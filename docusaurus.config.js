@@ -9,7 +9,7 @@ const config = {
   title: "SRS",
   tagline: "Simple Realtime Server",
   url: "https://ossrs.net",
-  baseUrl: "/srs-docs/",
+  baseUrl: "/docs/",
   onBrokenLinks: "throw",
   onBrokenMarkdownLinks: "warn",
   favicon: "img/favicon.ico",
@@ -110,7 +110,7 @@ const config = {
             position: "right",
           },
           {
-            href: "https://github.com/facebook/docusaurus",
+            href: "https://github.com/ossrs/srs",
             label: "GitHub",
             position: "right",
           },
