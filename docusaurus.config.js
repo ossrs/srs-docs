@@ -55,18 +55,18 @@ const config = {
             type: 'doc',
             docId: 'tutorial/getting-started',
             position: 'left',
-            label: 'Tutorial',
+            label: '教程',
           },
           {
             type: 'doc',
             docId: 'doc/git',
             position: 'left',
-            label: 'Docs',
+            label: '文档',
           },
           {
             type: 'doc',
             docId: 'samples/sample-RTMP',
-            label: 'Sample',
+            label: '使用案例',
             position: 'left',
           },
           // {
@@ -75,7 +75,7 @@ const config = {
           //   label: "Solution",
           //   position: "left",
           // },
-          { to: '/blog', label: 'Blog', position: 'left' },
+          { to: '/blog', label: '博客', position: 'left' },
           {
             type: 'docsVersionDropdown',
             position: 'right',
@@ -118,44 +118,56 @@ const config = {
         style: 'dark',
         links: [
           {
-            title: 'Docs',
+            title: '学习',
             items: [
               {
-                label: 'Tutorial',
+                label: '教程',
                 to: '/docs/tutorial/getting-started',
               },
               {
-                label: 'Docs',
+                label: '文档',
                 to: '/docs/doc/git',
               },
               {
-                label: 'Sample',
+                label: '使用案例',
                 to: '/docs/samples/sample-RTMP',
               },
             ],
           },
           {
-            title: 'Community',
+            title: '社群',
             items: [
               {
                 label: 'Stack Overflow',
-                href: 'https://stackoverflow.com/questions/tagged/docusaurus',
+                href: 'https://stackoverflow.com/questions/tagged/simple-realtime-server',
               },
               {
                 label: 'Discord',
-                href: 'https://discordapp.com/invite/docusaurus',
+                href: 'https://discord.com/invite/yZ4BnPmHAd',
               },
               {
-                label: 'Twitter',
-                href: 'https://twitter.com/docusaurus',
+                label: 'Bilibili',
+                href: 'https://space.bilibili.com/430256302?spm_id_from=333.788.b_765f7570696e666f.2',
+              },
+              {
+                label: '直播答疑',
+                href: 'https://mp.weixin.qq.com/s/dC5-iQC6x3hDIfVNxJHilw',
               },
             ],
           },
           {
-            title: 'More',
+            title: '微信公众号',
             items: [
               {
-                label: 'Blog',
+                html: '<img src="https://ossrs.net/images/srs-server-alpha3.jpg" alt="微信搜索 “SRS开源服务器” 关注我们" width="96">',
+              },
+            ],
+          },
+          {
+            title: '更多',
+            items: [
+              {
+                label: '博客',
                 to: '/blog',
               },
               {
@@ -165,7 +177,19 @@ const config = {
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
+        // copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
+        copyright: `<div>
+        <p>
+          备案证编号：
+          <a
+            target="_blank"
+            href="https://beian.miit.gov.cn/"
+          >
+            京ICP备19056366号-1
+          </a>
+        </p>
+        <p>© 2013-${new Date().getFullYear()} SRS 版权所有</p>
+      </div>`,
       },
       prism: {
         theme: lightCodeTheme,

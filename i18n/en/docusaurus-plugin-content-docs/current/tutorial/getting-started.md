@@ -8,11 +8,11 @@ custom_edit_url: null
 
 ## Getting Started
 
-对于新手来说，音视频的门槛真的非常高，SRS的目标是降低（不能消除）音视频的门槛，所以请一定要读完Wiki。 不读Wiki一定扑街，不读文档请不要提Issue，不读文档请不要提问题，任何文档中明确说过的疑问都不会解答。
+Let's install SRS.
 
-### 源码
+### Source
 
-下载源码，推荐用 [CentOS7](https://github.com/ossrs/srs/wiki/v4_EN_Build)系统:
+Get SRS source, recommend [CentOS7](https://github.com/ossrs/srs/wiki/v4_EN_Build):
 
 ```
 git clone -b 4.0release https://gitee.com/ossrs/srs.git
@@ -20,7 +20,7 @@ git clone -b 4.0release https://gitee.com/ossrs/srs.git
 
 > Note: Recommend docker, or K8s
 
-编译，注意需要切换到srs/trunk目录：
+Build SRS in srs/trunk:
 
 ```
 cd srs/trunk
@@ -28,49 +28,39 @@ cd srs/trunk
 make
 ```
 
-启动服务器：
+Run SRS server:
 
 ```
 ./objs/srs -c conf/srs.conf
 ```
 
-检查SRS是否成功启动，可以打开 http://localhost:8080 ，或者执行命令：
+Check SRS by http://localhost:8080 or:
 
 ```
-# 查看SRS的状态
+# Check the process status
 ./etc/init.d/srs status
 
-# 或者看SRS的日志
+# Check the SRS logs
 tail -n 30 -f ./objs/srs.log
 ```
 
-例如，下面的命令显示SRS正在运行：
-
-```
-MB0:trunk $ ./etc/init.d/srs status
-SRS(pid 90408) is running.                                 [  OK  ]
-
-MB0:trunk $ tail -n 30 -f ./objs/srs.log
-[2021-08-13 10:30:36.634][Trace][90408][12c97232] Hybrid cpu=0.00%,0MB, cid=1,1, timer=61,0,0, clock=0,22,25,0,0,0,0,1,0
-```
-
-使用 FFmpeg(点击下载) 或 OBS(点击下载) 推流：
+Publish stream by FFmpeg or OBS :
 
 ```
 ffmpeg -re -i ./doc/source.flv -c copy -f flv rtmp://localhost/live/livestream
 ```
 
-打开下面的页面播放流（若SRS不在本机，请将localhost更换成服务器IP）:
+Play stream by:
 - RTMP (by VLC): rtmp://localhost/live/livestream
 - H5(HTTP-FLV): http://localhost:8080/live/livestream.flv
 - H5(HLS): http://localhost:8080/live/livestream.m3u8
 
-注意如果RTMP转WebRTC流播放，必须使用配置文件 [rtmp2rtc.conf](https://github.com/ossrs/srs/issues/2728#rtmp2rtc-en-guide):
+Note that if convert RTMP to WebRTC, please use [rtmp2rtc.conf](https://github.com/ossrs/srs/issues/2728#rtmp2rtc-en-guide):
 - H5(WebRTC): webrtc://localhost/live/livestream
 
 > Note: Please set CANDIDATE if need to enable WebRTC, please read [CANDIDATE](https://github.com/ossrs/srs/wiki/v4_EN_WebRTC#config-candidate).
 
-请继续阅读下面的内容，了解更多SRS的信息。
+Please read more information about SRS.
 
 
 ### Docker

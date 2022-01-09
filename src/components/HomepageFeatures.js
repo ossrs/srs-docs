@@ -1,5 +1,7 @@
 import React from 'react';
 import clsx from 'clsx';
+import Translate, { translate } from '@docusaurus/Translate';
+import Link from '@docusaurus/Link';
 import styles from './HomepageFeatures.module.css';
 
 const FeatureList = [
@@ -53,15 +55,34 @@ export default function HomepageFeatures() {
   return (
     <section className={styles.features}>
       <div className="container">
-        <p>SRS is a simple, high efficiency and realtime video server, supports RTMP/WebRTC/HLS/HTTP-FLV/SRT.</p>
+        <p>
+          <Translate
+            id="homepage.subTitle"
+            description="SRS是一个简单高效的实时视频服务器，支持RTMP/WebRTC/HLS/HTTP-FLV/SRT/GB28181。"
+          >
+            SRS是一个简单高效的实时视频服务器，支持RTMP/WebRTC/HLS/HTTP-FLV/SRT/GB28181。
+          </Translate>
+        </p>
         <p>
           <img src="https://ossrs.net/wiki/images/SRS-Overview-4.0.png" />
         </p>
+
         <p>
-          Note: See &nbsp;
-          <a href="https://www.processon.com/view/link/619f29791efad425fd699fd2">
-            processon.com/view/link/619f29791efad425fd699fd2
-          </a>
+          <Translate
+            id="homepage.overview"
+            description="Note: 高清大图请参考这里"
+            values={{
+              overview: (
+                <Link to="https://www.processon.com/view/link/619f29791efad425fd699fd2">
+                  <Translate id="homepage.overviewLink" description="Note: 高清大图请参考这里">
+                    这里
+                  </Translate>
+                </Link>
+              ),
+            }}
+          >
+            {'Note: 高清大图请参考{overview}'}
+          </Translate>
         </p>
       </div>
     </section>

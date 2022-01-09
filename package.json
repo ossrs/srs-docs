@@ -11,7 +11,7 @@
     "deploy": "docusaurus deploy",
     "clear": "docusaurus clear",
     "serve": "docusaurus serve",
-    "write-translations": "docusaurus write-translations",
+    "write-translations": "docusaurus write-translations -- --locale en",
     "write-heading-ids": "docusaurus write-heading-ids",
     "lint": "lint-staged"
   },

@@ -1,7 +1,7 @@
 # srs-docs
 The documents for SRS
 
-English | [简体中文](./README-zh_CN.md)
+[English](./README.md) | 简体中文
 
 ---
 ## Requirements
@@ -72,6 +72,14 @@ $ yarn build
 
 This command generates static content into the `build` directory and can be served using any static contents hosting service.
 
+### 本地预览
+
+```
+$ yarn serve
+```
+
+This command 可以在 `build` 完成后直接预览实际效果。
+
 ### Change baseUrl
 
 ```
@@ -79,3 +87,32 @@ $ yarn cross-env BASE_URL='/custom-base-url/' docusaurus build
 ```
 
 This command uses `'/custom-base-url/'` instead of the default baseUrl(`'/lts/'`) to generate static content.
+
+
+## 翻译
+
+### 本地运行英文版网站
+
+```
+$ yarn run start -- --locale en
+```
+您的站点可通过 http://localhost:3000/en/ 访问
+
+
+### 翻译
+
+#### 提取页面中需要翻译的内容
+
+    $ yarn run write-translations -- --locale en
+
+  此命令将提取并初始化待翻译的 JSON 译文文件。
+
+#### 拷贝文档和博客文件
+
+    将待翻译的文档拷贝到 `/i18n/en/docusaurus-plugin-content-docs/current` 目录
+    `/i18n/en/docusaurus-plugin-content-docs/current` 目录结构需要和 `/docs` 保持一致
+
+    将待翻译的博客拷贝到 `/i18n/en/docusaurus-plugin-content-blog/current` 目录
+    `/i18n/en/docusaurus-plugin-content-blog/current` 目录结构需要和 `/blog` 保持一致
+
+#### 修改 `/i18n/en/` 中的文件并通过 `http://localhost:3000/en/` 查看翻译结果

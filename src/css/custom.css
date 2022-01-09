@@ -6,21 +6,21 @@
 
 /* You can override the default Infima variables here. */
 :root {
-  --ifm-color-primary: #f19c93;
-  --ifm-color-primary-dark: #cc7872;
-  --ifm-color-primary-darker: #a65755;
-  --ifm-color-primary-darkest: #59282a;
-  --ifm-color-primary-light: #ffccc4;
-  --ifm-color-primary-lighter: #fff0ed;
-  --ifm-color-primary-lightest: #fff3f0;
+  --ifm-color-primary: #3578e5;
+  --ifm-color-primary-dark: #1d68e1;
+  --ifm-color-primary-darker: #1b62d4;
+  --ifm-color-primary-darkest: #1751af;
+  --ifm-color-primary-light: #4e89e8;
+  --ifm-color-primary-lighter: #5a91ea;
+  --ifm-color-primary-lightest: #80aaef;
   --ifm-code-font-size: 95%;
-  --ifm-link-color: #1890ff;
-  /* --ifm-navbar-link-hover-color: var(--ifm-link-color); */
-  --ifm-footer-link-hover-color: var(--ifm-link-color);
+  /* --ifm-link-color: #1890ff;
+  --ifm-footer-link-hover-color: var(--ifm-link-color); */
 }
 
 .docusaurus-highlight-code-line {
   display: block;
+
   margin: 0 calc(-1 * var(--ifm-pre-padding));
   padding: 0 var(--ifm-pre-padding);
 
