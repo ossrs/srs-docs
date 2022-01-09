@@ -9,7 +9,7 @@ const config = {
   title: 'SRS',
   tagline: 'Simple Realtime Server',
   url: 'https://ossrs.net',
-  baseUrl: '/doc/',
+  baseUrl: process.env.BASE_URL || '/lts/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',

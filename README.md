@@ -70,3 +70,11 @@ $ yarn build
 ```
 
 This command generates static content into the `build` directory and can be served using any static contents hosting service.
+
+### Change baseUrl
+
+```
+$ yarn cross-env BASE_URL='/custom-base-url/' docusaurus build
+```
+
+This command uses `'/custom-base-url/'` instead of the default baseUrl(`'/lts/'`) to generate static content.

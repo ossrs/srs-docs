@@ -6,7 +6,7 @@
     "prepare": "husky install",
     "docusaurus": "docusaurus",
     "start": "docusaurus start",
-    "build": "docusaurus build",
+    "build": "cross-env BASE_URL='/lts/' docusaurus build",
     "swizzle": "docusaurus swizzle",
     "deploy": "docusaurus deploy",
     "clear": "docusaurus clear",
@@ -39,6 +39,7 @@
   "devDependencies": {
     "@babel/core": "^7.16.7",
     "@babel/eslint-parser": "^7.16.5",
+    "cross-env": "^7.0.3",
     "eslint": "^8.6.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-prettier": "^4.0.0",
@@ -47,6 +48,6 @@
     "prettier": "^2.5.1"
   },
   "lint-staged": {
-    "*": "eslint"
+    "*.js": "eslint"
   }
 }
