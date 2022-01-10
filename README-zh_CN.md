@@ -103,7 +103,7 @@ $ yarn run start -- --locale en
 
 #### 提取页面中需要翻译的内容
 
-    $ yarn run write-translations -- --locale en
+    $ yarn docusaurus write-translations -- --locale en
 
   此命令将提取并初始化待翻译的 JSON 译文文件。
 
