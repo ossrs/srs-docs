@@ -6,6 +6,8 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 
 const baseUrl = process.env.BASE_URL || '/lts/';
 
+const language = process.env.LANGUAGE || 'zh-cn';
+
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: 'SRS',
@@ -200,7 +202,7 @@ const config = {
       },
     }),
   i18n: {
-    defaultLocale: 'zh-cn',
+    defaultLocale: language,
     locales: ['zh-cn', 'en'],
   },
 };
