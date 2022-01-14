@@ -52,7 +52,7 @@
     "description": "The label of footer link with label=GitHub linking to https://github.com/ossrs/srs"
   },
   "copyright": {
-    "message": "<p>©2013~2022 SRS <a href=\"https://beian.miit.gov.cn\">京ICP备19056366号-1</a></p>",
+    "message": "<p></p>",
     "description": "The footer copyright"
   }
 }
