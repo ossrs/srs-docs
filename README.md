@@ -79,3 +79,8 @@ $ yarn cross-env BASE_URL='/custom-base-url/' docusaurus build
 ```
 
 This command uses `'/custom-base-url/'` instead of the default baseUrl(`'/lts/'`) to generate static content.
+
+### Dockers
+
+* Docker hub: [ossrs/docs](https://hub.docker.com/r/ossrs/docs)
+* Aliyun ACR: [registry.cn-hangzhou.aliyuncs.com/ossrs/docs](https://cr.console.aliyun.com/repository/cn-hangzhou/ossrs/docs/images)

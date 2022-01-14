@@ -1,0 +1,27 @@
+FROM node:16-buster AS build
+
+# Use /git as work dir.
+COPY . /git
+WORKDIR /git
+
+# Build the project.
+RUN yarn
+RUN yarn build
+
+# Copy the build output.
+RUN cp -R build /usr/local/srs-docs
+
+############################################################
+# dist
+############################################################
+FROM ossrs/httpx:1 AS dist
+
+EXPOSE 80 443
+
+COPY --from=build /usr/local/srs-docs /usr/local/srs-docs
+RUN cd /usr/local/srs-docs && ln -sf . lts
+
+WORKDIR /usr/local
+CMD ["./bin/httpx-static", \
+    "-http", "80", "-root", "./srs-docs" \
+    ]
