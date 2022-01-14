@@ -1,16 +1,16 @@
 ---
 title: Getting Started
 sidebar_label: Getting Started
-hide_title: true
+hide_title: false
 hide_table_of_contents: false
 custom_edit_url: null
 ---
 
-## Getting Started
+
 
 对于新手来说，音视频的门槛真的非常高，SRS的目标是降低（不能消除）音视频的门槛，所以请一定要读完Wiki。 不读Wiki一定扑街，不读文档请不要提Issue，不读文档请不要提问题，任何文档中明确说过的疑问都不会解答。
 
-### 源码
+## 源码
 
 下载源码，推荐用 [CentOS7](https://github.com/ossrs/srs/wiki/v4_EN_Build)系统:
 
@@ -73,7 +73,7 @@ ffmpeg -re -i ./doc/source.flv -c copy -f flv rtmp://localhost/live/livestream
 请继续阅读下面的内容，了解更多SRS的信息。
 
 
-### Docker
+## Docker
 
 Run SRS docker, the available images is [here](https://hub.docker.com/r/ossrs/srs/tags) :
 
@@ -97,7 +97,7 @@ docker run --rm -it -p 1935:1935 -p 1985:1985 -p 8080:8080 \
 Please read more information about SRS.
 
 
-### K8s
+## K8s
 
 Highly recommend that you [Deploy to Cloud Platforms](https://github.com/ossrs/srs/wiki/v4_EN_Home#v4_CN_K8s#deploy-to-cloud-platforms).
 

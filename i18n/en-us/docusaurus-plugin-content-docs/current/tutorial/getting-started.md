@@ -1,16 +1,14 @@
 ---
 title: Getting Started
 sidebar_label: Getting Started
-hide_title: true
+hide_title: false
 hide_table_of_contents: false
 custom_edit_url: null
 ---
 
-## Getting Started
-
 Let's install SRS.
 
-### Source
+## Source
 
 Get SRS source, recommend [CentOS7](https://github.com/ossrs/srs/wiki/v4_EN_Build):
 
@@ -63,7 +61,7 @@ Note that if convert RTMP to WebRTC, please use [rtmp2rtc.conf](https://github.c
 Please read more information about SRS.
 
 
-### Docker
+## Docker
 
 Run SRS docker, the available images is [here](https://hub.docker.com/r/ossrs/srs/tags) :
 
@@ -87,7 +85,7 @@ docker run --rm -it -p 1935:1935 -p 1985:1985 -p 8080:8080 \
 Please read more information about SRS.
 
 
-### K8s
+## K8s
 
 Highly recommend that you [Deploy to Cloud Platforms](https://github.com/ossrs/srs/wiki/v4_EN_Home#v4_CN_K8s#deploy-to-cloud-platforms).
 
