@@ -4,15 +4,16 @@
 const lightCodeTheme = require('prism-react-renderer/themes/github');
 const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 
-const baseUrl = process.env.BASE_URL || '/lts/';
-
-const language = process.env.LANGUAGE || 'zh-cn';
+const regionConfig = process.env.REGION === 'zh-cn' ? require('./config/zh-cn') : require('./config/default');
+const url = process.env.URL || regionConfig.url;
+const baseUrl = process.env.BASE_URL || regionConfig.baseUrl;
+const defaultLocale = process.env.DEFAULT_LOCALE || regionConfig.defaultLocale;
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: 'SRS',
   tagline: 'Simple Realtime Server',
-  url: 'https://ossrs.net',
+  url: url,
   baseUrl: baseUrl,
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
@@ -181,20 +182,8 @@ const config = {
             ],
           },
         ],
-        // copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
-        //   copyright: `<div>
-        //   <p>
-        //     备案证编号：
-        //     <a
-        //       target="_blank"
-        //       href="https://beian.miit.gov.cn/"
-        //     >
-        //       京ICP备19056366号-1
-        //     </a>
-        //   </p>
-        //   <p>© 2013-${new Date().getFullYear()} SRS 版权所有</p>
-        // </div>`,
-        copyright: `<p>©2013~${new Date().getFullYear()} SRS <a href="https://beian.miit.gov.cn">京ICP备19056366号-1</a></p>`,
+        copyright: `<p></p>`,
+        // copyright: `<p>©2013~${new Date().getFullYear()} SRS <a href="https://beian.miit.gov.cn">京ICP备19056366号-1</a></p>`,
       },
       prism: {
         theme: lightCodeTheme,
@@ -202,9 +191,10 @@ const config = {
       },
     }),
   i18n: {
-    defaultLocale: language,
-    locales: ['zh-cn', 'en'],
+    defaultLocale: defaultLocale,
+    locales: ['zh-cn', 'en-us'],
   },
+  plugins: [...regionConfig.plugins],
 };
 
 module.exports = config;

@@ -5,9 +5,8 @@
   "scripts": {
     "prepare": "husky install",
     "docusaurus": "docusaurus",
-    "start": "docusaurus start",
-    "build": "cross-env BASE_URL='/lts/' LANGUAGE='zh-cn' docusaurus build",
-    "build-en": "cross-env BASE_URL='/lts/' LANGUAGE='en' docusaurus build",
+    "start": "cross-env REGION='zh-cn' docusaurus start",
+    "build": "docusaurus build",
     "swizzle": "docusaurus swizzle",
     "deploy": "docusaurus deploy",
     "clear": "docusaurus clear",

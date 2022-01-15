@@ -116,3 +116,63 @@ $ yarn run start -- --locale en
     `/i18n/en/docusaurus-plugin-content-blog/current` 目录结构需要和 `/blog` 保持一致
 
 #### 修改 `/i18n/en/` 中的文件并通过 `http://localhost:3000/en/` 查看翻译结果
+
+
+## 环境变量
+
+|  变量名   | 默认值  | 优先级  | 作用  |
+|  ----  | ----  | ----  | ----  |
+| URL  | `"https://ossrs.io"` | 高 | 设置域名 |
+| BASE_URL  | `"/"` | 高 | 设置网站 baseUrl |
+| DEFAULT_LOCALE  | `"en-us"` | 高 | 设置默认语言 |
+| REGION  | `""` | 低  | 设置网站默认配置模板，模板中的参数可以被更高优先级的环境变量覆盖。 |
+
+
+### REGION 环境变量取值说明
+
+#### 不设置
+
+```
+yarn build
+```
+
+使用 config 目录下的 default.js 文件中的配置
+
+```js
+{
+  url: 'https://ossrs.io',
+  baseUrl: '/',
+  defaultLocale: 'en-us',
+  plugins: [
+    [
+      './config/docusaurus-dynamic-copyright-plugin',
+      {
+        copyright: `<p>©2013~${new Date().getFullYear()} SRS</p>`,
+      },
+    ],
+  ],
+}
+```
+#### 设置 `"zh-cn"`
+
+```
+yarn cross-env REGION='zh-cn' docusaurus build
+```
+
+使用 config 目录下的 zh-cn.js 文件中的配置
+
+```js
+{
+  url: 'https://ossrs.net',
+  baseUrl: '/lts/',
+  defaultLocale: 'zh-cn',
+  plugins: [
+    [
+      './config/docusaurus-dynamic-copyright-plugin',
+      {
+        copyright: `<p>©2013~${new Date().getFullYear()} SRS <a href="https://beian.miit.gov.cn">京ICP备19056366号-1</a></p>`,
+      },
+    ],
+  ],
+};
+```
