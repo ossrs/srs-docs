@@ -6,7 +6,7 @@ WORKDIR /git
 
 # Build the project.
 RUN yarn
-RUN yarn build-en
+RUN yarn cross-env REGION='en-us' docusaurus build
 
 # Copy the build output.
 RUN cp -R build /usr/local/srs-docs
