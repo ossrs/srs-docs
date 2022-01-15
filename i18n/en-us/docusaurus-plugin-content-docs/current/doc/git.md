@@ -1,18 +1,16 @@
 ---
 title: Git
 sidebar_label: Git
-hide_title: true
+hide_title: false
 hide_table_of_contents: false
 custom_edit_url: null
 ---
-
-## Git
 
 > Note: 如果觉得Github的Wiki访问太慢，可以访问 Gitee 镜像。
 
 如何选择SRS的稳定版本？如何更新代码？
 
-### Fast checkout
+## Fast checkout
 
 很多人希望缩减仓库大小，很多doc和3rdparty中的第三方代码压缩包。我在这里集中说明一次，为何需要把doc收集那么全？这个不言自明，srs中23%的代码都是注释，注释会说明是哪个文档的哪一页，难道还需要再下载一次这个文档吗？为何需要把依赖的第三方代码放进来，譬如ffmpeg和nignx还有openssl？再去下载这些相关的程序会比较麻烦，而且对于新手来说，下载正确的版本和编译都是比较复杂的问题。为了好用，大一点的仓库我觉得而是可以接受的。
 
@@ -28,7 +26,7 @@ cd srs && git remote set-url origin https://github.com/ossrs/srs.git
 其他国内镜像参考：develop#mirrors
 
 
-### Checkout Branch
+## Checkout Branch
 
 有些功能只有SRS2.0有，SRS1.0没有，请注意看wiki是v1还是v2的。
 
@@ -60,7 +58,7 @@ git pull && git checkout 4.0release
 git pull && git checkout develop
 ```
 
-### SRS Branches
+## SRS Branches
 
 release分支会比develop稳定，不过只有正式发布的版本才比较稳定，发布中的版本也会有release分支。
 

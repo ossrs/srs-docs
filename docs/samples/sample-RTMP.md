@@ -1,12 +1,12 @@
 ---
 title: RTMP 部署实例
 sidebar_label: RTMP 部署实例
-hide_title: true
+hide_title: false
 hide_table_of_contents: false
 custom_edit_url: null
 ---
 
-## RTMP 部署实例
+
 
 > Note: 如果觉得Github的Wiki访问太慢，可以访问 Gitee 镜像。
 
@@ -14,7 +14,7 @@ RTMP部署的步骤。
 
 **假设服务器的IP是：192.168.1.170**
 
-### 第一步，获取SRS。
+## 第一步，获取SRS。
 
 详细参考GIT获取代码
 
@@ -30,7 +30,7 @@ git pull
 ```
 
 
-### 第二步，编译SRS。
+## 第二步，编译SRS。
 详细参考Build
 
 ```
@@ -38,7 +38,7 @@ git pull
 ```
 
 
-### 第三步，编写SRS配置文件。
+## 第三步，编写SRS配置文件。
 详细参考RTMP分发
 
 将以下内容保存为文件，譬如 conf/rtmp.conf，服务器启动时指定该配置文件(srs的conf文件夹有该文件)。
@@ -51,14 +51,14 @@ vhost __defaultVhost__ {
 }
 ```
 
-### 第四步，启动SRS。
+## 第四步，启动SRS。
 详细参考RTMP分发
 
 ```
 ./objs/srs -c conf/rtmp.conf
 ```
 
-### 第五步，启动推流编码器。
+## 第五步，启动推流编码器。
 详细参考RTMP分发
 
 使用FFMPEG命令推流：
@@ -78,7 +78,7 @@ FMS URL: rtmp://192.168.1.170/live
 Stream: livestream
 ```
 
-### 第六步，观看RTMP流。
+## 第六步，观看RTMP流。
 详细参考RTMP分发
 
 

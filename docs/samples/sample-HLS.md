@@ -1,12 +1,12 @@
 ---
 title: HLS 部署实例
 sidebar_label: HLS 部署实例
-hide_title: true
+hide_title: false
 hide_table_of_contents: false
 custom_edit_url: null
 ---
 
-## HLS 部署实例
+
 
 > Note: 如果觉得Github的Wiki访问太慢，可以访问 Gitee 镜像。
 
@@ -14,7 +14,7 @@ SRS支持HLS的详细步骤。
 
 **假设服务器的IP是：192.168.1.170**
 
-### 第一步，获取SRS。
+## 第一步，获取SRS。
 
 详细参考GIT获取代码
 
@@ -28,7 +28,7 @@ cd srs/trunk
 git pull
 ```
 
-### 第二步，编译SRS。
+## 第二步，编译SRS。
 
 详细参考Build
 
@@ -37,7 +37,7 @@ git pull
 ```
 
 
-### 第三步，编写SRS配置文件。
+## 第三步，编写SRS配置文件。
 
 详细参考HLS分发
 
@@ -67,7 +67,7 @@ vhost __defaultVhost__ {
 > 备注：hls_path必须存在，srs只会自动创建${hls_path}下的app的目录。参考：HLS分发: HLS流程
 
 
-### 第四步，启动SRS。
+## 第四步，启动SRS。
 
 详细参考HLS分发
 
@@ -75,7 +75,7 @@ vhost __defaultVhost__ {
 ./objs/srs -c conf/hls.conf
 ```
 
-### 第五步，用FFMPEG或FMLE推流。
+## 第五步，用FFMPEG或FMLE推流。
 
 详细参考HLS分发
 
@@ -101,7 +101,7 @@ Stream: livestream
 - HLS流地址为： http://192.168.1.170:8080/live/livestream.m3u8
 
 
-### 第六步，观看RTMP流。
+## 第六步，观看RTMP流。
 
 详细参考HLS分发
 
@@ -113,7 +113,7 @@ RTMP流地址为：rtmp://192.168.1.170/live/livestream
 
 > 备注：请将所有实例的IP地址192.168.1.170都换成部署的服务器IP地址。
 
-### 第七步，观看HLS流。
+## 第七步，观看HLS流。
 
 详细参考HLS分发
 
@@ -129,7 +129,7 @@ HLS流地址为： http://192.168.1.170:8080/live/livestream.m3u8
 
 分发纯音频流参考：HLS audio only
 
-### Q&A
+## Q&A
 
 **RTMP流能看，HLS看不了**
 

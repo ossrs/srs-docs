@@ -1,5 +1,5 @@
 ---
-slug: SRT-adn-RIST-preview
+slug: SRT-and-RIST-preview
 title: 技术解码 | SRT和RIST协议综述
 authors: [TencentCloud]
 tags: [文章]
