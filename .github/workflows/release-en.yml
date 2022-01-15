@@ -62,14 +62,30 @@ jobs:
           docker push --all-tags registry.cn-hangzhou.aliyuncs.com/ossrs/docs
 
       ################################################################
-      ## K8S
-      #- name: Setup KUBCONFIG for Aliyun ACK
-      #  run: |-
-      #    KUBECONFIG=$RUNNER_TEMP/kubeconfig_$(date +%s)
-      #    echo "${{ secrets.KUBCONFIG }}" > $KUBECONFIG
-      #    echo "KUBECONFIG=$KUBECONFIG" >> $GITHUB_ENV
-      ## K8S for SRS web
-      #- name: Release SRS web to Aliyun ACK
-      #  run: |-
-      #    kubectl set image deploy/web-deploy web=registry.cn-hangzhou.aliyuncs.com/ossrs/web:$SRS_TAG
-      #    kubectl describe deploy/web-deploy
+      # DigitalOcean droplet
+      - name: Install doctl
+        uses: digitalocean/action-doctl@v2
+        with:
+          token: ${{ secrets.DIGITALOCEAN_ACCESS_TOKEN }}
+      # Generate variables like:
+      #   SRS_DROPLET_EIP=1.2.3.4
+      - name: Show droplet information
+        run: |
+          doctl compute droplet list --format Name,Region,Status,VCPUs,Memory
+          SRS_DROPLET_EIP=$(doctl compute droplet get srs --format PublicIPv4 --no-header)
+          echo "SRS_DROPLET_EIP=$SRS_DROPLET_EIP" >> $GITHUB_ENV
+      - name: Update the docs container
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ env.SRS_DROPLET_EIP }}
+          username: root
+          key: ${{ secrets.DIGITALOCEAN_SSHKEY }}
+          port: 22
+          envs: SRS_TAG
+          script: |
+            for ((i=0; i < 5; i++)); do
+              if [[ $(docker ps -f name=docs |wc -l) -eq 1 ]]; then echo "Killed"; break; fi
+              docker kill -s SIGKILL docs
+              sleep 0.3;
+            done
+            docker run -d -it --rm --privileged --name docs -p 3000:80 ossrs/docs:en-$SRS_TAG

@@ -62,14 +62,14 @@ jobs:
           docker push --all-tags registry.cn-hangzhou.aliyuncs.com/ossrs/docs
 
       ################################################################
-      ## K8S
-      #- name: Setup KUBCONFIG for Aliyun ACK
-      #  run: |-
-      #    KUBECONFIG=$RUNNER_TEMP/kubeconfig_$(date +%s)
-      #    echo "${{ secrets.KUBCONFIG }}" > $KUBECONFIG
-      #    echo "KUBECONFIG=$KUBECONFIG" >> $GITHUB_ENV
-      ## K8S for SRS web
-      #- name: Release SRS web to Aliyun ACK
-      #  run: |-
-      #    kubectl set image deploy/web-deploy web=registry.cn-hangzhou.aliyuncs.com/ossrs/web:$SRS_TAG
-      #    kubectl describe deploy/web-deploy
+      # K8S
+      - name: Setup KUBCONFIG for Aliyun ACK
+        run: |-
+          KUBECONFIG=$RUNNER_TEMP/kubeconfig_$(date +%s)
+          echo "${{ secrets.KUBCONFIG }}" > $KUBECONFIG
+          echo "KUBECONFIG=$KUBECONFIG" >> $GITHUB_ENV
+      # K8S for SRS web
+      - name: Release SRS web to Aliyun ACK
+        run: |-
+          kubectl set image deploy/docs-deploy docs=registry.cn-hangzhou.aliyuncs.com/ossrs/docs:cn-$SRS_TAG
+          kubectl describe deploy/docs-deploy
