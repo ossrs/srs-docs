@@ -6,7 +6,7 @@ WORKDIR /git
 
 # Build the project.
 RUN yarn
-RUN yarn cross-env REGION='en-us' DEFAULT_LOCALE='en-us' BASE_URL='/lts/' \
+RUN yarn cross-env REGION='en-us' DEFAULT_LOCALE='en-us' BASE_URL='/' \
   docusaurus build
 
 # Copy the build output.
