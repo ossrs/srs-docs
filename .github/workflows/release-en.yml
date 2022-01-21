@@ -85,7 +85,7 @@ jobs:
           script: |
             for ((i=0; i < 5; i++)); do
               if [[ $(docker ps -f name=docs |wc -l) -eq 1 ]]; then echo "Killed"; break; fi
-              docker kill -s SIGKILL docs
+              docker rm -f docs
               sleep 0.3;
             done
-            docker run -d -it --rm --privileged --name docs -p 3000:80 ossrs/docs:en-$SRS_TAG
+            docker run -d -it --restart always --privileged --name docs -p 3000:80 ossrs/docs:en-$SRS_TAG
