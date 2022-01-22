@@ -46,6 +46,8 @@ const config = {
     ],
   ],
 
+  themes: ['docusaurus-theme-search-typesense'],
+
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
@@ -112,6 +114,21 @@ const config = {
             position: 'right',
           },
         ],
+      },
+      typesense: {
+        typesenseCollectionName: 'srs-docs', // Replace with your own doc site's name. Should match the collection name in the scraper settings.
+        typesenseServerConfig: {
+          nodes: [
+            {
+              host: 'localhost', // when in prod env, change it to your public domain
+              port: 8108,
+              protocol: 'http',
+            },
+          ],
+          apiKey: 'panda',
+        },
+        // Optional
+        contextualSearch: true,
       },
       footer: {
         style: 'dark',

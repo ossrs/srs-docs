@@ -5,12 +5,12 @@
   "scripts": {
     "prepare": "husky install",
     "docusaurus": "docusaurus",
-    "start": "docusaurus start",
-    "build": "docusaurus build",
+    "start": "cross-env docusaurus start",
+    "build": "cross-env docusaurus build",
     "swizzle": "docusaurus swizzle",
     "deploy": "docusaurus deploy",
     "clear": "docusaurus clear",
-    "serve": "docusaurus serve",
+    "serve": "cross-env REGION='zh-cn' docusaurus serve --port=80",
     "write-translations": "docusaurus write-translations -- --locale zh-cn",
     "write-heading-ids": "docusaurus write-heading-ids",
     "lint": "lint-staged"
@@ -20,6 +20,7 @@
     "@docusaurus/preset-classic": "2.0.0-beta.14",
     "@mdx-js/react": "^1.6.21",
     "clsx": "^1.1.1",
+    "docusaurus-theme-search-typesense": "^0.2.0",
     "prism-react-renderer": "^1.2.1",
     "react": "^17.0.1",
     "react-dom": "^17.0.1"
