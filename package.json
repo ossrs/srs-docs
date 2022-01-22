@@ -11,8 +11,8 @@
     "deploy": "docusaurus deploy",
     "clear": "docusaurus clear",
     "serve": "cross-env REGION='zh-cn' SEARCH_APIKEY='test' docusaurus serve --port=3000",
-    "search-typesense": "docker run --rm -it -v `pwd`/search/data:/data -p 8108:8108 registry.cn-hangzhou.aliyuncs.com/ossrs/typesense:0.22.1 --enable-cors --data-dir /data --api-key=test",
-    "search-scraper": "docker run --rm -e UPDATE_NB_HITS=0 -e TYPESENSE_HOST=host.docker.internal -e TYPESENSE_API_KEY=test -e TYPESENSE_PORT=8108 -e TYPESENSE_PROTOCOL=http -v `pwd`/search/scraper.json:/config.json -e CONFIG=/config.json registry.cn-hangzhou.aliyuncs.com/ossrs/docsearch-scraper:latest",
+    "typesense": "docker run --rm -it -v `pwd`/search/data:/data -p 8108:8108 registry.cn-hangzhou.aliyuncs.com/ossrs/typesense:0.22.1 --enable-cors --data-dir /data --api-key=test",
+    "scraper": "docker run --rm -e UPDATE_NB_HITS=0 -e TYPESENSE_HOST=host.docker.internal -e TYPESENSE_API_KEY=test -e TYPESENSE_PORT=8108 -e TYPESENSE_PROTOCOL=http -v `pwd`/search/scraper.json:/config.json -e CONFIG=/config.json registry.cn-hangzhou.aliyuncs.com/ossrs/docsearch-scraper:latest",
     "write-translations": "docusaurus write-translations -- --locale zh-cn",
     "write-heading-ids": "docusaurus write-heading-ids",
     "lint": "lint-staged"
