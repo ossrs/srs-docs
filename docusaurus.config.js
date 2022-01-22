@@ -4,6 +4,7 @@
 const lightCodeTheme = require('prism-react-renderer/themes/github');
 const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 
+const typesenseApiKey = process.env.APIKEY || 'test';
 const regionConfig = process.env.REGION === 'zh-cn' ? require('./config/zh-cn') : require('./config/default');
 const url = process.env.URL || regionConfig.url;
 const baseUrl = process.env.BASE_URL || regionConfig.baseUrl;
@@ -131,7 +132,7 @@ const config = {
               protocol: 'http',
             },
           ],
-          apiKey: 'panda',
+          apiKey: typesenseApiKey,
         },
         // Optional
         contextualSearch: true,

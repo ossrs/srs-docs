@@ -5,12 +5,12 @@
   "scripts": {
     "prepare": "husky install",
     "docusaurus": "docusaurus",
-    "start": "cross-env REGION='zh-cn' docusaurus start",
+    "start": "cross-env REGION='zh-cn' APIKEY='panda' docusaurus start",
     "build": "cross-env REGION='zh-cn' docusaurus build",
     "swizzle": "docusaurus swizzle",
     "deploy": "docusaurus deploy",
     "clear": "docusaurus clear",
-    "serve": "cross-env REGION='zh-cn' docusaurus serve --port=80",
+    "serve": "cross-env REGION='zh-cn' APIKEY='panda' docusaurus serve --port=80",
     "write-translations": "docusaurus write-translations -- --locale en",
     "write-heading-ids": "docusaurus write-heading-ids",
     "lint": "lint-staged"
