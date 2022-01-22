@@ -33,7 +33,8 @@ jobs:
       - name: Build SRS docker image
         run: |
           echo "Release ossrs/docs:cn-$SRS_TAG"
-          docker build --tag ossrs/docs:cn-$SRS_TAG -f Dockerfile.cn .
+          docker build --tag ossrs/docs:cn-$SRS_TAG --build-arg SEARCH_APIKEY=${{ secrets.SEARCH_APIKEY }} \
+            -f Dockerfile.cn .
 
       ################################################################
       # Docker

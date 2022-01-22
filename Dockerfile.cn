@@ -4,9 +4,14 @@ FROM node:16-buster AS build
 COPY . /git
 WORKDIR /git
 
+ARG SEARCH_APIKEY
+
 # Build the project.
 RUN yarn
 RUN yarn cross-env REGION='zh-cn' DEFAULT_LOCALE='zh-cn' BASE_URL='/lts/' \
+  SEARCH_HTTPS_HOST=ossrs.io SEARCH_HTTPS_PORT=443 \
+  SEARCH_HTTP_HOST=ossrs.io SEARCH_HTTP_PORT=80 \
+  SEARCH_APIKEY=$SEARCH_APIKEY \
   docusaurus build
 
 # Copy the build output.
