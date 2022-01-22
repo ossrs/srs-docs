@@ -122,3 +122,6 @@ dist
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+search/data
+srs-docs-search-config.json
