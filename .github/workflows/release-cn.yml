@@ -86,6 +86,7 @@ jobs:
       - name: Restart the typesense and scraper
         run: |-
           kubectl delete pods -l app=typesense --grace-period=0 --force
+          kubectl get pods -l app=typesense
 
       # K8S for SRS web
       - name: Release SRS web to Aliyun ACK
