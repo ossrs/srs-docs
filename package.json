@@ -6,7 +6,7 @@
     "prepare": "husky install",
     "docusaurus": "docusaurus",
     "start": "cross-env SEARCH_APIKEY='test' docusaurus start",
-    "build": "cross-env docusaurus build",
+    "build": "cross-env REGION='zh-cn' docusaurus build",
     "swizzle": "docusaurus swizzle",
     "deploy": "docusaurus deploy",
     "clear": "docusaurus clear",
