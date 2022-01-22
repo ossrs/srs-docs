@@ -159,7 +159,7 @@ jobs:
             done
             # Replace the BASE_URL
             sed -i 's|.*url.*host.docker.internal:3000.*|      "url": "http://host.docker.internal:3000/",|g' /root/search/scraper.json
-            docker run --rm -e UPDATE_NB_HITS=0 --privileged --name search-scraper --add-host host.docker.internal:$SRS_DROPLET_PIP \
+            docker run --rm --privileged --name search-scraper --add-host host.docker.internal:$SRS_DROPLET_PIP -e UPDATE_NB_HITS=0 \
               -e TYPESENSE_HOST=host.docker.internal -e TYPESENSE_API_KEY=$SEARCH_APIKEY -e TYPESENSE_PORT=8108 \
               -e TYPESENSE_PROTOCOL=http -v /root/search/scraper.json:/config.json -e CONFIG=/config.json \
               typesense/docsearch-scraper

@@ -29,6 +29,7 @@ jobs:
           echo "SRS_TAG=$SRS_TAG" >> $GITHUB_ENV
           SRS_MAJOR=$(echo $SRS_TAG| cut -c 2)
           echo "SRS_MAJOR=$SRS_MAJOR" >> $GITHUB_ENV
+
       # Build SRS image
       - name: Build SRS docker image
         run: |
@@ -43,6 +44,7 @@ jobs:
         with:
           username: "${{ secrets.DOCKER_USERNAME }}"
           password: "${{ secrets.DOCKER_PASSWORD }}"
+
       - name: Push to docker hub
         run: |
           docker tag ossrs/docs:cn-$SRS_TAG ossrs/docs:cn-$SRS_MAJOR
@@ -56,6 +58,7 @@ jobs:
           login-server: https://registry.cn-hangzhou.aliyuncs.com
           username: "${{ secrets.ACR_USERNAME }}"
           password: "${{ secrets.ACR_PASSWORD }}"
+
       - name: Push to Aliyun docker hub
         run: |
           docker tag ossrs/docs:cn-$SRS_TAG registry.cn-hangzhou.aliyuncs.com/ossrs/docs:cn-$SRS_TAG
@@ -69,6 +72,21 @@ jobs:
           KUBECONFIG=$RUNNER_TEMP/kubeconfig_$(date +%s)
           echo "${{ secrets.KUBCONFIG }}" > $KUBECONFIG
           echo "KUBECONFIG=$KUBECONFIG" >> $GITHUB_ENV
+
+      # Update config from search/scraper.json
+      - name: Update config from search/scraper.json
+        run: |-
+          cp search/scraper.json srs-docs-search-config.json
+          sed -i 's|.*url.*host.docker.internal:3000.*|      "url": "http://docs-tcp-service:80/lts/",|g' srs-docs-search-config.json
+          sed -i 's|host.docker.internal|docs-tcp-service|g' srs-docs-search-config.json
+          kubectl create configmap srs-docs --from-file srs-docs-search-config.json -o yaml --dry-run=client | kubectl apply -f -
+          kubectl describe configmap/srs-docs
+
+      # Restart the typesense and scraper
+      - name: Restart the typesense and scraper
+        run: |-
+          kubectl delete pods -l app=typesense --grace-period=0 --force
+
       # K8S for SRS web
       - name: Release SRS web to Aliyun ACK
         run: |-
