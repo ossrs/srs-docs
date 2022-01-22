@@ -3,24 +3,24 @@
     "message": "SRS",
     "description": "The title in the navbar"
   },
-  "item.label.教程": {
-    "message": "Tutorial",
-    "description": "Navbar item with label 教程"
-  },
-  "item.label.文档": {
-    "message": "Docs",
-    "description": "Navbar item with label 文档"
-  },
-  "item.label.使用案例": {
-    "message": "Sample",
-    "description": "Navbar item with label 使用案例"
-  },
-  "item.label.博客": {
-    "message": "Blog",
-    "description": "Navbar item with label 博客"
-  },
   "item.label.GitHub": {
     "message": "GitHub",
     "description": "Navbar item with label GitHub"
+  },
+  "item.label.Tutorial": {
+    "message": "教程",
+    "description": "Navbar item with label Tutorial"
+  },
+  "item.label.Docs": {
+    "message": "文档",
+    "description": "Navbar item with label Docs"
+  },
+  "item.label.Samples": {
+    "message": "使用案例",
+    "description": "Navbar item with label Samples"
+  },
+  "item.label.Blog": {
+    "message": "博客",
+    "description": "Navbar item with label Blog"
   }
 }

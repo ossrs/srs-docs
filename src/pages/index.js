@@ -16,15 +16,15 @@ function HomepageHeader() {
         <p className="hero__subtitle">
           <Translate
             id="homepage.subTitle"
-            description="SRS是一个简单高效的实时视频服务器，支持RTMP/WebRTC/HLS/HTTP-FLV/SRT/GB28181。"
+            description="SRS is a simple, high efficiency and realtime video server, supports RTMP/WebRTC/HLS/HTTP-FLV/SRT."
           >
-            SRS是一个简单高效的实时视频服务器，支持RTMP/WebRTC/HLS/HTTP-FLV/SRT/GB28181。
+            SRS is a simple, high efficiency and realtime video server, supports RTMP/WebRTC/HLS/HTTP-FLV/SRT.
           </Translate>
         </p>
         <div className={styles.buttons}>
           <Link className="button button--secondary button--lg" to="/docs/tutorial/getting-started">
             {siteConfig.title}&nbsp;
-            {translate({ message: '教程', id: 'homepage.tutorial', description: '教程' })}
+            {translate({ message: 'Tutorial', id: 'homepage.tutorial', description: 'Tutorial' })}
           </Link>
         </div>
       </div>
@@ -37,10 +37,9 @@ export default function Home() {
   return (
     <Layout
       title={`SRS (Simple Realtime Server)`}
-      // description="SRS是一个简单高效的实时视频服务器，支持RTMP/WebRTC/HLS/HTTP-FLV/SRT/GB28181。"
       description={translate({
         id: 'homepage.subTitle',
-        message: 'SRS是一个简单高效的实时视频服务器，支持RTMP/WebRTC/HLS/HTTP-FLV/SRT/GB28181。',
+        message: 'SRS is a simple, high efficiency and realtime video server, supports RTMP/WebRTC/HLS/HTTP-FLV/SRT.',
       })}
     >
       <HomepageHeader />

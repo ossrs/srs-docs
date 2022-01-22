@@ -58,9 +58,9 @@ export default function HomepageFeatures() {
         <p>
           <Translate
             id="homepage.subTitle"
-            description="SRS是一个简单高效的实时视频服务器，支持RTMP/WebRTC/HLS/HTTP-FLV/SRT/GB28181。"
+            description="SRS is a simple, high efficiency and realtime video server, supports RTMP/WebRTC/HLS/HTTP-FLV/SRT."
           >
-            SRS是一个简单高效的实时视频服务器，支持RTMP/WebRTC/HLS/HTTP-FLV/SRT/GB28181。
+            SRS is a simple, high efficiency and realtime video server, supports RTMP/WebRTC/HLS/HTTP-FLV/SRT.
           </Translate>
         </p>
         <p>
@@ -70,18 +70,18 @@ export default function HomepageFeatures() {
         <p>
           <Translate
             id="homepage.overview"
-            description="Note: 高清大图请参考这里"
+            description="Note: Please see {overview}"
             values={{
               overview: (
                 <Link to="https://www.processon.com/view/link/619f29791efad425fd699fd2">
-                  <Translate id="homepage.overviewLink" description="Note: 高清大图请参考这里">
-                    这里
+                  <Translate id="homepage.overviewLink" description="processon.com/view/link/619f29791efad425fd699fd2">
+                    processon.com/view/link/619f29791efad425fd699fd2
                   </Translate>
                 </Link>
               ),
             }}
           >
-            {'Note: 高清大图请参考{overview}'}
+            {'Note: Please see {overview}'}
           </Translate>
         </p>
       </div>

@@ -60,27 +60,21 @@ const config = {
             type: 'doc',
             docId: 'tutorial/getting-started',
             position: 'left',
-            label: '教程',
+            label: 'Tutorial',
           },
           {
             type: 'doc',
             docId: 'doc/git',
             position: 'left',
-            label: '文档',
+            label: 'Docs',
           },
           {
             type: 'doc',
             docId: 'samples/sample-RTMP',
-            label: '使用案例',
+            label: 'Samples',
             position: 'left',
           },
-          // {
-          //   type: "doc",
-          //   docId: "doc/sample-RTMP",
-          //   label: "Solution",
-          //   position: "left",
-          // },
-          { to: '/blog', label: '博客', position: 'left' },
+          { to: '/blog', label: 'Blog', position: 'left' },
           {
             type: 'docsVersionDropdown',
             position: 'right',
@@ -123,24 +117,24 @@ const config = {
         style: 'dark',
         links: [
           {
-            title: '学习',
+            title: 'Learn',
             items: [
               {
-                label: '教程',
+                label: 'Tutorial',
                 to: '/docs/tutorial/getting-started',
               },
               {
-                label: '文档',
+                label: 'Docs',
                 to: '/docs/doc/git',
               },
               {
-                label: '使用案例',
+                label: 'Samples',
                 to: '/docs/samples/sample-RTMP',
               },
             ],
           },
           {
-            title: '社群',
+            title: 'Community',
             items: [
               {
                 label: 'Stack Overflow',
@@ -155,13 +149,13 @@ const config = {
                 href: 'https://space.bilibili.com/430256302?spm_id_from=333.788.b_765f7570696e666f.2',
               },
               {
-                label: '直播答疑',
+                label: 'Live',
                 href: 'https://mp.weixin.qq.com/s/dC5-iQC6x3hDIfVNxJHilw',
               },
             ],
           },
           {
-            title: '微信公众号',
+            title: 'WeChat',
             items: [
               {
                 html: `<img src="${baseUrl}img/srs-server-no-border.png" alt="微信搜索 “SRS开源服务器” 关注我们" width="120">`,
@@ -169,10 +163,10 @@ const config = {
             ],
           },
           {
-            title: '更多',
+            title: 'More',
             items: [
               {
-                label: '博客',
+                label: 'Blog',
                 to: '/blog',
               },
               {
@@ -192,7 +186,7 @@ const config = {
     }),
   i18n: {
     defaultLocale: defaultLocale,
-    locales: ['zh-cn', 'en-us'],
+    locales: ['en-us', 'zh-cn'],
   },
   plugins: [...regionConfig.plugins],
 };
