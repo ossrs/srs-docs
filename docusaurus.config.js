@@ -4,7 +4,11 @@
 const lightCodeTheme = require('prism-react-renderer/themes/github');
 const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 
-const typesenseApiKey = process.env.APIKEY || 'test';
+const typesenseHttpsHost = process.env.SEARCH_HTTPS_HOST;
+const typesenseHttpsPort = process.env.SEARCH_HTTPS_PORT;
+const typesenseHttpHost = process.env.SEARCH_HTTP_HOST || 'localhost';
+const typesenseHttpPort = process.env.SEARCH_HTTP_PORT || 8108;
+const typesenseApiKey = process.env.SEARCH_APIKEY || 'test';
 const regionConfig = process.env.REGION === 'zh-cn' ? require('./config/zh-cn') : require('./config/default');
 const url = process.env.URL || regionConfig.url;
 const baseUrl = process.env.BASE_URL || regionConfig.baseUrl;
@@ -117,15 +121,21 @@ const config = {
         ],
       },
       typesense: {
-        typesenseCollectionName: 'srs-docs', // Replace with your own doc site's name. Should match the collection name in the scraper settings.
+        // See https://typesense.org/docs/guide/docsearch.html#step-2-add-a-search-bar-to-your-documentation-site
+        typesenseCollectionName: 'srs-docs',
         typesenseServerConfig: {
           nodes: [
-            {
-              host: 'localhost', // when in prod env, change it to your public domain
-              port: 8108,
-              protocol: 'http',
+            typesenseHttpsHost && {
+              host: typesenseHttpsHost,
+              port: typesenseHttpsPort,
+              protocol: 'https',
             },
-          ],
+            typesenseHttpHost && {
+              host: typesenseHttpHost,
+              port: typesenseHttpPort,
+              protocol: 'http',
+            }
+          ].filter(e => e),
           apiKey: typesenseApiKey,
         },
         // Optional
