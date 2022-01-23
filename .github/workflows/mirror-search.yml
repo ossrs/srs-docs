@@ -1,0 +1,35 @@
+name: "Mirror the search images to aliyun"
+
+on:
+  push:
+    tags:
+      - v1*
+
+jobs:
+  mirror-images:
+    name: mirror-images
+    runs-on: ubuntu-20.04
+
+    steps:
+      ################################################################
+      # Aliyun ACR
+      - name: Login Aliyun docker hub
+        uses: aliyun/acr-login@v1
+        with:
+          login-server: https://registry.cn-hangzhou.aliyuncs.com
+          username: "${{ secrets.ACR_USERNAME }}"
+          password: "${{ secrets.ACR_PASSWORD }}"
+
+      - name: Push to Aliyun docker hub
+        run: |
+          #
+          # See https://cr.console.aliyun.com/repository/cn-hangzhou/ossrs/typesense/images
+          docker pull typesense/typesense:0.22.1
+          docker tag typesense/typesense:0.22.1 registry.cn-hangzhou.aliyuncs.com/ossrs/typesense:0.22.1
+          docker push --all-tags registry.cn-hangzhou.aliyuncs.com/ossrs/typesense
+          #
+          # See https://cr.console.aliyun.com/repository/cn-hangzhou/ossrs/docsearch-scraper/images
+          docker pull typesense/docsearch-scraper:latest
+          docker tag typesense/docsearch-scraper:latest registry.cn-hangzhou.aliyuncs.com/ossrs/docsearch-scraper:latest
+          docker push --all-tags registry.cn-hangzhou.aliyuncs.com/ossrs/docsearch-scraper
+

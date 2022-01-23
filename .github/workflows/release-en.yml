@@ -33,7 +33,8 @@ jobs:
       - name: Build SRS docker image
         run: |
           echo "Release ossrs/docs:en-$SRS_TAG"
-          docker build --tag ossrs/docs:en-$SRS_TAG -f Dockerfile.en .
+          docker build --tag ossrs/docs:en-$SRS_TAG --build-arg SEARCH_APIKEY=${{ secrets.SEARCH_APIKEY }} \
+            -f Dockerfile.en .
 
       ################################################################
       # Docker
@@ -57,6 +58,7 @@ jobs:
           password: "${{ secrets.ACR_PASSWORD }}"
       - name: Push to Aliyun docker hub
         run: |
+          # See https://cr.console.aliyun.com/repository/cn-hangzhou/ossrs/docs/images
           docker tag ossrs/docs:en-$SRS_TAG registry.cn-hangzhou.aliyuncs.com/ossrs/docs:en-$SRS_TAG
           docker tag ossrs/docs:en-$SRS_TAG registry.cn-hangzhou.aliyuncs.com/ossrs/docs:en-$SRS_MAJOR
           docker push --all-tags registry.cn-hangzhou.aliyuncs.com/ossrs/docs
@@ -67,25 +69,98 @@ jobs:
         uses: digitalocean/action-doctl@v2
         with:
           token: ${{ secrets.DIGITALOCEAN_ACCESS_TOKEN }}
+
       # Generate variables like:
       #   SRS_DROPLET_EIP=1.2.3.4
-      - name: Show droplet information
+      #   SRS_DROPLET_PIP=1.2.3.4
+      - name: Build droplet variables
         run: |
           doctl compute droplet list --format Name,Region,Status,VCPUs,Memory
           SRS_DROPLET_EIP=$(doctl compute droplet get srs --format PublicIPv4 --no-header)
+          SRS_DROPLET_PIP=$(doctl compute droplet get srs --format PrivateIPv4 --no-header)
           echo "SRS_DROPLET_EIP=$SRS_DROPLET_EIP" >> $GITHUB_ENV
-      - name: Update the docs container
+          echo "SRS_DROPLET_PIP=$SRS_DROPLET_PIP" >> $GITHUB_ENV
+
+      - name: Prepare the droplet
         uses: appleboy/ssh-action@master
         with:
           host: ${{ env.SRS_DROPLET_EIP }}
           username: root
           key: ${{ secrets.DIGITALOCEAN_SSHKEY }}
           port: 22
-          envs: SRS_TAG
           script: |
+            mkdir -p /root/search
+
+      - name: Copy the files to droplet
+        uses: appleboy/scp-action@master
+        with:
+          host: ${{ env.SRS_DROPLET_EIP }}
+          username: root
+          key: ${{ secrets.DIGITALOCEAN_SSHKEY }}
+          source: "search/scraper.json"
+          target: "/root/search/"
+          strip_components: 1
+
+      - name: Restart the docs container
+        uses: appleboy/ssh-action@master
+        env:
+          SEARCH_APIKEY: ${{ secrets.SEARCH_APIKEY }}
+        with:
+          host: ${{ env.SRS_DROPLET_EIP }}
+          username: root
+          key: ${{ secrets.DIGITALOCEAN_SSHKEY }}
+          port: 22
+          envs: SRS_TAG,SEARCH_APIKEY,SRS_DROPLET_PIP
+          script: |
+            #
+            # Restart HTTPX
             for ((i=0; i < 5; i++)); do
-              if [[ $(docker ps -f name=docs |wc -l) -eq 1 ]]; then echo "Killed"; break; fi
-              docker rm -f docs
-              sleep 0.3;
+              if [[ $(docker ps -f name=httpx |wc -l) -eq 1 ]]; then echo "Killed"; break; fi;
+              docker rm -f httpx; sleep 0.3;
+            done
+            docker run -d -it --restart always --privileged -v /root:/root \
+              --name httpx -p 80:80 -p 443:443 ossrs/httpx:v1.0.19 \
+              ./bin/httpx-static -http 80 -https 443 \
+              -ssk /root/ssl/ossrs.io.key -ssc /root/ssl/ossrs.io.crt \
+              -proxy http://$SRS_DROPLET_PIP:3000/lts/ \
+              -proxy http://$SRS_DROPLET_PIP:1985/api/ \
+              -proxy http://$SRS_DROPLET_PIP:1985/rtc/ \
+              -proxy http://$SRS_DROPLET_PIP:8108/multi_search \
+              -proxy http://$SRS_DROPLET_PIP:3000/
+            #
+            # Restart SRS docs
+            for ((i=0; i < 5; i++)); do
+              if [[ $(docker ps -f name=docs |wc -l) -eq 1 ]]; then echo "Killed"; break; fi;
+              docker rm -f docs; sleep 0.3;
             done
             docker run -d -it --restart always --privileged --name docs -p 3000:80 ossrs/docs:en-$SRS_TAG
+            #
+            # Restart SRS server
+            for ((i=0; i < 5; i++)); do
+              if [[ $(docker ps -f name=srs |wc -l) -eq 1 ]]; then echo "Killed"; break; fi;
+              docker rm -f srs; sleep 0.3;
+            done
+            docker run -d -it --restart always --privileged --name srs \
+              -p 1935:1935 -p 1985:1985 -p 8080:8080 -p 8000:8000/udp \
+              ossrs/droplet:4
+            #
+            # Restart typesense
+            for ((i=0; i < 5; i++)); do
+              if [[ $(docker ps -f name=typesense |wc -l) -eq 1 ]]; then echo "Killed"; break; fi;
+              docker rm -f typesense; sleep 0.3;
+            done
+            docker run -d -it --restart always --privileged --name typesense -v /root/search/data:/data -p $SRS_DROPLET_PIP:8108:8108 \
+              typesense/typesense:0.22.1 --enable-cors --data-dir /data --api-key=$SEARCH_APIKEY
+            #
+            # Restart search scraper
+            for ((i=0; i < 5; i++)); do
+              if [[ $(docker ps -f name=search-scraper |wc -l) -eq 1 ]]; then echo "Killed"; break; fi;
+              docker rm -f search-scraper; sleep 0.3;
+            done
+            # Replace the BASE_URL
+            sed -i 's|.*url.*host.docker.internal:3000.*|      "url": "http://host.docker.internal:3000/",|g' /root/search/scraper.json
+            docker run --rm --privileged --name search-scraper --add-host host.docker.internal:$SRS_DROPLET_PIP -e UPDATE_NB_HITS=0 \
+              -e TYPESENSE_HOST=host.docker.internal -e TYPESENSE_API_KEY=$SEARCH_APIKEY -e TYPESENSE_PORT=8108 \
+              -e TYPESENSE_PROTOCOL=http -v /root/search/scraper.json:/config.json -e CONFIG=/config.json \
+              typesense/docsearch-scraper
+
