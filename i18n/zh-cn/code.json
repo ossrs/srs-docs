@@ -1,19 +1,4 @@
 {
-  "homepage.subTitle": {
-    "message": "SRS是一个简单高效的实时视频服务器，支持RTMP/WebRTC/HLS/HTTP-FLV/SRT/GB28181。"
-  },
-  "homepage.overview": {
-    "message": "Note: 高清大图请参考{overview}",
-    "description": "Note: Please see {overview}"
-  },
-  "homepage.overviewLink": {
-    "message": "这里",
-    "description": "processon.com/view/link/619f29791efad425fd699fd2"
-  },
-  "homepage.tutorial": {
-    "message": "教程",
-    "description": "Tutorial"
-  },
   "theme.ErrorPageContent.title": {
     "message": "This page crashed.",
     "description": "The title of the fallback page when the page crashed"
@@ -209,5 +194,20 @@
   "theme.tags.tagsPageTitle": {
     "message": "Tags",
     "description": "The title of the tag list page"
+  },
+  "homepage.subTitle": {
+    "message": "SRS 是一个简单高效的实时视频服务器，支持 RTMP/WebRTC/HLS/HTTP-FLV/SRT/GB28181。"
+  },
+  "homepage.overview": {
+    "message": "Note: 高清大图请参考{overview}",
+    "description": "Note: Please see {overview}"
+  },
+  "homepage.overviewLink": {
+    "message": "这里",
+    "description": "processon.com/view/link/619f29791efad425fd699fd2"
+  },
+  "homepage.tutorial": {
+    "message": "Tutorial",
+    "description": "Tutorial"
   }
 }
