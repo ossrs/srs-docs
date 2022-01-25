@@ -82,14 +82,15 @@ jobs:
           kubectl create configmap srs-docs --from-file srs-docs-search-config.json -o yaml --dry-run=client | kubectl apply -f -
           kubectl describe configmap/srs-docs
 
-      # Restart the typesense and scraper
-      - name: Restart the typesense and scraper
-        run: |-
-          kubectl delete pods -l app=typesense --grace-period=0 --force
-          kubectl get pods -l app=typesense
-
       # K8S for SRS web
       - name: Release SRS web to Aliyun ACK
         run: |-
           kubectl set image deploy/docs-deploy docs=registry.cn-hangzhou.aliyuncs.com/ossrs/docs:cn-$SRS_TAG
           kubectl describe deploy/docs-deploy
+
+      # Restart the typesense and scraper
+      - name: Restart the typesense and scraper
+        run: |-
+          echo "Wait for srs-docs to restart" && sleep 30
+          kubectl delete pods -l app=typesense --grace-period=0 --force
+          kubectl get pods -l app=typesense
