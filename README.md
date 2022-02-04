@@ -44,6 +44,9 @@ If the installation was successful, you should be able to run the following comm
     $ yarn --version
     1.22.15
 
+### docker
+The search function relies on two docker images, typesense and scraper, so you need to install docker in your local development environment. the installation can refer:[docker install](https://docs.docker.com/engine/install/ubuntu/)
+
 
 ---
 ## Getting Started
@@ -174,3 +177,31 @@ Use configs in `'/config/zh-cn.js'`.
   ],
 };
 ```
+
+---
+
+## search
+
+> our documentation site using Typesense DocSearch. for more details, please refer:[using-typesense-docsearch](https://docusaurus.io/docs/search#using-typesense-docsearch) 以及 [Search for Documentation Sites](https://typesense.org/docs/guide/docsearch.html#search-for-documentation-sites)
+
+### how to enable search on local environment？
+
+1. start typesense, it's an open-source instant-search engine, that supplies http api service to query items. we choose to Self-Host our own server with:
+
+```
+  yarn typesense
+```
+
+2. build and serve the documentation site:
+
+```
+  yarn build
+  yarn serve
+```
+
+3. start [scraper](https://github.com/typesense/typesense-docsearch-scraper), which scrapes the site content and indexes the data in the Typesense server: 
+
+```
+  yarn scraper
+```
+when scraper finished，you can do search in the html.
