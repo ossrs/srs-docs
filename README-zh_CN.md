@@ -46,6 +46,8 @@ If the installation was successful, you should be able to run the following comm
     $ yarn --version
     1.22.15
 
+### Docker 安装
+  search功能依赖typesense和scraper两个docker镜像，所以在本地开发环境中，需要[install docker](https://docs.docker.com/get-docker/)
 
 ---
 ## Getting Started
@@ -176,3 +178,31 @@ yarn cross-env REGION='zh-cn' docusaurus build
   ],
 };
 ```
+
+---
+
+## 搜索
+
+> 此文档网站的搜索功能是选用typesense+scraper的方案实现的，具体实现请参考[using-typesense-docsearch](https://docusaurus.io/docs/search#using-typesense-docsearch) 以及 [Search for Documentation Sites](https://typesense.org/docs/guide/docsearch.html#search-for-documentation-sites)
+
+### 本地如何启用搜索功能？
+
+1. 本地启动typesense, 它是一个开源的即时搜索引擎，提供文档搜索API服务. 我们选用在本地自建一个typesense server
+
+```
+  yarn typesense
+```
+
+2. 本地启动文档网站
+
+```
+  yarn build
+  yarn serve
+```
+
+3. 启动[scraper](https://github.com/typesense/typesense-docsearch-scraper), 它会抓取文档网站的内容，并将数据送到typesense server进行索引处理
+
+```
+  yarn scraper
+```
+scraper文档处理完成后，就可以在页面中进行搜索了。
