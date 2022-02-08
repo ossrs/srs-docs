@@ -169,10 +169,6 @@ const config = {
                 href: 'https://stackoverflow.com/questions/tagged/simple-realtime-server',
               },
               {
-                label: 'Discord',
-                href: 'https://discord.com/invite/yZ4BnPmHAd',
-              },
-              {
                 label: 'Bilibili',
                 href: 'https://space.bilibili.com/430256302?spm_id_from=333.788.b_765f7570696e666f.2',
               },
@@ -183,10 +179,11 @@ const config = {
             ],
           },
           {
-            title: 'WeChat',
+            title: 'Discussion',
             items: [
               {
-                html: `<img src="${baseUrl}img/srs-server-no-border.png" alt="微信搜索 “SRS开源服务器” 关注我们" width="120">`,
+                label: 'Discord',
+                href: 'https://discord.com/invite/yZ4BnPmHAd',
               },
             ],
           },

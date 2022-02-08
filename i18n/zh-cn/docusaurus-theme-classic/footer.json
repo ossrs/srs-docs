@@ -54,5 +54,9 @@
   "copyright": {
     "message": "<p></p>",
     "description": "The footer copyright"
+  },
+  "link.title.Discussion": {
+    "message": "讨论",
+    "description": "The title of the footer links column with title=Discussion in the footer"
   }
 }
