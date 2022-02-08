@@ -13,6 +13,7 @@ const regionConfig = process.env.REGION === 'zh-cn' ? require('./config/zh-cn') 
 const url = process.env.URL || regionConfig.url;
 const baseUrl = process.env.BASE_URL || regionConfig.baseUrl;
 const defaultLocale = process.env.DEFAULT_LOCALE || regionConfig.defaultLocale;
+const isEnLocale = process.env.REGION === 'en-us';
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
@@ -181,11 +182,14 @@ const config = {
           {
             title: 'Discussion',
             items: [
-              {
+              isEnLocale && {
                 label: 'Discord',
                 href: 'https://discord.gg/yZ4BnPmHAd',
               },
-            ],
+              !isEnLocale && {
+                html: `<img src="${baseUrl}img/srs-server-no-border.png" alt="微信搜索 “SRS开源服务器” 关注我们" width="120">`,
+              },
+            ].filter((e) => e),
           },
           {
             title: 'More',
