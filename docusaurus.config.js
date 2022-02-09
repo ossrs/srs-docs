@@ -169,10 +169,6 @@ const config = {
                 href: 'https://stackoverflow.com/questions/tagged/simple-realtime-server',
               },
               {
-                label: 'Discord',
-                href: 'https://discord.com/invite/yZ4BnPmHAd',
-              },
-              {
                 label: 'Bilibili',
                 href: 'https://space.bilibili.com/430256302?spm_id_from=333.788.b_765f7570696e666f.2',
               },
@@ -183,12 +179,13 @@ const config = {
             ],
           },
           {
-            title: 'WeChat',
+            title: 'Discussion',
             items: [
               {
-                html: `<img src="${baseUrl}img/srs-server-no-border.png" alt="微信搜索 “SRS开源服务器” 关注我们" width="120">`,
-              },
-            ],
+                label: 'Discord',
+                href: 'https://discord.gg/yZ4BnPmHAd',
+              }
+            ]
           },
           {
             title: 'More',
@@ -216,7 +213,25 @@ const config = {
     defaultLocale: defaultLocale,
     locales: ['en-us', 'zh-cn'],
   },
-  plugins: [...regionConfig.plugins],
+  plugins: [...regionConfig.plugins,[
+    './config/docusaurus-rewrite-siteconfig-plugin',
+    {
+      rewriteSiteConfig: (context) => {
+        if ('zh-cn' === context.i18n.currentLocale) {
+          context.siteConfig.themeConfig.footer.links.forEach(function ({ items }) {
+            items.forEach(function (item) {
+              if (item.label === 'Discord') {
+                delete item.label;
+                delete item.href;
+                item.html = `<img src="${baseUrl}img/srs-server-no-border.png" alt="微信搜索 “SRS开源服务器” 关注我们" width="120" />`;
+              }
+            });
+          });
+        }
+      },
+    },
+  ],
+],
 };
 
 module.exports = config;

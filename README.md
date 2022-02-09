@@ -182,7 +182,7 @@ Use configs in `'/config/zh-cn.js'`.
 
 ## search
 
-> our documentation site using Typesense DocSearch. for more details, please refer:[using-typesense-docsearch](https://docusaurus.io/docs/search#using-typesense-docsearch) 以及 [Search for Documentation Sites](https://typesense.org/docs/guide/docsearch.html#search-for-documentation-sites)
+> our documentation site using Typesense DocSearch. for more details, please refer:[using-typesense-docsearch](https://docusaurus.io/docs/search#using-typesense-docsearch) and [Search for Documentation Sites](https://typesense.org/docs/guide/docsearch.html#search-for-documentation-sites)
 
 ### how to enable search on local environment？
 
