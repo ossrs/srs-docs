@@ -216,9 +216,19 @@ const config = {
   plugins: [...regionConfig.plugins,[
     './config/docusaurus-rewrite-siteconfig-plugin',
     {
-      object: 'footer',
-      label: 'Discord',
-      html: `<img src="${baseUrl}img/srs-server-no-border.png" alt="微信搜索 “SRS开源服务器” 关注我们" width="120">`,
+      rewriteSiteConfig: (context) => {
+        if ('zh-cn' === context.i18n.currentLocale) {
+          context.siteConfig.themeConfig.footer.links.forEach(function ({ items }) {
+            items.forEach(function (item) {
+              if (item.label === 'Discord') {
+                delete item.label;
+                delete item.href;
+                item.html = `<img src="${baseUrl}img/srs-server-no-border.png" alt="微信搜索 “SRS开源服务器” 关注我们" width="120" />`;
+              }
+            });
+          });
+        }
+      },
     },
   ],
 ],
