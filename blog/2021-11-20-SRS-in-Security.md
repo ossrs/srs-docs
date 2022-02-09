@@ -3,7 +3,7 @@ slug: SRS-in-Security
 title: SRS 在安防中的应用
 author: 陈海博
 authorURL: https://space.bilibili.com/430256302?spm_id_from=333.788.b_765f7570696e666f.2
-tags: [视频]
+tags: [video]
 ---
 
 # 陈海博：SRS 在安防中的应用
