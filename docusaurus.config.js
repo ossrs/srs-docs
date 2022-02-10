@@ -218,7 +218,7 @@ const config = {
     [
       './config/docusaurus-rewrite-siteconfig-plugin',
       {
-        rewriteSiteconfig: (context) => {
+        rewriteSiteConfig: (context) => {
           if ('zh-cn' === context.i18n.currentLocale) {
             context.siteConfig.themeConfig.footer.links.forEach(function ({ items }) {
               items.forEach(function (item) {
