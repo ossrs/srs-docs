@@ -34,7 +34,8 @@ const config = {
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
           // Please change this to your repo.
-          editUrl: 'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+          editUrl: ({ versionDocsDirPath, docPath }) =>
+            `https://github.com/ossrs/srs-docs/edit/main/${versionDocsDirPath}/${docPath}`,
           versions: {
             current: { label: '5.0.0.alpha.1' },
           },
@@ -42,7 +43,8 @@ const config = {
         blog: {
           showReadingTime: true,
           // Please change this to your repo.
-          editUrl: 'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
+          editUrl: ({ locale, blogDirPath, blogPath, permalink }) =>
+            `https://github.com/ossrs/srs-docs/edit/main/${blogDirPath}/${blogPath}`,
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
@@ -82,6 +84,12 @@ const config = {
             position: 'left',
           },
           { to: '/blog', label: 'Blog', position: 'left' },
+          {
+            type: 'doc',
+            docId: 'community/Support',
+            label: 'Community',
+            position: 'left',
+          },
           {
             type: 'docsVersionDropdown',
             position: 'right',
