@@ -25,8 +25,10 @@ There are many online forums for discussion about best practices and application
 
     srs-server' Bilibili [video space](https://space.bilibili.com/430256302?spm_id_from=333.788.b_765f7570696e666f.2)，Here you will see wonderful videos of various usage scenarios of SRS.
   
-## Feature requests
-For new feature requests, you should first read[Never file an issue unless read it](https://github.com/ossrs/srs/issues/2716)，before fire an issue, please read：
+## Issue requests
+[Never file an issue unless read it](https://github.com/ossrs/srs/issues/2716)
+
+and read the following articles：
 * [usage](https://github.com/ossrs/srs#usage)
 * [detail wiki docs](https://github.com/ossrs/srs/wiki)
 * [search in issues](https://github.com/ossrs/srs/issues)

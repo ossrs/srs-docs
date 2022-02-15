@@ -34,8 +34,11 @@ const config = {
         docs: {
           sidebarPath: require.resolve('./sidebars.js'),
           // Please change this to your repo.
-          editUrl: ({ versionDocsDirPath, docPath }) =>
-            `https://github.com/ossrs/srs-docs/edit/main/${versionDocsDirPath}/${docPath}`,
+          editUrl: ({ versionDocsDirPath, docPath, locale, version }) => {
+            return 'en-us' == locale
+              ? `https://github.com/ossrs/srs-docs/edit/main/${versionDocsDirPath}/${docPath}`
+              : `https://github.com/ossrs/srs-docs/edit/main/i18n/${locale}/docusaurus-plugin-content-docs/${version}/${docPath}`;
+          },
           versions: {
             current: { label: '5.0.0.alpha.1' },
           },
