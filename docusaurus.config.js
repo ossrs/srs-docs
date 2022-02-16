@@ -46,8 +46,11 @@ const config = {
         blog: {
           showReadingTime: true,
           // Please change this to your repo.
-          editUrl: ({ locale, blogDirPath, blogPath, permalink }) =>
-            `https://github.com/ossrs/srs-docs/edit/main/${blogDirPath}/${blogPath}`,
+          editUrl: ({ locale, blogDirPath, blogPath, permalink }) => {
+            return 'en-us' === locale
+              ? `https://github.com/ossrs/srs-docs/edit/main/${blogDirPath}/${blogPath}`
+              : `https://github.com/ossrs/srs-docs/edit/main/i18n/${locale}/docusaurus-plugin-content-blog/${blogPath}`;
+          },
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
