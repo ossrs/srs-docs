@@ -11,7 +11,7 @@
   "allowed_domains": ["host.docker.internal"],
   "selectors": {
     "default": {
-      "lvl0": ".markdown header h1",
+      "lvl0": "header h1",
       "lvl1": ".markdown h2",
       "lvl2": ".markdown h3",
       "lvl3": ".markdown h4",
