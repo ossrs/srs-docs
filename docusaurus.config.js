@@ -32,6 +32,7 @@ const config = {
       /** @type {import('@docusaurus/preset-classic').Options} */
       ({
         docs: {
+          path: 'i18n/en-us/docusaurus-plugin-content-docs/current',
           sidebarPath: require.resolve('./sidebars.js'),
           // Please change this to your repo.
           editUrl: 'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
@@ -40,6 +41,7 @@ const config = {
           },
         },
         blog: {
+          path: 'i18n/en-us/docusaurus-plugin-content-blog/current',
           showReadingTime: true,
           // Please change this to your repo.
           editUrl: 'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
@@ -134,8 +136,8 @@ const config = {
               host: typesenseHttpHost,
               port: typesenseHttpPort,
               protocol: 'http',
-            }
-          ].filter(e => e),
+            },
+          ].filter((e) => e),
           apiKey: typesenseApiKey,
         },
         // Optional
@@ -184,8 +186,8 @@ const config = {
               {
                 label: 'Discord',
                 href: 'https://discord.gg/yZ4BnPmHAd',
-              }
-            ]
+              },
+            ],
           },
           {
             title: 'More',
