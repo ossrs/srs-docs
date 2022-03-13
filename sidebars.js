@@ -17,6 +17,7 @@ const sidebars = {
   tutorialSidebar: ['tutorial/getting-started', 'tutorial/learning-path'],
   docsSidebar: ['doc/git', 'doc/build'],
   sampleSidebar: ['samples/sample-RTMP', 'samples/sample-HLS'],
+  communitySidebar: ['community/Support', 'community/Contributing'],
 
   // But you can create a sidebar manually
   /*
