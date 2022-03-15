@@ -42,6 +42,7 @@ const config = {
           versions: {
             current: { label: '5.0.0.alpha.1' },
           },
+          remarkPlugins: [require('mdx-mermaid')],
         },
         blog: {
           showReadingTime: true,
@@ -51,6 +52,7 @@ const config = {
               ? `https://github.com/ossrs/srs-docs/edit/main/${blogDirPath}/${blogPath}`
               : `https://github.com/ossrs/srs-docs/edit/main/i18n/${locale}/docusaurus-plugin-content-blog/${blogPath}`;
           },
+          remarkPlugins: [require('mdx-mermaid')],
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
@@ -148,8 +150,8 @@ const config = {
               host: typesenseHttpHost,
               port: typesenseHttpPort,
               protocol: 'http',
-            }
-          ].filter(e => e),
+            },
+          ].filter((e) => e),
           apiKey: typesenseApiKey,
         },
         // Optional
@@ -202,8 +204,8 @@ const config = {
               {
                 label: 'Discord',
                 href: 'https://discord.gg/yZ4BnPmHAd',
-              }
-            ]
+              },
+            ],
           },
           {
             title: 'More',
