@@ -43,6 +43,7 @@ const config = {
           versions: {
             current: { label: '5.0.0.alpha.1' },
           },
+          remarkPlugins: [require('mdx-mermaid')],
         },
         blog: {
           path: 'i18n/en-us/docusaurus-plugin-content-blog/current',
@@ -53,6 +54,7 @@ const config = {
               ? `https://github.com/ossrs/srs-docs/edit/main/${blogDirPath}/${blogPath}`
               : `https://github.com/ossrs/srs-docs/edit/main/i18n/${locale}/docusaurus-plugin-content-blog/${blogPath}`;
           },
+          remarkPlugins: [require('mdx-mermaid')],
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
