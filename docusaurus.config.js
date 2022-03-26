@@ -32,6 +32,7 @@ const config = {
       /** @type {import('@docusaurus/preset-classic').Options} */
       ({
         docs: {
+          path: 'i18n/en-us/docusaurus-plugin-content-docs/current',
           sidebarPath: require.resolve('./sidebars.js'),
           // Please change this to your repo.
           editUrl: ({ versionDocsDirPath, docPath, locale, version }) => {
@@ -45,6 +46,7 @@ const config = {
           remarkPlugins: [require('mdx-mermaid')],
         },
         blog: {
+          path: 'i18n/en-us/docusaurus-plugin-content-blog/current',
           showReadingTime: true,
           // Please change this to your repo.
           editUrl: ({ locale, blogDirPath, blogPath, permalink }) => {
