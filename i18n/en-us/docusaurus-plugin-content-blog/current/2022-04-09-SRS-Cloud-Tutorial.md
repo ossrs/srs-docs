@@ -47,7 +47,7 @@ Now the video streaming service is ready, we could use FFmpeg, OBS or WebRTC to 
 
 OBS is more simple to use, and SRS provides guide for OBS, please click `Scenarios / Streaming / OBS or vMix` or open URL `http://your_public_ipv4/mgmt/en/routers-scenario?tab=live` with `Server` and `StreamKey` for OBS, please copy these config and paste to OBS:
 
-![](https://upload-images.jianshu.io/upload_images/20832941-17ac772e36cac427.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/576)
+![](/img/blog-2022-04-09-01.png)
 
 > Note: There is also a guide for publishing streams by FFmpeg and WebRTC, however, it's a bit complex for WebRTC, and we will talk about it later.
 
