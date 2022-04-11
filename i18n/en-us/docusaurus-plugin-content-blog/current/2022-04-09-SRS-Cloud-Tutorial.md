@@ -45,7 +45,7 @@ Now the video streaming service is ready, we could use FFmpeg, OBS or WebRTC to 
 
 ## Step 2: Publish Stream using OBS
 
-OBS is more simple to use, and SRS provides guide for OBS, please click `Scenarios / Streaming / OBS or vMix` or open URL `http://your_public_ipv4/mgmt/en/routers-scenario?tab=live` with `Server` and `StreamKey` for OBS, please copy these config and paste to OBS:
+OBS is more simple to use, and SRS provides guide for OBS, please click `Scenarios > Streaming > OBS or vMix` or open URL `http://your_public_ipv4/mgmt/en/routers-scenario?tab=live` with `Server` and `StreamKey` for OBS, please copy these config and paste to OBS:
 
 ![](/img/blog-2022-04-09-01.png)
 
@@ -71,7 +71,7 @@ Now please switch to `System / HTTPS / Let's Encrypt` and enter `your_domain_nam
 
 ![](/img/blog-2022-04-09-02.png)
 
-When the HTTPS is ready, please open the URL `https://your_domain_name/mgmt` to access `Scenarios / Streaming / WebRTC` and open the URL to publish using WebRTC: 
+When the HTTPS is ready, please open the URL `https://your_domain_name/mgmt` to access `Scenarios > Streaming > WebRTC` and open the URL to publish using WebRTC: 
 
 ![](/img/blog-2022-04-09-03.png)
 
@@ -91,7 +91,7 @@ WebRTC? No! It's too complicated, and few devices support WebRTC. [WHIP](https:/
 
 > Note: Whatever, SRS Cloud allows you to use WebRTC for live streaming, to publish by WebRTC and play by RTMP/HLS/WebRTC.
 
-It's also very easy to use SRT, by clicking `Scenarios / Low Latency / OBS+ffplay`, the guide is use OBS to publish SRT stream, and play by ffplay. The latency of `OBS+ffplay` is about 300ms, the bellow is a lower solution, by `vMix+ffplay`:
+It's also very easy to use SRT, by clicking `Scenarios > Low Latency > OBS+ffplay`, the guide is use OBS to publish SRT stream, and play by ffplay. The latency of `OBS+ffplay` is about 300ms, the bellow is a lower solution, by `vMix+ffplay`:
 
 ![](/img/blog-2022-04-09-05.png)
 
