@@ -16,6 +16,12 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v2
 
+      # DigitalOcean droplet
+      - name: Install doctl
+        uses: digitalocean/action-doctl@v2
+        with:
+          token: ${{ secrets.DIGITALOCEAN_ACCESS_TOKEN }}
+
       # Generate variables like:
       #   SRS_DROPLET_EIP=1.2.3.4
       #   SRS_DROPLET_PIP=1.2.3.4
@@ -85,12 +91,6 @@ jobs:
           docker push --all-tags registry.cn-hangzhou.aliyuncs.com/ossrs/docs
 
       ################################################################
-      # DigitalOcean droplet
-      - name: Install doctl
-        uses: digitalocean/action-doctl@v2
-        with:
-          token: ${{ secrets.DIGITALOCEAN_ACCESS_TOKEN }}
-
       - name: Prepare the droplet
         uses: appleboy/ssh-action@master
         with:
