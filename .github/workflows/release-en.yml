@@ -123,8 +123,6 @@ jobs:
               ./bin/httpx-static -http 80 -https 443 \
               -ssk /root/ssl/ossrs.io.key -ssc /root/ssl/ossrs.io.crt \
               -proxy http://$SRS_DROPLET_PIP:3000/lts/ \
-              -proxy http://$SRS_DROPLET_PIP:1985/api/ \
-              -proxy http://$SRS_DROPLET_PIP:1985/rtc/ \
               -proxy http://$SRS_DROPLET_PIP:8108/multi_search \
               -proxy http://$SRS_DROPLET_PIP:3000/
             #
@@ -134,15 +132,6 @@ jobs:
               docker rm -f docs; sleep 0.3;
             done
             docker run -d -it --restart always --privileged --name docs -p 3000:80 ossrs/docs:en-$SRS_TAG
-            #
-            # Restart SRS server
-            for ((i=0; i < 5; i++)); do
-              if [[ $(docker ps -f name=srs |wc -l) -eq 1 ]]; then echo "Killed"; break; fi;
-              docker rm -f srs; sleep 0.3;
-            done
-            docker run -d -it --restart always --privileged --name srs \
-              -p 1935:1935 -p 1985:1985 -p 8080:8080 -p 8000:8000/udp \
-              ossrs/droplet:4
             #
             # Restart typesense
             for ((i=0; i < 5; i++)); do
