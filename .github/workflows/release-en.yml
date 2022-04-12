@@ -129,7 +129,7 @@ jobs:
             #
             # For Ubuntu that use ufw as firewall, we must allow the ports for scraper and httpx.
             ufw allow 8108/tcp;
-            ufw allow 8109/tcp;
+            ufw allow 8107/tcp;
             #
             # Restart SRS docs
             for ((i=0; i < 5; i++)); do
@@ -152,7 +152,7 @@ jobs:
               docker rm -f search-scraper; sleep 0.3;
             done
             # Replace the BASE_URL
-            sed -i 's|.*url.*host.docker.internal:3000.*|      "url": "http://host.docker.internal:3000/",|g' /root/search/scraper.json
+            sed -i 's|.*url.*host.docker.internal:8107.*|      "url": "http://host.docker.internal:8107/",|g' /root/search/scraper.json
             docker run --rm --privileged --name search-scraper --add-host host.docker.internal:$SRS_DROPLET_PIP -e UPDATE_NB_HITS=0 \
               -e TYPESENSE_HOST=host.docker.internal -e TYPESENSE_API_KEY=$SEARCH_APIKEY -e TYPESENSE_PORT=8108 \
               -e TYPESENSE_PROTOCOL=http -v /root/search/scraper.json:/config.json -e CONFIG=/config.json \
