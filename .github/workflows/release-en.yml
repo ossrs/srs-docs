@@ -142,6 +142,9 @@ jobs:
             docker run -d -it --restart always --privileged --name typesense -v /root/search/data:/data -p $SRS_DROPLET_PIP:8108:8108 \
               typesense/typesense:0.22.1 --enable-cors --data-dir /data --api-key=$SEARCH_APIKEY
             #
+            # For Ubuntu that use ufw as firewall, we must allow the 8108 for scraper.
+            ufw allow 8108/tcp;
+            #
             # Restart search scraper
             for ((i=0; i < 5; i++)); do
               if [[ $(docker ps -f name=search-scraper |wc -l) -eq 1 ]]; then echo "Killed"; break; fi;
