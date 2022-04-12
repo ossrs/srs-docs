@@ -122,7 +122,7 @@ jobs:
               --name httpx -p 20080:80 ossrs/httpx:v1.0.19 \
               ./bin/httpx-static -http 80 \
               -proxy http://$SRS_DROPLET_PIP:3000/lts/ \
-              -proxy http://$SRS_DROPLET_PIP:8108/multi_search \
+              -proxy http://$SRS_DROPLET_PIP:8108/multi_search
             #
             # Restart SRS docs
             for ((i=0; i < 5; i++)); do
