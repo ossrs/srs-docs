@@ -61,7 +61,7 @@ While for players, the URL is public and no `secret` thing, because generally we
 
 ## Step 3: Publish by WebRTC (Optional)
 
-WebRTC or H5 is very convenient for users to share their camera, by just opening a H5 URL, to start live streaming like what OBS does.
+WebRTC or H5 is very convenient for users to share their camera, by just opening a H5 URL, to start live streaming like what OBS does. Please follow [secure SRS with let's encrypt](https://blog.ossrs.io/how-to-secure-srs-with-lets-encrypt-by-1-click-cb618777639f) tutorial.
 
 Because WebRTC requires HTTPS, so you need a fully registered domain name, you could purchase a domain name on [Namecheap](https://namecheap.com/) or [GoDaddy](https://godaddy.com/), however we will use placeholder `your_domain_name` throughout this tutorial.
 
