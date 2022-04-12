@@ -118,10 +118,9 @@ jobs:
               if [[ $(docker ps -f name=httpx |wc -l) -eq 1 ]]; then echo "Killed"; break; fi;
               docker rm -f httpx; sleep 0.3;
             done
-            docker run -d -it --restart always --privileged -v /root:/root \
-              --name httpx -p 80:80 -p 443:443 ossrs/httpx:v1.0.19 \
-              ./bin/httpx-static -http 80 -https 443 \
-              -ssk /root/ssl/ossrs.io.key -ssc /root/ssl/ossrs.io.crt \
+            docker run -d -it --restart always \
+              --name httpx -p 20080:80 ossrs/httpx:v1.0.19 \
+              ./bin/httpx-static -http 80 \
               -proxy http://$SRS_DROPLET_PIP:3000/lts/ \
               -proxy http://$SRS_DROPLET_PIP:8108/multi_search \
             #
