@@ -16,6 +16,27 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v2
 
+      # Generate variables like:
+      #   SRS_DROPLET_EIP=1.2.3.4
+      #   SRS_DROPLET_PIP=1.2.3.4
+      - name: Build droplet variables
+        run: |
+          doctl compute droplet list --format Name,Region,Status,VCPUs,Memory
+          SRS_DROPLET_EIP=$(doctl compute droplet get ossrs.io --format PublicIPv4 --no-header)
+          SRS_DROPLET_PIP=$(doctl compute droplet get ossrs.io --format PrivateIPv4 --no-header)
+          echo "SRS_DROPLET_EIP=$SRS_DROPLET_EIP" >> $GITHUB_ENV
+          echo "SRS_DROPLET_PIP=$SRS_DROPLET_PIP" >> $GITHUB_ENV
+
+      - name: Test the SSH connection.
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ env.SRS_DROPLET_EIP }}
+          username: root
+          key: ${{ secrets.DIGITALOCEAN_SSHKEY }}
+          port: 22
+          envs: SRS_DROPLET_PIP
+          script: ls
+
       ################################################################
       # Build
       # The github.ref is, for example, refs/tags/v1.0.52
@@ -70,17 +91,6 @@ jobs:
         with:
           token: ${{ secrets.DIGITALOCEAN_ACCESS_TOKEN }}
 
-      # Generate variables like:
-      #   SRS_DROPLET_EIP=1.2.3.4
-      #   SRS_DROPLET_PIP=1.2.3.4
-      - name: Build droplet variables
-        run: |
-          doctl compute droplet list --format Name,Region,Status,VCPUs,Memory
-          SRS_DROPLET_EIP=$(doctl compute droplet get ossrs.io --format PublicIPv4 --no-header)
-          SRS_DROPLET_PIP=$(doctl compute droplet get ossrs.io --format PrivateIPv4 --no-header)
-          echo "SRS_DROPLET_EIP=$SRS_DROPLET_EIP" >> $GITHUB_ENV
-          echo "SRS_DROPLET_PIP=$SRS_DROPLET_PIP" >> $GITHUB_ENV
-
       - name: Prepare the droplet
         uses: appleboy/ssh-action@master
         with:
@@ -100,16 +110,6 @@ jobs:
           source: "search/scraper.json"
           target: "/root/search/"
           strip_components: 1
-
-      - name: Test the SSH connection.
-        uses: appleboy/ssh-action@master
-        with:
-          host: ${{ env.SRS_DROPLET_EIP }}
-          username: root
-          key: ${{ secrets.DIGITALOCEAN_SSHKEY }}
-          port: 22
-          envs: SRS_DROPLET_PIP
-          script: ls
 
       - name: Restart the httpx container
         uses: appleboy/ssh-action@master
