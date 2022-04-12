@@ -101,16 +101,14 @@ jobs:
           target: "/root/search/"
           strip_components: 1
 
-      - name: Restart the docs container
+      - name: Restart the httpx container
         uses: appleboy/ssh-action@master
-        env:
-          SEARCH_APIKEY: ${{ secrets.SEARCH_APIKEY }}
         with:
           host: ${{ env.SRS_DROPLET_EIP }}
           username: root
           key: ${{ secrets.DIGITALOCEAN_SSHKEY }}
           port: 22
-          envs: SRS_TAG,SEARCH_APIKEY,SRS_DROPLET_PIP
+          envs: SRS_DROPLET_PIP
           script: |
             #
             # Restart HTTPX
@@ -123,6 +121,16 @@ jobs:
               ./bin/httpx-static -http 80 \
               -proxy http://$SRS_DROPLET_PIP:3000/lts/ \
               -proxy http://$SRS_DROPLET_PIP:8108/multi_search
+
+      - name: Restart the docs container
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ env.SRS_DROPLET_EIP }}
+          username: root
+          key: ${{ secrets.DIGITALOCEAN_SSHKEY }}
+          port: 22
+          envs: SRS_TAG
+          script: |
             #
             # Restart SRS docs
             for ((i=0; i < 5; i++)); do
@@ -130,6 +138,18 @@ jobs:
               docker rm -f docs; sleep 0.3;
             done
             docker run -d -it --restart always --privileged --name docs -p 3000:80 ossrs/docs:en-$SRS_TAG
+
+      - name: Restart the typesense container
+        uses: appleboy/ssh-action@master
+        env:
+          SEARCH_APIKEY: ${{ secrets.SEARCH_APIKEY }}
+        with:
+          host: ${{ env.SRS_DROPLET_EIP }}
+          username: root
+          key: ${{ secrets.DIGITALOCEAN_SSHKEY }}
+          port: 22
+          envs: SEARCH_APIKEY,SRS_DROPLET_PIP
+          script: |
             #
             # Restart typesense
             for ((i=0; i < 5; i++)); do
@@ -138,6 +158,18 @@ jobs:
             done
             docker run -d -it --restart always --privileged --name typesense -v /root/search/data:/data -p $SRS_DROPLET_PIP:8108:8108 \
               typesense/typesense:0.22.1 --enable-cors --data-dir /data --api-key=$SEARCH_APIKEY
+
+      - name: Restart the search scraper container
+        uses: appleboy/ssh-action@master
+        env:
+          SEARCH_APIKEY: ${{ secrets.SEARCH_APIKEY }}
+        with:
+          host: ${{ env.SRS_DROPLET_EIP }}
+          username: root
+          key: ${{ secrets.DIGITALOCEAN_SSHKEY }}
+          port: 22
+          envs: SEARCH_APIKEY,SRS_DROPLET_PIP
+          script: |
             #
             # Restart search scraper
             for ((i=0; i < 5; i++)); do
