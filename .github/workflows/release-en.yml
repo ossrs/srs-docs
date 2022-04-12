@@ -111,6 +111,16 @@ jobs:
           target: "/root/search/"
           strip_components: 1
 
+      - name: Test the SSH connection.
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ env.SRS_DROPLET_EIP }}
+          username: root
+          key: ${{ secrets.DIGITALOCEAN_SSHKEY }}
+          port: 22
+          envs: SRS_DROPLET_PIP
+          script: pwd
+
       - name: Restart the httpx container
         uses: appleboy/ssh-action@master
         with:
