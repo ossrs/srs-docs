@@ -127,16 +127,15 @@ jobs:
               -proxy http://$SRS_DROPLET_PIP:8107/lts/ \
               -proxy http://$SRS_DROPLET_PIP:8108/multi_search
             #
-            # For Ubuntu that use ufw as firewall, we must allow the ports for scraper and httpx.
-            ufw allow 8108/tcp;
-            ufw allow 8107/tcp;
-            #
             # Restart SRS docs
             for ((i=0; i < 5; i++)); do
               if [[ $(docker ps -f name=docs |wc -l) -eq 1 ]]; then echo "Killed"; break; fi;
               docker rm -f docs; sleep 0.3;
             done
             docker run -d -it --restart always --privileged --name docs -p 8107:80 ossrs/docs:en-$SRS_TAG
+            #
+            # Use 8107/tcp as port.
+            sed -i 's/host.docker.internal:3000/host.docker.internal:8107/g' /root/search/scraper.json
             #
             # Restart typesense
             for ((i=0; i < 5; i++)); do
