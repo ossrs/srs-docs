@@ -4,7 +4,7 @@ SRS云服务器，是开箱即用的音视频方案，提供升级和监控运�
 
 使用起来非常简单，不熟悉服务器和命令行也可以使用，也可以作为开发者的参考实现，请观看下面B站的视频：
 
-SRS-029-内置SRS的云服务器：https://www.bilibili.com/video/BV1844y1L7dL/
+[SRS-029-内置SRS的云服务器](https://www.bilibili.com/video/BV1844y1L7dL/)
 
 特别提醒几点：
 
