@@ -124,7 +124,6 @@ jobs:
               -ssk /root/ssl/ossrs.io.key -ssc /root/ssl/ossrs.io.crt \
               -proxy http://$SRS_DROPLET_PIP:3000/lts/ \
               -proxy http://$SRS_DROPLET_PIP:8108/multi_search \
-              -proxy http://$SRS_DROPLET_PIP:3000/
             #
             # Restart SRS docs
             for ((i=0; i < 5; i++)); do
