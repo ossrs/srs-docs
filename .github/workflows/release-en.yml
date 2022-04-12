@@ -103,6 +103,7 @@ jobs:
           docker push --all-tags registry.cn-hangzhou.aliyuncs.com/ossrs/docs
 
       ################################################################
+      # Execute command in a ssh, because ufw limit the rate.
       - name: Restart the containers
         uses: appleboy/ssh-action@master
         with:
