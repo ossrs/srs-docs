@@ -59,6 +59,8 @@ If that's successful, please try reloading your website using `https://your_doma
 
 ![](/img/blog-2022-04-12-03.png)
 
+> Note: You could request multiple domains separated by semicolon, after adding an A record for each domain, for example, `domain.com;www.domain.com`, then both `https://domain.com` and `https://www.domain.com` are available.
+
 Le's finish by the renewal process.
 
 ## Step 3 - About Certificate Auto-Renewal

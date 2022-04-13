@@ -57,6 +57,8 @@ PING ossrs.io (your_public_ipv4): 56 data bytes
 
 ![](/img/blog-2022-04-12-03.png)
 
+> Note: 你可以指定多个域名，当然每个域名都要解析到这个服务器，用分号分割多个域名，比如 `domain.com;www.domain.com`，这样 `https://domain.com` 和 `https://www.domain.com` 都是可用的。
+
 最后，我们看看如何续期证书。
 
 ## Step 3 - About Certificate Auto-Renewal
