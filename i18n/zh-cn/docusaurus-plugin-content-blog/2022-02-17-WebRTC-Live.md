@@ -1,5 +1,7 @@
 # 什么时候应该和不应该用WebRTC做直播？
 
+什么时候应该和不应该用WebRTC做直播？为什么说WebRTC做直播，不是潮流而是大坑？
+
 这是和Thegobot在Discord上讨论的文章。
 
 ## About send stream
