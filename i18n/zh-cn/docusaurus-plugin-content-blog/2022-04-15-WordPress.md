@@ -62,7 +62,7 @@
 你的播放器应该在页面上正常播放了。
 
 > Note: SRS不需要HTTPS，但是如果你的WordPress网站是HTTPS的，那么就无法播放非HTTPS的流。这时候就必须设置SRS的HTTPS，请参考
-> [如何设置HTTPS](2022-04-12-SRS-Cloud-HTTPS)。
+> [如何设置HTTPS](./2022-04-12-SRS-Cloud-HTTPS.md)。
 
 Step 3: Resize the player on your post or page.
 
@@ -80,7 +80,7 @@ Step 3: Resize the player on your post or page.
 
 如果你的WordPress网站是HTTPS的，但是SRS是HTTP，会播放失败。因为HTTPS网站不能访问HTTP资源，这是浏览器安全要求。
 
-请参考[如何设置HTTPS](2022-04-12-SRS-Cloud-HTTPS)，让SRS支持HTTPS的流。
+请参考[如何设置HTTPS](./2022-04-12-SRS-Cloud-HTTPS.md)，让SRS支持HTTPS的流。
 
 ## Conclusion
 
