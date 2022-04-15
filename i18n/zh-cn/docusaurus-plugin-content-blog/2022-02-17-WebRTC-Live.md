@@ -49,5 +49,5 @@
 
 对于直播而言，WebRTC不是潮流，而是坑中坑，没有最坑只有更坑。
 
-欢迎关注SRS的公众号，加微信群请看[这里](https://github.com/ossrs/srs/wikis/Contact#wechat)。
+欢迎关注SRS的公众号，加微信群请看 [这里](https://github.com/ossrs/srs/wikis/Contact#wechat) 。
 

@@ -1,50 +1,47 @@
-# How to Publish Your SRS Livestream Through WordPress
+# 如何用WordPress+SRS做直播网站
 
 ## Introduction
 
-After you have set up your own live streaming server through the [SRS Droplet](https://blog.ossrs.io/how-to-setup-a-video-streaming-service-by-1-click-e9fe6f314ac6) 
-you received multiple links to publish your stream. You can use the build in players or use the links in [VLC](https://www.videolan.org/) 
-for example for the various sources.
+如果你已经有了一台 [SRS云服务器](https://www.bilibili.com/video/BV1844y1L7dL/) ，推流后可以用播放器播放直播流，
+可以用H5或[VLC](https://www.videolan.org/) 播放。
 
-But what if you would like to embed your HTTP-FLV, HLS or WebRTC stream straight into your WordPress site?
+但是如果你想在WordPress网站的文章中，播放HLS、HTTP-FLV或WebRTC直播流，要怎么搞？
 
-In this tutorial, I will show you how you set up your WordPress and SRS Player plugin to stream right through your 
-website for viewers to watch.
+在这个文章中，我会给出如何使用WordPress的SrsPlayer插件，来直接播放直播流，做一个直播网站，观众可以观看。
 
 ## Prerequisites
 
-To complete this guide, you need:
+操作的前提条件是：
 
-1. OBS installed, following the instructions [here](https://obsproject.com/) to download and install OBS.
-1. Having your SRS Server set up, following the instructions [here](https://blog.ossrs.io/how-to-setup-a-video-streaming-service-by-1-click-e9fe6f314ac6).
-1. Having your WordPress website [set up](https://medium.com/@kindlepublishingservices/setting-up-a-wordpress-website-8ed1911d3831).
+1. 安装下OBS，请在 [这里](https://obsproject.com/) 下载和安装OBS。
+1. 安装和设置完 [SRS云服务器](https://www.bilibili.com/video/BV1844y1L7dL/) 。
+1. 安装和设置好WordPress，可以用WordPress写文章了，这个麻烦网上搜一搜。很多介绍了。
 
-This guide will use placeholder `your_public_ipv4` and `your_domain_name` throughout for streaming URLs. Please replace 
-them with your own IP address or domain name.
+这个文章中，我们会用`your_public_ipv4`和`your_domain_name`，代表你的SRS服务器的IP和域名，请替换成你的地址。
 
 ## Step 1: Download the SRS WordPress Plugin
 
-After you logged in your WordPress website, navigate to Plugins, click the `Add New` button.
+打开WordPress的后台，点击`Plugins > Add New`按钮。
 
 ![](/img/blog-2022-04-15-001.png)
 
-Search for `SRS Player` or follow this [link](https://wordpress.org/plugins/srs-player/).
+搜索插件`SRS Player`，或者直接打开页面 [链接](https://wordpress.org/plugins/srs-player/) 安装插件。
 
 ![](/img/blog-2022-04-15-002.png)
 
-Click the `Install Now` button and after the Installing prompt, click Activate. The plugin should now be active.
+点击`Install Now`按钮，安装完成后，点击`Activate`按钮激活插件。
 
 ## Step 2: Embed the WordPress Plugin shortcode into your post or page.
 
-Copy the shortcode from your SRS server of the protocol you wish to embed.
+从SRS的后台，直接拷贝WordPress的Shortcode，如下图所示：
 
 ![](/img/blog-2022-04-15-003.png)
 
-Within WordPress, create a new Post or Page.
+在WordPress中，创建一个Post或Page。
 
 ![](/img/blog-2022-04-15-004.png)
 
-Create a new shortcode on your post or page.
+在Post或Page中，新建一个Shortcode。
 
 ![](/img/blog-2022-04-15-005.png)
 
@@ -52,45 +49,41 @@ Create a new shortcode on your post or page.
 
 ![](/img/blog-2022-04-15-007.png)
 
-Use the shortcode of the protocol you would like to embed by using one of the following shortcodes:
+在Shortcode中，粘贴已经复制的流地址。比如：
 
 1. HLS `[srs_player url="https://your_public_ipv4/live/livestream.m3u8"]`
 1. FLV `[srs_player url="https://your_public_ipv4/live/livestream.flv"]`
 1. WebRTC `[srs_player url="webrtc://your_public_ipv4/live/livestream"]`
 
-Click the Publish button and check your new page.
+点击`Publish`按钮，然后访问你的页面。
 
 ![](/img/blog-2022-04-15-008.png)
 
-Your player should show up on your WordPress post or page.
+你的播放器应该在页面上正常播放了。
 
-> Note: Basic setup of the SRS server does not activate HTTPS. If your WordPress website is HTTPS, it will be unable to 
-> show the video coming from a HTTP server. Setting up HTTPS on your server requires additional steps, please follow 
-> [set-up HTTPS for SRS](https://blog.ossrs.io/how-to-secure-srs-with-lets-encrypt-by-1-click-cb618777639f) tutorial.
+> Note: SRS不需要HTTPS，但是如果你的WordPress网站是HTTPS的，那么就无法播放非HTTPS的流。这时候就必须设置SRS的HTTPS，请参考
+> [如何设置HTTPS](2022-04-12-SRS-Cloud-HTTPS)。
 
 Step 3: Resize the player on your post or page.
 
-By default the player has the size of the output size you determined in your OBS stream settings. This can cause your 
-WordPress layout to look off. To resize your player add `width="your chosen width"` in your shortcode.
+播放器默认的大小是视频流的大小，自动检测的，一般可以不用调整。如果你希望设置也可以，可以加一个属性`width="your chosen width"`就可以。
 
-For example, if I want my player to have a width of 320, your shortcode would look like this:
+例如，如果你希望设置为320，那么代码如下：
 
 ```text
 [srs_player url="https://ip/live/livestream.m3u8" width="320"]
 ```
 
-Your player should have a width of 320 and a height with the corresponding aspect ratio of your stream.
+你的播放器的宽会变成320，而高是自动等比调整的。
 
 ## Step 4: Set up your SRS server as HTTPS (optional)
 
-If your WordPress website is protected by a SSL certificate and your initial setup of your SRS server is not, your video 
-will not play on your website.
+如果你的WordPress网站是HTTPS的，但是SRS是HTTP，会播放失败。因为HTTPS网站不能访问HTTP资源，这是浏览器安全要求。
 
-Please follow [these instructions](https://blog.ossrs.io/how-to-secure-srs-with-lets-encrypt-by-1-click-cb618777639f) to 
-setup an SSL certificate for your SRS streaming server. After this setup your video will play on your website.
+请参考[如何设置HTTPS](2022-04-12-SRS-Cloud-HTTPS)，让SRS支持HTTPS的流。
 
 ## Conclusion
 
-In this tutorial you’ve learned to set up the SRS WordPress plugin and embedded a stream on your post or page. If you 
-have further questions about SRS, [the wiki](https://github.com/ossrs/srs/wiki/v4_EN_Home) is a good place to start. If 
-you’d like to discuss with SRS, you are welcome to [discord](https://discord.gg/yZ4BnPmHAd).
+在这个文章中，我们设置了WordPress插件，并且在Post或Page中，实现了直播播放。如果对于SRS有问题，那么可以参考
+[Wiki](https://github.com/ossrs/srs/wiki/v4_CN_Home) 。也欢迎加微信群 [这里](https://github.com/ossrs/srs/wikis/Contact#wechat) 。
+
