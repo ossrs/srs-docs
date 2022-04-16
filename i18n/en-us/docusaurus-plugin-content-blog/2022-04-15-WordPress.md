@@ -2,14 +2,16 @@
 
 ## Introduction
 
-After you have set up your own live streaming server through the [SRS Droplet](https://blog.ossrs.io/how-to-setup-a-video-streaming-service-by-1-click-e9fe6f314ac6) 
-you received multiple links to publish your stream. You can use the build in players or use the links in [VLC](https://www.videolan.org/) 
+After you have set up your own live streaming server through the [SRS Droplet](https://blog.ossrs.io/how-to-setup-a-video-streaming-service-by-1-click-e9fe6f314ac6)
+you received multiple links to publish your stream. You can use the build in players or use the links in [VLC](https://www.videolan.org/)
 for example for the various sources.
 
 But what if you would like to embed your HTTP-FLV, HLS or WebRTC stream straight into your WordPress site?
 
-In this tutorial, I will show you how you set up your WordPress and SRS Player plugin to stream right through your 
+In this tutorial, I will show you how you set up your WordPress and SRS Player plugin to stream right through your
 website for viewers to watch.
+
+<!--truncate-->
 
 ## Prerequisites
 
@@ -19,7 +21,7 @@ To complete this guide, you need:
 1. Having your SRS Server set up, following the instructions [here](https://blog.ossrs.io/how-to-setup-a-video-streaming-service-by-1-click-e9fe6f314ac6).
 1. Having your WordPress website [set up](https://medium.com/@kindlepublishingservices/setting-up-a-wordpress-website-8ed1911d3831).
 
-This guide will use placeholder `your_public_ipv4` and `your_domain_name` throughout for streaming URLs. Please replace 
+This guide will use placeholder `your_public_ipv4` and `your_domain_name` throughout for streaming URLs. Please replace
 them with your own IP address or domain name.
 
 ## Step 1: Download the SRS WordPress Plugin
@@ -64,13 +66,13 @@ Click the Publish button and check your new page.
 
 Your player should show up on your WordPress post or page.
 
-> Note: Basic setup of the SRS server does not activate HTTPS. If your WordPress website is HTTPS, it will be unable to 
-> show the video coming from a HTTP server. Setting up HTTPS on your server requires additional steps, please follow 
+> Note: Basic setup of the SRS server does not activate HTTPS. If your WordPress website is HTTPS, it will be unable to
+> show the video coming from a HTTP server. Setting up HTTPS on your server requires additional steps, please follow
 > [set-up HTTPS for SRS](https://blog.ossrs.io/how-to-secure-srs-with-lets-encrypt-by-1-click-cb618777639f) tutorial.
 
 Step 3: Resize the player on your post or page.
 
-By default the player has the size of the output size you determined in your OBS stream settings. This can cause your 
+By default the player has the size of the output size you determined in your OBS stream settings. This can cause your
 WordPress layout to look off. To resize your player add `width="your chosen width"` in your shortcode.
 
 For example, if I want my player to have a width of 320, your shortcode would look like this:
@@ -83,14 +85,14 @@ Your player should have a width of 320 and a height with the corresponding aspec
 
 ## Step 4: Set up your SRS server as HTTPS (optional)
 
-If your WordPress website is protected by a SSL certificate and your initial setup of your SRS server is not, your video 
+If your WordPress website is protected by a SSL certificate and your initial setup of your SRS server is not, your video
 will not play on your website.
 
-Please follow [these instructions](https://blog.ossrs.io/how-to-secure-srs-with-lets-encrypt-by-1-click-cb618777639f) to 
+Please follow [these instructions](https://blog.ossrs.io/how-to-secure-srs-with-lets-encrypt-by-1-click-cb618777639f) to
 setup an SSL certificate for your SRS streaming server. After this setup your video will play on your website.
 
 ## Conclusion
 
-In this tutorial you’ve learned to set up the SRS WordPress plugin and embedded a stream on your post or page. If you 
-have further questions about SRS, [the wiki](https://github.com/ossrs/srs/wiki/v4_EN_Home) is a good place to start. If 
+In this tutorial you’ve learned to set up the SRS WordPress plugin and embedded a stream on your post or page. If you
+have further questions about SRS, [the wiki](https://github.com/ossrs/srs/wiki/v4_EN_Home) is a good place to start. If
 you’d like to discuss with SRS, you are welcome to [discord](https://discord.gg/yZ4BnPmHAd).
