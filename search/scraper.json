@@ -2,7 +2,7 @@
   "index_name": "srs-docs",
   "start_urls": [
     {
-      "url": "http://host.docker.internal:3000/lts/",
+      "url": "http://host.docker.internal:3000",
       "variables": {
         "version": "0.22.1"
       }
@@ -16,7 +16,7 @@
       "lvl2": ".markdown h3",
       "lvl3": ".markdown h4",
       "lvl4": ".markdown h5",
-      "text": ".markdown p, .markdown ul li, .markdown table tbody tr"
+      "text": ".markdown p, .markdown ul li, .markdown ol li, .markdown table tbody tr"
     }
   },
   "scrape_start_urls": false,
