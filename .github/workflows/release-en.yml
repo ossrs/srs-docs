@@ -116,6 +116,10 @@ jobs:
           envs: SRS_TAG,SRS_MAJOR,SEARCH_APIKEY,SRS_DROPLET_PIP
           script: |
             #
+            ufw allow 20080
+            ufw allow 8107
+            ufw allow 8108
+            #
             # Restart HTTPX
             for ((i=0; i < 5; i++)); do
               if [[ $(docker ps -f name=docs-httpx |wc -l) -eq 1 ]]; then echo "Killed"; break; fi;
