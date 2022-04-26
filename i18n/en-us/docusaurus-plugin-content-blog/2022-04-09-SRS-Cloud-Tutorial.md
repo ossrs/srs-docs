@@ -1,3 +1,11 @@
+---
+slug: SRS-Cloud-Tutorial
+title: How to Setup a Video Streaming Service by 1-Click
+authors: []
+tags: [turotial, srs, webrtc, streaming]
+custom_edit_url: null
+---
+
 # How to Setup a Video Streaming Service by 1-Click
 
 ## Introduction

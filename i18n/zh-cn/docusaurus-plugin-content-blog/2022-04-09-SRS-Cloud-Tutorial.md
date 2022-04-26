@@ -1,3 +1,11 @@
+---
+slug: SRS-Cloud-Tutorial
+title: SRS云服务器：起步、购买和入门
+authors: []
+tags: [turotial, srs, webrtc, streaming]
+custom_edit_url: null
+---
+
 # SRS云服务器：起步、购买和入门
 
 SRS云服务器，是开箱即用的音视频方案，提供升级和监控运维能力，同时针对不同音视频的应用场景，开箱即用。

@@ -1,3 +1,11 @@
+---
+slug: WebRTC-Live
+title: 什么时候应该和不应该用WebRTC做直播
+authors: []
+tags: [blog, webrtc, streaming]
+custom_edit_url: null
+---
+
 # 什么时候应该和不应该用WebRTC做直播？
 
 什么时候应该和不应该用WebRTC做直播？为什么说WebRTC做直播，不是潮流而是大坑？

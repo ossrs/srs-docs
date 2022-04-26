@@ -1,8 +1,8 @@
 ---
-slug: WordPress Plugin
+slug: WordPress-Plugin
 title: How to Publish Your SRS Livestream Through WordPress
 authors: []
-tags: [tutorial]
+tags: [tutorial, wordpress, streaming]
 custom_edit_url: null
 ---
 

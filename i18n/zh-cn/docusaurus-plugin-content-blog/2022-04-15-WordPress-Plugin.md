@@ -1,8 +1,8 @@
 ---
-slug: WordPress Plugin
+slug: WordPress-Plugin
 title: 如何用WordPress+SRS做直播网站
 authors: []
-tags: [tutorial]
+tags: [tutorial, wordpress, streaming]
 custom_edit_url: null
 ---
 
