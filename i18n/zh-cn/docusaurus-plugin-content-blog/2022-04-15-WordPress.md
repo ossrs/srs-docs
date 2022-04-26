@@ -1,3 +1,11 @@
+---
+slug: WordPress
+title: How to Publish Your SRS Livestream Through WordPress
+authors: []
+tags: [tutorial]
+custom_edit_url: null
+---
+
 # 如何用WordPress+SRS做直播网站
 
 ## Introduction
