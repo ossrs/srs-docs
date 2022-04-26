@@ -49,11 +49,15 @@ custom_edit_url: null
 
 ![](/img/blog-2022-04-15-004.png)
 
-在Post或Page中，新建一个Shortcode。
+在Post或Page中，新建一个简码Shortcode，如下图所示。
 
 ![](/img/blog-2022-04-15-005.png)
 
+在搜索框中，输入shortcode，也就是简码，如下图所示。
+
 ![](/img/blog-2022-04-15-006.png)
+
+或者直接在输入框中敲斜杠/，然后按回车键，也可以直接插入，如下图所示。
 
 ![](/img/blog-2022-04-15-007.png)
 
