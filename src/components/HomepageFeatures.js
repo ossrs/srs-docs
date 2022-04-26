@@ -64,6 +64,26 @@ export default function HomepageFeatures() {
           </Translate>
         </p>
         <p>
+          <img src="https://ossrs.net/wiki/images/SRS-SingleNode-4.0-hd.png" />
+        </p>
+        <p>
+          <Translate
+            id="homepage.singleNode"
+            description="the picture of single node arch"
+            values={{
+              singleNode: (
+                <Link to="https://www.figma.com/file/333POxVznQ8Wz1Rxlppn36/SRS-4.0-Server-Arch">
+                  <Translate id="homepage.singleNodeLink" description="SRS-4.0-Server-Arch">
+                    SRS-4.0-Server-Arch
+                  </Translate>
+                </Link>
+              ),
+            }}
+          >
+            {'Note: The single node architecture for SRS, general and major use scenario, please see {singleNode}'}
+          </Translate>
+        </p>
+        <p>
           <img src="https://ossrs.net/wiki/images/SRS-Overview-4.0.png" />
         </p>
 

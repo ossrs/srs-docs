@@ -198,8 +198,12 @@
   "homepage.subTitle": {
     "message": "SRS 是一个简单高效的实时视频服务器，支持 RTMP/WebRTC/HLS/HTTP-FLV/SRT/GB28181。"
   },
+  "homepage.singleNode": {
+    "message": "Note: 简单的单节点架构，适用于大多数场景，大图请看{singleNode}",
+    "description": "Note: Please see {singleNode}"
+  },
   "homepage.overview": {
-    "message": "Note: 高清大图请参考{overview}",
+    "message": "Note: 这是典型的源站和边缘集群的架构，适用于需要高并发的场景，高清大图请参考{overview}",
     "description": "Note: Please see {overview}"
   },
   "homepage.overviewLink": {
