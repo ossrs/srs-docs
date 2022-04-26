@@ -1,3 +1,11 @@
+---
+slug: WordPress Plugin
+title: How to Publish Your SRS Livestream Through WordPress
+authors: []
+tags: [tutorial]
+custom_edit_url: null
+---
+
 # How to Publish Your SRS Livestream Through WordPress
 
 ## Introduction
