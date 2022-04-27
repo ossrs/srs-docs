@@ -10,11 +10,14 @@ custom_edit_url: null
 
 ## Introduction
 
-As a CA(Certificate Authority), Let's Encrypt provides free and automatic TLS/SSL certificates, thereby enabling encrypted HTTPS for SRS Droplet. It's very easy to use, only by 1-Click.
+As a CA(Certificate Authority), Let's Encrypt provides free and automatic TLS/SSL certificates, which enables encrypted
+HTTPS for SRS Droplet. It's very easy to use, only by 1-Click.
 
-HTTPS is required for publishing streams using WebRTC, and it adds security. If you want to use the video streaming in any HTTPS website, such as a WordPress website, you must use HLS/FLV/WebRTC with HTTPS, or it fails for security reasons.
+HTTPS is required for publishing streams using WebRTC, and it improves security. If you want to support the video
+streaming in any HTTPS website, such as a WordPress website, you must use HLS/FLV/WebRTC with HTTPS, or it will fail for
+security reasons.
 
-> Note that SRS droplet only supports a single domain name, which makes the problem simple, and easy to use.
+> Note that SRS droplet only supports a single domain name, which makes the problem simple. It is easy to use.
 
 In this tutorial, you will learn how to configure the HTTPS for SRS droplets, and your certificate will be renewed automatically.
 
@@ -23,13 +26,16 @@ In this tutorial, you will learn how to configure the HTTPS for SRS droplets, an
 To complete this guide, you will need:
 
 1. A SRS Droplet with Cloud SRS installed, please follow this [set-up a video streaming service](https://blog.ossrs.io/how-to-setup-a-video-streaming-service-by-1-click-e9fe6f314ac6) tutorial.
-1. A fully registered domain name, you could purchase a domain name on [Namecheap](https://namecheap.com/) or [GoDaddy](https://godaddy.com/), however we will use placeholder `your_domain_name` throughout this tutorial.
+1. A fully registered domain name, you could purchase a domain name on [Namecheap](https://namecheap.com/) or [GoDaddy](https://godaddy.com/). For the demonstration purpose, however, we will use a placeholder `your_domain_name` throughout this tutorial.
 
-This guide will use placeholder `your_public_ipv4` and `your_domain_name` throughout. Please replace them with your own IP address or domain name.
+This guide will also use placeholders `your_public_ipv4` and `your_domain_name` throughout. Please replace them with
+your own IP address and domain name.
 
 ## Step 1 - DNS Records Setup
 
-When you get a domain name, make sure a DNS record set-up for your server, please add an `A record` with `your_domain_name` pointing to your server public IP address that is `your_public_ipv4` as we said, see [Domains and DNS](https://docs.digitalocean.com/products/networking/dns/how-to/manage-records/#a-records). Add a record like this:
+Make sure setup a DNS record for your server. Please add an `A record` with `your_domain_name` pointing to your server
+public IP address, which is `your_public_ipv4` as we mentioned, see [Domains and DNS](https://docs.digitalocean.com/products/networking/dns/how-to/manage-records/#a-records).
+Add a record like this:
 
 ```text
 A your_domain_name your_public_ipv4
@@ -57,23 +63,29 @@ Next, let's fetch our certificates.
 
 ## Step 2 - Obtaining an SSL Certificate
 
-Now please switch to `System > HTTPS > Let's Encrypt` and enter `your_domain_name`, then click `Submit` button to request a free SSL cert from [Let's Encrypt](https://letsencrypt.org/):
+Now please switch to `System > HTTPS > Let's Encrypt` and enter `your_domain_name`, then click `Submit` button to request
+a free SSL cert from [Let's Encrypt](https://letsencrypt.org/):
 
 ![](/img/blog-2022-04-12-02.png)
 
-This runs `certbot` to fetch an SSL certificate, it will communicate with the Let's Encrypt server, then create a challenge to verify that you control the domain that you're requesting a certificate for. All these are automatically done by Cloud SRS.
+This runs `certbot` to fetch an SSL certificate. It will communicate with the Let's Encrypt server, then create a challenge
+to verify that you control the domain that you're requesting a certificate for. All these are automatically done by Cloud
+SRS.
 
-If that's successful, please try reloading your website using `https://your_domain_name/mgmt` and notice your browser's security indicator, see following figure:
+If successful, please try reload your website using `https://your_domain_name/mgmt`. Pay attention to your browser's
+security indicator, as demonstrated bellow:
 
 ![](/img/blog-2022-04-12-03.png)
 
-> Note: You could request multiple domains separated by semicolon, after adding an A record for each domain, for example, `domain.com;www.domain.com`, then both `https://domain.com` and `https://www.domain.com` are available.
+> Note: You could request multiple domains separated by semicolon, after adding an A record for each domain, for example,
+`domain.com;www.domain.com`, then both `https://domain.com` and `https://www.domain.com` are available.
 
-Le's finish by the renewal process.
+Let's finish this tutorial by covering the certificate renewal process.
 
 ## Step 3 - About Certificate Auto-Renewal
 
-Let's Encrypt's certificates are only valid for about 3 months. SRS Cloud will start a timer to renew your certificates every day, and reload Nginx to apply the changes.
+Let's Encrypt's certificates are only valid for about 3 months. SRS Cloud will start a timer to verify if it is due to
+renew your certificates on a daily basis, and reload Nginx to apply the changes if neccessary.
 
 You can check the renew log by:
 
@@ -91,9 +103,11 @@ The following certificates are not due for renewal yet:
 No renewals were attempted.
 ```
 
-If no errors, you'are all set.
+If no errors, you're all set.
 
 ## Conclusion
 
-In this tutorial, you set-up the DNS A Record, downloaded SSL Certificates for your domain, configured Nginx to apply the certificate, and set-up automatic renewal. If you have further questions, please contact us by [discord](https://discord.gg/yZ4BnPmHAd).
+In this tutorial, you set-up the DNS A Record, downloaded SSL Certificates for your domain, configured Nginx to apply
+the certificate, and set-up automatic renewal. If you have further questions, please contact us by
+[discord](https://discord.gg/yZ4BnPmHAd).
 
