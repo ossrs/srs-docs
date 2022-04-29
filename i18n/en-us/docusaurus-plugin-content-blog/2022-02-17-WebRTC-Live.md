@@ -10,6 +10,8 @@ custom_edit_url: null
 
 Discussion with a friend Thegobot in [discord](https://discord.gg/yZ4BnPmHAd)
 
+<!--truncate-->
+
 ## About send stream
 
 For sending stream by H5, only WebRTC works, so it’s ok to use WebRTC if you only want to support H5.

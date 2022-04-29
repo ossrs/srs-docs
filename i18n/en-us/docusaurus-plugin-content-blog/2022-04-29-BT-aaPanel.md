@@ -10,9 +10,14 @@ custom_edit_url: null
 
 ## Introduction
 
-[aaPanel](https://www.aapanel.com) is a simple website and server management tool, similar to [cpanel.net](https://cpanel.net/), while aaPanel is free, open source and easy to develop plugins for developing media servers.
+[aaPanel](https://www.aapanel.com) is a simple website and server management tool, similar to [cpanel.net](https://cpanel.net/),
+while aaPanel is free, open source and easy to develop plugins for developing media servers.
 
-In this tutorial, you will learn how to deploy a live streaming media server, using aaPanel. If you have deployed websites using aaPanel, it's also possible to deploy an extra media server to power your website with live streaming service, for example, to enable live streaming feature for your WordPress website.
+In this tutorial, you will learn how to deploy a live streaming media server, using aaPanel. If you have deployed
+websites using aaPanel, it's also possible to deploy an extra media server to power your website with live streaming
+service, for example, to enable live streaming feature for your WordPress website.
+
+<!--truncate-->
 
 ## Prerequisites
 

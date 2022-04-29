@@ -12,6 +12,8 @@ custom_edit_url: null
 
 宝塔在手，全部拥有！
 
+<!--truncate-->
+
 举个例子，我就有两个云主机，用宝塔部署了网站和云SRS，一鱼多吃，爽啊！之前海外两台机器，每个月10刀，现在只要5刀，每年可以省60美元，一百万年就可以省6000万美元啊，赚大发了：
 
 * 腾讯云Lighthouse，部署了[wp.ossrs.net](https://wp.ossrs.net)网站，写写一些杂七杂八的东西，还部署了[lh.ossrs.net](https://lh.ossrs.net)云SRS，每周六做直播用的。

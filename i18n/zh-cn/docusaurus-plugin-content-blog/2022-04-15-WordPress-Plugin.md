@@ -17,6 +17,8 @@ custom_edit_url: null
 
 在这个文章中，我会给出如何使用WordPress的SrsPlayer插件，来直接播放直播流，做一个直播网站，观众可以观看。
 
+<!--truncate-->
+
 ## Prerequisites
 
 操作的前提条件是：
