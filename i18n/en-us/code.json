@@ -198,14 +198,6 @@
   "homepage.subTitle": {
     "message": "SRS is a simple, high efficiency and realtime video server, supports RTMP/WebRTC/HLS/HTTP-FLV/SRT."
   },
-  "homepage.overview": {
-    "message": "Note: Please see {overview}",
-    "description": "Note: Please see {overview}"
-  },
-  "homepage.overviewLink": {
-    "message": "processon.com/view/link/619f29791efad425fd699fd2",
-    "description": "processon.com/view/link/619f29791efad425fd699fd2"
-  },
   "homepage.tutorial": {
     "message": "Tutorial",
     "description": "Tutorial"

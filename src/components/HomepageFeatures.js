@@ -64,6 +64,26 @@ export default function HomepageFeatures() {
           </Translate>
         </p>
         <p>
+          <img src="https://ossrs.net/wiki/images/SRS-SingleNode-4.0-hd.png" />
+        </p>
+        <p>
+          <Translate
+            id="homepage.singleNode"
+            description="the picture of single node arch"
+            values={{
+              singleNode: (
+                <Link to="https://www.figma.com/file/333POxVznQ8Wz1Rxlppn36/SRS-4.0-Server-Arch">
+                  <Translate id="homepage.singleNodeLink" description="SRS-4.0-Server-Arch">
+                    SRS-4.0-Server-Arch
+                  </Translate>
+                </Link>
+              ),
+            }}
+          >
+            {'Note: The single node architecture for SRS, general and major use scenario, please see {singleNode}'}
+          </Translate>
+        </p>
+        <p>
           <img src="https://ossrs.net/wiki/images/SRS-Overview-4.0.png" />
         </p>
 
@@ -73,15 +93,20 @@ export default function HomepageFeatures() {
             description="Note: Please see {overview}"
             values={{
               overview: (
-                <Link to="https://www.processon.com/view/link/619f29791efad425fd699fd2">
-                  <Translate id="homepage.overviewLink" description="processon.com/view/link/619f29791efad425fd699fd2">
-                    processon.com/view/link/619f29791efad425fd699fd2
+                <Link to="https://www.processon.com/view/link/5e3f5581e4b0a3daae80ecef">
+                  <Translate
+                    id="homepage.overviewLink"
+                    description="SRS-4.0-Overview And Large-Scale-Live-Streaming-Arch"
+                  >
+                    SRS-4.0-Overview And Large-Scale-Live-Streaming-Arch
                   </Translate>
                 </Link>
               ),
             }}
           >
-            {'Note: Please see {overview}'}
+            {
+              'Note: This is the typical architecture of origin cluster and edge cluster for scenarios require high concurrency, please see {overview}'
+            }
           </Translate>
         </p>
       </div>
