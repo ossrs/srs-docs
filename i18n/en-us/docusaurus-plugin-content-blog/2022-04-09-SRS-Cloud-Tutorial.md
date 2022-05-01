@@ -23,6 +23,8 @@ Literally it's not just a media server, and seems a bit complicated, right? Yep 
 
 In this tutorial, you will learn how to set-up a video streaming service, supports publishing by browser without a plugin that is converting WebRTC to HLS, to deliver low latency (about 300ms) video streaming  using SRT, and to secure the service by authentication. Furthermore, this solution is open source and very easy to get it done, via even 1-Click.
 
+<!--truncate-->
+
 ## Prerequisites
 
 To complete this guide, you need:

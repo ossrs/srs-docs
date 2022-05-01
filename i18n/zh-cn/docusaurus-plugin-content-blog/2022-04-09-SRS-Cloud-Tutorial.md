@@ -14,6 +14,8 @@ SRS云服务器，是开箱即用的音视频方案，提供升级和监控运�
 
 [SRS-029-内置SRS的云服务器](https://www.bilibili.com/video/BV1844y1L7dL/)
 
+<!--truncate-->
+
 特别提醒几点：
 
 * 记得防火墙开特定端口哈，开防火墙也很容易。

@@ -16,6 +16,8 @@ HTTPS在WebRTC中是必要的，若需要在HTTPS的网站中播放直播流，S
 
 这个文章介绍了如何开启SRS Cloud的HTTPS功能，并自动续期。
 
+<!--truncate-->
+
 ## Prerequisites
 
 操作的前提条件是：

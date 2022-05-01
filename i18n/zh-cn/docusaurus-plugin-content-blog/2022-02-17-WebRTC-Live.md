@@ -12,6 +12,8 @@ custom_edit_url: null
 
 这是和Thegobot在Discord上讨论的文章。
 
+<!--truncate-->
+
 ## About send stream
 
 如果是需要用H5推流，把浏览器当OBS使用，那么只有WebRTC可用。
