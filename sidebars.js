@@ -15,7 +15,24 @@
 const sidebars = {
   // By default, Docusaurus generates a sidebar from the docs folder structure
   tutorialSidebar: ['tutorial/getting-started', 'tutorial/learning-path'],
-  docsSidebar: ['doc/git', 'doc/build'],
+  docsSidebar: [
+    'doc/introduction',
+    {
+      type: 'category',
+      label: 'Getting Started',
+      link: {
+        type: 'generated-index',
+      },
+      collapsed: false,
+      items: [
+        'doc/gettingStarted/build',
+        'doc/gettingStarted/deploy',
+        'doc/gettingStarted/service',
+        'doc/gettingStarted/arm',
+      ],
+    },
+    'doc/git',
+  ],
   sampleSidebar: ['samples/sample-RTMP', 'samples/sample-HLS'],
   communitySidebar: ['community/Support', 'community/Contributing'],
 
