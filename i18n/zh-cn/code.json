@@ -206,10 +206,6 @@
     "message": "Note: 这是典型的源站和边缘集群的架构，适用于需要高并发的场景，高清大图请参考{overview}",
     "description": "Note: Please see {overview}"
   },
-  "homepage.overviewLink": {
-    "message": "这里",
-    "description": "processon.com/view/link/619f29791efad425fd699fd2"
-  },
   "homepage.tutorial": {
     "message": "Tutorial",
     "description": "Tutorial"
