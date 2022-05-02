@@ -37,7 +37,7 @@
   },
   "link.item.label.Samples": {
     "message": "使用案例",
-    "description": "The label of footer link with label=Samples linking to /docs/samples/sample-RTMP"
+    "description": "The label of footer link with label=Samples linking to /docs/samples/sample"
   },
   "link.item.label.Live": {
     "message": "直播答疑",

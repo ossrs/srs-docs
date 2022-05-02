@@ -47,7 +47,7 @@ selinux也需要disable，运行命令`getenforce`，若不是Disabled，执行�
 ./objs/srs -c conf/srs.conf
 ```
 
-推RTMP流和观看，参考[Usage: RTMP](../../samples/sample-RTMP.md)
+推RTMP流和观看，参考[Usage: RTMP](../../samples/rtmp/sample-rtmp.md)
 
 更多使用方法，参考[Usage](https://github.com/ossrs/srs/tree/3.0release#usage)
 

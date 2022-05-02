@@ -3,10 +3,8 @@ title: HLS 部署实例
 sidebar_label: HLS 部署实例
 hide_title: false
 hide_table_of_contents: false
-custom_edit_url: null
 ---
 
-> Note: 如果觉得Github的Wiki访问太慢，可以访问 Gitee 镜像。
 
 SRS支持HLS的详细步骤。
 
