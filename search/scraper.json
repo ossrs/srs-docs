@@ -2,7 +2,7 @@
   "index_name": "srs-docs",
   "start_urls": [
     {
-      "url": "http://host.docker.internal:3000",
+      "url": "http://host.docker.internal:3000/lts",
       "variables": {
         "version": "0.22.1"
       }

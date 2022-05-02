@@ -3,11 +3,7 @@ title: SRS 学习路径
 sidebar_label: SRS 学习路径
 hide_title: false
 hide_table_of_contents: false
-custom_edit_url: null
 ---
-
-<!-- TODO: 页面里面的链接和图片拷贝丢失 -->
-
 
 新同学专用的学习路径，请一定按照文档操作。
 
@@ -15,11 +11,11 @@ custom_edit_url: null
 
 先过第一个门槛：看到直播和 WebRTC 长什么样子，能跑出来下图的效果，需要 5 ～ 15 分钟左右。
 
-<!-- TODO: 这里缺图片 -->
+![](/img/doc-learning-path-001.png)
 
 > Note: 这个看似很容易，甚至直接在 SRS 官网中就能点开两个页面，但是一定要自己用 SRS 搭建出来才算，而不是直接打开线上的演示网页。
 
-具体怎么做呢？请参考 [Getting Started](./getting-started)。
+具体怎么做呢？请参考 [Getting Started](./getting-started.md)。
 
 
 接触一个新的东西，首先就要有直观的体验和感觉，这个门槛虽然看起来很简单，但是它涉及到了音视频的几乎全链路的东西：
@@ -34,8 +30,6 @@ custom_edit_url: null
 
 第二个门槛：了解音视频应用的各个典型场景，大约五个核心场景，总共需要 3~7 天左右。
 
-请根据 Github: Wiki，或者国内请访问 Gitee: Wiki，这里详细描述了各个场景会使用到的技术，内容都是一样的，Wiki 会同步更新到 Github 和 Gitee。
-
 典型的音视频业务场景，包括但不限于：
 - 全平台直播，小荷才露尖尖角。只需要上图的 Encoders(FFmpeg/OBS)推送 RTMP 到 SRS；一台 SRS Origin(不需要 Cluster)，转封装成 HTTP-FLV 流、转封装成 HLS；Players 根据平台的播放器可以选 HTTP-FLV 或 HLS 流播放。
 - WebRTC 通话业务，一对一通话，多人通话，会议室等。WebRTC 是 SRS4 引入的关键和核心的能力，从 1 到 3 秒延迟，到 100 到 300 毫秒延迟，绝对不是数字的变化，而是本质的变化。
@@ -49,12 +43,12 @@ custom_edit_url: null
 
 第三个门槛：了解每个纵向的技术点，应用场景，代码和问题排查，大约 3 ～ 6 月左右。
 
-- 视频专栏，包括环境搭建，代码分析，还有零声学院专业老师的讲解。
-- 解决方案，大家在各个不同场景中，应用 SRS 的分享和探索。
-- 部署方案，如何部署实现不同的具体功能，这些功能可以组合起来使用。
-- 集群和扩展，当业务量上升，如何扩展单机到集群，如何服务不同区域的用户。
-- 集成和定制，如何和现有系统对接，如何验证用户，安全和防盗链机制等。
-- 深度分析，协程原理，代码分析，高性能服务器框架，性能优化等。
+- [视频专栏](https://github.com/ossrs/srs/wiki/v4_CN_Home#effective-srs)，包括环境搭建，代码分析，还有零声学院专业老师的讲解。
+- [解决方案](https://github.com/ossrs/srs/wiki/v4_CN_Home#solution-guides)，大家在各个不同场景中，应用 SRS 的分享和探索。
+- [部署方案](https://github.com/ossrs/srs/wiki/v4_CN_Home#deployment-guides)，如何部署实现不同的具体功能，这些功能可以组合起来使用。
+- [集群和扩展](https://github.com/ossrs/srs/wiki/v4_CN_Home#cluster-guides)，当业务量上升，如何扩展单机到集群，如何服务不同区域的用户。
+- [集成和定制](https://github.com/ossrs/srs/wiki/v4_CN_Home#integration-guides)，如何和现有系统对接，如何验证用户，安全和防盗链机制等。
+- [深度分析](https://github.com/ossrs/srs/wiki/v4_CN_Home#develop-guide)，协程原理，代码分析，高性能服务器框架，性能优化等。
 
 如果能踏踏实实的了解完 SRS，音视频真不难。
 

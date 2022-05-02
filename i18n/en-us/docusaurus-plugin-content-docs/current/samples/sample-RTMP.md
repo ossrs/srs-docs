@@ -1,47 +1,40 @@
 ---
-title: RTMP 部署实例
-sidebar_label: RTMP 部署实例
+title: RTMP deploy
+sidebar_label: RTMP deploy
 hide_title: false
 hide_table_of_contents: false
-custom_edit_url: null
 ---
 
-> Note: 如果觉得Github的Wiki访问太慢，可以访问 Gitee 镜像。
+# RTMP deploy example
 
-RTMP部署的步骤。
+RTMP is the kernel feature of SRS.
 
-**假设服务器的IP是：192.168.1.170**
+<strong>Suppose the server ip is 192.168.1.170</strong>
 
-## 第一步，获取SRS。
+<strong>Step 1, get SRS.</strong> For detail, read [GIT](v4_EN_Git)
 
-详细参考GIT获取代码
-
-```
+```bash
 git clone https://github.com/ossrs/srs
 cd srs/trunk
 ```
 
-或者使用git更新已有代码：
+Or update the exists code:
 
-```
+```bash
 git pull
 ```
 
+<strong>Step 2, build SRS.</strong> For detail, read [Build](v4_EN_Build)
 
-## 第二步，编译SRS。
-详细参考Build
-
-```
+```bash
 ./configure && make
 ```
 
+<strong>Step 3, config srs.</strong> For detail, read [RTMP](v4_EN_DeliveryRTMP)
 
-## 第三步，编写SRS配置文件。
-详细参考RTMP分发
+Save bellow as config, or use `conf/rtmp.conf`:
 
-将以下内容保存为文件，譬如 conf/rtmp.conf，服务器启动时指定该配置文件(srs的conf文件夹有该文件)。
-
-```
+```bash
 # conf/rtmp.conf
 listen              1935;
 max_connections     1000;
@@ -49,18 +42,17 @@ vhost __defaultVhost__ {
 }
 ```
 
-## 第四步，启动SRS。
-详细参考RTMP分发
+<strong>Step 4, start srs.</strong> For detail, read [RTMP](v4_EN_DeliveryRTMP)
 
-```
+```bash
 ./objs/srs -c conf/rtmp.conf
 ```
 
-## 第五步，启动推流编码器。
-详细参考RTMP分发
+<strong>Step 5, start encoder.</strong> For detail, read [RTMP](v4_EN_DeliveryRTMP)
 
-使用FFMPEG命令推流：
-```
+Use FFMPEG to publish stream:
+
+```bash
     for((;;)); do \
         ./objs/ffmpeg/bin/ffmpeg -re -i ./doc/source.flv \
         -c copy \
@@ -69,23 +61,28 @@ vhost __defaultVhost__ {
     done
 ```
 
-或使用FMLE推流：
+Or use FMLE to publish:
 
-```
+```bash
 FMS URL: rtmp://192.168.1.170/live
 Stream: livestream
 ```
 
-## 第六步，观看RTMP流。
-详细参考RTMP分发
+<strong>Step 6, play RTMP.</strong> For detail, read [RTMP](v4_EN_DeliveryRTMP)
 
+RTMP url is: `rtmp://192.168.1.170:1935/live/livestream`
 
-RTMP流地址为：rtmp://192.168.1.170/live/livestream
+User can use vlc to play the RTMP stream.
 
-可以使用VLC观看。
+Or, use online SRS player: [srs-player][srs-player]
 
-或者使用在线SRS播放器播放：srs-player
+Note: Please replace all ip 192.168.1.170 to your server ip.
 
-备注：请将所有实例的IP地址192.168.1.170都换成部署的服务器IP地址。
+Winlin 2014.11
 
-Winlin 2014.3
+[nginx]: http://192.168.1.170:8080/nginx.html
+[srs-player]: http://ossrs.net/srs.release/trunk/research/players/srs_player.html?vhost=__defaultVhost__&autostart=true&server=192.168.1.170&app=live&stream=livestream&port=1935
+[srs-player-19350]: http://ossrs.net/srs.release/trunk/research/players/srs_player.html?vhost=__defaultVhost__&autostart=true&server=192.168.1.170&app=live&stream=livestream&port=19350
+[srs-player-ff]: http://ossrs.net/srs.release/trunk/research/players/srs_player.html?vhost=__defaultVhost__&autostart=true&server=192.168.1.170&app=live&stream=livestream_ff
+[jwplayer]: http://ossrs.net/srs.release/trunk/research/players/srs_player.html?app=live&stream=livestream.m3u8&server=192.168.1.170&port=8080&autostart=true&vhost=192.168.1.170&schema=http&hls_autostart=true&hls_port=8080
+[jwplayer-ff]: http://ossrs.net/srs.release/trunk/research/players/srs_player.html?app=live&stream=livestream_ff.m3u8&server=192.168.1.170&port=8080&autostart=true&vhost=192.168.1.170&schema=http&hls_autostart=true&hls_port=8080

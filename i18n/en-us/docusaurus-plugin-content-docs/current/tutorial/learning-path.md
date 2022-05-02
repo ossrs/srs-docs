@@ -1,68 +1,60 @@
 ---
-title: SRS 学习路径
-sidebar_label: SRS 学习路径
+title: Learning Path
+sidebar_label: Learning Path
 hide_title: false
 hide_table_of_contents: false
-custom_edit_url: null
 ---
 
-<!-- TODO: 页面里面的链接和图片拷贝丢失 -->
+A learning path for newcomers, please be sure to follow the documentation.
 
-新同学专用的学习路径，请一定按照文档操作。
+## Quick Preview
 
-## 快速预览
+First, It takes about 5 to 15 minutes to see what live streaming and WebRTC look like, as the following picture shown:。
 
-先过第一个门槛：看到直播和 WebRTC 长什么样子，能跑出来下图的效果，需要 5 ～ 15 分钟左右。
+![](/img/doc-learning-path-001.png)
 
-<!-- TODO: 这里缺图片 -->
+> Note: This may seem easy, even if you can open two pages directly from the SRS website, but you must build it yourself with SRS, not just open the online demo page.
 
-> Note: 这个看似很容易，甚至直接在 SRS 官网中就能点开两个页面，但是一定要自己用 SRS 搭建出来才算，而不是直接打开线上的演示网页。
+How do you do it？Please refer to [Getting Started](./getting-started.md)。
 
-具体怎么做呢？请参考 [Getting Started](./getting-started)。
+The first step in approaching something new is to have an intuitive experience and feel for it. Although it seems simple, it involves almost the whole chain of things in the audio/video field：
+- FFmpeg, a powerful audio/video client that supports publish and pull streaming, codecs encoding and decoding , as well as various processing capabilities.
+- Chrome (or browser), H5 is the most convenient client, very convenient for demo and learning, SRS’s features basically have H5 demo.
+- Audio and video protocols: RTMP, HTTP-FLV, HLS and WebRTC.
+- SRS server, deploying audio and video cloud by itself, or providing cloud services for audio and video, SRS is essentially a kind of server for video cloud.
 
+> Note: The above diagram is still missing the mobile end, in fact, the mobile end is just a kind of end, and there is no new protocol, you can also download the SRS live streaming client, experience the above push stream and play, you can also enter your server's stream address to play.
 
-接触一个新的东西，首先就要有直观的体验和感觉，这个门槛虽然看起来很简单，但是它涉及到了音视频的几乎全链路的东西：
-- FFmpeg，强大的音视频客户端，推拉流和编解码，以及各种处理的能力。
-- Chrome（或浏览器），H5 是最便捷的客户端，非常方便演示和学习，SRS 功能基本上都有 H5 的演示。
-- 音视频协议：RTMP，HTTP-FLV，HLS 和 WebRTC，这些操作步骤中，已经涉及到了这些协议，也是实际应用中典型的用法。
-- SRS 服务器，自己部署音视频云，或者提供音视频的云服务，SRS 本质上就是视频云的一种服务器。
+## Deeper
 
-> Note: 上面的拼图还缺少移动端，其实移动端只是一种端，而并没有新的协议，也可以下载 SRS 直播客户端，体验上面的推流和播放，也可以输入你的服务器的流地址播放。
+Second, understand each typical scenario of audio and video applications, about five core scenarios, which takes about 3~7 days in total:
 
-## 深入场景
+Typical audio and video business scenarios, including but not limited to:
+- All-platform live streaming. The Encoders (FFmpeg/OBS) above can publish RTMP to SRS; an SRS Origin (no need Cluster), which is muxed into HTTP-FLV streams and HLS; Players can choose HTTP-FLV or HLS streams to play according to the platform's player.
+- WebRTC call services, one-to-one calls, multi-person calls, conference rooms, etc. WebRTC is the key and core capability introduced in SRS4. From 1 to 3 seconds latency at the beginning, to 100 to 300 milliseconds latency now, it is definitely not a change of numbers, but an essential change.
+- Monitoring and broadcasting business to the cloud. In addition to using FFmpeg to actively pull streams to SRS, you can also use the SRT protocol of the broadcasting industry to publish streams, or the GB28181 protocol of the surveillance industry to publish streams, SRS can converts it to the Internet protocols for playing.
+- Low latency live streaming and interactive live streaming. Convert RTMP to WebRTC for playing to reduce the latency of palying, and can also use the WebRTC to publish stream. In the future will support WebTransport live streaming.
+- Large-Scale Business, if business grows rapidly, you can use SRS Edge Cluster to support massice Players, or use SRS Origin Cluster to support massive Encoders, of course, you can migrate your business to the video cloud smoothly too. In the future, SRS will also support WebRTC cluster.
 
-第二个门槛：了解音视频应用的各个典型场景，大约五个核心场景，总共需要 3~7 天左右。
+Each scenario can build a typical application.
 
-请根据 Github: Wiki，或者国内请访问 Gitee: Wiki，这里详细描述了各个场景会使用到的技术，内容都是一样的，Wiki 会同步更新到 Github 和 Gitee。
+## For Details
 
-典型的音视频业务场景，包括但不限于：
-- 全平台直播，小荷才露尖尖角。只需要上图的 Encoders(FFmpeg/OBS)推送 RTMP 到 SRS；一台 SRS Origin(不需要 Cluster)，转封装成 HTTP-FLV 流、转封装成 HLS；Players 根据平台的播放器可以选 HTTP-FLV 或 HLS 流播放。
-- WebRTC 通话业务，一对一通话，多人通话，会议室等。WebRTC 是 SRS4 引入的关键和核心的能力，从 1 到 3 秒延迟，到 100 到 300 毫秒延迟，绝对不是数字的变化，而是本质的变化。
-- 监控和广电上云，各行业风起云涌。除了使用 FFmpeg 主动拉取流到 SRS，还可以广电行业 SRT 协议推流，或监控行业 GB28181 协议推流，SRS 转换成互联网的协议观看。
-- 直播低延迟和互动，聚变近在咫尺。RTMP 转 WebRTC 播放降低播放延迟，还能做直播连麦，或者使用 WebRTC 推流，未来还会支持 WebTransport 直播等等。
-- 大规模业务，带你装逼带你飞。如果业务快速上涨，可以通过 Edge Cluster 支持海量 Players，或者 Origin Cluster 支持海量 Encoders，当然可以直接平滑迁移到视频云。未来还会支持 RTC 的级联和集群。
+Third, Understand the technical points, application scenarios, code and problem solving, about 3 to 6 months.
 
-每个场景都可以自己搭建出来典型的应用。
+- [Video Columns](https://github.com/ossrs/srs/wiki/v4_CN_Home#effective-srs), includes environment building, code analysis, and explanations from professional teachers at Voice Academy.
+- [Solution Guides](https://github.com/ossrs/srs/wiki/v4_CN_Home#solution-guides)，share and explore the application of SRS in different scenarios.
+- [Deployment Guides](https://github.com/ossrs/srs/wiki/v4_CN_Home#deployment-guides), how to deploy to implement different specific functions.
+- [Cluster Guides](https://github.com/ossrs/srs/wiki/v4_CN_Home#cluster-guides), when business grows rapidly, how to scale single server to cluster, and how to serve users in different regions.
+- [Integration Guides](https://github.com/ossrs/srs/wiki/v4_CN_Home#integration-guides), How to integrate with existing systems, how to authenticate users, security and anti-stealing chain mechanisms, etc.
+- [Develop Guides](https://github.com/ossrs/srs/wiki/v4_CN_Home#develop-guide), Concurrent principles, code analysis, high performance server framework, performance optimization, etc.
 
-## 了解细节
+If you can thoroughly understand SRS, it's really not difficult.
 
-第三个门槛：了解每个纵向的技术点，应用场景，代码和问题排查，大约 3 ～ 6 月左右。
+Author：winlinvip
 
-- 视频专栏，包括环境搭建，代码分析，还有零声学院专业老师的讲解。
-- 解决方案，大家在各个不同场景中，应用 SRS 的分享和探索。
-- 部署方案，如何部署实现不同的具体功能，这些功能可以组合起来使用。
-- 集群和扩展，当业务量上升，如何扩展单机到集群，如何服务不同区域的用户。
-- 集成和定制，如何和现有系统对接，如何验证用户，安全和防盗链机制等。
-- 深度分析，协程原理，代码分析，高性能服务器框架，性能优化等。
+Origin Link：https://www.jianshu.com/p/2662df9fe078
 
-如果能踏踏实实的了解完 SRS，音视频真不难。
+From：jianshu.com
 
-如果总想着三分钟 XXX，那可不是很难么？
-
-作者：winlinvip
-
-链接：https://www.jianshu.com/p/2662df9fe078
-
-来源：简书
-
-著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
+The copyright belongs to the author. For commercial reproduction, please contact the author for authorization, and for non-commercial reproduction, please cite the source.

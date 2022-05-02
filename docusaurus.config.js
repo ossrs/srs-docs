@@ -83,7 +83,7 @@ const config = {
           },
           {
             type: 'doc',
-            docId: 'doc/git',
+            docId: 'doc/introduction',
             position: 'left',
             label: 'Docs',
           },
