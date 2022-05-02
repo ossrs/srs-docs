@@ -3,8 +3,8 @@
     "message": "5.0.0.alpha.1",
     "description": "The label for version current"
   },
-  "sidebar.docsSidebar.category.Getting Started": {
-    "message": "开始上手",
-    "description": "The label for category Getting Started in sidebar docsSidebar"
+  "sidebar.docsSidebar.category.Build": {
+    "message": "编译",
+    "description": "The label for category Build in sidebar docsSidebar"
   }
 }

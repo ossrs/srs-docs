@@ -1,6 +1,6 @@
 ---
-title: Service
-sidebar_label: Service
+title: Linux Service
+sidebar_label: Linux Service
 hide_title: false
 hide_table_of_contents: false
 ---

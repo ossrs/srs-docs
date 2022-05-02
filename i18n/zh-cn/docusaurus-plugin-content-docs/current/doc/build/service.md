@@ -1,6 +1,6 @@
 ---
-title: 系统服务
-sidebar_label: 系统服务
+title: Linux系统服务
+sidebar_label: Linux系统服务
 hide_title: false
 hide_table_of_contents: false
 ---

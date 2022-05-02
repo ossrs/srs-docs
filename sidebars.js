@@ -14,22 +14,17 @@
 /** @type {import('@docusaurus/plugin-content-docs').SidebarsConfig} */
 const sidebars = {
   // By default, Docusaurus generates a sidebar from the docs folder structure
-  tutorialSidebar: ['tutorial/getting-started', 'tutorial/learning-path'],
+  tutorialSidebar: ['tutorial/learning-path', 'tutorial/getting-started'],
   docsSidebar: [
     'doc/introduction',
     {
       type: 'category',
-      label: 'Getting Started',
+      label: 'Build',
       link: {
         type: 'generated-index',
       },
       collapsed: false,
-      items: [
-        'doc/gettingStarted/start',
-        'doc/gettingStarted/install',
-        'doc/gettingStarted/service',
-        'doc/gettingStarted/arm',
-      ],
+      items: ['doc/build/install', 'doc/build/service', 'doc/build/arm'],
     },
     'doc/git',
   ],
