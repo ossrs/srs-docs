@@ -1,6 +1,6 @@
 ---
-title: Build
-sidebar_label: Build
+title: Install
+sidebar_label: Install
 hide_title: false
 hide_table_of_contents: false
 ---
@@ -51,7 +51,7 @@ Publish RTMP, please read: [Usage: RTMP](../../samples/sample-RTMP.md)
 
 More usages, please read: [Usage](https://github.com/ossrs/srs/tree/4.0release#usage)
 
-For service management, please read [Service](./service.md)
+For service management, please read [Service](/doc/gettingStarted/service.md)
 
 Run SRS in docker, please read [srs-docker](https://github.com/ossrs/dev-docker#usage)
 
@@ -59,6 +59,6 @@ Run SRS in docker, please read [srs-docker](https://github.com/ossrs/dev-docker#
 
 It's also ok to directly build on ARM server.
 
-For ARM/MIPS or crossbuild, please read [here](./arm.md)
+For ARM/MIPS or crossbuild, please read [here](/doc/gettingStarted/arm.md)
 
 Winlin 2014.11

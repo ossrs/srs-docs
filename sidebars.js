@@ -25,8 +25,8 @@ const sidebars = {
       },
       collapsed: false,
       items: [
-        'doc/gettingStarted/build',
-        'doc/gettingStarted/deploy',
+        'doc/gettingStarted/start',
+        'doc/gettingStarted/install',
         'doc/gettingStarted/service',
         'doc/gettingStarted/arm',
       ],

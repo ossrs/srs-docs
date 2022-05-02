@@ -1,6 +1,6 @@
 ---
-title: Arm
-sidebar_label: Arm
+title: ARM
+sidebar_label: ARM
 hide_title: false
 hide_table_of_contents: false
 ---
