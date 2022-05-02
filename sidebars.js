@@ -28,7 +28,27 @@ const sidebars = {
     },
     'doc/git',
   ],
-  sampleSidebar: ['samples/sample-RTMP', 'samples/sample-HLS'],
+  sampleSidebar: [
+    'samples/sample',
+    {
+      type: 'category',
+      label: 'RTMP',
+      link: {
+        type: 'generated-index',
+      },
+      collapsed: false,
+      items: ['samples/rtmp/sample-rtmp', 'samples/rtmp/delivery-rtmp'],
+    },
+    {
+      type: 'category',
+      label: 'HLS',
+      link: {
+        type: 'generated-index',
+      },
+      collapsed: false,
+      items: ['samples/hls/sample-hls', 'samples/hls/delivery-hls'],
+    },
+  ],
   communitySidebar: ['community/Support', 'community/Contributing'],
 
   // But you can create a sidebar manually

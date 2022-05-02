@@ -1,6 +1,6 @@
 ---
-title: RTMP deploy
-sidebar_label: RTMP deploy
+title: RTMP Sample
+sidebar_label: RTMP Sample 
 hide_title: false
 hide_table_of_contents: false
 ---
@@ -11,7 +11,7 @@ RTMP is the kernel feature of SRS.
 
 <strong>Suppose the server ip is 192.168.1.170</strong>
 
-<strong>Step 1, get SRS.</strong> For detail, read [GIT](v4_EN_Git)
+<strong>Step 1, get SRS.</strong> For detail, read [GIT](../../doc/git.md)
 
 ```bash
 git clone https://github.com/ossrs/srs
@@ -24,13 +24,13 @@ Or update the exists code:
 git pull
 ```
 
-<strong>Step 2, build SRS.</strong> For detail, read [Build](v4_EN_Build)
+<strong>Step 2, build SRS.</strong> For detail, read [Build](../../doc/build/install.md)
 
 ```bash
 ./configure && make
 ```
 
-<strong>Step 3, config srs.</strong> For detail, read [RTMP](v4_EN_DeliveryRTMP)
+<strong>Step 3, config srs.</strong> For detail, read [RTMP](./delivery-rtmp.md)
 
 Save bellow as config, or use `conf/rtmp.conf`:
 
@@ -42,13 +42,13 @@ vhost __defaultVhost__ {
 }
 ```
 
-<strong>Step 4, start srs.</strong> For detail, read [RTMP](v4_EN_DeliveryRTMP)
+<strong>Step 4, start srs.</strong> For detail, read [RTMP](./delivery-rtmp.md)
 
 ```bash
 ./objs/srs -c conf/rtmp.conf
 ```
 
-<strong>Step 5, start encoder.</strong> For detail, read [RTMP](v4_EN_DeliveryRTMP)
+<strong>Step 5, start encoder.</strong> For detail, read [RTMP](./delivery-rtmp.md)
 
 Use FFMPEG to publish stream:
 
@@ -68,7 +68,7 @@ FMS URL: rtmp://192.168.1.170/live
 Stream: livestream
 ```
 
-<strong>Step 6, play RTMP.</strong> For detail, read [RTMP](v4_EN_DeliveryRTMP)
+<strong>Step 6, play RTMP.</strong> For detail, read [RTMP](./delivery-rtmp.md)
 
 RTMP url is: `rtmp://192.168.1.170:1935/live/livestream`
 

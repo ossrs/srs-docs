@@ -77,7 +77,7 @@ const config = {
         items: [
           {
             type: 'doc',
-            docId: 'tutorial/getting-started',
+            docId: 'tutorial/learning-path',
             position: 'left',
             label: 'Tutorial',
           },
@@ -89,7 +89,7 @@ const config = {
           },
           {
             type: 'doc',
-            docId: 'samples/sample-RTMP',
+            docId: 'samples/sample',
             label: 'Samples',
             position: 'left',
           },
@@ -167,7 +167,7 @@ const config = {
             items: [
               {
                 label: 'Tutorial',
-                to: '/docs/tutorial/getting-started',
+                to: '/docs/tutorial/learning-path',
               },
               {
                 label: 'Docs',
@@ -175,7 +175,7 @@ const config = {
               },
               {
                 label: 'Samples',
-                to: '/docs/samples/sample-RTMP',
+                to: '/docs/samples/sample',
               },
             ],
           },
