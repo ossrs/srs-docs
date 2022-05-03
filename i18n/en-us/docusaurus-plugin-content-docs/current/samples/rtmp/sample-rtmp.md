@@ -9,9 +9,11 @@ hide_table_of_contents: false
 
 RTMP is the kernel feature of SRS.
 
-<strong>Suppose the server ip is 192.168.1.170</strong>
+**Suppose the server ip is 192.168.1.170**
 
-<strong>Step 1, get SRS.</strong> For detail, read [GIT](../../doc/git.md)
+## Step 1, get SRS
+
+For detail, read [GIT](../../doc/git.md)
 
 ```bash
 git clone https://github.com/ossrs/srs
@@ -24,13 +26,17 @@ Or update the exists code:
 git pull
 ```
 
-<strong>Step 2, build SRS.</strong> For detail, read [Build](../../doc/build/install.md)
+## Step 2, build SRS
+
+For detail, read [Build](../../doc/build/install.md)
 
 ```bash
 ./configure && make
 ```
 
-<strong>Step 3, config srs.</strong> For detail, read [RTMP](./delivery-rtmp.md)
+## Step 3, config SRS
+
+For detail, read [RTMP](./delivery-rtmp.md)
 
 Save bellow as config, or use `conf/rtmp.conf`:
 
@@ -42,13 +48,17 @@ vhost __defaultVhost__ {
 }
 ```
 
-<strong>Step 4, start srs.</strong> For detail, read [RTMP](./delivery-rtmp.md)
+## Step 4, start SRS
+
+For detail, read [RTMP](./delivery-rtmp.md)
 
 ```bash
 ./objs/srs -c conf/rtmp.conf
 ```
 
-<strong>Step 5, start encoder.</strong> For detail, read [RTMP](./delivery-rtmp.md)
+## Step 5, start encoder
+
+For detail, read [RTMP](./delivery-rtmp.md)
 
 Use FFMPEG to publish stream:
 
@@ -68,7 +78,9 @@ FMS URL: rtmp://192.168.1.170/live
 Stream: livestream
 ```
 
-<strong>Step 6, play RTMP.</strong> For detail, read [RTMP](./delivery-rtmp.md)
+## Step 6, play RTMP
+
+For detail, read [RTMP](./delivery-rtmp.md)
 
 RTMP url is: `rtmp://192.168.1.170:1935/live/livestream`
 
@@ -79,10 +91,3 @@ Or, use online SRS player: [srs-player][srs-player]
 Note: Please replace all ip 192.168.1.170 to your server ip.
 
 Winlin 2014.11
-
-[nginx]: http://192.168.1.170:8080/nginx.html
-[srs-player]: http://ossrs.net/srs.release/trunk/research/players/srs_player.html?vhost=__defaultVhost__&autostart=true&server=192.168.1.170&app=live&stream=livestream&port=1935
-[srs-player-19350]: http://ossrs.net/srs.release/trunk/research/players/srs_player.html?vhost=__defaultVhost__&autostart=true&server=192.168.1.170&app=live&stream=livestream&port=19350
-[srs-player-ff]: http://ossrs.net/srs.release/trunk/research/players/srs_player.html?vhost=__defaultVhost__&autostart=true&server=192.168.1.170&app=live&stream=livestream_ff
-[jwplayer]: http://ossrs.net/srs.release/trunk/research/players/srs_player.html?app=live&stream=livestream.m3u8&server=192.168.1.170&port=8080&autostart=true&vhost=192.168.1.170&schema=http&hls_autostart=true&hls_port=8080
-[jwplayer-ff]: http://ossrs.net/srs.release/trunk/research/players/srs_player.html?app=live&stream=livestream_ff.m3u8&server=192.168.1.170&port=8080&autostart=true&vhost=192.168.1.170&schema=http&hls_autostart=true&hls_port=8080

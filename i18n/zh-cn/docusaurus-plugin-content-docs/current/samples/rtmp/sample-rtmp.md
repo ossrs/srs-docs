@@ -1,6 +1,6 @@
 ---
-title: RTMP 部署实例
-sidebar_label: RTMP 部署实例
+title: RTMP 部署
+sidebar_label: RTMP 部署
 hide_title: false
 hide_table_of_contents: false
 ---
