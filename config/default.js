@@ -1,6 +1,6 @@
 const config = {
   url: 'https://ossrs.io',
-  baseUrl: '/',
+  baseUrl: '/lts/',
   defaultLocale: 'en-us',
   plugins: [
     [
