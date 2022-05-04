@@ -18,5 +18,13 @@
   "sidebar.sampleSidebar.category.FLV": {
     "message": "FLV",
     "description": "The label for category FLV in sidebar sampleSidebar"
+  },
+  "sidebar.docsSidebar.category.Main Concepts": {
+    "message": "核心概念",
+    "description": "The label for category Main Concepts in sidebar docsSidebar"
+  },
+  "sidebar.docsSidebar.category.Integration": {
+    "message": "集成",
+    "description": "The label for category Integration in sidebar docsSidebar"
   }
 }
