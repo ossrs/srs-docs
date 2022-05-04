@@ -42,7 +42,7 @@ jobs:
           key: ${{ secrets.DIGITALOCEAN_SSHKEY }}
           port: 22
           script: |
-            mkdir -p /root/search /root/cn-search
+            mkdir -p /root/search
 
       # Run scp first, because ufw limit the rate.
       - name: Copy the files to droplet
@@ -53,19 +53,6 @@ jobs:
           key: ${{ secrets.DIGITALOCEAN_SSHKEY }}
           source: "search/scraper.json"
           target: "/root/search/"
-          strip_components: 1
-
-      ##################################################################################################################
-      # TODO: FIXME: Remove it when path is ok.
-      # Run scp first, because ufw limit the rate.
-      - name: Copy the files to droplet
-        uses: appleboy/scp-action@master
-        with:
-          host: ${{ env.SRS_DROPLET_EIP }}
-          username: root
-          key: ${{ secrets.DIGITALOCEAN_SSHKEY }}
-          source: "search/scraper.json"
-          target: "/root/cn-search/"
           strip_components: 1
 
       ################################################################
