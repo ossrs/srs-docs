@@ -132,9 +132,6 @@ jobs:
             ufw allow 20080
             ufw allow 8107
             ufw allow 8108
-            # TODO: FIXME: Remove it when path is ok.
-            ufw allow 8106
-            ufw allow 8109
             #
             # Restart HTTPX
             for ((i=0; i < 5; i++)); do
@@ -144,7 +141,6 @@ jobs:
             docker run -d -it --restart always \
               --name docs-httpx -p 20080:80 ossrs/httpx:v1.0.19 \
               ./bin/httpx-static -http 80 \
-              -proxy http://$SRS_DROPLET_PIP:8106/lts/en-us/ \
               -proxy http://$SRS_DROPLET_PIP:8107/lts/ \
               -proxy http://$SRS_DROPLET_PIP:8108/multi_search
             #
@@ -177,50 +173,6 @@ jobs:
             docker run --rm --privileged --name docs-search-scraper --add-host host.docker.internal:$SRS_DROPLET_PIP -e UPDATE_NB_HITS=0 \
               -e TYPESENSE_HOST=host.docker.internal -e TYPESENSE_API_KEY=$SEARCH_APIKEY -e TYPESENSE_PORT=8108 \
               -e TYPESENSE_PROTOCOL=http -v /root/search/scraper.json:/config.json -e CONFIG=/config.json \
-              typesense/docsearch-scraper
-            #
-            # Cleanup old docker images.
-            for image in $(docker images |grep '<none>' |awk '{print $3}'); do
-              docker rmi -f $image
-              echo "Remove image $image, r0=$?"
-            done
-            #
-            ############################################################################################################
-            # TODO: FIXME: Remove it when path is ok.
-            while true; do
-              docker pull ossrs/docs:cn-$SRS_MAJOR >/dev/null 2>&1 && echo "done" && break
-              echo "Image ossrs/docs:cn-$SRS_MAJOR not ready, wait..." && sleep 5
-            done
-            #
-            # Restart SRS docs
-            for ((i=0; i < 5; i++)); do
-              if [[ $(docker ps -f name=cn-docs-docs |wc -l) -eq 1 ]]; then echo "Killed"; break; fi;
-              docker rm -f cn-docs-docs; sleep 0.3;
-            done
-            docker pull ossrs/docs:cn-$SRS_MAJOR
-            docker run -d -it --restart always --privileged --name cn-docs-docs -p 8106:80 ossrs/docs:cn-$SRS_MAJOR
-            #
-            # Use 8106/tcp as port.
-            sed -i 's/host.docker.internal:3000/host.docker.internal:8106/g' /root/cn-search/scraper.json
-            #
-            # Restart typesense
-            for ((i=0; i < 5; i++)); do
-              if [[ $(docker ps -f name=cn-docs-typesense |wc -l) -eq 1 ]]; then echo "Killed"; break; fi;
-              docker rm -f cn-docs-typesense; sleep 0.3;
-            done
-            docker run -d -it --restart always --privileged --name cn-docs-typesense -v /root/cn-search/data:/data -p $SRS_DROPLET_PIP:8109:8108 \
-              typesense/typesense:0.22.1 --enable-cors --data-dir /data --api-key=$SEARCH_APIKEY
-            #
-            # Restart search scraper
-            for ((i=0; i < 5; i++)); do
-              if [[ $(docker ps -f name=cn-docs-search-scraper |wc -l) -eq 1 ]]; then echo "Killed"; break; fi;
-              docker rm -f cn-docs-search-scraper; sleep 0.3;
-            done
-            # Replace the BASE_URL
-            sed -i 's|.*url.*host.docker.internal:8106.*|      "url": "http://host.docker.internal:8106/",|g' /root/cn-search/scraper.json
-            docker run --rm --privileged --name cn-docs-search-scraper --add-host host.docker.internal:$SRS_DROPLET_PIP -e UPDATE_NB_HITS=0 \
-              -e TYPESENSE_HOST=host.docker.internal -e TYPESENSE_API_KEY=$SEARCH_APIKEY -e TYPESENSE_PORT=8109 \
-              -e TYPESENSE_PROTOCOL=http -v /root/cn-search/scraper.json:/config.json -e CONFIG=/config.json \
               typesense/docsearch-scraper
             #
             # Cleanup old docker images.
