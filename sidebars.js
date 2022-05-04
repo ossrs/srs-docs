@@ -23,10 +23,40 @@ const sidebars = {
       link: {
         type: 'generated-index',
       },
-      collapsed: false,
-      items: ['doc/build/install', 'doc/build/service', 'doc/build/arm'],
+      collapsed: true,
+      items: ['doc/build/install', 'doc/build/service', 'doc/build/arm', 'doc/build/raspberrypi', 'doc/build/windows'],
     },
     'doc/git',
+    {
+      type: 'category',
+      label: 'Main Concepts',
+      link: {
+        type: 'generated-index',
+      },
+      collapsed: true,
+      items: [
+        'doc/main-concepts/rtmp-url-vhost',
+        'doc/main-concepts/rtmp-handshake',
+        'doc/main-concepts/rtmp-pk-http',
+        'doc/main-concepts/low-latency',
+      ],
+    },
+    {
+      type: 'category',
+      label: 'Integration',
+      link: {
+        type: 'generated-index',
+      },
+      collapsed: true,
+      items: [
+        'doc/integration/http-api',
+        'doc/integration/http-callback',
+        'doc/integration/special-control',
+        'doc/integration/ide',
+        'doc/integration/client-sdk',
+        'doc/integration/srs-lib-rtmp',
+      ],
+    },
   ],
   sampleSidebar: [
     'samples/sample',
@@ -36,7 +66,7 @@ const sidebars = {
       link: {
         type: 'generated-index',
       },
-      collapsed: false,
+      collapsed: true,
       items: ['samples/rtmp/sample-rtmp', 'samples/rtmp/delivery-rtmp', 'samples/rtmp/sample-rtmp-cluster'],
     },
     {
@@ -45,7 +75,7 @@ const sidebars = {
       link: {
         type: 'generated-index',
       },
-      collapsed: false,
+      collapsed: true,
       items: [
         'samples/hls/sample-hls',
         'samples/hls/delivery-hls',
@@ -59,7 +89,7 @@ const sidebars = {
       link: {
         type: 'generated-index',
       },
-      collapsed: false,
+      collapsed: true,
       items: ['samples/flv/sample-http-flv', 'samples/flv/sample-http-flv-cluster'],
     },
   ],
