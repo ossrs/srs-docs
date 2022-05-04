@@ -38,7 +38,7 @@ For detail, read [Build](../../doc/build/install.md)
 
 ## Step 3, config SRS
 
-For detail, read [HLS](./delivery-hls.md)
+For detail, read [HLS](http://ossrs.net/srs.release/wiki/v4_EN_DeliveryHLS)
 
 Save bellow as config, or use `conf/transcode2hls.audio.only.conf`:
 
@@ -78,7 +78,7 @@ vhost __defaultVhost__ {
 
 ## Step 4, strat SRS
 
-For detail, read [HLS](./delivery-hls.md)
+For detail, read [HLS](http://ossrs.net/srs.release/wiki/v4_EN_DeliveryHLS)
 
 ```bash
 ./objs/srs -c conf/transcode2hls.audio.only.conf
@@ -86,7 +86,7 @@ For detail, read [HLS](./delivery-hls.md)
 
 ## Step 5, start Encoder
 
-For detail, read [HLS](./delivery-hls.md)
+For detail, read [HLS](http://ossrs.net/srs.release/wiki/v4_EN_DeliveryHLS)
 
 Use FFMPEG to publish stream:
 
@@ -115,7 +115,7 @@ Note: we can use another vhost to output HLS, other codecs transcode then output
 
 ## Step 6, play RTMP
 
-For detail, read [HLS](./delivery-hls.md)
+For detail, read [HLS](http://ossrs.net/srs.release/wiki/v4_EN_DeliveryHLS)
 
 RTMP url is: `rtmp://192.168.1.170:1935/live/livestream_ff`
 
@@ -127,7 +127,7 @@ Note: Please replace all ip 192.168.1.170 to your server ip.
 
 ## Step 7, play HLS
 
-For detail, read [HLS](./delivery-hls.md)
+For detail, read [HLS](http://ossrs.net/srs.release/wiki/v4_EN_DeliveryHLS)
 
 HLS url: `http://192.168.1.170:8080/live/livestream_ff.m3u8`
 

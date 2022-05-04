@@ -9,11 +9,11 @@ hide_table_of_contents: false
 
 SRS（Simple RTMP Server）分发RTMP是核心功能，srs的主要定位就是分发RTMP低延时流媒体，同时支持分发HLS流。
 
-RTMP和HLS的优势参考：[HLS](../hls/delivery-hls.md)
+RTMP和HLS的优势参考：[HLS](http://ossrs.net/srs.release/wiki/v4_EN_DeliveryHLS)
 
 RTMP和HLS的比较参考：[RTMP PK HLS](http://ossrs.net/srs.release/wiki/v4_CN_RTMP.PK.HTTP)
 
-部署RTMP的实例参考：[Usage: RTMP](./sample-rtmp.md)
+部署RTMP的实例参考：[Usage: RTMP](http://ossrs.net/srs.release/wiki/v4_CN_SampleRTMP)
 
 ## 应用场景
 
@@ -67,7 +67,7 @@ Stream: livestream
 
 RTMP的URL规则，Vhost规则，参考：[RTMP URL&Vhost](http://ossrs.net/srs.release/wiki/v4_CN_RtmpUrlVhost)
 
-部署分发RTMP流的实例，参考：[Usage: RTMP](./sample-rtmp.md)
+部署分发RTMP流的实例，参考：[Usage: RTMP](http://ossrs.net/srs.release/wiki/v4_CN_SampleRTMP)
 
 如下图所示：
 ![FMLE推流到SRS](http://ossrs.net/srs.release/wiki/images/FMLE.png)

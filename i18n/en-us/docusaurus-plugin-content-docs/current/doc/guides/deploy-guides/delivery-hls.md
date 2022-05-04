@@ -13,11 +13,11 @@ RTMP is Adobe RTMP (Realtime Message Protocol), for low latency live streaming, 
 
 HLS is Apple HLS (HTTP Live Streaming), for both live and VOD streaming over HTTP, and the standard protocol on Apple platforms.
 
-Servers delivering both HLS and RTMP can support all screens. For RTMP, see: [RTMP Delivery](../rtmp/delivery-rtmp.md)。
+Servers delivering both HLS and RTMP can support all screens. For RTMP, see: [RTMP Delivery](http://ossrs.net/srs.release/wiki/v4_CN_DeliveryRTMP)。
 
 For information comparing RTMP and HLS, read [RTMP PK HLS](http://ossrs.net/srs.release/wiki/v4_EN_RTMP.PK.HTTP).
 
-For information about how to deploy SRS to support HLS, read [Usage: HLS](./sample-hls.md).
+For information about how to deploy SRS to support HLS, read [Usage: HLS](http://ossrs.net/srs.release/wiki/v4_CN_SampleHLS).
 
 For cluster to deliver HLS, to serve a vast set of visitors, please see [Nginx for HLS](http://ossrs.net/srs.release/wiki/v4_EN_NginxForHLS).
 
@@ -310,7 +310,7 @@ The ts url generated to: http://your-server/live/livestream-0.ts
 * on_hls: callback when ts generated.
 * on_hls_notify: callback when ts generated, use [ts_url] as a variable, uses GET method. Can be used to push ts files to can network.
 
-For how to deploy SRS to deliver HLS, read [Usage: HLS](./sample-hls.md)
+For how to deploy SRS to deliver HLS, read [Usage: HLS](http://ossrs.net/srs.release/wiki/v4_CN_SampleHLS)
 
 ## HTTP Callback
 
@@ -336,7 +336,7 @@ SRS support delivering pure audio stream by HLS. The audio codec requires AAC, u
 
 For information about dropping video, read [Transcode: Disable Stream](http://ossrs.net/srs.release/wiki/v4_EN_FFMPEG#drop-video-or-audio)
 
-There is no special configuration for pure audio for HLS. Please read [Usage: HLS](./sample-hls.md)
+There is no special configuration for pure audio for HLS. Please read [Usage: HLS](http://ossrs.net/srs.release/wiki/v4_CN_SampleHLS)
 
 ## HLS and Forwarding
 

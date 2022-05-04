@@ -36,7 +36,7 @@ git pull
 
 ## 第三步，编写SRS源站配置文件
 
-详细参考[RTMP分发](./delivery-rtmp.md)和[Edge](http://ossrs.net/srs.release/wiki/v4_CN_Edge)
+详细参考[RTMP分发](http://ossrs.net/srs.release/wiki/v4_CN_DeliveryRTMP)和[Edge](http://ossrs.net/srs.release/wiki/v4_CN_Edge)
 
 将以下内容保存为文件，譬如`conf/origin.conf`，服务器启动时指定该配置文件(srs的conf文件夹有该文件)。
 
@@ -52,7 +52,7 @@ vhost __defaultVhost__ {
 
 ## 第四步，编写SRS边缘配置文件
 
-详细参考[RTMP分发](./delivery-rtmp.md)和[Edge](http://ossrs.net/srs.release/wiki/v4_CN_Edge)
+详细参考[RTMP分发](http://ossrs.net/srs.release/wiki/v4_CN_DeliveryRTMP)和[Edge](http://ossrs.net/srs.release/wiki/v4_CN_Edge)
 
 将以下内容保存为文件，譬如`conf/edge.conf`，服务器启动时指定该配置文件(srs的conf文件夹有该文件)。
 
@@ -72,7 +72,7 @@ vhost __defaultVhost__ {
 
 ## 第五步，启动SRS
 
-详细参考[RTMP分发](./delivery-rtmp.md)和[Edge](http://ossrs.net/srs.release/wiki/v4_CN_Edge)
+详细参考[RTMP分发](http://ossrs.net/srs.release/wiki/v4_CN_DeliveryRTMP)和[Edge](http://ossrs.net/srs.release/wiki/v4_CN_Edge)
 
 ```bash
 ./objs/srs -c conf/origin.conf &
@@ -81,7 +81,7 @@ vhost __defaultVhost__ {
 
 ## 第六步，启动推流编码器
 
-详细参考[RTMP分发](./delivery-rtmp.md)和[Edge](http://ossrs.net/srs.release/wiki/v4_CN_Edge)
+详细参考[RTMP分发](http://ossrs.net/srs.release/wiki/v4_CN_DeliveryRTMP)和[Edge](http://ossrs.net/srs.release/wiki/v4_CN_Edge)
 
 使用FFMPEG命令推流：
 
@@ -103,7 +103,7 @@ Stream: livestream
 
 ## 第七步，观看RTMP流
 
-详细参考[RTMP分发](./delivery-rtmp.md)和[Edge](http://ossrs.net/srs.release/wiki/v4_CN_Edge)
+详细参考[RTMP分发](http://ossrs.net/srs.release/wiki/v4_CN_DeliveryRTMP)和[Edge](http://ossrs.net/srs.release/wiki/v4_CN_Edge)
 
 源站RTMP流地址为：`rtmp://192.168.1.170:19350/live/livestream`，可以使用VLC观看。或者使用在线SRS播放器播放：[srs-player-19350][srs-player-19350]
 
