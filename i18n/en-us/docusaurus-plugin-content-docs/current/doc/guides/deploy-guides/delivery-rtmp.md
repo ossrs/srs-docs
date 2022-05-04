@@ -11,9 +11,9 @@ Adobe RTMP stands for Real Time Message Protocol, which is the basic feature of 
 
 For more information about protocol of SRS:
 
-1. About Apple HLS, another variety used protocol, please read [HLS](../hls/delivery-hls.md).
+1. About Apple HLS, another variety used protocol, please read [HLS](http://ossrs.net/srs.release/wiki/v4_CN_DeliveryHLS).
 2. About the different between RTMP and HLS, please read [RTMP or HLS](http://ossrs.net/srs.release/wiki/v4_EN_RTMP.PK.HTTP).
-3. About how to deploy SRS as RTMP server, please read [Usage: RTMP](./sample-rtmp.md).
+3. About how to deploy SRS as RTMP server, please read [Usage: RTMP](http://ossrs.net/srs.release/wiki/v4_CN_SampleRTMP).
 
 ## Use Scenario
 
@@ -67,7 +67,7 @@ Stream: livestream
 
 The RTMP url, see: [RTMP URL&Vhost](http://ossrs.net/srs.release/wiki/v4_EN_RtmpUrlVhost)
 
-The deploy sample, see: [Usage: RTMP](./sample-rtmp.md)
+The deploy sample, see: [Usage: RTMP](http://ossrs.net/srs.release/wiki/v4_CN_SampleRTMP)
 
 The FMLE publish example:
 ![FMLE publish RTMP to SRS](http://ossrs.net/srs.release/wiki/images/FMLE.png)

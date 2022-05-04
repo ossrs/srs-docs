@@ -26,5 +26,13 @@
   "sidebar.docsSidebar.category.Integration": {
     "message": "集成",
     "description": "The label for category Integration in sidebar docsSidebar"
+  },
+  "sidebar.docsSidebar.category.Guides": {
+    "message": "指南",
+    "description": "The label for category Guides in sidebar docsSidebar"
+  },
+  "sidebar.docsSidebar.category.Deploy Guides": {
+    "message": "部署指南",
+    "description": "The label for category Deploy Guides in sidebar docsSidebar"
   }
 }

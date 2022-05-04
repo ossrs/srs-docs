@@ -36,7 +36,7 @@ For detail, read [Build](../../doc/build/install.md)
 
 ## Step 3, config SRS
 
-For detail, read [RTMP](./delivery-rtmp.md)
+For detail, read [RTMP](http://ossrs.net/srs.release/wiki/v4_EN_DeliveryRTMP)
 
 Save bellow as config, or use `conf/rtmp.conf`:
 
@@ -50,7 +50,7 @@ vhost __defaultVhost__ {
 
 ## Step 4, start SRS
 
-For detail, read [RTMP](./delivery-rtmp.md)
+For detail, read [RTMP](http://ossrs.net/srs.release/wiki/v4_EN_DeliveryRTMP)
 
 ```bash
 ./objs/srs -c conf/rtmp.conf
@@ -58,7 +58,7 @@ For detail, read [RTMP](./delivery-rtmp.md)
 
 ## Step 5, start encoder
 
-For detail, read [RTMP](./delivery-rtmp.md)
+For detail, read [RTMP](http://ossrs.net/srs.release/wiki/v4_EN_DeliveryRTMP)
 
 Use FFMPEG to publish stream:
 
@@ -80,7 +80,7 @@ Stream: livestream
 
 ## Step 6, play RTMP
 
-For detail, read [RTMP](./delivery-rtmp.md)
+For detail, read [RTMP](http://ossrs.net/srs.release/wiki/v4_EN_DeliveryRTMP)
 
 RTMP url is: `rtmp://192.168.1.170:1935/live/livestream`
 

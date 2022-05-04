@@ -36,7 +36,7 @@ git pull
 
 ## 第三步，编写SRS源站配置文件，生成HLS切片文件
 
-详细参考[HLS分发](./delivery-hls.md)。
+详细参考[HLS分发](http://ossrs.net/srs.release/wiki/v4_EN_DeliveryHLS)。
 
 将以下内容保存为文件，譬如`conf/hls.origin.conf`，服务器启动时指定该配置文件(srs的conf文件夹有该文件)。
 

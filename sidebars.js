@@ -39,6 +39,34 @@ const sidebars = {
         'doc/main-concepts/rtmp-handshake',
         'doc/main-concepts/rtmp-pk-http',
         'doc/main-concepts/low-latency',
+        'doc/main-concepts/time-jitter',
+        'doc/main-concepts/rtmp-atc',
+        'doc/main-concepts/drm',
+        'doc/main-concepts/edge',
+      ],
+    },
+    {
+      type: 'category',
+      label: 'Guides',
+      link: {
+        type: 'generated-index',
+      },
+      collapsed: true,
+      items: [
+        'doc/guides/log',
+        'doc/guides/log-rotate',
+        'doc/guides/resource',
+        'doc/guides/reload',
+        'doc/guides/reuse-port',
+        {
+          type: 'category',
+          label: 'Deploy Guides',
+          link: {
+            type: 'generated-index',
+          },
+          collapsed: true,
+          items: ['doc/guides/deploy-guides/delivery-rtmp', 'doc/guides/deploy-guides/delivery-hls'],
+        },
       ],
     },
     {
@@ -67,7 +95,7 @@ const sidebars = {
         type: 'generated-index',
       },
       collapsed: true,
-      items: ['samples/rtmp/sample-rtmp', 'samples/rtmp/delivery-rtmp', 'samples/rtmp/sample-rtmp-cluster'],
+      items: ['samples/rtmp/sample-rtmp', 'samples/rtmp/sample-rtmp-cluster'],
     },
     {
       type: 'category',
@@ -76,12 +104,7 @@ const sidebars = {
         type: 'generated-index',
       },
       collapsed: true,
-      items: [
-        'samples/hls/sample-hls',
-        'samples/hls/delivery-hls',
-        'samples/hls/sample-hls-cluster',
-        'samples/hls/sample-transcode-to-hls',
-      ],
+      items: ['samples/hls/sample-hls', 'samples/hls/sample-hls-cluster', 'samples/hls/sample-transcode-to-hls'],
     },
     {
       type: 'category',

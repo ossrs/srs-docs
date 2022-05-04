@@ -13,11 +13,11 @@ RTMP指Adobe的RTMP(Realtime Message Protocol)，广泛应用于低延时直播�
 
 HLS指Apple的HLS(Http Live Streaming)，本身就是Live（直播）的，不过Vod（点播）也能支持。HLS是Apple平台的标准流媒体协议，和RTMP在PC上一样支持得天衣无缝。
 
-HLS和RTMP两种分发方式，就可以支持所有的终端。RTMP参考[RTMP分发](../rtmp/delivery-rtmp.md)。
+HLS和RTMP两种分发方式，就可以支持所有的终端。RTMP参考[RTMP分发](http://ossrs.net/srs.release/wiki/v4_CN_DeliveryRTMP)。
 
 RTMP和HLS的比较参考：[RTMP PK HLS](http://ossrs.net/srs.release/wiki/v4_CN_RTMP.PK.HTTP)
 
-部署分发HLS的实例，参考：[Usage: HLS](./sample-hls.md)
+部署分发HLS的实例，参考：[Usage: HLS](http://ossrs.net/srs.release/wiki/v4_CN_SampleHLS)
 
 部署HLS的分发集群，边缘分发集群，解决海量的观看问题，请参考[Nginx for HLS](http://ossrs.net/srs.release/wiki/v4_CN_NginxForHLS)
 
@@ -306,7 +306,7 @@ HLS配置路径：
 * on_hls: 当切片生成时，回调这个url，使用POST回调。用来和自己的系统集成，譬如实现切片移动等。
 * on_hls_notify: 当切片生成时，回调这个url，使用GET回调。用来和系统集成，可以使用[ts_url]变量，实现预分发(即下载一次ts片)。
 
-部署分发HLS的实例，参考：[Usage: HLS](./sample-hls.md)
+部署分发HLS的实例，参考：[Usage: HLS](http://ossrs.net/srs.release/wiki/v4_CN_SampleHLS)
 
 ## HTTP Callback
 
@@ -334,7 +334,7 @@ SRS支持分发HLS纯音频流，当RTMP流没有视频，且音频为aac（可�
 
 若RTMP流中已经有视频和音频，需要支持纯音频HLS流，可以用转码将视频去掉，参考：[转码: 禁用流](http://ossrs.net/srs.release/wiki/v4_CN_FFMPEG#%E7%A6%81%E7%94%A8)。然后分发音频流。
 
-分发纯音频流不需要特殊配置，和HLS分发一样，参考：[Usage: HLS](./sample-hls.md)
+分发纯音频流不需要特殊配置，和HLS分发一样，参考：[Usage: HLS](http://ossrs.net/srs.release/wiki/v4_CN_SampleHLS)
 
 ## HLS and Forward
 
