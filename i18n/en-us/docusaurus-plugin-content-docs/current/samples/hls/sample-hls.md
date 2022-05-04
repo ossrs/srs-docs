@@ -1,6 +1,6 @@
 ---
-title: HLS Sample
-sidebar_label: HLS Sample
+title: HLS Deploy
+sidebar_label: HLS Deploy
 hide_title: false
 hide_table_of_contents: false
 ---

@@ -1,9 +1,11 @@
 ---
-title: RTMP Cluster Sample
-sidebar_label: RTMP Cluster Sample 
+title: RTMP Cluster Deploy
+sidebar_label: RTMP Cluster Deploy 
 hide_title: false
 hide_table_of_contents: false
 ---
+
+# RTMP Edge Cluster Example
 
 RTMP Edge cluster deploy example
 

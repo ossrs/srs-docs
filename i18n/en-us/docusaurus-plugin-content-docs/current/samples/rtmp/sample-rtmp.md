@@ -1,6 +1,6 @@
 ---
-title: RTMP Sample
-sidebar_label: RTMP Sample 
+title: RTMP Deploy
+sidebar_label: RTMP Deploy 
 hide_title: false
 hide_table_of_contents: false
 ---

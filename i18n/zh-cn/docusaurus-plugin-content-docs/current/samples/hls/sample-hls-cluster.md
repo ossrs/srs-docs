@@ -106,7 +106,7 @@ http {
 
 ```bash
 nginx -c $(pwd)/conf/hls.edge.conf
-./objs/srs -c conf/edge.conf
+./objs/srs -c conf/hls.origin.conf
 ```
 
 > Note: 请参考[NGINX](https://nginx.org/)的说明下载和安装，只要是NGINX就可以，没有特别的要求。

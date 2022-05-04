@@ -5,7 +5,7 @@ hide_title: false
 hide_table_of_contents: false
 ---
 
-# SRS-HTTP-FLV部署实例
+# HTTP-FLV部署实例
 
 SRS支持HTTP FLV直播流分发，详细参考[HTTP FLV](http://ossrs.net/srs.release/wiki/v4_CN_DeliveryHttpStream#about-http-flv)
 

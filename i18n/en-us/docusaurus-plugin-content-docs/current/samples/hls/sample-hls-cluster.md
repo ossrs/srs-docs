@@ -1,6 +1,6 @@
 ---
-title: HLS Cluster Sample
-sidebar_label: HLS Cluster Sample
+title: HLS Cluster Deploy
+sidebar_label: HLS Cluster Deploy
 hide_title: false
 hide_table_of_contents: false
 ---

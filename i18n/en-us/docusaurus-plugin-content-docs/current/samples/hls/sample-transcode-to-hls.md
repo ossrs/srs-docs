@@ -1,6 +1,6 @@
 ---
-title: Transcode HLS Sample
-sidebar_label: Transcode HLS Sample
+title: Transcode HLS Deploy
+sidebar_label: Transcode HLS Deploy
 hide_title: false
 hide_table_of_contents: false
 ---
