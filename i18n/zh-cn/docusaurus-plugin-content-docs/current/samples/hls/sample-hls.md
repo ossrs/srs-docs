@@ -1,10 +1,11 @@
 ---
-title: HLS 部署实例
-sidebar_label: HLS 部署实例
+title: HLS 部署
+sidebar_label: HLS 部署
 hide_title: false
 hide_table_of_contents: false
 ---
 
+# HLS 部署实例
 
 SRS支持HLS的详细步骤。
 

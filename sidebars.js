@@ -37,7 +37,7 @@ const sidebars = {
         type: 'generated-index',
       },
       collapsed: false,
-      items: ['samples/rtmp/sample-rtmp', 'samples/rtmp/delivery-rtmp'],
+      items: ['samples/rtmp/sample-rtmp', 'samples/rtmp/delivery-rtmp', 'samples/rtmp/sample-rtmp-cluster'],
     },
     {
       type: 'category',
@@ -46,7 +46,21 @@ const sidebars = {
         type: 'generated-index',
       },
       collapsed: false,
-      items: ['samples/hls/sample-hls', 'samples/hls/delivery-hls'],
+      items: [
+        'samples/hls/sample-hls',
+        'samples/hls/delivery-hls',
+        'samples/hls/sample-hls-cluster',
+        'samples/hls/sample-transcode-to-hls',
+      ],
+    },
+    {
+      type: 'category',
+      label: 'FLV',
+      link: {
+        type: 'generated-index',
+      },
+      collapsed: false,
+      items: ['samples/flv/sample-http-flv', 'samples/flv/sample-http-flv-cluster'],
     },
   ],
   communitySidebar: ['community/Support', 'community/Contributing'],
