@@ -43,6 +43,19 @@ const sidebars = {
         'doc/main-concepts/rtmp-atc',
         'doc/main-concepts/drm',
         'doc/main-concepts/edge',
+        {
+          type: 'category',
+          label: 'SRT',
+          link: {
+            type: 'generated-index',
+          },
+          collapsed: true,
+          items: [
+            'doc/main-concepts/srt/srt-codec',
+            'doc/main-concepts/srt/srt-params',
+            'doc/main-concepts/srt/srt-url',
+          ],
+        },
       ],
     },
     {
@@ -65,7 +78,12 @@ const sidebars = {
             type: 'generated-index',
           },
           collapsed: true,
-          items: ['doc/guides/deploy-guides/delivery-rtmp', 'doc/guides/deploy-guides/delivery-hls'],
+          items: [
+            'doc/guides/deploy-guides/delivery-rtmp',
+            'doc/guides/deploy-guides/delivery-hls',
+            'doc/guides/deploy-guides/delivery-http-flv',
+            'doc/guides/deploy-guides/delivery-hds',
+          ],
         },
       ],
     },
