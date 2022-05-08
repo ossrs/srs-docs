@@ -5,7 +5,7 @@ hide_title: false
 hide_table_of_contents: false
 ---
 
-# Delivery HTTP Flv Stream
+# HTTP-FLV Delivery
 
 ## HTTP FLV Live Stream
 

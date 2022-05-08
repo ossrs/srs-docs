@@ -5,7 +5,7 @@ hide_title: false
 hide_table_of_contents: false
 ---
 
-# DeliveryHDS
+# HDS 分发
 
 HDS指Adobe的Http Dynamic Stream，和Apple的[HLS](http://ossrs.net/srs.release/wiki/v4_CN_DeliveryHLS)类似。
 

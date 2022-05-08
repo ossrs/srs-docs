@@ -5,7 +5,7 @@ hide_title: false
 hide_table_of_contents: false
 ---
 
-# DeliveryHDS
+# HDS Delivery
 
 HDS is the Http Dynamic Stream of Adobe，similar to Apple [HLS](http://ossrs.net/srs.release/wiki/v4_EN_DeliveryHLS).
 
