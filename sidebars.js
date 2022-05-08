@@ -71,6 +71,10 @@ const sidebars = {
         'doc/guides/resource',
         'doc/guides/reload',
         'doc/guides/reuse-port',
+        'doc/guides/ingest',
+        'doc/guides/forward',
+        'doc/guides/snapshot',
+        'doc/guides/ffmpeg',
         {
           type: 'category',
           label: 'Deploy Guides',
@@ -133,6 +137,11 @@ const sidebars = {
       collapsed: true,
       items: ['samples/flv/sample-http-flv', 'samples/flv/sample-http-flv-cluster'],
     },
+    'samples/sample-dash',
+    'samples/sample-srt',
+    'samples/sample-ingest',
+    'samples/sample-forward',
+    'samples/sample-ffmpeg',
   ],
   communitySidebar: ['community/Support', 'community/Contributing'],
 
