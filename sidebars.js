@@ -44,6 +44,7 @@ const sidebars = {
         'doc/main-concepts/flv-vod-stream',
         'doc/main-concepts/drm',
         'doc/main-concepts/edge',
+        'doc/main-concepts/hevc',
         'doc/main-concepts/webrtc',
         {
           type: 'category',
