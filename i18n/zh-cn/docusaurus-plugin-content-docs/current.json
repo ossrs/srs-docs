@@ -34,5 +34,13 @@
   "sidebar.docsSidebar.category.Deploy Guides": {
     "message": "部署指南",
     "description": "The label for category Deploy Guides in sidebar docsSidebar"
+  },
+  "sidebar.docsSidebar.category.SRT": {
+    "message": "SRT",
+    "description": "The label for category SRT in sidebar docsSidebar"
+  },
+  "sidebar.docsSidebar.category.Advanced Guides": {
+    "message": "进阶指南",
+    "description": "The label for category Advanced Guides in sidebar docsSidebar"
   }
 }
