@@ -16,6 +16,35 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v2
 
+      # Generate variables like:
+      #   SRS_DROPLET_EIP=1.2.3.4
+      - name: Build droplet variables
+        run: |
+          SRS_DROPLET_EIP=$(dig +short lh.ossrs.net)
+          echo "SRS_DROPLET_EIP=$SRS_DROPLET_EIP" >> $GITHUB_ENV
+
+      # Run scp first, because ufw limit the rate.
+      - name: Prepare the droplet
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ env.SRS_DROPLET_EIP }}
+          username: root
+          key: ${{ secrets.DIGITALOCEAN_SSHKEY }}
+          port: 22
+          script: |
+            mkdir -p /root/search
+
+      # Run scp first, because ufw limit the rate.
+      - name: Copy the files to droplet
+        uses: appleboy/scp-action@master
+        with:
+          host: ${{ env.SRS_DROPLET_EIP }}
+          username: root
+          key: ${{ secrets.DIGITALOCEAN_SSHKEY }}
+          source: "search/scraper.json"
+          target: "/root/search/"
+          strip_components: 1
+
       ################################################################
       # Build
       # The github.ref is, for example, refs/tags/v1.0.52
@@ -66,31 +95,68 @@ jobs:
           docker push --all-tags registry.cn-hangzhou.aliyuncs.com/ossrs/docs
 
       ################################################################
-      # K8S
-      - name: Setup KUBCONFIG for Aliyun ACK
-        run: |-
-          KUBECONFIG=$RUNNER_TEMP/kubeconfig_$(date +%s)
-          echo "${{ secrets.KUBCONFIG }}" > $KUBECONFIG
-          echo "KUBECONFIG=$KUBECONFIG" >> $GITHUB_ENV
-
-      # Update config from search/scraper.json
-      - name: Update config from search/scraper.json
-        run: |-
-          cp search/scraper.json srs-docs-search-config.json
-          sed -i 's|.*url.*host.docker.internal:3000.*|      "url": "http://docs-tcp-service:80/lts/",|g' srs-docs-search-config.json
-          sed -i 's|host.docker.internal|docs-tcp-service|g' srs-docs-search-config.json
-          kubectl create configmap srs-docs --from-file srs-docs-search-config.json -o yaml --dry-run=client | kubectl apply -f -
-          kubectl describe configmap/srs-docs
-
-      # K8S for SRS web
-      - name: Release SRS web to Aliyun ACK
-        run: |-
-          kubectl set image deploy/docs-deploy docs=registry.cn-hangzhou.aliyuncs.com/ossrs/docs:cn-$SRS_TAG
-          kubectl describe deploy/docs-deploy
-
-      # Restart the typesense and scraper
-      - name: Restart the typesense and scraper
-        run: |-
-          echo "Wait for srs-docs to restart" && sleep 30
-          kubectl delete pods -l app=typesense --grace-period=0 --force
-          kubectl get pods -l app=typesense
+      # Execute command in a ssh, because ufw limit the rate.
+      - name: Restart the containers
+        env:
+          SEARCH_APIKEY: ${{ secrets.SEARCH_APIKEY }}
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ env.SRS_DROPLET_EIP }}
+          username: root
+          key: ${{ secrets.DIGITALOCEAN_SSHKEY }}
+          port: 22
+          envs: SRS_TAG,SRS_MAJOR,SEARCH_APIKEY
+          timeout: 60s
+          command_timeout: 30m
+          script: |
+            #
+            export SRS_DROPLET_PIP=$(ifconfig eth0 |grep 'inet ' |awk '{print $2}')
+            echo "SRS_DROPLET_PIP=$SRS_DROPLET_PIP"
+            #
+            # Restart HTTPX
+            for ((i=0; i < 5; i++)); do
+              if [[ $(docker ps -f name=docs-httpx |wc -l) -eq 1 ]]; then echo "Killed"; break; fi;
+              docker rm -f docs-httpx; sleep 0.3;
+            done
+            docker run -d -it --restart always \
+              --name docs-httpx -p 20080:80 registry.cn-hangzhou.aliyuncs.com/ossrs/httpx:v1.0.19 \
+              ./bin/httpx-static -http 80 \
+              -proxy http://$SRS_DROPLET_PIP:8107/lts/ \
+              -proxy http://$SRS_DROPLET_PIP:8108/multi_search
+            #
+            # Restart SRS docs
+            for ((i=0; i < 5; i++)); do
+              if [[ $(docker ps -f name=docs-docs |wc -l) -eq 1 ]]; then echo "Killed"; break; fi;
+              docker rm -f docs-docs; sleep 0.3;
+            done
+            docker pull registry.cn-hangzhou.aliyuncs.com/ossrs/docs:cn-$SRS_MAJOR
+            docker run -d -it --restart always --privileged --name docs-docs -p 8107:80 registry.cn-hangzhou.aliyuncs.com/ossrs/docs:cn-$SRS_MAJOR
+            #
+            # Use 8107/tcp as port.
+            sed -i 's/host.docker.internal:3000/host.docker.internal:8107/g' /root/search/scraper.json
+            #
+            # Restart typesense
+            for ((i=0; i < 5; i++)); do
+              if [[ $(docker ps -f name=docs-typesense |wc -l) -eq 1 ]]; then echo "Killed"; break; fi;
+              docker rm -f docs-typesense; sleep 0.3;
+            done
+            docker run -d -it --restart always --privileged --name docs-typesense -v /root/search/data:/data -p $SRS_DROPLET_PIP:8108:8108 \
+              registry.cn-hangzhou.aliyuncs.com/ossrs/typesense:0.22.1 --enable-cors --data-dir /data --api-key=$SEARCH_APIKEY
+            #
+            # Restart search scraper
+            for ((i=0; i < 5; i++)); do
+              if [[ $(docker ps -f name=docs-search-scraper |wc -l) -eq 1 ]]; then echo "Killed"; break; fi;
+              docker rm -f docs-search-scraper; sleep 0.3;
+            done
+            # Replace the BASE_URL
+            sed -i 's|.*url.*host.docker.internal:8107.*|      "url": "http://host.docker.internal:8107/",|g' /root/search/scraper.json
+            docker run --rm --privileged --name docs-search-scraper --add-host host.docker.internal:$SRS_DROPLET_PIP -e UPDATE_NB_HITS=0 \
+              -e TYPESENSE_HOST=host.docker.internal -e TYPESENSE_API_KEY=$SEARCH_APIKEY -e TYPESENSE_PORT=8108 \
+              -e TYPESENSE_PROTOCOL=http -v /root/search/scraper.json:/config.json -e CONFIG=/config.json \
+              registry.cn-hangzhou.aliyuncs.com/ossrs/docsearch-scraper
+            #
+            # Cleanup old docker images.
+            for image in $(docker images |grep '<none>' |awk '{print $3}'); do
+              docker rmi -f $image
+              echo "Remove image $image, r0=$?"
+            done

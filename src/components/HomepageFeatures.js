@@ -64,7 +64,7 @@ export default function HomepageFeatures() {
           </Translate>
         </p>
         <p>
-          <img src="https://ossrs.net/wiki/images/SRS-SingleNode-4.0-hd.png" />
+          <img src="//ossrs.net/wiki/images/SRS-SingleNode-4.0-hd.png" />
         </p>
         <p>
           <Translate
@@ -84,7 +84,7 @@ export default function HomepageFeatures() {
           </Translate>
         </p>
         <p>
-          <img src="https://ossrs.net/wiki/images/SRS-Overview-4.0.png" />
+          <img src="//ossrs.net/wiki/images/SRS-Overview-4.0.png" />
         </p>
 
         <p>
