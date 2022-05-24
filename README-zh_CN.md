@@ -206,3 +206,71 @@ yarn cross-env REGION='zh-cn' docusaurus build
   yarn scraper
 ```
 scraper文档处理完成后，就可以在页面中进行搜索了。
+
+## 如何在docs下新增文档
+
+### 在已有目录下新增一个文档
+
+> 比如在 <strong>教程</strong> 中增加一个(example.md)的文档
+
+1. 增加英文文档
+  
+```
+cd i18n/en-us/docusaurus-plugin-content-docs/current/tutorial/ && touch example.md
+```
+
+2. 增加中文文档
+
+```
+cd i18n/zh-cn/docusaurus-plugin-content-docs/current/tutorial/ && touch example.md
+```
+
+3. 侧边栏配置， 参考官方文档：https://docusaurus.io/zh-CN/docs/next/sidebar/items
+
+```
+  在sidebar.json中的tutorialSidebar配置项中增加['tutorial/example'],注意不要带.md后缀
+```
+  
+  配置完成后，就可以在教程目录中看到新增的文档了
+   
+
+### 新增一个目录以及文档
+
+> 比如在 <strong>教程</strong> 中增加一个(mydir/new-example.md)的文档
+
+1. 增加英文文档
+  
+```
+cd i18n/en-us/docusaurus-plugin-content-docs/current/tutorial/ && mkdir -p mydir && touch new-example.md
+```
+
+1. 增加中文文档
+
+```
+cd i18n/zh-cn/docusaurus-plugin-content-docs/current/tutorial/ && mkdir -p mydir && touch new-example.md
+```
+
+3. 侧边栏配置， 参考文官方文档：https://docusaurus.io/zh-CN/docs/next/sidebar/items
+
+
+  在sidebar.json中的tutorialSidebar配置项中增加category分类侧边栏，并在items中增加子文件路径
+  ```
+  {
+    type: 'category',
+    label: 'NewDir',
+    link: {
+      type: 'generated-index',
+    },
+    collapsed: true,
+    items: ['tutorial/mydir/new-example'],
+  }
+  ```
+
+  配置完成后，就可以在教程的目录中看到新增的目录和文档了
+
+4. 修改侧边栏目录的中文名称
+
+  ```
+  执行 yarn docusaurus write-translations -- --locale zh-cn
+  在 i18n/zh-cn/docusaurus-plugin-content-docs/current.json，找到新增目录的英文名称'NewDir' 将其修改为对应的中文名称即可。
+  ```
