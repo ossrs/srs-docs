@@ -205,3 +205,70 @@ Use configs in `'/config/zh-cn.js'`.
   yarn scraper
 ```
 when scraper finished，you can do search in the html.
+
+## how to add a new document
+
+### add a new document to an existing directory
+
+> for example, add a new document (example.md) in <strong>tutorial</strong> 
+
+1. add document in i18n/en-us/
+  
+```
+cd i18n/en-us/docusaurus-plugin-content-docs/current/tutorial/ && touch example.md
+```
+
+2. add document in i18n/zh-cn/
+
+```
+cd i18n/zh-cn/docusaurus-plugin-content-docs/current/tutorial/ && touch example.md
+```
+
+3. sidebar config, please refer：https://docusaurus.io/zh-CN/docs/next/sidebar/items
+
+```
+  Add ['tutorial/example'] to the tutorialSidebar configuration item in sidebar.json, please note that not with the .md suffix
+```
+  
+  Once the configuration is complete, you can see the new documentation in the tutorial directory
+   
+
+### add a new directory and documentation
+
+> for example, add a new document (mydir/new-example.md) in <strong>tutorial</strong>
+
+1. add document in i18n/en-us/
+  
+```
+cd i18n/en-us/docusaurus-plugin-content-docs/current/tutorial/ && mkdir -p mydir && touch new-example.md
+```
+
+1. add document in i18n/zh-cn/
+
+```
+cd i18n/zh-cn/docusaurus-plugin-content-docs/current/tutorial/ && mkdir -p mydir && touch new-example.md
+```
+
+3. sidebar config, please refer：https://docusaurus.io/zh-CN/docs/next/sidebar/items
+
+  add a category sidebar config in tutorialSidebar of sidebar.json, and config items of the subfile
+  ```
+  {
+    type: 'category',
+    label: 'NewDir',
+    link: {
+      type: 'generated-index',
+    },
+    collapsed: true,
+    items: ['tutorial/mydir/new-example'],
+  }
+  ```
+
+  Once the configuration is complete, you can see the new documentation in the tutorial directory
+
+4. modify the chinese name of new category
+
+  ```
+  run: yarn docusaurus write-translations -- --locale zh-cn
+  when finish, modify the i18n/zh-cn/docusaurus-plugin-content-docs/current.json file's 'NewDir' to your expected chinese name.
+  ```
