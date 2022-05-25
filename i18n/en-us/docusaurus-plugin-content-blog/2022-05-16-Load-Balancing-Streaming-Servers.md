@@ -12,6 +12,8 @@ custom_edit_url: null
 
 When our business workloads exceed streaming-server capacity, we have to balance those workloads. Normally, the problem can be solved by clustering. Clustering is not the only way to solve this problem, though. Sometimes the concept of Load Balancing can be linked to many emerging terms such as Service Discovery, but a LoadBalancer in cloud service is an indispensable requirement for solving the problem. In short, this problem is very complicated, and many people ask me about this frequently. Here I’m going to systematically discuss this issue.
 
+<!--truncate-->
+
 If you already have answers to the questions below and understand mechanisms behind, you may skip this article:
 
 * Does SRS need NGINX, F5 or HAProxy as stream proxy? No, not at all. Who think the above three are needed are misunderstanding how streaming-server balances its loads. However, for HTTPS, we recommend using those proxies. And to reduce IP addresses for external service, we also recommend cloud LoadBalancer.
