@@ -121,46 +121,58 @@ jobs:
             ufw allow 8108
             #
             # Restart HTTPX
-            for ((i=0; i < 5; i++)); do
-              if [[ $(docker ps -f name=docs-httpx |wc -l) -eq 1 ]]; then echo "Killed"; break; fi;
-              docker rm -f docs-httpx; sleep 0.3;
-            done
-            docker run -d -it --restart always \
-              --name docs-httpx -p 20080:80 ossrs/httpx:v1.0.19 \
-              ./bin/httpx-static -http 80 \
-              -proxy http://$SRS_DROPLET_PIP:8107/lts/ \
-              -proxy http://$SRS_DROPLET_PIP:8108/multi_search
+            cat << END > /root/restart_docs-httpx.sh
+              for ((i=0; i < 5; i++)); do
+                if [[ $(docker ps -f name=docs-httpx |wc -l) -eq 1 ]]; then echo "Killed"; break; fi;
+                docker rm -f docs-httpx; sleep 0.3;
+              done
+              docker run -d -it --restart always \
+                --name docs-httpx -p 20080:80 ossrs/httpx:v1.0.19 \
+                ./bin/httpx-static -http 80 \
+                -proxy http://$SRS_DROPLET_PIP:8107/lts/ \
+                -proxy http://$SRS_DROPLET_PIP:8108/multi_search
+            END
+            bash /root/restart_docs-httpx.sh
             #
             # Restart SRS docs
-            for ((i=0; i < 5; i++)); do
-              if [[ $(docker ps -f name=docs-docs |wc -l) -eq 1 ]]; then echo "Killed"; break; fi;
-              docker rm -f docs-docs; sleep 0.3;
-            done
-            docker pull ossrs/docs:en-$SRS_MAJOR
-            docker run -d -it --restart always --privileged --name docs-docs -p 8107:80 ossrs/docs:en-$SRS_MAJOR
+            cat << END > /root/restart_docs-docs.sh
+              for ((i=0; i < 5; i++)); do
+                if [[ $(docker ps -f name=docs-docs |wc -l) -eq 1 ]]; then echo "Killed"; break; fi;
+                docker rm -f docs-docs; sleep 0.3;
+              done
+              docker pull ossrs/docs:en-$SRS_MAJOR
+              docker run -d -it --restart always --privileged --name docs-docs -p 8107:80 ossrs/docs:en-$SRS_MAJOR
+            END
+            bash /root/restart_docs-docs.sh
             #
             # Use 8107/tcp as port.
             sed -i 's/host.docker.internal:3000/host.docker.internal:8107/g' /root/search/scraper.json
             #
             # Restart typesense
-            for ((i=0; i < 5; i++)); do
-              if [[ $(docker ps -f name=docs-typesense |wc -l) -eq 1 ]]; then echo "Killed"; break; fi;
-              docker rm -f docs-typesense; sleep 0.3;
-            done
-            docker run -d -it --restart always --privileged --name docs-typesense -v /root/search/data:/data -p $SRS_DROPLET_PIP:8108:8108 \
-              typesense/typesense:0.22.1 --enable-cors --data-dir /data --api-key=$SEARCH_APIKEY
+            cat << END > /root/restart_docs-typesense.sh
+              for ((i=0; i < 5; i++)); do
+                if [[ $(docker ps -f name=docs-typesense |wc -l) -eq 1 ]]; then echo "Killed"; break; fi;
+                docker rm -f docs-typesense; sleep 0.3;
+              done
+              docker run -d -it --restart always --privileged --name docs-typesense -v /root/search/data:/data -p $SRS_DROPLET_PIP:8108:8108 \
+                typesense/typesense:0.22.1 --enable-cors --data-dir /data --api-key=$SEARCH_APIKEY
+            END
+            bash /root/restart_docs-typesense.sh
             #
             # Restart search scraper
-            for ((i=0; i < 5; i++)); do
-              if [[ $(docker ps -f name=docs-search-scraper |wc -l) -eq 1 ]]; then echo "Killed"; break; fi;
-              docker rm -f docs-search-scraper; sleep 0.3;
-            done
-            # Replace the BASE_URL
-            sed -i 's|.*url.*host.docker.internal:8107.*|      "url": "http://host.docker.internal:8107/",|g' /root/search/scraper.json
-            docker run --rm --privileged --name docs-search-scraper --add-host host.docker.internal:$SRS_DROPLET_PIP -e UPDATE_NB_HITS=0 \
-              -e TYPESENSE_HOST=host.docker.internal -e TYPESENSE_API_KEY=$SEARCH_APIKEY -e TYPESENSE_PORT=8108 \
-              -e TYPESENSE_PROTOCOL=http -v /root/search/scraper.json:/config.json -e CONFIG=/config.json \
-              typesense/docsearch-scraper
+            cat << END > /root/restart_docs-search-scraper.sh
+              for ((i=0; i < 5; i++)); do
+                if [[ $(docker ps -f name=docs-search-scraper |wc -l) -eq 1 ]]; then echo "Killed"; break; fi;
+                docker rm -f docs-search-scraper; sleep 0.3;
+              done
+              # Replace the BASE_URL
+              sed -i 's|.*url.*host.docker.internal:8107.*|      "url": "http://host.docker.internal:8107/",|g' /root/search/scraper.json
+              docker run --rm --privileged --name docs-search-scraper --add-host host.docker.internal:$SRS_DROPLET_PIP -e UPDATE_NB_HITS=0 \
+                -e TYPESENSE_HOST=host.docker.internal -e TYPESENSE_API_KEY=$SEARCH_APIKEY -e TYPESENSE_PORT=8108 \
+                -e TYPESENSE_PROTOCOL=http -v /root/search/scraper.json:/config.json -e CONFIG=/config.json \
+                typesense/docsearch-scraper
+            END
+            bash /root/restart_docs-search-scraper.sh
             #
             # Cleanup old docker images.
             for image in $(docker images |grep '<none>' |awk '{print $3}'); do
