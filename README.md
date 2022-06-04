@@ -272,3 +272,37 @@ cd i18n/zh-cn/docusaurus-plugin-content-docs/current/tutorial/ && mkdir -p mydir
   run: yarn docusaurus write-translations -- --locale zh-cn
   when finish, modify the i18n/zh-cn/docusaurus-plugin-content-docs/current.json file's 'NewDir' to your expected chinese name.
   ```
+
+## Versioning
+
+See [versioning guide here](https://docusaurus.io/docs/versioning).
+
+1. First, make sure the current docs version (the ./i18n/en-us/docusaurus-plugin-content-docs/current directory) is ready to be frozen.
+2. Enter a new version number.
+
+```
+yarn run docusaurus docs:version 4.2.0
+```
+
+3. change the current version label in `docusaurus.config.js` file
+```diff
+        docs: {
+          path: 'i18n/en-us/docusaurus-plugin-content-docs/current',
+          sidebarPath: require.resolve('./sidebars.js'),
+          // Please change this to your repo.
+          editUrl: ({ versionDocsDirPath, docPath, locale, version }) => {
+            return 'en-us' == locale
+              ? `https://github.com/ossrs/srs-docs/edit/main/${versionDocsDirPath}/${docPath}`
+              : `https://github.com/ossrs/srs-docs/edit/main/i18n/${locale}/docusaurus-plugin-content-docs/${version}/${docPath}`;
+          },
+          // lastVersion: 'current',
+          lastVersion: versions[0],
+          versions: {
+            current: {
++              label: `4.3.0 🚧`,
+-              label: `4.2.0 🚧`,
+            },
+          },
+          remarkPlugins: [require('mdx-mermaid')],
+        },
+```
