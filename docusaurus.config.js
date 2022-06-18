@@ -177,15 +177,15 @@ const config = {
             items: [
               {
                 label: 'Tutorial',
-                to: '/docs/tutorial/learning-path',
+                to: '/docs/v5/tutorial/learning-path',
               },
               {
                 label: 'Docs',
-                to: '/docs/doc/git',
+                to: '/docs/v5/doc/git',
               },
               {
                 label: 'Samples',
-                to: '/docs/samples/sample',
+                to: '/docs/v5/samples/sample',
               },
             ],
           },

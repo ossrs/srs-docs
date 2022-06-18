@@ -22,7 +22,7 @@ function HomepageHeader() {
           </Translate>
         </p>
         <div className={styles.buttons}>
-          <Link className="button button--secondary button--lg" to="/docs/tutorial/learning-path">
+          <Link className="button button--secondary button--lg" to="/docs/v5/tutorial/learning-path">
             {siteConfig.title}&nbsp;
             {translate({ message: 'Tutorial', id: 'homepage.tutorial', description: 'Tutorial' })}
           </Link>
