@@ -47,6 +47,11 @@ const config = {
           versions: {
             current: {
               label: `5.0 🚧`,
+              path: 'v5',
+            },
+            '4.0': {
+              label: '4.0',
+              path: 'v4',
             },
           },
           remarkPlugins: [require('mdx-mermaid')],
