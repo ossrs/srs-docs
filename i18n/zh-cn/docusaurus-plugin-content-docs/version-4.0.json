@@ -1,0 +1,42 @@
+{
+  "sidebar.docsSidebar.category.Build": {
+    "message": "编译",
+    "description": "The label for category Build in sidebar docsSidebar"
+  },
+  "sidebar.sampleSidebar.category.RTMP": {
+    "message": "RTMP",
+    "description": "The label for category RTMP in sidebar sampleSidebar"
+  },
+  "sidebar.sampleSidebar.category.HLS": {
+    "message": "HLS",
+    "description": "The label for category HLS in sidebar sampleSidebar"
+  },
+  "sidebar.sampleSidebar.category.FLV": {
+    "message": "FLV",
+    "description": "The label for category FLV in sidebar sampleSidebar"
+  },
+  "sidebar.docsSidebar.category.Main Concepts": {
+    "message": "核心概念",
+    "description": "The label for category Main Concepts in sidebar docsSidebar"
+  },
+  "sidebar.docsSidebar.category.Integration": {
+    "message": "集成",
+    "description": "The label for category Integration in sidebar docsSidebar"
+  },
+  "sidebar.docsSidebar.category.Guides": {
+    "message": "指南",
+    "description": "The label for category Guides in sidebar docsSidebar"
+  },
+  "sidebar.docsSidebar.category.Deploy Guides": {
+    "message": "部署指南",
+    "description": "The label for category Deploy Guides in sidebar docsSidebar"
+  },
+  "sidebar.docsSidebar.category.SRT": {
+    "message": "SRT",
+    "description": "The label for category SRT in sidebar docsSidebar"
+  },
+  "sidebar.docsSidebar.category.Advanced Guides": {
+    "message": "进阶指南",
+    "description": "The label for category Advanced Guides in sidebar docsSidebar"
+  }
+}
