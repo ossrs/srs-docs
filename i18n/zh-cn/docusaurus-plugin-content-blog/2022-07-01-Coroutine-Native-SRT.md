@@ -14,7 +14,7 @@ custom_edit_url: null
 
 SRS 5.0从2022年初启动以来，经过摸索和探讨，确定了以媒体网关作为核心方向，详细请看[SRS 5.0核心问题定义和解法](https://mp.weixin.qq.com/s/Rq3NuZKdMr2_Dmiki72RFw)。
 
-SRT作为主播/广播推流领域广泛采用的协议，浏览器却只支持WebRTC推流，这恰恰是媒体网关的核心价值，可以通过媒体网关将SRT转成RTMP/HLS/WebRTC后，我们可以实现广播领域真正的Web超低延迟方案，我们还可以把SRT强大的跨国传输能力用起来。
+SRT作为主播/广播推流领域广泛采用的协议，而Web浏览器却不支持播放SRT流，这恰恰是媒体网关的核心价值，可以将SRT转成RTMP/HLS/WebRTC后，实现广播领域的Web超低延迟方案，还可以把SRT强大的跨国传输能力用起来。
 
 而这些美好愿景的基础，就是这次要介绍的：改造SRT支持协程化(Coroutine Native SRT)。这是SRS 5.0至关重要的一步，也是具备深远影响的一步，详细代码请参考[PR#3010](https://github.com/ossrs/srs/pull/3010)。
 
