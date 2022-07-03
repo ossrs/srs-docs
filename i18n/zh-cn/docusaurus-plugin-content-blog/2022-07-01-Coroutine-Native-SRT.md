@@ -8,17 +8,15 @@ custom_edit_url: null
 
 # Coroutine Native SRT
 
-> Written by [Winlin](https://github.com/winlinvip), [John](https://github.com/xiaozhihong)
+> Written by [John](https://github.com/xiaozhihong), [Winlin](https://github.com/winlinvip)
 
-协程是现代服务器的核心技术，能极大简化逻辑和提升维护性；SRT是逐渐在取代RTMP推流的新协议，但它有自己的IO框架；只有实现了SRT的协程化，才能成为SRS的核心的成熟的协议，这是SRS5迈出的第一步，也是至关重要的一步。
-
-<!--truncate-->
+协程是现代服务器的核心技术，能极大简化逻辑和提升维护性；SRT是逐渐在取代RTMP推流的新协议，但它有自己的IO框架；只有实现了SRT的协程化，才能成为SRS的核心的成熟的协议，这是SRS 5.0迈出的第一步，也是至关重要的一步。
 
 SRS 5.0从2022年初启动以来，经过摸索和探讨，确定了以媒体网关作为核心方向，详细请看[SRS 5.0核心问题定义和解法](https://mp.weixin.qq.com/s/Rq3NuZKdMr2_Dmiki72RFw)。
 
-其中，SRT作为主播推流领域广泛采用的协议，也是浏览器肯定不会支持的协议，这恰恰是媒体网关的核心能力，想象下如果可以通过媒体网关将SRT转成RTMP/HLS/WebRTC后，我们可以实现广播领域真正的Web超低延迟方案，我们还可以把SRT强大的跨国传输能力用起来。
+SRT作为主播/广播推流领域广泛采用的协议，浏览器却只支持WebRTC推流，这恰恰是媒体网关的核心价值，可以通过媒体网关将SRT转成RTMP/HLS/WebRTC后，我们可以实现广播领域真正的Web超低延迟方案，我们还可以把SRT强大的跨国传输能力用起来。
 
-而这些美好愿景的基础，就是这次要介绍的：改造SRT为协程化(Coroutine Native SRT)。这是SRS 5.0至关重要的一步，也是具备深远影响的一步，详细代码请参考[PR#3010](https://github.com/ossrs/srs/pull/3010)。
+而这些美好愿景的基础，就是这次要介绍的：改造SRT支持协程化(Coroutine Native SRT)。这是SRS 5.0至关重要的一步，也是具备深远影响的一步，详细代码请参考[PR#3010](https://github.com/ossrs/srs/pull/3010)。
 
 我们先了解下详细的背景介绍。
 
@@ -65,11 +63,11 @@ if (n == -1) {
 printf("Got %d size of data %p", n, buf);
 ```
 
-> Note: 为了方便表达关键逻辑，我们使用示意代码，线上代码可以参考epoll的示例代码。
+> Note: 为了方便表达关键逻辑，我们使用示意代码，具体代码可以参考epoll的示例代码。
 
 一般read是业务逻辑，读出来的数据也是业务数据，但是这里却需要在EAGAIN时调用epoll这个底层框架处理fd。这就是把底层逻辑和业务逻辑混合在一起，导致难以维护。
 
-> Note: 尽管NGINX包装了一层框架，但是本质上并不能解决这个异步回调问题，当fd没有准备好必须返回当前函数，所以导致很多状态需要保障和恢复，在复杂的逻辑中状态机也变得非常复杂。
+> Note: 尽管NGINX包装了一层框架，但是本质上并不能解决这个异步回调问题，当fd没有准备好必须返回当前函数，所以导致很多状态需要保存和恢复，在复杂的逻辑中状态机也变得非常复杂。
 
 下面我们看协程化的逻辑会是怎样的，同样以上面代码为例：
 
@@ -264,8 +262,11 @@ void srt_handle::handle_push_data(SRT_SOCKSTATUS status, SRTSOCKET conn_fd) {
     return;
   }
 
-  ret = srt_conn_ptr->read(data, DEF_DATA_SIZE);
+  ret = srt_conn_ptr->read_async(data, DEF_DATA_SIZE);
   if (ret <= 0) { // Error.
+    if (srt_getlasterror(NULL) != SRT_EASYNCRCV) {
+      return;
+    }
     close_push_conn(conn_fd);
     return;
   }
@@ -293,7 +294,7 @@ srs_error_t SrsMpegtsSrtConn::do_publishing() {
 }
 ```
 
-> Note: 这里Conn的生命周期非常明确，它的状态就是直接在这里返回错误，对于这个会话来说，这就是它的主循环，不会因为`read`而导致进入SRT的epoll大循环，我们在维护时也不用关注这个异步事件触发和处理。
+> Note: 这里`srt_conn`的生命周期非常明确，它的状态就是直接在这里返回错误，对于这个会话来说，这就是它的主循环，不会因为`read`而导致进入SRT的epoll大循环，我们在维护时也不用关注这个异步事件触发和处理。
 
 再次强调一次，维护代码时，我们需要了解的信息量是非常不同的。在基于异步回调的逻辑中，我们在回调函数中，是需要关注目前对象有哪些状态，修改了哪些状态，其他异步事件又有哪些影响。而基于协程的逻辑中，没有这些状态，协程的创建和执行，就是线性的，或者说这些状态就是在协程的函数调用中。
 
