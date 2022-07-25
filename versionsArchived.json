@@ -1,21 +1,4 @@
 {
   "docs": [],
-  "wiki": [
-    {
-      "label": "4.0 wiki",
-      "href": "https://github.com/ossrs/srs/wiki/v4_EN_Home"
-    },
-    {
-      "label": "3.0 wiki",
-      "href": "https://github.com/ossrs/srs/wiki/v3_EN_Home"
-    },
-    {
-      "label": "2.0 wiki",
-      "href": "https://github.com/ossrs/srs/wiki/v2_EN_Home"
-    },
-    {
-      "label": "1.0 wiki",
-      "href": "https://github.com/ossrs/srs/wiki/v1_EN_Home"
-    }
-  ]
+  "wiki": []
 }

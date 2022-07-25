@@ -196,10 +196,27 @@
     "description": "The title of the tag list page"
   },
   "homepage.subTitle": {
-    "message": "SRS is a simple, high efficiency and realtime video server, supports RTMP/WebRTC/HLS/HTTP-FLV/SRT."
+    "message": "SRS(Simple Realtime Server) is a simple, high efficiency and realtime video server, supports RTMP/WebRTC/HLS/HTTP-FLV/SRT protocols."
   },
   "homepage.tutorial": {
-    "message": "Tutorial",
-    "description": "Tutorial"
+    "message": "Tutorial"
+  },
+  "homepage.easyToUseName": {
+    "message": "Easy to Use"
+  },
+  "homepage.easyToUse": {
+    "message": "Based on coroutine technology without async callback problem, SRS is also cloud native(docker image, k8s deploy, telemetry, etc)."
+  },
+  "homepage.focusOnName": {
+    "message": "Focus on Realtime Streaming"
+  },
+  "homepage.focusOn": {
+    "message": "SRS focuses on realtime streaming gateway, support streaming protocols, for example, RTMP, HLS, WebRTC, HTTP-FLV and SRT."
+  },
+  "homepage.highEfficiencyName": {
+    "message": "High Efficiency"
+  },
+  "homepage.highEfficiency": {
+    "message": "SRS is a high performance media streaming server, support best conceptual integrity, power your business wth video streaming efficiently."
   }
 }

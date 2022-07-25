@@ -1,79 +1,49 @@
-# srs-docs
-The documents for SRS
+# SRS-DOCS
 
----
-## Requirements
+The documents for [ossrs.net](https://ossrs.net) or [ossrs.io](https://ossrs.io).
 
-For development, you will only need Node.js and a node global package, Yarn, installed in your environement.
+## Usage
 
-### Node
-- #### Node installation on Windows
+Please install node, npm and yarn:
 
-  Just go on [official Node.js website](https://nodejs.org/) and download the installer.
-Also, be sure to have `git` available in your PATH, `npm` might need it (You can find git [here](https://git-scm.com/)).
-
-- #### Node installation on Ubuntu
-
-  You can install nodejs and npm easily with apt install, just run the following commands.
-
-      $ sudo apt install nodejs
-      $ sudo apt install npm
-
-- #### Other Operating Systems
-  You can find more information about the installation on the [official Node.js website](https://nodejs.org/) and the [official NPM website](https://npmjs.org/).
-
-If the installation was successful, you should be able to run the following command.
-
-    $ node --version
-    v14.18.1
-
-    $ npm --version
-    6.14.15
-
-If you need to update `npm`, you can make it using `npm`! Cool right? After running the following command, just open again the command line and be happy.
-
-    $ npm install npm -g
-
-### Yarn installation
-  After installing node, this project will need yarn too, so just run the following command.
-
-      $ npm install -g yarn
-
-If the installation was successful, you should be able to run the following command.
-
-    $ yarn --version
-    1.22.15
-
-### docker
-The search function relies on two docker images, typesense and scraper, so you need to install docker in your local development environment. the installation can refer:[docker install](https://docs.docker.com/engine/install/ubuntu/)
-
-
----
-## Getting Started
-
-### Installation
-
-```
-$ yarn install
+```bash
+brew install node
+npm install -g --force npm yarn
 ```
 
-### Local Development
+Install dependencies:
 
+```bash
+yarn install
 ```
-$ yarn start
+
+Start local development server:
+
+```bash
+yarn start
 ```
 
 This command starts a local development server and opens up a browser window. Most changes are reflected live without having to restart the server.
 
-### Build
+## Language
 
+Run for English user:
+
+```bash
+yarn start
+# or
+yarn start-en
 ```
-$ yarn build
+
+Or for Chinese user:
+
+```bash
+yarn start-cn
 ```
 
-This command generates static content into the `build` directory and can be served using any static contents hosting service.
+> Note: Please see `package.json` for detail command.
 
-### Change baseUrl
+## Change baseUrl
 
 ```
 $ yarn cross-env BASE_URL='/custom-base-url/' docusaurus build
@@ -81,7 +51,7 @@ $ yarn cross-env BASE_URL='/custom-base-url/' docusaurus build
 
 This command uses `'/custom-base-url/'` instead of the default baseUrl(`'/lts/'`) to generate static content.
 
-### Dockers
+## Dockers
 
 * Docker hub: [ossrs/docs](https://hub.docker.com/r/ossrs/docs)
 * Aliyun ACR: [registry.cn-hangzhou.aliyuncs.com/ossrs/docs](https://cr.console.aliyun.com/repository/cn-hangzhou/ossrs/docs/images)
@@ -90,7 +60,7 @@ This command uses `'/custom-base-url/'` instead of the default baseUrl(`'/lts/'`
 ---
 ## Translate
 
-### Start en-us site
+## Start en-us site
 
 Start your localized site in dev mode, using the locale of your choice:
 
@@ -101,9 +71,9 @@ $ yarn run start -- --locale en-us
 Your site is accessible at `http://localhost:3000/en-us/`.
 
 
-### Translate site content
+## Translate site content
 
-#### Step 1: Translate JSON files
+### Step 1: Translate JSON files
 
 Run the write-translations command:
 
@@ -114,7 +84,7 @@ It will extract and initialize the JSON translation files that you need to trans
 The JSON files will be in generated in `/i18n/en-us/` path.
 
 
-#### Step2: Translation Markdown files
+### Step2: Translation Markdown files
 
 First, you should copy markdown files in "/docs" and "/blog" folder to "/i18n/en/docusaurus-plugin-content-docs/current" and "/i18n/en/docusaurus-plugin-content-blog/current", then translation markdown files.
 
@@ -129,9 +99,9 @@ First, you should copy markdown files in "/docs" and "/blog" folder to "/i18n/en
 | REGION  | `""` | low | use site default config template, config in template can be overwritten by high levle environment variable |
 
 
-### REGION Environment variable
+## REGION Environment variable
 
-#### NONE: `''`
+### NONE: `''`
 
 ```
 yarn build
@@ -154,7 +124,7 @@ Use configs in `'/config/default.js'`.
   ],
 }
 ```
-#### `"zh-cn"`
+### `"zh-cn"`
 
 ```
 yarn cross-env REGION='zh-cn' docusaurus build
@@ -184,7 +154,7 @@ Use configs in `'/config/zh-cn.js'`.
 
 > our documentation site using Typesense DocSearch. for more details, please refer:[using-typesense-docsearch](https://docusaurus.io/docs/search#using-typesense-docsearch) and [Search for Documentation Sites](https://typesense.org/docs/guide/docsearch.html#search-for-documentation-sites)
 
-### how to enable search on local environment？
+## how to enable search on local environment？
 
 1. start typesense, it's an open-source instant-search engine, that supplies http api service to query items. we choose to Self-Host our own server with:
 
@@ -208,7 +178,7 @@ when scraper finished，you can do search in the html.
 
 ## how to add a new document
 
-### add a new document to an existing directory
+## add a new document to an existing directory
 
 > for example, add a new document (example.md) in <strong>tutorial</strong> 
 
@@ -233,7 +203,7 @@ cd i18n/zh-cn/docusaurus-plugin-content-docs/current/tutorial/ && touch example.
   Once the configuration is complete, you can see the new documentation in the tutorial directory
    
 
-### add a new directory and documentation
+## add a new directory and documentation
 
 > for example, add a new document (mydir/new-example.md) in <strong>tutorial</strong>
 
