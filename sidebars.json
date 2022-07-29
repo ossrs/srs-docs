@@ -1,0 +1,183 @@
+{
+  "tutorialSidebar": [
+    "tutorial/learning-path",
+    "tutorial/getting-started"
+  ],
+  "docsSidebar": [
+    "doc/introduction",
+    {
+      "type": "category",
+      "label": "Build",
+      "link": {
+        "type": "generated-index"
+      },
+      "collapsed": true,
+      "items": [
+        "doc/build/install",
+        "doc/build/service",
+        "doc/build/arm",
+        "doc/build/raspberrypi",
+        "doc/build/windows"
+      ]
+    },
+    "doc/git",
+    {
+      "type": "category",
+      "label": "Main Concepts",
+      "link": {
+        "type": "generated-index"
+      },
+      "collapsed": true,
+      "items": [
+        "doc/main-concepts/rtmp-url-vhost",
+        "doc/main-concepts/rtmp-handshake",
+        "doc/main-concepts/rtmp-pk-http",
+        "doc/main-concepts/low-latency",
+        "doc/main-concepts/time-jitter",
+        "doc/main-concepts/rtmp-atc",
+        "doc/main-concepts/flv-vod-stream",
+        "doc/main-concepts/drm",
+        "doc/main-concepts/edge",
+        "doc/main-concepts/hevc",
+        "doc/main-concepts/webrtc",
+        {
+          "type": "category",
+          "label": "SRT",
+          "link": {
+            "type": "generated-index"
+          },
+          "collapsed": true,
+          "items": [
+            "doc/main-concepts/srt/srt-codec",
+            "doc/main-concepts/srt/srt-params",
+            "doc/main-concepts/srt/srt-url"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "category",
+      "label": "Guides",
+      "link": {
+        "type": "generated-index"
+      },
+      "collapsed": true,
+      "items": [
+        "doc/guides/log",
+        "doc/guides/log-rotate",
+        "doc/guides/resource",
+        "doc/guides/reload",
+        "doc/guides/reuse-port",
+        "doc/guides/ingest",
+        "doc/guides/streamer",
+        "doc/guides/forward",
+        "doc/guides/snapshot",
+        "doc/guides/dvr",
+        "doc/guides/ffmpeg",
+        "doc/guides/http-server",
+        "doc/guides/security",
+        "doc/guides/nginx-exec",
+        "doc/guides/nginx-for-hls",
+        {
+          "type": "category",
+          "label": "Deploy Guides",
+          "link": {
+            "type": "generated-index"
+          },
+          "collapsed": true,
+          "items": [
+            "doc/guides/deploy-guides/delivery-rtmp",
+            "doc/guides/deploy-guides/delivery-hls",
+            "doc/guides/deploy-guides/delivery-http-flv",
+            "doc/guides/deploy-guides/delivery-hds"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "category",
+      "label": "Advanced Guides",
+      "link": {
+        "type": "generated-index"
+      },
+      "collapsed": true,
+      "items": [
+        "doc/advanced-guides/origin-cluster",
+        "doc/advanced-guides/k8s",
+        "doc/advanced-guides/gperf",
+        "doc/advanced-guides/gprof",
+        "doc/advanced-guides/perf",
+        "doc/advanced-guides/performance"
+      ]
+    },
+    {
+      "type": "category",
+      "label": "Integration",
+      "link": {
+        "type": "generated-index"
+      },
+      "collapsed": true,
+      "items": [
+        "doc/integration/http-api",
+        "doc/integration/http-callback",
+        "doc/integration/special-control",
+        "doc/integration/ide",
+        "doc/integration/client-sdk",
+        "doc/integration/srs-lib-rtmp"
+      ]
+    }
+  ],
+  "sampleSidebar": [
+    "samples/sample",
+    {
+      "type": "category",
+      "label": "RTMP",
+      "link": {
+        "type": "generated-index"
+      },
+      "collapsed": true,
+      "items": [
+        "samples/rtmp/sample-rtmp",
+        "samples/rtmp/sample-rtmp-cluster"
+      ]
+    },
+    {
+      "type": "category",
+      "label": "HLS",
+      "link": {
+        "type": "generated-index"
+      },
+      "collapsed": true,
+      "items": [
+        "samples/hls/sample-hls",
+        "samples/hls/sample-hls-cluster",
+        "samples/hls/sample-transcode-to-hls"
+      ]
+    },
+    {
+      "type": "category",
+      "label": "FLV",
+      "link": {
+        "type": "generated-index"
+      },
+      "collapsed": true,
+      "items": [
+        "samples/flv/sample-http-flv",
+        "samples/flv/sample-http-flv-cluster"
+      ]
+    },
+    "samples/sample-realtime",
+    "samples/sample-http",
+    "samples/sample-dash",
+    "samples/sample-srt",
+    "samples/sample-ingest",
+    "samples/sample-forward",
+    "samples/sample-ffmpeg",
+    "samples/sample-origin-cluster",
+    "samples/sample-arm"
+  ],
+  "communitySidebar": [
+    "community/Support",
+    "community/Contributing"
+  ]
+}

@@ -1,0 +1,1 @@
+../auto/pub.sh
