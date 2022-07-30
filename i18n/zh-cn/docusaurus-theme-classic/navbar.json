@@ -26,5 +26,13 @@
   "item.label.Community": {
     "message": "社区",
     "description": "Navbar item with label Community"
+  },
+  "item.label.Tools": {
+    "message": "工具",
+    "description": "Navbar item with label Tools"
+  },
+  "item.label.FAQ": {
+    "message": "FAQ",
+    "description": "Navbar item with label FAQ"
   }
 }

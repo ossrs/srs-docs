@@ -29,15 +29,15 @@
   },
   "link.item.label.Tutorial": {
     "message": "教程",
-    "description": "The label of footer link with label=Tutorial linking to /docs/doc/learning-path"
+    "description": "The label of footer link with label=Tutorial linking to /docs/v4/tutorial/srs-open-source"
   },
   "link.item.label.Docs": {
     "message": "文档",
-    "description": "The label of footer link with label=Docs linking to /docs/doc/git"
+    "description": "The label of footer link with label=Docs linking to /docs/v4/doc/git"
   },
   "link.item.label.Samples": {
     "message": "使用案例",
-    "description": "The label of footer link with label=Samples linking to /docs/samples/sample"
+    "description": "The label of footer link with label=Samples linking to /docs/v4/samples/sample"
   },
   "link.item.label.Live": {
     "message": "直播答疑",

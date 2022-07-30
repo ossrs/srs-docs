@@ -38,5 +38,25 @@
   "sidebar.docsSidebar.category.Advanced Guides": {
     "message": "进阶指南",
     "description": "The label for category Advanced Guides in sidebar docsSidebar"
+  },
+  "version.label": {
+    "message": "5.0 🚧",
+    "description": "The label for version current"
+  },
+  "sidebar.docsSidebar.category.Samples": {
+    "message": "Samples",
+    "description": "The label for category Samples in sidebar docsSidebar"
+  },
+  "sidebar.docsSidebar.category.RTMP": {
+    "message": "RTMP",
+    "description": "The label for category RTMP in sidebar docsSidebar"
+  },
+  "sidebar.docsSidebar.category.HLS": {
+    "message": "HLS",
+    "description": "The label for category HLS in sidebar docsSidebar"
+  },
+  "sidebar.docsSidebar.category.FLV": {
+    "message": "FLV",
+    "description": "The label for category FLV in sidebar docsSidebar"
   }
 }
