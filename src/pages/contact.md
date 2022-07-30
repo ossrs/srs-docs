@@ -19,7 +19,7 @@ There are many online forums for discussion about best practices and application
   
 * SRS Live Talk
 
-    Every Saturday night at 20:00, there will be an live talk of SRS(https://mp.weixin.qq.com/s/dC5-iQC6x3hDIfVNxJHilw)
+    Every Saturday night at 20:00, there will be an live talk of [SRS](https://mp.weixin.qq.com/s/dC5-iQC6x3hDIfVNxJHilw)
   
 * Bilibili Space
 

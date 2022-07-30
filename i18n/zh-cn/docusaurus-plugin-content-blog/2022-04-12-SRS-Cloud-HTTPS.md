@@ -95,5 +95,5 @@ No renewals were attempted.
 
 ## Conclusion
 
-这个文章中，我们设置了DNS A记录，申请了HTTPS证书，如果有问题请关注公众号 [加微信群](https://github.com/ossrs/srs/wiki/Contact#wechat) 。
+这个文章中，我们设置了DNS A记录，申请了HTTPS证书，如果有问题请关注公众号 [加微信群](/contact) 。
 
