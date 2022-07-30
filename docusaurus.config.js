@@ -88,7 +88,7 @@ const config = {
         items: [
           {
             type: 'doc',
-            docId: 'tutorial/learning-path',
+            docId: 'tutorial/srs-open-source',
             position: 'left',
             label: 'Tutorial',
           },
@@ -171,7 +171,7 @@ const config = {
             items: [
               {
                 label: 'Tutorial',
-                to: '/docs/v4/tutorial/learning-path',
+                to: '/docs/v4/tutorial/srs-open-source',
               },
               {
                 label: 'Docs',

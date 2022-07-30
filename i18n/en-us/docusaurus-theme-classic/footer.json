@@ -17,7 +17,7 @@
   },
   "link.item.label.Tutorial": {
     "message": "Tutorial",
-    "description": "The label of footer link with label=Tutorial linking to /docs/tutorial/learning-path"
+    "description": "The label of footer link with label=Tutorial linking to /docs/doc/learning-path"
   },
   "link.item.label.Docs": {
     "message": "Docs",

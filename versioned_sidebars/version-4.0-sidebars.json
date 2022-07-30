@@ -1,10 +1,11 @@
 {
   "tutorialSidebar": [
-    "tutorial/learning-path",
-    "tutorial/getting-started"
+    "tutorial/srs-open-source"
   ],
   "docsSidebar": [
     "doc/introduction",
+    "doc/learning-path",
+    "doc/getting-started",
     {
       "type": "category",
       "label": "Build",
