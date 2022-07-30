@@ -66,6 +66,7 @@ const config = {
               : `https://github.com/ossrs/srs-docs/edit/main/i18n/${locale}/docusaurus-plugin-content-blog/${blogPath}`;
           },
           remarkPlugins: [require('mdx-mermaid')],
+          blogSidebarCount: 'ALL',
         },
         theme: {
           customCss: require.resolve('./src/css/custom.css'),
