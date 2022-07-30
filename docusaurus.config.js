@@ -38,7 +38,7 @@ const config = {
           sidebarPath: require.resolve('./sidebars.js'),
           // Please change this to your repo.
           editUrl: ({ versionDocsDirPath, docPath, locale, version }) => {
-            return 'en-us' == locale
+            return 'en-us' === locale
               ? `https://github.com/ossrs/srs-docs/edit/main/${versionDocsDirPath}/${docPath}`
               : `https://github.com/ossrs/srs-docs/edit/main/i18n/${locale}/docusaurus-plugin-content-docs/${version}/${docPath}`;
           },
@@ -89,9 +89,9 @@ const config = {
         items: [
           {
             type: 'doc',
-            docId: 'tutorial/srs-open-source',
+            docId: 'doc/introduction',
             position: 'left',
-            label: 'Tutorial',
+            label: 'Docs',
           },
           {
             to: '/faq',
@@ -100,9 +100,9 @@ const config = {
           },
           {
             type: 'doc',
-            docId: 'doc/introduction',
+            docId: 'tutorial/srs-open-source',
             position: 'left',
-            label: 'Docs',
+            label: 'Tutorial',
           },
           {
             to: '/blog',
@@ -116,38 +116,20 @@ const config = {
             position: 'left',
           },
           {
+            href: 'https://github.com/ossrs/srs',
+            label: 'GitHub',
+            position: 'left',
+          },
+          {
             type: 'docsVersionDropdown',
             position: 'right',
             dropdownActiveClassDisabled: true,
             dropdownItemsAfter: [
-              // {
-              //   type: 'html',
-              //   value: '<hr class="dropdown-separator">',
-              // },
-              // {
-              //   type: 'html',
-              //   className: 'dropdown-archived-versions',
-              //   value: '<b>Archived versions</b>',
-              // },
-              // ...versionsArchived.map(({ label, href }) => ({ label: label, href: href })),
               ...versionsArchived.wiki,
-              // {
-              //   type: 'html',
-              //   value: '<hr class="dropdown-separator">',
-              // },
-              // {
-              //   to: '/versions',
-              //   label: 'All versions',
-              // },
             ],
           },
           {
             type: 'localeDropdown',
-            position: 'right',
-          },
-          {
-            href: 'https://github.com/ossrs/srs',
-            label: 'GitHub',
             position: 'right',
           },
         ],
@@ -234,7 +216,6 @@ const config = {
           },
         ],
         copyright: `<p></p>`,
-        // copyright: `<p>©2013~${new Date().getFullYear()} SRS <a href="https://beian.miit.gov.cn">京ICP备19056366号-1</a></p>`,
       },
       prism: {
         theme: lightCodeTheme,
