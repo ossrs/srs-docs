@@ -15,7 +15,7 @@ hide_table_of_contents: false
 
 > Note: 这个看似很容易，甚至直接在 SRS 官网中就能点开两个页面，但是一定要自己用 SRS 搭建出来才算，而不是直接打开线上的演示网页。
 
-具体怎么做呢？请参考 [Getting Started](./getting-started.md)。
+具体怎么做呢？请参考 [Getting Started](./getting-started)。
 
 
 接触一个新的东西，首先就要有直观的体验和感觉，这个门槛虽然看起来很简单，但是它涉及到了音视频的几乎全链路的东西：

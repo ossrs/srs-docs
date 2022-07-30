@@ -26,7 +26,7 @@ vhost __defaultVhost__ {
 }
 ```
 
-配置项的详细信息参考下面的[配置章节](./delivery-http-flv.md#http-live-stream-config)的说明。
+配置项的详细信息参考下面的[配置章节](./delivery-http-flv#http-live-stream-config)的说明。
 
 ## HTTPS FLV Live Stream
 
@@ -57,7 +57,7 @@ vhost __defaultVhost__ {
 
 > Note: 若需要开启HTTPS API，请参考[HTTPS API](http://ossrs.net/srs.release/wiki/v4_CN_HTTPApi#https-api)
 
-配置项的详细信息参考下面的[配置章节](./delivery-http-flv.md#http-live-stream-config)的说明。
+配置项的详细信息参考下面的[配置章节](./delivery-http-flv#http-live-stream-config)的说明。
 
 ## HTTP and HTTPS Proxy
 
@@ -84,7 +84,7 @@ vhost __defaultVhost__ {
 }
 ```
 
-配置项的详细信息参考下面的[配置章节](./delivery-http-flv.md#http-live-stream-config)的说明。
+配置项的详细信息参考下面的[配置章节](./delivery-http-flv#http-live-stream-config)的说明。
 
 ## HTTP Mp3 Live Stream
 
@@ -106,7 +106,7 @@ vhost __defaultVhost__ {
 }
 ```
 
-配置项的详细信息参考下面的[配置章节](./delivery-http-flv.md#http-live-stream-config)的说明。
+配置项的详细信息参考下面的[配置章节](./delivery-http-flv#http-live-stream-config)的说明。
 
 ## HTTP Aac Live Stream
 
@@ -128,7 +128,7 @@ vhost __defaultVhost__ {
 }
 ```
 
-配置项的详细信息参考下面的[配置章节](./delivery-http-flv.md#http-live-stream-config)的说明。
+配置项的详细信息参考下面的[配置章节](./delivery-http-flv#http-live-stream-config)的说明。
 
 ## HTTP Live Stream Config
 

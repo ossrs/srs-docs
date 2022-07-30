@@ -15,7 +15,7 @@ First, It takes about 5 to 15 minutes to see what live streaming and WebRTC look
 
 > Note: This may seem easy, even if you can open two pages directly from the SRS website, but you must build it yourself with SRS, not just open the online demo page.
 
-How do you do it？Please refer to [Getting Started](./getting-started.md)。
+How do you do it？Please refer to [Getting Started](./getting-started)。
 
 The first step in approaching something new is to have an intuitive experience and feel for it. Although it seems simple, it involves almost the whole chain of things in the audio/video field：
 - FFmpeg, a powerful audio/video client that supports publish and pull streaming, codecs encoding and decoding , as well as various processing capabilities.

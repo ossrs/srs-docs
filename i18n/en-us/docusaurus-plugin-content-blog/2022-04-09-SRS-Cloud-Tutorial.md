@@ -119,7 +119,7 @@ Well DVR is another story, DVR means we convert live streaming to VoD files, so 
 
 We're also considering to integrate a CMS to SRS cloud, to allow users to publish the live streaming rooms, or VoD files like a vlog, etc.
 
-SRS Cloud is a single node video streaming service, but SRS is a media server that supports clusters, like [Origin Cluster](/docs/v4/doc/advanced-guides/origin-cluster), [RTMP Edge Cluster](/docs/v4/doc/samples/rtmp/sample-rtmp-cluster) and even [HLS Edge Cluster](/docs/v4/doc/samples/hls/sample-hls-cluster). The HLS Edge Cluster is based on NGINX, and SRS could work well with NGINX, we will publish more tutorials about this topic if you wanna.
+SRS Cloud is a single node video streaming service, but SRS is a media server that supports clusters, like [Origin Cluster](/docs/v4/doc/origin-cluster), [RTMP Edge Cluster](/docs/v4/doc/sample-rtmp-cluster) and even [HLS Edge Cluster](/docs/v4/doc/sample-hls-cluster). The HLS Edge Cluster is based on NGINX, and SRS could work well with NGINX, we will publish more tutorials about this topic if you wanna.
 
 ## Conclusion
 

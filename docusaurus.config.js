@@ -199,7 +199,7 @@ const config = {
               },
               {
                 label: 'Samples',
-                to: '/docs/v4/doc/samples/sample',
+                to: '/docs/v4/doc/sample',
               },
             ],
           },

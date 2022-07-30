@@ -26,7 +26,7 @@ vhost __defaultVhost__ {
 }
 ```
 
-@remark For more information about config, read [following detail config](./delivery-http-flv.md#http-live-stream-config).
+@remark For more information about config, read [following detail config](./delivery-http-flv#http-live-stream-config).
 
 ## HTTPS FLV Live Stream
 
@@ -57,7 +57,7 @@ vhost __defaultVhost__ {
 
 > Note: To enable the HTTPS API, please read [HTTPS API](http://ossrs.net/srs.release/v4_EN_HTTPApi#https-api)
 
-@remark For more information about config, read [following detail config](./delivery-http-flv.md#http-live-stream-config).
+@remark For more information about config, read [following detail config](./delivery-http-flv#http-live-stream-config).
 
 ## HTTP and HTTPS Proxy
 
@@ -84,7 +84,7 @@ vhost __defaultVhost__ {
 }
 ```
 
-@remark For more information about config, read [following detail config](./delivery-http-flv.md#http-live-stream-config).
+@remark For more information about config, read [following detail config](./delivery-http-flv#http-live-stream-config).
 
 ## HTTP Mp3 Live Stream
 
@@ -106,7 +106,7 @@ vhost __defaultVhost__ {
 }
 ```
 
-@remark For more information about config, read [following detail config](./delivery-http-flv.md#http-live-stream-config).
+@remark For more information about config, read [following detail config](./delivery-http-flv#http-live-stream-config).
 
 ## HTTP Aac Live Stream
 
@@ -128,7 +128,7 @@ vhost __defaultVhost__ {
 }
 ```
 
-@remark For more information about config, read [following detail config](./delivery-http-flv.md#http-live-stream-config).
+@remark For more information about config, read [following detail config](./delivery-http-flv#http-live-stream-config).
 
 ## HTTP Live Stream Config
 

@@ -47,11 +47,11 @@ selinux也需要disable，运行命令`getenforce`，若不是Disabled，执行�
 ./objs/srs -c conf/srs.conf
 ```
 
-推RTMP流和观看，参考[Usage: RTMP](../samples/rtmp/sample-rtmp.md)
+推RTMP流和观看，参考[Usage: RTMP](./sample-rtmp)
 
 更多使用方法，参考[Usage](https://github.com/ossrs/srs/tree/3.0release#usage)
 
-服务管理，参考[Service](/doc/build/service.md)
+服务管理，参考[Service](./service)
 
 Docker启动SRS，参考[srs-docker](https://github.com/ossrs/dev-docker#usage)
 
@@ -59,6 +59,6 @@ Docker启动SRS，参考[srs-docker](https://github.com/ossrs/dev-docker#usage)
 
 一般的ARM都可以直接编译，使用和上面的方法是一样的。
 
-某些编译非常慢，或者没有编译器的嵌入式平台，才需要交叉编译，请参考[这里](/doc/build/arm.md)
+某些编译非常慢，或者没有编译器的嵌入式平台，才需要交叉编译，请参考[这里](./arm)
 
 Winlin 2014.11

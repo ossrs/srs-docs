@@ -9,7 +9,7 @@ hide_table_of_contents: false
 
 There are some important parameters about stream transport in SRT. SRS support configures those parameters. <br/>
 For more detail about SRT, please see [SRT wiki](http://ossrs.net/srs.release/wiki/v5_EN_SRTParams)
-> Note: [all options in libSRT](https://github.com/Haivision/srt/blob/master/docs/API/API-socket-options.md#list-of-options)
+> Note: [all options in libSRT](https://github.com/Haivision/srt/blob/master/docs/API/API-socket-options#list-of-options)
 
 ## How to config SRT
 

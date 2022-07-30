@@ -11,7 +11,7 @@ To learn the basics of SRS, you may choose one of the following favorite methods
 
 ## Build From Source
 
-Get SRS source, recommend [CentOS7](../doc/build/install.md):
+Get SRS source, recommend [CentOS7](./install):
 
 ```
 git clone -b 4.0release https://gitee.com/ossrs/srs.git
@@ -140,7 +140,7 @@ SRS works well on **Cloud Virtual Machine**:
 * [DigitalOcean Droplet](https://github.com/ossrs/srs-cloud/wiki/Droplet): Create SRS Droplet.
 * [TencentCloud LightHouse](https://www.bilibili.com/video/BV1844y1L7dL/): Deploy SRS to Tencent LightHouse.
 * [TencentCloud CVM](https://www.bilibili.com/video/BV1844y1L7dL/): Deploy SRS to Tencent CVM.
-* [Binary installer for CentOS 7](https://github.com/ossrs/srs/releases), download and install SRS, use [systemctl](../doc/build/service.md#systemctl) to manage the service.
+* [Binary installer for CentOS 7](https://github.com/ossrs/srs/releases), download and install SRS, use [systemctl](./service#systemctl) to manage the service.
 
 ## K8s
 

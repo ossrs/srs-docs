@@ -12,7 +12,7 @@ SRS支持下面多种方式启动，请使用你最熟悉的方式。
 
 ## Build From Source
 
-下载源码，推荐用[CentOS7](../doc/build/install.md)：
+下载源码，推荐用[CentOS7](./install)：
 
 ```
 git clone -b 4.0release https://gitee.com/ossrs/srs.git
@@ -152,7 +152,7 @@ SRS可以在云虚拟机上工作得很好，下面是一些可用的云厂商�
 * [TencentCloud LightHouse](https://www.bilibili.com/video/BV1844y1L7dL/)：不仅仅是SRS，这是个微缩视频云，参考[#2856](https://github.com/ossrs/srs/issues/2856#lighthouse)。
 * [TencentCloud CVM](https://mp.weixin.qq.com/s/x-PjoKjJj6HRF-eCKX0KzQ)：不仅仅是SRS，这是个微缩视频云，参考[#2856](https://github.com/ossrs/srs/issues/2856#lighthouse)。
 * [DigitalOcean Droplet](https://mp.weixin.qq.com/s/_GcJm15BGv1qbmHixPQAGQ)：海外用户，直接创建SRS Droplet。
-* [CentOS 7安装包](https://github.com/ossrs/srs/releases)：在所有云厂商的虚拟机上，手动安装SRS，使用[systemctl](../doc/build/service.md#systemctl)管理服务。
+* [CentOS 7安装包](https://github.com/ossrs/srs/releases)：在所有云厂商的虚拟机上，手动安装SRS，使用[systemctl](./service#systemctl)管理服务。
 
 ## K8s
 

@@ -13,7 +13,7 @@ hide_table_of_contents: false
 
 ## 第一步，获取SRS
 
-详细参考[GIT获取代码](../../git.md)
+详细参考[GIT获取代码](./git)
 
 ```bash
 git clone https://github.com/ossrs/srs
@@ -28,7 +28,7 @@ git pull
 
 ## 第二步，编译SRS
 
-详细参考[Build](../../build/install.md)
+详细参考[Build](./install)
 
 ```bash
 ./configure && make

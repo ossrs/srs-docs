@@ -13,7 +13,7 @@ Example for HLS Edge Cluster, like to create a CDN to deliver HLS files.
 
 ## Step 1, Get SRS code
 
-For detail, read [GIT](../../git.md)
+For detail, read [GIT](./git)
 
 ```bash
 git clone https://github.com/ossrs/srs
@@ -28,7 +28,7 @@ git pull
 
 ## Step 2, Configure and build SRS
 
-For detail, read [Build](../../build/install.md)
+For detail, read [Build](./install)
 
 ```bash
 ./configure && make

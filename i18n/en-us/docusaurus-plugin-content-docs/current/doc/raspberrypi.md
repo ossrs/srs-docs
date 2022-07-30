@@ -49,7 +49,7 @@ Stream information:
 * Resolution: 768x320
 * Audio Bitrate: 30kbps
 
-For arm [SRS: arm](./arm.md#raspberrypi)
+For arm [SRS: arm](./arm#raspberrypi)
 
 ## OS settings
 
