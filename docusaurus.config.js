@@ -98,12 +98,6 @@ const config = {
             position: 'left',
             label: 'Docs',
           },
-          {
-            type: 'doc',
-            docId: 'samples/sample',
-            label: 'Samples',
-            position: 'left',
-          },
           { to: '/blog', label: 'Blog', position: 'left' },
           {
             type: 'doc',
