@@ -195,7 +195,7 @@ const config = {
               },
               {
                 label: 'Samples',
-                to: '/docs/v4/samples/sample',
+                to: '/docs/v4/doc/samples/sample',
               },
             ],
           },
