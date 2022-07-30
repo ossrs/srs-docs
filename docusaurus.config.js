@@ -93,6 +93,7 @@ const config = {
             position: 'left',
             label: 'Tutorial',
           },
+          { to: '/blog/faq', label: 'FAQ', position: 'left' },
           {
             type: 'doc',
             docId: 'doc/introduction',
