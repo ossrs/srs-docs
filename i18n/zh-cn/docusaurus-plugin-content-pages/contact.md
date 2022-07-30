@@ -1,10 +1,3 @@
----
-title: 支持
-sidebar_label: 支持
-hide_title: false
-hide_table_of_contents: false
----
-
 SRS 有超过数千名开发者的社区。
 
 此页中，我们列出了您可参与的 SRS 相关社区；请参见本节的其他页面以获得额外的线上及线下学习材料。

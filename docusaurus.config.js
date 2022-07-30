@@ -110,16 +110,6 @@ const config = {
             position: 'left',
           },
           {
-            to: '/contact',
-            label: 'Contact',
-            position: 'left',
-          },
-          {
-            to: '/how-to-file-pr',
-            label: 'Community',
-            position: 'left',
-          },
-          {
             type: 'doc',
             docId: 'tools/demo',
             label: 'Tools',
@@ -207,16 +197,12 @@ const config = {
             title: 'Community',
             items: [
               {
-                label: 'Stack Overflow',
-                href: 'https://stackoverflow.com/questions/tagged/simple-realtime-server',
+                to: '/contact',
+                label: 'Contact',
               },
               {
-                label: 'Twitter',
-                href: 'https://twitter.com/srs_server',
-              },
-              {
-                label: 'Bilibili',
-                href: 'https://space.bilibili.com/430256302?spm_id_from=333.788.b_765f7570696e666f.2',
+                to: '/how-to-file-pr',
+                label: 'Community',
               },
               {
                 label: 'Live',
