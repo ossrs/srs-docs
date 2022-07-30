@@ -31,6 +31,10 @@
     "message": "社区",
     "description": "Navbar item with label Community"
   },
+  "item.label.Contributing": {
+    "message": "贡献",
+    "description": "Navbar item with label Contributing"
+  },
   "item.label.Tools": {
     "message": "工具",
     "description": "Navbar item with label Tools"

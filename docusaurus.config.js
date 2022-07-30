@@ -87,16 +87,12 @@ const config = {
           src: 'img/srs-200x200.png',
         },
         items: [
+          //////////////////////////////////////////////////////
           {
             type: 'doc',
-            docId: 'doc/introduction',
+            docId: 'doc/getting-started',
             position: 'left',
             label: 'Docs',
-          },
-          {
-            to: '/faq',
-            label: 'FAQ',
-            position: 'left',
           },
           {
             type: 'doc',
@@ -110,16 +106,36 @@ const config = {
             position: 'left',
           },
           {
-            type: 'doc',
-            docId: 'tools/demo',
-            label: 'Tools',
+            // See https://docusaurus.io/docs/api/themes/configuration#navbar-dropdown
+            type: 'dropdown',
+            label: 'Community',
             position: 'left',
+            items: [
+              {
+                to: '/faq',
+                label: 'FAQ',
+              },
+              {
+                to: '/contact',
+                label: 'Contact',
+              },
+              {
+                to: '/how-to-file-pr',
+                label: 'Contributing',
+              },
+              {
+                type: 'doc',
+                docId: 'tools/demo',
+                label: 'Tools',
+              },
+            ],
           },
           {
             href: 'https://github.com/ossrs/srs',
             label: 'GitHub',
             position: 'left',
           },
+          //////////////////////////////////////////////////////
           {
             type: 'docsVersionDropdown',
             position: 'right',
@@ -167,11 +183,11 @@ const config = {
               },
               {
                 label: 'Docs',
-                to: '/docs/v4/doc/git',
+                to: '/docs/v4/doc/getting-started',
               },
               {
-                label: 'Samples',
-                to: '/docs/v4/doc/sample',
+                to: '/blog',
+                label: 'Blog',
               },
             ],
           },
