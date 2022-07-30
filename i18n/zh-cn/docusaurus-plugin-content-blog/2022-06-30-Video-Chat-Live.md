@@ -30,7 +30,7 @@ custom_edit_url: null
 
 前提条件，需要具备的知识点，或依赖的工具：
 
-* 一台云主机，带公网IP。推荐[云SRS](https://ossrs.net/lts/zh-cn/blog/SRS-Cloud-Tutorial)，带有音视频服务器SRS的云服务器，腾讯云Lighthouse或CVM有云SRS镜像，其他云主机可以用宝塔安装。
+* 一台云主机，带公网IP。推荐[云SRS](./SRS-Cloud-Tutorial)，带有音视频服务器SRS的云服务器，腾讯云Lighthouse或CVM有云SRS镜像，其他云主机可以用宝塔安装。
 * 有一定的软件开发基础，虽然设计了比较简单的入门场景，还是有部分场景需要移动端开发能力，以及Linux服务器的操作能力。
 * [可选] 注册的域名，申请合法的HTTPS证书必须得域名，用于WebRTC推流；无域名只能使用自签名证书，操作麻烦些，也是可行的。
 
@@ -73,7 +73,7 @@ SaaS做直播的好处是不用了解直播的细节，直接就能把直播做�
 * 直播平台：云SRS，SRS，NginxRTMP等。
 * 观看工具：Chrome浏览器，VLC等。
 
-推荐使用云SRS，因为后面也可以用于连麦。最方便的部署SRS的方式使用[云SRS](https://ossrs.net/lts/zh-cn/blog/SRS-Cloud-Tutorial)，可以用腾讯云镜像一键部署，其他云或自己虚拟机可以用宝塔部署，具体请参考[视频教程](https://www.bilibili.com/video/BV1844y1L7dL/)。若愿意从代码编译和部署SRS，也可以参考[SRS](https://github.com/ossrs/srs#usage)。
+推荐使用云SRS，因为后面也可以用于连麦。最方便的部署SRS的方式使用[云SRS](./SRS-Cloud-Tutorial)，可以用腾讯云镜像一键部署，其他云或自己虚拟机可以用宝塔部署，具体请参考[视频教程](https://www.bilibili.com/video/BV1844y1L7dL/)。若愿意从代码编译和部署SRS，也可以参考[SRS](https://github.com/ossrs/srs#usage)。
 
 部署好SRS后，可以使用OBS推流到SRS，地址一般比较简单，例如：
 
@@ -98,7 +98,7 @@ OBS(主播) ---RTMP---> SRS ----RTMP/FLV/HLS---> VLC
 
 > Note: RTMP和FLV协议，客户端和SRS之间都是一个TCP连接。而HLS协议则是多个TCP连接。
 
-一般用户不会使用VLC看直播流。其实也可以直接用浏览器看直播，比如[SrsPlayer](https://ossrs.net/players/srs_player.html)就可以输入FLV或HLS地址观看，包括PC和移动端都可以看HLS直播流。也可以将直播地址嵌入到WordPress博客页面，参考[链接](https://ossrs.net/lts/zh-cn/blog/WordPress-Plugin)，这样可以有比较丰富的内容展示。移动端除了H5观看HLS直播流，还可以用[ijkplayer](https://github.com/bilibili/ijkplayer)把直播流嵌入原生应用。
+一般用户不会使用VLC看直播流。其实也可以直接用浏览器看直播，比如[SrsPlayer](https://ossrs.net/players/srs_player.html)就可以输入FLV或HLS地址观看，包括PC和移动端都可以看HLS直播流。也可以将直播地址嵌入到WordPress博客页面，参考[链接](./WordPress-Plugin)，这样可以有比较丰富的内容展示。移动端除了H5观看HLS直播流，还可以用[ijkplayer](https://github.com/bilibili/ijkplayer)把直播流嵌入原生应用。
 
 安装完[SrsPlayer](https://wordpress.org/plugins/srs-player/)插件后，新建一个Post或Page，嵌入直播流到WordPress页面：
 
@@ -136,9 +136,9 @@ OBS(主播) ---RTMP---> SRS ----RTMP/FLV/HLS---> VLC
 
 同样，最简单的通话方案是SaaS，可以选择腾讯会议或Zoom两个通话的SaaS，它们都有自己的客户端和账号体系，只需要下载就可以使用了。
 
-若使用开源搭建，推荐SRS服务器。最方便的部署SRS的方式使用[云SRS](https://ossrs.net/lts/zh-cn/blog/SRS-Cloud-Tutorial)，可以用腾讯云镜像一键部署，其他云或自己虚拟机可以用宝塔部署，具体请参考[视频教程](https://www.bilibili.com/video/BV1844y1L7dL/)。若愿意从代码编译和部署SRS，也可以参考[SRS](https://github.com/ossrs/srs#usage)。
+若使用开源搭建，推荐SRS服务器。最方便的部署SRS的方式使用[云SRS](./SRS-Cloud-Tutorial)，可以用腾讯云镜像一键部署，其他云或自己虚拟机可以用宝塔部署，具体请参考[视频教程](https://www.bilibili.com/video/BV1844y1L7dL/)。若愿意从代码编译和部署SRS，也可以参考[SRS](https://github.com/ossrs/srs#usage)。
 
-由于WebRTC推流，必须使用HTTPS，而HTTPS必须要域名和证书，可以参考[如何设置HTTPS](https://ossrs.net/lts/zh-cn/blog/SRS-Cloud-HTTPS)。当然如果使用自签名证书也可以，需要手动允许自签名证书。
+由于WebRTC推流，必须使用HTTPS，而HTTPS必须要域名和证书，可以参考[如何设置HTTPS](./SRS-Cloud-HTTPS)。当然如果使用自签名证书也可以，需要手动允许自签名证书。
 
 安装好云SRS后，我们打开后台`私人直播间`，选择`WebRTC推流`，点击更换流名称按钮，获取推流和播放链接，每个主播一个流地址比如：
 
@@ -154,7 +154,7 @@ OBS(主播) ---RTMP---> SRS ----RTMP/FLV/HLS---> VLC
 
 > Note: 主播之间交换播放的地址，其实就是一种业务信令；两个主播连麦，可以通过手动交换彼此的播放地址；如果有10主播连麦，就需要一个业务信令的服务器，实现加入房间后自动交换信令。
 
-同样，可以将WebRTC推流和播放嵌入到WordPress博客页面，参考[链接](https://ossrs.net/lts/zh-cn/blog/WordPress-Plugin)，这样可以有比较丰富的内容展示。
+同样，可以将WebRTC推流和播放嵌入到WordPress博客页面，参考[链接](./WordPress-Plugin)，这样可以有比较丰富的内容展示。
 
 安装完[SrsPlayer](https://wordpress.org/plugins/srs-player/)插件后，新建一个Post或Page，例如主播A的页面，嵌入推流和播放对方流的地址：
 
