@@ -8,7 +8,7 @@ hide_table_of_contents: false
 # SRT Config
 
 There are some important parameters about stream transport in SRT. SRS support configures those parameters. <br/>
-For more detail about SRT, please see [SRT wiki](v5_EN_SRTParams)
+For more detail about SRT, please see [SRT wiki](http://ossrs.net/srs.release/wiki/v5_EN_SRTParams)
 > Note: [all options in libSRT](https://github.com/Haivision/srt/blob/master/docs/API/API-socket-options.md#list-of-options)
 
 ## How to config SRT
@@ -124,7 +124,8 @@ Delay first, allow packet loss.
 In case of contest live, TV content production, we always prepare a link which is stable and exclusive. <br/>
 And we care about latency in those case, and allow some loss packets. <br/>
 We will detect the RTT of link before we start publish, and using the result RTT to configure SRT parameters. <br/>
-The recommended configuration is below <br/>
+The recommended configuration is below
+
 ```
 srt_server {
     enabled on;
