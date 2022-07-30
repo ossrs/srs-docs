@@ -82,6 +82,10 @@ The streams for SRS [usage](https://github.com/ossrs/srs/tree/4.0release#usage):
 * H5(HLS): [http://localhost:8080/live/livestream.m3u8](http://localhost:8080/players/srs_player.html?autostart=true&stream=livestream.m3u8&port=8080&schema=http)
 * H5(WebRTC): [webrtc://localhost/live/livestream](http://localhost:8080/players/rtc_player.html?autostart=true)
 
+## HTTP API
+
+About the API for WebRTC, please read [publish](https://github.com/ossrs/srs/wiki/v4_EN_HTTPApi#webrtc-publish) and [play](https://github.com/ossrs/srs/wiki/v4_EN_HTTPApi#webrtc-play).
+
 ## RTMP to RTC
 
 Please use `conf/rtmp2rtc.conf` as config.
@@ -174,7 +178,7 @@ Use HTTPS proxy [httpx-static](https://github.com/ossrs/go-oryx/tree/develop/htt
 
 ```bash
 export CANDIDATE="192.168.1.10"
-docker run --rm -p 80:80 -p 443:443 ossrs/httpx:v1.0.2 \
+docker run --rm -p 80:80 -p 443:443 ossrs/httpx:1 \
     ./bin/httpx-static -http 80 -https 443 -ssk ./etc/server.key -ssc ./etc/server.crt \
           -proxy http://$CANDIDATE:1989/sig -proxy http://$CANDIDATE:1985/rtc \
           -proxy http://$CANDIDATE:8080/

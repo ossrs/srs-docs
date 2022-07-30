@@ -5,11 +5,14 @@ hide_title: false
 hide_table_of_contents: false
 ---
 
-# SRT参数配置
+# SRT Config
 
 SRT有一些重要的参数配置，在SRT的流收发中非常重要。SRS支持对SRT重要参数的配置。
 
-## 如何配置SRT参数
+了解更多的SRT，请访问[srt wiki](https://github.com/ossrs/srs/wiki/v5_CN_SRTWiki)。
+> Note: [libSRT所有的参数](https://github.com/Haivision/srt/blob/master/docs/API/API-socket-options.md#list-of-options)
+
+## How to config SRT
 
 在srs的配置中，srt_server中有独立的配置，如下：
 ```
@@ -25,6 +28,12 @@ srt_server {
 ```
 srt的配置配置在srt_server的模板下。
 下面简介一下参数的配置，和其具体的含义。
+
+### tsbpdmode
+
+true 或者 false，默认是true <br/>
+按时间戳投递包模式(Timestamp based packet delivery)<br/>
+给每一个报文打上时间戳，应用层读取时，会按照报文时间戳的间隔读取。<br/>
 
 ### latency
 
@@ -83,7 +92,12 @@ srt的配置配置在srt_server的模板下。
 ### connect_timeout
 
 - 单位：ms(毫秒)，默认值是3000ms。 
-- srt连接超时时间。
+srt建立连接超时时间。
+
+### peer_idle_timeout
+
+单位：ms(毫秒)，默认值是10000ms。 <br/>
+srt对端超时时间。
 
 ### sendbuf
 
@@ -100,10 +114,43 @@ srt的配置配置在srt_server的模板下。
 - 单位：byte，默认值是1316=188x7 
 - 因为srt承载的媒体数据是mpegts封装，而每个mpegts的最小包是188bytes，所以payloadsize是188的倍数，默认是1316bytes(188x7)
 
-### mix_correct
-* on: 使能
-* off: 去使能
+# Recommend SRT config
+### Latency first
+延迟优先，允许丢包
+对于赛事、活动、电视制作等长距离推流，链路一般都是提前准备好，且独占稳定的。这类场景下，需要满足固定延迟，允许一定程度的丢包（极小概率）<br/>
+一般会在推流开始前探测链路的RTT， 并作为依据进行配置SRT推拉流参数。<br/>
+推荐配置如下
+<br/>
+```
+srt_server {
+    enabled on;
+    listen 10080;
+    connect_timeout 4000;
+    peerlatency RTT * 3;
+    recvlatency RTT * 3;
+    latency RTT * 3;
+    tlpktdrop on;
+    tsbpdmode on;
+}
+```
 
-默认是使能状态。srt的媒体封装格式是mpegts，对于AAC在mpegts中的封装，会出现多个报文只携带一个dts时间戳，导致音视频不同步，所以在mpegts的解析过程，需要做一下音视频同步，默认使能。
+### Common Live
+延迟自适应，不允许丢包
+在公网环境使用SRT，链路不稳定，非独占，RTT也会动态变化。对于低延迟直播场景，需要自适应延迟，而且一定不能丢包。<br/>
+推荐配置如下
+<br/>
+```
+srt_server {
+    enabled on;
+    listen 10080;
+    connect_timeout 4000;
+    peerlatency 0;
+    recvlatency 0;
+    latency 0;
+    tlpktdrop off;
+    tsbpdmode off;
+}
+```
+> Note: 如果你使用了如上配置仍然花屏，请参考[FFmpeg patch](https://github.com/FFmpeg/FFmpeg/commit/9099046cc76c9e3bf02f62a237b4d444cdaf5b20)
 
 Runner365 2020.02

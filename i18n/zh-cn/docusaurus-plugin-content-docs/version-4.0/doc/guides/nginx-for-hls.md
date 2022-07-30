@@ -11,7 +11,7 @@ hide_table_of_contents: false
 
 * SRS Edge只支持直播流协议，比如RTMP或HTTP-FLV等，参考[RTMP Edge Cluster](https://github.com/ossrs/srs/wiki/v4_CN_SampleRTMPCluster)。
 * SRS Edge不支持HLS或DASH等切片的直播流，本质上它们不是流，就是文件分发。
-* SRS Edge不支持WebRTC的流分发，这不是Edge设计的目标，WebRTC有自己的集群方式。
+* SRS Edge不支持WebRTC的流分发，这不是Edge设计的目标，WebRTC有自己的集群方式，参考[#2091](https://github.com/ossrs/srs/issues/2091)。
 
 本文描述的就是HLS或DASH等切片的边缘集群，基于NGINX实现，所以也叫NGINX Edge Cluster。
 

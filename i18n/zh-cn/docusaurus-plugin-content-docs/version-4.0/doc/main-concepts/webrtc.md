@@ -157,6 +157,10 @@ docker run --rm --env CANDIDATE=$CANDIDATE \
 
 SRS的URL定义，遵守的是HTTP的URL定义，不同的流的schema不同，比如RTC的是`webrtc`。
 
+## HTTP API
+
+关于SRS的WebRTC API，请参考[publish](https://github.com/ossrs/srs/wiki/v4_CN_HTTPApi#webrtc-publish)和[play](https://github.com/ossrs/srs/wiki/v4_CN_HTTPApi#webrtc-play).
+
 ## RTMP to RTC
 
 WebRTC可以作为直播的一个播放器，播放直播流，延迟比RTMP还要低，更能抗网络抖动。
@@ -287,7 +291,7 @@ docker run --rm -p 1989:1989 registry.cn-hangzhou.aliyuncs.com/ossrs/signaling:1
 
 ```bash
 export CANDIDATE="192.168.1.10"
-docker run --rm -p 80:80 -p 443:443 registry.cn-hangzhou.aliyuncs.com/ossrs/httpx:v1.0.2 \
+docker run --rm -p 80:80 -p 443:443 registry.cn-hangzhou.aliyuncs.com/ossrs/httpx:1 \
     ./bin/httpx-static -http 80 -https 443 -ssk ./etc/server.key -ssc ./etc/server.crt \
           -proxy http://$CANDIDATE:1989/sig -proxy http://$CANDIDATE:1985/rtc \
           -proxy http://$CANDIDATE:8080/

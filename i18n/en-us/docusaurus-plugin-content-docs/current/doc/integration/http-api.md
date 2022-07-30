@@ -141,25 +141,6 @@ Root directory:
     }
 ```
 
-The urls is the apis to access:
-
-```bash
-# curl http://192.168.1.102:1985/api/
-    "urls": {
-        "v1": "the api version 1.0"
-    }
-```
-
-Go on:
-
-```bash
-# curl http://192.168.1.102:1985/api/v1/
-    "urls": {
-        "versions": "the version of SRS",
-        "authors": "the primary authors and contributors"
-    }
-```
-
 Go on:
 
 ```bash
@@ -295,6 +276,68 @@ User can access the `http://192.168.1.102:1985/api/v1`, where:
 | streams | /api/v1/streams | manage all streams or specified stream |
 | clients | /api/v1/clients | manage all clients or specified client, default query top 10 clients |
 | configs | /api/v1/configs | RAW API for CUID the configs |
+| publish | /rtc/v1/publish/ | The push stream API for WebRTC |
+| play | /rtc/v1/play/ | The play stream API for WebRTC |
+
+## WebRTC Publish
+
+To push or publish stream to SRS using WebRTC, client should request the publish API to exchange SDP.
+
+For example:
+
+```
+POST /rtc/v1/publish/
+
+Body in JSON:
+
+{
+  "api": "https://d.ossrs.net/rtc/v1/publish/"
+  "streamurl": "webrtc://d.ossrs.net/live/3abd9f34",
+  "sdp": "v=0\r\n......\r\na=ssrc:2064016335 label:c8243ce9-ace5-4d17-9184-41a2543101b5\r\n"
+}
+```
+
+Server response the SDP for WebRTC:
+
+```
+{
+  "code": 0
+  "sdp": "v=0\r\n......\r\na=candidate:1 1 udp 2130706431 172.18.0.4 8000 typ host generation 0\r\n"
+  "sessionid": "186tj710:hMub"
+}
+```
+
+Please see [srs.sdk.js](https://github.com/ossrs/srs/blob/develop/trunk/research/players/js/srs.sdk.js) for detail.
+
+## WebRTC Play
+
+To pull or play stream from SRS using WebRTC, please request the bellow API with the same request as WebRTC publish.
+
+For example:
+
+```
+POST /rtc/v1/play/
+
+Body in JSON:
+
+{
+  "api": "https://d.ossrs.net/rtc/v1/play/"
+  "streamurl": "webrtc://d.ossrs.net/live/3abd9f34",
+  "sdp": "v=0\r\n......\r\na=ssrc:2064016335 label:c8243ce9-ace5-4d17-9184-41a2543101b5\r\n"
+}
+```
+
+Server response the SDP for WebRTC:
+
+```
+{
+  "code": 0
+  "sdp": "v=0\r\n......\r\na=candidate:1 1 udp 2130706431 172.18.0.4 8000 typ host generation 0\r\n"
+  "sessionid": "186tj710:hMub"
+}
+```
+
+Please see [srs.sdk.js](https://github.com/ossrs/srs/blob/develop/trunk/research/players/js/srs.sdk.js) for detail.
 
 ## Summaries
 

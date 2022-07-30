@@ -162,25 +162,6 @@ SRS提供了api的面包屑，可以从根目录开始导航，不需要任何�
     }
 ```
 
-返回的urls表示子链接可以访问。接着访问：
-
-```bash
-# curl http://192.168.1.170:1985/api/
-    "urls": {
-        "v1": "the api version 1.0"
-    }
-```
-
-继续：
-
-```bash
-# curl http://192.168.1.170:1985/api/v1/
-    "urls": {
-        "versions": "the version of SRS",
-        "authors": "the primary authors and contributors"
-    }
-```
-
 继续：
 
 ```bash
@@ -316,6 +297,64 @@ SRS提供了API的导航，即所有支持的API及描述。
 | streams | /api/v1/streams | 获取服务器的streams信息 |
 | clients | /api/v1/clients | 获取服务器的clients信息，默认获取前10个 |
 | configs | /api/v1/configs | CUID配置，RAW API |
+| publish | /rtc/v1/publish/ | WebRTC推流的API |
+| play | /rtc/v1/play/ | WebRTC播放流的API |
+
+## WebRTC Publish
+
+使用WebRTC推流到SRS时，需要先调用API交换SDK。例如：
+
+```
+POST /rtc/v1/publish/
+
+Body in JSON:
+
+{
+  "api": "https://d.ossrs.net/rtc/v1/publish/"
+  "streamurl": "webrtc://d.ossrs.net/live/3abd9f34",
+  "sdp": "v=0\r\n......\r\na=ssrc:2064016335 label:c8243ce9-ace5-4d17-9184-41a2543101b5\r\n"
+}
+```
+
+服务器响应对应的SDP如下：
+
+```
+{
+  "code": 0
+  "sdp": "v=0\r\n......\r\na=candidate:1 1 udp 2130706431 172.18.0.4 8000 typ host generation 0\r\n"
+  "sessionid": "186tj710:hMub"
+}
+```
+
+具体调用和使用请参考[srs.sdk.js](https://github.com/ossrs/srs/blob/develop/trunk/research/players/js/srs.sdk.js)
+
+## WebRTC Play
+
+拉流或播放时，需要调用另外的API，请求格式和publish一样。例如：
+
+```
+POST /rtc/v1/play/
+
+Body in JSON:
+
+{
+  "api": "https://d.ossrs.net/rtc/v1/play/"
+  "streamurl": "webrtc://d.ossrs.net/live/3abd9f34",
+  "sdp": "v=0\r\n......\r\na=ssrc:2064016335 label:c8243ce9-ace5-4d17-9184-41a2543101b5\r\n"
+}
+```
+
+服务器响应对应的SDP如下：
+
+```
+{
+  "code": 0
+  "sdp": "v=0\r\n......\r\na=candidate:1 1 udp 2130706431 172.18.0.4 8000 typ host generation 0\r\n"
+  "sessionid": "186tj710:hMub"
+}
+```
+
+具体调用和使用请参考[srs.sdk.js](https://github.com/ossrs/srs/blob/develop/trunk/research/players/js/srs.sdk.js)
 
 ## Summaries
 
