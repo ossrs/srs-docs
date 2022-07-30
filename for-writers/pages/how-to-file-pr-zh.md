@@ -1,0 +1,1 @@
+../../i18n/zh-cn/docusaurus-plugin-content-pages/how-to-file-pr.md

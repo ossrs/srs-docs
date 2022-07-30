@@ -1,0 +1,1 @@
+../../src/pages/how-to-file-pr.md
