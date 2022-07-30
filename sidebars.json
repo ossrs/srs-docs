@@ -1,10 +1,11 @@
 {
   "tutorialSidebar": [
-    "tutorial/learning-path",
-    "tutorial/getting-started"
+    "tutorial/srs-open-source"
   ],
   "docsSidebar": [
     "doc/introduction",
+    "doc/learning-path",
+    "doc/getting-started",
     {
       "type": "category",
       "label": "Build",
@@ -18,6 +19,63 @@
         "doc/build/arm",
         "doc/build/raspberrypi",
         "doc/build/windows"
+      ]
+    },
+    {
+      "type": "category",
+      "label": "Samples",
+      "link": {
+        "type": "generated-index"
+      },
+      "collapsed": true,
+      "items": [
+        "samples/sample",
+        {
+          "type": "category",
+          "label": "RTMP",
+          "link": {
+            "type": "generated-index"
+          },
+          "collapsed": true,
+          "items": [
+            "samples/rtmp/sample-rtmp",
+            "samples/rtmp/sample-rtmp-cluster"
+          ]
+        },
+        {
+          "type": "category",
+          "label": "HLS",
+          "link": {
+            "type": "generated-index"
+          },
+          "collapsed": true,
+          "items": [
+            "samples/hls/sample-hls",
+            "samples/hls/sample-hls-cluster",
+            "samples/hls/sample-transcode-to-hls"
+          ]
+        },
+        {
+          "type": "category",
+          "label": "FLV",
+          "link": {
+            "type": "generated-index"
+          },
+          "collapsed": true,
+          "items": [
+            "samples/flv/sample-http-flv",
+            "samples/flv/sample-http-flv-cluster"
+          ]
+        },
+        "samples/sample-realtime",
+        "samples/sample-http",
+        "samples/sample-dash",
+        "samples/sample-srt",
+        "samples/sample-ingest",
+        "samples/sample-forward",
+        "samples/sample-ffmpeg",
+        "samples/sample-origin-cluster",
+        "samples/sample-arm"
       ]
     },
     "doc/git",
@@ -126,55 +184,6 @@
         "doc/integration/srs-lib-rtmp"
       ]
     }
-  ],
-  "sampleSidebar": [
-    "samples/sample",
-    {
-      "type": "category",
-      "label": "RTMP",
-      "link": {
-        "type": "generated-index"
-      },
-      "collapsed": true,
-      "items": [
-        "samples/rtmp/sample-rtmp",
-        "samples/rtmp/sample-rtmp-cluster"
-      ]
-    },
-    {
-      "type": "category",
-      "label": "HLS",
-      "link": {
-        "type": "generated-index"
-      },
-      "collapsed": true,
-      "items": [
-        "samples/hls/sample-hls",
-        "samples/hls/sample-hls-cluster",
-        "samples/hls/sample-transcode-to-hls"
-      ]
-    },
-    {
-      "type": "category",
-      "label": "FLV",
-      "link": {
-        "type": "generated-index"
-      },
-      "collapsed": true,
-      "items": [
-        "samples/flv/sample-http-flv",
-        "samples/flv/sample-http-flv-cluster"
-      ]
-    },
-    "samples/sample-realtime",
-    "samples/sample-http",
-    "samples/sample-dash",
-    "samples/sample-srt",
-    "samples/sample-ingest",
-    "samples/sample-forward",
-    "samples/sample-ffmpeg",
-    "samples/sample-origin-cluster",
-    "samples/sample-arm"
   ],
   "communitySidebar": [
     "community/Support",
