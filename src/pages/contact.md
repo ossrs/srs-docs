@@ -1,6 +1,6 @@
 ---
-title: Support
-sidebar_label: Support
+title: Contact
+sidebar_label: Contact
 hide_title: false
 hide_table_of_contents: false
 ---

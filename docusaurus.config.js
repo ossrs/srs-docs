@@ -110,8 +110,12 @@ const config = {
             position: 'left',
           },
           {
-            type: 'doc',
-            docId: 'community/Support',
+            to: '/contact',
+            label: 'Contact',
+            position: 'left',
+          },
+          {
+            to: '/how-to-file-pr',
             label: 'Community',
             position: 'left',
           },

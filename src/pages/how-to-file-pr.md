@@ -1,6 +1,6 @@
 ---
-title: Contributing
-sidebar_label: Contributing
+title: HowToFilePR
+sidebar_label: HowToFilePR
 hide_title: false
 hide_table_of_contents: false
 ---
