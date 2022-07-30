@@ -1,4 +1,8 @@
 {
+  "sidebar.docsSidebar.category.Installation": {
+    "message": "安装",
+    "description": "The label for category Installation in sidebar docsSidebar"
+  },
   "sidebar.docsSidebar.category.Build": {
     "message": "编译",
     "description": "The label for category Build in sidebar docsSidebar"

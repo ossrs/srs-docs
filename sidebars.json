@@ -3,9 +3,19 @@
     "tutorial/srs-open-source"
   ],
   "docsSidebar": [
+    {
+      "type": "category",
+      "label": "Installation",
+      "link": {
+        "type": "generated-index"
+      },
+      "collapsed": false,
+      "items": [
+        "doc/getting-started"
+      ]
+    },
     "doc/introduction",
     "doc/learning-path",
-    "doc/getting-started",
     {
       "type": "category",
       "label": "Build",

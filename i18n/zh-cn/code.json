@@ -199,7 +199,10 @@
     "message": "SRS(Simple Realtime Server)是一个简单高效的实时视频服务器，支持RTMP、WebRTC、HLS、HTTP-FLV、SRT等多种实时流媒体协议。"
   },
   "homepage.tutorial": {
-    "message": "Tutorial"
+    "message": "入门教程"
+  },
+  "homepage.getStarted": {
+    "message": "快速开始"
   },
   "homepage.easyToUseName": {
     "message": "简单"
