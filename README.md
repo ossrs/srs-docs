@@ -23,22 +23,16 @@ Start local development server:
 yarn start
 ```
 
-This command starts a local development server and opens up a browser window. Most changes are reflected live without having to restart the server.
+This command starts a local development server and opens up a browser window. Most changes are reflected live without 
+having to restart the server.
 
 ## Language
 
-Run for English user:
+Build English and Chinese versions:
 
 ```bash
-yarn start
-# or
-yarn start-en
-```
-
-Or for Chinese user:
-
-```bash
-yarn start-cn
+yarn build
+yarn serve
 ```
 
 > Note: Please see `package.json` for detail command.
