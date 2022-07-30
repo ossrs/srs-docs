@@ -188,5 +188,9 @@
   "communitySidebar": [
     "community/Support",
     "community/Contributing"
+  ],
+  "toolsSidebar": [
+    "tools/demo",
+    "tools/utility"
   ]
 }

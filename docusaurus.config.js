@@ -108,6 +108,12 @@ const config = {
             position: 'left',
           },
           {
+            type: 'doc',
+            docId: 'tools/demo',
+            label: 'Tools',
+            position: 'left',
+          },
+          {
             type: 'docsVersionDropdown',
             position: 'right',
             dropdownActiveClassDisabled: true,
