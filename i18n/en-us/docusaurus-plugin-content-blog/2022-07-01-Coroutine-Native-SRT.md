@@ -1,6 +1,6 @@
 ---
 slug: coroutine-native-srt
-title: TBD
+title: Coroutine Native for SRT
 authors: []
 tags: [tutorial, video, srt, streaming]
 custom_edit_url: null
