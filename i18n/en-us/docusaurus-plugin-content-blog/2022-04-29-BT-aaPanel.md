@@ -134,6 +134,6 @@ There is also a live demonstration here [SRS Player Demo](https://wp.ossrs.io/20
 ## Conclusion
 
 In this tutorial, you create a live streaming service with aaPanel, publish a stream with OBS and then play it through a
-browser or WordPress. If you have further questions about SRS, [the wiki](https://github.com/ossrs/srs/wiki/v4_EN_Home)
+browser or WordPress. If you have further questions about SRS, [the wiki](/docs/v4/doc/introduction)
 is a good place to start. If you'd like to discuss with SRS community members, you are welcome to join us on [discord](https://discord.gg/yZ4BnPmHAd).
 
