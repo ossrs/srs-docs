@@ -93,14 +93,22 @@ const config = {
             position: 'left',
             label: 'Tutorial',
           },
-          { to: '/blog/faq', label: 'FAQ', position: 'left' },
+          {
+            to: '/faq',
+            label: 'FAQ',
+            position: 'left',
+          },
           {
             type: 'doc',
             docId: 'doc/introduction',
             position: 'left',
             label: 'Docs',
           },
-          { to: '/blog', label: 'Blog', position: 'left' },
+          {
+            to: '/blog',
+            label: 'Blog',
+            position: 'left',
+          },
           {
             type: 'doc',
             docId: 'community/Support',
