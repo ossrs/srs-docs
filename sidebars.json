@@ -29,7 +29,7 @@
       },
       "collapsed": true,
       "items": [
-        "doc/samples/sample",
+        "doc/sample",
         {
           "type": "category",
           "label": "RTMP",
@@ -38,8 +38,8 @@
           },
           "collapsed": true,
           "items": [
-            "doc/samples/rtmp/sample-rtmp",
-            "doc/samples/rtmp/sample-rtmp-cluster"
+            "doc/sample-rtmp",
+            "doc/sample-rtmp-cluster"
           ]
         },
         {
@@ -50,9 +50,9 @@
           },
           "collapsed": true,
           "items": [
-            "doc/samples/hls/sample-hls",
-            "doc/samples/hls/sample-hls-cluster",
-            "doc/samples/hls/sample-transcode-to-hls"
+            "doc/sample-hls",
+            "doc/sample-hls-cluster",
+            "doc/sample-transcode-to-hls"
           ]
         },
         {
@@ -63,19 +63,19 @@
           },
           "collapsed": true,
           "items": [
-            "doc/samples/flv/sample-http-flv",
-            "doc/samples/flv/sample-http-flv-cluster"
+            "doc/sample-http-flv",
+            "doc/sample-http-flv-cluster"
           ]
         },
-        "doc/samples/sample-realtime",
-        "doc/samples/sample-http",
-        "doc/samples/sample-dash",
-        "doc/samples/sample-srt",
-        "doc/samples/sample-ingest",
-        "doc/samples/sample-forward",
-        "doc/samples/sample-ffmpeg",
-        "doc/samples/sample-origin-cluster",
-        "doc/samples/sample-arm"
+        "doc/sample-realtime",
+        "doc/sample-http",
+        "doc/sample-dash",
+        "doc/sample-srt",
+        "doc/sample-ingest",
+        "doc/sample-forward",
+        "doc/sample-ffmpeg",
+        "doc/sample-origin-cluster",
+        "doc/sample-arm"
       ]
     },
     "doc/git",
