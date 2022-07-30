@@ -15,7 +15,7 @@ How to use multiple process for HTTP FLV? You can use HTTP reverse proxy, and SR
 
 ## Step 1, get SRS
 
-For detail, read [GIT](../../doc/git.md)
+For detail, read [GIT](../../git.md)
 
 ```bash
 git clone https://github.com/ossrs/srs
@@ -30,7 +30,7 @@ git pull
 
 ## Step 2, build SRS
 
-For detail, read [Build](../../doc/build/install.md)
+For detail, read [Build](../../build/install.md)
 
 ```bash
 ./configure && make

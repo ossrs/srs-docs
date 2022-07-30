@@ -17,7 +17,7 @@ SRS的HTTP FLV边缘只能使用单进程，如何做到多进程呢？可以使
 
 ## 第一步，获取SRS
 
-详细参考[GIT获取代码](../../doc/git.md)
+详细参考[GIT获取代码](../../git.md)
 
 ```bash
 git clone https://github.com/ossrs/srs
@@ -32,7 +32,7 @@ git pull
 
 ## 第二步，编译SRS
 
-详细参考[Build](../../doc/build/install.md)
+详细参考[Build](../../build/install.md)
 
 ```bash
 ./configure && make

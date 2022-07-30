@@ -102,5 +102,5 @@ setup an SSL certificate for your SRS streaming server. After this setup your vi
 ## Conclusion
 
 In this tutorial you’ve learned to set up the SRS WordPress plugin and embedded a stream on your post or page. If you
-have further questions about SRS, [the wiki](https://github.com/ossrs/srs/wiki/v4_EN_Home) is a good place to start. If
+have further questions about SRS, [the wiki](./home) is a good place to start. If
 you’d like to discuss with SRS, you are welcome to [discord](https://discord.gg/yZ4BnPmHAd).

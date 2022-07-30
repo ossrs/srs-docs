@@ -22,7 +22,7 @@ HLS需要h.264+aac，若符合这个要求可以按照[Usage: HLS](http://ossrs.
 
 ## 第一步，获取SRS
 
-详细参考[GIT获取代码](../../doc/git.md)
+详细参考[GIT获取代码](../../git.md)
 
 ```bash
 git clone https://github.com/ossrs/srs
@@ -37,7 +37,7 @@ git pull
 
 ## 第二步，编译SRS
 
-详细参考[Build](../../doc/build/install.md)
+详细参考[Build](../../build/install.md)
 
 ```bash
 ./configure --ffmpeg-tool=on && make
