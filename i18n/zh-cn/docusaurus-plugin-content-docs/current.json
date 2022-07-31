@@ -1,10 +1,26 @@
 {
   "sidebar.docsSidebar.category.Getting Started": {
-    "message": "起步",
-    "description": "The label for category Installation in sidebar docsSidebar"
+    "message": "起步"
   },
   "sidebar.docsSidebar.category.Main Protocols": {
-    "message": "核心协议",
-    "description": "The label for category Main Protocols in sidebar docsSidebar"
+    "message": "核心协议"
+  },
+  "sidebar.docsSidebar.category.Main Features": {
+    "message": "核心功能"
+  },
+  "sidebar.docsSidebar.category.OpenAPI": {
+    "message": "开放接口"
+  },
+  "sidebar.docsSidebar.category.Clusters": {
+    "message": "集群"
+  },
+  "sidebar.docsSidebar.category.Logging": {
+    "message": "日志"
+  },
+  "sidebar.docsSidebar.category.Advanced Guides": {
+    "message": "高级指引"
+  },
+  "sidebar.docsSidebar.category.Others": {
+    "message": "其他"
   }
 }
