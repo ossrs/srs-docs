@@ -1,6 +1,6 @@
 {
-  "sidebar.docsSidebar.category.Installation": {
-    "message": "安装",
+  "sidebar.docsSidebar.category.Getting Started": {
+    "message": "起步",
     "description": "The label for category Installation in sidebar docsSidebar"
   },
   "sidebar.docsSidebar.category.Build": {

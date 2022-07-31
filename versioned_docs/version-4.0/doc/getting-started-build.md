@@ -1,34 +1,49 @@
 ---
-title: Docker
-sidebar_label: Docker
+title: Build
+sidebar_label: Build
 hide_title: false
 hide_table_of_contents: false
 ---
 
-# Docker
+# Build
 
-Please run SRS with docker.
+You can build SRS from source code, but [docker](./getting-started) is highly recommend.
 
 ## Live Streaming
 
 SRS supports live streaming.
 
-Run SRS using docker:
+Get SRS source, recommend [CentOS7](./install):
 
-```bash
-docker run --rm -it -p 1935:1935 -p 1985:1985 -p 8080:8080 \
-    ossrs/srs:4 ./objs/srs -c conf/docker.conf
+```
+git clone -b 4.0release https://github.com/ossrs/srs.git
 ```
 
-> Note: The available images is [here](https://hub.docker.com/r/ossrs/srs/tags).
+Build SRS in `srs/trunk`:
 
-Use docker of FFmpeg to publish:
-
-```bash
-docker run --network host --rm ossrs/srs:encoder
+```
+cd srs/trunk
+./configure
+make
 ```
 
-Or publish stream by [FFmpeg](https://ffmpeg.org/download.html) or [OBS](https://obsproject.com/download) :
+Run SRS server:
+
+```
+./objs/srs -c conf/srs.conf
+```
+
+Check SRS by [http://localhost:8080/](http://localhost:8080/) or:
+
+```
+# Check the process status
+./etc/init.d/srs status
+
+# Check the SRS logs
+tail -n 30 -f ./objs/srs.log
+```
+
+Publish stream by [FFmpeg](https://ffmpeg.org/download.html) or [OBS](https://obsproject.com/download) :
 
 ```bash
 ffmpeg -re -i ./doc/source.flv -c copy -f flv rtmp://localhost/live/livestream
@@ -46,18 +61,40 @@ Play stream by:
 
 SRS supports WebRTC for video chat.
 
-Run SRS using docker:
+Get SRS source, recommend [CentOS7](./install):
 
-```bash
+```
+git clone -b 4.0release https://github.com/ossrs/srs.git
+```
+
+Build SRS in `srs/trunk`:
+
+```
+cd srs/trunk
+./configure
+make
+```
+
+Run SRS server:
+
+```
 CANDIDATE="192.168.1.10"
-docker run --rm -it -p 1935:1935 -p 1985:1985 -p 8080:8080 -p 1990:1990 -p 8088:8088 \
-    --env CANDIDATE=$CANDIDATE -p 8000:8000/udp \
-    ossrs/srs:4 ./objs/srs -c conf/docker.conf
+./objs/srs -c conf/srs.conf
 ```
 
 > Note: Please replace the IP with your server IP.
 
 > Note: About CANDIDATE, please read [CANDIDATE](./webrtc#config-candidate)
+
+Check SRS by [http://localhost:8080/](http://localhost:8080/) or:
+
+```
+# Check the process status
+./etc/init.d/srs status
+
+# Check the SRS logs
+tail -n 30 -f ./objs/srs.log
+```
 
 Push stream to SRS by [WebRTC: Publish](http://localhost:8080/players/rtc_publisher.html?autostart=true&stream=livestream&port=8080&schema=http)
 
@@ -67,30 +104,36 @@ Play stream of SRS by [WebRTC: Play](http://localhost:8080/players/rtc_player.ht
 
 ## WebRTC for Live Streaming
 
-SRS supports coverting live streaming to WebRTC.
+SRS supports converting live streaming to WebRTC.
 
-Run SRS using docker:
+Get SRS source, recommend [CentOS7](./install):
 
-```bash
+```
+git clone -b 4.0release https://github.com/ossrs/srs.git
+```
+
+Build SRS in `srs/trunk`:
+
+```
+cd srs/trunk
+./configure
+make
+```
+
+Run SRS server:
+
+```
 CANDIDATE="192.168.1.10"
-docker run --rm -it -p 1935:1935 -p 1985:1985 -p 8080:8080 \
-    --env CANDIDATE=$CANDIDATE -p 8000:8000/udp \
-    ossrs/srs:4 ./objs/srs -c conf/rtmp2rtc.conf
+./objs/srs -c conf/rtmp2rtc.conf
 ```
 
 > Note: Please replace the IP with your server IP.
 
 > Note: About CANDIDATE, please read [CANDIDATE](./webrtc#config-candidate)
 
-> Note: If convert RTMP to WebRTC, please use [`rtmp2rtc.conf`](https://github.com/ossrs/srs/issues/2728#rtmp2rtc-en-guide)
+> Note: If convert RTMP to WebRTC, please use [`rtmp2rtc.conf`](https://github.com/ossrs/srs/issues/2728#rtmp2rtc-cn-guide)
 
-Use docker of FFmpeg to publish:
-
-```bash
-docker run --network host --rm ossrs/srs:encoder
-```
-
-Or publish stream by [FFmpeg](https://ffmpeg.org/download.html) or [OBS](https://obsproject.com/download) :
+Publish stream by [FFmpeg](https://ffmpeg.org/download.html) or [OBS](https://obsproject.com/download) :
 
 ```bash
 ffmpeg -re -i ./doc/source.flv -c copy -f flv rtmp://localhost/live/livestream
@@ -108,14 +151,26 @@ Play stream by:
 
 If not localhost, for example, to view WebRTC on pad or mobile phone, when SRS is running on remote server.
 
-Run SRS using docker:
+Get SRS source, recommend [CentOS7](./install):
 
-```bash
-CANDIDATE="192.168.1.10"
-docker run --rm -it -p 1935:1935 -p 1985:1985 -p 8080:8080 -p 1990:1990 -p 8088:8088 \
-    --env CANDIDATE=$CANDIDATE -p 8000:8000/udp \
-    ossrs/srs:4 ./objs/srs -c conf/https.docker.conf
 ```
+git clone -b 4.0release https://github.com/ossrs/srs.git
+```
+
+Build SRS in `srs/trunk`:
+
+```
+cd srs/trunk
+./configure
+make
+```
+
+Run SRS server:
+
+```
+CANDIDATE="192.168.1.10"
+./objs/srs -c conf/https.rtc.conf
+``` 
 
 > Note: Please replace the IP with your server IP.
 

@@ -1,111 +1,114 @@
 ---
-title: 起步
-sidebar_label: 起步
+title: Docker
+sidebar_label: Docker镜像
 hide_title: false
 hide_table_of_contents: false
 ---
 
-# Getting Started
+# Docker
 
-SRS支持下面多种方式启动，请使用你最熟悉的方式。
+推荐使用Docker启动SRS，这是最简单也是最方便的方式。
 
+## Live Streaming
 
-## Build From Source
+直播是SRS的典型场景，支持推直播流后多种观看方式。
 
-下载源码，推荐用[CentOS7](./install)：
+先用Docker启动SRS:
 
-```
-git clone -b 4.0release https://gitee.com/ossrs/srs.git
-```
-
-编译，注意需要切换到`srs/trunk`目录：
-
-```
-cd srs/trunk
-./configure
-make
+```bash
+docker run --rm -it -p 1935:1935 -p 1985:1985 -p 8080:8080 \
+    registry.cn-hangzhou.aliyuncs.com/ossrs/srs:4 ./objs/srs -c conf/docker.conf
 ```
 
-启动服务器：
+> Note: 可用镜像在 [这里](https://cr.console.aliyun.com/repository/cn-hangzhou/ossrs/srs/images) 和每个 [Release](https://github.com/ossrs/srs/releases?q=v4&expanded=true) 都会给出来链接。
 
-```
-./objs/srs -c conf/srs.conf
-```
+使用FFmpeg的Docker推流到本机：
 
-检查SRS是否成功启动，可以打开 [http://localhost:8080/](http://localhost:8080/) ，或者执行命令：
-
-```
-# 查看SRS的状态
-./etc/init.d/srs status
-
-# 或者看SRS的日志
-tail -n 30 -f ./objs/srs.log
+```bash
+docker run --network host --rm registry.cn-hangzhou.aliyuncs.com/ossrs/srs:encoder
 ```
 
-例如，下面的命令显示SRS正在运行：
-
-```
-MB0:trunk $ ./etc/init.d/srs status
-SRS(pid 90408) is running.                                 [  OK  ]
-
-MB0:trunk $ tail -n 30 -f ./objs/srs.log
-[2021-08-13 10:30:36.634][Trace][90408][12c97232] Hybrid cpu=0.00%,0MB, cid=1,1, timer=61,0,0, clock=0,22,25,0,0,0,0,1,0
-```
-
-使用 [FFmpeg(点击下载)](https://ffmpeg.org/download.html) 或 [OBS(点击下载)](https://obsproject.com/download) 推流：
+或者使用 [FFmpeg(点击下载)](https://ffmpeg.org/download.html) 或 [OBS(点击下载)](https://obsproject.com/download) 推流：
 
 ```bash
 ffmpeg -re -i ./doc/source.flv -c copy -f flv rtmp://localhost/live/livestream
 ```
 
-或者使用FFmpeg的Docker推流，请将`192.168.1.10`换成你的内网IP：
-
-```bash
-docker run --rm registry.cn-hangzhou.aliyuncs.com/ossrs/srs:encoder \
-  ffmpeg -re -i ./doc/source.200kbps.768x320.flv -c copy -f flv rtmp://192.168.1.10/live/livestream
-```
+> Note: 实例文件`./doc/source.flv`在SRS的源代码目录中有。
 
 打开下面的页面播放流（若SRS不在本机，请将localhost更换成服务器IP）:
 
-* RTMP (by [VLC](https://www.videolan.org/)): rtmp://localhost/live/livestream
+* RTMP (by [VLC](https://www.videolan.org/)): `rtmp://localhost/live/livestream`
 * H5(HTTP-FLV): [http://localhost:8080/live/livestream.flv](http://localhost:8080/players/srs_player.html?autostart=true&stream=livestream.flv&port=8080&schema=http)
 * H5(HLS): [http://localhost:8080/live/livestream.m3u8](http://localhost:8080/players/srs_player.html?autostart=true&stream=livestream.m3u8&port=8080&schema=http)
 
-注意如果RTMP转WebRTC流播放，必须使用配置文件[`rtmp2rtc.conf`](https://github.com/ossrs/srs/issues/2728#rtmp2rtc-cn-guide):
+## WebRTC
 
-* H5(WebRTC): [webrtc://localhost/live/livestream](http://localhost:8080/players/rtc_player.html?autostart=true)
+SRS支持WebRTC，可以做会议或视频聊天。
 
-> Note: 推荐直接运行SRS，可以使用 **[docker](#Docker)**, 或者 **[K8s](#K8s)**
-
-> Note: 若需要开启WebRTC能力，请将CANDIDATE设置为服务器的外网地址，详细请阅读[WebRTC: CANDIDATE](https://github.com/ossrs/srs/wiki/v4_CN_WebRTC#config-candidate)。
-
-> Note: 若需要HTTPS，比如WebRTC和浏览器都要求是HTTPS，那么请参考
-> **[HTTPS API](https://github.com/ossrs/srs/wiki/v4_CN_HTTPApi#https-api)**
-> 以及 **[HTTPS Callback](https://github.com/ossrs/srs/wiki/v4_CN_HTTPCallback#https-callback)**
-> 以及 **[HTTPS Live Streaming](https://github.com/ossrs/srs/wiki/v4_EN_DeliveryHttpStream#https-flv-live-stream)**，
-> 当然了HTTPS的反向代理也能和SRS工作很好，比如Nginx代理到SRS。
-
-请继续阅读下面的内容，了解更多SRS的信息。
-
-## Docker
-
-推荐使用Docker直接启动SRS，可用镜像在[这里](https://cr.console.aliyun.com/repository/cn-hangzhou/ossrs/srs/images)和每个[Release](https://github.com/ossrs/srs/releases?q=v4&expanded=true)都会给出来链接:
+先使用Docker启动SRS：
 
 ```bash
-docker run --rm -it -p 1935:1935 -p 1985:1985 -p 8080:8080 \
+CANDIDATE="192.168.1.10"
+docker run --rm -it -p 1935:1935 -p 1985:1985 -p 8080:8080 -p 1990:1990 -p 8088:8088 \
+    --env CANDIDATE=$CANDIDATE -p 8000:8000/udp \
     registry.cn-hangzhou.aliyuncs.com/ossrs/srs:4 ./objs/srs -c conf/docker.conf
 ```
 
-若需要支持WebRTC，需要设置CANDIATE，并开启UDP/8000端口：
+> Note: 请将IP换成你的SRS的IP地址。
+
+> Note: 请将CANDIDATE设置为服务器的外网地址，详细请阅读[WebRTC: CANDIDATE](./webrtc#config-candidate)。
+
+使用WebRTC推流到SRS：[WebRTC: Publish](http://localhost:8080/players/rtc_publisher.html?autostart=true&stream=livestream&port=8080&schema=http)
+
+打开页面观看WebRTC流：[WebRTC: Play](http://localhost:8080/players/rtc_player.html?autostart=true&stream=livestream&port=8080&schema=http)
+
+> Note: 可以打开不同的页面，推拉不同的流，就可以实现视频聊天了。
+
+## WebRTC for Live Streaming
+
+SRS支持直播转WebRTC，推直播流，使用WebRTC观看。
+
+先用Docker启动SRS：
 
 ```bash
 CANDIDATE="192.168.1.10"
 docker run --rm -it -p 1935:1935 -p 1985:1985 -p 8080:8080 \
     --env CANDIDATE=$CANDIDATE -p 8000:8000/udp \
-    registry.cn-hangzhou.aliyuncs.com/ossrs/srs:4 ./objs/srs -c conf/docker.conf
+    registry.cn-hangzhou.aliyuncs.com/ossrs/srs:4 ./objs/srs -c conf/rtmp2rtc.conf
 ```
 
-若需要HTTPS，需要开启端口映射，并使用配置文件`conf/https.*`，比如`conf/https.docker.conf`：
+> Note: 请将IP换成你的SRS的IP地址。
+
+> Note: 请将CANDIDATE设置为服务器的外网地址，详细请阅读[WebRTC: CANDIDATE](./webrtc#config-candidate)。
+
+> Note: 注意如果RTMP转WebRTC流播放，必须使用配置文件[`rtmp2rtc.conf`](https://github.com/ossrs/srs/issues/2728#rtmp2rtc-cn-guide)
+
+使用FFmpeg的Docker推流到本机：
+
+```bash
+docker run --network host --rm registry.cn-hangzhou.aliyuncs.com/ossrs/srs:encoder
+```
+
+或者使用 [FFmpeg(点击下载)](https://ffmpeg.org/download.html) 或 [OBS(点击下载)](https://obsproject.com/download) 推流：
+
+```bash
+ffmpeg -re -i ./doc/source.flv -c copy -f flv rtmp://localhost/live/livestream
+```
+
+> Note: 实例文件`./doc/source.flv`在SRS的源代码目录中有。
+
+打开下面的页面播放流（若SRS不在本机，请将localhost更换成服务器IP）:
+
+* WebRTC: [webrtc://localhost/live/livestream](http://localhost:8080/players/rtc_player.html?autostart=true&stream=livestream&port=8080&schema=http)
+* H5(HTTP-FLV): [http://localhost:8080/live/livestream.flv](http://localhost:8080/players/srs_player.html?autostart=true&stream=livestream.flv&port=8080&schema=http)
+* H5(HLS): [http://localhost:8080/live/livestream.m3u8](http://localhost:8080/players/srs_player.html?autostart=true&stream=livestream.m3u8&port=8080&schema=http)
+
+## WebRTC using HTTPS
+
+若需要在非本机使用WebRTC，比如SRS运行在远程服务器，在笔记本或者手机上使用WeBRTC，则需要开启HTTPS API。 
+
+先用Docker启动SRS：
 
 ```bash
 CANDIDATE="192.168.1.10"
@@ -114,54 +117,21 @@ docker run --rm -it -p 1935:1935 -p 1985:1985 -p 8080:8080 -p 1990:1990 -p 8088:
     registry.cn-hangzhou.aliyuncs.com/ossrs/srs:4 ./objs/srs -c conf/https.docker.conf
 ```
 
-> Note: 请将CANDIDATE设置为服务器的外网地址，详细请阅读[WebRTC: CANDIDATE](https://github.com/ossrs/srs/wiki/v4_CN_WebRTC#config-candidate)。
+> Note: 请将IP换成你的SRS的IP地址。
 
-> Note: 注意如果RTMP转WebRTC流播放，必须使用配置文件[`rtmp2rtc.conf`](https://github.com/ossrs/srs/issues/2728#rtmp2rtc-cn-guide)
+> Note: 请将CANDIDATE设置为服务器的外网地址，详细请阅读[WebRTC: CANDIDATE](./webrtc#config-candidate)。
 
 > Remark: 请使用你的证书文件，代替上面配置中的key和cert，请参考
-> **[HTTPS API](https://github.com/ossrs/srs/wiki/v4_CN_HTTPApi#https-api)**
-> 以及 **[HTTPS Callback](https://github.com/ossrs/srs/wiki/v4_CN_HTTPCallback#https-callback)**
-> 以及 **[HTTPS Live Streaming](https://github.com/ossrs/srs/wiki/v4_EN_DeliveryHttpStream#https-flv-live-stream)**，
+> **[HTTPS API](./http-api#https-api)**
+> 以及 **[HTTPS Callback](./http-callback#https-callback)**
+> 以及 **[HTTPS Live Streaming](./delivery-http-flv#https-flv-live-stream)**，
 > 当然了HTTPS的反向代理也能和SRS工作很好，比如Nginx代理到SRS。
 
-使用 [FFmpeg(点击下载)](https://ffmpeg.org/download.html) 或 [OBS(点击下载)](https://obsproject.com/download) 推流：
+使用WebRTC推流到SRS：[WebRTC: Publish](https://192.168.3.82:8088/players/rtc_publisher.html?autostart=true&stream=livestream&api=1990&schema=https)
 
-```bash
-ffmpeg -re -i ./doc/source.flv -c copy -f flv rtmp://localhost/live/livestream
-```
+打开页面观看WebRTC流：[WebRTC: Play](https://192.168.3.82:8088/players/rtc_player.html?autostart=true&stream=livestream&api=1990&schema=https)
 
-或者使用FFmpeg的Docker推流，请将`192.168.1.10`换成你的内网IP：
+> 注意：自签名证书，在空白处输入`thisisunsafe`（注意没空格）。
 
-```bash
-docker run --rm registry.cn-hangzhou.aliyuncs.com/ossrs/srs:encoder \
-  ffmpeg -re -i ./doc/source.200kbps.768x320.flv -c copy -f flv rtmp://192.168.1.10/live/livestream
-```
+> Note: 可以打开不同的页面，推拉不同的流，就可以实现视频聊天了。
 
-打开下面的页面播放流（若SRS不在本机，请将localhost更换成服务器IP）:
-
-* RTMP (by [VLC](https://www.videolan.org/)): rtmp://localhost/live/livestream
-* H5(HTTP-FLV): [http://localhost:8080/live/livestream.flv](http://localhost:8080/players/srs_player.html?autostart=true&stream=livestream.flv&port=8080&schema=http)
-* H5(HLS): [http://localhost:8080/live/livestream.m3u8](http://localhost:8080/players/srs_player.html?autostart=true&stream=livestream.m3u8&port=8080&schema=http)
-
-请继续阅读下面的内容，了解更多SRS的信息。
-
-## Cloud Virtual Machine
-
-SRS可以在云虚拟机上工作得很好，下面是一些可用的云厂商，以及使用方式：
-
-* [TencentCloud LightHouse](https://www.bilibili.com/video/BV1844y1L7dL/)：不仅仅是SRS，这是个微缩视频云，参考[#2856](https://github.com/ossrs/srs/issues/2856#lighthouse)。
-* [TencentCloud CVM](https://mp.weixin.qq.com/s/x-PjoKjJj6HRF-eCKX0KzQ)：不仅仅是SRS，这是个微缩视频云，参考[#2856](https://github.com/ossrs/srs/issues/2856#lighthouse)。
-* [DigitalOcean Droplet](https://mp.weixin.qq.com/s/_GcJm15BGv1qbmHixPQAGQ)：海外用户，直接创建SRS Droplet。
-* [CentOS 7安装包](https://github.com/ossrs/srs/releases)：在所有云厂商的虚拟机上，手动安装SRS，使用[systemctl](./service#systemctl)管理服务。
-
-## K8s
-
-推荐使用K8s部署SRS，参考[Deploy to Cloud Platforms](https://github.com/ossrs/srs/wiki/v4_CN_K8s#deploy-to-cloud-platforms)，视频教程[Bilibili: SRS-027-用K8s零命令行部署SRS](https://www.bilibili.com/video/BV1g44y1j7Vz/)
-
-SRS提供了一系列的模版项目，可以快速部署到云平台K8s：
-
-* [TKE(腾讯云K8s)](https://github.com/ossrs/srs-tke-template)
-* [通用K8s](https://github.com/ossrs/srs-k8s-template)
-* [ACK(阿里云K8s)](https://github.com/ossrs/srs-ack-template)
-* [EKS(亚马逊AWS K8s)](https://github.com/ossrs/srs-eks-template)
-* [AKS(微软Azure K8s)](https://github.com/ossrs/srs-aks-template)

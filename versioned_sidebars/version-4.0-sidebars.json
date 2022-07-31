@@ -2,16 +2,23 @@
   "tutorialSidebar": [
     "tutorial/srs-open-source"
   ],
+  "toolsSidebar": [
+    "tools/demo",
+    "tools/utility"
+  ],
   "docsSidebar": [
     {
       "type": "category",
-      "label": "Installation",
+      "label": "Getting Started",
       "link": {
         "type": "generated-index"
       },
       "collapsed": false,
       "items": [
-        "doc/getting-started"
+        "doc/getting-started",
+        "doc/getting-started-build",
+        "doc/getting-started-cloud",
+        "doc/getting-started-k8s"
       ]
     },
     "doc/introduction",
@@ -194,9 +201,5 @@
         "doc/srs-lib-rtmp"
       ]
     }
-  ],
-  "toolsSidebar": [
-    "tools/demo",
-    "tools/utility"
   ]
 }
