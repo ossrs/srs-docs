@@ -7,6 +7,7 @@
     "tools/utility"
   ],
   "docsSidebar": [
+    "doc/introduction",
     {
       "type": "category",
       "label": "Getting Started",
@@ -21,8 +22,6 @@
         "doc/getting-started-k8s"
       ]
     },
-    "doc/introduction",
-    "doc/learning-path",
     {
       "type": "category",
       "label": "Build",
