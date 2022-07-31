@@ -58,3 +58,7 @@ The bug about this feature, read [#211](https://github.com/ossrs/srs/issues/211)
 When reload the security config, it only effects the new clients.
 
 Winlin 2015.1
+
+![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/doc-en-4/doc/security)
+
+

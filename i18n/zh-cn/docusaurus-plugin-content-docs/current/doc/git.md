@@ -76,3 +76,6 @@ SRS的稳定性保障，主要依靠几个方法：
 * 依靠社区的反馈，一般Release分支会提交一些Commit但不一定会打版本，如果过段时间没有稳定性问题反馈才会发版本。
 
 Winlin 2014.3
+![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/doc-zh-5/doc/git)
+
+

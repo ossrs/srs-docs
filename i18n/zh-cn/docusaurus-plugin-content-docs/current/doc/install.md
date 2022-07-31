@@ -62,3 +62,6 @@ Docker启动SRS，参考[srs-docker](https://github.com/ossrs/dev-docker#usage)
 某些编译非常慢，或者没有编译器的嵌入式平台，才需要交叉编译，请参考[这里](./arm)
 
 Winlin 2014.11
+![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/doc-zh-5/doc/install)
+
+

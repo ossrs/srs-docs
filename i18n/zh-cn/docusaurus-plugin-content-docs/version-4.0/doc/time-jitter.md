@@ -97,3 +97,7 @@ vhost dvr.srs.com {
 [RTMP ATC](./rtmp-atc)开启时，RTMP流分发的时间戳矫正机制变为关闭，不对时间戳做任何处理。
 
 Winlin 2015.4
+
+![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/doc-zh-4/doc/time-jitter)
+
+

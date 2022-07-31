@@ -16,3 +16,7 @@ The clion of JetBrains, please open `trunk/ide/srs_clion/CMakeLists.txt`
 Read [http://www.jetbrains.com/clion/](http://www.jetbrains.com/clion/)
 
 Winlin 2015.10
+
+![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/doc-en-4/doc/ide)
+
+

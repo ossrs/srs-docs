@@ -186,3 +186,7 @@ Toolchain options:          @see https://github.com/ossrs/srs/issues/1547#issuec
 之前在支持ARM时，新增过一个Flags的选项( https://github.com/ossrs/srs/issues/1282#issuecomment-568891854 )，会设置`CFLAGS and CXXFLAGS`，也会将这个设置传递到ST设置`EXTRA_CFLAGS`。同样，对于交叉编译，这个选项也是有效的。
 
 Winlin 2014.2
+
+![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/doc-zh-4/doc/arm)
+
+

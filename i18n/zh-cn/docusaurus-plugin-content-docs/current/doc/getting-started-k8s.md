@@ -16,3 +16,7 @@ SRS提供了一系列的模版项目，可以快速部署到云平台K8s：
 * [ACK(阿里云K8s)](https://github.com/ossrs/srs-ack-template)
 * [EKS(亚马逊AWS K8s)](https://github.com/ossrs/srs-eks-template)
 * [AKS(微软Azure K8s)](https://github.com/ossrs/srs-aks-template)
+
+![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/doc-zh-5/doc/getting-started-k8s)
+
+

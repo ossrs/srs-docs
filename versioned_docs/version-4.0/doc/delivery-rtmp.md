@@ -81,3 +81,6 @@ User can use flash player or vlc to play RTMP stream, for example, the RTMP url:
 The latency of RTMP is in 1-3s, the config see: [Low Latency](./low-latency)
 
 Winlin 2014.11
+![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/doc-en-4/doc/delivery-rtmp)
+
+

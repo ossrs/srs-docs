@@ -264,3 +264,7 @@ SRS的HTTP FLV容易和下面的几种分发方式混淆：
 Winlin 2015.1
 
 [go-sharp]: https://github.com/ossrs/go-sharp
+
+![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/doc-zh-5/doc/delivery-http-flv)
+
+

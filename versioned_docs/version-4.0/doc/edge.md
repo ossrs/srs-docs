@@ -145,3 +145,7 @@ SRS can config the edge mode to transform the host to origin, use the config `vh
 For more information, read the config of edge server.
 
 Winlin 2015.4
+
+![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/doc-en-4/doc/edge)
+
+

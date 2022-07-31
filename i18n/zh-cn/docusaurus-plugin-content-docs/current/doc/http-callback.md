@@ -7,3 +7,7 @@ hide_table_of_contents: false
 
 # HTTP Callback
 
+
+![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/doc-zh-5/doc/http-callback)
+
+

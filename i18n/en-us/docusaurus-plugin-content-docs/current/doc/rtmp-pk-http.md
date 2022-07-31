@@ -86,3 +86,7 @@ I recomment to use these delivery protocols in:
 * Android: Always use HLS. Or use library to play RTMP.
 
 Winlin 2014.11
+
+![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/doc-en-5/doc/rtmp-pk-http)
+
+

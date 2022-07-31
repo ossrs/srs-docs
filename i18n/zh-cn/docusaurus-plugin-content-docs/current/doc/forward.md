@@ -191,3 +191,7 @@ forward还可以结合hls和transcoder功能使用，即在源站将流转码，
 参考vhost，hls和transcoder相关wiki。
 
 Winlin 2014.2
+
+![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/doc-zh-5/doc/forward)
+
+

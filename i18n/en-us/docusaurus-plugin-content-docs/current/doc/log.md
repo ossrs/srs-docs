@@ -500,3 +500,7 @@ To startup with default config `conf/srs.conf`:
 ```
 
 Winlin 2014.10
+
+![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/doc-en-5/doc/log)
+
+

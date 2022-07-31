@@ -91,3 +91,7 @@ SRS2 uses the following functions, which have license problems and have been rep
 
 Please read [#917](https://github.com/ossrs/srs/issues/917).
 
+
+![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/pages/license-en)
+
+

@@ -242,3 +242,7 @@ SRS集群不会增加延迟。这个是Edge模式比ingest要高级的地方，i
 参考：![Edge-latency](/img/doc-main-concepts-low-latency-002.png)
 
 Winlin 2015.8
+
+![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/doc-zh-4/doc/low-latency)
+
+

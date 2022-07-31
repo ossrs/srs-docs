@@ -169,3 +169,6 @@ force_grace_quit off;
 > Note: There is a example for Gracefully Quit, see [#1579](https://github.com/ossrs/srs/issues/1579#issuecomment-587414898)
 
 Winlin 2019.10
+![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/doc-en-5/doc/service)
+
+

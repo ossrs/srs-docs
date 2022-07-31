@@ -497,3 +497,7 @@ SRS1的HLS主要参考了nginx-rtmp的HLS实现方式，SRS2已经按照HLS标�
 SRS3支持切片加密，具体使用方法参考[#1093](https://github.com/ossrs/srs/issues/1093#issuecomment-415971022)。
 
 Winlin 2015.2
+
+![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/doc-zh-4/doc/delivery-hls)
+
+

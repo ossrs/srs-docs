@@ -64,3 +64,6 @@ SRS云服务器，面向鼠标编程，没有服务器和命令行经验，也�
 ## 马景瑞：云SRS的SRT超清直播应用
 * 地址: https://www.bilibili.com/video/BV1c341177e7
 * 说明: SRS云服务器面向鼠标编程，让每个人都能做音视频业务。不懂音视频的可以，懂音视频的也可以，种地的可以，撸网线的可以，剪电影的可以，背摄像机的也可以，跳舞的可以，唱歌的可以，会用电脑有微信就可以，守法公民都可以。
+![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/doc-zh-4/tutorial/srs-cloud-server)
+
+

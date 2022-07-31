@@ -210,3 +210,7 @@ GB已经放到独立的仓库 [srs-gb28181](https://github.com/ossrs/srs-gb28181
 该Issue会被删除，请先阅读FAQ：#2716
 ```
 
+
+![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/pages/faq-zh)
+
+

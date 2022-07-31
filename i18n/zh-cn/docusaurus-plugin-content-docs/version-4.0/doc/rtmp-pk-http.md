@@ -84,3 +84,6 @@ HLS的主要劣势是：
 * Andorid：和IOS一样，不过可以确定的是可以自己开发支持RTMP。
 
 Winlin 2014.4
+![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/doc-zh-4/doc/rtmp-pk-http)
+
+

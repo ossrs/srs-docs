@@ -487,3 +487,7 @@ SRS2 already rewrites the HLS strictly following the HLS specification.
 You could use HLS with encryption from [#1093](https://github.com/ossrs/srs/issues/1093#issuecomment-415971022).
 
 Winlin 2015.2
+
+![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/doc-en-4/doc/delivery-hls)
+
+

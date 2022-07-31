@@ -42,3 +42,7 @@ Reload的方法为：`killall -1 srs`
 使用启动脚本：`/etc/init.d/srs reload`
 
 Winlin 2014.2
+
+![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/doc-zh-4/doc/reload)
+
+

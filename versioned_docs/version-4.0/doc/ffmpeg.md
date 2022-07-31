@@ -362,3 +362,6 @@ FFMPEG links:
 * [ffmpeg codecs](http://ffmpeg.org/ffmpeg-codecs.html)
 
 Winlin 2015.6
+![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/doc-en-4/doc/ffmpeg)
+
+

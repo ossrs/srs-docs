@@ -98,3 +98,7 @@ When [RTMP ATC](./rtmp-atc) is on,
 RTMP always disable the time_jitter.
 
 Winlin 2015.4
+
+![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/doc-en-5/doc/time-jitter)
+
+

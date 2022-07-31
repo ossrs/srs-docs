@@ -18,3 +18,7 @@ SRS provides a set of template repository for fast deploy:
 * [ACK(Alibaba Cloud Container Service for Kubernetes)](https://github.com/ossrs/srs-ack-template)
 
 
+
+![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/doc-en-5/doc/getting-started-k8s)
+
+

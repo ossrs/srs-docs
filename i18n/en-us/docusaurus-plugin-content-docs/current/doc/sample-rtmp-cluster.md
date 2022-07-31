@@ -114,3 +114,6 @@ Edge RTMP url is: `rtmp://192.168.1.170:1935/live/livestream`, User can use vlc 
 Note: Please replace all ip 192.168.1.170 to your server ip.
 
 Winlin 2014.11
+![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/doc-en-5/doc/sample-rtmp-cluster)
+
+

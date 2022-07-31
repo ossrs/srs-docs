@@ -244,3 +244,6 @@ api-server的日志：
 改变dvr配置后reload，会导致dvr重启，即关闭当前dvr文件后重新应用dvr配置。
 
 Winlin 2015.1
+![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/doc-zh-5/doc/dvr)
+
+

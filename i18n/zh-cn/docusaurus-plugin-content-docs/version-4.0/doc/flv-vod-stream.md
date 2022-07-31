@@ -41,3 +41,6 @@ SRS的HTTP服务器已经重写，稳定可以商用。
 参考[HTTP Server](./http-server#config)
 
 Winlin 2015.1
+![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/doc-zh-4/doc/flv-vod-stream)
+
+

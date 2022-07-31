@@ -243,3 +243,7 @@ The bugs of dvr:
 The changing of dvr and reload will restart the dvr, that is, to close current dvr file then apply new config.
 
 Winlin 2015.1
+
+![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/doc-en-4/doc/dvr)
+
+

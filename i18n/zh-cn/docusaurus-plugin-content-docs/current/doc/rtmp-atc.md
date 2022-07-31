@@ -85,3 +85,7 @@ vhost atc.srs.com {
 将自动atc关闭即可。
 
 Winlin 2014.3
+
+![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/doc-zh-5/doc/rtmp-atc)
+
+

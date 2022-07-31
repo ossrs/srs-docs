@@ -53,3 +53,7 @@ vhost __defaultVhost__ {
 The config items are similar to HLS, read [HLS config](./delivery-hls#hls-config)
 
 Winlin 2015.3
+
+![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/doc-en-5/doc/delivery-hds)
+
+

@@ -2106,3 +2106,6 @@ kubectl exec `kubectl get po|grep srs-deploy|awk '{print $1}'` -- tail -f objs/s
 > Note: 从ConfigMap的修改，到Pod的配置文件生效，一共花了118秒钟，时间比较久。
 
 Winlin 2020.02
+![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/doc-zh-4/doc/k8s)
+
+

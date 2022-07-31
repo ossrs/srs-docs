@@ -346,3 +346,7 @@ Many services own a corresponding exporter. For example, [redis_exporter](https:
 
 At present, SRS has not implemented its own `srs-exporter`, but it will be implemented in the future. For details, please refer to [#2899](https://github.com/ossrs/srs/issues/2899).
 
+
+![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/blog-en/22-05-16-Load-Balancing-Streaming-Servers)
+
+

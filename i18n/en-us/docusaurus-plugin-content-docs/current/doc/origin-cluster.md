@@ -60,3 +60,7 @@ To use origin cluster, please read [#464](https://github.com/ossrs/srs/issues/46
 We also recommend to use a edge server please read [here](https://github.com/ossrs/srs/issues/464#issuecomment-366169962). The edge server can transmux RTMP to HTTP-FLV, supports fault-tolerance.
 
 2018.02
+
+![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/doc-en-5/doc/origin-cluster)
+
+

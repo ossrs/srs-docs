@@ -10,3 +10,6 @@ hide_table_of_contents: false
 SRS不再维护srs-librtmp，原因请看[#32](https://github.com/ossrs/srs-librtmp/issues/32)。
 
 Winlin 2014.11
+![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/doc-zh-4/doc/srs-lib-rtmp)
+
+

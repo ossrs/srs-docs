@@ -127,3 +127,7 @@ winlin:srs winlin$ ls -lh objs/nginx/html/live/*.png
 Note: SRS never choose the best thumbnail.
 
 Winlin 2015.10
+
+![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/doc-en-4/doc/snapshot)
+
+

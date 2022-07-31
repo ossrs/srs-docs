@@ -174,3 +174,6 @@ Total: 20 samples
 备注：SRS的configure脚本会检查是否可以同时开启。
 
 Winlin 2014.3
+![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/doc-zh-4/doc/gperf)
+
+

@@ -126,3 +126,6 @@ Remark: User should enable the HTTP server and HLS, read `conf/push.flv.conf`
 2015.1
 
 [ap]: https://github.com/ossrs/android-publisher
+![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/doc-en-5/doc/streamer)
+
+

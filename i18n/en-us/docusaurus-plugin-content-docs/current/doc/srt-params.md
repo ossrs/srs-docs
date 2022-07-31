@@ -160,3 +160,7 @@ srt_server {
 > Note: If you use the configuration above, but play video artifacts, please see [FFmpeg patch](https://github.com/FFmpeg/FFmpeg/commit/9099046cc76c9e3bf02f62a237b4d444cdaf5b20)
 
 John 2022.5.24
+
+![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/doc-en-5/doc/srt-params)
+
+

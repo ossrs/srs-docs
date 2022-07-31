@@ -27,3 +27,6 @@ Flash播放器连接服务器时，若服务器只支持简单握手，则无法
 备注：SRS编译时若打开了SSL选项（--with-ssl），SRS会先使用复杂握手和客户端握手，若复杂握手失败，则尝试简单握手。
 
 Winlin 2014.2
+![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/doc-zh-5/doc/rtmp-handshake)
+
+

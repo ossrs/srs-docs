@@ -115,3 +115,6 @@ Supported HTTP method:
 * GET: Query API, or download file.
 
 Winlin 2015.1
+![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/doc-en-5/doc/http-server)
+
+

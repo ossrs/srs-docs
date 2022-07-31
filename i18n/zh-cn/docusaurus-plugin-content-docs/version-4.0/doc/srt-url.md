@@ -69,3 +69,6 @@ srt url举例：
 或rtmp://127.0.0.1/live/livestream?vhost=srs.srt.com.cn。
 
 Runner365 2020.02
+![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/doc-zh-4/doc/srt-url)
+
+

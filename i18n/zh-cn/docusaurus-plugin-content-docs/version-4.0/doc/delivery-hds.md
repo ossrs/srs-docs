@@ -55,3 +55,7 @@ vhost __defaultVhost__ {
 为何SRS要在SRS2引入HDS？主要是SRS的HTTP服务器重写，以及文杰哥对于HDS很熟悉。另外，加入HDS不会对SRS现有结构有影响。
 
 Winlin 2015.3
+
+![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/doc-zh-4/doc/delivery-hds)
+
+

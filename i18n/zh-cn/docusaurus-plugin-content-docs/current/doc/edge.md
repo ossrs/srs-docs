@@ -205,3 +205,7 @@ RTMP回源连接。
 具体配置参考上面的Config。
 
 Winlin 2015.4
+
+![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/doc-zh-5/doc/edge)
+
+

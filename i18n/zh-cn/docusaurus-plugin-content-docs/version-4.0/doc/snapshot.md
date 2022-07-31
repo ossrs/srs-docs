@@ -127,3 +127,6 @@ winlin:srs winlin$ ls -lh objs/nginx/html/live/*.png
 注意：SRS没有办法选出最佳的截图。
 
 Winlin 2015.10
+![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/doc-zh-4/doc/snapshot)
+
+

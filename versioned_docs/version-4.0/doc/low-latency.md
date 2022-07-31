@@ -210,3 +210,6 @@ SRS RTMP cluster almost not add more latency.
 Read ![Edge-latency](/img/doc-main-concepts-low-latency-002.png)
 
 Winlin 2015.8
+![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/doc-en-4/doc/low-latency)
+
+

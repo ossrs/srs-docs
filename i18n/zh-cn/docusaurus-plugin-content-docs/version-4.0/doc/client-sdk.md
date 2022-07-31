@@ -46,3 +46,7 @@ hide_table_of_contents: false
 ![OBS](/img/doc-integration-client-sdk-002.png)
 
 Winlin 2017.4
+
+![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/doc-zh-4/doc/client-sdk)
+
+

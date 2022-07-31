@@ -26,3 +26,7 @@ hide_table_of_contents: false
 使用方式请参考[DigitalOcean Droplet](https://mp.weixin.qq.com/s/_GcJm15BGv1qbmHixPQAGQ)：海外用户，直接创建SRS Droplet。
 
 
+
+![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/doc-zh-4/doc/getting-started-cloud)
+
+

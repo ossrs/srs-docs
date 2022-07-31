@@ -107,3 +107,7 @@ srt的配置配置在srt_server的模板下。
 默认是使能状态。srt的媒体封装格式是mpegts，对于AAC在mpegts中的封装，会出现多个报文只携带一个dts时间戳，导致音视频不同步，所以在mpegts的解析过程，需要做一下音视频同步，默认使能。
 
 Runner365 2020.02
+
+![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/doc-zh-4/doc/srt-params)
+
+

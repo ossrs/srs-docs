@@ -149,3 +149,7 @@ HLS流地址为： `http://192.168.1.170:8080/live/livestream_ff.m3u8`
 备注：请将所有实例的IP地址192.168.1.170都换成部署的服务器IP地址。
 
 Winlin 2014.3
+
+![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/doc-zh-4/doc/sample-transcode-to-hls)
+
+

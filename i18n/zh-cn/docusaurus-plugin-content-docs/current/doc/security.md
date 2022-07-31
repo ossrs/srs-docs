@@ -65,3 +65,6 @@ SRS应用安全策略的方式是:
 当Reload改变security配置后，只影响新连接的客户端，已经连接的客户端不受影响。
 
 Winlin 2015.1
+![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/doc-zh-5/doc/security)
+
+

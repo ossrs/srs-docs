@@ -135,3 +135,7 @@ docker run --rm -it -p 1935:1935 -p 1985:1985 -p 8080:8080 -p 1990:1990 -p 8088:
 
 > Note: 可以打开不同的页面，推拉不同的流，就可以实现视频聊天了。
 
+
+![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/doc-zh-5/doc/getting-started)
+
+
