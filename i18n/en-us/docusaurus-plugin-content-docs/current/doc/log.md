@@ -496,7 +496,7 @@ To startup with default config `conf/srs.conf`:
 [2014-04-14 12:12:57.775][trace][0][0] config parse complete
 [2014-04-14 12:12:57.775][trace][0][0] write log to file ./objs/srs.log
 [2014-04-14 12:12:57.775][trace][0][0] you can: tailf ./objs/srs.log
-[2014-04-14 12:12:57.775][trace][0][0] @see: https://github.com/ossrs/srs/wiki/v4_EN_SrsLog
+[2014-04-14 12:12:57.775][trace][0][0] @see https://ossrs.io/lts/en-us/docs/v4/doc/log
 ```
 
 Winlin 2014.10

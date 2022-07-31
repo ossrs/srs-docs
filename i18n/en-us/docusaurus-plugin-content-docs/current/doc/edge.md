@@ -91,7 +91,7 @@ vhost __defaultVhost__ {
         # it's strongly recommend to open the debug_srs_upnode,
         # when connect to upnode, it will take the debug info,
         # for example, the id, source id, pid.
-        # please see: https://github.com/ossrs/srs/wiki/v4_EN_SrsLog
+        # please see https://ossrs.io/lts/en-us/docs/v4/doc/log
         # default: on
         debug_srs_upnode    on;
     }

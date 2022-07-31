@@ -159,8 +159,8 @@ vhost __defaultVhost__ {
         #       [timestamp],replace this const to current UNIX timestamp in ms.
         #       [seq], the sequence number of ts.
         #       [duration], replace this const to current ts duration.
-        # @see https://github.com/ossrs/srs/wiki/v4_CN_DVR#custom-path
-        # @see https://github.com/ossrs/srs/wiki/v4_CN_DeliveryHLS#hls-config
+        # @see https://ossrs.net/lts/zh-cn/docs/v4/doc/dvr#custom-path
+        # @see https://ossrs.net/lts/zh-cn/docs/v4/doc/delivery-hls#hls-config
         # default: [app]/[stream]-[seq].ts
         hls_ts_file     [app]/[stream]-[seq].ts;
         # whether use floor for the hls_ts_file path generation.
@@ -244,8 +244,8 @@ vhost __defaultVhost__ {
 
         # on_hls, never config in here, should config in http_hooks.
         # for the hls http callback, @see http_hooks.on_hls of vhost hooks.callback.srs.com
-        # @read https://github.com/ossrs/srs/wiki/v4_CN_DeliveryHLS#http-callback
-        # @read https://github.com/ossrs/srs/wiki/v4_CN_DeliveryHLS#http-callback
+        # @see https://ossrs.net/lts/zh-cn/docs/v4/doc/delivery-hls#http-callback
+        # @see https://ossrs.net/lts/zh-cn/docs/v4/doc/delivery-hls#http-callback
 
         # on_hls_notify, never config in here, should config in http_hooks.
         # we support the variables to generate the notify url:
@@ -254,8 +254,8 @@ vhost __defaultVhost__ {
         #       [param], replace with the param.
         #       [ts_url], replace with the ts url.
         # for the hls http callback, @see http_hooks.on_hls_notify of vhost hooks.callback.srs.com
-        # @read https://github.com/ossrs/srs/wiki/v4_CN_DeliveryHLS#on-hls-notify
-        # @read https://github.com/ossrs/srs/wiki/v4_CN_DeliveryHLS#on-hls-notify
+        # @see https://ossrs.net/lts/zh-cn/docs/v4/doc/delivery-hls#on-hls-notify
+        # @see https://ossrs.net/lts/zh-cn/docs/v4/doc/delivery-hls#on-hls-notify
     }
 }
 ```

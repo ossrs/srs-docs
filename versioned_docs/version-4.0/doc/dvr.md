@@ -79,8 +79,8 @@ vhost yourvhost {
         #       dvr_path ./objs/nginx/html/[app]/[stream].[timestamp].mp4;
         #       =>
         #       dvr_path ./objs/nginx/html/live/livestream.1420254068776.mp4;
-        # @see https://github.com/ossrs/srs/wiki/v4_EN_DVR#custom-path
-        # @see https://github.com/ossrs/srs/wiki/v4_EN_DVR#custom-path
+        # @see https://ossrs.io/lts/en-us/docs/v4/doc/dvr#custom-path
+        # @see https://ossrs.io/lts/en-us/docs/v4/doc/dvr#custom-path
         #       segment,session apply it.
         # default: ./objs/nginx/html/[app]/[stream].[timestamp].flv
         dvr_path        ./objs/nginx/html/[app]/[stream].[timestamp].flv;
@@ -112,8 +112,8 @@ vhost yourvhost {
 
         # on_dvr, never config in here, should config in http_hooks.
         # for the dvr http callback, @see http_hooks.on_dvr of vhost hooks.callback.srs.com
-        # @read https://github.com/ossrs/srs/wiki/v4_EN_DVR#http-callback
-        # @read https://github.com/ossrs/srs/wiki/v4_EN_DVR#http-callback
+        # @see https://ossrs.io/lts/en-us/docs/v4/doc/dvr#http-callback
+        # @see https://ossrs.io/lts/en-us/docs/v4/doc/dvr#http-callback
     }
 }
 ```

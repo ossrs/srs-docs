@@ -2092,7 +2092,7 @@ kubectl exec `kubectl get po|grep srs-deploy|awk '{print $1}'` -- tail -f objs/s
 [2020-03-12 14:34:18.114][Warn][1][348][11] stats disk not configed, disk iops disabled.
 [2020-03-12 14:34:18.114][Trace][1][348] write log to file ./objs/srs.log
 [2020-03-12 14:34:18.114][Trace][1][348] you can: tailf ./objs/srs.log
-[2020-03-12 14:34:18.114][Trace][1][348] @see: https://github.com/ossrs/srs/wiki/v4_CN_SrsLog
+[2020-03-12 14:34:18.114][Trace][1][348] @see https://ossrs.net/lts/zh-cn/docs/v4/doc/log
 [2020-03-12 14:34:18.115][Trace][1][348] reload http_api on=>off success.
 [2020-03-12 14:34:18.115][Trace][1][348] reload http stream on=>off success.
 [2020-03-12 14:34:18.115][Trace][1][348] vhost __defaultVhost__ maybe modified, reload its detail.

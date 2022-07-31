@@ -1,46 +1,38 @@
 {
   "title": {
-    "message": "SRS",
-    "description": "The title in the navbar"
+    "message": "SRS"
   },
   "item.label.GitHub": {
-    "message": "GitHub",
-    "description": "Navbar item with label GitHub"
+    "message": "GitHub"
   },
   "item.label.Tutorial": {
-    "message": "教程",
-    "description": "Navbar item with label Tutorial"
+    "message": "教程"
   },
   "item.label.Docs": {
-    "message": "文档",
-    "description": "Navbar item with label Docs"
+    "message": "文档"
   },
   "item.label.Samples": {
-    "message": "使用案例",
-    "description": "Navbar item with label Samples"
+    "message": "使用案例"
   },
   "item.label.Blog": {
-    "message": "博客",
-    "description": "Navbar item with label Blog"
+    "message": "博客"
   },
   "item.label.Contact": {
-    "message": "支持",
-    "description": "Navbar item with label Contact"
+    "message": "支持"
   },
   "item.label.Community": {
-    "message": "社区",
-    "description": "Navbar item with label Community"
+    "message": "社区"
   },
   "item.label.Contributing": {
-    "message": "贡献",
-    "description": "Navbar item with label Contributing"
+    "message": "贡献"
   },
   "item.label.Tools": {
-    "message": "工具",
-    "description": "Navbar item with label Tools"
+    "message": "工具"
   },
   "item.label.FAQ": {
-    "message": "FAQ",
-    "description": "Navbar item with label FAQ"
+    "message": "FAQ"
+  },
+  "item.label.LICENSE": {
+    "message": "授权"
   }
 }
