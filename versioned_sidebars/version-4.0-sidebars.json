@@ -67,7 +67,8 @@
       "items": [
         "doc/http-api",
         "doc/http-callback",
-        "doc/reload"
+        "doc/reload",
+        "doc/resource"
       ]
     },
     {
@@ -83,7 +84,9 @@
         "doc/sample-hls-cluster",
         "doc/sample-http-flv-cluster",
         "doc/sample-origin-cluster",
-        "doc/origin-cluster"
+        "doc/origin-cluster",
+        "doc/reuse-port",
+        "doc/nginx-for-hls"
       ]
     },
     {
@@ -131,6 +134,11 @@
       },
       "collapsed": true,
       "items": [
+        "doc/arm",
+        "doc/raspberrypi",
+        "doc/windows",
+        "doc/streamer",
+        "doc/hevc",
         "doc/sample-ingest",
         "doc/sample-forward",
         "doc/sample-ffmpeg",
@@ -140,22 +148,14 @@
         "doc/sample-arm",
         "doc/sample",
         "doc/delivery-hds",
-        "doc/streamer",
         "doc/ffmpeg",
         "doc/nginx-exec",
         "doc/flv-vod-stream",
         "doc/drm",
-        "doc/hevc",
-        "doc/install",
-        "doc/arm",
-        "doc/raspberrypi",
-        "doc/windows",
         "doc/git",
-        "doc/resource",
-        "doc/reuse-port",
-        "doc/nginx-for-hls",
         "doc/special-control",
         "doc/ide",
+        "doc/install",
         "doc/client-sdk",
         "doc/srs-lib-rtmp"
       ]
