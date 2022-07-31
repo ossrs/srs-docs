@@ -14,7 +14,7 @@
       "link": {
         "type": "generated-index"
       },
-      "collapsed": false,
+      "collapsed": true,
       "items": [
         "doc/getting-started",
         "doc/getting-started-build",
@@ -24,114 +24,71 @@
     },
     {
       "type": "category",
-      "label": "Build",
+      "label": "Main Protocols",
       "link": {
         "type": "generated-index"
       },
       "collapsed": true,
       "items": [
-        "doc/install",
-        "doc/service",
-        "doc/arm",
-        "doc/raspberrypi",
-        "doc/windows"
-      ]
-    },
-    {
-      "type": "category",
-      "label": "Samples",
-      "link": {
-        "type": "generated-index"
-      },
-      "collapsed": true,
-      "items": [
-        "doc/sample",
-        {
-          "type": "category",
-          "label": "RTMP",
-          "link": {
-            "type": "generated-index"
-          },
-          "collapsed": true,
-          "items": [
-            "doc/sample-rtmp",
-            "doc/sample-rtmp-cluster"
-          ]
-        },
-        {
-          "type": "category",
-          "label": "HLS",
-          "link": {
-            "type": "generated-index"
-          },
-          "collapsed": true,
-          "items": [
-            "doc/sample-hls",
-            "doc/sample-hls-cluster",
-            "doc/sample-transcode-to-hls"
-          ]
-        },
-        {
-          "type": "category",
-          "label": "FLV",
-          "link": {
-            "type": "generated-index"
-          },
-          "collapsed": true,
-          "items": [
-            "doc/sample-http-flv",
-            "doc/sample-http-flv-cluster"
-          ]
-        },
-        "doc/sample-realtime",
-        "doc/sample-http",
-        "doc/sample-dash",
-        "doc/sample-srt",
-        "doc/sample-ingest",
-        "doc/sample-forward",
-        "doc/sample-ffmpeg",
-        "doc/sample-origin-cluster",
-        "doc/sample-arm"
-      ]
-    },
-    "doc/git",
-    {
-      "type": "category",
-      "label": "Main Concepts",
-      "link": {
-        "type": "generated-index"
-      },
-      "collapsed": true,
-      "items": [
-        "doc/rtmp-url-vhost",
-        "doc/rtmp-handshake",
-        "doc/rtmp-pk-http",
-        "doc/low-latency",
-        "doc/time-jitter",
-        "doc/rtmp-atc",
-        "doc/flv-vod-stream",
-        "doc/drm",
-        "doc/edge",
-        "doc/hevc",
+        "doc/sample-rtmp",
+        "doc/sample-hls",
         "doc/webrtc",
-        {
-          "type": "category",
-          "label": "SRT",
-          "link": {
-            "type": "generated-index"
-          },
-          "collapsed": true,
-          "items": [
-            "doc/srt-codec",
-            "doc/srt-params",
-            "doc/srt-url"
-          ]
-        }
+        "doc/sample-http-flv",
+        "doc/sample-srt",
+        "doc/sample-dash",
+        "doc/http-server"
       ]
     },
     {
       "type": "category",
-      "label": "Guides",
+      "label": "Main Features",
+      "link": {
+        "type": "generated-index"
+      },
+      "collapsed": true,
+      "items": [
+        "doc/delivery-rtmp",
+        "doc/delivery-hls",
+        "doc/delivery-http-flv",
+        "doc/dvr",
+        "doc/ingest",
+        "doc/forward",
+        "doc/security",
+        "doc/snapshot"
+      ]
+    },
+    {
+      "type": "category",
+      "label": "OpenAPI",
+      "link": {
+        "type": "generated-index"
+      },
+      "collapsed": true,
+      "items": [
+        "doc/http-api",
+        "doc/http-callback",
+        "doc/reload"
+      ]
+    },
+    {
+      "type": "category",
+      "label": "Clusters",
+      "link": {
+        "type": "generated-index"
+      },
+      "collapsed": true,
+      "items": [
+        "doc/sample-rtmp-cluster",
+        "doc/edge",
+        "doc/sample-hls-cluster",
+        "doc/sample-http-flv-cluster",
+        "doc/sample-origin-cluster",
+        "doc/origin-cluster"
+      ]
+    },
+    {
+      "type": "category",
+      "label": "Logging",
       "link": {
         "type": "generated-index"
       },
@@ -139,33 +96,7 @@
       "items": [
         "doc/log",
         "doc/log-rotate",
-        "doc/resource",
-        "doc/reload",
-        "doc/reuse-port",
-        "doc/ingest",
-        "doc/streamer",
-        "doc/forward",
-        "doc/snapshot",
-        "doc/dvr",
-        "doc/ffmpeg",
-        "doc/http-server",
-        "doc/security",
-        "doc/nginx-exec",
-        "doc/nginx-for-hls",
-        {
-          "type": "category",
-          "label": "Deploy Guides",
-          "link": {
-            "type": "generated-index"
-          },
-          "collapsed": true,
-          "items": [
-            "doc/delivery-rtmp",
-            "doc/delivery-hls",
-            "doc/delivery-http-flv",
-            "doc/delivery-hds"
-          ]
-        }
+        "doc/service"
       ]
     },
     {
@@ -176,24 +107,53 @@
       },
       "collapsed": true,
       "items": [
-        "doc/origin-cluster",
-        "doc/k8s",
+        "doc/srt-codec",
+        "doc/srt-params",
+        "doc/srt-url",
+        "doc/low-latency",
+        "doc/time-jitter",
+        "doc/performance",
         "doc/gperf",
         "doc/gprof",
         "doc/perf",
-        "doc/performance"
+        "doc/k8s",
+        "doc/rtmp-url-vhost",
+        "doc/rtmp-handshake",
+        "doc/rtmp-pk-http",
+        "doc/rtmp-atc"
       ]
     },
     {
       "type": "category",
-      "label": "Integration",
+      "label": "Others",
       "link": {
         "type": "generated-index"
       },
       "collapsed": true,
       "items": [
-        "doc/http-api",
-        "doc/http-callback",
+        "doc/sample-ingest",
+        "doc/sample-forward",
+        "doc/sample-ffmpeg",
+        "doc/sample-transcode-to-hls",
+        "doc/sample-realtime",
+        "doc/sample-http",
+        "doc/sample-arm",
+        "doc/sample",
+        "doc/delivery-hds",
+        "doc/streamer",
+        "doc/ffmpeg",
+        "doc/nginx-exec",
+        "doc/flv-vod-stream",
+        "doc/drm",
+        "doc/hevc",
+        "doc/install",
+        "doc/arm",
+        "doc/raspberrypi",
+        "doc/windows",
+        "doc/git",
+        "doc/resource",
+        "doc/reuse-port",
+        "doc/nginx-for-hls",
         "doc/special-control",
         "doc/ide",
         "doc/client-sdk",

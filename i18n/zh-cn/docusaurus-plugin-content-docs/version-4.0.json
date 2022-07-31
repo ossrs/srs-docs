@@ -1,66 +1,26 @@
 {
   "sidebar.docsSidebar.category.Getting Started": {
-    "message": "起步",
-    "description": "The label for category Installation in sidebar docsSidebar"
+    "message": "起步"
   },
-  "sidebar.docsSidebar.category.Build": {
-    "message": "编译",
-    "description": "The label for category Build in sidebar docsSidebar"
+  "sidebar.docsSidebar.category.Main Protocols": {
+    "message": "核心协议"
   },
-  "sidebar.sampleSidebar.category.RTMP": {
-    "message": "RTMP",
-    "description": "The label for category RTMP in sidebar sampleSidebar"
+  "sidebar.docsSidebar.category.Main Features": {
+    "message": "核心功能"
   },
-  "sidebar.sampleSidebar.category.HLS": {
-    "message": "HLS",
-    "description": "The label for category HLS in sidebar sampleSidebar"
+  "sidebar.docsSidebar.category.OpenAPI": {
+    "message": "开放接口"
   },
-  "sidebar.sampleSidebar.category.FLV": {
-    "message": "FLV",
-    "description": "The label for category FLV in sidebar sampleSidebar"
+  "sidebar.docsSidebar.category.Clusters": {
+    "message": "集群"
   },
-  "sidebar.docsSidebar.category.Main Concepts": {
-    "message": "核心概念",
-    "description": "The label for category Main Concepts in sidebar docsSidebar"
-  },
-  "sidebar.docsSidebar.category.Integration": {
-    "message": "集成",
-    "description": "The label for category Integration in sidebar docsSidebar"
-  },
-  "sidebar.docsSidebar.category.Guides": {
-    "message": "指南",
-    "description": "The label for category Guides in sidebar docsSidebar"
-  },
-  "sidebar.docsSidebar.category.Deploy Guides": {
-    "message": "部署指南",
-    "description": "The label for category Deploy Guides in sidebar docsSidebar"
-  },
-  "sidebar.docsSidebar.category.SRT": {
-    "message": "SRT",
-    "description": "The label for category SRT in sidebar docsSidebar"
+  "sidebar.docsSidebar.category.Logging": {
+    "message": "日志"
   },
   "sidebar.docsSidebar.category.Advanced Guides": {
-    "message": "进阶指南",
-    "description": "The label for category Advanced Guides in sidebar docsSidebar"
+    "message": "高级指引"
   },
-  "version.label": {
-    "message": "4.0",
-    "description": "The label for version 4.0"
-  },
-  "sidebar.docsSidebar.category.Samples": {
-    "message": "Samples",
-    "description": "The label for category Samples in sidebar docsSidebar"
-  },
-  "sidebar.docsSidebar.category.RTMP": {
-    "message": "RTMP",
-    "description": "The label for category RTMP in sidebar docsSidebar"
-  },
-  "sidebar.docsSidebar.category.HLS": {
-    "message": "HLS",
-    "description": "The label for category HLS in sidebar docsSidebar"
-  },
-  "sidebar.docsSidebar.category.FLV": {
-    "message": "FLV",
-    "description": "The label for category FLV in sidebar docsSidebar"
+  "sidebar.docsSidebar.category.Others": {
+    "message": "其他"
   }
 }
