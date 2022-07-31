@@ -13,7 +13,7 @@ SRS embeded HTTP server, to delivery HLS and files.
 
 ## Step 1, get SRS
 
-For detail, read [GIT](https://ossrs.io/lts/en-us/docs/v4/doc/git)
+For detail, read [GIT](./git)
 
 ```bash
 git clone https://github.com/ossrs/srs
@@ -28,7 +28,7 @@ git pull
 
 ## Step 2, build SRS
 
-For detail, read [Build](https://ossrs.io/lts/en-us/docs/v4/doc/install)
+For detail, read [Build](./install)
 
 ```bash
 ./configure && make
@@ -36,7 +36,7 @@ For detail, read [Build](https://ossrs.io/lts/en-us/docs/v4/doc/install)
 
 ## Step 3, config SRS
 
-For detail, read [HLS](https://ossrs.io/lts/en-us/docs/v4/doc/delivery-hls) and [HTTP Server](https://ossrs.io/lts/en-us/docs/v4/doc/http-server)
+For detail, read [HLS](./delivery-hls) and [HTTP Server](./http-server)
 
 Save bellow as config, or use `conf/http.hls.conf`:
 
@@ -59,11 +59,11 @@ vhost __defaultVhost__ {
 }
 ```
 
-Note: The hls_path must exists, srs never create it. For detail, read [HLS](https://ossrs.io/lts/en-us/docs/v4/doc/delivery-hls)
+Note: The hls_path must exists, srs never create it. For detail, read [HLS](./delivery-hls)
 
 ## Step 4, start SRS
 
-For detail, read [HLS](https://ossrs.io/lts/en-us/docs/v4/doc/delivery-hls) and [SRS HTTP Server](https://ossrs.io/lts/en-us/docs/v4/doc/http-server)
+For detail, read [HLS](./delivery-hls) and [SRS HTTP Server](./http-server)
 
 ```bash
 ./objs/srs -c conf/http.hls.conf
@@ -71,7 +71,7 @@ For detail, read [HLS](https://ossrs.io/lts/en-us/docs/v4/doc/delivery-hls) and 
 
 ## Step 5, start Encoder
 
-For detail, read [HLS](https://ossrs.io/lts/en-us/docs/v4/doc/delivery-hls)
+For detail, read [HLS](./delivery-hls)
 
 Use FFMPEG to publish stream:
 
@@ -84,7 +84,7 @@ Use FFMPEG to publish stream:
     done
 ```
 
-Or use FMLE(which support h.264+aac) to publish, read [Transcode2HLS](https://ossrs.io/lts/en-us/docs/v4/doc/sample-transcode-to-hls)：
+Or use FMLE(which support h.264+aac) to publish, read [Transcode2HLS](./sample-transcode-to-hls)：
 
 ```bash
 FMS URL: rtmp://192.168.1.170/live
@@ -97,7 +97,7 @@ The streams on SRS:
 
 ## Step 6, play RTMP
 
-For detail, read [HLS](https://ossrs.io/lts/en-us/docs/v4/doc/delivery-hls)
+For detail, read [HLS](./delivery-hls)
 
 RTMP url is: `rtmp://192.168.1.170:1935/live/livestream`
 
@@ -109,7 +109,7 @@ Note: Please replace all ip 192.168.1.170 to your server ip.
 
 ## Step 7, play HLS
 
-For detail, read [HLS](https://ossrs.io/lts/en-us/docs/v4/doc/delivery-hls)
+For detail, read [HLS](./delivery-hls)
 
 HLS url: `http://192.168.1.170:8080/live/livestream.m3u8`
 

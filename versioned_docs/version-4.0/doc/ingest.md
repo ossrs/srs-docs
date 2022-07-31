@@ -14,7 +14,7 @@ encode or passthrough then publish as RTMP to SRS.
 Ingest actually use FFMEPG, or your tool, to encode or remux
 to suck known data to RTMP to SRS.
 
-How to deploy ingest, read [Ingest](https://ossrs.io/lts/en-us/docs/v4/doc/sample-ingest)
+How to deploy ingest, read [Ingest](./sample-ingest)
 
 ## Use Scenario
 
@@ -31,7 +31,7 @@ stream from other place.
 
 ## Build
 
-Config SRS with option `--with-ingest`, read [Build](https://ossrs.io/lts/en-us/docs/v4/doc/install)
+Config SRS with option `--with-ingest`, read [Build](./install)
 
 The ingest tool of SRS can use FFMPEG, or use your own tool.
 
@@ -89,7 +89,7 @@ The `type` specifies the ingest type:
 The `engine` specifies the transcode engine and output:
 * enabled: Whether transcode, remux when off.
 * output：The output RTMP url. The vhost and port is variable.
-* others is same to [FFMPEG](https://ossrs.io/lts/en-us/docs/v4/doc/ffmpeg)
+* others is same to [FFMPEG](./ffmpeg)
 
 Note: Engine is copy, when:
 * The enabled is off.

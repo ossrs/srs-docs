@@ -9,7 +9,7 @@ hide_table_of_contents: false
 
 SRS Embeded a HTTP web server, supports api and simple HTTP file for HLS.
 
-To deploy SRS HTTP server, read [Usage: HTTP](https://ossrs.io/lts/en-us/docs/v4/doc/sample-http)
+To deploy SRS HTTP server, read [Usage: HTTP](./sample-http)
 
 The SRS Embeded HTTP server is rewrite refer to go http module, so it's ok to use srs as http server. Read [#277](https://github.com/ossrs/srs/issues/277)
 

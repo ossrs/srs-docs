@@ -84,7 +84,7 @@ The streams for SRS [usage](https://github.com/ossrs/srs/tree/4.0release#usage):
 
 ## HTTP API
 
-About the API for WebRTC, please read [publish](https://ossrs.io/lts/en-us/docs/v4/doc/http-api#webrtc-publish) and [play](https://ossrs.io/lts/en-us/docs/v4/doc/http-api#webrtc-play).
+About the API for WebRTC, please read [publish](./http-api#webrtc-publish) and [play](./http-api#webrtc-play).
 
 ## RTMP to RTC
 

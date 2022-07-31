@@ -14,7 +14,7 @@ Vhost(Virtual Host)就是虚拟域，用来隔离客户或业务。如下图所�
 
 ![](/img/doc-main-concepts-rtmp-url-vhost-001.png)
 
-RTMP和HLS的优势参考：[HLS](https://ossrs.net/lts/zh-cn/docs/v4/doc/delivery-hls)
+RTMP和HLS的优势参考：[HLS](./delivery-hls)
 
 ## Use Scenarios
 
@@ -288,7 +288,7 @@ SRS的full.conf配置文件中，有很多Vhost，主要是为了说明各个功
 | Transcode | app.transcode.vhost.com | 转码实例：只对匹配的app的流进行转码。|
 | Transcode | stream.transcode.vhost.com | 转码实例：只对匹配的流进行转码。|
 
-SRS的demo.conf配置文件中，包含了demo用到的一些vhost，参考[Usage: Demo](https://ossrs.net/lts/zh-cn/docs/v4/doc/sampleDemo)。
+SRS的demo.conf配置文件中，包含了demo用到的一些vhost。
 
 | Category | Vhost | 说明 |
 | -------- | ----- | ---- |

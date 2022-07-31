@@ -13,7 +13,7 @@ SRS supports DVR RTMP stream to FLV/MP4 file. Although the bellow using FLV as e
 
 DVR is always enabled for SRS3+.
 
-For information about the dvr option, read [Build](https://ossrs.io/lts/en-us/docs/v4/doc/install)
+For information about the dvr option, read [Build](./install)
 
 ## Config
 
@@ -131,7 +131,7 @@ The config file can also use `conf/dvr.segment.conf` or `conf/dvr.session.conf`.
 
 The dvr apply is a filter which enable or disable the dvr of specified stream.
 This feature is similar to nginx control module, but stronger than nginx.
-User can use [http raw api](https://ossrs.io/lts/en-us/docs/v4/doc/http-api) to control when to dvr specified stream.
+User can use [http raw api](./http-api) to control when to dvr specified stream.
 Please read [351](https://github.com/ossrs/srs/issues/459#issuecomment-134983742).
 
 The following exmaple dvr `live/stream1`和`live/stream2`, the config:
@@ -143,7 +143,7 @@ vhost xxx {
 }
 ```
 
-About the RAW API to control DVR, read [319](https://github.com/ossrs/srs/issues/319) and [wiki](https://ossrs.io/lts/en-us/docs/v4/doc/http-api#raw-dvr).
+About the RAW API to control DVR, read [319](https://github.com/ossrs/srs/issues/319) and [wiki](./http-api#raw-dvr).
 
 ## Custom Path
 
@@ -227,7 +227,7 @@ The log of api-server for api dvrs：
 127.0.0.1 - - [03/Jan/2015:15:25:48] "POST /api/v1/dvrs HTTP/1.1" 200 1 "" "SRS(Simple RTMP Server)2.0.88"
 ```
 
-For more information, read about [HttpCallback](https://ossrs.io/lts/en-us/docs/v4/doc/http-callback)
+For more information, read about [HttpCallback](./http-callback)
 
 ## Bug
 

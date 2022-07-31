@@ -21,7 +21,7 @@ Streamer是SRS作为服务器侦听并接收其他协议的流（譬如RTSP，MP
 
 ## Build
 
-编译SRS时打开StreamCaster支持，参考[Build](https://ossrs.net/lts/zh-cn/docs/v4/doc/install)：
+编译SRS时打开StreamCaster支持，参考[Build](./install)：
 
 ```
 ./configure --stream-caster=on

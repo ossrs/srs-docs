@@ -9,7 +9,7 @@ hide_table_of_contents: false
 
 边缘集群（Edge Cluster）就是为了解决很多人观看的问题，可以支持非常多的人观看直播流。注意：
 
-* SRS Edge只支持直播流协议，比如RTMP或HTTP-FLV等，参考[RTMP Edge Cluster](https://ossrs.net/lts/zh-cn/docs/v4/doc/sample-rtmp-cluster)。
+* SRS Edge只支持直播流协议，比如RTMP或HTTP-FLV等，参考[RTMP Edge Cluster](./sample-rtmp-cluster)。
 * SRS Edge不支持HLS或DASH等切片的直播流，本质上它们不是流，就是文件分发。
 * SRS Edge不支持WebRTC的流分发，这不是Edge设计的目标，WebRTC有自己的集群方式，参考[#2091](https://github.com/ossrs/srs/issues/2091)。
 

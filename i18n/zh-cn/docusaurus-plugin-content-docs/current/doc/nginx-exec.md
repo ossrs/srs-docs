@@ -16,7 +16,7 @@ NGINX-RTMP支持的EXEC方式，参考[nginx exec][ne]，SRS只支持常用的�
 1. exec_play: 不支持。
 1. exec_record_done: 不支持。
 
-> Note: 可以使用[HTTP Callback](https://ossrs.net/lts/zh-cn/docs/v4/doc/http-callback)，回调你的业务服务器，再启动FFmpeg处理对应的流。这是更灵活，也是更合适的方案。
+> Note: 可以使用[HTTP Callback](./http-callback)，回调你的业务服务器，再启动FFmpeg处理对应的流。这是更灵活，也是更合适的方案。
 
 ## Config
 

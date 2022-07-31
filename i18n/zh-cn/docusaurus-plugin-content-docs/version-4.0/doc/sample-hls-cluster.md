@@ -36,7 +36,7 @@ git pull
 
 ## 第三步，编写SRS源站配置文件，生成HLS切片文件
 
-详细参考[HLS分发](https://ossrs.io/lts/en-us/docs/v4/doc/delivery-hls)。
+详细参考[HLS分发](./delivery-hls)。
 
 将以下内容保存为文件，譬如`conf/hls.origin.conf`，服务器启动时指定该配置文件(srs的conf文件夹有该文件)。
 
@@ -59,7 +59,7 @@ vhost __defaultVhost__ {
 
 ## 第四步，编写NGINX边缘配置文件，分发HLS文件
 
-详细参考[Nginx for HLS](https://ossrs.net/lts/zh-cn/docs/v4/doc/nginx-for-hls)。
+详细参考[Nginx for HLS](./nginx-for-hls)。
 
 将以下内容保存为文件，譬如`conf/hls.edge.conf`，服务器启动时指定该配置文件(srs的conf文件夹有该文件)。
 

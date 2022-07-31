@@ -18,7 +18,7 @@ Forward就是SRS将流拷贝输出给其他的RTMP服务器，以SRS转发给SRS
 
 ## 第一步，获取SRS
 
-详细参考[GIT获取代码](https://ossrs.net/lts/zh-cn/docs/v4/doc/git)
+详细参考[GIT获取代码](./git)
 
 ```bash
 git clone https://github.com/ossrs/srs
@@ -33,7 +33,7 @@ git pull
 
 ## 第二步，编译SRS
 
-详细参考[Build](https://ossrs.net/lts/zh-cn/docs/v4/doc/install)
+详细参考[Build](./install)
 
 ```bash
 ./configure && make
@@ -41,7 +41,7 @@ git pull
 
 ## 第三步，编写主SRS配置文件
 
-详细参考[Forward](https://ossrs.net/lts/zh-cn/docs/v4/doc/forward)
+详细参考[Forward](./forward)
 
 将以下内容保存为文件，譬如`conf/forward.master.conf`，服务器启动时指定该配置文件(srs的conf文件夹有该文件)。
 
@@ -62,7 +62,7 @@ vhost __defaultVhost__ {
 
 ## 第四步，启动主SRS，主SRS将流转发到备SRS
 
-详细参考[Forward](https://ossrs.net/lts/zh-cn/docs/v4/doc/forward)
+详细参考[Forward](./forward)
 
 ```bash
 ./objs/srs -c conf/forward.master.conf
@@ -70,7 +70,7 @@ vhost __defaultVhost__ {
 
 ## 第五步，编写备SRS配置文件
 
-详细参考[Forward](https://ossrs.net/lts/zh-cn/docs/v4/doc/forward)
+详细参考[Forward](./forward)
 
 将以下内容保存为文件，譬如`conf/forward.slave.conf`，服务器启动时指定该配置文件(srs的conf文件夹有该文件)。
 
@@ -86,7 +86,7 @@ vhost __defaultVhost__ {
 
 ## 第六步，启动备SRS，主SRS将流转发到备SRS
 
-详细参考[Forward](https://ossrs.net/lts/zh-cn/docs/v4/doc/forward)
+详细参考[Forward](./forward)
 
 ```bash
 ./objs/srs -c conf/forward.slave.conf
@@ -102,7 +102,7 @@ tcp        0      0 0.0.0.0:19350               0.0.0.0:*                   LIST
 
 ## 第七步，启动推流编码器
 
-详细参考[Forward](https://ossrs.net/lts/zh-cn/docs/v4/doc/forward)
+详细参考[Forward](./forward)
 
 使用FFMPEG命令推流：
 
@@ -130,7 +130,7 @@ Stream: livestream
 
 ## 第八步，观看主SRS的RTMP流
 
-详细参考[Forward](https://ossrs.net/lts/zh-cn/docs/v4/doc/forward)
+详细参考[Forward](./forward)
 
 RTMP流地址为：`rtmp://192.168.1.170/live/livestream`
 
@@ -142,7 +142,7 @@ RTMP流地址为：`rtmp://192.168.1.170/live/livestream`
 
 ## 第九步，观看备SRS的RTMP流
 
-详细参考[Forward](https://ossrs.net/lts/zh-cn/docs/v4/doc/forward)
+详细参考[Forward](./forward)
 
 RTMP流地址为：`rtmp://192.168.1.170:19350/live/livestream`
 

@@ -292,7 +292,7 @@ EOF
 
 Edge Cluster实现了合并回源，对于某一路流，不管有多少客户端播放，Edge Server都只会从Origin Server取一路流，这样可以通过扩展Edge Cluster来增加支持的播放能力，也就是CDN网络具备的重要能力：高并发。
 
-> Note: Edge Cluster根据客户端播放的协议不同，可以分为[RTMP Edge Cluster](https://ossrs.net/lts/zh-cn/docs/v4/doc/sample-rtmp-cluster)或[HTTP-FLV Edge Cluster](https://ossrs.net/lts/zh-cn/docs/v4/doc/sample-http-flvCluster)，详细请参考相关Wiki。
+> Note: Edge Cluster根据客户端播放的协议不同，可以分为[RTMP Edge Cluster](./sample-rtmp-cluster)或[HTTP-FLV Edge Cluster](./sample-http-flv-cluster)，详细请参考相关Wiki。
 
 对于自建源站，没有那么多播放量，为何不建议使用[SRS单源站](./k8s#quick-start)直接提供服务，而要用Edge Cluster呢？主要场景分析如下：
 
@@ -543,7 +543,7 @@ EOF
 
 本章描述了基于K8S，如何构建Origin Cluster支持超多推流场景。
 
-[Origin Cluster](https://ossrs.net/lts/zh-cn/docs/v4/doc/origin-cluster)通过配置其他源站的信息，在本源站没有流时查询到流的位置，通过RTMP 302定向到指定源站，具体原理可以参考[#464](https://github.com/ossrs/srs/issues/464)。主要应用场景如下：
+[Origin Cluster](./origin-cluster)通过配置其他源站的信息，在本源站没有流时查询到流的位置，通过RTMP 302定向到指定源站，具体原理可以参考[#464](https://github.com/ossrs/srs/issues/464)。主要应用场景如下：
 
 * 源站灾备：即使流比较少，也可以用两个源站，这样可以将流分散到不同的源站，避免源站出现问题时影响所有的流。
 * 海量推流：单源站可以支持1000到3000路流，高码率的流支持的路数更少，有DVR和HLS时支持的路更少，源站集群有多个源站同时接收推流，可以支持10k~100k推流，参考[规格](https://github.com/ossrs/srs/issues/464#issuecomment-586550917)。
@@ -959,7 +959,7 @@ EOF
 
 > Note: 平滑更新的关键是平滑退出，重点是边缘集群的更新，对于源站集群我们可以选择直接重启，因为一般会有边缘集群作为代理，源站断开后边缘会重试，不影响用户，参考[#1579](https://github.com/ossrs/srs/issues/1579#issuecomment-587233844)
 
-我们重点关注边缘集群的平滑退出，SRS边缘属于长连接无状态服务。和Nginx一样，SRS使用[SIGQUIT](https://ossrs.net/lts/zh-cn/docs/v4/doc/service#gracefully-upgrade)作为信号，
+我们重点关注边缘集群的平滑退出，SRS边缘属于长连接无状态服务。和Nginx一样，SRS使用[SIGQUIT](./service#gracefully-upgrade)作为信号，
 同时配置[force_grace_quit](https://github.com/ossrs/srs/issues/1579#issuecomment-587475077)认为SIGTERM也是平滑退出，收到SIGQUIT信号后，会等待[grace_start_wait](https://github.com/ossrs/srs/issues/1595#issuecomment-587516567)指定的时间，然后关闭Listeners新的连接不会分配到这个服务器，
 然后开始清理并等待现有连接退出，所有连接退出后还会等待[grace_final_wait](https://github.com/ossrs/srs/issues/1579#issuecomment-587414898)指定的时间，才会退出。
 

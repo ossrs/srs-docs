@@ -9,7 +9,7 @@ hide_table_of_contents: false
 
 SRS can deploy on ARM linux. SRS provides srs-librtmp as client library for ARM.
 
-Compile and build ARM, read [SrsLinuxArm](https://ossrs.io/lts/en-us/docs/v4/doc/arm),
+Compile and build ARM, read [SrsLinuxArm](./arm),
 this artical describes how to deploy.
 
 **Suppose the IP of ubuntu12: 192.168.1.170**
@@ -17,15 +17,15 @@ this artical describes how to deploy.
 **Suppose the ARM device running in VirtualBox 1935 mapped to Ubuntu12 19350, 22 mapped to 2200.
 That is, we can access Ubuntu12 19350 to access the ARM 1935, while the Ubuntu 2200 for ARM 22.**
 
-For more information, read [SrsLinuxArm](https://ossrs.io/lts/en-us/docs/v4/doc/arm)
+For more information, read [SrsLinuxArm](./arm)
 
-> Note: We need to patch ST, read [ST#1](https://github.com/ossrs/state-threads/issues/1) and [SrsLinuxArm](https://ossrs.io/lts/en-us/docs/v4/doc/arm#st-arm-bug-fix)
+> Note: We need to patch ST, read [ST#1](https://github.com/ossrs/state-threads/issues/1) and [SrsLinuxArm](./arm#st-arm-bug-fix)
 
 ## Ubuntu12 cross build SRS
 
 ### Step 1, get SRS
 
-For detail, read [GIT](https://ossrs.io/lts/en-us/docs/v4/doc/git)
+For detail, read [GIT](./git)
 
 ```bash
 git clone https://github.com/ossrs/srs
@@ -40,17 +40,17 @@ git pull
 
 ### Step 2, build SRS
 
-For detail, read [SrsLinuxArm](https://ossrs.io/lts/en-us/docs/v4/doc/arm)
+For detail, read [SrsLinuxArm](./arm)
 
 ```bash
 ./configure --cross-build && make
 ```
 
-> Note: To directly build on ARM device, for example RaspberryPi, use `./configure` instead. For others, please read [SrsLinuxArm](https://ossrs.io/lts/en-us/docs/v4/doc/arm)
+> Note: To directly build on ARM device, for example RaspberryPi, use `./configure` instead. For others, please read [SrsLinuxArm](./arm)
 
 ### Step 3, send SRS to ARM virtual machine
 
-For detail, read [SrsLinuxArm](https://ossrs.io/lts/en-us/docs/v4/doc/arm)
+For detail, read [SrsLinuxArm](./arm)
 
 ```bash
 # Password is：root
@@ -64,7 +64,7 @@ Login to Ubuntu 2200, we are on ARM:
 
 ### Step 4, start SRS
 
-For detail, read [SrsLinuxArm](https://ossrs.io/lts/en-us/docs/v4/doc/arm)
+For detail, read [SrsLinuxArm](./arm)
 
 ```bash
 ./objs/srs -c conf/rtmp.conf
@@ -72,7 +72,7 @@ For detail, read [SrsLinuxArm](https://ossrs.io/lts/en-us/docs/v4/doc/arm)
 
 ### Step 5, start Encoder
 
-For detail, read [SrsLinuxArm](https://ossrs.io/lts/en-us/docs/v4/doc/arm)
+For detail, read [SrsLinuxArm](./arm)
 
 Use FFMPEG to publish stream:
 

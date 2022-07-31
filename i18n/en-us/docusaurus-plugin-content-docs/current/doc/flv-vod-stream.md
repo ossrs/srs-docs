@@ -42,6 +42,6 @@ for arm is not easy to build some server.
 
 ## Config
 
-Read [HTTP Server](https://ossrs.io/lts/en-us/docs/v4/doc/http-server#config)
+Read [HTTP Server](./http-server#config)
 
 Winlin 2015.1

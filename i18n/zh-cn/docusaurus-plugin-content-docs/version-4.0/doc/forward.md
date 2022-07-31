@@ -9,7 +9,7 @@ hide_table_of_contents: false
 
 srs定位为直播服务器，其中一项重要的功能是forward，即将服务器的流转发到其他服务器。
 
-备注：SRS的边缘RTMP参考[Edge](https://ossrs.net/lts/zh-cn/docs/v4/doc/edge)，支持访问时回源，为大规模并发提供最佳解决方案。
+备注：SRS的边缘RTMP参考[Edge](./edge)，支持访问时回源，为大规模并发提供最佳解决方案。
 
 注意：edge可以从源站拉流，也可以将流转发给源站。也就是说，播放edge上的流时，edge会回源拉流；推流到edge上时，edge会直接将流转发给源站。
 
@@ -19,7 +19,7 @@ srs定位为直播服务器，其中一项重要的功能是forward，即将服�
 
 forward本身是用做热备，即用户推一路流上来，可以被SRS转发（或者转码后转发）到多个slave源站，CDN边缘可以回多个slave源，实现故障热备的功能，构建强容错系统。
 
-转发的部署实例参考：[Usage: Forward](https://ossrs.net/lts/zh-cn/docs/v4/doc/sample-forward)
+转发的部署实例参考：[Usage: Forward](./sample-forward)
 
 ## Keywords
 

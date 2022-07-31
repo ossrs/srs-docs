@@ -13,7 +13,7 @@ SRS支持SRT的详细步骤。
 
 ## 第一步，获取SRS
 
-详细参考[GIT获取代码](https://ossrs.net/lts/zh-cn/docs/v4/doc/git)
+详细参考[GIT获取代码](./git)
 
 ```bash
 git clone https://github.com/ossrs/srs
@@ -28,7 +28,7 @@ git pull
 
 ## 第二步，编译SRS
 
-详细参考[Build](https://ossrs.net/lts/zh-cn/docs/v4/doc/install)
+详细参考[Build](./install)
 
 ```bash
 ./configure --srt=on && make
@@ -54,7 +54,7 @@ vhost __defaultVhost__ {
 }
 ```
 
-> Note: 关于SRT更多的详细配置参数，参考[SRT Parameters](https://ossrs.net/lts/zh-cn/docs/v4/doc/srt-params)。
+> Note: 关于SRT更多的详细配置参数，参考[SRT Parameters](./srt-params)。
 
 > Note: 关于SRT的讨论可以参考[#1147](https://github.com/ossrs/srs/issues/1147#issuecomment-577469119)。
 

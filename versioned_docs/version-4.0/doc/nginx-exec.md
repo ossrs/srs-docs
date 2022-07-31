@@ -16,7 +16,7 @@ SRS only support some exec introduced by NGINX RTMP:
 1. exec_play: Not support.
 1. exec_record_done: Not support.
 
-> Note: You could use [HTTP Callback](https://ossrs.io/lts/en-us/docs/v4/doc/http-callback) to start FFmpeg on your backend server. It's much better solution.
+> Note: You could use [HTTP Callback](./http-callback) to start FFmpeg on your backend server. It's much better solution.
 
 ## Config
 

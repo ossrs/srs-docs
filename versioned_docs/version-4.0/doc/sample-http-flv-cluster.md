@@ -7,7 +7,7 @@ hide_table_of_contents: false
 
 # HTTP FLV Cluster Example
 
-About the HTTP FLV cluster of SRS, read [HTTP FLV](https://ossrs.io/lts/en-us/docs/v4/doc/delivery-http-flv#about-http-flv)
+About the HTTP FLV cluster of SRS, read [HTTP FLV](./delivery-http-flv#about-http-flv)
 
 How to use multiple process for HTTP FLV? You can use HTTP reverse proxy, and SRS start the go-sharp project, which can proxy in load balance mode and detect the status of SRS. For go-sharp, read [go-sharp][go-sharp]
 
@@ -40,7 +40,7 @@ For detail, read [Build](./install)
 
 ## Step 3, config origin SRS
 
-For detail, read [HTTP FLV](https://ossrs.io/lts/en-us/docs/v4/doc/delivery-http-flv)
+For detail, read [HTTP FLV](./delivery-http-flv)
 
 Save bellow as config, or use `conf/http.flv.live.conf`:
 
@@ -64,7 +64,7 @@ vhost __defaultVhost__ {
 
 ## Step 4, config edge SRS
 
-For detail, read [HTTP FLV](https://ossrs.io/lts/en-us/docs/v4/doc/delivery-http-flv)
+For detail, read [HTTP FLV](./delivery-http-flv)
 
 Save bellow as config, or use `conf/http.flv.live.edge1.conf` or `conf/http.flv.live.edge2.conf`:
 
@@ -92,7 +92,7 @@ vhost __defaultVhost__ {
 
 ## Step 5, start SRS
 
-For detail, read [HTTP FLV](https://ossrs.io/lts/en-us/docs/v4/doc/delivery-http-flv)
+For detail, read [HTTP FLV](./delivery-http-flv)
 
 ```bash
 ./objs/srs -c conf/http.flv.live.conf &
@@ -102,7 +102,7 @@ For detail, read [HTTP FLV](https://ossrs.io/lts/en-us/docs/v4/doc/delivery-http
 
 ## Step 6, start Encoder
 
-For detail, read read [HTTP FLV](https://ossrs.io/lts/en-us/docs/v4/doc/delivery-http-flv)
+For detail, read read [HTTP FLV](./delivery-http-flv)
 
 Use FFMPEG to publish stream:
 
@@ -136,7 +136,7 @@ The streams on SRS edge2:
 
 ## Step 7, play RTMP
 
-For detail, read [HTTP FLV](https://ossrs.io/lts/en-us/docs/v4/doc/delivery-http-flv)
+For detail, read [HTTP FLV](./delivery-http-flv)
 
 Origin RTMP url is: `rtmp://192.168.1.170:1935/live/livestream`, User can use vlc to play the RTMP stream. Or, use online SRS player: [srs-player][srs-player]
 
@@ -148,7 +148,7 @@ Note: Please replace all ip 192.168.1.170 to your server ip.
 
 ## Step 8, play HTTP FLV
 
-For detail, read [HTTP FLV](https://ossrs.io/lts/en-us/docs/v4/doc/delivery-http-flv)
+For detail, read [HTTP FLV](./delivery-http-flv)
 
 Origin HTTP FLV url: `http://192.168.1.170:8080/live/livestream.flv`, User can use vlc to play the HLS stream. Or, use online SRS player(you must input the flv url): [jwplayer-flv][jwplayer-flv]
 

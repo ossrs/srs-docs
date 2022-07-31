@@ -15,7 +15,7 @@ SRS内嵌了http服务器，支持分发hls流和文件。
 
 ## 第一步，获取SRS
 
-详细参考[GIT获取代码](https://ossrs.net/lts/zh-cn/docs/v4/doc/git)
+详细参考[GIT获取代码](./git)
 
 ```bash
 git clone https://github.com/ossrs/srs
@@ -30,7 +30,7 @@ git pull
 
 ## 第二步，编译SRS
 
-详细参考[Build](https://ossrs.net/lts/zh-cn/docs/v4/doc/install)
+详细参考[Build](./install)
 
 ```bash
 ./configure && make
@@ -38,7 +38,7 @@ git pull
 
 ## 第三步，编写SRS配置文件
 
-详细参考[HLS分发](https://ossrs.net/lts/zh-cn/docs/v4/doc/delivery-hls)和[HTTP服务器](https://ossrs.net/lts/zh-cn/docs/v4/doc/http-server)
+详细参考[HLS分发](./delivery-hls)和[HTTP服务器](./http-server)
 
 将以下内容保存为文件，譬如`conf/http.hls.conf`，服务器启动时指定该配置文件(srs的conf文件夹有该文件)。
 
@@ -61,11 +61,11 @@ vhost __defaultVhost__ {
 }
 ```
 
-备注：hls_path必须存在，srs只会自动创建${hls_path}下的app的目录。参考：[HLS分发: HLS流程](https://ossrs.net/lts/zh-cn/docs/v4/doc/delivery-hls)
+备注：hls_path必须存在，srs只会自动创建${hls_path}下的app的目录。参考：[HLS分发: HLS流程](./delivery-hls)
 
 ## 第四步，启动SRS
 
-详细参考[HLS分发](https://ossrs.net/lts/zh-cn/docs/v4/doc/delivery-hls)和[HTTP服务器](https://ossrs.net/lts/zh-cn/docs/v4/doc/http-server)
+详细参考[HLS分发](./delivery-hls)和[HTTP服务器](./http-server)
 
 ```bash
 ./objs/srs -c conf/http.hls.conf
@@ -77,7 +77,7 @@ vhost __defaultVhost__ {
 
 ## 第五步，启动推流编码器
 
-详细参考[HLS分发](https://ossrs.net/lts/zh-cn/docs/v4/doc/delivery-hls)
+详细参考[HLS分发](./delivery-hls)
 
 使用FFMPEG命令推流：
 
@@ -90,7 +90,7 @@ vhost __defaultVhost__ {
     done
 ```
 
-或使用支持h.264+aac的FMLE推流（若不支持h.264+aac，则可以使用srs转码，参考[Transcode2HLS](https://ossrs.net/lts/zh-cn/docs/v4/doc/sample-transcode-to-hls)）：
+或使用支持h.264+aac的FMLE推流（若不支持h.264+aac，则可以使用srs转码，参考[Transcode2HLS](./sample-transcode-to-hls)）：
 
 ```bash
 FMS URL: rtmp://192.168.1.170/live
@@ -103,7 +103,7 @@ Stream: livestream
 
 ## 第六步，观看RTMP流
 
-详细参考[HLS分发](https://ossrs.net/lts/zh-cn/docs/v4/doc/delivery-hls)
+详细参考[HLS分发](./delivery-hls)
 
 RTMP流地址为：`rtmp://192.168.1.170/live/livestream`
 
@@ -115,7 +115,7 @@ RTMP流地址为：`rtmp://192.168.1.170/live/livestream`
 
 ## 第七步，观看HLS流
 
-详细参考[HLS分发](https://ossrs.net/lts/zh-cn/docs/v4/doc/delivery-hls)
+详细参考[HLS分发](./delivery-hls)
 
 HLS流地址为： `http://192.168.1.170:8080/live/livestream.m3u8`
 
@@ -140,7 +140,7 @@ HLS流地址为： `http://192.168.1.170:8080/live/livestream.m3u8`
 
 ## RTMP流内容和HLS流内容不一致
 * 一般这种问题出现在使用上面的例子推流，然后换成别的编码器推流，或者换个文件推流。
-* 可能是流的编码不对（推流时使用FMLE），HLS需要h.264+aac，需要转码，参考只转码音频[Transcode2HLS](https://ossrs.net/lts/zh-cn/docs/v4/doc/sample-transcode-to-hls)或者全转码[HLS+Transcode][HLS-And-Transcode]
+* 可能是流的编码不对（推流时使用FMLE），HLS需要h.264+aac，需要转码，参考只转码音频[Transcode2HLS](./sample-transcode-to-hls)或者全转码[HLS+Transcode][HLS-And-Transcode]
 
 Winlin 2014.4
 

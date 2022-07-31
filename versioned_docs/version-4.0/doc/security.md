@@ -47,7 +47,7 @@ Please see `conf/security.deny.publish.conf` for detail.
 
 ## Kickoff Client
 
-SRS provides api to kickoff user, read [wiki](https://ossrs.io/lts/en-us/docs/v4/doc/http-api#kickoff-client).
+SRS provides api to kickoff user, read [wiki](./http-api#kickoff-client).
 
 ## Bug
 
