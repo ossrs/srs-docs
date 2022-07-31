@@ -1,6 +1,9 @@
 {
   "tutorialSidebar": [
-    "tutorial/srs-open-source"
+    "tutorial/srs-open-source",
+    "tutorial/srs-cloud-server",
+    "tutorial/srs-faq",
+    "tutorial/srs-other"
   ],
   "toolsSidebar": [
     "tools/demo",
