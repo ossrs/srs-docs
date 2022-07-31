@@ -13,7 +13,7 @@ Delivery DASH by SRS:
 
 ## Step 1, get SRS
 
-For detail, read [GIT](https://github.com/ossrs/srs/wiki/v4_EN_Git)
+For detail, read [GIT](https://ossrs.io/lts/en-us/docs/v4/doc/git)
 
 ```bash
 git clone https://github.com/ossrs/srs
@@ -28,7 +28,7 @@ git pull
 
 ## Step 2, build SRS
 
-For detail, read [Build](https://github.com/ossrs/srs/wiki/v4_EN_Build)
+For detail, read [Build](https://ossrs.io/lts/en-us/docs/v4/doc/install)
 
 ```bash
 ./configure && make
@@ -112,4 +112,4 @@ Winlin 2020.01
 [srs-player-ff]: http://ossrs.net/srs.release/trunk/research/players/srs_player.html?vhost=__defaultVhost__&autostart=true&server=192.168.1.170&app=live&stream=livestream_ff
 [jwplayer]: http://ossrs.net/srs.release/trunk/research/players/srs_player.html?app=live&stream=livestream.m3u8&server=192.168.1.170&port=8080&autostart=true&vhost=192.168.1.170&schema=http&hls_autostart=true&hls_port=8080
 [jwplayer-ff]: http://ossrs.net/srs.release/trunk/research/players/srs_player.html?app=live&stream=livestream_ff.m3u8&server=192.168.1.170&port=8080&autostart=true&vhost=192.168.1.170&schema=http&hls_autostart=true&hls_port=8080
-[HLS-Audio-Only]: https://github.com/ossrs/srs/wiki/v4_EN_DeliveryHLS#hlsaudioonly
+[HLS-Audio-Only]: https://ossrs.io/lts/en-us/docs/v4/doc/delivery-hls#hlsaudioonly

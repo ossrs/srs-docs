@@ -9,7 +9,7 @@ hide_table_of_contents: false
 
 SRS内嵌了一个web服务器，支持api和简单的文件分发。
 
-部署和使用SRS的内嵌http服务器，参考：[Usage: HTTP](http://ossrs.net/srs.release/wiki/v4_CN_SampleHTTP)
+部署和使用SRS的内嵌http服务器，参考：[Usage: HTTP](https://ossrs.net/lts/zh-cn/docs/v4/doc/sample-http)
 
 SRS的内置HTTP服务器已经参考GO的HTTP模块重写，满足商用要求，可以当作web服务器使用。参考：[#277](https://github.com/ossrs/srs/issues/277)
 

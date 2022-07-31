@@ -43,7 +43,7 @@ decided to give it a try. Most intereseting feature of SRS
 to me was a "forward" option. It allows to push all streams 
 you have avaliable on local server (SRS origin) to remote 
 server (SRS edge) with a single line in config file.
-https://github.com/ossrs/srs/wiki/v4_CN_SampleForward
+https://ossrs.net/lts/zh-cn/docs/v4/doc/sample-forward
 
 SRS2 config on origin server:
 ```
@@ -229,7 +229,7 @@ me没怎么去具体分析srs只是觉得作者文档写得比较流畅不乏幽
 
 最简单的方式是什么？摄像头自己支持输出HLS流不就好了？也就是摄像头有个内网ip作为服务器，摄像头给出一个hls的播放地址，IOS客户端譬如IPad可以播放这个HLS地址。
 
-SRS最适合做这个事情，依赖很少，提供[arm编译脚本](http://ossrs.net/srs.release/wiki/v4_CN_SampleARM)，只需要[改下configure的交叉编译工具](http://ossrs.net/srs.release/wiki/v4_CN_SrsLinuxArm#%E4%BD%BF%E7%94%A8%E5%85%B6%E4%BB%96%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91%E5%B7%A5%E5%85%B7)就可以编译了。
+SRS最适合做这个事情，依赖很少，提供[arm编译脚本](https://ossrs.net/lts/zh-cn/docs/v4/doc/sample-arm)，只需要[改下configure的交叉编译工具](https://ossrs.net/lts/zh-cn/docs/v4/doc/arm#%E4%BD%BF%E7%94%A8%E5%85%B6%E4%BB%96%E4%BA%A4%E5%8F%89%E7%BC%96%E8%AF%91%E5%B7%A5%E5%85%B7)就可以编译了。
 
 主要流程：
 * 编译arm下的srs，部署到树莓派，在摄像头中启动srs。
@@ -245,7 +245,7 @@ SRS最适合做这个事情，依赖很少，提供[arm编译脚本](http://ossr
 
 主要流程：
 * 在教室使用播控系统（摄像机+采集卡或者摄像机+导播台）推送RTMP流到主SRS
-* 主SRS自动Forward给从SRS（参考[Forward](http://ossrs.net/srs.release/wiki/v4_CN_Forward)）
+* 主SRS自动Forward给从SRS（参考[Forward](https://ossrs.net/lts/zh-cn/docs/v4/doc/forward)）
 * PC客户端（Flash）使用FlowerPlayer，支持多个服务器的负载均衡
 * FlowerPlayer支持在两个主从SRS，自动选择一个服务器，实现负载均衡
 

@@ -15,7 +15,7 @@ Let's take a look at the typical use scenaio of vhost.
 
 ![](/img/doc-main-concepts-rtmp-url-vhost-001.png)
 
-The benifit of RTMP and HLS, see: [HLS](http://ossrs.net/srs.release/wiki/v4_EN_DeliveryHLS)
+The benifit of RTMP and HLS, see: [HLS](https://ossrs.io/lts/en-us/docs/v4/doc/delivery-hls)
 
 ## Use Scenario
 
@@ -289,7 +289,7 @@ The full.conf of conf of SRS contains many vhost, which used to show each featur
 | Transcode | app.transcode.vhost.com | Sample for transcode, transcode specified app streams.| 
 | Transcode | stream.transcode.vhost.com | Sample for transcode, transcode specified streams. |
 
-The demo.conf of conf of SRS, used for demo of SRS, see: [Usage: Demo](http://ossrs.net/srs.release/wiki/v4_EN_SampleDemo)。
+The demo.conf of conf of SRS, used for demo of SRS, see: [Usage: Demo](https://ossrs.io/lts/en-us/docs/v4/doc/sampleDemo)。
 
 | Category | Vhost | Description |
 | -------- | ----- | ---- |

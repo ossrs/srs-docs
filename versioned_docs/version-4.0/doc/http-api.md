@@ -21,7 +21,7 @@ The HTTP API of SRS follows the simple priciple:
 
 ## Build
 
-SRS always enable the http api, read [configure](http://ossrs.net/srs.release/wiki/v4_EN_Build)
+SRS always enable the http api, read [configure](https://ossrs.io/lts/en-us/docs/v4/doc/install)
 
 ```bash
 ./configure && make
@@ -242,7 +242,7 @@ http_api {
 
 > Remark: Please use your HTTPS key and cert file.
 
-> Note: To enable the HTTPS live streaming, please read [HTTPS FLV Live Stream](http://ossrs.net/srs.release/wiki/v4_EN_DeliveryHttpStream#https-flv-live-stream)
+> Note: To enable the HTTPS live streaming, please read [HTTPS FLV Live Stream](https://ossrs.io/lts/en-us/docs/v4/doc/delivery-http-flv#https-flv-live-stream)
 
 ## HTTP and HTTPS Proxy
 

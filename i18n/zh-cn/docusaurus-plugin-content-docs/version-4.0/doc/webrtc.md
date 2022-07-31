@@ -159,7 +159,7 @@ SRS的URL定义，遵守的是HTTP的URL定义，不同的流的schema不同，�
 
 ## HTTP API
 
-关于SRS的WebRTC API，请参考[publish](https://github.com/ossrs/srs/wiki/v4_CN_HTTPApi#webrtc-publish)和[play](https://github.com/ossrs/srs/wiki/v4_CN_HTTPApi#webrtc-play).
+关于SRS的WebRTC API，请参考[publish](https://ossrs.net/lts/zh-cn/docs/v4/doc/http-api#webrtc-publish)和[play](https://ossrs.net/lts/zh-cn/docs/v4/doc/http-api#webrtc-play).
 
 ## RTMP to RTC
 

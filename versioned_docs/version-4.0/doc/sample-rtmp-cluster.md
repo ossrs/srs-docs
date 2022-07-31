@@ -38,7 +38,7 @@ For detail, read [Build](./install)
 
 ## Step 3, config origin SRS
 
-For detail, read [RTMP](http://ossrs.net/srs.release/wiki/v4_EN_DeliveryRTMP) and [Edge](http://ossrs.net/srs.release/wiki/v4_EN_Edge)
+For detail, read [RTMP](https://ossrs.io/lts/en-us/docs/v4/doc/delivery-rtmp) and [Edge](https://ossrs.io/lts/en-us/docs/v4/doc/edge)
 
 Save bellow as config, or use `conf/origin.conf`:
 
@@ -54,7 +54,7 @@ vhost __defaultVhost__ {
 
 ## Step 4, config edge SRS
 
-For detail, read [RTMP](http://ossrs.net/srs.release/wiki/v4_EN_DeliveryRTMP) and [Edge](http://ossrs.net/srs.release/wiki/v4_EN_Edge)
+For detail, read [RTMP](https://ossrs.io/lts/en-us/docs/v4/doc/delivery-rtmp) and [Edge](https://ossrs.io/lts/en-us/docs/v4/doc/edge)
 
 Save bellow as config, or use `conf/edge.conf`:
 
@@ -74,7 +74,7 @@ vhost __defaultVhost__ {
 
 ## Step 5, start SRS
 
-For detail, read [RTMP](http://ossrs.net/srs.release/wiki/v4_EN_DeliveryRTMP) and [Edge](http://ossrs.net/srs.release/wiki/v4_EN_Edge)
+For detail, read [RTMP](https://ossrs.io/lts/en-us/docs/v4/doc/delivery-rtmp) and [Edge](https://ossrs.io/lts/en-us/docs/v4/doc/edge)
 
 ```bash
 ./objs/srs -c conf/origin.conf &
@@ -83,7 +83,7 @@ For detail, read [RTMP](http://ossrs.net/srs.release/wiki/v4_EN_DeliveryRTMP) an
 
 ## Step 6, start Enocder
 
-For detail, read [RTMP](http://ossrs.net/srs.release/wiki/v4_EN_DeliveryRTMP) and [Edge](http://ossrs.net/srs.release/wiki/v4_EN_Edge)
+For detail, read [RTMP](https://ossrs.io/lts/en-us/docs/v4/doc/delivery-rtmp) and [Edge](https://ossrs.io/lts/en-us/docs/v4/doc/edge)
 
 Use FFMPEG to publish stream:
 
@@ -105,7 +105,7 @@ Stream: livestream
 
 ## Step 7, play RTMP
 
-For detail, read [RTMP](http://ossrs.net/srs.release/wiki/v4_EN_DeliveryRTMP) and [Edge](http://ossrs.net/srs.release/wiki/v4_EN_Edge)
+For detail, read [RTMP](https://ossrs.io/lts/en-us/docs/v4/doc/delivery-rtmp) and [Edge](https://ossrs.io/lts/en-us/docs/v4/doc/edge)
 
 Origin RTMP url is: `rtmp://192.168.1.170:19350/live/livestream`, User can use vlc to play the RTMP stream. Or, use online SRS player: [srs-player-19350][srs-player-19350]
 

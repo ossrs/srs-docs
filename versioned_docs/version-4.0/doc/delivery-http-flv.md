@@ -208,7 +208,7 @@ vhost __defaultVhost__ {
 
 Remark: Use forward+vhost to support multiple http live stream for a stream.
 
-Remark: The http server config section, read [HTTP Server](http://ossrs.net/srs.release/wiki/v4_EN_HTTPServer#config)
+Remark: The http server config section, read [HTTP Server](https://ossrs.io/lts/en-us/docs/v4/doc/http-server#config)
 
 ## About HTTP FLV
 
@@ -249,7 +249,7 @@ Why SRS supports HTTP FLV?
 
 The config sample, read https://github.com/ossrs/srs/issues/293#issuecomment-70449126
 
-To config HTTP FLV, read [Sample](http://ossrs.net/srs.release/wiki/v4_EN_SampleHttpFlv)
+To config HTTP FLV, read [Sample](https://ossrs.io/lts/en-us/docs/v4/doc/sample-http-flv)
 
 ## Websocket FLV
 
@@ -259,7 +259,7 @@ About transmuxing HTTP to WebSocket, please read [mse.go](https://github.com/win
 
 ## HTTP FLV VOD Stream
 
-About the HTTP flv vod stream, read [v4_EN_FlvVodStream](http://ossrs.net/srs.release/wiki/v4_EN_FlvVodStream)
+About the HTTP flv vod stream, read [v4_EN_FlvVodStream](https://ossrs.io/lts/en-us/docs/v4/doc/flv-vod-stream)
 
 Winlin 2015.1
 

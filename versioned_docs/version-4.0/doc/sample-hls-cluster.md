@@ -36,7 +36,7 @@ For detail, read [Build](./install)
 
 ## Step 3, Config origin srs, to generate HLS files
 
-See [HLS](http://ossrs.net/srs.release/wiki/v4_EN_DeliveryHLS).
+See [HLS](https://ossrs.io/lts/en-us/docs/v4/doc/delivery-hls).
 
 Please use config `conf/hls.origin.conf`, or create a config file by:
 
@@ -59,7 +59,7 @@ vhost __defaultVhost__ {
 
 ## Step 4, Config edge NGINX to deliver HLS files.
 
-See [Nginx for HLS](http://ossrs.net/srs.release/wiki/v4_EN_NginxForHLS).
+See [Nginx for HLS](https://ossrs.io/lts/en-us/docs/v4/doc/nginx-for-hls).
 
 Save bellow as config, or use `conf/hls.edge.conf`:
 

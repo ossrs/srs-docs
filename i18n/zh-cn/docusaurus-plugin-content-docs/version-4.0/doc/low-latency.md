@@ -7,9 +7,9 @@ hide_table_of_contents: false
 
 # 低延时直播应用
 
-直播应用中，RTMP和HLS基本上可以覆盖所有客户端观看（参考：[DeliveryHLS](http://ossrs.net/srs.release/wiki/v4_CN_DeliveryHLS)），HLS主要是延时比较大，RTMP主要优势在于延时低。
+直播应用中，RTMP和HLS基本上可以覆盖所有客户端观看（参考：[DeliveryHLS](https://ossrs.net/lts/zh-cn/docs/v4/doc/delivery-hls)），HLS主要是延时比较大，RTMP主要优势在于延时低。
 
-低延迟的部署实例参考：[Usage: Realtime](http://ossrs.net/srs.release/wiki/v4_CN_SampleRealtime)
+低延迟的部署实例参考：[Usage: Realtime](https://ossrs.net/lts/zh-cn/docs/v4/doc/sample-realtime)
 
 ## 应用场景
 
@@ -66,7 +66,7 @@ vhost mrw.srs.com {
 }
 ```
 
-部署低延时的实例，参考：[wiki]([EN](http://ossrs.net/srs.release/wiki/v4_CN_SampleRealtime), [CN](http://ossrs.net/srs.release/wiki/v4_CN_SampleRealtime)).
+部署低延时的实例，参考：[wiki]([EN](https://ossrs.net/lts/zh-cn/docs/v4/doc/sample-realtime), [CN](https://ossrs.net/lts/zh-cn/docs/v4/doc/sample-realtime)).
 
 ## Merged-Read
 
@@ -203,7 +203,7 @@ vhost __defaultVhost__ {
 }
 ```
 
-当然，服务器的性能也要考虑，不可以让一个SRS进程跑太高带宽，一般CPU在80%以下不会影响延迟，连接数参考[性能](http://ossrs.net/srs.release/wiki/v4_CN_Performance)。
+当然，服务器的性能也要考虑，不可以让一个SRS进程跑太高带宽，一般CPU在80%以下不会影响延迟，连接数参考[性能](https://ossrs.net/lts/zh-cn/docs/v4/doc/performance)。
 
 ## 实测
 

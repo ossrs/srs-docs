@@ -9,7 +9,6 @@ hide_table_of_contents: false
 
 SRT有一些重要的参数配置，在SRT的流收发中非常重要。SRS支持对SRT重要参数的配置。
 
-了解更多的SRT，请访问[srt wiki](https://github.com/ossrs/srs/wiki/v5_CN_SRTWiki)。
 > Note: [libSRT所有的参数](https://github.com/Haivision/srt/blob/master/docs/API/API-socket-options#list-of-options)
 
 ## How to config SRT

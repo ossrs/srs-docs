@@ -15,7 +15,7 @@ to support huge pushing and pulling streams.
 
 ## Step 1: Get SRS
 
-For more information please read [here](https://github.com/ossrs/srs/wiki/v4_EN_Git)
+For more information please read [here](https://ossrs.io/lts/en-us/docs/v4/doc/git)
 
 ```bash
 git clone https://github.com/ossrs/srs
@@ -30,7 +30,7 @@ git pull
 
 ## Step 2: Build SRS
 
-For more information please read [here](https://github.com/ossrs/srs/wiki/v4_EN_Build)
+For more information please read [here](https://ossrs.io/lts/en-us/docs/v4/doc/install)
 
 ```bash
 ./configure && make
@@ -38,7 +38,7 @@ For more information please read [here](https://github.com/ossrs/srs/wiki/v4_EN_
 
 ## Step 3: Config the first origin, Origin ServerA
 
-For more information please read [here](https://github.com/ossrs/srs/wiki/v4_EN_OriginCluster)
+For more information please read [here](https://ossrs.io/lts/en-us/docs/v4/doc/origin-cluster)
 
 You can use the file `conf/origin.cluster.serverA.conf`, or write your own:
 
@@ -64,7 +64,7 @@ vhost __defaultVhost__ {
 
 ## Step 4: Config the second origin, Origin ServerB
 
-For more information please read [here](https://github.com/ossrs/srs/wiki/v4_EN_OriginCluster)
+For more information please read [here](https://ossrs.io/lts/en-us/docs/v4/doc/origin-cluster)
 
 You can use the file `conf/origin.cluster.serverB.conf`, or write your own:
 
@@ -90,7 +90,7 @@ vhost __defaultVhost__ {
 
 ## Step 5: Config edge server, which pulls streams from Origin Servers
 
-For more information please read [here](https://github.com/ossrs/srs/wiki/v4_EN_OriginCluster)
+For more information please read [here](https://ossrs.io/lts/en-us/docs/v4/doc/origin-cluster)
 
 You can use the file `conf/origin.cluster.edge.conf`, or write your own:
 
@@ -111,7 +111,7 @@ vhost __defaultVhost__ {
 
 ## Step 6: Start SRS servers
 
-For more information please read [here](https://github.com/ossrs/srs/wiki/v4_EN_OriginCluster)
+For more information please read [here](https://ossrs.io/lts/en-us/docs/v4/doc/origin-cluster)
 
 ```bash
 ./objs/srs -c conf/origin.cluster.serverA.conf &
@@ -121,7 +121,7 @@ For more information please read [here](https://github.com/ossrs/srs/wiki/v4_EN_
 
 ## Step 7: Push stream to any Origin Server
 
-For more information please read [here](https://github.com/ossrs/srs/wiki/v4_EN_OriginCluster)
+For more information please read [here](https://ossrs.io/lts/en-us/docs/v4/doc/origin-cluster)
 
 By FFMEPG: 
 
@@ -143,7 +143,7 @@ Stream: livestream
 
 ## Step 8: Play RTMP stream from Edge server
 
-For more information please read [here](https://github.com/ossrs/srs/wiki/v4_EN_OriginCluster)
+For more information please read [here](https://ossrs.io/lts/en-us/docs/v4/doc/origin-cluster)
 
 RTMP URL is: `rtmp://192.168.1.170/live/livestream`, you can choose VLC, or only player [srs-player][srs-player].
 

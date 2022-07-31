@@ -6,7 +6,7 @@ hide_table_of_contents: false
 ---
 
 The [performance of SRS2](https://github.com/ossrs/srs/tree/2.0release#performance) is improved huge, but is it enough?
-Absolutely NOT! In SRS3, we provide [OriginCluster](http://ossrs.net/srs.release/wiki/v4_EN_SampleOriginCluster) for multiple origin servers to work together,
+Absolutely NOT! In SRS3, we provide [OriginCluster](https://ossrs.io/lts/en-us/docs/v4/doc/sample-origin-cluster) for multiple origin servers to work together,
 and [go-oryx](https://github.com/ossrs/go-oryx) as a tcp proxy for edge server, and these are not good enough, so we support
 SO_REUSEPORT feature for multiple processes edge server.
 

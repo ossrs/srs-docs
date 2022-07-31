@@ -38,6 +38,6 @@ SRS的HTTP服务器已经重写，稳定可以商用。
 
 ## Config
 
-参考[HTTP Server](http://ossrs.net/srs.release/wiki/v4_CN_HTTPServer#config)
+参考[HTTP Server](https://ossrs.net/lts/zh-cn/docs/v4/doc/http-server#config)
 
 Winlin 2015.1

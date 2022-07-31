@@ -23,7 +23,6 @@ There are many online forums for discussion about best practices and application
 
 and read the following articles：
 * [usage](https://github.com/ossrs/srs#usage)
-* [detail wiki docs](https://github.com/ossrs/srs/wiki)
 * [search in issues](https://github.com/ossrs/srs/issues)
 * [offical Website](https://ossrs.io)
 

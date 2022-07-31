@@ -126,3 +126,6 @@ yarn-error.log*
 
 search/data
 srs-docs-search-config.json
+
+/for-writers/doc
+

@@ -8,13 +8,13 @@ hide_table_of_contents: false
 # RTMP low latency deploy example
 
 The SRS realtime(low latency) mode can decrease the latency to 0.8-3s.
-For detail about latency, read [LowLatency](https://github.com/ossrs/srs/wiki/v4_EN_LowLatency).
+For detail about latency, read [LowLatency](https://ossrs.io/lts/en-us/docs/v4/doc/low-latency).
 
 **Suppose the server ip is 192.168.1.170**
 
 ## Step 1, get SRS
 
-For detail, read [GIT](https://github.com/ossrs/srs/wiki/v4_EN_Git)
+For detail, read [GIT](https://ossrs.io/lts/en-us/docs/v4/doc/git)
 
 ```bash
 git clone https://github.com/ossrs/srs
@@ -29,7 +29,7 @@ git pull
 
 ## Step 2, build SRS
 
-For detail, read [Build](https://github.com/ossrs/srs/wiki/v4_EN_Build)
+For detail, read [Build](https://ossrs.io/lts/en-us/docs/v4/doc/install)
 
 ```bash
 ./configure && make
@@ -37,7 +37,7 @@ For detail, read [Build](https://github.com/ossrs/srs/wiki/v4_EN_Build)
 
 ## Step 3, config SRS
 
-For detail, read [LowLatency](https://github.com/ossrs/srs/wiki/v4_EN_LowLatency)
+For detail, read [LowLatency](https://ossrs.io/lts/en-us/docs/v4/doc/low-latency)
 
 Save bellow as config, or use `conf/realtime.conf`:
 
@@ -63,7 +63,7 @@ vhost __defaultVhost__ {
 
 ## Step 4, start SRS
 
-For detail, read [LowLatency](https://github.com/ossrs/srs/wiki/v4_EN_LowLatency)
+For detail, read [LowLatency](https://ossrs.io/lts/en-us/docs/v4/doc/low-latency)
 
 ```bash
 ./objs/srs -c conf/realtime.conf
@@ -71,7 +71,7 @@ For detail, read [LowLatency](https://github.com/ossrs/srs/wiki/v4_EN_LowLatency
 
 ## Step 5, start Encoder
 
-For detail, read [LowLatency](https://github.com/ossrs/srs/wiki/v4_EN_LowLatency)
+For detail, read [LowLatency](https://ossrs.io/lts/en-us/docs/v4/doc/low-latency)
 
 Use FFMPEG to publish stream:
 
@@ -96,7 +96,7 @@ Note: To measure the latency, can use the clock of mobile phone.
 
 ## Step 6, play RTMP
 
-For detail, read [LowLatency](https://github.com/ossrs/srs/wiki/v4_EN_LowLatency)
+For detail, read [LowLatency](https://ossrs.io/lts/en-us/docs/v4/doc/low-latency)
 
 RTMP url is: `rtmp://192.168.1.170:1935/live/livestream`
 

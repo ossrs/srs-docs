@@ -25,7 +25,6 @@ Stack Overflow 是一个很受欢迎的编程问答论坛。您可以提问代�
 
 以及相应的文档：
 * [入门必看](https://github.com/ossrs/srs#usage)
-* [详细说明文档](https://github.com/ossrs/srs/wiki)
 * [在问题库中搜索](https://github.com/ossrs/srs/issues)
 * [官网](https://ossrs.net)
 

@@ -7,13 +7,13 @@ hide_table_of_contents: false
 
 # HDS 分发
 
-HDS指Adobe的Http Dynamic Stream，和Apple的[HLS](http://ossrs.net/srs.release/wiki/v4_CN_DeliveryHLS)类似。
+HDS指Adobe的Http Dynamic Stream，和Apple的[HLS](https://ossrs.net/lts/zh-cn/docs/v4/doc/delivery-hls)类似。
 
 HDS规范参考：http://www.adobe.com/devnet/hds.html
 
 ## Build
 
-编译SRS时可以打开或者关闭HDS，详细参考：[Build](http://ossrs.net/srs.release/wiki/v4_CN_Build)
+编译SRS时可以打开或者关闭HDS，详细参考：[Build](https://ossrs.net/lts/zh-cn/docs/v4/doc/install)
 
 ```
 ./configure --hds=on
@@ -48,7 +48,7 @@ vhost __defaultVhost__ {
 }
 ```
 
-配置项的意义和HLS类似，参考[HLS config](http://ossrs.net/srs.release/wiki/v4_CN_DeliveryHLS#hls-config)
+配置项的意义和HLS类似，参考[HLS config](https://ossrs.net/lts/zh-cn/docs/v4/doc/delivery-hls#hls-config)
 
 ## Why HDS
 

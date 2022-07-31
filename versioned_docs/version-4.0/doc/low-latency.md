@@ -8,10 +8,10 @@ hide_table_of_contents: false
 # Low Latency Live Stream
 
 The RTMP and HLS can cover all requires for internet live stream,
-read  [DeliveryHLS](http://ossrs.net/srs.release/wiki/v4_EN_DeliveryHLS),
+read  [DeliveryHLS](https://ossrs.io/lts/en-us/docs/v4/doc/delivery-hls),
 while RTMP is designed for low latency live stream.
 
-The deploy for low latency, read [Usage: Realtime](http://ossrs.net/srs.release/wiki/v4_EN_SampleRealtime)
+The deploy for low latency, read [Usage: Realtime](https://ossrs.io/lts/en-us/docs/v4/doc/sample-realtime)
 
 ## Use Scenario
 
@@ -58,7 +58,7 @@ vhost mrw.srs.com {
 }
 ```
 
-For example to deploy realtime stream, read [wiki]([EN](http://ossrs.net/srs.release/wiki/v4_EN_SampleRealtime), [CN](http://ossrs.net/srs.release/wiki/v4_EN_SampleRealtime)).
+For example to deploy realtime stream, read [wiki]([EN](https://ossrs.io/lts/en-us/docs/v4/doc/sample-realtime), [CN](https://ossrs.io/lts/en-us/docs/v4/doc/sample-realtime)).
 
 ## Merged-Read
 

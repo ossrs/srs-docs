@@ -13,10 +13,10 @@ The resources of SRS.
 
 The ports used by SRS, kernel services:
 
-* `tcp://1935`, for [RTMP live streaming server](https://github.com/ossrs/srs/wiki/v4_EN_DeliveryRTMP).
-* `tcp://1985`, HTTP API server, for [HTTP-API](https://github.com/ossrs/srs/wiki/v4_EN_HTTPApi), [WebRTC](https://github.com/ossrs/srs/wiki/v4_EN_WebRTC]), etc.
-* `tcp://8080`, HTTP live streaming server, [HTTP-FLV](https://github.com/ossrs/srs/wiki/v4_EN_SampleHttpFlv), HLS(https://github.com/ossrs/srs/wiki/v4_EN_SampleHLS) as such.
-* `udp://8000`, [WebRTC Media](https://github.com/ossrs/srs/wiki/v4_EN_WebRTC) server.
+* `tcp://1935`, for [RTMP live streaming server](https://ossrs.io/lts/en-us/docs/v4/doc/delivery-rtmp).
+* `tcp://1985`, HTTP API server, for [HTTP-API](https://ossrs.io/lts/en-us/docs/v4/doc/http-api), [WebRTC](https://ossrs.io/lts/en-us/docs/v4/doc/webrtc]), etc.
+* `tcp://8080`, HTTP live streaming server, [HTTP-FLV](https://ossrs.io/lts/en-us/docs/v4/doc/sample-http-flv), HLS(https://ossrs.io/lts/en-us/docs/v4/doc/sample-hls) as such.
+* `udp://8000`, [WebRTC Media](https://ossrs.io/lts/en-us/docs/v4/doc/webrtc) server.
 
 For optional HTTPS services, which might be provided by other web servers:
 
@@ -25,9 +25,9 @@ For optional HTTPS services, which might be provided by other web servers:
 
 For optional stream caster services, to push streams to SRS:
 
-* `udp://8935`, Stream Caster: [Push MPEGTS over UDP](https://github.com/ossrs/srs/wiki/v4_CN_Streamer#push-mpeg-ts-over-udp) server.
-* `tcp://554`, Stream Caster: [Push RTSP](https://github.com/ossrs/srs/wiki/v4_CN_Streamer#push-rtsp-to-srs) server.
-* `tcp://8936`, Stream Caster: [Push HTTP-FLV](https://github.com/ossrs/srs/wiki/v4_CN_Streamer#push-http-flv-to-srs) server.
+* `udp://8935`, Stream Caster: [Push MPEGTS over UDP](https://ossrs.net/lts/zh-cn/docs/v4/doc/streamer#push-mpeg-ts-over-udp) server.
+* `tcp://554`, Stream Caster: [Push RTSP](https://ossrs.net/lts/zh-cn/docs/v4/doc/streamer#push-rtsp-to-srs) server.
+* `tcp://8936`, Stream Caster: [Push HTTP-FLV](https://ossrs.net/lts/zh-cn/docs/v4/doc/streamer#push-http-flv-to-srs) server.
 * `udp://10080`, Stream Caster: [Push SRT Media](https://github.com/ossrs/srs/issues/1147#issuecomment-577469119) server.
 
 For external services to work with SRS:
@@ -53,7 +53,6 @@ Other API used by [ossrs.net](https://ossrs.net):
 The statistic path for [ossrs.net](https://ossrs.net):
 
 * `/srs/xxx` The GitHub pages for [srs](https://github.com/ossrs/srs)
-* `/wiki/xxx` The GitHub wiki for [srs](https://github.com/ossrs/srs/wiki)
 * `/release/xxx` The pages for [ossrs.net](https://ossrs.net)
 * `/console/xxx` The pages for [console](http://ossrs.net/console/)
 * `/player/xxx` The pages for [players and publishers](http://ossrs.net/players/)
@@ -61,7 +60,7 @@ The statistic path for [ossrs.net](https://ossrs.net):
 
 ## Mirrors
 
-[Gitee](https://gitee.com/ossrs/srs), [the GIT usage](https://github.com/ossrs/srs/wiki/v4_EN_Git)
+[Gitee](https://gitee.com/ossrs/srs), [the GIT usage](https://ossrs.io/lts/en-us/docs/v4/doc/git)
 
 ```
 git clone https://gitee.com/ossrs/srs.git &&
@@ -69,14 +68,14 @@ cd srs && git remote set-url origin https://github.com/ossrs/srs.git && git pull
 ```
 
 > Remark: For users in China, recomment to use mirror from CSDN or OSChina, because they are much faster.
-[Gitlab](https://gitlab.com/winlinvip/srs-gitlab), [the GIT usage](https://github.com/ossrs/srs/wiki/v4_EN_Git)
+[Gitlab](https://gitlab.com/winlinvip/srs-gitlab), [the GIT usage](https://ossrs.io/lts/en-us/docs/v4/doc/git)
 
 ```
 git clone https://gitlab.com/winlinvip/srs-gitlab.git srs &&
 cd srs && git remote set-url origin https://github.com/ossrs/srs.git && git pull
 ```
 
-[Github](https://github.com/ossrs/srs), [the GIT usage](https://github.com/ossrs/srs/wiki/v4_EN_Git)
+[Github](https://github.com/ossrs/srs), [the GIT usage](https://ossrs.io/lts/en-us/docs/v4/doc/git)
 
 ```
 git clone https://github.com/ossrs/srs.git

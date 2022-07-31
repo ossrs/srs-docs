@@ -42,12 +42,12 @@ Each scenario can build a typical application.
 
 Third, Understand the technical points, application scenarios, code and problem solving, about 3 to 6 months.
 
-- [Video Columns](https://github.com/ossrs/srs/wiki/v4_CN_Home#effective-srs), includes environment building, code analysis, and explanations from professional teachers at Voice Academy.
-- [Solution Guides](https://github.com/ossrs/srs/wiki/v4_CN_Home#solution-guides)，share and explore the application of SRS in different scenarios.
-- [Deployment Guides](https://github.com/ossrs/srs/wiki/v4_CN_Home#deployment-guides), how to deploy to implement different specific functions.
-- [Cluster Guides](https://github.com/ossrs/srs/wiki/v4_CN_Home#cluster-guides), when business grows rapidly, how to scale single server to cluster, and how to serve users in different regions.
-- [Integration Guides](https://github.com/ossrs/srs/wiki/v4_CN_Home#integration-guides), How to integrate with existing systems, how to authenticate users, security and anti-stealing chain mechanisms, etc.
-- [Develop Guides](https://github.com/ossrs/srs/wiki/v4_CN_Home#develop-guide), Concurrent principles, code analysis, high performance server framework, performance optimization, etc.
+- [Video Columns](./introduction#effective-srs), includes environment building, code analysis, and explanations from professional teachers at Voice Academy.
+- [Solution Guides](./introduction#solution-guides)，share and explore the application of SRS in different scenarios.
+- [Deployment Guides](./introduction#deployment-guides), how to deploy to implement different specific functions.
+- [Cluster Guides](./introduction#cluster-guides), when business grows rapidly, how to scale single server to cluster, and how to serve users in different regions.
+- [Integration Guides](./introduction#integration-guides), How to integrate with existing systems, how to authenticate users, security and anti-stealing chain mechanisms, etc.
+- [Develop Guides](./introduction#develop-guide), Concurrent principles, code analysis, high performance server framework, performance optimization, etc.
 
 If you can thoroughly understand SRS, it's really not difficult.
 

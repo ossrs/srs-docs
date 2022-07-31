@@ -13,13 +13,13 @@ RTMP指Adobe的RTMP(Realtime Message Protocol)，广泛应用于低延时直播�
 
 HLS指Apple的HLS(Http Live Streaming)，本身就是Live（直播）的，不过Vod（点播）也能支持。HLS是Apple平台的标准流媒体协议，和RTMP在PC上一样支持得天衣无缝。
 
-HLS和RTMP两种分发方式，就可以支持所有的终端。RTMP参考[RTMP分发](http://ossrs.net/srs.release/wiki/v4_CN_DeliveryRTMP)。
+HLS和RTMP两种分发方式，就可以支持所有的终端。RTMP参考[RTMP分发](https://ossrs.net/lts/zh-cn/docs/v4/doc/delivery-rtmp)。
 
-RTMP和HLS的比较参考：[RTMP PK HLS](http://ossrs.net/srs.release/wiki/v4_CN_RTMP.PK.HTTP)
+RTMP和HLS的比较参考：[RTMP PK HLS](https://ossrs.net/lts/zh-cn/docs/v4/doc/rtmp-pk-http)
 
-部署分发HLS的实例，参考：[Usage: HLS](http://ossrs.net/srs.release/wiki/v4_CN_SampleHLS)
+部署分发HLS的实例，参考：[Usage: HLS](https://ossrs.net/lts/zh-cn/docs/v4/doc/sample-hls)
 
-部署HLS的分发集群，边缘分发集群，解决海量的观看问题，请参考[Nginx for HLS](http://ossrs.net/srs.release/wiki/v4_CN_NginxForHLS)
+部署HLS的分发集群，边缘分发集群，解决海量的观看问题，请参考[Nginx for HLS](https://ossrs.net/lts/zh-cn/docs/v4/doc/nginx-for-hls)
 
 ## Use Scenario
 
@@ -277,7 +277,7 @@ hls_window >= sum(m3u8中每个ts的时长)
 ```
 * hls_path：HLS的m3u8和ts文件保存的路径。m3u8和ts文件都保存在这个目录中。
 * hls_m3u8_file: HLS的m3u8文件名，包含可替换的[vhost],[app]和[stream]变量。
-* hls_ts_file: HLS的ts文件名，包含可替换的一系列变量，参考[dvr variables](http://ossrs.net/srs.release/wiki/v4_CN_DVR#custom-path)，另外，[seq]是ts的seqence number。
+* hls_ts_file: HLS的ts文件名，包含可替换的一系列变量，参考[dvr variables](https://ossrs.net/lts/zh-cn/docs/v4/doc/dvr#custom-path)，另外，[seq]是ts的seqence number。
 ```bash
 对于RTMP流：rtmp://localhost/live/livestream
 HLS配置路径：
@@ -306,7 +306,7 @@ HLS配置路径：
 * on_hls: 当切片生成时，回调这个url，使用POST回调。用来和自己的系统集成，譬如实现切片移动等。
 * on_hls_notify: 当切片生成时，回调这个url，使用GET回调。用来和系统集成，可以使用[ts_url]变量，实现预分发(即下载一次ts片)。
 
-部署分发HLS的实例，参考：[Usage: HLS](http://ossrs.net/srs.release/wiki/v4_CN_SampleHLS)
+部署分发HLS的实例，参考：[Usage: HLS](https://ossrs.net/lts/zh-cn/docs/v4/doc/sample-hls)
 
 ## HTTP Callback
 
@@ -330,11 +330,11 @@ HLS可能会有爆音的问题，这是因为AAC的采样率导致在FLV(tbn=100
 
 ## HLSAudioOnly
 
-SRS支持分发HLS纯音频流，当RTMP流没有视频，且音频为aac（可以使用转码转为aac，参考[Usage: Transcode2HLS](http://ossrs.net/srs.release/wiki/v4_CN_SampleTranscode2HLS)），SRS只切片音频。
+SRS支持分发HLS纯音频流，当RTMP流没有视频，且音频为aac（可以使用转码转为aac，参考[Usage: Transcode2HLS](https://ossrs.net/lts/zh-cn/docs/v4/doc/sample-transcode-to-hls)），SRS只切片音频。
 
-若RTMP流中已经有视频和音频，需要支持纯音频HLS流，可以用转码将视频去掉，参考：[转码: 禁用流](http://ossrs.net/srs.release/wiki/v4_CN_FFMPEG#%E7%A6%81%E7%94%A8)。然后分发音频流。
+若RTMP流中已经有视频和音频，需要支持纯音频HLS流，可以用转码将视频去掉，参考：[转码: 禁用流](https://ossrs.net/lts/zh-cn/docs/v4/doc/ffmpeg#%E7%A6%81%E7%94%A8)。然后分发音频流。
 
-分发纯音频流不需要特殊配置，和HLS分发一样，参考：[Usage: HLS](http://ossrs.net/srs.release/wiki/v4_CN_SampleHLS)
+分发纯音频流不需要特殊配置，和HLS分发一样，参考：[Usage: HLS](https://ossrs.net/lts/zh-cn/docs/v4/doc/sample-hls)
 
 ## HLS and Forward
 

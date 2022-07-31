@@ -10,7 +10,7 @@ hide_table_of_contents: false
 SRS is design for live server, the forward is a important feature, used to 
 forward stream on server to other live servers.
 
-Note: The information about edge, read [Edge](https://github.com/ossrs/srs/wiki/v4_EN_Edge),
+Note: The information about edge, read [Edge](https://ossrs.io/lts/en-us/docs/v4/doc/edge),
 the best solution for large cluster and huge concurrency.
 
 Note: The edge is for both play and publish.
@@ -20,7 +20,7 @@ Note: Use edge first, except need to copy a stream to multiple servers in a time
 The forward is used for fault backup, the origin can forward a stream to multiple origin servers, 
 the edge can use multiple origin server for backup.
 
-For the usage of forward, read [Usage: Forward](https://github.com/ossrs/srs/wiki/v4_EN_SampleForward)
+For the usage of forward, read [Usage: Forward](https://ossrs.io/lts/en-us/docs/v4/doc/sample-forward)
 
 ## Keywords
 

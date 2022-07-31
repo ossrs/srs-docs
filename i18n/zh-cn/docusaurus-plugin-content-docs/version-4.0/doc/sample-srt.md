@@ -13,7 +13,7 @@ SRS支持SRT的详细步骤。
 
 ## 第一步，获取SRS
 
-详细参考[GIT获取代码](https://github.com/ossrs/srs/wiki/v4_CN_Git)
+详细参考[GIT获取代码](https://ossrs.net/lts/zh-cn/docs/v4/doc/git)
 
 ```bash
 git clone https://github.com/ossrs/srs
@@ -28,7 +28,7 @@ git pull
 
 ## 第二步，编译SRS
 
-详细参考[Build](https://github.com/ossrs/srs/wiki/v4_CN_Build)
+详细参考[Build](https://ossrs.net/lts/zh-cn/docs/v4/doc/install)
 
 ```bash
 ./configure --srt=on && make
@@ -54,7 +54,7 @@ vhost __defaultVhost__ {
 }
 ```
 
-> Note: 关于SRT更多的详细配置参数，参考[SRT Parameters](https://github.com/ossrs/srs/wiki/v4_CN_SRTParams)。
+> Note: 关于SRT更多的详细配置参数，参考[SRT Parameters](https://ossrs.net/lts/zh-cn/docs/v4/doc/srt-params)。
 
 > Note: 关于SRT的讨论可以参考[#1147](https://github.com/ossrs/srs/issues/1147#issuecomment-577469119)。
 
@@ -95,4 +95,4 @@ Winlin 2020.01
 [srs-player-19350]: http://ossrs.net/srs.release/trunk/research/players/srs_player.html?vhost=__defaultVhost__&autostart=true&server=192.168.1.170&app=live&stream=livestream&port=19350
 [srs-player-ff]: http://ossrs.net/srs.release/trunk/research/players/srs_player.html?vhost=__defaultVhost__&autostart=true&server=192.168.1.170&app=live&stream=livestream_ff
 [jwplayer]: http://ossrs.net/srs.release/trunk/research/players/srs_player.html?app=live&stream=livestream.m3u8&server=192.168.1.170&port=8080&autostart=true&vhost=192.168.1.170&schema=http&hls_autostart=true&hls_port=8080
-[HLS-Audio-Only]: https://github.com/ossrs/srs/wiki/v4_CN_DeliveryHLS#hlsaudioonly
+[HLS-Audio-Only]: https://ossrs.net/lts/zh-cn/docs/v4/doc/delivery-hls#hlsaudioonly

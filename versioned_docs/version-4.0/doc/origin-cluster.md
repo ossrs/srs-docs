@@ -38,7 +38,7 @@ vhost __defaultVhost__ {
 
         # For origin (mode local) cluster, the co-worker's HTTP APIs.
         # This origin will connect to co-workers and communicate with them.
-        # please read: https://github.com/ossrs/srs/wiki/v4_EN_OriginCluster
+        # please read: https://ossrs.io/lts/en-us/docs/v4/doc/origin-cluster
         # TODO: FIXME: Support reload.
         coworkers           127.0.0.1:9091 127.0.0.1:9092;
     }

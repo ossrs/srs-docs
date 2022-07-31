@@ -9,8 +9,8 @@ hide_table_of_contents: false
 
 There are two major methods to deliver video over internet, Live and WebRTC.
 
-* Live streaming: [HLS](http://ossrs.net/srs.release/wiki/v4_EN_DeliveryHLS), [RTMP](http://ossrs.net/srs.release/wiki/v4_EN_DeliveryRTMP) and [HTTP-FLV](http://ossrs.net/srs.release/wiki/v4_EN_DeliveryHttpStream) for entertainment.
-* WebRTC: [RTC](http://ossrs.net/srs.release/wiki/v4_EN_WebRTC), for communication.
+* Live streaming: [HLS](https://ossrs.io/lts/en-us/docs/v4/doc/delivery-hls), [RTMP](https://ossrs.io/lts/en-us/docs/v4/doc/delivery-rtmp) and [HTTP-FLV](https://ossrs.io/lts/en-us/docs/v4/doc/delivery-http-flv) for entertainment.
+* WebRTC: [RTC](https://ossrs.io/lts/en-us/docs/v4/doc/webrtc), for communication.
 
 Ignore other delivery protocol, which is not used on internet:
 * UDP: Private protocols, realtime protocol, latence in ms.
@@ -72,8 +72,8 @@ HLS is bad for:
 
 ## Use Scenario
 
-See [HTTP](http://ossrs.net/srs.release/wiki/v4_EN_DeliveryHLS)
-and [RTMP](http://ossrs.net/srs.release/wiki/v4_EN_DeliveryRTMP)
+See [HTTP](https://ossrs.io/lts/en-us/docs/v4/doc/delivery-hls)
+and [RTMP](https://ossrs.io/lts/en-us/docs/v4/doc/delivery-rtmp)
 
 I recomment to use these delivery protocols in:
 * Encoder always output RTMP for internet server.

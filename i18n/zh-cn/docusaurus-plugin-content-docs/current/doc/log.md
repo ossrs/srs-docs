@@ -496,7 +496,7 @@ vhost __defaultVhost__ {
 
 系统默认方式是daemon+log2file，具体参考`full.conf`的说明。
 
-注意：[init.d脚本启动](http://ossrs.net/srs.release/wiki/v4_CN_LinuxService)会将console日志也打印到文件，若没有指定文件，默认文件为`./objs/srs.log`。脚本启动尽量保证日志不丢失。
+注意：[init.d脚本启动](https://ossrs.net/lts/zh-cn/docs/v4/doc/service)会将console日志也打印到文件，若没有指定文件，默认文件为`./objs/srs.log`。脚本启动尽量保证日志不丢失。
 
 注意：一般以daemon后台启动，并将日志写到文件（默认），srs会提示配置解析成功，日志写到文件。
 

@@ -7,13 +7,13 @@ hide_table_of_contents: false
 
 # Ingest采集实例
 
-SRS启动后，自动启动Ingest开始采集file/stream/device，并将流推送到SRS。详细规则参考：[Ingest](https://github.com/ossrs/srs/wiki/v4_CN_Ingest)，本文列出了具体的部署的实例。
+SRS启动后，自动启动Ingest开始采集file/stream/device，并将流推送到SRS。详细规则参考：[Ingest](https://ossrs.net/lts/zh-cn/docs/v4/doc/ingest)，本文列出了具体的部署的实例。
 
 **假设服务器的IP是：192.168.1.170**
 
 ## 第一步，获取SRS
 
-详细参考[GIT获取代码](https://github.com/ossrs/srs/wiki/v4_CN_Git)
+详细参考[GIT获取代码](https://ossrs.net/lts/zh-cn/docs/v4/doc/git)
 
 ```bash
 git clone https://github.com/ossrs/srs
@@ -28,7 +28,7 @@ git pull
 
 ## 第二步，编译SRS
 
-详细参考[Build](https://github.com/ossrs/srs/wiki/v4_CN_Build)
+详细参考[Build](https://ossrs.net/lts/zh-cn/docs/v4/doc/install)
 
 ```bash
 ./configure --ffmpeg-tool=on && make
@@ -40,7 +40,7 @@ git pull
 
 ## 第三步，编写SRS配置文件
 
-详细参考[Ingest](https://github.com/ossrs/srs/wiki/v4_CN_Ingest)
+详细参考[Ingest](https://ossrs.net/lts/zh-cn/docs/v4/doc/ingest)
 
 将以下内容保存为文件，譬如`conf/ingest.conf`，服务器启动时指定该配置文件(srs的conf文件夹有该文件)。
 
@@ -68,7 +68,7 @@ vhost __defaultVhost__ {
 
 ## 第四步，启动SRS
 
-详细参考[Ingest](https://github.com/ossrs/srs/wiki/v4_CN_Ingest)
+详细参考[Ingest](https://ossrs.net/lts/zh-cn/docs/v4/doc/ingest)
 
 ```bash
 ./objs/srs -c conf/ingest.conf
@@ -79,7 +79,7 @@ vhost __defaultVhost__ {
 
 ## 第五步，观看RTMP流
 
-详细参考[Ingest](https://github.com/ossrs/srs/wiki/v4_CN_Ingest)
+详细参考[Ingest](https://ossrs.net/lts/zh-cn/docs/v4/doc/ingest)
 
 RTMP流地址为：`rtmp://192.168.1.170/live/livestream`
 
