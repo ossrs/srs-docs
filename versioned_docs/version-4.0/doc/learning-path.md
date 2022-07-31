@@ -5,6 +5,8 @@ hide_title: false
 hide_table_of_contents: false
 ---
 
+# Learning Path
+
 A learning path for newcomers, please be sure to follow the documentation.
 
 ## Quick Preview

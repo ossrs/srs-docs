@@ -1,3 +1,5 @@
+# FAQ
+
 About Q&A, please follow [rules](https://stackoverflow.com/help/product-support)：
 
 * Please read the [Wiki](/docs/v4/doc/introduction) first.

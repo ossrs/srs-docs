@@ -1,3 +1,5 @@
+# FAQ
+
 关于Q&A，请按下面的流程：
 
 * 在[Wiki](/docs/v4/doc/introduction)中有的内容，请花时间看文档，不要提Issue。

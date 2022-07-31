@@ -6,6 +6,8 @@ tags: [tutorial, video, chat, streaming]
 custom_edit_url: null
 ---
 
+# Video Chat Live
+
 On the way...
 
 <!--truncate-->

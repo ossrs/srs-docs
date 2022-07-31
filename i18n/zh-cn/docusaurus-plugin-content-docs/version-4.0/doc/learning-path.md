@@ -5,6 +5,8 @@ hide_title: false
 hide_table_of_contents: false
 ---
 
+# Learning Path
+
 新同学专用的学习路径，请一定按照文档操作。
 
 ## 快速预览
