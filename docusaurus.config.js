@@ -128,6 +128,10 @@ const config = {
                 docId: 'tools/demo',
                 label: 'Tools',
               },
+              {
+                to: '/license',
+                label: 'LICENSE',
+              },
             ],
           },
           {
