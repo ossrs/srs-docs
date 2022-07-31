@@ -34,5 +34,8 @@
   },
   "item.label.LICENSE": {
     "message": "授权"
+  },
+  "item.label.Milestones": {
+    "message": "里程碑"
   }
 }

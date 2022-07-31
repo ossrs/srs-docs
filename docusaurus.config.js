@@ -129,6 +129,10 @@ const config = {
                 label: 'Tools',
               },
               {
+                to: '/product',
+                label: 'Milestones',
+              },
+              {
                 to: '/license',
                 label: 'LICENSE',
               },
