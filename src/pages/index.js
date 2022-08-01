@@ -24,7 +24,7 @@ function HomepageHeader() {
           </Link>
         </div>
       </div>
-      <div className="container">
+      <div className={clsx('container', styles.imageHLD)}>
         <p>
           <a href={hldHdImage} target='_blank' rel='noreferrer'>
             <img src={hldSdImage}/>
@@ -45,6 +45,7 @@ export default function Home() {
       <main>
         <HomepageFeatures/>
       </main>
+      <img src='https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/index'/>
     </Layout>
   );
 }

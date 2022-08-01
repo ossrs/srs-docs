@@ -21,3 +21,14 @@
   align-items: center;
   justify-content: center;
 }
+
+/* For image HLD */
+.imageHLD {
+  display: block;
+}
+
+@media screen and (max-width: 966px) {
+  .imageHLD {
+    display: none;
+  }
+}
