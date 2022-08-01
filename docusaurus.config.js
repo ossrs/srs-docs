@@ -40,7 +40,7 @@ const config = {
           editUrl: ({ versionDocsDirPath, docPath, locale, version }) => {
             return 'en-us' === locale
               ? `https://github.com/ossrs/srs-docs/edit/main/${versionDocsDirPath}/${docPath}`
-              : `https://github.com/ossrs/srs-docs/edit/main/i18n/${locale}/docusaurus-plugin-content-docs/${version}/${docPath}`;
+              : `https://github.com/ossrs/srs-docs/edit/main/i18n/${locale}/docusaurus-plugin-content-docs/version-${version}/${docPath}`;
           },
           // lastVersion: 'current',
           lastVersion: versions[0],
