@@ -159,6 +159,7 @@ Edge2 HTTP FLV url: `http://192.168.1.170:8082/live/livestream.flv`, User can us
 Note: Please replace all ip 192.168.1.170 to your server ip.
 
 Winlin 2014.11
+
 ![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/doc-en-4/doc/sample-http-flv-cluster)
 
 

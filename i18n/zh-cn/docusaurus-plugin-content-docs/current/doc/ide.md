@@ -47,6 +47,7 @@ Clion的主要亮点：
 术业有专攻，JetBrains的IDE做得非常之用心。
 
 Winlin 2015.3
+
 ![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/doc-zh-5/doc/ide)
 
 

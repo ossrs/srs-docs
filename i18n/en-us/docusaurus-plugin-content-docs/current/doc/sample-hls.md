@@ -127,6 +127,7 @@ Note: VLC can not play the pure audio stream, while jwplayer can.
 For detail about pure audio HLS, read [HLS audio only][HLS-Audio-Only]
 
 Winlin 2014.11
+
 ![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/doc-en-5/doc/sample-hls)
 
 

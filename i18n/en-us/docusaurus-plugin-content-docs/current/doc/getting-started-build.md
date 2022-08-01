@@ -190,7 +190,6 @@ Play stream of SRS by [WebRTC: Play](https://192.168.3.82:8088/players/rtc_playe
 
 > Note: If use different streams, you're able to do video chat application.
 
-
 ![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/doc-en-5/doc/getting-started-build)
 
 

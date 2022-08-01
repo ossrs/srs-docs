@@ -369,6 +369,7 @@ OBS直接捕获浏览器，可以选择WindowCapature（窗口捕获），直接
 > Note: 转直播后，就可以使用SRS的直播录制（DVR）功能，将每个RTC流录下来，也可以录合并的流。
 
 Winlin 2020.03
+
 ![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/doc-zh-5/doc/webrtc)
 
 

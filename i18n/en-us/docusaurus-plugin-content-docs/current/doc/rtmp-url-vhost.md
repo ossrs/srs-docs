@@ -300,6 +300,7 @@ The demo.conf of conf of SRS, used for demo of SRS。
 | Others | dev | The vhost for dev, ignore.|
 
 Winlin 2014.10
+
 ![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/doc-en-5/doc/rtmp-url-vhost)
 
 

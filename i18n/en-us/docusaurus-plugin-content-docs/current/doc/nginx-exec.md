@@ -49,6 +49,7 @@ vhost __defaultVhost__ {
 Winlin 2015.8
 
 [ne]: https://github.com/arut/nginx-rtmp-module/wiki/Directives#exec
+
 ![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/doc-en-5/doc/nginx-exec)
 
 

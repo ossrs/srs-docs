@@ -45,6 +45,7 @@ Or send signal to process: `kill -1 7635`
 Or use SRS scripts: `/etc/init.d/srs reload`
 
 Winlin 2014.11
+
 ![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/doc-en-4/doc/reload)
 
 

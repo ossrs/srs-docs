@@ -15,6 +15,7 @@ to build and debug SRS on Windows.
 ![SRS for windows](/img/doc-build-windowns-001.jpg)
 
 Winlin 2014.5
+
 ![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/doc-en-5/doc/windows)
 
 

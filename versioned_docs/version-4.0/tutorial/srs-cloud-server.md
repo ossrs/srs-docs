@@ -7,15 +7,6 @@ hide_table_of_contents: false
 
 # SRS Cloud
 
-
- 
-
-
-
-
-
-
-
 ![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/doc-en-4/tutorial/srs-cloud-server)
 
 

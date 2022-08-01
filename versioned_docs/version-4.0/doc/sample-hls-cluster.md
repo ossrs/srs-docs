@@ -150,6 +150,7 @@ docker run --rm -it --network=host --name sb ossrs/srs:sb \
 You could run more NGINX from another server, use the same config.
 
 Winlin 2014.11
+
 ![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/doc-en-4/doc/sample-hls-cluster)
 
 

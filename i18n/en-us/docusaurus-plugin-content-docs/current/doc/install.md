@@ -62,6 +62,7 @@ It's also ok to directly build on ARM server.
 For ARM/MIPS or crossbuild, please read [here](./arm)
 
 Winlin 2014.11
+
 ![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/doc-en-5/doc/install)
 
 

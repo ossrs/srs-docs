@@ -66,6 +66,7 @@ END
 ```
 
 Winlin 2016.12
+
 ![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/doc-zh-4/doc/log-rotate)
 
 

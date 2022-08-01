@@ -150,6 +150,7 @@ docker run --rm -it --network=host --name sb ossrs/srs:sb \
 可以多找几台服务器，用同样的配置文件启动NGINX，就成了一个边缘集群了。
 
 Winlin 2014.3
+
 ![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/doc-zh-5/doc/sample-hls-cluster)
 
 

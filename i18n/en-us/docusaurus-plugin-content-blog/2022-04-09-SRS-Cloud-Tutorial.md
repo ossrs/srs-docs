@@ -125,7 +125,6 @@ SRS Cloud is a single node video streaming service, but SRS is a media server th
 
 In this tutorial, you build a video streaming service only by 1-Click, but with powerful features like authentication, SRT and WebRTC etc. If you have further questions about SRS, [the wiki](/docs/v4/doc/introduction) is a good place to start. If you'd like to discuss with SRS, you are welcome to [discord](https://discord.gg/yZ4BnPmHAd).
 
-
 ![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/blog-en/22-04-09-SRS-Cloud-Tutorial)
 
 

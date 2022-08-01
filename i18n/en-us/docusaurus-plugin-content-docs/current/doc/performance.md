@@ -348,6 +348,7 @@ That is 4Gbps for 522kbps bitrate, for a single SRS process. Read https://github
 SRS2.0.30 refined to support 7.5k clients, read https://github.com/ossrs/srs/issues/217
 
 Winlin 2014.11
+
 ![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/doc-en-5/doc/performance)
 
 

@@ -46,6 +46,7 @@ Although the number of PC users are smaller, there are still some use scenarios 
 ![OBS](/img/doc-integration-client-sdk-002.png)
 
 Winlin 2017.4
+
 ![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/doc-en-5/doc/client-sdk)
 
 
