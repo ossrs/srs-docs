@@ -14,7 +14,7 @@ For detail, read [FFMPEG](../ffmpeg).
 
 ## Step 1, get SRS
 
-For detail, read [GIT](../git)
+For detail, read [GIT](./git)
 
 ```bash
 git clone https://github.com/ossrs/srs
@@ -29,7 +29,7 @@ git pull
 
 ## Step 2, build SRS
 
-For detail, read [Build](../install)
+For detail, read [Build](./install)
 
 ```bash
 ./configure --ffmpeg-tool=on && make
