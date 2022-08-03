@@ -8,7 +8,7 @@ hide_table_of_contents: false
 # Transcode deploy example
 
 FFMPEG can used to transcode the live stream, output the other RTMP server.
-For detail, read [FFMPEG](../ffmpeg).
+For detail, read [FFMPEG](./ffmpeg).
 
 **Suppose the server ip is 192.168.1.170**
 
@@ -37,7 +37,7 @@ For detail, read [Build](./install)
 
 ## Step 3, config file
 
-For detail, read [FFMPEG](../ffmpeg)
+For detail, read [FFMPEG](./ffmpeg)
 
 Save the bellow as config file, or use `conf/ffmpeg.transcode.conf` instead:
 
@@ -77,7 +77,7 @@ vhost __defaultVhost__ {
 
 ## Step 4, start SRS
 
-For detail, read [FFMPEG](../ffmpeg)
+For detail, read [FFMPEG](./ffmpeg)
 
 ```bash
 ./objs/srs -c conf/ffmpeg.conf
@@ -85,7 +85,7 @@ For detail, read [FFMPEG](../ffmpeg)
 
 ## Step 5, start encoder
 
-For detail, read [FFMPEG](../ffmpeg)
+For detail, read [FFMPEG](./ffmpeg)
 
 Use FFMPEG to publish stream:
 
@@ -112,7 +112,7 @@ The stream in SRS:
 
 ## Step 6, play the stream
 
-For detail, read [FFMPEG](../ffmpeg)
+For detail, read [FFMPEG](./ffmpeg)
 
 RTMP url is: `rtmp://192.168.1.170:1935/live/livestream`
 
@@ -124,7 +124,7 @@ Note: Please replace all ip 192.168.1.170 to your server ip.
 
 ## Step 7, play the transcoded stream
 
-For detail, read [FFMPEG](../ffmpeg)
+For detail, read [FFMPEG](./ffmpeg)
 
 RTMP url is: `rtmp://192.168.1.170:1935/live/livestream_ff`
 
