@@ -172,7 +172,31 @@ vhost your_vhost {
 }
 ```
 
-Note: For more information, read the section hooks.callback.vhost.com in conf/full.conf 
+Note: For more information, read the section hooks.callback.vhost.com in conf/full.conf
+
+## Protocol
+
+The detail protocol, for example, `on_publish`:
+
+```text
+POST /api/v1/streams HTTP/1.1
+Content-Type: application-json
+
+Body:
+{
+  "server_id": "vid-0xk989d",
+  "action": "on_publish",
+  "client_id": "341w361a",
+  "ip": "127.0.0.1",
+  "vhost": "__defaultVhost__",
+  "app": "live",
+  "tcUrl": "rtmp://127.0.0.1:1935/live?vhost=__defaultVhost__",
+  "stream": "livestream",
+  "param": ""
+}
+```
+
+> Note: You can use wireshark or tcpdump to verify it.
 
 ## HTTP Callback Events
 

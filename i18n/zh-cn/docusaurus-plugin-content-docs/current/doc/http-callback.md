@@ -174,6 +174,30 @@ vhost your_vhost {
 
 备注：可以参考conf/full.conf配置文件中的hooks.callback.vhost.com实例。
 
+## Protocol
+
+HTTP回调的格式如下，以`on_publish`为例：
+
+```text
+POST /api/v1/streams HTTP/1.1
+Content-Type: application-json
+
+Body:
+{
+  "server_id": "vid-0xk989d",
+  "action": "on_publish",
+  "client_id": "341w361a",
+  "ip": "127.0.0.1",
+  "vhost": "__defaultVhost__",
+  "app": "live",
+  "tcUrl": "rtmp://127.0.0.1:1935/live?vhost=__defaultVhost__",
+  "stream": "livestream",
+  "param": ""
+}
+```
+
+> Note: 也可以用wireshark或tcpdump抓包验证。
+
 ## HTTP callback events
  
 SRS的回调事件包括：
