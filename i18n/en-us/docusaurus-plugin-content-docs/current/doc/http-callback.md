@@ -200,7 +200,7 @@ Body:
 
 ## Go Example
 
-Write Go code to handle SRS callback:
+Write Go code to handle SRS callback, for example, handling `on_publish`:
 
 ```go
 http.HandleFunc("/api/v1/streams", func(w http.ResponseWriter, r *http.Request) {
@@ -228,7 +228,7 @@ _ = http.ListenAndServe(":8085", nil)
 
 ## Nodejs Koa Example
 
-Write Nodejs/Koa code to handle SRS callback:
+Write Nodejs/Koa code to handle SRS callback, for example, handling `on_publish`:
 
 ```js
 const Router = require('koa-router');
@@ -243,7 +243,7 @@ router.all('/api/v1/streams', async (ctx) => {
 
 ## PHP Example
 
-Write PHP code to handle SRS callback:
+Write PHP code to handle SRS callback, for example, handling `on_publish`:
 
 ```php
 $body = json_decode(file_get_contents('php://input'));

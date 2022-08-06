@@ -200,7 +200,7 @@ Body:
 
 ## Go Example
 
-使用Go处理SRS的回调：
+使用Go处理SRS的回调，以`on_publish`为例：
 
 ```go
 http.HandleFunc("/api/v1/streams", func(w http.ResponseWriter, r *http.Request) {
@@ -228,7 +228,7 @@ _ = http.ListenAndServe(":8085", nil)
 
 ## Nodejs Koa Example
 
-使用Nodejs/Koa处理SRS的回调：
+使用Nodejs/Koa处理SRS的回调，以`on_publish`为例：
 
 ```js
 const Router = require('koa-router');
@@ -243,7 +243,7 @@ router.all('/api/v1/streams', async (ctx) => {
 
 ## PHP Example
 
-使用PHP处理SRS的回调：
+使用PHP处理SRS的回调，以`on_publish`为例：
 
 ```php
 $body = json_decode(file_get_contents('php://input'));
