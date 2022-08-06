@@ -198,6 +198,60 @@ Body:
 
 > Note: 也可以用wireshark或tcpdump抓包验证。
 
+## Go Example
+
+使用Go处理SRS的回调：
+
+```go
+http.HandleFunc("/api/v1/streams", func(w http.ResponseWriter, r *http.Request) {
+    b, err := ioutil.ReadAll(r.Body)
+    if err != nil {
+        http.Error(w, err.Error(), http.StatusInternalServerError)
+    }
+
+    fmt.Println(string(b))
+
+    res, err := json.Marshal(struct {
+        Code int `json:"code"`
+        Message string `json:"msg"`
+    }{
+        0, "OK",
+    })
+    if err != nil {
+        http.Error(w, err.Error(), http.StatusInternalServerError)
+    }
+    w.Write(res)
+})
+
+_ = http.ListenAndServe(":8085", nil)
+```
+
+## Nodejs Koa Example
+
+使用Nodejs/Koa处理SRS的回调：
+
+```js
+const Router = require('koa-router');
+const router = new Router();
+
+router.all('/api/v1/streams', async (ctx) => {
+  console.log(ctx.request.body);
+  
+  ctx.body = {code: 0, msg: 'OK'};
+});
+```
+
+## PHP Example
+
+使用PHP处理SRS的回调：
+
+```php
+$body = json_decode(file_get_contents('php://input'));
+printf($body);
+
+echo json_encode(array("code"=>0, "msg"=>"OK"));
+```
+
 ## HTTP callback events
  
 SRS的回调事件包括：
