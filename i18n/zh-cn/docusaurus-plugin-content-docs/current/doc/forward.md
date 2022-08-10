@@ -48,9 +48,88 @@ vhost __defaultVhost__ {
         # active-active for cdn to build high available fault tolerance system.
         # format: {ip}:{port} {ip_N}:{port_N}
         destination 127.0.0.1:1936 127.0.0.1:1937;
+
+        # when client(encoder) publish to vhost/app/stream, call the hook in creating backend forwarder.
+        # the request in the POST data string is a object encode by json:
+        #       {
+        #           "action": "on_forward",
+        #           "server_id": "vid-k21d7y2",
+        #           "client_id": "9o7g1330",
+        #           "ip": "127.0.0.1",
+        #           "vhost": "__defaultVhost__",
+        #           "app": "live",
+        #           "tcUrl": "rtmp://127.0.0.1:1935/live",
+        #           "stream": "livestream",
+        #           "param": ""
+        #       }
+        # if valid, the hook must return HTTP code 200(Status OK) and response
+        # an int value specifies the error code(0 corresponding to success):
+        #       {
+        #          "code": 0,
+        #          "data": {
+        #              "urls":[
+        #                 "rtmp://127.0.0.1:19350/test/teststream"
+        #              ]
+        #          }
+        #       }
+        # PS: you can transform params to backend service, such as:
+        #       { "param": "?forward=rtmp://127.0.0.1:19351/test/livestream" }
+        #     then backend return forward's url in response.
+        # if backend return empty urls, destanition is still disabled.
+        # only support one api hook, format:
+        #       backend http://xxx/api0
+        backend http://127.0.0.1:8085/api/v1/forward;
     }
 }
 ```
+
+## Dynamic Forward
+
+SRS支持动态Forward，从你的后端服务查询是否需要转发，以及转发的目标地址。
+
+首先，配置`backend`，你的后端服务的地址：
+
+```
+vhost __defaultVhost__ {
+    forward {
+        enabled on;
+        backend http://127.0.0.1:8085/api/v1/forward;
+    }
+}
+```
+
+当推流到SRS时，SRS会调用你的后端服务，请求Body如下：
+
+```json
+{
+    "action": "on_forward",
+    "server_id": "vid-k21d7y2",
+    "client_id": "9o7g1330",
+    "ip": "127.0.0.1",
+    "vhost": "__defaultVhost__",
+    "app": "live",
+    "tcUrl": "rtmp://127.0.0.1:1935/live",
+    "stream": "livestream",
+    "param": ""
+}
+```
+
+如果你的后端服务返回了urls，SRS会开始转发：
+
+```json
+{
+   "code": 0,
+   "data": {
+       "urls":[
+          "rtmp://127.0.0.1:19350/test/teststream"
+       ]
+   }
+}
+```
+
+> Note: 如果urls为空数组，SRS不会转发。
+
+关于动态Forward的信息，请参考[#1342](https://github.com/ossrs/srs/issues/1342)。
 
 ## For Small Cluster
 

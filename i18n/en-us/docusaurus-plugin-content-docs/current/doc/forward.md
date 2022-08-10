@@ -48,9 +48,88 @@ vhost __defaultVhost__ {
         # active-active for cdn to build high available fault tolerance system.
         # format: {ip}:{port} {ip_N}:{port_N}
         destination 127.0.0.1:1936 127.0.0.1:1937;
+
+        # when client(encoder) publish to vhost/app/stream, call the hook in creating backend forwarder.
+        # the request in the POST data string is a object encode by json:
+        #       {
+        #           "action": "on_forward",
+        #           "server_id": "vid-k21d7y2",
+        #           "client_id": "9o7g1330",
+        #           "ip": "127.0.0.1",
+        #           "vhost": "__defaultVhost__",
+        #           "app": "live",
+        #           "tcUrl": "rtmp://127.0.0.1:1935/live",
+        #           "stream": "livestream",
+        #           "param": ""
+        #       }
+        # if valid, the hook must return HTTP code 200(Status OK) and response
+        # an int value specifies the error code(0 corresponding to success):
+        #       {
+        #          "code": 0,
+        #          "data": {
+        #              "urls":[
+        #                 "rtmp://127.0.0.1:19350/test/teststream"
+        #              ]
+        #          }
+        #       }
+        # PS: you can transform params to backend service, such as:
+        #       { "param": "?forward=rtmp://127.0.0.1:19351/test/livestream" }
+        #     then backend return forward's url in response.
+        # if backend return empty urls, destanition is still disabled.
+        # only support one api hook, format:
+        #       backend http://xxx/api0
+        backend http://127.0.0.1:8085/api/v1/forward;
     }
 }
 ```
+
+## Dynamic Forward
+
+SRS support dynamic forwarding, to query the forwarding config from your backend API.
+
+First, config the `backend` of forward:
+
+```
+vhost __defaultVhost__ {
+    forward {
+        enabled on;
+        backend http://127.0.0.1:8085/api/v1/forward;
+    }
+}
+```
+
+When publishing to SRS, will call your backend server, with request body:
+
+```json
+{
+    "action": "on_forward",
+    "server_id": "vid-k21d7y2",
+    "client_id": "9o7g1330",
+    "ip": "127.0.0.1",
+    "vhost": "__defaultVhost__",
+    "app": "live",
+    "tcUrl": "rtmp://127.0.0.1:1935/live",
+    "stream": "livestream",
+    "param": ""
+}
+```
+
+If response with urls, SRS will start forwarding:
+
+```json
+{
+   "code": 0,
+   "data": {
+       "urls":[
+          "rtmp://127.0.0.1:19350/test/teststream"
+       ]
+   }
+}
+```
+
+> Note: If urls is empty array, SRS won't forward it.
+
+For more details about dynamic forwarding, please read [#1342](https://github.com/ossrs/srs/issues/1342).
 
 ## For Small Cluster
 
