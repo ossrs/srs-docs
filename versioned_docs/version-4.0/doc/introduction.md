@@ -45,15 +45,11 @@ Please see [link](/guide#scenario).
 
 ## Deployment Guides
 
-Please see [link](./category/main-protocols).
-
-## Cluster Guides
-
-Please see [link](./category/clusters).
+Please see [link](../category/main-protocols).
 
 ## Integration Guides
 
-Please see [link](./category/openapi).
+Please see [link](../category/openapi).
 
 ## Video Guides
 
