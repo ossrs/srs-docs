@@ -21,33 +21,43 @@ SRS is a simple, high efficiency and realtime video server, supports RTMP/WebRTC
 
 > Note: The cluster architecture, for detail picture please see [here](https://www.processon.com/view/link/5e3f5581e4b0a3daae80ecef)
 
-## Cluster Guides
-
-TBD.
-
-## Effective SRS
-
-TBD.
+Please read [Getting Started](../doc/getting-started).
 
 ## Solution Guides
-
-TBD.
-
-## Deployment Guides
-
-TBD.
-
-## Cluster Guides
-
-TBD.
-
-## Integration Guides
 
 TBD.
 
 ## Develop Guide
 
 TBD.
+
+## Tech Docs
+
+TBD.
+
+## Cluster Guides
+
+Please see [link](../category/clusters).
+
+## Effective SRS
+
+Please see [link](/guide#scenario).
+
+## Deployment Guides
+
+Please see [link](./category/main-protocols).
+
+## Cluster Guides
+
+Please see [link](./category/clusters).
+
+## Integration Guides
+
+Please see [link](./category/openapi).
+
+## Video Guides
+
+Please see [link](../tutorial/srs-open-source).
 
 ![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/doc-en-4/doc/introduction)
 

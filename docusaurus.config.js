@@ -201,6 +201,10 @@ const config = {
                 to: '/blog',
                 label: 'Blog',
               },
+              {
+                to: '/guide',
+                label: 'Guide',
+              },
             ],
           },
           {
