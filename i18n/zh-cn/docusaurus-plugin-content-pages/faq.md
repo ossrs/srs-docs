@@ -6,8 +6,8 @@
 * 重复的Issue会被删除，请先在[Issues](https://github.com/ossrs/srs/issues)中搜索你的问题，确认没有后再提Issue。
 * 我如何才能够？How do I? -- [Stack Overflow](https://stackoverflow.com/questions/tagged/simple-realtime-server)
 * 我碰到一个错误，为何？I got this error, why? -- [Stack Overflow](https://stackoverflow.com/questions/tagged/simple-realtime-server)
-* 我碰到个错误，确定是Bug，请按Issue模版提[Bug](https://github.com/ossrs/srs/issues/new) or [PR](./how-to-file-pr)，不提供**完整**信息的Issue会被直接删除。
-* 咨询和讨论请来[视频号直播间交流](./contact)。也可以[加微信群](./contact)，在群里交流。
+* 我碰到个错误，确定是Bug，请按Issue模版提[Bug](https://github.com/ossrs/srs/issues/new) or [PR](/how-to-file-pr)，不提供**完整**信息的Issue会被直接删除。
+* 咨询和讨论请来[视频号直播间交流](/contact)。也可以[加微信群](/contact)，在群里交流。
 
 ## FAQ
 
