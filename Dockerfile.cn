@@ -35,5 +35,6 @@ RUN cd /usr/local/srs-docs && ln -sf . lts
 
 WORKDIR /usr/local
 CMD ["./bin/httpx-static", \
-    "-http", "80", "-root", "./srs-docs" \
-    ]
+    "-http", "80", "-root", "./srs-docs", \
+    "-no-redirect-index", "true" \
+  ]
