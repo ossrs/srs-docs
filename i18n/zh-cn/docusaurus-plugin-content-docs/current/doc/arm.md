@@ -195,6 +195,7 @@ which arm-hisiv500-linux-g++
 
 ```bash
 ./configure --cross-build --cross-prefix=arm-hisiv500-linux-
+make
 ```
 
 在海思的板子启动SRS就可以了：
