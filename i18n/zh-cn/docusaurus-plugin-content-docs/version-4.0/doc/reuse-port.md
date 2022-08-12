@@ -1,6 +1,6 @@
 ---
-title: Reuser Port
-sidebar_label: Reuser Port
+title: Reuse Port
+sidebar_label: Reuse Port
 hide_title: false
 hide_table_of_contents: false
 ---

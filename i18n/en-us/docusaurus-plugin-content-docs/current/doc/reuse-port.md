@@ -7,6 +7,10 @@ hide_table_of_contents: false
 
 # Reuse Port
 
+You can use REUSE_PORT for different use scenarios.
+
+## For Edge Server
+
 The [performance of SRS2](https://github.com/ossrs/srs/tree/2.0release#performance) is improved huge, but is it enough?
 Absolutely NOT! In SRS3, we provide [OriginCluster](./sample-origin-cluster) for multiple origin servers to work together,
 and [go-oryx](https://github.com/ossrs/go-oryx) as a tcp proxy for edge server, and these are not good enough, so we support
@@ -61,6 +65,44 @@ Finally, we could publish to origin/edge, and play stream from each edge server:
 ```
 
 Use VLC to play the RTMP stream: `rtmp://192.168.1.170:1935/live/livestream`
+
+## For Origin Server
+
+You can use REUSE_PORT in Origin Server. Each Origin Server is isolated, only works for HLS:
+
+```
+              +-----------------+
+Client --->-- + Origin Servers  +------> Player
+              +-----------------+
+```
+
+> Note: If need to deliver RTMP or HTTP-FLV, pelease use [OriginCluster](./sample-origin-cluster).
+
+Start the first Origin Server, listen at `1935` and `8080`, covert RTMP to HLS:
+
+```bash
+./objs/srs -c conf/origin.hls.only1.conf
+```
+
+Start the second Origin Server, listen at `1935` and `8080`, covert RTMP to HLS:
+
+```bash
+./objs/srs -c conf/origin.hls.only2.conf
+```
+
+Publish stream to origin, system will select a random Origin Server:
+
+```bash
+./objs/ffmpeg/bin/ffmpeg -re -i ./doc/source.flv -c copy -f flv rtmp://localhost/live/livestream1
+```
+
+Publish another stream to origin, system will select a random Origin Server:
+
+```bash
+./objs/ffmpeg/bin/ffmpeg -re -i ./doc/source.flv -c copy -f flv rtmp://localhost/live/livestream2
+```
+
+> Note: It works only for HLS, please use [OriginCluster](./sample-origin-cluster) for RTMP or HTTP-FLV.
 
 ![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/doc-en-5/doc/reuse-port)
 

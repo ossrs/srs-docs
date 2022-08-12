@@ -210,6 +210,12 @@ CANDIDATE="192.168.1.10"
 
 > Note: 可以打开不同的页面，推拉不同的流，就可以实现视频聊天了。
 
+## Cross Build
+
+注意一般都可以直接编译，即使是ARM系统也可以直接编译，只有嵌入式板子才需要交叉编译。
+
+若需要交叉编译，请参考[ARM和交叉编译](./arm)。
+
 ![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/doc-zh-5/doc/getting-started-build)
 
 

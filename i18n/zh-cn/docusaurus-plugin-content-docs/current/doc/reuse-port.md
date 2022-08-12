@@ -1,11 +1,15 @@
 ---
-title: Reuser Port
-sidebar_label: Reuser Port
+title: Reuse Port
+sidebar_label: Reuse Port
 hide_title: false
 hide_table_of_contents: false
 ---
 
 # Reuse Port
+
+可以在不同场景下使用REUSE PORT，实现用一个端口对外服务。
+
+## For Edge Server
 
 SRS2的性能有大幅的提升，参考[SRS2性能](https://github.com/ossrs/srs/tree/2.0release#performance)。SRS3我们支持了源站集群，
 解决了源站的性能瓶颈，参考[OriginCluster](./sample-origin-cluster)；对于边缘服务器，我们提供了TCP代理方案，
@@ -60,6 +64,44 @@ srs     383 root    7u     IPv6  17831      0t0        TCP *:macromedia-fcs (LIS
 ```
 
 使用VLC播放RTMP流： `rtmp://192.168.1.170:1935/live/livestream`
+
+## For Origin Server
+
+Origin也可以使用REUSE PORT，此时多个Origin进程之间是独立的，如果输出是HLS，那么这种方式完全没问题：
+
+```
+              +-----------------+
+Client --->-- + Origin Servers  +------> Player
+              +-----------------+
+```
+
+> Note: 如果需要支持输出RTMP或FLV等流协议，那么需要使用[OriginCluster](./sample-origin-cluster)。
+
+启动第一个源站，侦听在`1935`和`8080`，输入RTMP流，输出HLS流：
+
+```bash
+./objs/srs -c conf/origin.hls.only1.conf
+```
+
+启动第二个源站，同样侦听在`1935`和`8080`，输入RTMP流，输出HLS流：
+
+```bash
+./objs/srs -c conf/origin.hls.only2.conf
+```
+
+推第一个流到服务器，会随机选择一个源站：
+
+```bash
+./objs/ffmpeg/bin/ffmpeg -re -i ./doc/source.flv -c copy -f flv rtmp://localhost/live/livestream1
+```
+
+推第二个流到服务器，会随机选择一个源站：
+
+```bash
+./objs/ffmpeg/bin/ffmpeg -re -i ./doc/source.flv -c copy -f flv rtmp://localhost/live/livestream2
+```
+
+> Note: 由于切片成HLS，所以只要流不同，这两个源站独立工作，是没有问题的。但是如果是输出FLV，可能就会出现找不到流的情况，这时就不能使用这种方式，需要使用[OriginCluster](./sample-origin-cluster)。
 
 ![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/doc-zh-5/doc/reuse-port)
 

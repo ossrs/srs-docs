@@ -119,6 +119,7 @@
         "doc/low-latency",
         "doc/time-jitter",
         "doc/performance",
+        "doc/arm",
         "doc/gperf",
         "doc/gprof",
         "doc/perf",
@@ -137,7 +138,6 @@
       },
       "collapsed": true,
       "items": [
-        "doc/arm",
         "doc/raspberrypi",
         "doc/windows",
         "doc/streamer",

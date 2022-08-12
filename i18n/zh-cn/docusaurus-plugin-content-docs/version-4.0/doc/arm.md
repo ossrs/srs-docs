@@ -1,6 +1,6 @@
 ---
-title: ARM
-sidebar_label: ARM
+title: ARM and CrossBuild
+sidebar_label: ARM和交叉编译
 hide_title: false
 hide_table_of_contents: false
 ---
