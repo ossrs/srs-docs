@@ -143,19 +143,30 @@ ffmpeg -re -i doc/source.flv -c copy -f flv rtmp://127.0.0.1:1935/live/livestrea
 
 Play stream：http://ossrs.net/srs.release/trunk/research/players/srs_player.html?app=live&stream=livestream&server=localhost&port=1935&autostart=true&vhost=localhost
 
+## Ubuntu Cross Build SRS: hisiv500(arm)
+
+TBD.
+
 ## Use Other Cross build tools
 
 SRS configure options for cross build:
 
 ```
-root@4c618f90fc4c:/tmp/git/srs/trunk# ./configure -h
-Toolchain options:          @see https://github.com/ossrs/srs/issues/1547#issuecomment-576078411
-  --cross-build             Enable crossbuild for ARM/MIPS.
-  --cc=<CC>                 Use c compiler CC, default is gcc.
-  --cxx=<CXX>               Use c++ compiler CXX, default is g++.
-  --ar=<AR>                 Use archive tool AR, default is ar.
-  --ld=<LD>                 Use linker tool LD, default is ld.
-  --randlib=<RANDLIB>       Use randlib tool RANDLIB, default is randlib.
+# ./configure -h
+
+Cross Build options:        @see https://ossrs.net/lts/zh-cn/docs/v4/doc/arm#ubuntu-cross-build-srs
+  --cpu=<CPU>               Toolchain: Select the minimum required CPU for cross-build. For example: --cpu=24kc
+  --arch=<ARCH>             Toolchain: Select architecture for cross-build. For example: --arch=aarch64
+  --host=<BUILD>            Toolchain: Cross-compile to build programs to run on HOST. For example: --host=aarch64-linux-gnu
+  --cross-prefix=<PREFIX>   Toolchain: Use PREFIX for compilation tools. For example: --cross-prefix=aarch64-linux-gnu-
+
+Toolchain options:
+  --static=on|off           Whether add '-static' to link options. Default: off
+  --cc=<CC>                 Toolchain: Use c compiler CC. Default: gcc
+  --cxx=<CXX>               Toolchain: Use c++ compiler CXX. Default: g++
+  --ar=<AR>                 Toolchain: Use archive tool AR. Default: g++
+  --ld=<LD>                 Toolchain: Use linker tool LD. Default: g++
+  --randlib=<RANDLIB>       Toolchain: Use randlib tool RANDLIB. Default: g++
   --extra-flags=<EFLAGS>    Set EFLAGS as CFLAGS and CXXFLAGS. Also passed to ST as EXTRA_CFLAGS.
 ```
 
