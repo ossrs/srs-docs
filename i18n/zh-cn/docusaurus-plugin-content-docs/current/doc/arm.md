@@ -91,8 +91,7 @@ apt-get install -y gcc-aarch64-linux-gnu g++-aarch64-linux-gnu
 交叉编译SRS：
 
 ```
-./configure --cross-build --cc=aarch64-linux-gnu-gcc --cxx=aarch64-linux-gnu-g++ \
-    --ar=aarch64-linux-gnu-ar --ld=aarch64-linux-gnu-ld --randlib=aarch64-linux-gnu-randlib &&
+./configure --cross-build --cross-prefix=aarch64-linux-gnu-
 make
 ```
 
@@ -138,8 +137,7 @@ apt-get install -y gcc-arm-linux-gnueabihf g++-arm-linux-gnueabihf
 交叉编译SRS：
 
 ```
-./configure --cross-build --cc=arm-linux-gnueabihf-gcc --cxx=arm-linux-gnueabihf-g++ \
-    --ar=arm-linux-gnueabihf-ar --ld=arm-linux-gnueabihf-ld --randlib=arm-linux-gnueabihf-randlib &&
+./configure --cross-build --cross-prefix=arm-linux-gnueabihf-
 make
 ```
 
