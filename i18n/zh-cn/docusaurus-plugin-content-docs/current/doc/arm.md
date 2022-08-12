@@ -170,7 +170,7 @@ docker run --rm -it -v $(pwd):/srs -w /srs/trunk \
   registry.cn-hangzhou.aliyuncs.com/ossrs/srs:ubuntu20 bash
 ```
 
-宿主机是64位的，而编辑工具是32位的，所以需要安装一个工具：
+宿主机是64位的，而编译工具是32位的，所以需要安装一个工具：
 
 ```bash
 apt-get -y install lib32z1-dev
@@ -210,14 +210,17 @@ make
 
 SRS相关的参数如下：
 
-```
-# ./configure -h
+```bash
+./configure -h
 
+Presets:
+  --cross-build             Enable cross-build, please set bellow Toolchain also. Default: off
+  
 Cross Build options:        @see https://ossrs.net/lts/zh-cn/docs/v4/doc/arm#ubuntu-cross-build-srs
-  --cpu=<CPU>               Toolchain: Select the minimum required CPU for cross-build. For example: --cpu=24kc
-  --arch=<ARCH>             Toolchain: Select architecture for cross-build. For example: --arch=aarch64
-  --host=<BUILD>            Toolchain: Cross-compile to build programs to run on HOST. For example: --host=aarch64-linux-gnu
-  --cross-prefix=<PREFIX>   Toolchain: Use PREFIX for compilation tools. For example: --cross-prefix=aarch64-linux-gnu-
+  --cpu=<CPU>               Toolchain: Select the minimum required CPU. For example: --cpu=24kc
+  --arch=<ARCH>             Toolchain: Select architecture. For example: --arch=aarch64
+  --host=<BUILD>            Toolchain: Build programs to run on HOST. For example: --host=aarch64-linux-gnu
+  --cross-prefix=<PREFIX>   Toolchain: Use PREFIX for tools. For example: --cross-prefix=aarch64-linux-gnu-
 
 Toolchain options:
   --static=on|off           Whether add '-static' to link options. Default: off
