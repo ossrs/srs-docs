@@ -73,14 +73,15 @@ ffmpeg -re -i doc/source.flv -c copy -f flv rtmp://127.0.0.1:1935/live/livestrea
 
 !!! 注意，请先确认是否需要交叉编译，一般可以直接编译，除非极少数情况，参考[#1547](https://github.com/ossrs/srs/issues/1547#issue-543780097)。
 
-启动容器Ubuntu 16(xenial)，主目录为SRS：
+启动容器Ubuntu20(xenial)，主目录为SRS：
 
 ```
-cd ~/git/srs/trunk && docker run --rm -it -v `pwd`:/srs -w /srs \
-    registry.cn-hangzhou.aliyuncs.com/ossrs/srs:ubuntu16 bash
+cd ~/git/srs/trunk
+docker run --rm -it -v `pwd`:/srs -w /srs \
+    registry.cn-hangzhou.aliyuncs.com/ossrs/srs:ubuntu20 bash
 ```
 
-> 推荐使用阿里云的容器，下载的速度比较快，也可以使用docker官方容器：`ossrs/srs:ubuntu16`
+> 推荐使用阿里云的容器，下载的速度比较快，也可以使用docker官方容器：`ossrs/srs:ubuntu20`
 
 安装toolchain(容器已经安装好了)：
 
@@ -119,14 +120,15 @@ ffmpeg -re -i doc/source.flv -c copy -f flv rtmp://127.0.0.1:1935/live/livestrea
 
 !!! 注意，请先确认是否需要交叉编译，一般可以直接编译，除非极少数情况，参考[#1547](https://github.com/ossrs/srs/issues/1547#issue-543780097)。
 
-启动容器Ubuntu 16(xenial)，主目录为SRS：
+启动容器Ubuntu20(xenial)，主目录为SRS：
 
 ```
-cd ~/git/srs/trunk && docker run --rm -it -v `pwd`:/srs -w /srs \
-    registry.cn-hangzhou.aliyuncs.com/ossrs/srs:ubuntu16 bash
+cd ~/git/srs/trunk
+docker run --rm -it -v `pwd`:/srs -w /srs \
+    registry.cn-hangzhou.aliyuncs.com/ossrs/srs:ubuntu20 bash
 ```
 
-> 推荐使用阿里云的容器，下载的速度比较快，也可以使用docker官方容器：`ossrs/srs:ubuntu16`
+> 推荐使用阿里云的容器，下载的速度比较快，也可以使用docker官方容器：`ossrs/srs:ubuntu20`
 
 安装toolchain(容器已经安装好了)，例如[Acqua or RoadRunner board](https://www.acmesystems.it/arm9_toolchain)
 

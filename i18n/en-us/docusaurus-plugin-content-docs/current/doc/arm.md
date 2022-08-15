@@ -65,11 +65,11 @@ Play stream：http://ossrs.net/srs.release/trunk/research/players/srs_player.htm
 
 ## Ubuntu Cross Build SRS: ARMv8(aarch64)
 
-Build SRS in docker(Ubuntu 16(xenial))：
+Build SRS in docker(Ubuntu20(xenial))：
 
 ```
-cd ~/git/srs/trunk && docker run --rm -it -v `pwd`:/srs -w /srs \
-    registry.cn-hangzhou.aliyuncs.com/ossrs/srs:ubuntu16 bash
+cd ~/git/srs/trunk
+docker run --rm -it -v `pwd`:/srs -w /srs ossrs/srs:ubuntu20 bash
 ```
 
 Install toolchain(optional):
@@ -103,13 +103,13 @@ Play stream：http://ossrs.net/srs.release/trunk/research/players/srs_player.htm
 
 ## Ubuntu Cross Build SRS: ARMv7
 
-Cross build ST and OpenSSL on Ubuntu16.
+Cross build ST and OpenSSL on Ubuntu20.
 
-Build SRS in docker(Ubuntu 16(xenial))：
+Build SRS in docker(Ubuntu20(xenial))：
 
 ```
-cd ~/git/srs/trunk && docker run --rm -it -v `pwd`:/srs -w /srs \
-    registry.cn-hangzhou.aliyuncs.com/ossrs/srs:ubuntu16 bash
+cd ~/git/srs/trunk
+docker run --rm -it -v `pwd`:/srs -w /srs ossrs/srs:ubuntu20 bash
 ```
 
 Install toolchain(optional), for example [Acqua or RoadRunner board](https://www.acmesystems.it/arm9_toolchain)
