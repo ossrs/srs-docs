@@ -1,6 +1,6 @@
 ---
-title: 系统日志
-sidebar_label: 系统日志
+title: 日志
+sidebar_label: 日志
 hide_title: false
 hide_table_of_contents: false
 ---

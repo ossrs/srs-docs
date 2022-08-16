@@ -1,6 +1,6 @@
 ---
-title: K8s
-sidebar_label: K8s
+title: K8s Guide
+sidebar_label: K8s Guide
 hide_title: false
 hide_table_of_contents: false
 ---

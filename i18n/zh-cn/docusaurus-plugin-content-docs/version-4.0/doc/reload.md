@@ -1,6 +1,6 @@
 ---
-title: Reload
-sidebar_label: Reload
+title: 热加载配置
+sidebar_label: 热加载配置
 hide_title: false
 hide_table_of_contents: false
 ---

@@ -1,6 +1,6 @@
 ---
-title: Edge Server
-sidebar_label: Edge Server
+title: Edge Cluster
+sidebar_label: Edge Cluster
 hide_title: false
 hide_table_of_contents: false
 ---

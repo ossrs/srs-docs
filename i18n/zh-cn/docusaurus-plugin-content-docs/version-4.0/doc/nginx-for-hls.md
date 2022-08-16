@@ -1,6 +1,6 @@
 ---
-title: Nginx For HLS
-sidebar_label: Nginx For HLS
+title: HLS Cluster
+sidebar_label: HLS Cluster
 hide_title: false
 hide_table_of_contents: false
 ---

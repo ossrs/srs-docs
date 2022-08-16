@@ -1,6 +1,6 @@
 ---
-title: 资源
-sidebar_label: 资源
+title: 端口和资源
+sidebar_label: 端口和资源
 hide_title: false
 hide_table_of_contents: false
 ---

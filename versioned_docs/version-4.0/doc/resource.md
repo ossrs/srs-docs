@@ -1,6 +1,6 @@
 ---
-title: Resource
-sidebar_label: Resource
+title: Ports and Resource
+sidebar_label: Ports and Resource
 hide_title: false
 hide_table_of_contents: false
 ---

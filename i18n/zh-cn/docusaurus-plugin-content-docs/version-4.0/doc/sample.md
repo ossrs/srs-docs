@@ -1,6 +1,6 @@
 ---
-title: General
-sidebar_label: General
+title: Use Scenarios
+sidebar_label: Use Scenarios
 hide_title: false
 hide_table_of_contents: false
 ---

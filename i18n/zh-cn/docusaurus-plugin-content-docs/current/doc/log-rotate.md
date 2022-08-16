@@ -1,6 +1,6 @@
 ---
-title: 日志回滚
-sidebar_label: 日志回滚
+title: 日志切割
+sidebar_label: 日志切割
 hide_title: false
 hide_table_of_contents: false
 ---

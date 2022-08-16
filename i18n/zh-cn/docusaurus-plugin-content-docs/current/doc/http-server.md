@@ -1,6 +1,6 @@
 ---
-title: Embeded HTTP Server
-sidebar_label: Embeded HTTP Server 
+title: HTTP Server
+sidebar_label: HTTP Server 
 hide_title: false
 hide_table_of_contents: false
 ---

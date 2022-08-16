@@ -14,8 +14,8 @@
   "sidebar.docsSidebar.category.Clusters": {
     "message": "集群"
   },
-  "sidebar.docsSidebar.category.Logging": {
-    "message": "日志"
+  "sidebar.docsSidebar.category.DevOps": {
+    "message": "运维"
   },
   "sidebar.docsSidebar.category.Advanced Guides": {
     "message": "高级指引"

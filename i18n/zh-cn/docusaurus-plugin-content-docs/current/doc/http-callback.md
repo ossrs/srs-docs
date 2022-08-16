@@ -1,6 +1,6 @@
 ---
-title: HTTP Callback
-sidebar_label: HTTP Callback
+title: HTTP回调
+sidebar_label: HTTP回调
 hide_title: false
 hide_table_of_contents: false
 ---
