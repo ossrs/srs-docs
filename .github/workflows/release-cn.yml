@@ -133,6 +133,8 @@ jobs:
           password: "${{ secrets.DOCKER_PASSWORD }}"
       - name: Push to docker hub
         run: |
+          (cd build && tar xf zh-cn.tar.bz2 && du -sh *)
+          
           echo "Release ossrs/docs:cn-$SRS_TAG"
           docker build --tag ossrs/docs:cn-$SRS_TAG -f Dockerfile.cn.dist .
           docker tag ossrs/docs:cn-$SRS_TAG ossrs/docs:cn-$SRS_MAJOR
