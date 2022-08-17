@@ -3,7 +3,7 @@ name: "Release EN version"
 on:
   push:
     tags:
-      - vxxx1*
+      - v1*
 
 jobs:
   envs:
@@ -131,11 +131,11 @@ jobs:
       - uses: actions/download-artifact@v2
         with:
           name: zh-cn
-          path: build/zh-cn.tar.bz2
+          path: build
       - uses: actions/download-artifact@v2
         with:
           name: en-us
-          path: build/en-us.tar.bz2
+          path: build
       - name: Login docker hub
         uses: docker/login-action@v1
         with:
@@ -143,8 +143,6 @@ jobs:
           password: "${{ secrets.DOCKER_PASSWORD }}"
       - name: Push to docker hub
         run: |
-          (cd build && unzip -q zh-cn.tar.bz2 && du -sh *)
-          
           echo "Release ossrs/docs:en-$SRS_TAG"
           docker build --tag ossrs/docs:en-$SRS_TAG -f Dockerfile.en.dist .
           docker tag ossrs/docs:en-$SRS_TAG ossrs/docs:en-$SRS_MAJOR
@@ -167,11 +165,11 @@ jobs:
       - uses: actions/download-artifact@v2
         with:
           name: zh-cn
-          path: build/zh-cn.tar.bz2
+          path: build
       - uses: actions/download-artifact@v2
         with:
           name: en-us
-          path: build/en-us.tar.bz2
+          path: build
       - name: Login docker hub
         uses: docker/login-action@v1
         with:
