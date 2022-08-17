@@ -14,6 +14,6 @@ yarn cross-env REGION='en-us' BASE_URL='/lts/en-us/' \
   SEARCH_APIKEY=$SEARCH_APIKEY \
   docusaurus build --locale en-us --out-dir build/en-us
 
-(cd build && tar jcf en-us.tar.bz2 en-us)
+(cd build && tar zcf en-us.tar.gz en-us)
 du -sh build/*
 
