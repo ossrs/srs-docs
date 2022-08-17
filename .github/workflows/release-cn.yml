@@ -121,11 +121,11 @@ jobs:
       - uses: actions/download-artifact@v2
         with:
           name: zh-cn
-          path: zh-cn.tar.bz2
+          path: build/zh-cn.tar.bz2
       - uses: actions/download-artifact@v2
         with:
           name: en-us
-          path: en-us.tar.bz2
+          path: build/en-us.tar.bz2
       - name: Login docker hub
         uses: docker/login-action@v1
         with:
@@ -155,11 +155,11 @@ jobs:
       - uses: actions/download-artifact@v2
         with:
           name: zh-cn
-          path: zh-cn.tar.bz2
+          path: build/zh-cn.tar.bz2
       - uses: actions/download-artifact@v2
         with:
           name: en-us
-          path: en-us.tar.bz2
+          path: build/en-us.tar.bz2
       - name: Login docker hub
         uses: docker/login-action@v1
         with:
