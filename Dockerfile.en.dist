@@ -5,8 +5,8 @@ FROM ossrs/httpx:1 AS dist
 
 EXPOSE 80 443
 
-ADD build/zh-cn.tar.bz2 /usr/local/srs-docs/
-ADD build/en-us.tar.bz2 /usr/local/srs-docs/
+ADD zh-cn.tar.bz2 /usr/local/srs-docs/
+ADD en-us.tar.bz2 /usr/local/srs-docs/
 RUN cd /usr/local/srs-docs && ln -sf . lts && du -sh * && \
   du -sh zh-cn/* && du -sh en-us/*
 
