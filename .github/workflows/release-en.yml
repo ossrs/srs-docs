@@ -6,22 +6,18 @@ on:
       - v1*
 
 jobs:
-  release-en:
-    name: release-en
+  envs:
+    name: envs
     runs-on: ubuntu-20.04
-
     steps:
-      ################################################################
       # Git checkout
       - name: Checkout repository
         uses: actions/checkout@v2
-
       # DigitalOcean droplet
       - name: Install doctl
         uses: digitalocean/action-doctl@v2
         with:
           token: ${{ secrets.DIGITALOCEAN_ACCESS_TOKEN }}
-
       # Generate variables like:
       #   SRS_DROPLET_EIP=1.2.3.4
       #   SRS_DROPLET_PIP=1.2.3.4
@@ -32,31 +28,6 @@ jobs:
           SRS_DROPLET_PIP=$(doctl compute droplet get production --format PrivateIPv4 --no-header)
           echo "SRS_DROPLET_EIP=$SRS_DROPLET_EIP" >> $GITHUB_ENV
           echo "SRS_DROPLET_PIP=$SRS_DROPLET_PIP" >> $GITHUB_ENV
-
-      # Run scp first, because ufw limit the rate.
-      - name: Prepare the droplet
-        uses: appleboy/ssh-action@master
-        with:
-          host: ${{ env.SRS_DROPLET_EIP }}
-          username: root
-          key: ${{ secrets.DIGITALOCEAN_SSHKEY }}
-          port: 22
-          script: |
-            mkdir -p /root/search
-
-      # Run scp first, because ufw limit the rate.
-      - name: Copy the files to droplet
-        uses: appleboy/scp-action@master
-        with:
-          host: ${{ env.SRS_DROPLET_EIP }}
-          username: root
-          key: ${{ secrets.DIGITALOCEAN_SSHKEY }}
-          source: "search/scraper.json"
-          target: "/root/search/"
-          strip_components: 1
-
-      ################################################################
-      # Build
       # The github.ref is, for example, refs/tags/v1.0.52
       # Generate variables like:
       #   SRS_TAG=v1.0.52
@@ -68,15 +39,103 @@ jobs:
           echo "SRS_TAG=$SRS_TAG" >> $GITHUB_ENV
           SRS_MAJOR=$(echo $SRS_TAG| cut -c 2)
           echo "SRS_MAJOR=$SRS_MAJOR" >> $GITHUB_ENV
-      # Build SRS image
+    outputs:
+      SRS_DROPLET_EIP: ${{ env.SRS_DROPLET_EIP }}
+      SRS_DROPLET_PIP: ${{ env.SRS_DROPLET_PIP }}
+      SRS_TAG: ${{ env.SRS_TAG }}
+      SRS_MAJOR: ${{ env.SRS_MAJOR }}
+
+  files:
+    name: files
+    runs-on: ubuntu-20.04
+    needs:
+      - envs
+    steps:
+      - name: Covert output to env
+        run: |
+          echo "SRS_DROPLET_EIP=${{ needs.envs.outputs.SRS_DROPLET_EIP }}" >> $GITHUB_ENV
+      # Git checkout
+      - name: Checkout repository
+        uses: actions/checkout@v2
+      # Run scp first, because ufw limit the rate.
+      - name: Prepare the droplet
+        uses: appleboy/ssh-action@master
+        with:
+          host: ${{ env.SRS_DROPLET_EIP }}
+          username: root
+          key: ${{ secrets.DIGITALOCEAN_SSHKEY }}
+          port: 22
+          script: |
+            mkdir -p /root/search
+      # Run scp first, because ufw limit the rate.
+      - name: Copy the files to droplet
+        uses: appleboy/scp-action@master
+        with:
+          host: ${{ env.SRS_DROPLET_EIP }}
+          username: root
+          key: ${{ secrets.DIGITALOCEAN_SSHKEY }}
+          source: "search/scraper.json"
+          target: "/root/search/"
+          strip_components: 1
+
+  docker0:
+    name: docker0
+    runs-on: ubuntu-20.04
+    needs:
+      - envs
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
       - name: Build SRS docker image
         run: |
-          echo "Release ossrs/docs:en-$SRS_TAG"
-          docker build --tag ossrs/docs:en-$SRS_TAG --build-arg SEARCH_APIKEY=${{ secrets.SEARCH_APIKEY }} \
-            -f Dockerfile.en .
+          echo "Build build/zh-cn"
+          docker run --rm -v $(pwd):/git -w /git -e SEARCH_APIKEY=${{ secrets.SEARCH_APIKEY }} \
+            ossrs/docs:docs-cache bash auto/build-en-stage0.sh
+      - uses: actions/upload-artifact@v2
+        with:
+          name: zh-cn
+          path: build/zh-cn.bz2
 
-      ################################################################
-      # Docker
+  docker1:
+    name: docker1
+    runs-on: ubuntu-20.04
+    needs:
+      - envs
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+      - name: Build SRS docker image
+        run: |
+          echo "Build build/en-us"
+          docker run --rm -v $(pwd):/git -w /git -e SEARCH_APIKEY=${{ secrets.SEARCH_APIKEY }} \
+            ossrs/docs:docs-cache bash auto/build-en-stage1.sh
+      - uses: actions/upload-artifact@v2
+        with:
+          name: en-us
+          path: build/en-us.bz2
+
+  docker:
+    name: docker
+    runs-on: ubuntu-20.04
+    needs:
+      - envs
+      - docker0
+      - docker1
+    steps:
+      - name: Covert output to env
+        run: |
+          echo "SRS_TAG=${{ needs.envs.outputs.SRS_TAG }}" >> $GITHUB_ENV
+          echo "SRS_MAJOR=${{ needs.envs.outputs.SRS_MAJOR }}" >> $GITHUB_ENV
+      - name: Checkout repository
+        uses: actions/checkout@v2
+      - uses: actions/download-artifact@v2
+        with:
+          name: zh-cn
+          path: build/zh-cn.bz2
+      - uses: actions/download-artifact@v2
+        with:
+          name: en-us
+          path: build/en-us.bz2
       - name: Login docker hub
         uses: docker/login-action@v1
         with:
@@ -84,25 +143,61 @@ jobs:
           password: "${{ secrets.DOCKER_PASSWORD }}"
       - name: Push to docker hub
         run: |
+          echo "Release ossrs/docs:en-$SRS_TAG"
+          docker build --tag ossrs/docs:en-$SRS_TAG -f Dockerfile.en.dist .
           docker tag ossrs/docs:en-$SRS_TAG ossrs/docs:en-$SRS_MAJOR
           docker push --all-tags ossrs/docs
 
-      ################################################################
-      # Aliyun ACR
-      - name: Login Aliyun docker hub
-        uses: aliyun/acr-login@v1
+  aliyun:
+    name: aliyun-hub
+    runs-on: ubuntu-20.04
+    needs:
+      - envs
+      - docker0
+      - docker1
+    steps:
+      - name: Covert output to env
+        run: |
+          echo "SRS_TAG=${{ needs.envs.outputs.SRS_TAG }}" >> $GITHUB_ENV
+          echo "SRS_MAJOR=${{ needs.envs.outputs.SRS_MAJOR }}" >> $GITHUB_ENV
+      - name: Checkout repository
+        uses: actions/checkout@v2
+      - uses: actions/download-artifact@v2
         with:
-          login-server: https://registry.cn-hangzhou.aliyuncs.com
+          name: zh-cn
+          path: build/zh-cn.bz2
+      - uses: actions/download-artifact@v2
+        with:
+          name: en-us
+          path: build/en-us.bz2
+      - name: Login docker hub
+        uses: docker/login-action@v1
+        with:
+          registry: registry.cn-hangzhou.aliyuncs.com
           username: "${{ secrets.ACR_USERNAME }}"
           password: "${{ secrets.ACR_PASSWORD }}"
-      - name: Push to Aliyun docker hub
+      - name: Push to aliyun hub
         run: |
-          # See https://cr.console.aliyun.com/repository/cn-hangzhou/ossrs/docs/images
+          echo "Release registry.cn-hangzhou.aliyuncs.com/ossrs/docs:en-$SRS_TAG"
+          docker build --tag ossrs/docs:en-$SRS_TAG -f Dockerfile.en.dist .
           docker tag ossrs/docs:en-$SRS_TAG registry.cn-hangzhou.aliyuncs.com/ossrs/docs:en-$SRS_TAG
           docker tag ossrs/docs:en-$SRS_TAG registry.cn-hangzhou.aliyuncs.com/ossrs/docs:en-$SRS_MAJOR
           docker push --all-tags registry.cn-hangzhou.aliyuncs.com/ossrs/docs
 
-      ################################################################
+  deploy:
+    name: deploy
+    runs-on: ubuntu-20.04
+    needs:
+      - envs
+      - docker
+      - files
+    steps:
+      - name: Covert output to env
+        run: |
+          echo "SRS_TAG=${{ needs.envs.outputs.SRS_TAG }}" >> $GITHUB_ENV
+          echo "SRS_MAJOR=${{ needs.envs.outputs.SRS_MAJOR }}" >> $GITHUB_ENV
+          echo "SRS_DROPLET_EIP=${{ needs.envs.outputs.SRS_DROPLET_EIP }}" >> $GITHUB_ENV
+          echo "SRS_DROPLET_PIP=${{ needs.envs.outputs.SRS_DROPLET_PIP }}" >> $GITHUB_ENV
       # Execute command in a ssh, because ufw limit the rate.
       - name: Restart the containers
         env:
@@ -179,4 +274,3 @@ jobs:
               docker rmi -f $image
               echo "Remove image $image, r0=$?"
             done
-

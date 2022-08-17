@@ -1,0 +1,16 @@
+############################################################
+# dist
+############################################################
+FROM ossrs/httpx:1 AS dist
+
+EXPOSE 80 443
+
+COPY build/zh-cn.bz2 /usr/local/srs-docs/zh-cn
+COPY build/en-us.bz2 /usr/local/srs-docs/en-us
+RUN cd /usr/local/srs-docs && ln -sf . lts && du -sh *
+
+WORKDIR /usr/local
+CMD ["./bin/httpx-static", \
+    "-http", "80", "-root", "./srs-docs", \
+    "-no-redirect-index", "true" \
+  ]
