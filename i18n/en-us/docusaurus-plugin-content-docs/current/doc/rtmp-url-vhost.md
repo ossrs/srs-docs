@@ -141,7 +141,7 @@ The rule of default vhost is same to other vhost, the default is used for the vh
 
 There are two ways to access the vhost on server:
 * DNS name: When access the dns name equals to the vhost, by dns resolve or hosts file, we can access the vhost on server.
-* App parameters: When connect to tcUrl on server, that is, connect to the app, the parameter can specifies the vhost. This needs the server supports this way, for example, SRS can use parameter ?vhost=VHOST and ...vhost...VHOST to access specified vhost.
+* Stream parameters: While publishing or playing stream, the parameter can take the vhost. This needs the server supports this way, for example, SRS can use parameter `?vhost=VHOST` and `?domain=VHOST` to access specified vhost.
 
 For example:
 
@@ -159,71 +159,37 @@ Edge SRS config:
 
 The ways to access the url on edge servers:
 
-| 用户 | RTMP URL | hosts设置 | 目标 |
-| ---- | -------- | ------- | ------ |
-| 普通用户 | rtmp://demo.srs.com/live/livestream | 无 | 由DNS<br/>解析到指定边缘 |
-| 运维 | rtmp://demo.srs.com/live/livestream | 192.168.1.100 demo.srs.com | 查看192.168.1.100上的流 |
-| 运维 | rtmp://192.168.1.100/live?<br/>vhost=demo.srs.com/livestream | 无 | 查看192.168.1.100上的流 |
-| 运维 | rtmp://192.168.1.100/live<br/>...vhost...demo.srs.com/livestream | 无 | 查看192.168.1.100上的流|
+| User   | RTMP URL | hosts                      | Target                   |
+|--------| -------- |----------------------------|--------------------------|
+| User   | rtmp://demo.srs.com/live/livestream | -                          | Resolved by DNS          |
+| DevOps | rtmp://demo.srs.com/live/livestream | 192.168.1.100 demo.srs.com | Connect to 192.168.1.100 |
+| DevOps     | rtmp://192.168.1.100/live?<br/>vhost=demo.srs.com/livestream | -                          | Connect to 192.168.1.100       |
+| DevOps     | rtmp://192.168.1.100/live<br/>...vhost...demo.srs.com/livestream | -                          | Connect to 192.168.1.100       |
 
 It is sample way to access other servers.
-
-## URL of FMLE
-
-The publish URL of FMLE, see: [Adobe FMLE](http://help.adobe.com/en_US/FlashMediaLiveEncoder/3.0/Using/WS5b3ccc516d4fbf351e63e3d11c104ba878-7ff7.html)：
-* FMS URL: The tcUrl, the vhost and app. For example: rtmp://demo.srs.com/live
-* Backup URL: The backup server.
-* Stream: The stream name. For example: livestream
-
-Why FMLE seperate the RTMP URL to two parts: tcUrl(vhost/app) and stream?
-* Support multiple app and stream: The app can be multiple app, for example, live/live1. The stream can be multiple level stream, for example, livestream/livestream1. The RTMP url is: rtmp://vhost/live/live1/livestream/livestream1.
-* Support parameters for app: The HLS/HDS url of FMS is ugly, see: [FMS livepkgr](http://help.adobe.com/en_US/flashmediaserver/devguide/WSd391de4d9c7bd609-52e437a812a3725dfa0-8000.html#WSd391de4d9c7bd609-52e437a812a3725dfa0-7ff5), for example, publish a rtmp stream and slice to HLS:
-```bash
-FMLE:
-FMS URL: rtmp://demo.srs.com/livepkgr
-Stream: livestream?adbe-live-event=liveevent
-
-Client:
-RTMP:  rtmp://demo.srs.com/livepkgr/livestream
-HLS: http://demo.srs.com/hls-live/livepkgr/_definst_/liveevent/livestream.m3u8
-HDS: http://demo.srs.com/hds-live/livepkgr/_definst_/liveevent/livestream.f4m
-```
-
-Compare to the simple solution of SRS:
-```bash
-FMLE: 
-FMS URL: rtmp://demo.srs.com/livepkgr
-Stream: livestream
-
-Client:
-RTMP: rtmp://demo.srs.com/livepkgr/livestream
-HLS: http://demo.srs.com/livepkgr/livestream.m3u8
-HDS: not support yet.
-```
-
-The next section descripts the parameters of RTMP url.
 
 ## Parameters in URL
 
 There is no parameters for RTMP URL, similar to query string of HTTP, we can pass parameters in RTMP URL for SRS:
 * Vhost：Specifies the vhost in the RTMP URL for SRS.
-* Event: The events for HLS of FMS, while SRS do not use this solution, all HLS parameters is in config.
-* Token authentication: Not implements for SRS, while user can specifies the token in the RTMP URL, for example, rtmp://server/live?vhost=xxx&token=xxx/livestream, SRS can fetch the token and verify it on remote authentication server. The token authentication is better and complex than refer authentication.
+* Token authentication: Not implements for SRS, while user can specifies the token in the RTMP URL, SRS can fetch the token and verify it on remote authentication server. The token authentication is better and complex than refer authentication.
 
-Why pass the parameters in tcUrl? The client as code to play RTMP stream is:
+The parameters in SRS URL:
 
-```as
-// how to play url: rtmp://demo.srs.com/live/livestream
-conn = new NetConnection();
-conn.connect("rtmp://demo.srs.com/live");
+* `rtmp://192.168.1.100/live/livestream?vhost=demo.srs.com`
+* `rtmp://192.168.1.100/live/livestream?domain=demo.srs.com`
+* `rtmp://192.168.1.100/live/livestream?token=xxx`
+* `rtmp://192.168.1.100/live/livestream?vhost=demo.srs.com&token=xxx`
 
-stream = new NetStream(conn);
-stream.play("livestream");
-```
+> Note: FMLE passes the parameters in app, which should not be used now, because it confuses people.
 
-From the perspective of RTMP protcol:
-* NetConnection.connect(vhost+app): Complete the handshake protocol, send the connect packet to connect at the vhost and app. The parameters, for instance, the token or vhost, must specifies in the tcUrl(vhost/app).
-* NetStream.play(stream): Send a play packet and start play the stream.
+It's also applied to other protocols, for example:
+
+* `http://192.168.1.100/live/livestream.flv?vhost=demo.srs.com&token=xxx`
+* `http://192.168.1.100/live/livestream.m3u8?vhost=demo.srs.com&token=xxx`
+* `webrtc://192.168.1.100/live/livestream?vhost=demo.srs.com&token=xxx`
+
+> Note: SRT is another story, please read [SRT Parameters](./srt-url) for details.
 
 ## URL of SRS
 
@@ -260,8 +226,8 @@ The RTMP URL of SRS:
 | URL | Description |
 | ---- | ------ |
 | rtmp://demo.srs.com/live/livestream | Standard RTMP URL |
-| rtmp://192.168.1.10/live?vhost=demo.srs.com/livestream | URL specifies vhost |
-| rtmp://demo.srs.com/live?key=ER892ID839KD9D0A1D87D/livestream | URL specifies token authentication |
+| rtmp://192.168.1.10/live/livestream?vhost=demo.srs.com | URL specifies vhost |
+| rtmp://demo.srs.com/live/livestream?key=ER892ID839KD9D0A1D87D | URL specifies token authentication |
 
 ## Example Vhosts in SRS
 

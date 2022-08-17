@@ -122,12 +122,12 @@
         "doc/gperf",
         "doc/gprof",
         "doc/perf",
-        "doc/srt-codec",
-        "doc/srt-params",
-        "doc/srt-url",
         "doc/rtmp-url-vhost",
         "doc/rtmp-handshake",
-        "doc/rtmp-atc"
+        "doc/rtmp-atc",
+        "doc/srt-codec",
+        "doc/srt-params",
+        "doc/srt-url"
       ]
     },
     {

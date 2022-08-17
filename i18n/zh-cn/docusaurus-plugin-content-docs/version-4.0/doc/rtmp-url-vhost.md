@@ -141,7 +141,7 @@ defaultVhost和其他vhost的规则一样，只是用来匹配那些没有匹配
 
 如何访问某台服务器上的Vhost？有两个方法：
 * 配置hosts：因为Vhost实际上就是DNS解析，所以可以配置客户端的hosts，将域名（Vhost）解析到指定的服务器，就可以访问这台服务器上的指定的vhost。
-* 使用app的参数：需要服务器支持。在app后面带参数指定要访问的Vhost。SRS支持?vhost=VHOST和...vhost...VHOST这两种方式，后面的方式是避免一些播放器不识别？和=等特殊字符。
+* 使用stream的参数：需要服务器支持。在stream后面带参数指定要访问的Vhost。SRS支持`?vhost=VHOST`和`?domain=VHOST`这两种方式。
 
 普通用户不用这么麻烦，直接访问RTMP地址就好了，有时候运维需要看某台机器上的Vhost的流是否有问题，就需要这种特殊的访问方式。考虑下面的例子：
 
@@ -168,61 +168,28 @@ RTMP URL: rtmp://demo.srs.com/live/livestream
 
 访问其他服务器的流也类似。
 
-## URL of FMLE
-
-FMLE推流时，URL那个地方，有三个可以输入的框，参考[Adobe FMLE](http://help.adobe.com/en_US/FlashMediaLiveEncoder/3.0/Using/WS5b3ccc516d4fbf351e63e3d11c104ba878-7ff7.html)：
-* FMS URL: 需要输入rtmp://host:port/app，例如：rtmp://demo.srs.com/live
-* Backup URL: 备份的服务器，格式同FMS URL。若指定了备份服务器，FMLE会同时推送给这两个服务器。
-* Stream: 流名称，例如：livestream
-
-实际上是将RTMP URL分成了两部分，stream前面那部分和stream。为何要这么搞？我猜想有以下原因：
-* 支持多级app和Stream：我们目前举的例子都是一级app和一级stream，实际上RTMP支持多级app和stream，就像子文件夹，实际上很少用得到。所以SRS的URL都是一个地址，默认最后一个/后面就是stream，前面是app。
-* 支持流名称带参数：Adobe的鬼HLS/HDS非常之麻烦，那个地址是个恶心的完全不一致。参考[FMS livepkgr](http://help.adobe.com/en_US/flashmediaserver/devguide/WSd391de4d9c7bd609-52e437a812a3725dfa0-8000.html#WSd391de4d9c7bd609-52e437a812a3725dfa0-7ff5)，例如发布一个rtmp，并切片成HLS：
-```bash
-FMLE:
-FMS URL: rtmp://demo.srs.com/livepkgr
-Stream: livestream?adbe-live-event=liveevent
-
-Client:
-RTMP:  rtmp://demo.srs.com/livepkgr/livestream
-HLS: http://demo.srs.com/hls-live/livepkgr/_definst_/liveevent/livestream.m3u8
-HDS: http://demo.srs.com/hds-live/livepkgr/_definst_/liveevent/livestream.f4m
-```
-没有比这个更恶心的东西了。比较SRS的简洁方案：
-```bash
-FMLE: 
-FMS URL: rtmp://demo.srs.com/livepkgr
-Stream: livestream
-
-Client:
-RTMP: rtmp://demo.srs.com/livepkgr/livestream
-HLS: http://demo.srs.com/livepkgr/livestream.m3u8
-HDS: not support yet.
-```
-
-既然谈到了RTMP URL中的参数，下一章就说说这个。
-
 ## Parameters in URL
 
 RTMP URL一般是不带参数，类似于http的query，有时候为了特殊的要求，会在RTMP URL中带参数，譬如：
-* Vhost：前面讲过，在app后面加参数，可以访问指定服务器的指定Vhost。这个SRS的特殊约定，方便排错。
-* FMLE的Stream后面的参数，指定event之类的。SRS不需要这么麻烦，HLS是内置支持，无需这种复杂的配置。Callback也是http的，FMS为了支持服务器端脚本，需要很复杂的配置和复杂的参数，实在是很麻烦的设计。
-* token认证：SRS还未实现。在连接服务器时，在app后面指定token（方式和vhost一样），例如rtmp://server/live?vhost=xxx&token=xxx/livestream，服务器可以取出token，进行验证，若验证失败则断开连接，这种是比Refer更高级的防盗链。
+* Vhost：前面讲过，在stream后面加参数，可以访问指定服务器的指定Vhost。这个SRS的特殊约定，方便排错。
+* token认证：SRS还未实现。在连接服务器时，在app后面指定token（方式和vhost一样），服务器可以取出token，进行验证，若验证失败则断开连接，这种是比Refer更高级的防盗链。
 
-app和stream后面带参数，这两者有何区别，为何SRS把参数放在app后面？客户端播放流的as3代码大约是：
+例如，下面都是SRS可以识别的URL参数：
 
-```as
-// how to play url: rtmp://demo.srs.com/live/livestream
-conn = new NetConnection();
-conn.connect("rtmp://demo.srs.com/live");
+* `rtmp://192.168.1.100/live/livestream?vhost=demo.srs.com`
+* `rtmp://192.168.1.100/live/livestream?domain=demo.srs.com`
+* `rtmp://192.168.1.100/live/livestream?token=xxx`
+* `rtmp://192.168.1.100/live/livestream?vhost=demo.srs.com&token=xxx`
 
-stream = new NetStream(conn);
-stream.play("livestream");
-```
+> Note: 之前由于FMLE定义的参数，是传在app中的，这会造成困扰，不推荐使用。
 
-从RTMP协议的角度来看：
-* NetConnection.connect(vhost+app)：这一步会完成握手，connect到vhost，切换到app。类似于登录到vhost后，cd到app这个目录。也就是vhost的验证，都可以在这一步做，也就是指定vhost也是在一步了，所以app后面跟的参数都是和vhost/app相关的。
-* NetStream.play(stream)：这一步是播放指定的直播流。所以和stream相关的事件，都可以传递参数，譬如Adobe的event。SRS是没有这些事件的，流启动时，若配置了HLS会自动开始切片。
+除了RTMP，其他协议也是一样的用法，比如：
+
+* `http://192.168.1.100/live/livestream.flv?vhost=demo.srs.com&token=xxx`
+* `http://192.168.1.100/live/livestream.m3u8?vhost=demo.srs.com&token=xxx`
+* `webrtc://192.168.1.100/live/livestream?vhost=demo.srs.com&token=xxx`
+
+> Note: SRT由于协议的特殊性，无法使用这种方式，详细请参考[SRT Parameters](./srt-url)
 
 ## URL of SRS
 
@@ -259,8 +226,8 @@ SRS常见的三种RTMP URL，详细见下表：
 | URL | 说明 |
 | ---- | ------ |
 | rtmp://demo.srs.com/live/livestream | 普通用户的标准访问方式，观看直播流 |
-| rtmp://192.168.1.10/live?vhost=demo.srs.com/livestream | 运维对特定服务器排错 |
-| rtmp://demo.srs.com/live?key=ER892ID839KD9D0A1D87D/livestream | token验证用户，或者带宽测试的key验证 |
+| rtmp://192.168.1.10/live/livestream?vhost=demo.srs.com | 运维对特定服务器排错 |
+| rtmp://demo.srs.com/live/livestream?key=ER892ID839KD9D0A1D87D | token验证用户，或者带宽测试的key验证 |
 
 ## Example Vhosts in SRS
 
