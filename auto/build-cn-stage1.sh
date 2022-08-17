@@ -15,6 +15,6 @@ yarn cross-env REGION='zh-cn' BASE_URL='/lts/en-us/' \
   docusaurus build --locale en-us --out-dir build/en-us
 
 
-(cd build && tar jcf en-us.bz2 en-us)
+(cd build && tar jcf en-us.tar.bz2 en-us)
 du -sh build/*
 

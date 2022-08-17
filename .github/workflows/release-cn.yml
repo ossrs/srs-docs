@@ -84,7 +84,7 @@ jobs:
       - uses: actions/upload-artifact@v2
         with:
           name: zh-cn
-          path: build/zh-cn.bz2
+          path: build/zh-cn.tar.bz2
 
   docker1:
     name: docker1
@@ -102,7 +102,7 @@ jobs:
       - uses: actions/upload-artifact@v2
         with:
           name: en-us
-          path: build/en-us.bz2
+          path: build/en-us.tar.bz2
 
   docker:
     name: docker
@@ -121,11 +121,11 @@ jobs:
       - uses: actions/download-artifact@v2
         with:
           name: zh-cn
-          path: build/zh-cn.bz2
+          path: build/zh-cn.tar.bz2
       - uses: actions/download-artifact@v2
         with:
           name: en-us
-          path: build/en-us.bz2
+          path: build/en-us.tar.bz2
       - name: Login docker hub
         uses: docker/login-action@v1
         with:
