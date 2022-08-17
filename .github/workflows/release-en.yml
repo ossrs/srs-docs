@@ -3,7 +3,7 @@ name: "Release EN version"
 on:
   push:
     tags:
-      - v1*
+      - vxxx1*
 
 jobs:
   envs:
