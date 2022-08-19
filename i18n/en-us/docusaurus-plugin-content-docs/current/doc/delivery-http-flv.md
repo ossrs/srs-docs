@@ -214,7 +214,7 @@ Remark: The http server config section, read [HTTP Server](./http-server#config)
 
 This section descrbes the HTTP FLV live streaming.
 
-How to use multiple process for HTTP FLV? You can use HTTP reverse proxy. 
+How to use multiple process for HTTP FLV? Please read [Reuse Port](./reuse-port) for detail.
 
 ### What is HTTP FLV
 

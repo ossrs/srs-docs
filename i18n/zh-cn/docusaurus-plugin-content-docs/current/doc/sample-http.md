@@ -71,7 +71,7 @@ vhost __defaultVhost__ {
 ./objs/srs -c conf/http.hls.conf
 ```
 
-备注：请确定srs-http-server已经启动，可以访问[nginx][nginx]，若能看到`nginx is ok`则没有问题。
+备注：请确定srs-http-server已经启动，可以访问[nginx](http://localhost:8080/nginx.html)，若能看到`nginx is ok`则没有问题。
 
 备注：实际上提供服务的是SRS，可以看到响应头是`Server: SRS/0.9.51`之类。
 

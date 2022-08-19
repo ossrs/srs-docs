@@ -9,7 +9,7 @@ hide_table_of_contents: false
 
 About the HTTP FLV of SRS, read [HTTP FLV](./delivery-http-flv#about-http-flv)
 
-How to use multiple process for HTTP FLV? You can use HTTP reverse proxy. 
+How to use multiple process for HTTP FLV? Please read [Reuse Port](./reuse-port) for detail.
 
 **Suppose the server ip is 192.168.1.170**
 

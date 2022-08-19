@@ -9,7 +9,7 @@ hide_table_of_contents: false
 
 About the HTTP FLV cluster of SRS, read [HTTP FLV](./delivery-http-flv#about-http-flv)
 
-How to use multiple process for HTTP FLV? You can use HTTP reverse proxy. 
+How to use multiple process for HTTP FLV? Please read [Reuse Port](./reuse-port) for detail.
 
 This example show how to deploy three SRS instance, listen at different port at a machine(user can deploy each to different machine, use same port), while one is origin server, another two are edge servers. We can publish RTMP to origin or edge, and play the RTMP/FLV at any edge. The latency is same to RTMP, 0.8-1s.
 

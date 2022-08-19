@@ -214,7 +214,7 @@ vhost __defaultVhost__ {
 
 这一节详细解释HTTP FLV的背景。
 
-SRS的HTTP FLV边缘只能使用单进程，如何做到多进程呢？可以使用HTTP反向代理，SRS提供了go-sharp，支持根据SRS边缘的负载均衡以及心跳检测。参考：[go-sharp][go-sharp]
+SRS的HTTP FLV边缘只能使用单进程，如何做到多进程呢？请参考[Reuse Port](./reuse-port)
 
 ### What is HTTP FLV
 

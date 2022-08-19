@@ -131,7 +131,7 @@ HLS url: `http://192.168.1.170:8080/live/livestream_ff.m3u8`
 
 User can use vlc to play the HLS stream.
 
-Or, use online SRS player: [jwplayer-ff][jwplayer-ff]
+Or, use online SRS player: [srs-player](https://ossrs.net/players/srs_player.html)
 
 Note: Please replace all ip 192.168.1.170 to your server ip.
 

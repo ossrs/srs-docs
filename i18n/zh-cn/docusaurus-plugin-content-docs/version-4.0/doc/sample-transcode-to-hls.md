@@ -16,8 +16,6 @@ HLS需要h.264+aac，若符合这个要求可以按照[Usage: HLS](./delivery-hl
 
 备注：在虚拟机上测试，一路流转码为aac，需要3%CPU，在物理机上可能稍好点。转码的开销比分发要大，实际应用需要考虑这个因素。
 
-分发纯音频流参考：[HLS audio only][http://ossrs.net/srs.release/wiki/HLS-Audio-Only]
-
 **假设服务器的IP是：192.168.1.170**
 
 ## 第一步，获取SRS
@@ -83,7 +81,7 @@ vhost __defaultVhost__ {
 }
 ```
 
-备注：这个配置使用只转码音频，因为视频是h.264符合要求，若需要全转码，参考[HLS+Transcode][http://ossrs.net/srs.release/wiki/HLS-And-Transcode]
+备注：这个配置使用只转码音频，因为视频是h.264符合要求，若需要全转码
 
 ## 第四步，启动SRS
 
@@ -142,7 +140,7 @@ HLS流地址为： `http://192.168.1.170:8080/live/livestream_ff.m3u8`
 
 可以使用VLC观看。
 
-或者使用在线SRS播放器播放：[jwplayer-ff][jwplayer-ff]
+或者使用在线SRS播放器播放：[srs-player](https://ossrs.net/players/srs_player.html)
 
 备注：请将所有实例的IP地址192.168.1.170都换成部署的服务器IP地址。
 

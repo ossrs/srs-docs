@@ -9,7 +9,7 @@ hide_table_of_contents: false
 
 SRS支持HTTP FLV直播流集群分发，详细参考[HTTP FLV](./delivery-http-flv#about-http-flv)
 
-SRS的HTTP FLV边缘只能使用单进程，如何做到多进程呢？可以使用HTTP反向代理，SRS提供了go-sharp，支持根据SRS边缘的负载均衡以及心跳检测。参考：[go-sharp][go-sharp]
+SRS的HTTP FLV边缘只能使用单进程，如何做到多进程呢？请参考[Reuse Port](./reuse-port)
 
 本例子部署了三个SRS，侦听不同的端口（实际可以部署到不同的机器，侦听同一个端口），一个作为Origin源站，两个作为Edge边缘。推RTMP流到源站或者边缘后，可以通过任何Edge观看，和RTMP的效果一样，集群的延迟在0.8-3秒。
 
@@ -140,9 +140,9 @@ Stream: livestream
 
 源站RTMP流地址为：`rtmp://192.168.1.170/live/livestream`，可以使用VLC观看，或者使用在线SRS播放器播放：[srs-player](https://ossrs.net/players/srs_player.html)
 
-边缘1的RTMP流地址为：`rtmp://192.168.1.170:19351/live/livestream`，可以使用VLC观看，或者使用在线SRS播放器播放：[srs-player-19351][srs-player-19351]
+边缘1的RTMP流地址为：`rtmp://192.168.1.170:19351/live/livestream`，可以使用VLC观看，或者使用在线SRS播放器播放：[srs-player](https://ossrs.net/players/srs_player.html)
 
-边缘2的RTMP流地址为：`rtmp://192.168.1.170:19352/live/livestream`，可以使用VLC观看，或者使用在线SRS播放器播放：[srs-player-19352][srs-player-19352]
+边缘2的RTMP流地址为：`rtmp://192.168.1.170:19352/live/livestream`，可以使用VLC观看，或者使用在线SRS播放器播放：[srs-player](https://ossrs.net/players/srs_player.html)
 
 备注：请将所有实例的IP地址192.168.1.170都换成部署的服务器IP地址。
 
@@ -154,7 +154,7 @@ Stream: livestream
 
 边缘1的HTTP FLV流地址为： `http://192.168.1.170:8081/live/livestream.flv`，可以使用VLC观看，或者使用在线SRS播放器播放：[srs-player](https://ossrs.net/players/srs_player.html)
 
-边缘2的HTTP FLV流地址为： `http://192.168.1.170:8082/live/livestream.flv`，可以使用VLC观看，或者使用在线SRS播放器播放：[jwplayer-flv-8081][jwplayer-flv-8082]
+边缘2的HTTP FLV流地址为： `http://192.168.1.170:8082/live/livestream.flv`，可以使用VLC观看，或者使用在线SRS播放器播放：[srs-player](https://ossrs.net/players/srs_player.html)
 
 备注：请将所有实例的IP地址192.168.1.170都换成部署的服务器IP地址。
 
