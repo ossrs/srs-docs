@@ -86,19 +86,9 @@ RTMP url is: `rtmp://192.168.1.170:1935/live/livestream`
 
 User can use vlc to play the RTMP stream.
 
-Or, use online SRS player: [srs-player][srs-player]
-
 Note: Please replace all ip 192.168.1.170 to your server ip.
 
 Winlin 2020.01
-
-[nginx]: http://192.168.1.170:8080/nginx.html
-[srs-player]: http://ossrs.net/srs.release/trunk/research/players/srs_player.html?vhost=__defaultVhost__&autostart=true&server=192.168.1.170&app=live&stream=livestream&port=1935
-[srs-player-19350]: http://ossrs.net/srs.release/trunk/research/players/srs_player.html?vhost=__defaultVhost__&autostart=true&server=192.168.1.170&app=live&stream=livestream&port=19350
-[srs-player-ff]: http://ossrs.net/srs.release/trunk/research/players/srs_player.html?vhost=__defaultVhost__&autostart=true&server=192.168.1.170&app=live&stream=livestream_ff
-[jwplayer]: http://ossrs.net/srs.release/trunk/research/players/srs_player.html?app=live&stream=livestream.m3u8&server=192.168.1.170&port=8080&autostart=true&vhost=192.168.1.170&schema=http&hls_autostart=true&hls_port=8080
-[jwplayer-ff]: http://ossrs.net/srs.release/trunk/research/players/srs_player.html?app=live&stream=livestream_ff.m3u8&server=192.168.1.170&port=8080&autostart=true&vhost=192.168.1.170&schema=http&hls_autostart=true&hls_port=8080
-[HLS-Audio-Only]: https://ossrs.io/lts/en-us/docs/v4/doc/delivery-hls#hlsaudioonly
 
 ![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/doc-en-4/doc/sample-srt)
 

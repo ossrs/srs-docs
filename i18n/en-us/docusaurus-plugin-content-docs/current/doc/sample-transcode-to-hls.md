@@ -121,8 +121,6 @@ RTMP url is: `rtmp://192.168.1.170:1935/live/livestream_ff`
 
 User can use vlc to play the RTMP stream.
 
-Or, use online SRS player: [srs-player-ff][srs-player-ff]
-
 Note: Please replace all ip 192.168.1.170 to your server ip.
 
 ## Step 7, play HLS

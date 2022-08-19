@@ -86,7 +86,7 @@ RTMP流地址为：`rtmp://192.168.1.170/live/livestream`
 
 可以使用VLC观看。
 
-或者使用在线SRS播放器播放：[srs-player][srs-player]
+或者使用在线SRS播放器播放：[srs-player](https://ossrs.net/players/srs_player.html)
 
 Winlin 2020.01
 

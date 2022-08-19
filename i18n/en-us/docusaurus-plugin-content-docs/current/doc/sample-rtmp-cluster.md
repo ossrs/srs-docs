@@ -107,9 +107,9 @@ Stream: livestream
 
 For detail, read [RTMP](./delivery-rtmp) and [Edge](./edge)
 
-Origin RTMP url is: `rtmp://192.168.1.170:19350/live/livestream`, User can use vlc to play the RTMP stream. Or, use online SRS player: [srs-player-19350][srs-player-19350]
+Origin RTMP url is: `rtmp://192.168.1.170:19350/live/livestream`, User can use vlc to play the RTMP stream.
 
-Edge RTMP url is: `rtmp://192.168.1.170:1935/live/livestream`, User can use vlc to play the RTMP stream. Or, use online SRS player: [srs-player][srs-player]
+Edge RTMP url is: `rtmp://192.168.1.170:1935/live/livestream`, User can use vlc to play the RTMP stream.
 
 Note: Please replace all ip 192.168.1.170 to your server ip.
 

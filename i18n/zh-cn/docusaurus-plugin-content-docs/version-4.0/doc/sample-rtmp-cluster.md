@@ -105,9 +105,9 @@ Stream: livestream
 
 详细参考[RTMP分发](./delivery-rtmp)和[Edge](./edge)
 
-源站RTMP流地址为：`rtmp://192.168.1.170:19350/live/livestream`，可以使用VLC观看。或者使用在线SRS播放器播放：[srs-player-19350][srs-player-19350]
+源站RTMP流地址为：`rtmp://192.168.1.170:19350/live/livestream`，可以使用VLC观看。
 
-边缘RTMP流地址为：`rtmp://192.168.1.170/live/livestream`，可以使用VLC观看。或者使用在线SRS播放器播放：[srs-player][srs-player]
+边缘RTMP流地址为：`rtmp://192.168.1.170/live/livestream`，可以使用VLC观看。或者使用在线SRS播放器播放：[srs-player](https://ossrs.net/players/srs_player.html)
 
 备注：请将所有实例的IP地址192.168.1.170都换成部署的服务器IP地址。
 

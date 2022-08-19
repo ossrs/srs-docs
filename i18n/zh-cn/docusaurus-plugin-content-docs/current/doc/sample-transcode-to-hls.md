@@ -132,8 +132,6 @@ RTMP流地址为：`rtmp://192.168.1.170/live/livestream_ff`
 
 可以使用VLC观看。
 
-或者使用在线SRS播放器播放：[srs-player-ff][srs-player-ff]
-
 备注：请将所有实例的IP地址192.168.1.170都换成部署的服务器IP地址。
 
 ## 第八步，观看HLS流

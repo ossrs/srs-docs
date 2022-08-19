@@ -9,7 +9,7 @@ hide_table_of_contents: false
 
 About the HTTP FLV cluster of SRS, read [HTTP FLV](./delivery-http-flv#about-http-flv)
 
-How to use multiple process for HTTP FLV? You can use HTTP reverse proxy, and SRS start the go-sharp project, which can proxy in load balance mode and detect the status of SRS. For go-sharp, read [go-sharp][go-sharp]
+How to use multiple process for HTTP FLV? You can use HTTP reverse proxy. 
 
 This example show how to deploy three SRS instance, listen at different port at a machine(user can deploy each to different machine, use same port), while one is origin server, another two are edge servers. We can publish RTMP to origin or edge, and play the RTMP/FLV at any edge. The latency is same to RTMP, 0.8-1s.
 
@@ -138,11 +138,11 @@ The streams on SRS edge2:
 
 For detail, read [HTTP FLV](./delivery-http-flv)
 
-Origin RTMP url is: `rtmp://192.168.1.170:1935/live/livestream`, User can use vlc to play the RTMP stream. Or, use online SRS player: [srs-player][srs-player]
+Origin RTMP url is: `rtmp://192.168.1.170:1935/live/livestream`, User can use vlc to play the RTMP stream.
 
-Edge1 RTMP url is: `rtmp://192.168.1.170:19351/live/livestream`, User can use vlc to play the RTMP stream. Or, use online SRS player: [srs-player-19351][srs-player-19351]
+Edge1 RTMP url is: `rtmp://192.168.1.170:19351/live/livestream`, User can use vlc to play the RTMP stream.
 
-Edge2 RTMP url is: `rtmp://192.168.1.170:19352/live/livestream`, User can use vlc to play the RTMP stream. Or, use online SRS player: [srs-player-19352][srs-player-19352]
+Edge2 RTMP url is: `rtmp://192.168.1.170:19352/live/livestream`, User can use vlc to play the RTMP stream.
 
 Note: Please replace all ip 192.168.1.170 to your server ip.
 
@@ -150,11 +150,11 @@ Note: Please replace all ip 192.168.1.170 to your server ip.
 
 For detail, read [HTTP FLV](./delivery-http-flv)
 
-Origin HTTP FLV url: `http://192.168.1.170:8080/live/livestream.flv`, User can use vlc to play the HLS stream. Or, use online SRS player(you must input the flv url): [jwplayer-flv][jwplayer-flv]
+Origin HTTP FLV url: `http://192.168.1.170:8080/live/livestream.flv`, User can use vlc to play the HLS stream. Or, use online SRS player(you must input the flv url): [srs-player](https://ossrs.net/players/srs_player.html)
 
-Edge1 HTTP FLV url: `http://192.168.1.170:8081/live/livestream.flv`, User can use vlc to play the HLS stream. Or, use online SRS player(you must input the flv url): [jwplayer-flv-8081][jwplayer-flv-8081]
+Edge1 HTTP FLV url: `http://192.168.1.170:8081/live/livestream.flv`, User can use vlc to play the HLS stream. Or, use online SRS player(you must input the flv url): [srs-player](https://ossrs.net/players/srs_player.html)
 
-Edge2 HTTP FLV url: `http://192.168.1.170:8082/live/livestream.flv`, User can use vlc to play the HLS stream. Or, use online SRS player(you must input the flv url): [jwplayer-flv-8082][jwplayer-flv-8082]
+Edge2 HTTP FLV url: `http://192.168.1.170:8082/live/livestream.flv`, User can use vlc to play the HLS stream. Or, use online SRS player(you must input the flv url): [srs-player](https://ossrs.net/players/srs_player.html)
 
 Note: Please replace all ip 192.168.1.170 to your server ip.
 

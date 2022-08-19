@@ -109,7 +109,7 @@ RTMP流地址为：`rtmp://192.168.1.170/live/livestream`
 
 可以使用VLC观看。
 
-或者使用在线SRS播放器播放：[srs-player][srs-player]
+或者使用在线SRS播放器播放：[srs-player](https://ossrs.net/players/srs_player.html)
 
 备注：请将所有实例的IP地址192.168.1.170都换成部署的服务器IP地址。
 
@@ -121,13 +121,11 @@ HLS流地址为： `http://192.168.1.170:8080/live/livestream.m3u8`
 
 可以使用VLC观看。
 
-或者使用在线SRS播放器播放：[srs-player][srs-player]
+或者使用在线SRS播放器播放：[srs-player](https://ossrs.net/players/srs_player.html)
 
 备注：请将所有实例的IP地址192.168.1.170都换成部署的服务器IP地址。
 
-注意：VLC无法观看纯音频流，jwplayer可以观看。
-
-分发纯音频流参考：[HLS audio only][HLS-Audio-Only]
+注意：VLC无法观看纯音频流。
 
 ## Q&A
 
@@ -140,7 +138,7 @@ HLS流地址为： `http://192.168.1.170:8080/live/livestream.m3u8`
 
 ## RTMP流内容和HLS流内容不一致
 * 一般这种问题出现在使用上面的例子推流，然后换成别的编码器推流，或者换个文件推流。
-* 可能是流的编码不对（推流时使用FMLE），HLS需要h.264+aac，需要转码，参考只转码音频[Transcode2HLS](./sample-transcode-to-hls)或者全转码[HLS+Transcode][HLS-And-Transcode]
+* 可能是流的编码不对（推流时使用FMLE），HLS需要h.264+aac，需要转码，参考只转码音频[Transcode2HLS](./sample-transcode-to-hls)
 
 Winlin 2014.4
 

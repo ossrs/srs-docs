@@ -106,8 +106,6 @@ RTMP url is: `rtmp://192.168.1.170:1935/live/livestream`
 
 User can use vlc to play the RTMP stream.
 
-Or, use online SRS player: [srs-player][srs-player]
-
 Note: Please replace all ip 192.168.1.170 to your server ip.
 
 ## Step 7, play HLS stream
@@ -118,13 +116,11 @@ HLS url： `http://192.168.1.170:8080/live/livestream.m3u8`
 
 User can use vlc to play the HLS stream.
 
-Or, use online SRS player：[srs-player][jwplayer]
+Or, use online SRS player：[srs-player](https://ossrs.net/players/srs_player.html)
 
 Note: Please replace all ip 192.168.1.170 to your server ip.
 
 Note: VLC can not play the pure audio stream, while jwplayer can.
-
-For detail about pure audio HLS, read [HLS audio only][HLS-Audio-Only]
 
 Winlin 2014.11
 

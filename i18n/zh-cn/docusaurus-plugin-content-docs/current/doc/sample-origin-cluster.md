@@ -146,7 +146,7 @@ Stream: livestream
 
 详细参考[RTMP源站集群](./origin-cluster)
 
-观看集群的RTMP流地址为：`rtmp://192.168.1.170/live/livestream`，可以使用VLC观看。或者使用在线SRS播放器播放：[srs-player][srs-player]
+观看集群的RTMP流地址为：`rtmp://192.168.1.170/live/livestream`，可以使用VLC观看。或者使用在线SRS播放器播放：[srs-player](https://ossrs.net/players/srs_player.html)
 
 备注：请将所有实例的IP地址192.168.1.170都换成部署的服务器IP地址。
 

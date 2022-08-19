@@ -9,7 +9,7 @@ hide_table_of_contents: false
 
 About the HTTP FLV of SRS, read [HTTP FLV](./delivery-http-flv#about-http-flv)
 
-How to use multiple process for HTTP FLV? You can use HTTP reverse proxy, and SRS start the go-sharp project, which can proxy in load balance mode and detect the status of SRS. For go-sharp, read [go-sharp][go-sharp]
+How to use multiple process for HTTP FLV? You can use HTTP reverse proxy. 
 
 **Suppose the server ip is 192.168.1.170**
 
@@ -98,7 +98,7 @@ The streams on SRS:
 
 For detail, read [HTTP FLV](./delivery-http-flv)
 
-RTMP url is: `rtmp://192.168.1.170:1935/live/livestream`, User can use vlc to play the RTMP stream. Or, use online SRS player: [srs-player][srs-player]
+RTMP url is: `rtmp://192.168.1.170:1935/live/livestream`, User can use vlc to play the RTMP stream.
 
 Note: Please replace all ip 192.168.1.170 to your server ip.
 
@@ -106,7 +106,7 @@ Note: Please replace all ip 192.168.1.170 to your server ip.
 
 For detail, read [HTTP FLV](./delivery-http-flv)
 
-HTTP FLV url: `http://192.168.1.170:8080/live/livestream.flv`, User can use vlc to play the HLS stream. Or, use online SRS player(you must input the flv url): [jwplayer-flv][jwplayer-flv]
+HTTP FLV url: `http://192.168.1.170:8080/live/livestream.flv`, User can use vlc to play the HLS stream. Or, use online SRS player(you must input the flv url): [srs-player](https://ossrs.net/players/srs_player.html)
 
 Note: Please replace all ip 192.168.1.170 to your server ip.
 

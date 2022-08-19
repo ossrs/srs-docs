@@ -214,7 +214,7 @@ Remark: The http server config section, read [HTTP Server](./http-server#config)
 
 This section descrbes the HTTP FLV live streaming.
 
-How to use multiple process for HTTP FLV? You can use HTTP reverse proxy, and SRS start the go-sharp project, which can proxy in load balance mode and detect the status of SRS. For go-sharp, read [go-sharp][go-sharp]
+How to use multiple process for HTTP FLV? You can use HTTP reverse proxy. 
 
 ### What is HTTP FLV
 

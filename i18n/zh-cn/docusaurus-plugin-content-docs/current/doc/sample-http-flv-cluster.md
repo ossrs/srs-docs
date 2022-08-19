@@ -138,7 +138,7 @@ Stream: livestream
 
 详细参考[HTTP FLV](./delivery-http-flv)
 
-源站RTMP流地址为：`rtmp://192.168.1.170/live/livestream`，可以使用VLC观看，或者使用在线SRS播放器播放：[srs-player][srs-player]
+源站RTMP流地址为：`rtmp://192.168.1.170/live/livestream`，可以使用VLC观看，或者使用在线SRS播放器播放：[srs-player](https://ossrs.net/players/srs_player.html)
 
 边缘1的RTMP流地址为：`rtmp://192.168.1.170:19351/live/livestream`，可以使用VLC观看，或者使用在线SRS播放器播放：[srs-player-19351][srs-player-19351]
 
@@ -150,9 +150,9 @@ Stream: livestream
 
 详细参考[HTTP FLV](./delivery-http-flv)
 
-源站HTTP FLV流地址为： `http://192.168.1.170:8080/live/livestream.flv`，可以使用VLC观看，或者使用在线SRS播放器播放：[jwplayer-flv][jwplayer-flv]
+源站HTTP FLV流地址为： `http://192.168.1.170:8080/live/livestream.flv`，可以使用VLC观看，或者使用在线SRS播放器播放：[srs-player](https://ossrs.net/players/srs_player.html)
 
-边缘1的HTTP FLV流地址为： `http://192.168.1.170:8081/live/livestream.flv`，可以使用VLC观看，或者使用在线SRS播放器播放：[jwplayer-flv-8081][jwplayer-flv-8081]
+边缘1的HTTP FLV流地址为： `http://192.168.1.170:8081/live/livestream.flv`，可以使用VLC观看，或者使用在线SRS播放器播放：[srs-player](https://ossrs.net/players/srs_player.html)
 
 边缘2的HTTP FLV流地址为： `http://192.168.1.170:8082/live/livestream.flv`，可以使用VLC观看，或者使用在线SRS播放器播放：[jwplayer-flv-8081][jwplayer-flv-8082]
 

@@ -86,8 +86,6 @@ RTMP url is: `rtmp://192.168.1.170:1935/live/livestream`
 
 User can use vlc to play the RTMP stream.
 
-Or, use online SRS player: [srs-player][srs-player]
-
 Note: Please replace all ip 192.168.1.170 to your server ip.
 
 Winlin 2014.11
