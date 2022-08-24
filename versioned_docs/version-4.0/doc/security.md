@@ -59,6 +59,6 @@ When reload the security config, it only effects the new clients.
 
 Winlin 2015.1
 
-![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/doc-en-4/doc/security)
+![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/doc/en/v4/security)
 
 

@@ -187,6 +187,6 @@ Toolchain options:          @see https://github.com/ossrs/srs/issues/1547#issuec
 
 Winlin 2014.2
 
-![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/doc-zh-4/doc/arm)
+![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/doc/zh/v4/arm)
 
 

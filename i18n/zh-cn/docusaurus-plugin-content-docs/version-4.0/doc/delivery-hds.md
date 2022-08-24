@@ -56,6 +56,6 @@ vhost __defaultVhost__ {
 
 Winlin 2015.3
 
-![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/doc-zh-4/doc/delivery-hds)
+![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/doc/zh/v4/delivery-hds)
 
 

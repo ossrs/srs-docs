@@ -50,6 +50,6 @@ Winlin 2015.8
 
 [ne]: https://github.com/arut/nginx-rtmp-module/wiki/Directives#exec
 
-![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/doc-en-4/doc/nginx-exec)
+![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/doc/en/v4/nginx-exec)
 
 

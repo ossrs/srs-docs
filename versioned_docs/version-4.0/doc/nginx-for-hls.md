@@ -9,6 +9,6 @@ hide_table_of_contents: false
 
 On the way...
 
-![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/doc-en-4/doc/nginx-for-hls)
+![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/doc/en/v4/nginx-for-hls)
 
 

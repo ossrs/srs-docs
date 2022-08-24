@@ -48,6 +48,6 @@ Clion的主要亮点：
 
 Winlin 2015.3
 
-![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/doc-zh-5/doc/ide)
+![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/doc/zh/v5/ide)
 
 

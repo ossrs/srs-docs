@@ -376,6 +376,6 @@ The HttpCallback can used to snapshot, please read [snapshot](./snapshot#httpcal
 
 Winlin 2015.1
 
-![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/doc-en-4/doc/http-callback)
+![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/doc/en/v4/http-callback)
 
 

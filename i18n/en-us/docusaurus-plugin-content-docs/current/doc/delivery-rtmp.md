@@ -82,6 +82,6 @@ The latency of RTMP is in 1-3s, the config see: [Low Latency](./low-latency)
 
 Winlin 2014.11
 
-![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/doc-en-5/doc/delivery-rtmp)
+![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/doc/en/v5/delivery-rtmp)
 
 

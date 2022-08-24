@@ -63,6 +63,6 @@ vhost __defaultVhost__ {
 
 2018.02
 
-![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/doc-zh-4/doc/origin-cluster)
+![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/doc/zh/v4/origin-cluster)
 
 

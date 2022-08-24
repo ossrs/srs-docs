@@ -28,6 +28,6 @@ Notes: When compile SRS with SSL, SRS will try complex, then simple.
 
 Winlin 2014.10
 
-![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/doc-en-4/doc/rtmp-handshake)
+![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/doc/en/v4/rtmp-handshake)
 
 

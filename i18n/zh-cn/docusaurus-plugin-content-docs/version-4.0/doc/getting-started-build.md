@@ -210,6 +210,6 @@ CANDIDATE="192.168.1.10"
 
 > Note: 可以打开不同的页面，推拉不同的流，就可以实现视频聊天了。
 
-![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/doc-zh-4/doc/getting-started-build)
+![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/doc/zh/v4/getting-started-build)
 
 

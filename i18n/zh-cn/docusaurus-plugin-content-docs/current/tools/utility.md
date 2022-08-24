@@ -13,6 +13,6 @@ hide_table_of_contents: false
 * [WebRTC Player](https://ossrs.net/releases/demo.html?page=rtc_player.html)
 * [GB28181 Player](https://ossrs.net/releases/demo.html?page=srs_gb28181.html)
 
-![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/doc-zh-5/tools/utility)
+![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/tools/zh/v5/utility)
 
 

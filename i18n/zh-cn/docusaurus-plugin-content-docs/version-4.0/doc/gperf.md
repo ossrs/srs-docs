@@ -175,6 +175,6 @@ Total: 20 samples
 
 Winlin 2014.3
 
-![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/doc-zh-4/doc/gperf)
+![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/doc/zh/v4/gperf)
 
 

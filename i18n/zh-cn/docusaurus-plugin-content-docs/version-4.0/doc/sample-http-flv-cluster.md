@@ -160,6 +160,6 @@ Stream: livestream
 
 Winlin 2014.4
 
-![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/doc-zh-4/doc/sample-http-flv-cluster)
+![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/doc/zh/v4/sample-http-flv-cluster)
 
 

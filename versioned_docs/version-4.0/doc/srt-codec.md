@@ -9,6 +9,6 @@ hide_table_of_contents: false
 
 Coming soon...
 
-![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/doc-en-4/doc/srt-codec)
+![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/doc/en/v4/srt-codec)
 
 

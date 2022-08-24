@@ -349,6 +349,6 @@ SRS2.0.30 refined to support 7.5k clients, read https://github.com/ossrs/srs/iss
 
 Winlin 2014.11
 
-![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/doc-en-5/doc/performance)
+![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/doc/en/v5/performance)
 
 

@@ -106,6 +106,6 @@ DASH流地址为： `http://192.168.1.170:8080/live/livestream.mpd`
 
 Winlin 2020.01
 
-![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/doc-zh-4/doc/sample-dash)
+![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/doc/zh/v4/sample-dash)
 
 

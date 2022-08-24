@@ -113,6 +113,6 @@ Stream: livestream
 
 Winlin 2014.3
 
-![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/doc-zh-5/doc/sample-rtmp-cluster)
+![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/doc/zh/v5/sample-rtmp-cluster)
 
 

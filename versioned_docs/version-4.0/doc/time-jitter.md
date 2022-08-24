@@ -99,6 +99,6 @@ RTMP always disable the time_jitter.
 
 Winlin 2015.4
 
-![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/doc-en-4/doc/time-jitter)
+![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/doc/en/v4/time-jitter)
 
 

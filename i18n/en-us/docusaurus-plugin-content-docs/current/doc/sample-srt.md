@@ -90,6 +90,6 @@ Note: Please replace all ip 192.168.1.170 to your server ip.
 
 Winlin 2020.01
 
-![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/doc-en-5/doc/sample-srt)
+![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/doc/en/v5/sample-srt)
 
 

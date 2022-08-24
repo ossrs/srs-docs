@@ -125,6 +125,6 @@ stream_caster {
 
 [ap]: https://github.com/ossrs/android-publisher
 
-![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/doc-zh-4/doc/streamer)
+![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/doc/zh/v4/streamer)
 
 

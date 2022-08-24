@@ -245,6 +245,6 @@ api-server的日志：
 
 Winlin 2015.1
 
-![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/doc-zh-4/doc/dvr)
+![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/doc/zh/v4/dvr)
 
 

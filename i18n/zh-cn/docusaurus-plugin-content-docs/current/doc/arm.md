@@ -240,6 +240,6 @@ Toolchain options:
 
 Winlin 2014.2
 
-![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/doc-zh-5/doc/arm)
+![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/doc/zh/v5/arm)
 
 

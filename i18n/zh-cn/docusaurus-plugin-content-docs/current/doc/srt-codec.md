@@ -37,6 +37,6 @@ srt协议传输媒体是mpegts。mpegts对hevc编码格式是支持封装，标�
 
 Runner365 2020.02
 
-![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/doc-zh-5/doc/srt-codec)
+![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/doc/zh/v5/srt-codec)
 
 

@@ -103,6 +103,6 @@ Client --->-- + Origin Servers  +------> Player
 
 > Note: 由于切片成HLS，所以只要流不同，这两个源站独立工作，是没有问题的。但是如果是输出FLV，可能就会出现找不到流的情况，这时就不能使用这种方式，需要使用[OriginCluster](./sample-origin-cluster)。
 
-![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/doc-zh-5/doc/reuse-port)
+![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/doc/zh/v5/reuse-port)
 
 

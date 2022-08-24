@@ -62,6 +62,6 @@ Finally, we could publish to origin/edge, and play stream from each edge server:
 
 Use VLC to play the RTMP stream: `rtmp://192.168.1.170:1935/live/livestream`
 
-![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/doc-en-4/doc/reuse-port)
+![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/doc/en/v4/reuse-port)
 
 

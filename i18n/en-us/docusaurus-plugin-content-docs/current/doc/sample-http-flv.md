@@ -112,6 +112,6 @@ Note: Please replace all ip 192.168.1.170 to your server ip.
 
 Winlin 2014.11
 
-![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/doc-en-5/doc/sample-http-flv)
+![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/doc/en/v5/sample-http-flv)
 
 

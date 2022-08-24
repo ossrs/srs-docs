@@ -254,6 +254,6 @@ stream to slave. Then all stream on slave is h.264+aac, to delivery HLS.
 
 Winlin 2014.11
 
-![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/doc-en-5/doc/forward)
+![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/doc/en/v5/forward)
 
 

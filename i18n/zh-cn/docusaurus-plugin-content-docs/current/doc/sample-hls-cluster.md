@@ -151,6 +151,6 @@ docker run --rm -it --network=host --name sb ossrs/srs:sb \
 
 Winlin 2014.3
 
-![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/doc-zh-5/doc/sample-hls-cluster)
+![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/doc/zh/v5/sample-hls-cluster)
 
 

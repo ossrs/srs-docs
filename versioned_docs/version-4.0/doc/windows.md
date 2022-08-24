@@ -16,6 +16,6 @@ to build and debug SRS on Windows.
 
 Winlin 2014.5
 
-![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/doc-en-4/doc/windows)
+![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/doc/en/v4/windows)
 
 

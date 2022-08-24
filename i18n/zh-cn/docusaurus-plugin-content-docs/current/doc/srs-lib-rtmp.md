@@ -11,6 +11,6 @@ SRS不再维护srs-librtmp，原因请看[#32](https://github.com/ossrs/srs-libr
 
 Winlin 2014.11
 
-![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/doc-zh-5/doc/srs-lib-rtmp)
+![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/doc/zh/v5/srs-lib-rtmp)
 
 

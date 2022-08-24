@@ -85,6 +85,6 @@ HLS的主要劣势是：
 
 Winlin 2014.4
 
-![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/doc-zh-5/doc/rtmp-pk-http)
+![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/doc/zh/v5/rtmp-pk-http)
 
 

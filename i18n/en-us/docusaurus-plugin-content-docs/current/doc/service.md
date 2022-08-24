@@ -170,6 +170,6 @@ force_grace_quit off;
 
 Winlin 2019.10
 
-![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/doc-en-5/doc/service)
+![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/doc/en/v5/service)
 
 

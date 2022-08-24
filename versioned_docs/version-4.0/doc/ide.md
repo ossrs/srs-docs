@@ -17,6 +17,6 @@ Read [http://www.jetbrains.com/clion/](http://www.jetbrains.com/clion/)
 
 Winlin 2015.10
 
-![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/doc-en-4/doc/ide)
+![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/doc/en/v4/ide)
 
 

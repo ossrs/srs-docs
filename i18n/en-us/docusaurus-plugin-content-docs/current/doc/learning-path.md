@@ -61,6 +61,6 @@ From：jianshu.com
 
 The copyright belongs to the author. For commercial reproduction, please contact the author for authorization, and for non-commercial reproduction, please cite the source.
 
-![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/doc-en-5/doc/learning-path)
+![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/doc/en/v5/learning-path)
 
 

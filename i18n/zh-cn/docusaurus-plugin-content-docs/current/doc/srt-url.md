@@ -70,6 +70,6 @@ srt url举例：
 
 Runner365 2020.02
 
-![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/doc-zh-5/doc/srt-url)
+![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/doc/zh/v5/srt-url)
 
 

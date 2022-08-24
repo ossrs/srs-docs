@@ -196,6 +196,6 @@ Normally you're able to build SRS on both ARM or MIPS servers.
 
 If need to cross-build SRS for embed devices, pelase read [ARM and CrossBuild](./arm).
 
-![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/doc-en-5/doc/getting-started-build)
+![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/doc/en/v5/getting-started-build)
 
 

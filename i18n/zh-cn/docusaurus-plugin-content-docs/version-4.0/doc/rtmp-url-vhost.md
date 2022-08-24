@@ -267,6 +267,6 @@ SRS的demo.conf配置文件中，包含了demo用到的一些vhost。
 
 Winlin 2014.2
 
-![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/doc-zh-4/doc/rtmp-url-vhost)
+![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/doc/zh/v4/rtmp-url-vhost)
 
 

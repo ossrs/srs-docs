@@ -61,6 +61,6 @@ We also recommend to use a edge server please read [here](https://github.com/oss
 
 2018.02
 
-![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/doc-en-4/doc/origin-cluster)
+![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/doc/en/v4/origin-cluster)
 
 

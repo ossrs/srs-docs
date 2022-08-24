@@ -61,6 +61,6 @@ srs     383 root    7u     IPv6  17831      0t0        TCP *:macromedia-fcs (LIS
 
 使用VLC播放RTMP流： `rtmp://192.168.1.170:1935/live/livestream`
 
-![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/doc-zh-4/doc/reuse-port)
+![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/doc/zh/v4/reuse-port)
 
 

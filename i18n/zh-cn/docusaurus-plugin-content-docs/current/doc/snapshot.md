@@ -128,6 +128,6 @@ winlin:srs winlin$ ls -lh objs/nginx/html/live/*.png
 
 Winlin 2015.10
 
-![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/doc-zh-5/doc/snapshot)
+![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/doc/zh/v5/snapshot)
 
 

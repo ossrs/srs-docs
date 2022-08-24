@@ -288,6 +288,6 @@ The demo.conf of conf of SRS, used for demo of SRS。
 
 Winlin 2014.10
 
-![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/doc-en-4/doc/rtmp-url-vhost)
+![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/doc/en/v4/rtmp-url-vhost)
 
 

@@ -108,6 +108,6 @@ srt的配置配置在srt_server的模板下。
 
 Runner365 2020.02
 
-![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/doc-zh-4/doc/srt-params)
+![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/doc/zh/v4/srt-params)
 
 

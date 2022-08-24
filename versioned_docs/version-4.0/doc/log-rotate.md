@@ -68,6 +68,6 @@ END
 
 Winlin 2016.12
 
-![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/doc-en-4/doc/log-rotate)
+![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/doc/en/v4/log-rotate)
 
 

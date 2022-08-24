@@ -48,6 +48,6 @@ vhost __defaultVhost__ {
 
 Winlin 2015.08
 
-![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/doc-zh-5/doc/nginx-exec)
+![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/doc/zh/v5/nginx-exec)
 
 

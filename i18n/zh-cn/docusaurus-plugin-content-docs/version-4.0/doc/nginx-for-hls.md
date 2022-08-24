@@ -260,6 +260,6 @@ add_header X-Cache-Status $upstream_cache_status;
 ```
 
 > 注意：一般宝塔新增站点侦听的是80端口，域名server_name是自己填的域名，其他配置同宝塔配置。或者在宝塔的这个站点配置中，加入上面的cache和location的配置也可以。
-![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/doc-zh-4/doc/nginx-for-hls)
+![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/doc/zh/v4/nginx-for-hls)
 
 

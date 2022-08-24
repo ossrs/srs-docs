@@ -151,6 +151,6 @@ RTMP URL is: `rtmp://192.168.1.170/live/livestream`, you can choose VLC.
 
 Winlin 2018.2
 
-![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/doc-en-4/doc/sample-origin-cluster)
+![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/doc/en/v4/sample-origin-cluster)
 
 

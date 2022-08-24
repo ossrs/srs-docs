@@ -464,6 +464,6 @@ Other RAW APIs are disabled by SRS 4.0.
 
 Winlin 2015.8
 
-![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/doc-en-4/doc/http-api)
+![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/doc/en/v4/http-api)
 
 
