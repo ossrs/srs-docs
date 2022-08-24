@@ -31,7 +31,7 @@ vhost your_vhost {
         # the request in the POST data string is a object encode by json:
         #       {
         #           "action": "on_connect",
-        #           "client_id": 1985,
+        #           "client_id": "9308h583",
         #           "ip": "192.168.1.10", "vhost": "video.test.com", "app": "live",
         #           "tcUrl": "rtmp://video.test.com/live?key=d2fa801d08e3f90ed1e1670e6e52651a",
         #           "pageUrl": "http://www.test.com/live.html"
@@ -48,7 +48,7 @@ vhost your_vhost {
         # the request in the POST data string is a object encode by json:
         #       {
         #           "action": "on_close",
-        #           "client_id": 1985,
+        #           "client_id": "9308h583",
         #           "ip": "192.168.1.10", "vhost": "video.test.com", "app": "live",
         #           "send_bytes": 10240, "recv_bytes": 10240
         #       }
@@ -64,7 +64,7 @@ vhost your_vhost {
         # the request in the POST data string is a object encode by json:
         #       {
         #           "action": "on_publish",
-        #           "client_id": 1985,
+        #           "client_id": "9308h583",
         #           "ip": "192.168.1.10", "vhost": "video.test.com", "app": "live",
         #           "stream": "livestream", "param":"?token=xxx&salt=yyy"
         #       }
@@ -80,7 +80,7 @@ vhost your_vhost {
         # the request in the POST data string is a object encode by json:
         #       {
         #           "action": "on_unpublish",
-        #           "client_id": 1985,
+        #           "client_id": "9308h583",
         #           "ip": "192.168.1.10", "vhost": "video.test.com", "app": "live",
         #           "stream": "livestream", "param":"?token=xxx&salt=yyy"
         #       }
@@ -96,7 +96,7 @@ vhost your_vhost {
         # the request in the POST data string is a object encode by json:
         #       {
         #           "action": "on_play",
-        #           "client_id": 1985,
+        #           "client_id": "9308h583",
         #           "ip": "192.168.1.10", "vhost": "video.test.com", "app": "live",
         #           "stream": "livestream", "param":"?token=xxx&salt=yyy",
         #           "pageUrl": "http://www.test.com/live.html"
@@ -113,7 +113,7 @@ vhost your_vhost {
         # the request in the POST data string is a object encode by json:
         #       {
         #           "action": "on_stop",
-        #           "client_id": 1985,
+        #           "client_id": "9308h583",
         #           "ip": "192.168.1.10", "vhost": "video.test.com", "app": "live",
         #           "stream": "livestream", "param":"?token=xxx&salt=yyy"
         #       }
@@ -129,7 +129,7 @@ vhost your_vhost {
         # the request in the POST data string is a object encode by json:
         #       {
         #           "action": "on_dvr",
-        #           "client_id": 1985,
+        #           "client_id": "9308h583",
         #           "ip": "192.168.1.10", "vhost": "video.test.com", "app": "live",
         #           "stream": "livestream", "param":"?token=xxx&salt=yyy",
         #           "cwd": "/usr/local/srs",
@@ -143,7 +143,7 @@ vhost your_vhost {
         # the request in the POST data string is a object encode by json:
         #       {
         #           "action": "on_hls",
-        #           "client_id": 1985,
+        #           "client_id": "9308h583",
         #           "ip": "192.168.1.10", "vhost": "video.test.com", "app": "live",
         #           "stream": "livestream", "param":"?token=xxx&salt=yyy",
         #           "duration": 9.36, // in seconds
@@ -258,13 +258,13 @@ SRS can call HTTP callbacks for events:
 
 | Event | Data | Description |
 | --- | ---- | ---- |
-| on_connect|{<br/> "action": "on_connect",<br/> "client_id": 1985,<br/> "ip": "192.168.1.10", <br/> "vhost": "video.test.com", <br/> "app": "live",<br/> "tcUrl": "rtmp://x/x?key=xxx",<br/> "pageUrl": "http://x/x.html"<br/> } | When a client connects to the specified vhost and app.| 
-| on_close|{<br/> "action": "on_close",<br/> "client_id": 1985,<br/> "ip": "192.168.1.10", <br/> "vhost": "video.test.com", <br/> "app": "live", <br/> "send_bytes": 10240, <br/> "recv_bytes": 10240<br/> } | When a client closes a connection, or the server drops a connection.| 
-| on_publish|{<br/> "action": "on_publish",<br/> "client_id": 1985,<br/> "ip": "192.168.1.10", <br/> "vhost": "video.test.com", <br/> "app": "live",<br/> "stream": "livestream"<br/> } | When a client publishes a stream, for example, using flash or FMLE to publish a stream to the server.| 
-| on_unpublish|{<br/> "action": "on_unpublish",<br/> "client_id": 1985,<br/> "ip": "192.168.1.10", <br/> "vhost": "video.test.com", <br/> "app": "live",<br/> "stream": "livestream"<br/> } | When a client stops publishing a stream.| 
-| on_play|{<br/> "action": "on_play",<br/> "client_id": 1985,<br/> "ip": "192.168.1.10", <br/> "vhost": "video.test.com", <br/> "app": "live",<br/> "stream": "livestream",<br/> "pageUrl": "http://a.com/i.html",<br/>"param":"?k=v"<br/> } | When a client starts playing a stream.| 
-| on_stop|{<br/> "action": "on_stop",<br/> "client_id": 1985,<br/> "ip": "192.168.1.10", <br/> "vhost": "video.test.com", <br/> "app": "live",<br/> "stream": "livestream"<br/> } | When a client stops playback.| 
-| on_dvr|{<br/> "action": "on_dvr",<br/> "client_id": 1985,<br/> "ip": "192.168.1.10", <br/> "vhost": "video.test.com", <br/> "app": "live",<br/> "stream": "livestream",<br/> "cwd": "/opt",<br/> "file": "./l.xxx.flv"<br/> } | When reap a DVR file.|
+| on_connect|{<br/> "action": "on_connect",<br/> "client_id": "9308h583",<br/> "ip": "192.168.1.10", <br/> "vhost": "video.test.com", <br/> "app": "live",<br/> "tcUrl": "rtmp://x/x?key=xxx",<br/> "pageUrl": "http://x/x.html"<br/> } | When a client connects to the specified vhost and app.| 
+| on_close|{<br/> "action": "on_close",<br/> "client_id": "9308h583",<br/> "ip": "192.168.1.10", <br/> "vhost": "video.test.com", <br/> "app": "live", <br/> "send_bytes": 10240, <br/> "recv_bytes": 10240<br/> } | When a client closes a connection, or the server drops a connection.| 
+| on_publish|{<br/> "action": "on_publish",<br/> "client_id": "9308h583",<br/> "ip": "192.168.1.10", <br/> "vhost": "video.test.com", <br/> "app": "live",<br/> "stream": "livestream"<br/> } | When a client publishes a stream, for example, using flash or FMLE to publish a stream to the server.| 
+| on_unpublish|{<br/> "action": "on_unpublish",<br/> "client_id": "9308h583",<br/> "ip": "192.168.1.10", <br/> "vhost": "video.test.com", <br/> "app": "live",<br/> "stream": "livestream"<br/> } | When a client stops publishing a stream.| 
+| on_play|{<br/> "action": "on_play",<br/> "client_id": "9308h583",<br/> "ip": "192.168.1.10", <br/> "vhost": "video.test.com", <br/> "app": "live",<br/> "stream": "livestream",<br/> "pageUrl": "http://a.com/i.html",<br/>"param":"?k=v"<br/> } | When a client starts playing a stream.| 
+| on_stop|{<br/> "action": "on_stop",<br/> "client_id": "9308h583",<br/> "ip": "192.168.1.10", <br/> "vhost": "video.test.com", <br/> "app": "live",<br/> "stream": "livestream"<br/> } | When a client stops playback.| 
+| on_dvr|{<br/> "action": "on_dvr",<br/> "client_id": "9308h583",<br/> "ip": "192.168.1.10", <br/> "vhost": "video.test.com", <br/> "app": "live",<br/> "stream": "livestream",<br/> "cwd": "/opt",<br/> "file": "./l.xxx.flv"<br/> } | When reap a DVR file.|
 
 Notes:
 * Event: When this event occurs, call back to the specified HTTP URL.
