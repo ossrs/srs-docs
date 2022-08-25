@@ -50,6 +50,21 @@ This command uses `'/custom-base-url/'` instead of the default baseUrl(`'/lts/'`
 * Docker hub: [ossrs/docs](https://hub.docker.com/r/ossrs/docs)
 * Aliyun ACR: [registry.cn-hangzhou.aliyuncs.com/ossrs/docs](https://cr.console.aliyun.com/repository/cn-hangzhou/ossrs/docs/images)
 
+## Links
+
+The links in docs, relative link, for example:
+
+```markdown
+[wiki](./http-api)
+[wiki](./http-api#kickoff-client)
+```
+
+The links in blog or pages, absolute url link, for example:
+
+```markdown
+[Wiki: Getting Started](/docs/v4/doc/getting-started)
+[Developer Documentation](/docs/v4/doc/getting-started)
+```
 
 ---
 ## Translate
