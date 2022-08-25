@@ -220,7 +220,7 @@ const config = {
               },
               {
                 label: 'Live',
-                href: 'https://mp.weixin.qq.com/s/dC5-iQC6x3hDIfVNxJHilw',
+                href: 'https://mp.weixin.qq.com/s/6xvXQCRiShSXyjyjAlmPzw',
               },
             ],
           },
