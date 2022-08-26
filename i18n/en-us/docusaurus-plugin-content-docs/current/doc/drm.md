@@ -58,21 +58,24 @@ Remark: SRS3 use new style config for refer, which is compatible with SRS1/2.
 ## Token Authentication
 
 The token authentication similar to refer, but the token is put in the url, not in the args of connect:
-* Put token in RTMP url, for example, `rtmp://vhost/app?token=xxxx/stream`, SRS will pass the token 
-in the http-callback. read [HTTP callback](./http-callback)
-* Put token in the connect args, for example, as code NetConnection.connect(url, token), need to modify SRS code.
 
-Token is robust then refer, can specifies more params, for instance, the expire time.
+```
+rtmp://vhost/app/stream?token=xxxx
+http://vhost/app/stream.flv?token=xxxx
+http://vhost/app/stream.m3u8?token=xxxx
+webrtc://vhost/app/stream?token=xxxx
+```
 
-For example:
+SRS will pass the token in the http-callback. read [HTTP callback](./http-callback)
 
-1. When user access the web page, web application server can generate a token in the RTMP url, for example,
-token = md5(time + id + salt + expire) = 88195f8943e5c944066725df2b1706f8
-1. The RTMP url to play is, for instance, rtmp://192.168.1.10/live?time=1402307089&expire=3600&token=88195f8943e5c944066725df2b1706f8/livestream
-1. Config the http callback of SRS `on_connect http://127.0.0.1:8085/api/v1/clients;`, 
-read [HTTP callback](./http-callback#config-srs)
-1. When user play stream, SRS will callback the url with token to verify,
-if invalid, the http callback can return none zero which indicates error.
+Token is robust then refer, can specifies more params, for instance, the expire time. For example:
+
+1. When user access the web page, web application server can generate a token in the URL, for example, `token = md5(time + id + salt + expire) = 88195f8943e5c944066725df2b1706f8`
+1. The RTMP URL to publish is, for instance, `rtmp://192.168.1.10/live/livestream?time=1402307089&expire=3600&token=88195f8943e5c944066725df2b1706f8`
+1. Config the http callback of SRS `on_publish http://127.0.0.1:8085/api/v1/streams;` , read [HTTP callback](./http-callback#config-srs)
+1. When user publishing stream, SRS will callback the url with token to verify, if invalid, the http callback can return none zero which indicates error.
+
+> Note: You're able to verify the play.
 
 ## TokenTraverse
 

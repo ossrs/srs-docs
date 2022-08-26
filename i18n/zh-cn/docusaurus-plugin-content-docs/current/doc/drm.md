@@ -53,22 +53,29 @@ vhost refer.anti_suck.com {
 
 ## Token Authentication
 
-token类似于refer，不过是放在RTMP url中，或者在connect的请求参数中：
-* token在RTMP url，譬如：`rtmp://vhost/app?token=xxxx/stream`，这样服务器在on_connect回调接口中，
-就会把url带过去验证。参考：[HTTP callback](./http-callback)
-* token在connect的参数中：as函数NetConnection.connect(url, token)，服务器也可以拿到这个token。注意：SRS目前不支持。
+token类似于refer，不过是放在URL中，在请求参数中，譬如：
 
-token比refer更强悍，可以指定超时时间，可以变更token之类。可惜就是需要服务器端做定制，做验证。
+```
+rtmp://vhost/app/stream?token=xxxx
+http://vhost/app/stream.flv?token=xxxx
+http://vhost/app/stream.m3u8?token=xxxx
+webrtc://vhost/app/stream?token=xxxx
+```
+
+这样服务器在`on_publish`或`on_play`回调接口中， 就会把url带过去验证。参考：[HTTP callback](./http-callback)
+
+token比refer更强悍，可以指定超时时间，可以变更token之类。可惜就是需要服务器端做定制，做验证。 
 SRS提供http回调来做验证，已经有人用这种方式做了，比较简单靠谱。
 
 举个常用的token认证的例子：
 
-1. 用户在web页面登录，服务器可以生成一个token，譬如token=md5(time+id+私钥+有效期)=88195f8943e5c944066725df2b1706f8
-1. 服务器返回给用户一个地址，带token，譬如：rtmp://192.168.1.10/live?time=1402307089&expire=3600&token=88195f8943e5c944066725df2b1706f8/livestream
-1. 配置srs的http回调，`on_connect http://127.0.0.1:8085/api/v1/clients;`，
-参考：[HTTP callback](./http-callback#config-srs)
-1. 用户播放时，srs会回调那个地址，解析请求的内容，里面的tcUrl就有那些认证信息。
-按同样的算法验证，如果md5变了就返回错误，srs就会拒绝连接。如果返回0就会接受连接。
+1. 用户在web页面登录，服务器可以生成一个token，譬如：`token=md5(time+id+私钥+有效期)=88195f8943e5c944066725df2b1706f8`
+1. 服务器返回给用户一个地址，带token，譬如：`rtmp://192.168.1.10/live/livestream?time=1402307089&expire=3600&token=88195f8943e5c944066725df2b1706f8`
+1. 配置srs的http回调，`on_publish http://127.0.0.1:8085/api/v1/streams;` ，参考：[HTTP callback](./http-callback#config-srs)
+1. 用户推流时，srs会回调那个地址，解析请求的内容，里面的params就有那些认证信息。
+1. 按同样的算法验证，如果md5变了就返回错误，srs就会拒绝连接。如果返回0就会接受连接。
+
+> Note: 这是验证推流的，也可以验证播放。
 
 ## TokenTraverse
 

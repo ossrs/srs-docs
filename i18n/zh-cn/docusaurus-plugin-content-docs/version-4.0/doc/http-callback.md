@@ -27,39 +27,6 @@ vhost your_vhost {
         # whether the http hooks enable.
         # default off.
         enabled         on;
-        # when client connect to vhost/app, call the hook,
-        # the request in the POST data string is a object encode by json:
-        #       {
-        #           "action": "on_connect",
-        #           "client_id": "9308h583",
-        #           "ip": "192.168.1.10", "vhost": "video.test.com", "app": "live",
-        #           "tcUrl": "rtmp://video.test.com/live?key=d2fa801d08e3f90ed1e1670e6e52651a",
-        #           "pageUrl": "http://www.test.com/live.html"
-        #       }
-        # if valid, the hook must return HTTP code 200(Status OK) and response
-        # an int value specifies the error code(0 corresponding to success):
-        #       0
-        # support multiple api hooks, format:
-        #       on_connect http://xxx/api0 http://xxx/api1 http://xxx/apiN
-        # @remark For SRS4, the HTTPS url is supported, for example:
-        #       on_connect https://xxx/api0 https://xxx/api1 https://xxx/apiN
-        on_connect      http://127.0.0.1:8085/api/v1/clients http://localhost:8085/api/v1/clients;
-        # when client close/disconnect to vhost/app/stream, call the hook,
-        # the request in the POST data string is a object encode by json:
-        #       {
-        #           "action": "on_close",
-        #           "client_id": "9308h583",
-        #           "ip": "192.168.1.10", "vhost": "video.test.com", "app": "live",
-        #           "send_bytes": 10240, "recv_bytes": 10240
-        #       }
-        # if valid, the hook must return HTTP code 200(Status OK) and response
-        # an int value specifies the error code(0 corresponding to success):
-        #       0
-        # support multiple api hooks, format:
-        #       on_close http://xxx/api0 http://xxx/api1 http://xxx/apiN
-        # @remark For SRS4, the HTTPS url is supported, for example:
-        #       on_close https://xxx/api0 https://xxx/api1 https://xxx/apiN
-        on_close        http://127.0.0.1:8085/api/v1/clients http://localhost:8085/api/v1/clients;
         # when client(encoder) publish to vhost/app/stream, call the hook,
         # the request in the POST data string is a object encode by json:
         #       {
@@ -258,8 +225,6 @@ SRS的回调事件包括：
 
 | 事件 | 数据 | 说明 |
 | --- | ---- | ---- |
-| on_connect|{<br/> "action": "on_connect",<br/> "client_id": "9308h583",<br/> "ip": "192.168.1.10", <br/> "vhost": "video.test.com", <br/> "app": "live",<br/> "tcUrl": "rtmp://x/x?key=xxx",<br/> "pageUrl": "http://x/x.html"<br/> } | 当客户端连接到指定的vhost和app时| 
-| on_close|{<br/> "action": "on_close",<br/> "client_id": "9308h583",<br/> "ip": "192.168.1.10", <br/> "vhost": "video.test.com", <br/> "app": "live", <br/> "send_bytes": 10240, <br/> "recv_bytes": 10240 <br/> } | 当客户端关闭连接，或者SRS主动关闭连接时| 
 | on_publish|{<br/> "action": "on_publish",<br/> "client_id": "9308h583",<br/> "ip": "192.168.1.10", <br/> "vhost": "video.test.com", <br/> "app": "live",<br/> "stream": "livestream"<br/> } | 当客户端发布流时，譬如flash/FMLE方式推流到服务器| 
 | on_unpublish|{<br/> "action": "on_unpublish",<br/> "client_id": "9308h583",<br/> "ip": "192.168.1.10", <br/> "vhost": "video.test.com", <br/> "app": "live",<br/> "stream": "livestream"<br/> } | 当客户端停止发布流时| 
 | on_play|{<br/> "action": "on_play",<br/> "client_id": "9308h583",<br/> "ip": "192.168.1.10", <br/> "vhost": "video.test.com", <br/> "app": "live",<br/> "stream": "livestream",<br/> "pageUrl": "http://a.com/i.html",<br/>"param":"?k=v"<br/> } | 当客户端开始播放流时| 
@@ -304,8 +269,6 @@ SRS4支持HTTPS回调，只需要简单的将回调地址，从`http://`改成`h
 vhost your_vhost {
     http_hooks {
         enabled         on;
-        on_connect      https://127.0.0.1:8085/api/v1/clients;
-        on_close        https://127.0.0.1:8085/api/v1/clients;
         on_publish      https://127.0.0.1:8085/api/v1/streams;
         on_unpublish    https://127.0.0.1:8085/api/v1/streams;
         on_play         https://127.0.0.1:8085/api/v1/sessions;
@@ -315,22 +278,6 @@ vhost your_vhost {
         on_hls_notify   https://127.0.0.1:8085/api/v1/hls/[app]/[stream]/[ts_url][param];
     }
 }
-```
-
-## Publish and Play
-
-推流到SRS时，会调用HTTP接口：
-```bash
-[2014-02-27 09:41:33][trace] post to clients, req={"action":"on_connect","client_id":4,"ip":"192.168.1.179","vhost":"__defaultVhost__","app":"live","pageUrl":""}
-[2014-02-27 09:41:33][trace] srs on_connect: client id=4, ip=192.168.1.179, vhost=__defaultVhost__, app=live, pageUrl=
-127.0.0.1 - - [27/Feb/2014:09:41:33] "POST /api/v1/clients HTTP/1.1" 200 1 "" "srs(simple rtmp server)0.9.2"
-```
-
-播放SRS的流时，也会调用HTTP接口：
-```bash
-[2014-02-27 09:41:50][trace] post to clients, req={"action":"on_connect","client_id":5,"ip":"192.168.1.179","vhost":"__defaultVhost__","app":"live","pageUrl":"http://dev.chnvideo.com:3080/players/rtmp/"}
-[2014-02-27 09:41:50][trace] srs on_connect: client id=5, ip=192.168.1.179, vhost=__defaultVhost__, app=live, pageUrl=http://dev.chnvideo.com:3080/players/rtmp/
-127.0.0.1 - - [27/Feb/2014:09:41:50] "POST /api/v1/clients HTTP/1.1" 200 1 "" "srs(simple rtmp server)0.9.2"
 ```
 
 ## Response
