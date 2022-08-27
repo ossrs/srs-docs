@@ -69,12 +69,7 @@ vhost __defaultVhost__ {
 Use FFMPEG to publish stream:
 
 ```bash
-    for((;;)); do \
-        ./objs/ffmpeg/bin/ffmpeg -re -i ./doc/source.flv \
-        -c copy \
-        -f mpegts "srt://192.168.1.170:10080?streamid=#!::r=live/livestream,m=publish"; \
-        sleep 1; \
-    done
+ffmpeg -re -i ./doc/source.flv -c copy -f mpegts 'srt://192.168.1.170:10080?streamid=#!::r=live/livestream,m=publish'
 ```
 
 The stream in SRS:

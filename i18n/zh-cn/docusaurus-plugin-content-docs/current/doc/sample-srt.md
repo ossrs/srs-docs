@@ -69,12 +69,7 @@ vhost __defaultVhost__ {
 使用FFMPEG命令推流：
 
 ```bash
-    for((;;)); do \
-        ./objs/ffmpeg/bin/ffmpeg -re -i ./doc/source.flv \
-        -c copy \
-        -f mpegts "srt://127.0.0.1:10080?streamid=#!::r=live/livestream,m=publish"; \
-        sleep 1; \
-    done
+ffmpeg -re -i ./doc/source.flv -c copy -f mpegts 'srt://127.0.0.1:10080?streamid=#!::r=live/livestream,m=publish'
 ```
 
 生成的流地址为：

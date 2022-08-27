@@ -35,8 +35,8 @@ rtmp如何确认对rtmp url是推流还是拉流：
 
 ### srt常规地址(无vhost)
 srt url举例：
-* 推流地址: srt://127.0.0.1:10080?streamid=#!::r=live/livestream,m=publish 
-* 拉流地址: srt://127.0.0.1:10080?streamid=#!::r=live/livestream,m=request 
+* 推流地址: `srt://127.0.0.1:10080?streamid=#!::r=live/livestream,m=publish` 
+* 拉流地址: `srt://127.0.0.1:10080?streamid=#!::r=live/livestream,m=request` 
 
 其中：
 * #!:: 
@@ -51,8 +51,8 @@ srt url举例：
 
 ### srt复杂地址(有vhost)
 srt url举例：
-* 推流地址: srt://127.0.0.1:10080?streamid=#!::h=srs.srt.com.cn,r=live/livestream,m=publish 
-* 拉流地址: srt://127.0.0.1:10080?streamid=#!::h=srs.srt.com.cn,r=live/livestream,m=request 
+* 推流地址: `srt://127.0.0.1:10080?streamid=#!::h=srs.srt.com.cn,r=live/livestream,m=publish` 
+* 拉流地址: `srt://127.0.0.1:10080?streamid=#!::h=srs.srt.com.cn,r=live/livestream,m=request` 
 
 其中：
 * #!:: 
