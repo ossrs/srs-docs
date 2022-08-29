@@ -15,5 +15,5 @@ CMD ["./bin/httpx-static", \
     "-http=80", "-root=./srs-docs", \
     "-no-redirect-index=true", \
     "-trim-last-slash=true", \
-    "-trim-slash-limit=3"
+    "-trim-slash-limit=3" \
   ]
