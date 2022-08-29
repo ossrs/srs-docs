@@ -9,8 +9,8 @@ hide_table_of_contents: false
 
 There are two major methods to deliver video over internet, Live and WebRTC.
 
-* Live streaming: [HLS](./delivery-hls), [RTMP](./delivery-rtmp) and [HTTP-FLV](./delivery-http-flv) for entertainment.
-* WebRTC: [RTC](./webrtc), for communication.
+* Live streaming: [HLS](./delivery-hls.md), [RTMP](./delivery-rtmp.md) and [HTTP-FLV](./delivery-http-flv.md) for entertainment.
+* WebRTC: [RTC](./webrtc.md), for communication.
 
 Ignore other delivery protocol, which is not used on internet:
 * UDP: Private protocols, realtime protocol, latence in ms.
@@ -72,8 +72,8 @@ HLS is bad for:
 
 ## Use Scenario
 
-See [HTTP](./delivery-hls)
-and [RTMP](./delivery-rtmp)
+See [HTTP](./delivery-hls.md)
+and [RTMP](./delivery-rtmp.md)
 
 I recomment to use these delivery protocols in:
 * Encoder always output RTMP for internet server.

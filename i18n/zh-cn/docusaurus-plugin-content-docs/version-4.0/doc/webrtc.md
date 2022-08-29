@@ -159,7 +159,7 @@ SRS的URL定义，遵守的是HTTP的URL定义，不同的流的schema不同，�
 
 ## HTTP API
 
-关于SRS的WebRTC API，请参考[publish](./http-api#webrtc-publish)和[play](./http-api#webrtc-play).
+关于SRS的WebRTC API，请参考[publish](./http-api.md#webrtc-publish)和[play](./http-api.md#webrtc-play).
 
 ## RTMP to RTC
 
@@ -175,7 +175,7 @@ docker run --rm --env CANDIDATE=$CANDIDATE \
   objs/srs -c conf/rtmp2rtc.conf
 ```
 
-> Note: 请将CANDIDATE设置为服务器的外网地址，详细请阅读[WebRTC: CANDIDATE](./webrtc#config-candidate)。
+> Note: 请将CANDIDATE设置为服务器的外网地址，详细请阅读[WebRTC: CANDIDATE](./webrtc.md#config-candidate)。
 
 > Remark: SRS 4.0.14+支持RTMP推流，WebRTC播放。
 
@@ -215,7 +215,7 @@ docker run --rm --env CANDIDATE=$CANDIDATE \
   objs/srs -c conf/rtc.conf
 ```
 
-> Note: 请将CANDIDATE设置为服务器的外网地址，详细请阅读[WebRTC: CANDIDATE](./webrtc#config-candidate)。
+> Note: 请将CANDIDATE设置为服务器的外网地址，详细请阅读[WebRTC: CANDIDATE](./webrtc.md#config-candidate)。
 
 > Remark: SRS 4.0.76+支持WebRTC推流，WebRTC播放。
 
@@ -240,7 +240,7 @@ docker run --rm --env CANDIDATE=$CANDIDATE \
   objs/srs -c conf/rtc2rtmp.conf
 ```
 
-> Note: 请将CANDIDATE设置为服务器的外网地址，详细请阅读[WebRTC: CANDIDATE](./webrtc#config-candidate)。
+> Note: 请将CANDIDATE设置为服务器的外网地址，详细请阅读[WebRTC: CANDIDATE](./webrtc.md#config-candidate)。
 
 > Remark: SRS 4.0.95+支持WebRTC推流，RTMP/HTTP-FLV播放，参考[#2303](https://github.com/ossrs/srs/pull/2303)。
 
@@ -258,7 +258,7 @@ docker run --rm --env CANDIDATE=$CANDIDATE \
 
 ## SFU: One to One
 
-SRS早就具备了SFU的能力，比如一对一通话、[多人通话](./webrtc#sfu-video-room)、[直播连麦](./webrtc#room-to-live)等等。在沟通中，一对一是常用而且典型的场景，
+SRS早就具备了SFU的能力，比如一对一通话、[多人通话](./webrtc.md#sfu-video-room)、[直播连麦](./webrtc.md#room-to-live)等等。在沟通中，一对一是常用而且典型的场景，
 让我们一起来看看如何用SRS做直播和RTC一体化的一对一通话。
 
 > 下面以Docker中运行DEMO为例子，若希望从代码编译，请参考[这里](https://github.com/ossrs/signaling#build-from-source)。
@@ -273,7 +273,7 @@ docker run --rm --env CANDIDATE=$CANDIDATE \
   objs/srs -c conf/rtc.conf
 ```
 
-> Note: 请将CANDIDATE设置为服务器的外网地址，详细请阅读[WebRTC: CANDIDATE](./webrtc#config-candidate)。
+> Note: 请将CANDIDATE设置为服务器的外网地址，详细请阅读[WebRTC: CANDIDATE](./webrtc.md#config-candidate)。
 
 > Note: More images and version is [here](https://cr.console.aliyun.com/repository/cn-hangzhou/ossrs/srs/images).
 
@@ -297,7 +297,7 @@ docker run --rm -p 80:80 -p 443:443 registry.cn-hangzhou.aliyuncs.com/ossrs/http
           -proxy http://$CANDIDATE:8080/
 ```
 
-> Note: 请将CANDIDATE设置为服务器的外网地址，详细请阅读[WebRTC: CANDIDATE](./webrtc#config-candidate)。
+> Note: 请将CANDIDATE设置为服务器的外网地址，详细请阅读[WebRTC: CANDIDATE](./webrtc.md#config-candidate)。
 
 本机(localhost)可以直接打开[http://localhost/demos/one2one.html?autostart=true](http://localhost/demos/one2one.html?autostart=true)。
 
@@ -307,7 +307,7 @@ docker run --rm -p 80:80 -p 443:443 registry.cn-hangzhou.aliyuncs.com/ossrs/http
 
 ## SFU: Video Room
 
-SRS支持多人通话的SFU能力，请参考[一对一通话](./webrtc#sfu-one-to-one)搭建环境，然后访问页面：
+SRS支持多人通话的SFU能力，请参考[一对一通话](./webrtc.md#sfu-one-to-one)搭建环境，然后访问页面：
 
 本机(localhost)可以直接打开[http://localhost/demos/room.html?autostart=true](http://localhost/demos/room.html?autostart=true)。
 
@@ -315,14 +315,14 @@ SRS支持多人通话的SFU能力，请参考[一对一通话](./webrtc#sfu-one-
 
 > 注意：自签名证书，在空白处输入`thisisunsafe`（注意没空格）。
 
-若需要会议转直播，请参考[RTC转直播](./webrtc#room-to-live)。
+若需要会议转直播，请参考[RTC转直播](./webrtc.md#room-to-live)。
 
 ## Room to Live
 
-上面我们介绍了[一对一通话](./webrtc#sfu-one-to-one)，如果能将这个通话合成一个流，叠加视频和混音，
+上面我们介绍了[一对一通话](./webrtc.md#sfu-one-to-one)，如果能将这个通话合成一个流，叠加视频和混音，
 转成RTMP流推送到直播，这就是连麦了。
 
-> Note: [多人通话](./webrtc#sfu-video-room)也是可以转直播的，原理一样，只是多人通话的流更多。
+> Note: [多人通话](./webrtc.md#sfu-video-room)也是可以转直播的，原理一样，只是多人通话的流更多。
 
 注意请开启RTC转RTMP，我们合并的是RTMP流，例如：
 
@@ -334,11 +334,11 @@ docker run --rm --env CANDIDATE=$CANDIDATE \
   objs/srs -c conf/rtc2rtmp.conf
 ```
 
-> Note: 请将CANDIDATE设置为服务器的外网地址，详细请阅读[WebRTC: CANDIDATE](./webrtc#config-candidate)。
+> Note: 请将CANDIDATE设置为服务器的外网地址，详细请阅读[WebRTC: CANDIDATE](./webrtc.md#config-candidate)。
 
 > Note: More images and version is [here](https://cr.console.aliyun.com/repository/cn-hangzhou/ossrs/srs/images).
 
-> Note: 请参考[一对一通话](./webrtc#sfu-one-to-one)启动Signaling和httpx-static。
+> Note: 请参考[一对一通话](./webrtc.md#sfu-one-to-one)启动Signaling和httpx-static。
 
 视频合流非常非常消耗CPU，而且有很多种方式：
 * SRS+FFmpeg，SRS将WebRTC流转RTMP，FFmpeg将多路RTMP合流。优势：延迟小，音质好；缺点是命令行难度高。

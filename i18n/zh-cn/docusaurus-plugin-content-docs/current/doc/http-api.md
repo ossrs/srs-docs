@@ -20,7 +20,7 @@ SRS的HTTP接口遵循最简单原则，主要包括：
 
 ## Build
 
-SRS自动打开HTTPApi选项，参考：[configure选项](./install)
+SRS自动打开HTTPApi选项，参考：[configure选项](./install.md)
 
 ```bash
 ./configure && make
@@ -263,7 +263,7 @@ http_api {
 
 > Remark: 请使用你的证书文件，代替上面配置中的key和cert。
 
-> Note: 若需要开启HTTPS直播流，请参考[HTTPS FLV Live Stream](./delivery-http-flv#https-flv-live-stream)
+> Note: 若需要开启HTTPS直播流，请参考[HTTPS FLV Live Stream](./delivery-http-flv.md#https-flv-live-stream)
 
 ## HTTP and HTTPS Proxy
 

@@ -11,7 +11,7 @@ hide_table_of_contents: false
 
 Why should you use [k8s](https://docs.kubernetes.io/docs/concepts/overview/what-is-kubernetes) to build your SRS cluster?
 
-* Simple: It's really simple and convenient, let's figure it out by [QuickStart](./k8s#quick-start).
+* Simple: It's really simple and convenient, let's figure it out by [QuickStart](./k8s.md#quick-start).
 * Declarative deployment: We declare a desired SRS cluster and it'll always be there, without starting and migrating service, watchdog and SLB configuration.
 * Expand easily: K8S allows you to expand infrastructure automatically, and you can expand your business cluster easily by change the number of Pods.
 * Rolling Update: K8S allows deployment update, rollback and gray release with zero downtime.
@@ -19,20 +19,20 @@ Why should you use [k8s](https://docs.kubernetes.io/docs/concepts/overview/what-
 
 This tutorial highlights how to build SRS cluster for a variety of scenarios in [ACK(AlibabaCloud Container Service for Kubernetes)](https://www.alibabacloud.com/product/kubernetes).
 
-1. [Deploy to Cloud Platforms](./k8s#deploy-to-cloud-platforms): Clone template project and use actions to deploy.
-2. [Quick Start](./k8s#quick-start): Deployment a SRS origin server in ACK.
-3. [SRS Shares Volume with Nginx](./k8s#srs-shares-volume-with-nginx): SRS is able to deliver simple HTTP content, or work with Nginx, SRS delivers RTMP/HTTP-FLV and write HLS to a share volume, then Nginx reads and delivers HLS.
-4. [SRS Edge Cluster for High Concurrency Streaming](./k8s#srs-edge-cluster-with-slb): SRS edge cluster, which is configured and updated automatically, to provide services for huge players.
-5. [SRS Origin Cluster for a Large Number of Streams](./k8s#srs-origin-cluster-for-a-large-number-of-streams): SRS origin cluster is designed to serve a large number of streams.
-6. [SRS Cluster Update, Rollback, Gray Release with Zero Downtime](./k8s#srs-cluster-update-rollback-gray-release-with-zero-downtime): K8S allows deployment update, rollback and gray release with zero downtime.
-7. [Useful Tips](./k8s#useful-tips)
-    1. [Create K8S Cluster in ACK](./k8s#create-k8s-cluster-in-ack): Create your own k8s cluster in ACK.
-    2. [Publish Demo Streams to SRS](./k8s#publish-demo-streams-to-srs): Publish the demo streams to SRS.
-    3. [Cleanup For DVR/HLS Temporary Files](./k8s#cleanup-for-dvrhls-temporary-files): Remove the temporary files for DVR/HLS.
-    4. [Use One SLB and EIP for All Streaming Service](./k8s#use-one-slb-and-eip-for-all-streaming-service): Use one SLB for RTMP/HTTP-FLV/HLS streaming service.
-    5. [Build SRS Origin Cluster as Deployment](./k8s#build-srs-origin-cluster-as-deployment): Rather than StatefulSet, we can also use deployment to build Origin Cluster.
-    6. [Managing Compute Resources for Containers](./k8s#managing-compute-resources-for-containers): Resource requests and limits, and how pods requests are scheduled and limits are run.
-    7. [Auto Reload by Inotify](./k8s#auto-reload-by-inotify): SRS supports auto reload by inotify watching ConfigMap changes.
+1. [Deploy to Cloud Platforms](./k8s.md#deploy-to-cloud-platforms): Clone template project and use actions to deploy.
+2. [Quick Start](./k8s.md#quick-start): Deployment a SRS origin server in ACK.
+3. [SRS Shares Volume with Nginx](./k8s.md#srs-shares-volume-with-nginx): SRS is able to deliver simple HTTP content, or work with Nginx, SRS delivers RTMP/HTTP-FLV and write HLS to a share volume, then Nginx reads and delivers HLS.
+4. [SRS Edge Cluster for High Concurrency Streaming](./k8s.md#srs-edge-cluster-with-slb): SRS edge cluster, which is configured and updated automatically, to provide services for huge players.
+5. [SRS Origin Cluster for a Large Number of Streams](./k8s.md#srs-origin-cluster-for-a-large-number-of-streams): SRS origin cluster is designed to serve a large number of streams.
+6. [SRS Cluster Update, Rollback, Gray Release with Zero Downtime](./k8s.md#srs-cluster-update-rollback-gray-release-with-zero-downtime): K8S allows deployment update, rollback and gray release with zero downtime.
+7. [Useful Tips](./k8s.md#useful-tips)
+    1. [Create K8S Cluster in ACK](./k8s.md#create-k8s-cluster-in-ack): Create your own k8s cluster in ACK.
+    2. [Publish Demo Streams to SRS](./k8s.md#publish-demo-streams-to-srs): Publish the demo streams to SRS.
+    3. [Cleanup For DVR/HLS Temporary Files](./k8s.md#cleanup-for-dvrhls-temporary-files): Remove the temporary files for DVR/HLS.
+    4. [Use One SLB and EIP for All Streaming Service](./k8s.md#use-one-slb-and-eip-for-all-streaming-service): Use one SLB for RTMP/HTTP-FLV/HLS streaming service.
+    5. [Build SRS Origin Cluster as Deployment](./k8s.md#build-srs-origin-cluster-as-deployment): Rather than StatefulSet, we can also use deployment to build Origin Cluster.
+    6. [Managing Compute Resources for Containers](./k8s.md#managing-compute-resources-for-containers): Resource requests and limits, and how pods requests are scheduled and limits are run.
+    7. [Auto Reload by Inotify](./k8s.md#auto-reload-by-inotify): SRS supports auto reload by inotify watching ConfigMap changes.
 
 ## Deploy to Cloud Platforms
 
@@ -256,7 +256,7 @@ EOF
 
 > Note: We expose ports for external services through k8s LoadBalancer Service, where RTMP(1935)/FLV(8080)/API(1985) is served by SRS and HLS(80) is served by Nginx.
 
-> Note: Here we choose ACK to create SLB and EIP automatically, or you can specify SLB manually, refer to [Use One SLB and EIP for All Streaming Service](./k8s#ack-srs-buy-slb-eip).
+> Note: Here we choose ACK to create SLB and EIP automatically, or you can specify SLB manually, refer to [Use One SLB and EIP for All Streaming Service](./k8s.md#ack-srs-buy-slb-eip).
 
 Step 3: Great job. You can publish and play streams now. the HLS stream can by played from SRS(8080) or Nginx(80).
 * Publish RTMP to rtmp://28.170.32.118/live/livestream or Publish Demo Streams to SRS.
@@ -412,7 +412,7 @@ EOF
 
 > Note: The srs-http-service provide HLS distribution service with Nginx’s 80 port exported, and provide API service with SRS’s 1985 port exported.
 
-> Note: Here we choose ACK to create SLB and EIP automatically, or you can specify SLB manually, refer to [Use One SLB and EIP for All Streaming Service](./k8s#ack-srs-buy-slb-eip)
+> Note: Here we choose ACK to create SLB and EIP automatically, or you can specify SLB manually, refer to [Use One SLB and EIP for All Streaming Service](./k8s.md#ack-srs-buy-slb-eip)
 
 Step 2: Create Deployment and Service for SRS edge.
 
@@ -513,11 +513,11 @@ Note: The Edge Server has been configured to work in cluster mode:remote, it wil
 
 Note: The srs-edge-service provide RTMP service with SRS’s 1935 port exported, and provide HTTP-FLV service with SRS’s 80 port.
 
-Note: we choose ACK to create SLB and EIP automatically, or you can specify SLB manually, refer to [Use One SLB and EIP for All Streaming Service](./k8s#ack-srs-buy-slb-eip).
+Note: we choose ACK to create SLB and EIP automatically, or you can specify SLB manually, refer to [Use One SLB and EIP for All Streaming Service](./k8s.md#ack-srs-buy-slb-eip).
 
 Step 3: Now, you made it. you can push retmp stream to the edge, and pull hls stream from Nginx, pull RTMP, HTTP-FLV from SRS.
 
-* Publish RTMP to rtmp://28.170.32.118/live/livestream or [Publish Demo Streams to SRS](./k8s#ack-srs-publish-demo-stream-to-edge).
+* Publish RTMP to rtmp://28.170.32.118/live/livestream or [Publish Demo Streams to SRS](./k8s.md#ack-srs-publish-demo-stream-to-edge).
 
 * Play RTMP from [rtmp://28.170.32.118/live/livestream](http://ossrs.net/players/srs_player.html?app=live&stream=livestream&server=28.170.32.118&port=1935&autostart=true&vhost=28.170.32.118)
 
@@ -527,7 +527,7 @@ Step 3: Now, you made it. you can push retmp stream to the edge, and pull hls st
 
 > Note: Please change the EIP in the stream address to yourself. you can exec 'kubectl get svc/srs-http-service' or 'kubectl get svc/srs-edge-service’ command to check your EIP address.
 
-> Note: If the SLB and EIP are created automatically, the HLS and RTMP/HTTP-FLV’s EIP are different. you can choose to specify the SLB manually, and both services can use the same SLB, for details please refer to [Use One SLB and EIP for All Streaming Service](./k8s#ack-srs-buy-slb-eip).
+> Note: If the SLB and EIP are created automatically, the HLS and RTMP/HTTP-FLV’s EIP are different. you can choose to specify the SLB manually, and both services can use the same SLB, for details please refer to [Use One SLB and EIP for All Streaming Service](./k8s.md#ack-srs-buy-slb-eip).
 
 ## SRS Origin Cluster for a Large Number of Streams
 
@@ -541,12 +541,12 @@ Coming soon...
 
 There are some useful tips for you.
 
-1. [Create K8S Cluster in ACK](./k8s#create-k8s-cluster-in-ack): Create your own k8s cluster in ACK.
-1. [Publish Demo Streams to SRS](./k8s#publish-demo-streams-to-srs): Publish the demo streams to SRS.
-1. [Use One SLB and EIP for All Streaming Service](./k8s#use-one-slb-and-eip-for-all-streaming-service): Use one SLB for RTMP/HTTP-FLV/HLS streaming service.
-1. [Build SRS Origin Cluster as Deployment](./k8s#build-srs-origin-cluster-as-deployment): Rather than StatefulSet, we can also use deployment to build Origin Cluster.
-1. [Managing Compute Resources for Containers](./k8s#managing-compute-resources-for-containers): Resource requests and limits, and how pods requests are scheduled and limits are run.
-1. [Auto Reload by Inotify](./k8s#auto-reload-by-inotify): SRS supports auto reload by inotify watching ConfigMap changes.
+1. [Create K8S Cluster in ACK](./k8s.md#create-k8s-cluster-in-ack): Create your own k8s cluster in ACK.
+1. [Publish Demo Streams to SRS](./k8s.md#publish-demo-streams-to-srs): Publish the demo streams to SRS.
+1. [Use One SLB and EIP for All Streaming Service](./k8s.md#use-one-slb-and-eip-for-all-streaming-service): Use one SLB for RTMP/HTTP-FLV/HLS streaming service.
+1. [Build SRS Origin Cluster as Deployment](./k8s.md#build-srs-origin-cluster-as-deployment): Rather than StatefulSet, we can also use deployment to build Origin Cluster.
+1. [Managing Compute Resources for Containers](./k8s.md#managing-compute-resources-for-containers): Resource requests and limits, and how pods requests are scheduled and limits are run.
+1. [Auto Reload by Inotify](./k8s.md#auto-reload-by-inotify): SRS supports auto reload by inotify watching ConfigMap changes.
 
 ### Create K8S Cluster in ACK
 

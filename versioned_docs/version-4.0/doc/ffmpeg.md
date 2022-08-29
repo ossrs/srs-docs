@@ -15,7 +15,7 @@ The important use scenario of FFMPEG:
 * One in N out: Publish a high resolution video with big bitrate, for intance, h.264 5Mbps 1080p. Then use FFMPEG to transcode to multiple bitrates, for example, 1080p/720p/576p, the 576p is for mobile devices.
 * Support multiple screen: The stream published by flash is in h264/vp6/mp3/speex codec. Use FFMPEG to transcode to HLS(h264+aac) for IOS/Android.
 * Stream filters: For example, add logo to stream. SRS supports all filters from FFMPEG.
-* Snapshot: Please read [snapshot by transcoder](./snapshot#transcoder)
+* Snapshot: Please read [snapshot by transcoder](./snapshot.md#transcoder)
 
 ## Workflow
 

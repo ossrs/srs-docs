@@ -57,7 +57,7 @@ docker run --rm -it -p 1935:1935 -p 1985:1985 -p 8080:8080 -p 1990:1990 -p 8088:
 
 > Note: Please replace the IP with your server IP.
 
-> Note: About CANDIDATE, please read [CANDIDATE](./webrtc#config-candidate)
+> Note: About CANDIDATE, please read [CANDIDATE](./webrtc.md#config-candidate)
 
 Push stream to SRS by [WebRTC: Publish](http://localhost:8080/players/rtc_publisher.html?autostart=true&stream=livestream&port=8080&schema=http)
 
@@ -80,7 +80,7 @@ docker run --rm -it -p 1935:1935 -p 1985:1985 -p 8080:8080 \
 
 > Note: Please replace the IP with your server IP.
 
-> Note: About CANDIDATE, please read [CANDIDATE](./webrtc#config-candidate)
+> Note: About CANDIDATE, please read [CANDIDATE](./webrtc.md#config-candidate)
 
 > Note: If convert RTMP to WebRTC, please use [`rtmp2rtc.conf`](https://github.com/ossrs/srs/issues/2728#rtmp2rtc-en-guide)
 
@@ -119,12 +119,12 @@ docker run --rm -it -p 1935:1935 -p 1985:1985 -p 8080:8080 -p 1990:1990 -p 8088:
 
 > Note: Please replace the IP with your server IP.
 
-> Note: About CANDIDATE, please read [CANDIDATE](./webrtc#config-candidate)
+> Note: About CANDIDATE, please read [CANDIDATE](./webrtc.md#config-candidate)
 
 > Remark: Please use your HTTPS key and cert file, please read
-> **[HTTPS API](./http-api#https-api)**
-> and **[HTTPS Callback](./http-callback#https-callback)**
-> and **[HTTPS Live Streaming](./delivery-http-flv#https-flv-live-stream)**,
+> **[HTTPS API](./http-api.md#https-api)**
+> and **[HTTPS Callback](./http-callback.md#https-callback)**
+> and **[HTTPS Live Streaming](./delivery-http-flv.md#https-flv-live-stream)**,
 > however HTTPS proxy also works perfect with SRS such as Nginx.
 
 Push stream to SRS by [WebRTC: Publish](https://192.168.3.82:8088/players/rtc_publisher.html?autostart=true&stream=livestream&api=1990&schema=https)

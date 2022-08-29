@@ -9,13 +9,13 @@ hide_table_of_contents: false
 
 服务器端定制的实现方式，就是HTTP回调。譬如当客户端连接到SRS时，回调指定的http地址，这样可以实现验证功能。
 
-关于Token认证，即基于http回调的认证，参考：[Token Authentication](./drm#token-authentication)
+关于Token认证，即基于http回调的认证，参考：[Token Authentication](./drm.md#token-authentication)
 
 ## Compile
 
 SRS总是开启HttpCallback。
 
-参考：[Build](./install)
+参考：[Build](./install.md)
 
 ## Config SRS
 
@@ -282,7 +282,7 @@ vhost your_vhost {
 
 ## Response
 
-如果回调成功，必须响应正确的格式的数值，否则就会返回错误给客户端导致推流或播放失败。也可以参考[HTTP API](./http-api#error-code)。格式是：
+如果回调成功，必须响应正确的格式的数值，否则就会返回错误给客户端导致推流或播放失败。也可以参考[HTTP API](./http-api.md#error-code)。格式是：
 
 * HTTP/200, 必须返回200否则认为是错误。
 * 并且，响应的内容必须是int值0，或者是JSON对象带字段code值为0。
@@ -314,7 +314,7 @@ python research/api-server/server.py 8085
 
 ## Snapshot
 
-HttpCallback也可以用来截图，参考[snapshot](./snapshot#httpcallback)
+HttpCallback也可以用来截图，参考[snapshot](./snapshot.md#httpcallback)
 
 Winlin 2015.1
 

@@ -12,7 +12,7 @@ You can use REUSE_PORT for different use scenarios.
 ## For Edge Server
 
 The [performance of SRS2](https://github.com/ossrs/srs/tree/2.0release#performance) is improved huge, but is it enough?
-Absolutely NOT! In SRS3, we provide [OriginCluster](./sample-origin-cluster) for multiple origin servers to work together,
+Absolutely NOT! In SRS3, we provide [OriginCluster](./sample-origin-cluster.md) for multiple origin servers to work together,
 and [go-oryx](https://github.com/ossrs/go-oryx) as a tcp proxy for edge server, and these are not good enough, so we support
 SO_REUSEPORT feature for multiple processes edge server.
 
@@ -76,7 +76,7 @@ Client --->-- + Origin Servers  +------> Player
               +-----------------+
 ```
 
-> Note: If need to deliver RTMP or HTTP-FLV, pelease use [OriginCluster](./sample-origin-cluster).
+> Note: If need to deliver RTMP or HTTP-FLV, pelease use [OriginCluster](./sample-origin-cluster.md).
 
 Start the first Origin Server, listen at `1935` and `8080`, covert RTMP to HLS:
 
@@ -102,7 +102,7 @@ Publish another stream to origin, system will select a random Origin Server:
 ./objs/ffmpeg/bin/ffmpeg -re -i ./doc/source.flv -c copy -f flv rtmp://localhost/live/livestream2
 ```
 
-> Note: It works only for HLS, please use [OriginCluster](./sample-origin-cluster) for RTMP or HTTP-FLV.
+> Note: It works only for HLS, please use [OriginCluster](./sample-origin-cluster.md) for RTMP or HTTP-FLV.
 
 ![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/doc/en/v5/reuse-port)
 

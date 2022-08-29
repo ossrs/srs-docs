@@ -57,7 +57,7 @@ docker run --rm -it -p 1935:1935 -p 1985:1985 -p 8080:8080 -p 1990:1990 -p 8088:
 
 > Note: 请将IP换成你的SRS的IP地址。
 
-> Note: 请将CANDIDATE设置为服务器的外网地址，详细请阅读[WebRTC: CANDIDATE](./webrtc#config-candidate)。
+> Note: 请将CANDIDATE设置为服务器的外网地址，详细请阅读[WebRTC: CANDIDATE](./webrtc.md#config-candidate)。
 
 使用WebRTC推流到SRS：[WebRTC: Publish](http://localhost:8080/players/rtc_publisher.html?autostart=true&stream=livestream&port=8080&schema=http)
 
@@ -80,7 +80,7 @@ docker run --rm -it -p 1935:1935 -p 1985:1985 -p 8080:8080 \
 
 > Note: 请将IP换成你的SRS的IP地址。
 
-> Note: 请将CANDIDATE设置为服务器的外网地址，详细请阅读[WebRTC: CANDIDATE](./webrtc#config-candidate)。
+> Note: 请将CANDIDATE设置为服务器的外网地址，详细请阅读[WebRTC: CANDIDATE](./webrtc.md#config-candidate)。
 
 > Note: 注意如果RTMP转WebRTC流播放，必须使用配置文件[`rtmp2rtc.conf`](https://github.com/ossrs/srs/issues/2728#rtmp2rtc-cn-guide)
 
@@ -119,12 +119,12 @@ docker run --rm -it -p 1935:1935 -p 1985:1985 -p 8080:8080 -p 1990:1990 -p 8088:
 
 > Note: 请将IP换成你的SRS的IP地址。
 
-> Note: 请将CANDIDATE设置为服务器的外网地址，详细请阅读[WebRTC: CANDIDATE](./webrtc#config-candidate)。
+> Note: 请将CANDIDATE设置为服务器的外网地址，详细请阅读[WebRTC: CANDIDATE](./webrtc.md#config-candidate)。
 
 > Remark: 请使用你的证书文件，代替上面配置中的key和cert，请参考
-> **[HTTPS API](./http-api#https-api)**
-> 以及 **[HTTPS Callback](./http-callback#https-callback)**
-> 以及 **[HTTPS Live Streaming](./delivery-http-flv#https-flv-live-stream)**，
+> **[HTTPS API](./http-api.md#https-api)**
+> 以及 **[HTTPS Callback](./http-callback.md#https-callback)**
+> 以及 **[HTTPS Live Streaming](./delivery-http-flv.md#https-flv-live-stream)**，
 > 当然了HTTPS的反向代理也能和SRS工作很好，比如Nginx代理到SRS。
 
 使用WebRTC推流到SRS：[WebRTC: Publish](https://192.168.3.82:8088/players/rtc_publisher.html?autostart=true&stream=livestream&api=1990&schema=https)

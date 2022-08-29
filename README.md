@@ -55,8 +55,8 @@ This command uses `'/custom-base-url/'` instead of the default baseUrl(`'/lts/'`
 The links in docs, relative link, for example:
 
 ```markdown
-[wiki](./http-api)
-[wiki](./http-api#kickoff-client)
+[wiki](./http-api.md)
+[wiki](./http-api.md#kickoff-client)
 ```
 
 The links in blog or pages, absolute url link, for example:
@@ -65,6 +65,8 @@ The links in blog or pages, absolute url link, for example:
 [Wiki: Getting Started](/docs/v4/doc/getting-started)
 [Developer Documentation](/docs/v4/doc/getting-started)
 ```
+
+> Note: Please follow this rule, otherwise, the link from searching will fail.
 
 ---
 ## Translate

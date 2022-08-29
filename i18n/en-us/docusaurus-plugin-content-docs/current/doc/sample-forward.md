@@ -19,7 +19,7 @@ We use master to listen at 1935, and slave listen at 19350.
 
 ## Step 1, get SRS
 
-For detail, read [GIT](./git)
+For detail, read [GIT](./git.md)
 
 ```bash
 git clone https://github.com/ossrs/srs
@@ -34,7 +34,7 @@ git pull
 
 ## Step 2, build SRS
 
-For detail, read [Build](./install)
+For detail, read [Build](./install.md)
 
 ```bash
 ./configure && make
@@ -42,7 +42,7 @@ For detail, read [Build](./install)
 
 ## Step 3, config master SRS
 
-For detail, read [Forward](./forward)
+For detail, read [Forward](./forward.md)
 
 Save bellow as config, or use `conf/forward.master.conf`:
 
@@ -63,7 +63,7 @@ vhost __defaultVhost__ {
 
 ## Step 4, start master SRS
 
-For detail, read [Forward](./forward)
+For detail, read [Forward](./forward.md)
 
 ```bash
 ./objs/srs -c conf/forward.master.conf
@@ -71,7 +71,7 @@ For detail, read [Forward](./forward)
 
 ## Step 5, config slave SRS
 
-For detail, read [Forward](./forward)
+For detail, read [Forward](./forward.md)
 
 Save bellow as config, or use `conf/forward.slave.conf`:
 
@@ -87,7 +87,7 @@ vhost __defaultVhost__ {
 
 ## Step 6, start slave SRS
 
-For detail, read [Forward](./forward)
+For detail, read [Forward](./forward.md)
 
 ```bash
 ./objs/srs -c conf/forward.slave.conf
@@ -103,7 +103,7 @@ tcp        0      0 0.0.0.0:19350               0.0.0.0:*                   LIST
 
 ## Step 7, start Encoder
 
-For detail, read [Forward](./forward)
+For detail, read [Forward](./forward.md)
 
 Use FFMPEG to publish stream:
 
@@ -131,7 +131,7 @@ The stream in SRS:
 
 ## Step 8, play the stream on master
 
-For detail, read [Forward](./forward)
+For detail, read [Forward](./forward.md)
 
 RTMP url is: `rtmp://192.168.1.170:1935/live/livestream`
 
@@ -141,7 +141,7 @@ Note: Please replace all ip 192.168.1.170 to your server ip.
 
 ## Step 9, play the stream on slave
 
-For detail, read [Forward](./forward)
+For detail, read [Forward](./forward.md)
 
 RTMP url is: `rtmp://192.168.1.170:19350/live/livestream`
 

@@ -9,13 +9,13 @@ hide_table_of_contents: false
 
 SRS supports HTTP callback to extends SRS.
 
-For token authentication based on HTTP callbacks, read [Token Authentication](./drm#token-authentication)
+For token authentication based on HTTP callbacks, read [Token Authentication](./drm.md#token-authentication)
 
 ## Compile
 
 SRS always enable http callbacks.
 
-For more information, read [Build](./install)
+For more information, read [Build](./install.md)
 
 ## Configuring SRS
 
@@ -281,7 +281,7 @@ vhost your_vhost {
 
 ## Response
 
-If success, you must response `something` to identify the success, or SRS will reject the client, which enable you to reject the illegal client, please read [Callback Error Code](./http-api#error-code). 
+If success, you must response `something` to identify the success, or SRS will reject the client, which enable you to reject the illegal client, please read [Callback Error Code](./http-api.md#error-code). 
 
 > Note: The `on_publish` callback also could be used as advanced security, to `allow` or `deny` a client by its IP, or token in request url, or any other information of client.
 
@@ -317,7 +317,7 @@ And you will finger out what's the `right` response.
 
 ## Snapshot
 
-The HttpCallback can used to snapshot, please read [snapshot](./snapshot#httpcallback)
+The HttpCallback can used to snapshot, please read [snapshot](./snapshot.md#httpcallback)
 
 Winlin 2015.1
 

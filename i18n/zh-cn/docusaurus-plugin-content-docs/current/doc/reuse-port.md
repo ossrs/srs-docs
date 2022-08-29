@@ -12,7 +12,7 @@ hide_table_of_contents: false
 ## For Edge Server
 
 SRS2的性能有大幅的提升，参考[SRS2性能](https://github.com/ossrs/srs/tree/2.0release#performance)。SRS3我们支持了源站集群，
-解决了源站的性能瓶颈，参考[OriginCluster](./sample-origin-cluster)；对于边缘服务器，我们提供了TCP代理方案，
+解决了源站的性能瓶颈，参考[OriginCluster](./sample-origin-cluster.md)；对于边缘服务器，我们提供了TCP代理方案，
 参考[go-oryx](https://github.com/ossrs/go-oryx)；对于边缘服务器，我们还可以支持SO_REUSEPORT，可以在服务器上启动多个Edge进程。
 
 ![](/img/doc-guides-reuse-port-001.png)
@@ -75,7 +75,7 @@ Client --->-- + Origin Servers  +------> Player
               +-----------------+
 ```
 
-> Note: 如果需要支持输出RTMP或FLV等流协议，那么需要使用[OriginCluster](./sample-origin-cluster)。
+> Note: 如果需要支持输出RTMP或FLV等流协议，那么需要使用[OriginCluster](./sample-origin-cluster.md)。
 
 启动第一个源站，侦听在`1935`和`8080`，输入RTMP流，输出HLS流：
 
@@ -101,7 +101,7 @@ Client --->-- + Origin Servers  +------> Player
 ./objs/ffmpeg/bin/ffmpeg -re -i ./doc/source.flv -c copy -f flv rtmp://localhost/live/livestream2
 ```
 
-> Note: 由于切片成HLS，所以只要流不同，这两个源站独立工作，是没有问题的。但是如果是输出FLV，可能就会出现找不到流的情况，这时就不能使用这种方式，需要使用[OriginCluster](./sample-origin-cluster)。
+> Note: 由于切片成HLS，所以只要流不同，这两个源站独立工作，是没有问题的。但是如果是输出FLV，可能就会出现找不到流的情况，这时就不能使用这种方式，需要使用[OriginCluster](./sample-origin-cluster.md)。
 
 ![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/doc/zh/v5/reuse-port)
 

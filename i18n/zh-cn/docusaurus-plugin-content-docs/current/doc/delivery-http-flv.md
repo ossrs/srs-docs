@@ -26,7 +26,7 @@ vhost __defaultVhost__ {
 }
 ```
 
-配置项的详细信息参考下面的[配置章节](./delivery-http-flv#http-live-stream-config)的说明。
+配置项的详细信息参考下面的[配置章节](./delivery-http-flv.md#http-live-stream-config)的说明。
 
 ## HTTPS FLV Live Stream
 
@@ -55,9 +55,9 @@ vhost __defaultVhost__ {
 
 > Remark: 请使用你的证书文件，代替上面配置中的key和cert。
 
-> Note: 若需要开启HTTPS API，请参考[HTTPS API](./http-api#https-api)
+> Note: 若需要开启HTTPS API，请参考[HTTPS API](./http-api.md#https-api)
 
-配置项的详细信息参考下面的[配置章节](./delivery-http-flv#http-live-stream-config)的说明。
+配置项的详细信息参考下面的[配置章节](./delivery-http-flv.md#http-live-stream-config)的说明。
 
 ## HTTP and HTTPS Proxy
 
@@ -84,7 +84,7 @@ vhost __defaultVhost__ {
 }
 ```
 
-配置项的详细信息参考下面的[配置章节](./delivery-http-flv#http-live-stream-config)的说明。
+配置项的详细信息参考下面的[配置章节](./delivery-http-flv.md#http-live-stream-config)的说明。
 
 ## HTTP Mp3 Live Stream
 
@@ -106,7 +106,7 @@ vhost __defaultVhost__ {
 }
 ```
 
-配置项的详细信息参考下面的[配置章节](./delivery-http-flv#http-live-stream-config)的说明。
+配置项的详细信息参考下面的[配置章节](./delivery-http-flv.md#http-live-stream-config)的说明。
 
 ## HTTP Aac Live Stream
 
@@ -128,7 +128,7 @@ vhost __defaultVhost__ {
 }
 ```
 
-配置项的详细信息参考下面的[配置章节](./delivery-http-flv#http-live-stream-config)的说明。
+配置项的详细信息参考下面的[配置章节](./delivery-http-flv.md#http-live-stream-config)的说明。
 
 ## HTTP Live Stream Config
 
@@ -208,13 +208,13 @@ vhost __defaultVhost__ {
 
 备注：若需要同时分发不同的http live stream，可以使用forward到其他vhost，不同的vhost配置不同的http live stream。
 
-备注：HTTP服务器配置，参考[HTTP Server](./http-server#config)
+备注：HTTP服务器配置，参考[HTTP Server](./http-server.md#config)
 
 ## About HTTP FLV
 
 这一节详细解释HTTP FLV的背景。
 
-SRS的HTTP FLV边缘只能使用单进程，如何做到多进程呢？请参考[Reuse Port](./reuse-port)
+SRS的HTTP FLV边缘只能使用单进程，如何做到多进程呢？请参考[Reuse Port](./reuse-port.md)
 
 ### What is HTTP FLV
 
@@ -249,7 +249,7 @@ SRS的HTTP FLV容易和下面的几种分发方式混淆：
 
 配置实例参考：https://github.com/ossrs/srs/issues/293#issuecomment-70449126
 
-一步一步配置HTTP FLV： [Sample](./sample-http-flv)
+一步一步配置HTTP FLV： [Sample](./sample-http-flv.md)
 
 ## Websocket FLV
 
@@ -259,7 +259,7 @@ SRS的HTTP FLV容易和下面的几种分发方式混淆：
 
 ## HTTP FLV VOD Stream
 
-关于HTTP flv 点播流，参考：[v4_CN_FlvVodStream](./flv-vod-stream)
+关于HTTP flv 点播流，参考：[v4_CN_FlvVodStream](./flv-vod-stream.md)
 
 Winlin 2015.1
 

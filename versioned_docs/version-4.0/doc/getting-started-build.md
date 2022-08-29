@@ -7,13 +7,13 @@ hide_table_of_contents: false
 
 # Build
 
-You can build SRS from source code, but [docker](./getting-started) is highly recommend.
+You can build SRS from source code, but [docker](./getting-started.md) is highly recommend.
 
 ## Live Streaming
 
 SRS supports live streaming.
 
-Get SRS source, recommend [CentOS7](./install):
+Get SRS source, recommend [CentOS7](./install.md):
 
 ```
 git clone -b 4.0release https://github.com/ossrs/srs.git
@@ -61,7 +61,7 @@ Play stream by:
 
 SRS supports WebRTC for video chat.
 
-Get SRS source, recommend [CentOS7](./install):
+Get SRS source, recommend [CentOS7](./install.md):
 
 ```
 git clone -b 4.0release https://github.com/ossrs/srs.git
@@ -84,7 +84,7 @@ CANDIDATE="192.168.1.10"
 
 > Note: Please replace the IP with your server IP.
 
-> Note: About CANDIDATE, please read [CANDIDATE](./webrtc#config-candidate)
+> Note: About CANDIDATE, please read [CANDIDATE](./webrtc.md#config-candidate)
 
 Check SRS by [http://localhost:8080/](http://localhost:8080/) or:
 
@@ -106,7 +106,7 @@ Play stream of SRS by [WebRTC: Play](http://localhost:8080/players/rtc_player.ht
 
 SRS supports converting live streaming to WebRTC.
 
-Get SRS source, recommend [CentOS7](./install):
+Get SRS source, recommend [CentOS7](./install.md):
 
 ```
 git clone -b 4.0release https://github.com/ossrs/srs.git
@@ -129,7 +129,7 @@ CANDIDATE="192.168.1.10"
 
 > Note: Please replace the IP with your server IP.
 
-> Note: About CANDIDATE, please read [CANDIDATE](./webrtc#config-candidate)
+> Note: About CANDIDATE, please read [CANDIDATE](./webrtc.md#config-candidate)
 
 > Note: If convert RTMP to WebRTC, please use [`rtmp2rtc.conf`](https://github.com/ossrs/srs/issues/2728#rtmp2rtc-cn-guide)
 
@@ -151,7 +151,7 @@ Play stream by:
 
 If not localhost, for example, to view WebRTC on pad or mobile phone, when SRS is running on remote server.
 
-Get SRS source, recommend [CentOS7](./install):
+Get SRS source, recommend [CentOS7](./install.md):
 
 ```
 git clone -b 4.0release https://github.com/ossrs/srs.git
@@ -174,12 +174,12 @@ CANDIDATE="192.168.1.10"
 
 > Note: Please replace the IP with your server IP.
 
-> Note: About CANDIDATE, please read [CANDIDATE](./webrtc#config-candidate)
+> Note: About CANDIDATE, please read [CANDIDATE](./webrtc.md#config-candidate)
 
 > Remark: Please use your HTTPS key and cert file, please read
-> **[HTTPS API](./http-api#https-api)**
-> and **[HTTPS Callback](./http-callback#https-callback)**
-> and **[HTTPS Live Streaming](./delivery-http-flv#https-flv-live-stream)**,
+> **[HTTPS API](./http-api.md#https-api)**
+> and **[HTTPS Callback](./http-callback.md#https-callback)**
+> and **[HTTPS Live Streaming](./delivery-http-flv.md#https-flv-live-stream)**,
 > however HTTPS proxy also works perfect with SRS such as Nginx.
 
 Push stream to SRS by [WebRTC: Publish](https://192.168.3.82:8088/players/rtc_publisher.html?autostart=true&stream=livestream&api=1990&schema=https)

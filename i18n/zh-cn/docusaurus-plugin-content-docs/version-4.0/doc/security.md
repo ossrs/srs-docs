@@ -54,7 +54,7 @@ SRS应用安全策略的方式是:
 
 ## Kickoff Client
 
-可以踢掉连接的用户，参考[WIKI](./http-api#kickoff-client)。
+可以踢掉连接的用户，参考[WIKI](./http-api.md#kickoff-client)。
 
 ## Bug
 

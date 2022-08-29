@@ -7,7 +7,7 @@ hide_table_of_contents: false
 
 # K8s
 
-推荐使用K8s部署SRS，参考[Deploy to Cloud Platforms](./k8s#deploy-to-cloud-platforms)，视频教程[Bilibili: SRS-027-用K8s零命令行部署SRS](https://www.bilibili.com/video/BV1g44y1j7Vz/)
+推荐使用K8s部署SRS，参考[Deploy to Cloud Platforms](./k8s.md#deploy-to-cloud-platforms)，视频教程[Bilibili: SRS-027-用K8s零命令行部署SRS](https://www.bilibili.com/video/BV1g44y1j7Vz/)
 
 SRS提供了一系列的模版项目，可以快速部署到云平台K8s：
 

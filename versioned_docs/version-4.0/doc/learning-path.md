@@ -17,7 +17,7 @@ First, It takes about 5 to 15 minutes to see what live streaming and WebRTC look
 
 > Note: This may seem easy, even if you can open two pages directly from the SRS website, but you must build it yourself with SRS, not just open the online demo page.
 
-How do you do it？Please refer to [Getting Started](./getting-started)。
+How do you do it？Please refer to [Getting Started](./getting-started.md)。
 
 The first step in approaching something new is to have an intuitive experience and feel for it. Although it seems simple, it involves almost the whole chain of things in the audio/video field：
 - FFmpeg, a powerful audio/video client that supports publish and pull streaming, codecs encoding and decoding , as well as various processing capabilities.
@@ -44,12 +44,12 @@ Each scenario can build a typical application.
 
 Third, Understand the technical points, application scenarios, code and problem solving, about 3 to 6 months.
 
-- [Video Columns](./introduction#effective-srs), includes environment building, code analysis, and explanations from professional teachers at Voice Academy.
-- [Solution Guides](./introduction#solution-guides)，share and explore the application of SRS in different scenarios.
-- [Deployment Guides](./introduction#deployment-guides), how to deploy to implement different specific functions.
-- [Cluster Guides](./introduction#cluster-guides), when business grows rapidly, how to scale single server to cluster, and how to serve users in different regions.
-- [Integration Guides](./introduction#integration-guides), How to integrate with existing systems, how to authenticate users, security and anti-stealing chain mechanisms, etc.
-- [Develop Guides](./introduction#develop-guide), Concurrent principles, code analysis, high performance server framework, performance optimization, etc.
+- [Video Columns](./introduction.md#effective-srs), includes environment building, code analysis, and explanations from professional teachers at Voice Academy.
+- [Solution Guides](./introduction.md#solution-guides)，share and explore the application of SRS in different scenarios.
+- [Deployment Guides](./introduction.md#deployment-guides), how to deploy to implement different specific functions.
+- [Cluster Guides](./introduction.md#cluster-guides), when business grows rapidly, how to scale single server to cluster, and how to serve users in different regions.
+- [Integration Guides](./introduction.md#integration-guides), How to integrate with existing systems, how to authenticate users, security and anti-stealing chain mechanisms, etc.
+- [Develop Guides](./introduction.md#develop-guide), Concurrent principles, code analysis, high performance server framework, performance optimization, etc.
 
 If you can thoroughly understand SRS, it's really not difficult.
 

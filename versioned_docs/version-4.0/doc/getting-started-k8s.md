@@ -7,7 +7,7 @@ hide_table_of_contents: false
 
 # K8s
 
-Highly recommend that you [Deploy to Cloud Platforms](./k8s#deploy-to-cloud-platforms).
+Highly recommend that you [Deploy to Cloud Platforms](./k8s.md#deploy-to-cloud-platforms).
 
 SRS provides a set of template repository for fast deploy:
 

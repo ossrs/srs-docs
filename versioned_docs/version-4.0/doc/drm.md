@@ -66,13 +66,13 @@ http://vhost/app/stream.m3u8?token=xxxx
 webrtc://vhost/app/stream?token=xxxx
 ```
 
-SRS will pass the token in the http-callback. read [HTTP callback](./http-callback)
+SRS will pass the token in the http-callback. read [HTTP callback](./http-callback.md)
 
 Token is robust then refer, can specifies more params, for instance, the expire time. For example:
 
 1. When user access the web page, web application server can generate a token in the URL, for example, `token = md5(time + id + salt + expire) = 88195f8943e5c944066725df2b1706f8`
 1. The RTMP URL to publish is, for instance, `rtmp://192.168.1.10/live/livestream?time=1402307089&expire=3600&token=88195f8943e5c944066725df2b1706f8`
-1. Config the http callback of SRS `on_publish http://127.0.0.1:8085/api/v1/streams;` , read [HTTP callback](./http-callback#config-srs)
+1. Config the http callback of SRS `on_publish http://127.0.0.1:8085/api/v1/streams;` , read [HTTP callback](./http-callback.md#config-srs)
 1. When user publishing stream, SRS will callback the url with token to verify, if invalid, the http callback can return none zero which indicates error.
 
 > Note: You're able to verify the play.

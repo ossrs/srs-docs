@@ -11,9 +11,9 @@ Adobe RTMP stands for Real Time Message Protocol, which is the basic feature of 
 
 For more information about protocol of SRS:
 
-1. About Apple HLS, another variety used protocol, please read [HLS](./delivery-hls).
-2. About the different between RTMP and HLS, please read [RTMP or HLS](./rtmp-pk-http).
-3. About how to deploy SRS as RTMP server, please read [Usage: RTMP](./sample-rtmp).
+1. About Apple HLS, another variety used protocol, please read [HLS](./delivery-hls.md).
+2. About the different between RTMP and HLS, please read [RTMP or HLS](./rtmp-pk-http.md).
+3. About how to deploy SRS as RTMP server, please read [Usage: RTMP](./sample-rtmp.md).
 
 ## Use Scenario
 
@@ -65,9 +65,9 @@ FMS URL: rtmp://192.168.1.170/live
 Stream: livestream
 ```
 
-The RTMP url, see: [RTMP URL&Vhost](./rtmp-url-vhost)
+The RTMP url, see: [RTMP URL&Vhost](./rtmp-url-vhost.md)
 
-The deploy sample, see: [Usage: RTMP](./sample-rtmp)
+The deploy sample, see: [Usage: RTMP](./sample-rtmp.md)
 
 The FMLE publish example:
 ![FMLE publish RTMP to SRS](http://ossrs.net/srs.release/wiki/images/FMLE.png)
@@ -78,7 +78,7 @@ User can use flash player or vlc to play RTMP stream, for example, the RTMP url:
 
 ## Config Low Latency for RTMP
 
-The latency of RTMP is in 1-3s, the config see: [Low Latency](./low-latency)
+The latency of RTMP is in 1-3s, the config see: [Low Latency](./low-latency.md)
 
 Winlin 2014.11
 

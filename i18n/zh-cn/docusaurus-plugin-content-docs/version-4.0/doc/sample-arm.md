@@ -10,13 +10,13 @@ hide_table_of_contents: false
 SRS可以在ARM上作为服务器运行，播放器可以从ARM设备上取流播放。
 
 一般的ARM都可以直接编译，使用和上面的方法是一样的。
-某些编译非常慢，或者没有编译器的嵌入式平台，才需要交叉编译，请参考[这里](./arm).
+某些编译非常慢，或者没有编译器的嵌入式平台，才需要交叉编译，请参考[这里](./arm.md).
 
 ## Build SRS directly
 
 ### 第一步，获取SRS。
 
-详细参考[GIT获取代码](./git)
+详细参考[GIT获取代码](./git.md)
 
 ```bash
 git clone https://github.com/ossrs/srs
@@ -31,7 +31,7 @@ git pull
 
 ### 第二步，编译SRS
 
-详细参考：[SrsLinuxArm](./arm)
+详细参考：[SrsLinuxArm](./arm.md)
 
 ```bash
 ./configure && make
@@ -41,7 +41,7 @@ git pull
 
 ### 第三步，启动SRS
 
-详细参考：[SrsLinuxArm](./arm)
+详细参考：[SrsLinuxArm](./arm.md)
 
 ```bash
 ./objs/srs -c conf/srs.conf
@@ -49,7 +49,7 @@ git pull
 
 ### 第四步，启动推流编码器
 
-详细参考：[SrsLinuxArm](./arm)
+详细参考：[SrsLinuxArm](./arm.md)
 
 使用FFMPEG命令推流：
 

@@ -9,13 +9,13 @@ hide_table_of_contents: false
 
 配置SRS为Realtime模式，使用RTMP可以将延迟降低到0.8-3秒，可以应用到对实时性要求不苛刻的地方，譬如视频会议（其实视频会议，以及人类在开会的时候，正常时候是会有人讲，有人在听在想，然后换别人讲，其实1秒左右延迟没有问题的，除非要吵架，就需要0.3秒左右的延迟）。
 
-配置最低延迟的服务器详细信息可以参考：[LowLatency](./low-latency)，本文举例说明部署的实例步骤。
+配置最低延迟的服务器详细信息可以参考：[LowLatency](./low-latency.md)，本文举例说明部署的实例步骤。
 
 **假设服务器的IP是：192.168.1.170**
 
 ## 第一步，获取SRS
 
-详细参考[GIT获取代码](./git)
+详细参考[GIT获取代码](./git.md)
 
 ```bash
 git clone https://github.com/ossrs/srs
@@ -30,7 +30,7 @@ git pull
 
 ## 第二步，编译SRS
 
-详细参考[Build](./install)
+详细参考[Build](./install.md)
 
 ```bash
 ./configure && make
@@ -38,7 +38,7 @@ git pull
 
 ## 第三步，编写SRS配置文件
 
-详细参考[LowLatency](./low-latency)
+详细参考[LowLatency](./low-latency.md)
 
 将以下内容保存为文件，譬如`conf/realtime.conf`，服务器启动时指定该配置文件(srs的conf文件夹有该文件)。
 
@@ -64,7 +64,7 @@ vhost __defaultVhost__ {
 
 ## 第四步，启动SRS
 
-详细参考[LowLatency](./low-latency)
+详细参考[LowLatency](./low-latency.md)
 
 ```bash
 ./objs/srs -c conf/realtime.conf
@@ -72,7 +72,7 @@ vhost __defaultVhost__ {
 
 ## 第五步，启动推流编码器
 
-详细参考[LowLatency](./low-latency)
+详细参考[LowLatency](./low-latency.md)
 
 使用FFMPEG命令推流：
 
@@ -97,7 +97,7 @@ Stream: livestream
 
 ## 第六步，观看RTMP流
 
-详细参考[LowLatency](./low-latency)
+详细参考[LowLatency](./low-latency.md)
 
 RTMP流地址为：`rtmp://192.168.1.170/live/livestream`
 

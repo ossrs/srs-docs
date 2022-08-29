@@ -42,7 +42,7 @@ for arm is not easy to build some server.
 
 ## Config
 
-Read [HTTP Server](./http-server#config)
+Read [HTTP Server](./http-server.md#config)
 
 Winlin 2015.1
 

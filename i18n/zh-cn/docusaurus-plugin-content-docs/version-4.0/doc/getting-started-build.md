@@ -7,13 +7,13 @@ hide_table_of_contents: false
 
 # Build
 
-SRS可以从源码编译和启动，但推荐更简单的[Docker](./getting-started)方式启动。
+SRS可以从源码编译和启动，但推荐更简单的[Docker](./getting-started.md)方式启动。
 
 ## Live Streaming
 
 直播是SRS的典型场景，支持推直播流后多种观看方式。
 
-下载源码，推荐用[CentOS7](./install)：
+下载源码，推荐用[CentOS7](./install.md)：
 
 ```
 git clone -b 4.0release https://gitee.com/ossrs/srs.git
@@ -71,7 +71,7 @@ ffmpeg -re -i ./doc/source.flv -c copy -f flv rtmp://localhost/live/livestream
 
 SRS支持WebRTC，可以做会议或视频聊天。
 
-下载源码，推荐用[CentOS7](./install)：
+下载源码，推荐用[CentOS7](./install.md)：
 
 ```
 git clone -b 4.0release https://gitee.com/ossrs/srs.git
@@ -94,7 +94,7 @@ CANDIDATE="192.168.1.10"
 
 > Note: 请将IP换成你的SRS的IP地址。
 
-> Note: 请将CANDIDATE设置为服务器的外网地址，详细请阅读[WebRTC: CANDIDATE](./webrtc#config-candidate)。
+> Note: 请将CANDIDATE设置为服务器的外网地址，详细请阅读[WebRTC: CANDIDATE](./webrtc.md#config-candidate)。
 
 检查SRS是否成功启动，可以打开 [http://localhost:8080/](http://localhost:8080/) ，或者执行命令：
 
@@ -126,7 +126,7 @@ MB0:trunk $ tail -n 30 -f ./objs/srs.log
 
 SRS支持直播转WebRTC，推直播流，使用WebRTC观看。
 
-下载源码，推荐用[CentOS7](./install)：
+下载源码，推荐用[CentOS7](./install.md)：
 
 ```
 git clone -b 4.0release https://gitee.com/ossrs/srs.git
@@ -149,7 +149,7 @@ CANDIDATE="192.168.1.10"
 
 > Note: 请将IP换成你的SRS的IP地址。
 
-> Note: 请将CANDIDATE设置为服务器的外网地址，详细请阅读[WebRTC: CANDIDATE](./webrtc#config-candidate)。
+> Note: 请将CANDIDATE设置为服务器的外网地址，详细请阅读[WebRTC: CANDIDATE](./webrtc.md#config-candidate)。
 
 > Note: 注意如果RTMP转WebRTC流播放，必须使用配置文件[`rtmp2rtc.conf`](https://github.com/ossrs/srs/issues/2728#rtmp2rtc-cn-guide)
 
@@ -171,7 +171,7 @@ ffmpeg -re -i ./doc/source.flv -c copy -f flv rtmp://localhost/live/livestream
 
 若需要在非本机使用WebRTC，比如SRS运行在远程服务器，在笔记本或者手机上使用WeBRTC，则需要开启HTTPS API。
 
-下载源码，推荐用[CentOS7](./install)：
+下载源码，推荐用[CentOS7](./install.md)：
 
 ```
 git clone -b 4.0release https://gitee.com/ossrs/srs.git
@@ -194,12 +194,12 @@ CANDIDATE="192.168.1.10"
 
 > Note: 请将IP换成你的SRS的IP地址。
 
-> Note: 请将CANDIDATE设置为服务器的外网地址，详细请阅读[WebRTC: CANDIDATE](./webrtc#config-candidate)。
+> Note: 请将CANDIDATE设置为服务器的外网地址，详细请阅读[WebRTC: CANDIDATE](./webrtc.md#config-candidate)。
 
 > Remark: 请使用你的证书文件，代替上面配置中的key和cert，请参考
-> **[HTTPS API](./http-api#https-api)**
-> 以及 **[HTTPS Callback](./http-callback#https-callback)**
-> 以及 **[HTTPS Live Streaming](./delivery-http-flv#https-flv-live-stream)**，
+> **[HTTPS API](./http-api.md#https-api)**
+> 以及 **[HTTPS Callback](./http-callback.md#https-callback)**
+> 以及 **[HTTPS Live Streaming](./delivery-http-flv.md#https-flv-live-stream)**，
 > 当然了HTTPS的反向代理也能和SRS工作很好，比如Nginx代理到SRS。
 
 使用WebRTC推流到SRS：[WebRTC: Publish](https://192.168.3.82:8088/players/rtc_publisher.html?autostart=true&stream=livestream&api=1990&schema=https)

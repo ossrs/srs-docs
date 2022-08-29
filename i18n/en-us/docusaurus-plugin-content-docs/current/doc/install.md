@@ -47,11 +47,11 @@ Also easy to start SRS:
 ./objs/srs -c conf/srs.conf
 ```
 
-Publish RTMP, please read: [Usage: RTMP](./sample-rtmp)
+Publish RTMP, please read: [Usage: RTMP](./sample-rtmp.md)
 
 More usages, please read: [Usage](https://github.com/ossrs/srs/tree/4.0release#usage)
 
-For service management, please read [Service](./service)
+For service management, please read [Service](./service.md)
 
 Run SRS in docker, please read [srs-docker](https://github.com/ossrs/dev-docker#usage)
 
@@ -59,7 +59,7 @@ Run SRS in docker, please read [srs-docker](https://github.com/ossrs/dev-docker#
 
 It's also ok to directly build on ARM server.
 
-For ARM/MIPS or crossbuild, please read [here](./arm)
+For ARM/MIPS or crossbuild, please read [here](./arm.md)
 
 Winlin 2014.11
 

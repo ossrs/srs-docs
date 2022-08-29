@@ -13,7 +13,7 @@ SRS支持将RTMP流录制成FLV或MP4文件。下面的描述以FLV为例，但�
 
 DVR作为SRS3的核心功能，永远开启DVR。
 
-参考：[Build](./install)
+参考：[Build](./install.md)
 
 ## Config
 
@@ -132,7 +132,7 @@ DVR的计划即决定什么时候关闭flv文件，打开新的flv文件，主�
 
 DVR的apply决定了是否对某个流开启dvr，默认的all是对所有开启。
 这个功能是SRS实现nginx提供的control module的一个基础，而且更丰富。
-也就是可以支持用户调用[http raw api](./http-api)控制是否以及何时DVR。
+也就是可以支持用户调用[http raw api](./http-api.md)控制是否以及何时DVR。
 参考[351](https://github.com/ossrs/srs/issues/459#issuecomment-134983742)
 
 Apply可以对多个流进行录制，譬如对`live/stream1`和`live/stream2`录制，可以配置成：
@@ -144,7 +144,7 @@ vhost xxx {
 }
 ```
 
-可以使用RAW API控制DVR，参考[319](https://github.com/ossrs/srs/issues/319)和[wiki](./http-api#raw-dvr).
+可以使用RAW API控制DVR，参考[319](https://github.com/ossrs/srs/issues/319)和[wiki](./http-api.md#raw-dvr).
 
 ## Custom Path
 
@@ -228,7 +228,7 @@ api-server的日志：
 127.0.0.1 - - [03/Jan/2015:15:25:48] "POST /api/v1/dvrs HTTP/1.1" 200 1 "" "SRS(Simple RTMP Server)2.0.88"
 ```
 
-更多HTTP回调的信息，请参考 [HttpCallback](./http-callback)
+更多HTTP回调的信息，请参考 [HttpCallback](./http-callback.md)
 
 ## Bug
 

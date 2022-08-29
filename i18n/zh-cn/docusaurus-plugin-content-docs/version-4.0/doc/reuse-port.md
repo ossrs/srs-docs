@@ -8,7 +8,7 @@ hide_table_of_contents: false
 # Reuse Port
 
 SRS2的性能有大幅的提升，参考[SRS2性能](https://github.com/ossrs/srs/tree/2.0release#performance)。SRS3我们支持了源站集群，
-解决了源站的性能瓶颈，参考[OriginCluster](./sample-origin-cluster)；对于边缘服务器，我们提供了TCP代理方案，
+解决了源站的性能瓶颈，参考[OriginCluster](./sample-origin-cluster.md)；对于边缘服务器，我们提供了TCP代理方案，
 参考[go-oryx](https://github.com/ossrs/go-oryx)；对于边缘服务器，我们还可以支持SO_REUSEPORT，可以在服务器上启动多个Edge进程。
 
 ![](/img/doc-guides-reuse-port-001.png)

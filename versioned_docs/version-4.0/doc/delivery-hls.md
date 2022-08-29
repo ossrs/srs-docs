@@ -13,13 +13,13 @@ RTMP is Adobe RTMP (Realtime Message Protocol), for low latency live streaming, 
 
 HLS is Apple HLS (HTTP Live Streaming), for both live and VOD streaming over HTTP, and the standard protocol on Apple platforms.
 
-Servers delivering both HLS and RTMP can support all screens. For RTMP, see: [RTMP Delivery](./delivery-rtmp)。
+Servers delivering both HLS and RTMP can support all screens. For RTMP, see: [RTMP Delivery](./delivery-rtmp.md)。
 
-For information comparing RTMP and HLS, read [RTMP PK HLS](./rtmp-pk-http).
+For information comparing RTMP and HLS, read [RTMP PK HLS](./rtmp-pk-http.md).
 
-For information about how to deploy SRS to support HLS, read [Usage: HLS](./sample-hls).
+For information about how to deploy SRS to support HLS, read [Usage: HLS](./sample-hls.md).
 
-For cluster to deliver HLS, to serve a vast set of visitors, please see [Nginx for HLS](./nginx-for-hls).
+For cluster to deliver HLS, to serve a vast set of visitors, please see [Nginx for HLS](./nginx-for-hls.md).
 
 ## Use Scenario
 
@@ -281,7 +281,7 @@ hls_window >= sum(each ts duration in m3u8)
 ```
 * hls_path: The path to save m3u8 and ts files, where m3u8 and ts files are saved.
 * hls_m3u8_file: The filename of the m3u8 file, with variables [vhost], [app] and [stream] available for replacement.
-* hls_ts_file: The filename of the ts file, with some variables in [dvr variables](./dvr#custom-path). And, variable [seq] is the ts seqence number.
+* hls_ts_file: The filename of the ts file, with some variables in [dvr variables](./dvr.md#custom-path). And, variable [seq] is the ts seqence number.
 ```bash
 For RTMP stream: rtmp://localhost/live/livestream
 HLS path: 
@@ -310,7 +310,7 @@ The ts url generated to: http://your-server/live/livestream-0.ts
 * on_hls: callback when ts generated.
 * on_hls_notify: callback when ts generated, use [ts_url] as a variable, uses GET method. Can be used to push ts files to can network.
 
-For how to deploy SRS to deliver HLS, read [Usage: HLS](./sample-hls)
+For how to deploy SRS to deliver HLS, read [Usage: HLS](./sample-hls.md)
 
 ## HTTP Callback
 
@@ -332,11 +332,11 @@ SRS3 fixed it by using the number of AAC samples to calculate the TS DTS, it wor
 
 ## HLSAudioOnly
 
-SRS support delivering pure audio stream by HLS. The audio codec requires AAC, user must transcode other codecs to AAC, read [Usage: Transcode2HLS](./sample-transcode-to-hls)
+SRS support delivering pure audio stream by HLS. The audio codec requires AAC, user must transcode other codecs to AAC, read [Usage: Transcode2HLS](./sample-transcode-to-hls.md)
 
-For information about dropping video, read [Transcode: Disable Stream](./ffmpeg#drop-video-or-audio)
+For information about dropping video, read [Transcode: Disable Stream](./ffmpeg.md#drop-video-or-audio)
 
-There is no special configuration for pure audio for HLS. Please read [Usage: HLS](./sample-hls)
+There is no special configuration for pure audio for HLS. Please read [Usage: HLS](./sample-hls.md)
 
 ## HLS and Forwarding
 

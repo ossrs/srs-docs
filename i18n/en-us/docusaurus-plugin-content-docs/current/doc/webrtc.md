@@ -84,7 +84,7 @@ The streams for SRS [usage](https://github.com/ossrs/srs/tree/4.0release#usage):
 
 ## HTTP API
 
-About the API for WebRTC, please read [publish](./http-api#webrtc-publish) and [play](./http-api#webrtc-play).
+About the API for WebRTC, please read [publish](./http-api.md#webrtc-publish) and [play](./http-api.md#webrtc-play).
 
 ## RTMP to RTC
 
@@ -98,7 +98,7 @@ docker run --rm --env CANDIDATE=$CANDIDATE \
   objs/srs -c conf/rtmp2rtc.conf
 ```
 
-> Note: Please set CANDIDATE as the ip of server, please read [CANDIDATE](./webrtc#config-candidate).
+> Note: Please set CANDIDATE as the ip of server, please read [CANDIDATE](./webrtc.md#config-candidate).
 
 Use FFmpeg docker to push to localhost:
 
@@ -124,7 +124,7 @@ docker run --rm --env CANDIDATE=$CANDIDATE \
   objs/srs -c conf/rtc.conf
 ```
 
-> Note: Please set CANDIDATE as the ip of server, please read [CANDIDATE](./webrtc#config-candidate).
+> Note: Please set CANDIDATE as the ip of server, please read [CANDIDATE](./webrtc.md#config-candidate).
 
 Play the stream in browser:
 
@@ -145,7 +145,7 @@ docker run --rm --env CANDIDATE=$CANDIDATE \
   objs/srs -c conf/rtc2rtmp.conf
 ```
 
-> Note: Please set CANDIDATE as the ip of server, please read [CANDIDATE](./webrtc#config-candidate).
+> Note: Please set CANDIDATE as the ip of server, please read [CANDIDATE](./webrtc.md#config-candidate).
 
 The streams:
 
@@ -166,7 +166,7 @@ docker run --rm --env CANDIDATE=$CANDIDATE \
   objs/srs -c conf/rtc.conf
 ```
 
-> Note: Please set CANDIDATE as the ip of server, please read [CANDIDATE](./webrtc#config-candidate).
+> Note: Please set CANDIDATE as the ip of server, please read [CANDIDATE](./webrtc.md#config-candidate).
 
 Then startup the signaling, please read [usage](http://ossrs.net/srs.release/wiki/https://github.com/ossrs/signaling#usage):
 
@@ -192,7 +192,7 @@ Or by the IP [https://192.168.3.6/demos/one2one.html?autostart=true](https://192
 
 ## SFU: Video Room
 
-Please follow [SFU: One to One](./webrtc#sfu-one-to-one), and open the bellow demo pages.
+Please follow [SFU: One to One](./webrtc.md#sfu-one-to-one), and open the bellow demo pages.
 
 To open [http://localhost/demos/room.html?autostart=true](http://localhost/demos/room.html?autostart=true)
 
@@ -202,7 +202,7 @@ Or by the IP [https://192.168.3.6/demos/room.html?autostart=true](https://192.16
 
 ## Room to Live
 
-Please follow [SFU: One to One](./webrtc#sfu-one-to-one), and please convert RTC to RTMP, for FFmpeg to mix the streams.
+Please follow [SFU: One to One](./webrtc.md#sfu-one-to-one), and please convert RTC to RTMP, for FFmpeg to mix the streams.
 
 ```bash
 export CANDIDATE="192.168.1.10"

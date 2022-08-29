@@ -17,7 +17,7 @@ hide_table_of_contents: false
 
 > Note: 这个看似很容易，甚至直接在 SRS 官网中就能点开两个页面，但是一定要自己用 SRS 搭建出来才算，而不是直接打开线上的演示网页。
 
-具体怎么做呢？请参考 [Getting Started](./getting-started)。
+具体怎么做呢？请参考 [Getting Started](./getting-started.md)。
 
 接触一个新的东西，首先就要有直观的体验和感觉，这个门槛虽然看起来很简单，但是它涉及到了音视频的几乎全链路的东西：
 - FFmpeg，强大的音视频客户端，推拉流和编解码，以及各种处理的能力。
@@ -44,12 +44,12 @@ hide_table_of_contents: false
 
 第三个门槛：了解每个纵向的技术点，应用场景，代码和问题排查，大约 3 ～ 6 月左右。
 
-- [视频专栏](./introduction#effective-srs)，包括环境搭建，代码分析，还有零声学院专业老师的讲解。
-- [解决方案](./introduction#solution-guides)，大家在各个不同场景中，应用 SRS 的分享和探索。
-- [部署方案](./introduction#deployment-guides)，如何部署实现不同的具体功能，这些功能可以组合起来使用。
-- [集群和扩展](./introduction#cluster-guides)，当业务量上升，如何扩展单机到集群，如何服务不同区域的用户。
-- [集成和定制](./introduction#integration-guides)，如何和现有系统对接，如何验证用户，安全和防盗链机制等。
-- [深度分析](./introduction#develop-guide)，协程原理，代码分析，高性能服务器框架，性能优化等。
+- [视频专栏](./introduction.md#effective-srs)，包括环境搭建，代码分析，还有零声学院专业老师的讲解。
+- [解决方案](./introduction.md#solution-guides)，大家在各个不同场景中，应用 SRS 的分享和探索。
+- [部署方案](./introduction.md#deployment-guides)，如何部署实现不同的具体功能，这些功能可以组合起来使用。
+- [集群和扩展](./introduction.md#cluster-guides)，当业务量上升，如何扩展单机到集群，如何服务不同区域的用户。
+- [集成和定制](./introduction.md#integration-guides)，如何和现有系统对接，如何验证用户，安全和防盗链机制等。
+- [深度分析](./introduction.md#develop-guide)，协程原理，代码分析，高性能服务器框架，性能优化等。
 
 如果能踏踏实实的了解完 SRS，音视频真不难。
 

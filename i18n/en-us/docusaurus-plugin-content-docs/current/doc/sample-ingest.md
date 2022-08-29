@@ -8,13 +8,13 @@ hide_table_of_contents: false
 # Ingest deploy example
 
 SRS can start process to ingest file/stream/device, transcode or not,
-then publish to SRS. For detail, read [Ingest](./ingest).
+then publish to SRS. For detail, read [Ingest](./ingest.md).
 
 **Suppose the server ip is 192.168.1.170**
 
 ## Step 1, get SRS
 
-For detail, read [GIT](./git)
+For detail, read [GIT](./git.md)
 
 ```bash
 git clone https://github.com/ossrs/srs
@@ -29,7 +29,7 @@ git pull
 
 ## Step 2, build SRS
 
-For detail, read [Build](./install)
+For detail, read [Build](./install.md)
 
 ```bash
 ./configure --ffmpeg-tool=on && make
@@ -37,7 +37,7 @@ For detail, read [Build](./install)
 
 ## Step 3, config SRS
 
-For detail, read [Ingest](./ingest)
+For detail, read [Ingest](./ingest.md)
 
 Save bellow as config, or use `conf/ingest.conf`:
 
@@ -63,7 +63,7 @@ vhost __defaultVhost__ {
 
 ## Step 4, start SRS
 
-For detail, read [Ingest](./ingest)
+For detail, read [Ingest](./ingest.md)
 
 ```bash
 ./objs/srs -c conf/ingest.conf
@@ -74,7 +74,7 @@ The streams on SRS:
 
 ## Step 5, play RTMP
 
-For detail, read [Ingest](./ingest)
+For detail, read [Ingest](./ingest.md)
 
 RTMP url is: `rtmp://192.168.1.170:1935/live/livestream`
 

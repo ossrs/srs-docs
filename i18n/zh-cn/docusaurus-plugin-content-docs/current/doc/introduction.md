@@ -31,7 +31,7 @@ Please read [Getting Started](../doc/getting-started).
 * [陈海博：SRS在安防中的应用](https://www.bilibili.com/video/BV11S4y197Zx)
 * 最佳实践：[一对一通话](https://mp.weixin.qq.com/s/xWe6f9WRhtwnpJQ8SO0Eeg)，[多人通话](https://mp.weixin.qq.com/s/CM2h99A1e_masL5sjkp4Zw)和[直播连麦](https://mp.weixin.qq.com/s/7xexl07rrWBdh8xennXK3w)
 * [最佳实践：如何扩展你的SRS并发能力？](https://mp.weixin.qq.com/s/pd9YQS0WR3hSuHybkm1F7Q)
-* SRS是单进程模型，不支持多进程；可以使用[集群](https://mp.weixin.qq.com/s/pd9YQS0WR3hSuHybkm1F7Q) 或者[ReusePort](./reuse-port)扩展多进程(多核)能力。
+* SRS是单进程模型，不支持多进程；可以使用[集群](https://mp.weixin.qq.com/s/pd9YQS0WR3hSuHybkm1F7Q) 或者[ReusePort](./reuse-port.md)扩展多进程(多核)能力。
 * [基于HLS-TS&RTMP-FLV的微信小程序点直播方案](https://mp.weixin.qq.com/s/xhScUrkoroM7Q7ziODHyMA)
 * [借力SRS落地实际业务的几个关键事项](https://mp.weixin.qq.com/s/b19kBer_phZl4n4oUBOvxQ)
 * [干货 | 基于SRS直播平台的监控系统之实现思路与过程](https://mp.weixin.qq.com/s/QDTtW85giKmryhvCBkyyCg)
@@ -48,7 +48,7 @@ Please read [Getting Started](../doc/getting-started).
 * [协程原理：函数调用过程、参数和寄存器](https://mp.weixin.qq.com/s/2TsYSiV8ysyLrELHdlHtjg)，剖析SRS协程实现的最底层原理。
 * [性能优化：SRS为何能做到同类的三倍](https://mp.weixin.qq.com/s/r2jn1GAcHe08IeTW32OyuQ)，论性能优化的七七八八、前前后后。
 * [SRS代码分析](https://github.com/xialixin/srs_code_note/blob/master/doc/srs_note.md)，分析SRS结构和代码逻辑，类结构图，线程模型，模块架构。
-* [Third-party Client SDK](./client-sdk): 第三方厂商提供的客户端推流和播放的SDK，一般是移动端包括Andoird和iOS。
+* [Third-party Client SDK](./client-sdk.md): 第三方厂商提供的客户端推流和播放的SDK，一般是移动端包括Andoird和iOS。
 * [轻量线程分析](https://github.com/ossrs/state-threads#analysis)，分析SRS依赖的库ST的关键技术。
 * [SRS代码分析](https://github.com/xialixin/srs_code_note/blob/master/doc/srs_note.md)，分析SRS结构和代码逻辑，类结构图，线程模型，模块架构。
 * [深度: 掀起你的汇编来：如何移植ST协程到其他系统或CPU？](https://mp.weixin.qq.com/s/dARz99INVlGuoFW6K7SXaw)

@@ -13,7 +13,7 @@ RTMP is the kernel feature of SRS.
 
 ## Step 1, get SRS
 
-For detail, read [GIT](./git)
+For detail, read [GIT](./git.md)
 
 ```bash
 git clone https://github.com/ossrs/srs
@@ -28,7 +28,7 @@ git pull
 
 ## Step 2, build SRS
 
-For detail, read [Build](./install)
+For detail, read [Build](./install.md)
 
 ```bash
 ./configure && make
@@ -36,7 +36,7 @@ For detail, read [Build](./install)
 
 ## Step 3, config SRS
 
-For detail, read [RTMP](./delivery-rtmp)
+For detail, read [RTMP](./delivery-rtmp.md)
 
 Save bellow as config, or use `conf/rtmp.conf`:
 
@@ -50,7 +50,7 @@ vhost __defaultVhost__ {
 
 ## Step 4, start SRS
 
-For detail, read [RTMP](./delivery-rtmp)
+For detail, read [RTMP](./delivery-rtmp.md)
 
 ```bash
 ./objs/srs -c conf/rtmp.conf
@@ -58,7 +58,7 @@ For detail, read [RTMP](./delivery-rtmp)
 
 ## Step 5, start encoder
 
-For detail, read [RTMP](./delivery-rtmp)
+For detail, read [RTMP](./delivery-rtmp.md)
 
 Use FFMPEG to publish stream:
 
@@ -80,7 +80,7 @@ Stream: livestream
 
 ## Step 6, play RTMP
 
-For detail, read [RTMP](./delivery-rtmp)
+For detail, read [RTMP](./delivery-rtmp.md)
 
 RTMP url is: `rtmp://192.168.1.170:1935/live/livestream`
 

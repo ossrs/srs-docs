@@ -9,11 +9,11 @@ hide_table_of_contents: false
 
 SRS（Simple RTMP Server）分发RTMP是核心功能，srs的主要定位就是分发RTMP低延时流媒体，同时支持分发HLS流。
 
-RTMP和HLS的优势参考：[HLS](./delivery-hls)
+RTMP和HLS的优势参考：[HLS](./delivery-hls.md)
 
-RTMP和HLS的比较参考：[RTMP PK HLS](./rtmp-pk-http)
+RTMP和HLS的比较参考：[RTMP PK HLS](./rtmp-pk-http.md)
 
-部署RTMP的实例参考：[Usage: RTMP](./sample-rtmp)
+部署RTMP的实例参考：[Usage: RTMP](./sample-rtmp.md)
 
 ## 应用场景
 
@@ -65,9 +65,9 @@ FMS URL: rtmp://192.168.1.170/live
 Stream: livestream
 ```
 
-RTMP的URL规则，Vhost规则，参考：[RTMP URL&Vhost](./rtmp-url-vhost)
+RTMP的URL规则，Vhost规则，参考：[RTMP URL&Vhost](./rtmp-url-vhost.md)
 
-部署分发RTMP流的实例，参考：[Usage: RTMP](./sample-rtmp)
+部署分发RTMP流的实例，参考：[Usage: RTMP](./sample-rtmp.md)
 
 如下图所示：
 ![FMLE推流到SRS](http://ossrs.net/srs.release/wiki/images/FMLE.png)
@@ -78,7 +78,7 @@ RTMP的URL规则，Vhost规则，参考：[RTMP URL&Vhost](./rtmp-url-vhost)
 
 ## RTMP流的低延时配置
 
-RTMP流的延时在1-3秒，比HLS的延时更靠谱，低延时的配置参考：[低延时](./low-latency)
+RTMP流的延时在1-3秒，比HLS的延时更靠谱，低延时的配置参考：[低延时](./low-latency.md)
 
 Winlin 2013.10
 

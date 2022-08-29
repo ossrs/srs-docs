@@ -14,7 +14,7 @@ Vhost(Virtual Host)就是虚拟域，用来隔离客户或业务。如下图所�
 
 ![](/img/doc-main-concepts-rtmp-url-vhost-001.png)
 
-RTMP和HLS的优势参考：[HLS](./delivery-hls)
+RTMP和HLS的优势参考：[HLS](./delivery-hls.md)
 
 ## Use Scenarios
 
@@ -189,7 +189,7 @@ RTMP URL一般是不带参数，类似于http的query，有时候为了特殊的
 * `http://192.168.1.100/live/livestream.m3u8?vhost=demo.srs.com&token=xxx`
 * `webrtc://192.168.1.100/live/livestream?vhost=demo.srs.com&token=xxx`
 
-> Note: SRT由于协议的特殊性，无法使用这种方式，详细请参考[SRT Parameters](./srt-url)
+> Note: SRT由于协议的特殊性，无法使用这种方式，详细请参考[SRT Parameters](./srt-url.md)
 
 ## URL of SRS
 

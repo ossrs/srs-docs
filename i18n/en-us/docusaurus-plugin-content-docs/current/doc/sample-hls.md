@@ -13,7 +13,7 @@ We show how to delivery HLS by SRS.
 
 ## Step 1, get SRS
 
-For detail, read [GIT](./git)
+For detail, read [GIT](./git.md)
 
 ```bash
 git clone https://github.com/ossrs/srs
@@ -28,7 +28,7 @@ git pull
 
 ## Step 2, build SRS
 
-For detail, read [Build](./install)
+For detail, read [Build](./install.md)
 
 ```bash
 ./configure && make
@@ -36,7 +36,7 @@ For detail, read [Build](./install)
 
 ## Step 3, config SRS
 
-For detail, read [HLS](./delivery-hls)
+For detail, read [HLS](./delivery-hls.md)
 
 Save bellow as config, or use `conf/hls.conf`:
 
@@ -61,11 +61,11 @@ vhost __defaultVhost__ {
 
 > Note: You can also use other web server, such as NGINX, to delivery files of HLS.
 
-> Note: The hls_path must exists, srs never create it. For detail, read [HLS](./delivery-hls)
+> Note: The hls_path must exists, srs never create it. For detail, read [HLS](./delivery-hls.md)
 
 ## Step 4, start SRS
 
-For detail, read [HLS](./delivery-hls)
+For detail, read [HLS](./delivery-hls.md)
 
 ```bash
 ./objs/srs -c conf/hls.conf
@@ -73,7 +73,7 @@ For detail, read [HLS](./delivery-hls)
 
 ## Step 5, start publisher
 
-For detail, read [HLS](./delivery-hls)
+For detail, read [HLS](./delivery-hls.md)
 
 Use FFMPEG to publish stream:
 
@@ -87,7 +87,7 @@ Use FFMPEG to publish stream:
 ```
 
 Or use FMLE(which support h.264+aac) to publish, read 
-[Transcode2HLS](./sample-transcode-to-hls)：
+[Transcode2HLS](./sample-transcode-to-hls.md)：
 
 ```bash
 FMS URL: rtmp://192.168.1.170/live
@@ -100,7 +100,7 @@ The stream in SRS:
 
 ## Step 6, play RTMP stream
 
-For detail, read [HLS](./delivery-hls)
+For detail, read [HLS](./delivery-hls.md)
 
 RTMP url is: `rtmp://192.168.1.170:1935/live/livestream`
 
@@ -110,7 +110,7 @@ Note: Please replace all ip 192.168.1.170 to your server ip.
 
 ## Step 7, play HLS stream
 
-For detail, read [HLS](./delivery-hls)
+For detail, read [HLS](./delivery-hls.md)
 
 HLS url： `http://192.168.1.170:8080/live/livestream.m3u8`
 

@@ -94,7 +94,7 @@ vhost dvr.srs.com {
 
 ## ATC
 
-When [RTMP ATC](./rtmp-atc) is on,
+When [RTMP ATC](./rtmp-atc.md) is on,
 RTMP always disable the time_jitter.
 
 Winlin 2015.4

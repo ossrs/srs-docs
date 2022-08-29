@@ -13,7 +13,7 @@ SRS支持DASH的详细步骤。
 
 ## 第一步，获取SRS
 
-详细参考[GIT获取代码](./git)
+详细参考[GIT获取代码](./git.md)
 
 ```bash
 git clone https://github.com/ossrs/srs
@@ -28,7 +28,7 @@ git pull
 
 ## 第二步，编译SRS
 
-详细参考[Build](./install)
+详细参考[Build](./install.md)
 
 ```bash
 ./configure && make

@@ -7,10 +7,10 @@ hide_table_of_contents: false
 
 # 转码后分发HLS部署实例
 
-HLS需要h.264+aac，若符合这个要求可以按照[Usage: HLS](./delivery-hls)部署，若不符合这个要求则需要转码。
+HLS需要h.264+aac，若符合这个要求可以按照[Usage: HLS](./delivery-hls.md)部署，若不符合这个要求则需要转码。
 
 如何知道流是否是h264+aac编码：
-* [Usage: HLS](./delivery-hls)中的`Q&A`说明的问题。
+* [Usage: HLS](./delivery-hls.md)中的`Q&A`说明的问题。
 * 看编码器的参数，FMLE可以选视频编码为vp6或者h264，音频一般为mp3/NellyMoser。，所以FMLE肯定推流是不符合要求的。
 * 看SRS的日志，若显示`hls only support video h.264/avc codec. ret=601`，就明显说明是编码问题。
 
@@ -20,7 +20,7 @@ HLS需要h.264+aac，若符合这个要求可以按照[Usage: HLS](./delivery-hl
 
 ## 第一步，获取SRS
 
-详细参考[GIT获取代码](./git)
+详细参考[GIT获取代码](./git.md)
 
 ```bash
 git clone https://github.com/ossrs/srs
@@ -35,7 +35,7 @@ git pull
 
 ## 第二步，编译SRS
 
-详细参考[Build](./install)
+详细参考[Build](./install.md)
 
 ```bash
 ./configure --ffmpeg-tool=on && make
@@ -43,7 +43,7 @@ git pull
 
 ## 第三步，编写SRS配置文件
 
-详细参考[HLS分发](./delivery-hls)
+详细参考[HLS分发](./delivery-hls.md)
 
 将以下内容保存为文件，譬如`conf/transcode2hls.audio.only.conf`，服务器启动时指定该配置文件(srs的conf文件夹有该文件)。
 
@@ -85,7 +85,7 @@ vhost __defaultVhost__ {
 
 ## 第四步，启动SRS
 
-详细参考[HLS分发](./delivery-hls)
+详细参考[HLS分发](./delivery-hls.md)
 
 ```bash
 ./objs/srs -c conf/transcode2hls.audio.only.conf
@@ -93,7 +93,7 @@ vhost __defaultVhost__ {
 
 ## 第五步，启动推流编码器
 
-详细参考[HLS分发](./delivery-hls)
+详细参考[HLS分发](./delivery-hls.md)
 
 使用FFMPEG命令推流：
 
@@ -124,7 +124,7 @@ Stream: livestream
 
 ## 第七步，观看RTMP流
 
-详细参考[HLS分发](./delivery-hls)
+详细参考[HLS分发](./delivery-hls.md)
 
 RTMP流地址为：`rtmp://192.168.1.170/live/livestream_ff`
 
@@ -134,7 +134,7 @@ RTMP流地址为：`rtmp://192.168.1.170/live/livestream_ff`
 
 ## 第八步，观看HLS流
 
-详细参考[HLS分发](./delivery-hls)
+详细参考[HLS分发](./delivery-hls.md)
 
 HLS流地址为： `http://192.168.1.170:8080/live/livestream_ff.m3u8`
 

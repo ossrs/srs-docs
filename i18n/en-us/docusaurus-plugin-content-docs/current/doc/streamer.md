@@ -23,7 +23,7 @@ Remark: The streamer will demux other protocol then push to SRS over RTMP, so al
 
 ## Build
 
-Build SRS with stream caster, read [Build](./install)
+Build SRS with stream caster, read [Build](./install.md)
 
 ```
 ./configure --stream-caster=on

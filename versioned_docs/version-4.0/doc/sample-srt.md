@@ -13,7 +13,7 @@ Delivery SRT by SRS:
 
 ## Step 1, get SRS
 
-For detail, read [GIT](./git)
+For detail, read [GIT](./git.md)
 
 ```bash
 git clone https://github.com/ossrs/srs
@@ -28,7 +28,7 @@ git pull
 
 ## Step 2, build SRS
 
-For detail, read [Build](./install)
+For detail, read [Build](./install.md)
 
 ```bash
 ./configure --srt=on && make
@@ -54,7 +54,7 @@ vhost __defaultVhost__ {
 }
 ```
 
-> Note: About more parameters, please see [SRT Parameters](./srt-params).
+> Note: About more parameters, please see [SRT Parameters](./srt-params.md).
 
 > Note: More discussion about SRT, please read [#1147](https://github.com/ossrs/srs/issues/1147#issuecomment-577469119).
 

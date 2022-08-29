@@ -13,7 +13,7 @@ Example for HLS Edge Cluster, like to create a CDN to deliver HLS files.
 
 ## Step 1, Get SRS code
 
-For detail, read [GIT](./git)
+For detail, read [GIT](./git.md)
 
 ```bash
 git clone https://github.com/ossrs/srs
@@ -28,7 +28,7 @@ git pull
 
 ## Step 2, Configure and build SRS
 
-For detail, read [Build](./install)
+For detail, read [Build](./install.md)
 
 ```bash
 ./configure && make
@@ -36,7 +36,7 @@ For detail, read [Build](./install)
 
 ## Step 3, Config origin srs, to generate HLS files
 
-See [HLS](./delivery-hls).
+See [HLS](./delivery-hls.md).
 
 Please use config `conf/hls.origin.conf`, or create a config file by:
 
@@ -59,7 +59,7 @@ vhost __defaultVhost__ {
 
 ## Step 4, Config edge NGINX to deliver HLS files.
 
-See [Nginx for HLS](./nginx-for-hls).
+See [Nginx for HLS](./nginx-for-hls.md).
 
 Save bellow as config, or use `conf/hls.edge.conf`:
 

@@ -11,30 +11,30 @@ hide_table_of_contents: false
 
 为何要用[k8s](https://docs.kubernetes.io/zh/docs/concepts/overview/what-is-kubernetes)部署SRS集群？
 
-* Simple(简单有效): 这玩意儿真的非常简单、高效便捷、直击服务部署和维护的痛点。羽扇纶巾，谈笑间强撸灰飞湮灭，不信一起来看[QuickStart](./k8s#quick-start).
+* Simple(简单有效): 这玩意儿真的非常简单、高效便捷、直击服务部署和维护的痛点。羽扇纶巾，谈笑间强撸灰飞湮灭，不信一起来看[QuickStart](./k8s.md#quick-start).
 * Declarative deployment(声明式部署)：只需要根据业务量声明需要多少个SRS，自动配置和更新SLB，不用启动服务和看门狗，也不用机器故障时一顿操作猛如虎的迁移和更新。
 * Expand easily(扩容很容易): K8S可以自动扩容底层基础设施，例如可通过[ESS](https://essnew.console.aliyun.com/)自动，而业务集群(如SRS Edge)通过修改Pod数量(或根据策略)实现扩容。
 * Rolling Update(滚动式更新): K8S可以在不中断服务的前提下，实现服务的更新、回滚和灰度发布，这是提供稳定可靠高效服务的大杀器，总不能每次更新就被用户投诉吧？总不能每次都半夜三更提心吊胆吧？
 
 本文介绍了，在不同的业务场景下，如何使用[ACK(AlibabaCloud Container Service for Kubernetes)](https://www.alibabacloud.com/product/kubernetes)构建SRS集群。
 
-1. [Deploy to Cloud Platforms](./k8s#deploy-to-cloud-platforms): 直接部署GitHub项目到云平台K8s。
-2. [Quick Start](./k8s#quick-start): 快速入门，在ACK中部署单SRS源站服务。
-3. [SRS Shares Volume with Nginx](./k8s#srs-shares-volume-with-nginx): SRS能分发简单的HTTP，也能和Nginx配合工作提供更强大的HTTP能力，比如：SRS分发RTMP/HTTP-FLV等流协议，Nginx分发HLS。
-4. [SRS Edge Cluster for High Concurrency Streaming](./k8s#srs-edge-cluster-for-high-concurrency-streaming): SRS边缘集群，支持高并发流媒体播放，减轻源站压力，分离源站关键业务，在SLB下自动扩容和更新。
-5. [SRS Origin Cluster for a Large Number of Streams](./k8s#srs-origin-cluster-for-a-large-number-of-streams): SRS源站集群，支持大规模的推流，流的自动发现，以及流的灾备。
-6. [SRS Cluster Update, Rollback, Gray Release with Zero Downtime](./k8s#srs-cluster-update-rollback-gray-release-with-zero-downtime): 如何在不中断服务的前提下，实现SRS集群的更新、回滚和灰度发布。
-    1. [SRS Cluster Rolling Update](./k8s#srs-cluster-rolling-update): 在平滑退出基础上的滚动更新，集群更新的基础机制。
-    2. [SRS Cluster Rolling Back](./k8s#srs-cluster-rolling-back): 在平滑退出基础上的发布回滚，发布遇到问题首先考虑回滚。
-    3. [SRS Cluster Canary Release](./k8s#srs-cluster-canary-release): 金丝雀升级，可精确控制的流量控制和回滚。
-7. [Useful Tips](./k8s#useful-tips): 补充的实用话题和场景
-    1. [Create K8S Cluster in ACK](./k8s#create-k8s-cluster-in-ack): 在阿里云ACK创建你的K8S集群。
-    2. [Publish Demo Streams to SRS](./k8s#publish-demo-streams-to-srs): 推送SRS的演示流，可直接推源站，也可以推边缘集群。
-    3. [Cleanup For DVR/HLS Temporary Files](./k8s#cleanup-for-dvrhls-temporary-files): 定期，比如每天凌晨1点，清理临时文件。
-    4. [Use One SLB and EIP for All Streaming Service](./k8s#use-one-slb-and-eip-for-all-streaming-service): 使用一个SLB(EIP)对外提供RTMP、HTTP-FLV、HLS等服务。
-    5. [Build SRS Origin Cluster as Deployment](./k8s#build-srs-origin-cluster-as-deployment): 除了以StatefulSet有状态应用方式部署Origin Cluster，我们还可以选择Deployment无状态应用方式。
-    6. [Managing Compute Resources for Containers](./k8s#managing-compute-resources-for-containers): 资源的申请和限制，以及如何调度和限制如何生效。
-    7. [Auto Reload by Inotify](./k8s#auto-reload-by-inotify): SRS侦听ConfigMap的变更，并支持自动reload。
+1. [Deploy to Cloud Platforms](./k8s.md#deploy-to-cloud-platforms): 直接部署GitHub项目到云平台K8s。
+2. [Quick Start](./k8s.md#quick-start): 快速入门，在ACK中部署单SRS源站服务。
+3. [SRS Shares Volume with Nginx](./k8s.md#srs-shares-volume-with-nginx): SRS能分发简单的HTTP，也能和Nginx配合工作提供更强大的HTTP能力，比如：SRS分发RTMP/HTTP-FLV等流协议，Nginx分发HLS。
+4. [SRS Edge Cluster for High Concurrency Streaming](./k8s.md#srs-edge-cluster-for-high-concurrency-streaming): SRS边缘集群，支持高并发流媒体播放，减轻源站压力，分离源站关键业务，在SLB下自动扩容和更新。
+5. [SRS Origin Cluster for a Large Number of Streams](./k8s.md#srs-origin-cluster-for-a-large-number-of-streams): SRS源站集群，支持大规模的推流，流的自动发现，以及流的灾备。
+6. [SRS Cluster Update, Rollback, Gray Release with Zero Downtime](./k8s.md#srs-cluster-update-rollback-gray-release-with-zero-downtime): 如何在不中断服务的前提下，实现SRS集群的更新、回滚和灰度发布。
+    1. [SRS Cluster Rolling Update](./k8s.md#srs-cluster-rolling-update): 在平滑退出基础上的滚动更新，集群更新的基础机制。
+    2. [SRS Cluster Rolling Back](./k8s.md#srs-cluster-rolling-back): 在平滑退出基础上的发布回滚，发布遇到问题首先考虑回滚。
+    3. [SRS Cluster Canary Release](./k8s.md#srs-cluster-canary-release): 金丝雀升级，可精确控制的流量控制和回滚。
+7. [Useful Tips](./k8s.md#useful-tips): 补充的实用话题和场景
+    1. [Create K8S Cluster in ACK](./k8s.md#create-k8s-cluster-in-ack): 在阿里云ACK创建你的K8S集群。
+    2. [Publish Demo Streams to SRS](./k8s.md#publish-demo-streams-to-srs): 推送SRS的演示流，可直接推源站，也可以推边缘集群。
+    3. [Cleanup For DVR/HLS Temporary Files](./k8s.md#cleanup-for-dvrhls-temporary-files): 定期，比如每天凌晨1点，清理临时文件。
+    4. [Use One SLB and EIP for All Streaming Service](./k8s.md#use-one-slb-and-eip-for-all-streaming-service): 使用一个SLB(EIP)对外提供RTMP、HTTP-FLV、HLS等服务。
+    5. [Build SRS Origin Cluster as Deployment](./k8s.md#build-srs-origin-cluster-as-deployment): 除了以StatefulSet有状态应用方式部署Origin Cluster，我们还可以选择Deployment无状态应用方式。
+    6. [Managing Compute Resources for Containers](./k8s.md#managing-compute-resources-for-containers): 资源的申请和限制，以及如何调度和限制如何生效。
+    7. [Auto Reload by Inotify](./k8s.md#auto-reload-by-inotify): SRS侦听ConfigMap的变更，并支持自动reload。
 
 ## Deploy to Cloud Platforms
 
@@ -48,7 +48,7 @@ SRS提供了一系列的模版项目，可以快速部署到云平台K8s：
 
 ## Quick Start
 
-假设你有一个k8s集群（如果没有可以从[Create K8S Cluster in ACK](./k8s#create-k8s-cluster-in-ack)轻松创建），执行下面的命令应该是成功的：
+假设你有一个k8s集群（如果没有可以从[Create K8S Cluster in ACK](./k8s.md#create-k8s-cluster-in-ack)轻松创建），执行下面的命令应该是成功的：
 
 ```bash
 kubectl cluster-info
@@ -128,7 +128,7 @@ spec:
 EOF
 ```
 
-> Note: 如果是自动创建SLB和EIP，那么HLS和RTMP/HTTP-FLV的IP是不一样的，你可以选择手动指定SLB，这两个服务可以用同一个SLB，参考[Use One SLB and EIP for All Streaming Service](./k8s#ack-srs-buy-slb-eip)。
+> Note: 如果是自动创建SLB和EIP，那么HLS和RTMP/HTTP-FLV的IP是不一样的，你可以选择手动指定SLB，这两个服务可以用同一个SLB，参考[Use One SLB and EIP for All Streaming Service](./k8s.md#ack-srs-buy-slb-eip)。
 
 **Step 3:** 大功告成。查询服务的EIP地址，你就可以推拉流了。
 
@@ -141,7 +141,7 @@ srs-origin-service   LoadBalancer   172.21.12.131   28.170.32.118
 
 例子中的IP是`28.170.32.118`，就可以推流到这个公网IP地址，也可以从这个地址播放：
 
-* Publish RTMP to `rtmp://28.170.32.118/live/livestream` or [Publish Demo Streams to SRS](./k8s#ack-srs-publish-demo-stream-to-origin).
+* Publish RTMP to `rtmp://28.170.32.118/live/livestream` or [Publish Demo Streams to SRS](./k8s.md#ack-srs-publish-demo-stream-to-origin).
 * Play RTMP from [rtmp://28.170.32.118/live/livestream](http://ossrs.net/players/srs_player.html?app=live&stream=livestream&server=28.170.32.118&port=1935&autostart=true&vhost=28.170.32.118)
 * Play HTTP-FLV from [http://28.170.32.118:8080/live/livestream.flv](http://ossrs.net/players/srs_player.html?app=live&stream=livestream.flv&server=28.170.32.118&port=8080&autostart=true&vhost=28.170.32.118&schema=http)
 * Play HLS from [http://28.170.32.118:8080/live/livestream.m3u8](http://ossrs.net/players/srs_player.html?app=live&stream=livestream.m3u8&server=28.170.32.118&port=8080&autostart=true&vhost=28.170.32.118&schema=http)
@@ -274,11 +274,11 @@ EOF
 
 > Note: 我们通过Service暴露端口，对外提供服务，其中RTMP(1935)/FLV(8080)/API(1985)由SRS提供服务，HLS(80)由Nginx提供服务。
 
-> Note: 这里我们选择ACK自动创建SLB和EIP，也可以手动指定SLB，参考[Use One SLB and EIP for All Streaming Service](./k8s#ack-srs-buy-slb-eip)。
+> Note: 这里我们选择ACK自动创建SLB和EIP，也可以手动指定SLB，参考[Use One SLB and EIP for All Streaming Service](./k8s.md#ack-srs-buy-slb-eip)。
 
 **Step 3:** 大功告成。你可以推拉流了，其中HLS流可以从SRS(8080)播放，也可以从Nginx(80)播放：
 
-* Publish RTMP to `rtmp://28.170.32.118/live/livestream` or [Publish Demo Streams to SRS](./k8s#ack-srs-publish-demo-stream-to-origin).
+* Publish RTMP to `rtmp://28.170.32.118/live/livestream` or [Publish Demo Streams to SRS](./k8s.md#ack-srs-publish-demo-stream-to-origin).
 * Play RTMP from [rtmp://28.170.32.118/live/livestream](http://ossrs.net/players/srs_player.html?app=live&stream=livestream&server=28.170.32.118&port=1935&autostart=true&vhost=28.170.32.118)
 * Play HTTP-FLV from [http://28.170.32.118:8080/live/livestream.flv](http://ossrs.net/players/srs_player.html?app=live&stream=livestream.flv&server=28.170.32.118&port=8080&autostart=true&vhost=28.170.32.118&schema=http)
 * Play HLS from [http://28.170.32.118:8080/live/livestream.m3u8](http://ossrs.net/players/srs_player.html?app=live&stream=livestream.m3u8&server=28.170.32.118&port=8080&autostart=true&vhost=28.170.32.118&schema=http)
@@ -292,9 +292,9 @@ EOF
 
 Edge Cluster实现了合并回源，对于某一路流，不管有多少客户端播放，Edge Server都只会从Origin Server取一路流，这样可以通过扩展Edge Cluster来增加支持的播放能力，也就是CDN网络具备的重要能力：高并发。
 
-> Note: Edge Cluster根据客户端播放的协议不同，可以分为[RTMP Edge Cluster](./sample-rtmp-cluster)或[HTTP-FLV Edge Cluster](./sample-http-flv-cluster)，详细请参考相关Wiki。
+> Note: Edge Cluster根据客户端播放的协议不同，可以分为[RTMP Edge Cluster](./sample-rtmp-cluster.md)或[HTTP-FLV Edge Cluster](./sample-http-flv-cluster.md)，详细请参考相关Wiki。
 
-对于自建源站，没有那么多播放量，为何不建议使用[SRS单源站](./k8s#quick-start)直接提供服务，而要用Edge Cluster呢？主要场景分析如下：
+对于自建源站，没有那么多播放量，为何不建议使用[SRS单源站](./k8s.md#quick-start)直接提供服务，而要用Edge Cluster呢？主要场景分析如下：
 
 * 防止Origin过载，即使推流非常少而且播放的流也不多，比如自建源站后使用CDN回源，在多家CDN回源时，也可能一个CDN一条流会有多个回源连接。使用Edge能保护Origin不因为回源造成Origin问题，最多就是某些Edge被回源打挂。
 * 可以使用多个Edge Cluster（只需要再加srs-edge-service就可以），对外用不同的SLB暴露，可以针对每个SLB限流，防止CDN之间互相干扰。这样能保证某些CDN是可用的，而不是Origin挂了后所有CDN都不可用。
@@ -427,7 +427,7 @@ EOF
 
 > Note: 服务`srs-http-service`暴露的是Nginx(80)端口，对外提供HLS服务；以及SRS(1985)端口，对外提供API服务。
 
-> Note: 这里我们选择ACK自动创建SLB和EIP，也可以手动指定SLB，参考[Use One SLB and EIP for All Streaming Service](./k8s#ack-srs-buy-slb-eip)。
+> Note: 这里我们选择ACK自动创建SLB和EIP，也可以手动指定SLB，参考[Use One SLB and EIP for All Streaming Service](./k8s.md#ack-srs-buy-slb-eip)。
 
 **Step 2:** 创建SRS边缘配置、应用和服务。
 
@@ -526,24 +526,24 @@ EOF
 
 > Note: 服务`srs-edge-service`暴露的是SRS的1935端口，对外提供RTMP服务；以及SRS的8080端口，对外提供HTTP-FLV服务。
 
-> Note: 这里我们选择ACK自动创建SLB和EIP，也可以手动指定SLB，参考[Use One SLB and EIP for All Streaming Service](./k8s#ack-srs-buy-slb-eip)。
+> Note: 这里我们选择ACK自动创建SLB和EIP，也可以手动指定SLB，参考[Use One SLB and EIP for All Streaming Service](./k8s.md#ack-srs-buy-slb-eip)。
 
 **Step 3:** 大功告成。你可以推拉流了，其中HLS流可以从Nginx(80)播放，RTMP和HTTP-FLV从SRS播放：
 
-* Publish RTMP to `rtmp://28.170.32.118/live/livestream` or [Publish Demo Streams to SRS](./k8s#ack-srs-publish-demo-stream-to-edge).
+* Publish RTMP to `rtmp://28.170.32.118/live/livestream` or [Publish Demo Streams to SRS](./k8s.md#ack-srs-publish-demo-stream-to-edge).
 * Play RTMP from [rtmp://28.170.32.118/live/livestream](http://ossrs.net/players/srs_player.html?app=live&stream=livestream&server=28.170.32.118&port=1935&autostart=true&vhost=28.170.32.118)
 * Play HTTP-FLV from [http://28.170.32.118:8080/live/livestream.flv](http://ossrs.net/players/srs_player.html?app=live&stream=livestream.flv&server=28.170.32.118&port=8080&autostart=true&vhost=28.170.32.118&schema=http)
 * Play HLS from [http://28.170.32.118/live/livestream.m3u8](http://ossrs.net/players/srs_player.html?app=live&stream=livestream.m3u8&server=28.170.32.118&port=80&autostart=true&vhost=28.170.32.118&schema=http)
 
 > Note: 请将上面的EIP换成你自己的，可用命令`kubectl get svc/srs-http-service`或`kubectl get svc/srs-edge-service`查看你的EIP。
 
-> Note: 如果是自动创建SLB和EIP，那么HLS和RTMP/HTTP-FLV的IP是不一样的，你可以选择手动指定SLB，这两个服务可以用同一个SLB，参考[Use One SLB and EIP for All Streaming Service](./k8s#ack-srs-buy-slb-eip)。
+> Note: 如果是自动创建SLB和EIP，那么HLS和RTMP/HTTP-FLV的IP是不一样的，你可以选择手动指定SLB，这两个服务可以用同一个SLB，参考[Use One SLB and EIP for All Streaming Service](./k8s.md#ack-srs-buy-slb-eip)。
 
 ## SRS Origin Cluster for a Large Number of Streams
 
 本章描述了基于K8S，如何构建Origin Cluster支持超多推流场景。
 
-[Origin Cluster](./origin-cluster)通过配置其他源站的信息，在本源站没有流时查询到流的位置，通过RTMP 302定向到指定源站，具体原理可以参考[#464](https://github.com/ossrs/srs/issues/464)。主要应用场景如下：
+[Origin Cluster](./origin-cluster.md)通过配置其他源站的信息，在本源站没有流时查询到流的位置，通过RTMP 302定向到指定源站，具体原理可以参考[#464](https://github.com/ossrs/srs/issues/464)。主要应用场景如下：
 
 * 源站灾备：即使流比较少，也可以用两个源站，这样可以将流分散到不同的源站，避免源站出现问题时影响所有的流。
 * 海量推流：单源站可以支持1000到3000路流，高码率的流支持的路数更少，有DVR和HLS时支持的路更少，源站集群有多个源站同时接收推流，可以支持10k~100k推流，参考[规格](https://github.com/ossrs/srs/issues/464#issuecomment-586550917)。
@@ -567,7 +567,7 @@ EOF
 
 ![ACK: SRS Origin Cluster for a Large Number of Streams](/img/doc-advanced-guides-k8s-005.png)
 
-**Step 1:** 由于SRS和Nginx不在一个Pod可能也不在一个Node，需要创建依赖的PV(Persistent Volume)持久化卷，可[购买NAS](./k8s#ack-create-cluster-pv-nas)例如：
+**Step 1:** 由于SRS和Nginx不在一个Pod可能也不在一个Node，需要创建依赖的PV(Persistent Volume)持久化卷，可[购买NAS](./k8s.md#ack-create-cluster-pv-nas)例如：
 
 * 驱动类型(PV driver)：`alicloud/nas`
 * 挂载点(PV server)，可在控制台创建、查看和复制：`1abb5492f7-ubq80.cn-beijing.nas.aliyuncs.com`
@@ -748,7 +748,7 @@ EOF
 
 > Note: 源站对外提供API服务`srs-api-service`，我们选择第一个源站对外提供API服务，实际上源站集群需要改进这点，参考[#1607](https://github.com/ossrs/srs/issues/1607#issuecomment-586549464)。
 
-> Note: 这里我们选择ACK自动创建SLB和EIP，也可以手动指定SLB，参考[Use One SLB and EIP for All Streaming Service](./k8s#ack-srs-buy-slb-eip)。
+> Note: 这里我们选择ACK自动创建SLB和EIP，也可以手动指定SLB，参考[Use One SLB and EIP for All Streaming Service](./k8s.md#ack-srs-buy-slb-eip)。
 
 * `nginx-origin-deploy`: 创建一个无状态应用[k8s deployment](https://v1-14.docs.kubernetes.io/docs/concepts/workloads/controllers/deployment)，运行Nginx，将SRS静态文件写入PV，从共享存储PV读取HLS和静态文件。
 * `srs-http-service`: 创建一个服务[k8s service](https://v1-14.docs.kubernetes.io/docs/concepts/services-networking/service)，基于SLB提供HTTP服务，Nginx对外提供HLS服务。
@@ -824,7 +824,7 @@ EOF
 
 > Note: Nginx通过Shared Volume(PV)读取SRS Origin生成的切片，对外提供HLS服务。
 
-> Note: 这里我们选择ACK自动创建SLB和EIP，也可以手动指定SLB，参考[Use One SLB and EIP for All Streaming Service](./k8s#ack-srs-buy-slb-eip)。
+> Note: 这里我们选择ACK自动创建SLB和EIP，也可以手动指定SLB，参考[Use One SLB and EIP for All Streaming Service](./k8s.md#ack-srs-buy-slb-eip)。
 
 **Step 3:** 创建SRS边缘配置、应用和服务。
 
@@ -921,20 +921,20 @@ EOF
 
 > Note: Edge Server的配置中，通过源站在Headless Service注册的内部域名`srs-origin-0.socs`等等，连接到Origin Server。
 
-> Note: 这里我们选择ACK自动创建SLB和EIP，也可以手动指定SLB，参考[Use One SLB and EIP for All Streaming Service](./k8s#ack-srs-buy-slb-eip)。
+> Note: 这里我们选择ACK自动创建SLB和EIP，也可以手动指定SLB，参考[Use One SLB and EIP for All Streaming Service](./k8s.md#ack-srs-buy-slb-eip)。
 
 **Step 4:** 大功告成。你可以推拉流了，其中HLS流可以从Nginx(80)播放，RTMP和HTTP-FLV从SRS播放：
 
-* Publish RTMP to `rtmp://28.170.32.118/live/livestream` or [Publish Demo Streams to SRS](./k8s#ack-srs-publish-demo-stream-to-edge).
+* Publish RTMP to `rtmp://28.170.32.118/live/livestream` or [Publish Demo Streams to SRS](./k8s.md#ack-srs-publish-demo-stream-to-edge).
 * Play RTMP from [rtmp://28.170.32.118/live/livestream](http://ossrs.net/players/srs_player.html?app=live&stream=livestream&server=28.170.32.118&port=1935&autostart=true&vhost=28.170.32.118)
 * Play HTTP-FLV from [http://28.170.32.118:8080/live/livestream.flv](http://ossrs.net/players/srs_player.html?app=live&stream=livestream.flv&server=28.170.32.118&port=8080&autostart=true&vhost=28.170.32.118&schema=http)
 * Play HLS from [http://28.170.32.118/live/livestream.m3u8](http://ossrs.net/players/srs_player.html?app=live&stream=livestream.m3u8&server=28.170.32.118&port=80&autostart=true&vhost=28.170.32.118&schema=http)
 
 > Note: 请将上面的EIP换成你自己的，可用命令`kubectl get svc/srs-http-service`或`kubectl get svc/srs-edge-service`查看你的EIP。
 
-> Note: 如果是自动创建SLB和EIP，那么HLS和RTMP/HTTP-FLV的IP是不一样的，你可以选择手动指定SLB，这两个服务可以用同一个SLB，参考[Use One SLB and EIP for All Streaming Service](./k8s#ack-srs-buy-slb-eip)。
+> Note: 如果是自动创建SLB和EIP，那么HLS和RTMP/HTTP-FLV的IP是不一样的，你可以选择手动指定SLB，这两个服务可以用同一个SLB，参考[Use One SLB and EIP for All Streaming Service](./k8s.md#ack-srs-buy-slb-eip)。
 
-这里我们选择的是有状态集群方式，也可以选择以无状态应用(Deployment)方式部署源站，参考[Build SRS Origin Cluster as Deployment](./k8s#build-srs-origin-cluster-as-deployment)。
+这里我们选择的是有状态集群方式，也可以选择以无状态应用(Deployment)方式部署源站，参考[Build SRS Origin Cluster as Deployment](./k8s.md#build-srs-origin-cluster-as-deployment)。
 
 ## SRS Cluster Update, Rollback, Gray Release with Zero Downtime
 
@@ -959,11 +959,11 @@ EOF
 
 > Note: 平滑更新的关键是平滑退出，重点是边缘集群的更新，对于源站集群我们可以选择直接重启，因为一般会有边缘集群作为代理，源站断开后边缘会重试，不影响用户，参考[#1579](https://github.com/ossrs/srs/issues/1579#issuecomment-587233844)
 
-我们重点关注边缘集群的平滑退出，SRS边缘属于长连接无状态服务。和Nginx一样，SRS使用[SIGQUIT](./service#gracefully-upgrade)作为信号，
+我们重点关注边缘集群的平滑退出，SRS边缘属于长连接无状态服务。和Nginx一样，SRS使用[SIGQUIT](./service.md#gracefully-upgrade)作为信号，
 同时配置[force_grace_quit](https://github.com/ossrs/srs/issues/1579#issuecomment-587475077)认为SIGTERM也是平滑退出，收到SIGQUIT信号后，会等待[grace_start_wait](https://github.com/ossrs/srs/issues/1595#issuecomment-587516567)指定的时间，然后关闭Listeners新的连接不会分配到这个服务器，
 然后开始清理并等待现有连接退出，所有连接退出后还会等待[grace_final_wait](https://github.com/ossrs/srs/issues/1579#issuecomment-587414898)指定的时间，才会退出。
 
-以之前部署的SRS源站和边缘集群为例，参考[SRS Origin Cluster for a Large Number of Streams](./k8s#srs-origin-cluster-for-a-large-number-of-streams)，SRS边缘的Pod的配置，需要指定平滑退出的参数，例如：
+以之前部署的SRS源站和边缘集群为例，参考[SRS Origin Cluster for a Large Number of Streams](./k8s.md#srs-origin-cluster-for-a-large-number-of-streams)，SRS边缘的Pod的配置，需要指定平滑退出的参数，例如：
 
 ```bash
 cat <<EOF | kubectl apply -f -
@@ -1089,9 +1089,9 @@ tcp        0      0 172.20.0.62:1935        172.20.0.1:12066        ESTABLISHED 
 
 下面我们会分几个部分，看发布中遇到的问题：
 
-1. [SRS Cluster Rolling Update](./k8s#srs-cluster-rolling-update): 在平滑退出基础上的滚动更新，集群更新的基础机制。
-1. [SRS Cluster Rolling Back](./k8s#srs-cluster-rolling-back): 在平滑退出基础上的发布回滚，发布遇到问题首先考虑回滚。
-1. [SRS Cluster Canary Release](./k8s#srs-cluster-canary-release): 金丝雀升级，可精确控制的流量控制和回滚。
+1. [SRS Cluster Rolling Update](./k8s.md#srs-cluster-rolling-update): 在平滑退出基础上的滚动更新，集群更新的基础机制。
+1. [SRS Cluster Rolling Back](./k8s.md#srs-cluster-rolling-back): 在平滑退出基础上的发布回滚，发布遇到问题首先考虑回滚。
+1. [SRS Cluster Canary Release](./k8s.md#srs-cluster-canary-release): 金丝雀升级，可精确控制的流量控制和回滚。
 
 ### SRS Cluster Rolling Update
 
@@ -1356,13 +1356,13 @@ while true; do ffmpeg -f flv -i rtmp://r.ossrs.net/live/livestream 2>&1|grep ser
 
 本章补充了一些比较实用的话题，以及前面章节用到的一些工具和场景。
 
-1. [Create K8S Cluster in ACK](./k8s#create-k8s-cluster-in-ack): 在阿里云ACK创建你的K8S集群，我们基于ACK构建流媒体服务。
-1. [Publish Demo Streams to SRS](./k8s#publish-demo-streams-to-srs): 推送SRS的演示流，可直接推源站，也可以推边缘集群。
-1. [Cleanup For DVR/HLS Temporary Files](./k8s#cleanup-for-dvrhls-temporary-files): 定期清理临时文件，比如每天凌晨1点，删除3天前的临时文件。
-1. [Use One SLB and EIP for All Streaming Service](./k8s#use-one-slb-and-eip-for-all-streaming-service): 使用一个SLB(EIP)对外提供RTMP、HTTP-FLV、HLS等服务。
-1. [Build SRS Origin Cluster as Deployment](./k8s#build-srs-origin-cluster-as-deployment): 除了以StatefulSet有状态应用方式部署Origin Cluster，我们还可以选择Deployment无状态应用方式。
-1. [Managing Compute Resources for Containers](./k8s#managing-compute-resources-for-containers): 资源的申请和限制，以及如何调度和限制如何生效。
-1. [Auto Reload by Inotify](./k8s#auto-reload-by-inotify): SRS侦听ConfigMap的变更，并支持自动reload。
+1. [Create K8S Cluster in ACK](./k8s.md#create-k8s-cluster-in-ack): 在阿里云ACK创建你的K8S集群，我们基于ACK构建流媒体服务。
+1. [Publish Demo Streams to SRS](./k8s.md#publish-demo-streams-to-srs): 推送SRS的演示流，可直接推源站，也可以推边缘集群。
+1. [Cleanup For DVR/HLS Temporary Files](./k8s.md#cleanup-for-dvrhls-temporary-files): 定期清理临时文件，比如每天凌晨1点，删除3天前的临时文件。
+1. [Use One SLB and EIP for All Streaming Service](./k8s.md#use-one-slb-and-eip-for-all-streaming-service): 使用一个SLB(EIP)对外提供RTMP、HTTP-FLV、HLS等服务。
+1. [Build SRS Origin Cluster as Deployment](./k8s.md#build-srs-origin-cluster-as-deployment): 除了以StatefulSet有状态应用方式部署Origin Cluster，我们还可以选择Deployment无状态应用方式。
+1. [Managing Compute Resources for Containers](./k8s.md#managing-compute-resources-for-containers): 资源的申请和限制，以及如何调度和限制如何生效。
+1. [Auto Reload by Inotify](./k8s.md#auto-reload-by-inotify): SRS侦听ConfigMap的变更，并支持自动reload。
 
 ### Create K8S Cluster in ACK
 
@@ -1381,7 +1381,7 @@ while true; do ffmpeg -f flv -i rtmp://r.ossrs.net/live/livestream 2>&1|grep ser
 
 <a name="ack-create-cluster-pv-nas"></a>
 
-**Step 3:** [可选] [购买NAS](./k8s#ack-create-cluster-pv-nas)，创建源站集群使用的PV(Persistent Volume)持久化卷，可在[NAS](https://nasnext.console.aliyun.com/cn-zhangjiakou/filesystem)控制台`创建文件系统`。
+**Step 3:** [可选] [购买NAS](./k8s.md#ack-create-cluster-pv-nas)，创建源站集群使用的PV(Persistent Volume)持久化卷，可在[NAS](https://nasnext.console.aliyun.com/cn-zhangjiakou/filesystem)控制台`创建文件系统`。
 
 * 文件系统类型：可选择`通用型`，或者要求更快的速度可选择`极速型`。
 * 区域：请选择`华北3(张家口)`，千万注意别选错了，要和ACK集群在同一VPC中。
@@ -1420,7 +1420,7 @@ while true; do ffmpeg -f flv -i rtmp://r.ossrs.net/live/livestream 2>&1|grep ser
 kubectl cluster-info
 ```
 
-接下来，就可以创建SRS集群了，参考[QuickStart](./k8s#quick-start).
+接下来，就可以创建SRS集群了，参考[QuickStart](./k8s.md#quick-start).
 
 ### Publish Demo Streams to SRS
 
@@ -1514,7 +1514,7 @@ spec:
 EOF
 ```
 
-> Note: 若存在源站服务，可以直接推源站，参考[Publish Demo Streams to SRS](./k8s#ack-srs-publish-demo-stream-to-origin)。
+> Note: 若存在源站服务，可以直接推源站，参考[Publish Demo Streams to SRS](./k8s.md#ack-srs-publish-demo-stream-to-origin)。
 
 ### Cleanup For DVR/HLS Temporary Files
 
@@ -1651,7 +1651,7 @@ metadata:
 
 > Remark: 如果是专有版K8S，而不是托管版K8S，需要安装CCM(Cloud Controller Manager)才能使用SLB，否则会发现指定了SLB的ID无法使用，Service无ExternalIP等。
 
-例如，我们以[Quick Start](./k8s#quick-start)为例，可以修改Service如下：
+例如，我们以[Quick Start](./k8s.md#quick-start)为例，可以修改Service如下：
 
 ```bash
 cat <<EOF | kubectl apply -f -
@@ -1689,7 +1689,7 @@ EOF
 
 ### Build SRS Origin Cluster as Deployment
 
-在源站集群部署中，可以选择StatefulSet(有状态应用)方式部署，参考：[SRS Origin Cluster for a Large Number of Streams](./k8s#srs-origin-cluster-for-a-large-number-of-streams)。
+在源站集群部署中，可以选择StatefulSet(有状态应用)方式部署，参考：[SRS Origin Cluster for a Large Number of Streams](./k8s.md#srs-origin-cluster-for-a-large-number-of-streams)。
 当然也可以选择Deployment(无状态应用)方式部署，这两种方式的差异参考[#464](https://github.com/ossrs/srs/issues/464#issuecomment-586550787)。
 
 | 对比项 | 无状态源站集群 | 有状态源站集群 |
@@ -1703,7 +1703,7 @@ EOF
 * 灰度时，可以手动更改某些源站的镜像版本，出现问题手动回滚，不适合较多机器的情况。
 * 更新和回滚时，都会造成源站重启，由于有边缘作为代理，所以用户不会中断，但边缘会有重试，用户可能会有感知。
 
-> Note: 关于Rolling Update，参考[SRS Cluster Update, Rollback, Gray Release with Zero Downtime](./k8s#srs-cluster-update-rollback-gray-release-with-zero-downtime)。
+> Note: 关于Rolling Update，参考[SRS Cluster Update, Rollback, Gray Release with Zero Downtime](./k8s.md#srs-cluster-update-rollback-gray-release-with-zero-downtime)。
 
 我们以部署三个源站为例，全部以无状态应用(Deployment)方式部署：
 
@@ -1865,7 +1865,7 @@ EOF
 
 > Note: 源站对外提供API服务`srs-api-service`，我们选择第一个源站对外提供API服务，实际上源站集群需要改进这点，参考[#1607](https://github.com/ossrs/srs/issues/1607#issuecomment-586549464)。
 
-> Note: 这里我们选择ACK自动创建SLB和EIP，也可以手动指定SLB，参考[Use One SLB and EIP for All Streaming Service](./k8s#ack-srs-buy-slb-eip)。
+> Note: 这里我们选择ACK自动创建SLB和EIP，也可以手动指定SLB，参考[Use One SLB and EIP for All Streaming Service](./k8s.md#ack-srs-buy-slb-eip)。
 
 ### Managing Compute Resources for Containers
 

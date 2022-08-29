@@ -7,15 +7,15 @@ hide_table_of_contents: false
 
 # HTTP FLV deploy example
 
-About the HTTP FLV of SRS, read [HTTP FLV](./delivery-http-flv#about-http-flv)
+About the HTTP FLV of SRS, read [HTTP FLV](./delivery-http-flv.md#about-http-flv)
 
-How to use multiple process for HTTP FLV? Please read [Reuse Port](./reuse-port) for detail.
+How to use multiple process for HTTP FLV? Please read [Reuse Port](./reuse-port.md) for detail.
 
 **Suppose the server ip is 192.168.1.170**
 
 ## Step 1, get SRS
 
-For detail, read [GIT](./git)
+For detail, read [GIT](./git.md)
 
 ```bash
 git clone https://github.com/ossrs/srs
@@ -30,7 +30,7 @@ git pull
 
 ## Step 2, build SRS
 
-For detail, read [Build](./install)
+For detail, read [Build](./install.md)
 
 ```bash
 ./configure && make
@@ -38,7 +38,7 @@ For detail, read [Build](./install)
 
 ## Step 3, config SRS
 
-For detail, read [HTTP FLV](./delivery-http-flv)
+For detail, read [HTTP FLV](./delivery-http-flv.md)
 
 Save bellow as config, or use `conf/http.flv.live.conf`:
 
@@ -62,7 +62,7 @@ vhost __defaultVhost__ {
 
 ## Step 4, start SRS
 
-For detail, read [HTTP FLV](./delivery-http-flv)
+For detail, read [HTTP FLV](./delivery-http-flv.md)
 
 ```bash
 ./objs/srs -c conf/http.flv.live.conf
@@ -70,7 +70,7 @@ For detail, read [HTTP FLV](./delivery-http-flv)
 
 ## Step 5, start Encoder
 
-For detail, read read [HTTP FLV](./delivery-http-flv)
+For detail, read read [HTTP FLV](./delivery-http-flv.md)
 
 Use FFMPEG to publish stream:
 
@@ -96,7 +96,7 @@ The streams on SRS:
 
 ## Step 6, play RTMP
 
-For detail, read [HTTP FLV](./delivery-http-flv)
+For detail, read [HTTP FLV](./delivery-http-flv.md)
 
 RTMP url is: `rtmp://192.168.1.170:1935/live/livestream`, User can use vlc to play the RTMP stream.
 
@@ -104,7 +104,7 @@ Note: Please replace all ip 192.168.1.170 to your server ip.
 
 ## Step 7, play HTTP FLV
 
-For detail, read [HTTP FLV](./delivery-http-flv)
+For detail, read [HTTP FLV](./delivery-http-flv.md)
 
 HTTP FLV url: `http://192.168.1.170:8080/live/livestream.flv`, User can use vlc to play the HLS stream. Or, use online SRS player(you must input the flv url): [srs-player](https://ossrs.net/players/srs_player.html)
 
