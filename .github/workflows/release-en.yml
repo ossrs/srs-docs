@@ -222,7 +222,7 @@ jobs:
                 docker rm -f docs-httpx; sleep 0.3;
               done
               docker run -d -it --restart always \
-                --name docs-httpx -p 20080:80 ossrs/httpx:v1.0.19 \
+                --name docs-httpx -p 20080:80 ossrs/httpx:1 \
                 ./bin/httpx-static -http 80 \
                 -proxy http://$SRS_DROPLET_PIP:8107/lts/ \
                 -proxy http://$SRS_DROPLET_PIP:8108/multi_search
