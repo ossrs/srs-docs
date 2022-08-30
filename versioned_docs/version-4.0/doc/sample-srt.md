@@ -72,7 +72,14 @@ Use FFMPEG to publish stream:
 ffmpeg -re -i ./doc/source.flv -c copy -f mpegts 'srt://192.168.1.170:10080?streamid=#!::r=live/livestream,m=publish'
 ```
 
+You're able to play it by ffplay：
+
+```bash
+ffplay 'srt://127.0.0.1:10080?streamid=#!::r=live/livestream,m=request'
+```
+
 The stream in SRS:
+
 * RTMP url：`rtmp://192.168.1.170/live/livestream`
 
 ## Step 6, play RTMP stream

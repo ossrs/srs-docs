@@ -72,7 +72,14 @@ vhost __defaultVhost__ {
 ffmpeg -re -i ./doc/source.flv -c copy -f mpegts 'srt://127.0.0.1:10080?streamid=#!::r=live/livestream,m=publish'
 ```
 
+可直接用ffplay播放：
+
+```bash
+ffplay 'srt://127.0.0.1:10080?streamid=#!::r=live/livestream,m=request'
+```
+
 生成的流地址为：
+
 * RTMP流地址为：`rtmp://192.168.1.170/live/livestream`
 
 ## 第六步，观看RTMP流
