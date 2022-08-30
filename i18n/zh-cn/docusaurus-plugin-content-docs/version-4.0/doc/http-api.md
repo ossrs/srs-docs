@@ -302,7 +302,7 @@ SRS提供了API的导航，即所有支持的API及描述。
 
 ## WebRTC Publish
 
-使用WebRTC推流到SRS时，需要先调用API交换SDK。例如：
+使用WebRTC推流到SRS时，需要先调用API交换SDP。例如：
 
 ```
 POST /rtc/v1/publish/
