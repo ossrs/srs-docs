@@ -33,7 +33,8 @@ vhost your_vhost {
         #           "action": "on_publish",
         #           "client_id": "9308h583",
         #           "ip": "192.168.1.10", "vhost": "video.test.com", "app": "live",
-        #           "stream": "livestream", "param":"?token=xxx&salt=yyy"
+        #           "stream": "livestream", "param":"?token=xxx&salt=yyy", "server_id": "vid-werty",
+        #           "stream_url": "video.test.com/live/livestream", "stream_id": "vid-124q9y3"
         #       }
         # if valid, the hook must return HTTP code 200(Status OK) and response
         # an int value specifies the error code(0 corresponding to success):
@@ -49,7 +50,8 @@ vhost your_vhost {
         #           "action": "on_unpublish",
         #           "client_id": "9308h583",
         #           "ip": "192.168.1.10", "vhost": "video.test.com", "app": "live",
-        #           "stream": "livestream", "param":"?token=xxx&salt=yyy"
+        #           "stream": "livestream", "param":"?token=xxx&salt=yyy", "server_id": "vid-werty",
+        #           "stream_url": "video.test.com/live/livestream", "stream_id": "vid-124q9y3"
         #       }
         # if valid, the hook must return HTTP code 200(Status OK) and response
         # an int value specifies the error code(0 corresponding to success):
@@ -66,7 +68,8 @@ vhost your_vhost {
         #           "client_id": "9308h583",
         #           "ip": "192.168.1.10", "vhost": "video.test.com", "app": "live",
         #           "stream": "livestream", "param":"?token=xxx&salt=yyy",
-        #           "pageUrl": "http://www.test.com/live.html"
+        #           "pageUrl": "http://www.test.com/live.html", "server_id": "vid-werty",
+        #           "stream_url": "video.test.com/live/livestream", "stream_id": "vid-124q9y3"
         #       }
         # if valid, the hook must return HTTP code 200(Status OK) and response
         # an int value specifies the error code(0 corresponding to success):
@@ -82,7 +85,8 @@ vhost your_vhost {
         #           "action": "on_stop",
         #           "client_id": "9308h583",
         #           "ip": "192.168.1.10", "vhost": "video.test.com", "app": "live",
-        #           "stream": "livestream", "param":"?token=xxx&salt=yyy"
+        #           "stream": "livestream", "param":"?token=xxx&salt=yyy", "server_id": "vid-werty",
+        #           "stream_url": "video.test.com/live/livestream", "stream_id": "vid-124q9y3"
         #       }
         # if valid, the hook must return HTTP code 200(Status OK) and response
         # an int value specifies the error code(0 corresponding to success):
@@ -100,7 +104,8 @@ vhost your_vhost {
         #           "ip": "192.168.1.10", "vhost": "video.test.com", "app": "live",
         #           "stream": "livestream", "param":"?token=xxx&salt=yyy",
         #           "cwd": "/usr/local/srs",
-        #           "file": "./objs/nginx/html/live/livestream.1420254068776.flv"
+        #           "file": "./objs/nginx/html/live/livestream.1420254068776.flv", "server_id": "vid-werty",
+        #           "stream_url": "video.test.com/live/livestream", "stream_id": "vid-124q9y3"
         #       }
         # if valid, the hook must return HTTP code 200(Status OK) and response
         # an int value specifies the error code(0 corresponding to success):
@@ -119,7 +124,8 @@ vhost your_vhost {
         #           "url": "live/livestream/2015-04-23/01/476584165.ts",
         #           "m3u8": "./objs/nginx/html/live/livestream/live.m3u8",
         #           "m3u8_url": "live/livestream/live.m3u8",
-        #           "seq_no": 100
+        #           "seq_no": 100, "server_id": "vid-werty",
+        #           "stream_url": "video.test.com/live/livestream", "stream_id": "vid-124q9y3"
         #       }
         # if valid, the hook must return HTTP code 200(Status OK) and response
         # an int value specifies the error code(0 corresponding to success):
@@ -128,16 +134,22 @@ vhost your_vhost {
         # when srs reap a ts file of hls, call this hook,
         # used to push file to cdn network, by get the ts file from cdn network.
         # so we use HTTP GET and use the variable following:
+        #       [server_id], replace with the server_id
         #       [app], replace with the app.
         #       [stream], replace with the stream.
         #       [param], replace with the param.
         #       [ts_url], replace with the ts url.
         # ignore any return data of server.
         # @remark random select a url to report, not report all.
-        on_hls_notify   http://127.0.0.1:8085/api/v1/hls/[app]/[stream]/[ts_url][param];
+        on_hls_notify   http://127.0.0.1:8085/api/v1/hls/[server_id]/[app]/[stream]/[ts_url][param];
     }
 }
 ```
+
+Description about some fields:
+
+* `stream_url`: The stream identify without extension, such as `/live/livestream`.
+* `stream_id`: The id of stream, by which you can query the stream information.
 
 Note: For more information, read the section hooks.callback.vhost.com in conf/full.conf
 
@@ -159,7 +171,9 @@ Body:
   "app": "live",
   "tcUrl": "rtmp://127.0.0.1:1935/live?vhost=__defaultVhost__",
   "stream": "livestream",
-  "param": ""
+  "param": "",
+  "stream_url": "video.test.com/live/livestream",
+  "stream_id": "vid-124q9y3"
 }
 ```
 
@@ -223,19 +237,21 @@ echo json_encode(array("code"=>0, "msg"=>"OK"));
 
 SRS can call HTTP callbacks for events:
 
-| Event | Data | Description |
-| --- | ---- | ---- |
-| on_publish|{<br/> "action": "on_publish",<br/> "client_id": "9308h583",<br/> "ip": "192.168.1.10", <br/> "vhost": "video.test.com", <br/> "app": "live",<br/> "stream": "livestream"<br/> } | When a client publishes a stream, for example, using flash or FMLE to publish a stream to the server.| 
-| on_unpublish|{<br/> "action": "on_unpublish",<br/> "client_id": "9308h583",<br/> "ip": "192.168.1.10", <br/> "vhost": "video.test.com", <br/> "app": "live",<br/> "stream": "livestream"<br/> } | When a client stops publishing a stream.| 
-| on_play|{<br/> "action": "on_play",<br/> "client_id": "9308h583",<br/> "ip": "192.168.1.10", <br/> "vhost": "video.test.com", <br/> "app": "live",<br/> "stream": "livestream",<br/> "pageUrl": "http://a.com/i.html",<br/>"param":"?k=v"<br/> } | When a client starts playing a stream.| 
-| on_stop|{<br/> "action": "on_stop",<br/> "client_id": "9308h583",<br/> "ip": "192.168.1.10", <br/> "vhost": "video.test.com", <br/> "app": "live",<br/> "stream": "livestream"<br/> } | When a client stops playback.| 
-| on_dvr|{<br/> "action": "on_dvr",<br/> "client_id": "9308h583",<br/> "ip": "192.168.1.10", <br/> "vhost": "video.test.com", <br/> "app": "live",<br/> "stream": "livestream",<br/> "cwd": "/opt",<br/> "file": "./l.xxx.flv"<br/> } | When reap a DVR file.|
+* `on_publish`: When a client publishes a stream, for example, using flash or FMLE to publish a stream to the server. 
+* `on_unpublish`: When a client stops publishing a stream. 
+* `on_play`: When a client starts playing a stream. 
+* `on_stop`: When a client stops playback. 
+* `on_dvr`: When reap a DVR file.
+* `on_hls`: When reap a HLS file.
+
+For events `on_publish`和`on_play`:
+* Return Code: SRS requires that the response is an int indicating the error, 0 is success.
 
 Notes:
 * Event: When this event occurs, call back to the specified HTTP URL.
 * HTTP URL: Can be multiple URLs, split by spaces, SRS will notify all one by one.
 * Data: SRS will POST the data to specified HTTP API.
-* Return Code: SRS requires that the response is an int indicating the error, 0 is success.
+
 SRS will disconnect the connection when the response is not 0, or HTTP status is not 200.
 
 ## SRS HTTP Callback Server
