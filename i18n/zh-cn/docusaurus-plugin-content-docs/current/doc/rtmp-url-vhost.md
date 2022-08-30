@@ -227,7 +227,7 @@ SRS常见的三种RTMP URL，详细见下表：
 | ---- | ------ |
 | rtmp://demo.srs.com/live/livestream | 普通用户的标准访问方式，观看直播流 |
 | rtmp://192.168.1.10/live/livestream?vhost=demo.srs.com | 运维对特定服务器排错 |
-| rtmp://demo.srs.com/live/livestream?key=ER892ID839KD9D0A1D87D | token验证用户，或者带宽测试的key验证 |
+| rtmp://demo.srs.com/live/livestream?key=ER892ID839KD9D0A1D87D | token验证用户 |
 
 ## Example Vhosts in SRS
 
@@ -242,7 +242,6 @@ SRS的full.conf配置文件中，有很多Vhost，主要是为了说明各个功
 | HLS | no-hls.vhost.com | HLS实例：如何禁用HLS。|
 | RTMP | min.delay.com | RTMP最低延迟：如何配置最低延迟的RTMP流 |
 | RTMP | refer.anti_suck.com | Refer实例：如何配置Refer防盗链。|
-| RTMP | bandcheck.srs.com | 带宽测试用的vhost，srs测速默认连接到这个vhost。这个vhost配置了带宽测速的key，可测速间隔和最大测速带宽限制。其他Vhost也可以支持测速，只要把这个配置项打开，然后在测速播放器的参数中指明另外的vhost|
 | RTMP | removed.vhost.com | 禁用vhost实例：如何禁用vhost。|
 | Callback | hooks.callback.vhost.com | 设置http callback的实例，当这些事件发生时，SRS会调用指定的http api。其他Vhost将这些配置打开，就可以支持http callback。 |
 | Transcode | mirror.transcode.vhost.com | 转码实例：使用ffmpeg的实例filter，将视频做镜像翻转处理。其他Vhost添加这个配置，就可以对流进行转码。<br/>注：所有转码的流都需要重新推送到SRS，使用不同的流名称（vhost和app也可以不一样）。|

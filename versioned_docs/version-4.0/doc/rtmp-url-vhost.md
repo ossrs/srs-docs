@@ -263,7 +263,6 @@ The full.conf of conf of SRS contains many vhost, which used to show each featur
 | HLS | no-hls.vhost.com | Sample to disable the HLS.| 
 | RTMP | min.delay.com | Sample to config the minimum latency for RTMP.| 
 | RTMP | refer.anti_suck.com | Sample for Refer anti-suck DRM.| 
-| RTMP | bandcheck.srs.com | Sample for bandwidth check config.| 
 | RTMP | removed.vhost.com | Sample to disable vhost.| 
 | Callback | hooks.callback.vhost.com | Sample for http callback.| 
 | Transcode | mirror.transcode.vhost.com | Sample for transcode, to use the sample filter of FFMPEG.| 
