@@ -135,6 +135,45 @@ docker run --rm -it -p 1935:1935 -p 1985:1985 -p 8080:8080 -p 1990:1990 -p 8088:
 
 > Note: 可以打开不同的页面，推拉不同的流，就可以实现视频聊天了。
 
+## SRT for Live Streaming
+
+SRS支持SRT推直播流，使用SRT或其他协议观看。
+
+先用Docker启动SRS：
+
+```bash
+docker run --rm -it -p 1935:1935 -p 1985:1985 -p 8080:8080 -p 10080:10080/udp \
+    registry.cn-hangzhou.aliyuncs.com/ossrs/srs:4 ./objs/srs -c conf/srt.conf
+```
+
+使用 [FFmpeg(点击下载)](https://ffmpeg.org/download.html) 或 [OBS(点击下载)](https://obsproject.com/download) 推流：
+
+```bash
+ffmpeg -re -i ./doc/source.flv -c copy -f mpegts 'srt://127.0.0.1:10080?streamid=#!::r=live/livestream,m=publish'
+```
+
+使用 [ffplay(点击下载)](https://ffmpeg.org/download.html) 或 [OBS(点击下载)](https://obsproject.com/download) 播放：
+
+```bash
+ffplay -an 'srt://127.0.0.1:10080?streamid=#!::r=live/livestream,m=request'
+```
+
+## Multiple Streams
+
+你可以推拉多路流到SRS，不需要特殊的设置，按照前面的步骤运行SRS后，改变推拉流的URL就可以。比如：
+
+* `rtmp://ip/live/livesteam`
+* `rtmp://ip/live/livesteamN`
+* `rtmp://ip/liveN/livesteamN`
+* `srt://ip:10080?streamid=#!::r=liveN/livestreamN,m=publish`
+* `webrtc://localhost/liveN/livestreamN`
+* `http://ip:8080/liveN/livesteamN.flv`
+* `http://ip:8080/liveN/livesteamN.m3u8`
+* `https://ip:8080/liveN/livesteamN.flv`
+* `https://ip:8080/liveN/livesteamN.m3u8`
+
+> Note: 详细请参考[RTMP URL](./rtmp-url-vhost.md)。
+
 ![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/doc/zh/v5/getting-started)
 
 

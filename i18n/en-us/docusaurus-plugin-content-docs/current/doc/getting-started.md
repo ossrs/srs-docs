@@ -135,6 +135,45 @@ Play stream of SRS by [WebRTC: Play](https://192.168.3.82:8088/players/rtc_playe
 
 > Note: If use different streams, you're able to do video chat application.
 
+## SRT for Live Streaming
+
+SRS supports publishing by SRT for live streaming, and play by SRT or other protocols.
+
+先用Docker启动SRS：
+
+```bash
+docker run --rm -it -p 1935:1935 -p 1985:1985 -p 8080:8080 -p 10080:10080/udp \
+    registry.cn-hangzhou.aliyuncs.com/ossrs/srs:4 ./objs/srs -c conf/srt.conf
+```
+
+Publish stream by [FFmpeg](https://ffmpeg.org/download.html) or [OBS](https://obsproject.com/download) :
+
+```bash
+ffmpeg -re -i ./doc/source.flv -c copy -f mpegts 'srt://127.0.0.1:10080?streamid=#!::r=live/livestream,m=publish'
+```
+
+Play stream by [ffplay](https://ffmpeg.org/download.html) or [OBS](https://obsproject.com/download)
+
+```bash
+ffplay -an 'srt://127.0.0.1:10080?streamid=#!::r=live/livestream,m=request'
+```
+
+## Multiple Streams
+
+You're able to publish multiple streams to SRS, by using different URLs.
+
+* `rtmp://ip/live/livesteam`
+* `rtmp://ip/live/livesteamN`
+* `rtmp://ip/liveN/livesteamN`
+* `srt://ip:10080?streamid=#!::r=liveN/livestreamN,m=publish`
+* `webrtc://localhost/liveN/livestreamN`
+* `http://ip:8080/liveN/livesteamN.flv`
+* `http://ip:8080/liveN/livesteamN.m3u8`
+* `https://ip:8080/liveN/livesteamN.flv`
+* `https://ip:8080/liveN/livesteamN.m3u8`
+
+> Note: Please see [RTMP URL](./rtmp-url-vhost.md) for detail.
+
 ![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/doc/en/v5/getting-started)
 
 
