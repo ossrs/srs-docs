@@ -135,6 +135,12 @@
   > 1. 当然使用Nginx代理服务器，也可以解决跨域问题，这样就不需要在SRS设置了。注意只需要代理API，不要代理流媒体，因为流的带宽消耗太高了，会把代理打挂，也没有必要。
   > 1. 使用Nginx或Caddy代理，提供统一的HTTP/HTTPS服务，参考 [#2881](https://github.com/ossrs/srs/issues/2881)
 
+<a name='websocket'></a>
+
+### [Websocket](#websocket)
+* `WebSocket/WS`：如何支持WS-FLV或WS-TS？
+  > 1. 可以用一个Go代理转一次，几行关键代码稳定又可靠，参考[mse.go](https://github.com/winlinvip/videojs-flow/blob/master/demo/mse.go)
+
 <a name='latency'></a>
 
 ### [Latency](#latency)
