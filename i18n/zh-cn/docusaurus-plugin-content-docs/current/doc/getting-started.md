@@ -155,7 +155,7 @@ ffmpeg -re -i ./doc/source.flv -c copy -f mpegts 'srt://127.0.0.1:10080?streamid
 使用 [ffplay(点击下载)](https://ffmpeg.org/download.html) 或 [OBS(点击下载)](https://obsproject.com/download) 播放：
 
 ```bash
-ffplay -an 'srt://127.0.0.1:10080?streamid=#!::r=live/livestream,m=request'
+ffplay 'srt://127.0.0.1:10080?streamid=#!::r=live/livestream,m=request'
 ```
 
 ## Multiple Streams
@@ -164,13 +164,13 @@ ffplay -an 'srt://127.0.0.1:10080?streamid=#!::r=live/livestream,m=request'
 
 * `rtmp://ip/live/livesteam`
 * `rtmp://ip/live/livesteamN`
-* `rtmp://ip/liveN/livesteamN`
-* `srt://ip:10080?streamid=#!::r=liveN/livestreamN,m=publish`
-* `webrtc://localhost/liveN/livestreamN`
-* `http://ip:8080/liveN/livesteamN.flv`
-* `http://ip:8080/liveN/livesteamN.m3u8`
-* `https://ip:8080/liveN/livesteamN.flv`
-* `https://ip:8080/liveN/livesteamN.m3u8`
+* `rtmp://ip/liveN/livestreamN`
+* `srt://ip:10080?streamid=#!::r=anyM/streamN,m=publish`
+* `webrtc://localhost/anyM/streamN`
+* `http://ip:8080/anyM/streamN.flv`
+* `http://ip:8080/anyM/streamN.m3u8`
+* `https://ip:8080/anyM/streamN.flv`
+* `https://ip:8080/anyM/streamN.m3u8`
 
 > Note: 详细请参考[RTMP URL](./rtmp-url-vhost.md)。
 

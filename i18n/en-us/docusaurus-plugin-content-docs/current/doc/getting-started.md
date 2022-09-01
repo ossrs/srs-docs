@@ -155,7 +155,7 @@ ffmpeg -re -i ./doc/source.flv -c copy -f mpegts 'srt://127.0.0.1:10080?streamid
 Play stream by [ffplay](https://ffmpeg.org/download.html) or [OBS](https://obsproject.com/download)
 
 ```bash
-ffplay -an 'srt://127.0.0.1:10080?streamid=#!::r=live/livestream,m=request'
+ffplay 'srt://127.0.0.1:10080?streamid=#!::r=live/livestream,m=request'
 ```
 
 ## Multiple Streams
@@ -164,13 +164,13 @@ You're able to publish multiple streams to SRS, by using different URLs.
 
 * `rtmp://ip/live/livesteam`
 * `rtmp://ip/live/livesteamN`
-* `rtmp://ip/liveN/livesteamN`
-* `srt://ip:10080?streamid=#!::r=liveN/livestreamN,m=publish`
-* `webrtc://localhost/liveN/livestreamN`
-* `http://ip:8080/liveN/livesteamN.flv`
-* `http://ip:8080/liveN/livesteamN.m3u8`
-* `https://ip:8080/liveN/livesteamN.flv`
-* `https://ip:8080/liveN/livesteamN.m3u8`
+* `rtmp://ip/liveN/livestreamN`
+* `srt://ip:10080?streamid=#!::r=anyM/streamN,m=publish`
+* `webrtc://localhost/anyM/streamN`
+* `http://ip:8080/anyM/streamN.flv`
+* `http://ip:8080/anyM/streamN.m3u8`
+* `https://ip:8080/anyM/streamN.flv`
+* `https://ip:8080/anyM/streamN.m3u8`
 
 > Note: Please see [RTMP URL](./rtmp-url-vhost.md) for detail.
 
