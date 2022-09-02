@@ -71,31 +71,35 @@ There are some config for WebRTC:
 
 ## Config: Candidate
 
-由于`candidate`特别、特别、特别的重要，大概有1/3的朋友的问题都是这个配置不对。
-只要`candidate`配置不对，一定会出问题，没有其他可能，是一定会出问题。
+由于`candidate`特别、特别、特别的重要，大概有1/3的朋友的问题都是这个配置不对。只要`candidate`配置不对，一定会出问题，没有其他可能，是一定会出问题。
 
-其实，`candidate`就是服务器的`候选地址`，客户端可以连接的地址`ip:port`，在SDP交换中，
-就有个`candidate`的信息，比如服务器回的answer可能是这样：
+其实，`candidate`就是服务器的`候选地址`，客户端可以连接的地址`ip:port`，在SDP交换中，就有个`candidate`的信息，比如服务器回的answer可能是这样：
 
 ```bash
 type: answer, sdp: v=0
 a=candidate:0 1 udp 2130706431 192.168.3.6 8000 typ host generation 0
 ```
 
-上面SDP中的`192.168.3.6 8000`，就是`candidate listen`这两个配置，即服务器的IP和端口。
-既然是服务器的IP，那么目前有几种方式可以配置：
+上面SDP中的`192.168.3.6 8000`，就是`candidate listen`这两个配置，即服务器的IP和端口。 既然是服务器的IP，那么目前有几种方式可以配置：
 * 直接配置成固定的IP，比如：`candidate 192.168.3.6;`
 * 用命令`ifconfig`获取本机的内网IP，通过环境变量传递给SRS，比如：`candidate $CANDIDATE;`
-* 自动获取，先读取环境变量，然后获取本机网卡的IP，比如：`candidate *;`
+* 自动获取，先读取环境变量，然后获取本机网卡的IP，比如：`candidate *;`，下面会有详细说明。
 * 在url中通过`?eip=x`指定，比如：`webrtc://192.168.3.6/live/livestream?eip=192.168.3.6`
+* 若API和SRS是同一个服务器（默认就是），可以用API的hostname作为CANDIDATE，这种情况下面单独说明。
 
-目前还未实现的方式：
-* 自动获取网卡的配置，需要配置过滤条件，有可能有IPv6地址，或者多个网卡。比如：`candidate eth0; ip_family ipv4;`
-* 配置成域名，SRS解析域名获取IP地址，因为有些终端可能不支持域名只支持IP。比如：`candidate ossrs.net;`
-* 配置多个IP、域名、网卡。比如：`candidate eth0 192.168.3.6 ossrs.net;`
+此外，自动获取本机网卡IP的情况，相关配置如下：
+* `candidate *;`或`candidate 0.0.0.0;`，支持任意IP，就意味着让服务器自己选择，先选公网IP，然后选内网IP。
+* `use_auto_detect_network_ip on;` 若关闭这个功能，则不会自动选择IP。
+* `ip_family ipv4;` 自动选择IP时，选择IPv4还是IPv6的地址。
 
-简单来说，如果在SRS运行的服务器上，运行`ifconfig`获取的IP地址，是客户端访问不了的地址，
-就必须通过配置`candidate`，指定一个客户端能访问的地址。
+由于WebRTC推拉流之前，必须访问HTTP API交换SDP，因此在HTTP请求中的hostname一般就是SRS的公网域名或IP。相关配置如下：
+* `api_as_candidates on;` 是否开启这个功能。若API是单独的服务器，可以关闭这个功能。
+* `resolve_api_domain on;` 若API是域名，是否将域名解析为IP地址。注意Firefox不支持域名，所以一般是推荐打开的。
+* `keep_api_domain on;` 是否保留API的域名，支持域名解析的客户端可以自己解析IP地址，避免服务器实现解析。
+
+> Note: 注意，如果以上途径无法获取CANDIDATE，还是会自动选择一个网卡的IP，避免失败(无CANDIDATE一定失败)。
+
+简单来说，如果在SRS运行的服务器上，运行`ifconfig`获取的IP地址，是客户端访问不了的地址， 就必须通过配置`candidate`，指定一个客户端能访问的地址。
 
 通过`ifconfig`获取本机IP：
 

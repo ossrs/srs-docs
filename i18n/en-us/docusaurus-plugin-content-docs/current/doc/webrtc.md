@@ -20,21 +20,35 @@ There are some config for WebRTC:
 
 ## Config: Candidate
 
-The play will definitely fail if the `CANDIDATE` of config is not correct,
-because it's the RTP server address(`IP` and port) in SDP, the `IP` is `CANDIDATE`:
+Please note that `candidate` is essential important, and most failure is caused by wrong `candidate`, so be careful.
+
+As it shows, `candidate` is server IP to connect to, SRS will response it in SDP answer as `candidate`, like this one:
 
 ```bash
 type: answer, sdp: v=0
 a=candidate:0 1 udp 2130706431 192.168.3.6 8000 typ host generation 0
 ```
 
-So the `CANDIDATE` is `192.168.3.6` here, which is the IP of server.
-We could config it by:
+So the `192.168.3.6 8000` is an endpoint that client could access. There be some IP you can use:
+* Config as fixed IP, such as `candidate 192.168.3.6;`
+* Use `ifconfig` to get server IP and pass by environment variable, such as `candidate $CANDIDATE;`
+* Detect automatically, first by environment, then use server network interface IP, such as `candidate *;`, we will explain at bellow.
+* Specify the `?eip=x` in URL, such as: `webrtc://192.168.3.6/live/livestream?eip=192.168.3.6`
+* Normally API is provided by SRS, so you're able to use hostname of HTTP-API as `candidate`, we will explain at bellow.
 
-* Use plaintext IP directly, such as `candidate 192.168.3.6;`
-* Use command `ifconfig` to retrieve IP of network interface, pass it by ENV, such as `candidate $CANDIDATE;`
-* Try to read the intranet IP from network interface, for example, `candidate *;`
-* Read from query string of stream URL, such as `webrtc://192.168.3.6/live/livestream?eip=192.168.3.6`
+Configurations for automatically detect the IP for `candidate`:
+* `candidate *;` or `candidate 0.0.0.0;` means detect the network interface IP.
+* `use_auto_detect_network_ip on;` If disabled, never detect the IP automatically.
+* `ip_family ipv4;` To filter the IP if automatically detect.
+
+Configurations for using HTTP-API hostname as `candidate`:
+* `api_as_candidates on;` If disabled, never use HTTP API hostname as candidate.
+* `resolve_api_domain on;` If hostname is domain name, resolve to IP address. Note that Firefox does not support domain name.
+* `keep_api_domain on;` Whether keep the domain name to resolve it by client.
+
+> Note: Please note that if no `candidate` specified, SRS will use one automatically detected IP.
+
+In short, the `candidate` must be a IP address that client could connect to.
 
 Use command `ifconfig` to retrieve the IP:
 
