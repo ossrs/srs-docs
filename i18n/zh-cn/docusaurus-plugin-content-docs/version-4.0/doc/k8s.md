@@ -1,6 +1,6 @@
 ---
-title: K8s Guide
-sidebar_label: K8s Guide
+title: K8s集群
+sidebar_label: K8s集群
 hide_title: false
 hide_table_of_contents: false
 ---

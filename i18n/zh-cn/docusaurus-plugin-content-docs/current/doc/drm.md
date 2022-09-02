@@ -1,6 +1,6 @@
 ---
-title: DRM
-sidebar_label: DRM
+title: DRM防盗链
+sidebar_label: DRM防盗链
 hide_title: false
 hide_table_of_contents: false
 ---
@@ -8,22 +8,25 @@ hide_table_of_contents: false
 # DRM
 
 DRM重要的功能就是防盗链，只有允许的用户，才能访问服务器的流。有多种DRM的方式：
-* refer防盗链：检查用户从哪个网站过来的。譬如不是从公司的页面过来的人都不让看。
+* referer防盗链：检查用户从哪个网站过来的。譬如不是从公司的页面过来的人都不让看。
 * token防盗链：用户在播放时，必须先申请token，SRS会回调http检查这个token合法性。
 * FMS token tranverse：边缘RTMP服务器收到每个连接，都去上行节点验证，即token穿越认证。
 * Access服务器：专门的access服务器负责DRM。譬如adobe的access服务器。
 * 推流认证：adobe的RTMP推流时，支持几种认证方式，这个也可以归于防盗链概念。
 
-## Refer Authentication
+<a name='refer-authentication'></a>
+<a name='refer-autisuck'></a>
 
-SRS支持refer防盗链，adobe的flash在播放RTMP流时，会把页面的http url放在请求中，
+## Referer Anti-suck
+
+SRS支持referer防盗链，adobe的flash在播放RTMP流时，会把页面的http url放在请求中，
 as客户端代码不可以更改。当然如果用自己的客户端，不用flash播放流，就可以随意伪造了；
-尽管如此，refer防盗链还是能防住相当一部分盗链。
+尽管如此，referer防盗链还是能防住相当一部分盗链。
 
-配置Refer防盗链，在vhost中开启refer即可，可以指定publish和play的refer：
+配置Referer防盗链，在vhost中开启referer即可，可以指定publish和play的referer：
 
 ```bash
-# the vhost for antisuck.
+# the vhost for anti-suck.
 vhost refer.anti_suck.com {
     # refer hotlink-denial.
     refer {
@@ -49,11 +52,15 @@ vhost refer.anti_suck.com {
 }
 ```
 
-备注：SRS1/2的Refer配置方法和SRS3不一致，SRS3兼容SRS1/2的配置方法。
+> Remark: SRS1/2的Referer配置方法和SRS3不一致，SRS3兼容SRS1/2的配置方法。
+
+支持Referer防盗链的协议包括：
+
+* RTMP：推流和拉流。
 
 ## Token Authentication
 
-token类似于refer，不过是放在URL中，在请求参数中，譬如：
+token类似于referer，不过是放在URL中，在请求参数中，譬如：
 
 ```
 rtmp://vhost/app/stream?token=xxxx
@@ -64,7 +71,7 @@ webrtc://vhost/app/stream?token=xxxx
 
 这样服务器在`on_publish`或`on_play`回调接口中， 就会把url带过去验证。参考：[HTTP callback](./http-callback.md)
 
-token比refer更强悍，可以指定超时时间，可以变更token之类。可惜就是需要服务器端做定制，做验证。 
+token比referer更强悍，可以指定超时时间，可以变更token之类。可惜就是需要服务器端做定制，做验证。 
 SRS提供http回调来做验证，已经有人用这种方式做了，比较简单靠谱。
 
 举个常用的token认证的例子：

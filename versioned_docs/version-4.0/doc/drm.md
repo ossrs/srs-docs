@@ -8,26 +8,29 @@ hide_table_of_contents: false
 # DRM
 
 DRM use to protect the content, can use many strategys:
-* Refer Autisuck: Check the refer(PageUrl) of RTMP connect params, which is set by flash player.
+* Referer Anti-suck: Check the referer(PageUrl) of RTMP connect params, which is set by flash player.
 * Token Authentication: Check the token of RTMP connect params, SRS can use http-callback to verify the token.
 * FMS token tranverse: Edge server will verify each connection on origin server.
 * Access Server: Adobe Access Server.
 * Publish Authentication: The authentication protocol for publish.
 
-## Refer Autisuck
+<a name='refer-authentication'></a>
+<a name='refer-autisuck'></a>
 
-SRS support config the refer to antisuck.
+## Referer Anti-suck
+
+SRS support config the referer to anti-suck.
 
 When play RTMP url, adobe flash player will send the page url in the connect params PageUrl, 
 which is cannot changed by as code, server can check the web page url to ensure the user is ok.
 
 While user use client application, the PageUrl can be any value, for example, 
-use srs-librtmp to play RTMP url, the Refer antisuck is not work.
+use srs-librtmp to play RTMP url, the Referer anti-suck is not work.
 
-To config the refer antisuck in srs:
+To config the referer anti-suck in srs:
 
 ```bash
-# the vhost for antisuck.
+# the vhost for anti-suck.
 vhost refer.anti_suck.com {
     # refer hotlink-denial.
     refer {
@@ -53,11 +56,15 @@ vhost refer.anti_suck.com {
 }
 ```
 
-Remark: SRS3 use new style config for refer, which is compatible with SRS1/2.
+> Remark: SRS3 use new style config for referer, which is compatible with SRS1/2.
+
+The bellow protocols support referer:
+
+* RTMP: Both publisher and player.
 
 ## Token Authentication
 
-The token authentication similar to refer, but the token is put in the url, not in the args of connect:
+The token authentication similar to referer, but the token is put in the url, not in the args of connect:
 
 ```
 rtmp://vhost/app/stream?token=xxxx
@@ -68,7 +75,7 @@ webrtc://vhost/app/stream?token=xxxx
 
 SRS will pass the token in the http-callback. read [HTTP callback](./http-callback.md)
 
-Token is robust then refer, can specifies more params, for instance, the expire time. For example:
+Token is robust then referer, can specifies more params, for instance, the expire time. For example:
 
 1. When user access the web page, web application server can generate a token in the URL, for example, `token = md5(time + id + salt + expire) = 88195f8943e5c944066725df2b1706f8`
 1. The RTMP URL to publish is, for instance, `rtmp://192.168.1.10/live/livestream?time=1402307089&expire=3600&token=88195f8943e5c944066725df2b1706f8`

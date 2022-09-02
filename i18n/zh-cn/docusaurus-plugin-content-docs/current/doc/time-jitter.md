@@ -1,6 +1,6 @@
 ---
-title: Time Jitter
-sidebar_label: Time Jitter
+title: 时间戳矫正
+sidebar_label: 时间戳矫正
 hide_title: false
 hide_table_of_contents: false
 ---
