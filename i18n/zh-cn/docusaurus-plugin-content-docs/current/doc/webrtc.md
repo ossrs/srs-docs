@@ -32,18 +32,74 @@ RTC的配置很多，详细配置参考`full.conf`，如下：
 
 ```bash
 rtc_server {
+    # Whether enable WebRTC server.
+    # Overwrite by env SRS_RTC_SERVER_ENABLED
+    # default: off
     enabled on;
+    # The udp listen port, we will reuse it for connections.
+    # Overwrite by env SRS_RTC_SERVER_LISTEN
+    # default: 8000
     listen 8000;
-    candidate $CANDIDATE;
+    # For WebRTC over TCP directly, not TURN, see https://github.com/ossrs/srs/issues/2852
+    # Some network does not support UDP, or not very well, so we use TCP like HTTP/80 port for firewall traversing.
+    tcp {
+        # Whether enable WebRTC over TCP.
+        # Overwrite by env SRS_RTC_SERVER_TCP_ENABLED
+        # Default: off
+        enabled off;
+        # The TCP listen port for WebRTC. Highly recommend is some normally used ports, such as TCP/80, TCP/443,
+        # TCP/8000, TCP/8080 etc. However SRS default to TCP/8000 corresponding to UDP/8000.
+        # Overwrite by env SRS_RTC_SERVER_TCP_LISTEN
+        # Default: 8000
+        listen 8000;
+    }
+    # The protocol for candidate to use, it can be:
+    #       udp         Generate UDP candidates. Note that UDP server is always enabled for WebRTC.
+    #       tcp         Generate TCP candidates. Fail if rtc_server.tcp(WebRTC over TCP) is disabled.
+    #       all         Generate UDP+TCP candidates. Ignore if rtc_server.tcp(WebRTC over TCP) is disabled.
+    # Note that if both are connected, we will use the first connected(DTLS done) one.
+    # Overwrite by env SRS_RTC_SERVER_PROTOCOL
+    # Default: udp
+    protocol udp;
+    # The exposed candidate IPs, response in SDP candidate line. It can be:
+    #       *           Retrieve server IP automatically, from all network interfaces.
+    #       $CANDIDATE  Read the IP from ENV variable, use * if not set.
+    #       x.x.x.x     A specified IP address or DNS name, use * if 0.0.0.0.
+    # @remark For Firefox, the candidate MUST be IP, MUST NOT be DNS name, see https://bugzilla.mozilla.org/show_bug.cgi?id=1239006
+    # @see https://ossrs.net/lts/zh-cn/docs/v4/doc/webrtc#config-candidate
+    # Overwrite by env SRS_RTC_SERVER_CANDIDATE
+    # default: *
+    candidate *;
 }
 
 vhost rtc.vhost.srs.com {
     rtc {
+        # Whether enable WebRTC server.
+        # Overwrite by env SRS_VHOST_RTC_ENABLED for all vhosts.
+        # default: off
         enabled on;
-        rtmp_to_rtc off;
-        rtc_to_rtmp off;
+        # Whether support NACK.
+        # default: on
         nack on;
+        # Whether support TWCC.
+        # default: on
         twcc on;
+        # The timeout in seconds for session timeout.
+        # Client will send ping(STUN binding request) to server, we use it as heartbeat.
+        # default: 30
+        stun_timeout 30;
+        # The role of dtls when peer is actpass: passive or active
+        # default: passive
+        dtls_role passive;
+        # Whether enable transmuxing RTMP to RTC.
+        # If enabled, transcode aac to opus.
+        # Overwrite by env SRS_VHOST_RTC_RTMP_TO_RTC for all vhosts.
+        # default: off
+        rtmp_to_rtc off;
+        # Whether enable transmuxing RTC to RTMP.
+        # Overwrite by env SRS_VHOST_RTC_RTC_TO_RTMP for all vhosts.
+        # Default: off
+        rtc_to_rtmp off;
     }
 }
 ```
@@ -51,23 +107,17 @@ vhost rtc.vhost.srs.com {
 第一部分，`rtc_server`是全局的RTC服务器的配置，部分关键配置包括：
 * `enabled`：是否开启RTC服务器，默认是off。
 * `listen`：侦听的RTC端口，注意是UDP协议。
-* `candidate`：服务器提供服务的IP地址，由于RTC的特殊性，必须配置这个地址。
-* `ecdsa`：服务器自动生成的证书种类，ECDSA或RSA，是否用ECDSA。
+* `candidate`：服务器提供服务的IP地址，由于RTC的特殊性，必须配置这个地址。详细参考[Config: Candidate](./webrtc.md#config-candidate)
+* `tcp.listen`: 使用TCP传输WebRTC媒体数据，侦听的TCP端口。详细参考[WebRTC over TCP](./webrtc.md#webrtc-over-tcp)
 
 第二部分，每个vhost中的RTC配置，部分关键配置包括：
 * `rtc.enabled`：是否开启RTC能力，默认是off。
 * `rtc.rtmp_to_rtc`：是否开启RTMP转RTC。
+* `rtc.rtc_to_rtmp`：是否开启RTC转RTMP。
 * `rtc.stun_timeout`：会话超时时间，单位秒。
 * `rtc.nack`：是否开启NACK的支持，即丢包重传，默认on。
 * `rtc.twcc`：是否开启TWCC的支持，即拥塞控制的反馈机制，默认on。
 * `rtc.dtls_role`：DTLS角色，active就是DTLS Client(主动发起)，passive是DTLS Server(被动接受)。
-
-There are some config for WebRTC:
-
-* full.conf: Section `rtc_server` and vhost `rtc.vhost.srs.com` is about WebRTC.
-* rtc.conf: WebRTC to WebRTC clients.
-* rtmp2rtc.conf: Covert RTMP to WebRTC.
-* rtc2rtmp.conf: Covert WebRTC to RTMP.
 
 ## Config: Candidate
 
@@ -160,6 +210,40 @@ docker run --rm --env CANDIDATE=$CANDIDATE \
 * H5(WebRTC): [webrtc://localhost/live/livestream](http://localhost:8080/players/rtc_player.html?autostart=true)
 
 SRS的URL定义，遵守的是HTTP的URL定义，不同的流的schema不同，比如RTC的是`webrtc`。
+
+## WebRTC over TCP
+
+在很多网络条件下，WebRTC不适合使用UDP传输，因此支持TCP传输是极其重要的能力；而且SRS支持的是直接TCP传输的方式，避免使用TURN中转带来的额外网络层问题；这对于LoadBalancer也是非常友好的，一般支持TCP会更友好。
+
+* HTTP API、HTTP Stream、WebRTC over TCP，可以全部复用一个TCP端口，比如HTTPS(443)。
+* 支持直接UDP或TCP传输，不依赖TURN协议，没有额外的网元，没有额外部署和资源消耗。
+* 可部署在LoadBalancer后面(已实现)，可配合[Proxy(未实现)](https://github.com/ossrs/srs/issues/3138)或者[Cluster(未实现)](https://github.com/ossrs/srs/issues/2091)实现负载均衡和扩容。
+
+> Note: 注意需要升级到`v5.0.60+`，若使用Docker也请先确认SRS的版本。
+
+启动SRS，指定使用TCP传输WebRTC媒体，默认使用的是TCP(8000)端口：
+
+```bash
+docker run --rm -it -p 8080:8080 -p 1985:1985 -p 8000:8000 \
+  -e CANDIDATE="192.168.3.82" \
+  -e SRS_RTC_SERVER_TCP_ENABLED=on \
+  -e SRS_RTC_SERVER_PROTOCOL=tcp \
+  registry.cn-hangzhou.aliyuncs.com/ossrs/srs:v5.0.60
+```
+
+或者使用 [FFmpeg(点击下载)](https://ffmpeg.org/download.html) 或 [OBS(点击下载)](https://obsproject.com/download) 推流：
+
+```bash
+ffmpeg -re -i ./doc/source.flv -c copy -f flv rtmp://localhost/live/livestream
+```
+
+* 播放(WebRTC over TCP): [webrtc://localhost/live/livestream](http://localhost:8080/players/rtc_player.html?autostart=true)
+* 播放(HTTP FLV): [http://localhost:8080/live/livestream.flv](http://localhost:8080/players/srs_player.html?autostart=true)
+* 播放(HLS): [http://localhost:8080/live/livestream.m3u8](http://localhost:8080/players/srs_player.html?stream=livestream.m3u8&autostart=true)
+
+> Note: 我们使用环境变量开启配置，直接使用配置文件也可以的。
+
+> Note: 我们使用独立的TCP端口，HTTP API(1985)，HTTP Stream(8080)，WebRTC over TCP(8000)，也可以选择全部复用HTTP Stream端口。
 
 ## HTTP API
 

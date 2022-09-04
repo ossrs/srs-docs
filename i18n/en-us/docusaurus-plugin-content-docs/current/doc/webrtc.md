@@ -11,12 +11,89 @@ https://github.com/ossrs/srs/issues/307
 
 ## Config
 
-There are some config for WebRTC:
+There are some config for WebRTC, please see `full.conf` for more:
 
-* full.conf: Section `rtc_server` and vhost `rtc.vhost.srs.com` is about WebRTC.
-* rtc.conf: WebRTC to WebRTC clients.
-* rtmp2rtc.conf: Covert RTMP to WebRTC.
-* rtc2rtmp.conf: Covert WebRTC to RTMP.
+```bash
+rtc_server {
+    # Whether enable WebRTC server.
+    # Overwrite by env SRS_RTC_SERVER_ENABLED
+    # default: off
+    enabled on;
+    # The udp listen port, we will reuse it for connections.
+    # Overwrite by env SRS_RTC_SERVER_LISTEN
+    # default: 8000
+    listen 8000;
+    # For WebRTC over TCP directly, not TURN, see https://github.com/ossrs/srs/issues/2852
+    # Some network does not support UDP, or not very well, so we use TCP like HTTP/80 port for firewall traversing.
+    tcp {
+        # Whether enable WebRTC over TCP.
+        # Overwrite by env SRS_RTC_SERVER_TCP_ENABLED
+        # Default: off
+        enabled off;
+        # The TCP listen port for WebRTC. Highly recommend is some normally used ports, such as TCP/80, TCP/443,
+        # TCP/8000, TCP/8080 etc. However SRS default to TCP/8000 corresponding to UDP/8000.
+        # Overwrite by env SRS_RTC_SERVER_TCP_LISTEN
+        # Default: 8000
+        listen 8000;
+    }
+    # The protocol for candidate to use, it can be:
+    #       udp         Generate UDP candidates. Note that UDP server is always enabled for WebRTC.
+    #       tcp         Generate TCP candidates. Fail if rtc_server.tcp(WebRTC over TCP) is disabled.
+    #       all         Generate UDP+TCP candidates. Ignore if rtc_server.tcp(WebRTC over TCP) is disabled.
+    # Note that if both are connected, we will use the first connected(DTLS done) one.
+    # Overwrite by env SRS_RTC_SERVER_PROTOCOL
+    # Default: udp
+    protocol udp;
+    # The exposed candidate IPs, response in SDP candidate line. It can be:
+    #       *           Retrieve server IP automatically, from all network interfaces.
+    #       $CANDIDATE  Read the IP from ENV variable, use * if not set.
+    #       x.x.x.x     A specified IP address or DNS name, use * if 0.0.0.0.
+    # @remark For Firefox, the candidate MUST be IP, MUST NOT be DNS name, see https://bugzilla.mozilla.org/show_bug.cgi?id=1239006
+    # @see https://ossrs.net/lts/zh-cn/docs/v4/doc/webrtc#config-candidate
+    # Overwrite by env SRS_RTC_SERVER_CANDIDATE
+    # default: *
+    candidate *;
+}
+
+vhost rtc.vhost.srs.com {
+    rtc {
+        # Whether enable WebRTC server.
+        # Overwrite by env SRS_VHOST_RTC_ENABLED for all vhosts.
+        # default: off
+        enabled on;
+        # Whether support NACK.
+        # default: on
+        nack on;
+        # Whether support TWCC.
+        # default: on
+        twcc on;
+        # Whether enable transmuxing RTMP to RTC.
+        # If enabled, transcode aac to opus.
+        # Overwrite by env SRS_VHOST_RTC_RTMP_TO_RTC for all vhosts.
+        # default: off
+        rtmp_to_rtc off;
+        # Whether enable transmuxing RTC to RTMP.
+        # Overwrite by env SRS_VHOST_RTC_RTC_TO_RTMP for all vhosts.
+        # Default: off
+        rtc_to_rtmp off;
+    }
+}
+```
+
+The config `rtc_server` is global configuration for RTC, for example:
+* `enabled`：Whether enable WebRTC server.
+* `listen`：The udp listen port, we will reuse it for connections.
+* `candidate`：The exposed candidate IPs, response in SDP candidate line. Please read [Config: Candidate](./webrtc.md#config-candidate) for detail.
+* `tcp.listen`: Whether enable WebRTC over TCP. Please read [WebRTC over TCP](./webrtc.md#webrtc-over-tcp) for detail.
+
+For each vhost, the configuration is `rtc` section, for example:
+* `rtc.enabled`：Whether enable WebRTC server for this vhost.
+* `rtc.rtmp_to_rtc`：Whether enable transmuxing RTMP to RTC.
+* `rtc.rtc_to_rtmp`：Whether enable transmuxing RTC to RTMP.
+* `rtc.stun_timeout`：The timeout in seconds for session timeout.
+* `rtc.nack`：Whether support NACK for ARQ.
+* `rtc.twcc`：Whether support TWCC for congestion feedback.
+* `rtc.dtls_role`：The role of dtls when peer is actpass: passive or active.
 
 ## Config: Candidate
 
@@ -95,6 +172,38 @@ The streams for SRS [usage](https://github.com/ossrs/srs/tree/4.0release#usage):
 * H5(HTTP-FLV): [http://localhost:8080/live/livestream.flv](http://localhost:8080/players/srs_player.html?autostart=true&stream=livestream.flv&port=8080&schema=http)
 * H5(HLS): [http://localhost:8080/live/livestream.m3u8](http://localhost:8080/players/srs_player.html?autostart=true&stream=livestream.m3u8&port=8080&schema=http)
 * H5(WebRTC): [webrtc://localhost/live/livestream](http://localhost:8080/players/rtc_player.html?autostart=true)
+
+## WebRTC over TCP
+
+In many networks, UDP is not available for WebRTC, so TCP is very important to make it highly reliable. SRS supports directly TCP transport for WebRTC, not TURN, which introduce a complex network layer and system. It also makes the LoadBalancer possible to forward TCP packets, because TCP is more stable than UDP for LoadBalancer.
+
+* All HTTP API, HTTP Stream and WebRTC over TCP reuses one TCP port, such as TCP(443) for HTTPS.
+* Support directly transport over UDP or TCP, no dependency of TURN, no extra system and resource cost.
+* Works very well with [Proxy(Not Implemented)](https://github.com/ossrs/srs/issues/3138) and [Cluster(Not Implemented)](https://github.com/ossrs/srs/issues/2091), for load balancing and system capacity.
+
+Run SRS with WebRTC over TCP, by default the port is 8000:
+
+```bash
+docker run --rm -it -p 8080:8080 -p 1985:1985 -p 8000:8000 \
+  -e CANDIDATE="192.168.3.82" \
+  -e SRS_RTC_SERVER_TCP_ENABLED=on \
+  -e SRS_RTC_SERVER_PROTOCOL=tcp \
+  registry.cn-hangzhou.aliyuncs.com/ossrs/srs:v5.0.60
+```
+
+Please use [FFmpeg](https://ffmpeg.org/download.html) or [OBS](https://obsproject.com/download) to publish stream:
+
+```bash
+ffmpeg -re -i ./doc/source.flv -c copy -f flv rtmp://localhost/live/livestream
+```
+
+* Play WebRTC over TCP: [webrtc://localhost/live/livestream](http://localhost:8080/players/rtc_player.html?autostart=true)
+* Play HTTP FLV: [http://localhost:8080/live/livestream.flv](http://localhost:8080/players/srs_player.html?autostart=true)
+* Play HLS: [http://localhost:8080/live/livestream.m3u8](http://localhost:8080/players/srs_player.html?stream=livestream.m3u8&autostart=true)
+
+> Note: We config SRS by environment variables, you're able to use config file also.
+
+> Note: We use dedicated TCP port, for example, HTTP API(1985), HTTP Stream(8080) and WebRTC over TCP(8000), you're able to reuse one TCP port at HTTP Stream(8080).
 
 ## HTTP API
 
