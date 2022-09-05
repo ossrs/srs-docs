@@ -12,7 +12,7 @@ Adobe RTMP stands for Real Time Message Protocol, which is the basic feature of 
 For more information about protocol of SRS:
 
 1. About Apple HLS, another variety used protocol, please read [HLS](./delivery-hls.md).
-2. About the different between RTMP and HLS, please read [RTMP or HLS](./rtmp-pk-http.md).
+2. About the difference between RTMP and HLS, please read [RTMP or HLS](./rtmp-pk-http.md).
 3. About how to deploy SRS as RTMP server, please read [Usage: RTMP](./sample-rtmp.md).
 
 ## Use Scenario
@@ -30,7 +30,7 @@ SRS vod streaming is in plan and use HTTP protocol.
 
 ## FlashRTMP
 
-RTMP is the acient and the first video streaming protocol supported by flash, which is MacroMedia flash player, then rename to Adobe Flash player. Few lines code to play the RTMP stream:
+RTMP is the acient and the first video streaming protocol supported by flash, which is MacroMedia flash player, then renamed to Adobe Flash player. Few lines of code to play the RTMP stream:
 
 ```bash
 var conn = new NetConnection();
@@ -57,7 +57,7 @@ Start server: `./objs/srs -c conf/rtmp.conf`
 
 ## Publish RTMP
 
-Use encoder, for instance, FMLE to publish RTMP stream. FMLE use `FMS URL` to input the vhost/app, and the `Stream` to input the stream name:
+Use any encoder, for instance, FMLE to publish RTMP stream. FMLE use `FMS URL` to input the vhost/app, and the `Stream` to input the stream name:
 
 ```bash
 # For RTMP url: rtmp://192.168.1.170/live/livestream
