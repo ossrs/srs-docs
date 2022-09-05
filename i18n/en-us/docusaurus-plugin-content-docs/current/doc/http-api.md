@@ -359,13 +359,23 @@ SRS provides http api to query all streams.
 
 The http api stream url: `http://192.168.1.102:1985/api/v1/streams`
 
+Parameters in query string:
+
+* `?start=N`: The start index, default is 0.
+* `?count=N`: The max number of result, default is 10.
+
 To process specified stream by id, for instance `http://192.168.1.102:1985/api/v1/streams/3756`
 
 ## Clients
 
-SRS provides http api to query clients, default to get top 10 clients.
+SRS provides http api to query clients.
 
 The http api client url: `http://192.168.1.102:1985/api/v1/clients`
+
+Parameters in query string:
+
+* `?start=N`: The start index, default is 0.
+* `?count=N`: The max number of result, default is 10.
 
 To process specified client by id, for instance `http://192.168.1.102:1985/api/v1/clients/3756`
 
