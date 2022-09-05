@@ -72,7 +72,7 @@ User can access it by http server: [http://localhost:8085/live/livestream-best.p
 
 ## Transcoder
 
-The transcoder can used for snapshot:
+The transcoder can be used for snapshot:
 
 ```
 listen              1935;
