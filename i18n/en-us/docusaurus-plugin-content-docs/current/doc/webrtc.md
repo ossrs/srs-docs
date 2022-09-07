@@ -153,7 +153,7 @@ For example, to run SRS in docker, and setup the CANDIDATE:
 export CANDIDATE="192.168.3.10"
 docker run --rm --env CANDIDATE=$CANDIDATE \
   -p 1935:1935 -p 8080:8080 -p 1985:1985 -p 8000:8000/udp \
-  ossrs/srs:4 \
+  ossrs/srs:5 \
   objs/srs -c conf/rtc.conf
 ```
 
@@ -217,7 +217,7 @@ Please use `conf/rtmp2rtc.conf` as config.
 export CANDIDATE="192.168.1.10"
 docker run --rm --env CANDIDATE=$CANDIDATE \
   -p 1935:1935 -p 8080:8080 -p 1985:1985 -p 8000:8000/udp \
-  ossrs/srs:4 \
+  ossrs/srs:5 \
   objs/srs -c conf/rtmp2rtc.conf
 ```
 
@@ -243,7 +243,7 @@ Please use `conf/rtc.conf` as config.
 export CANDIDATE="192.168.1.10"
 docker run --rm --env CANDIDATE=$CANDIDATE \
   -p 1935:1935 -p 8080:8080 -p 1985:1985 -p 8000:8000/udp \
-  ossrs/srs:4 \
+  ossrs/srs:5 \
   objs/srs -c conf/rtc.conf
 ```
 
@@ -264,7 +264,7 @@ Please use `conf/rtc2rtmp.conf` as config.
 export CANDIDATE="192.168.1.10"
 docker run --rm --env CANDIDATE=$CANDIDATE \
   -p 1935:1935 -p 8080:8080 -p 1985:1985 -p 8000:8000/udp \
-  ossrs/srs:4 \
+  ossrs/srs:5 \
   objs/srs -c conf/rtc2rtmp.conf
 ```
 
@@ -285,7 +285,7 @@ Please use `conf/rtc.conf` as config.
 export CANDIDATE="192.168.1.10"
 docker run --rm --env CANDIDATE=$CANDIDATE \
   -p 1935:1935 -p 8080:8080 -p 1985:1985 -p 8000:8000/udp \
-  ossrs/srs:4 \
+  ossrs/srs:5 \
   objs/srs -c conf/rtc.conf
 ```
 
@@ -331,7 +331,7 @@ Please follow [SFU: One to One](./webrtc.md#sfu-one-to-one), and please convert 
 export CANDIDATE="192.168.1.10"
 docker run --rm --env CANDIDATE=$CANDIDATE \
   -p 1935:1935 -p 8080:8080 -p 1985:1985 -p 8000:8000/udp \
-  ossrs/srs:4 \
+  ossrs/srs:5 \
   objs/srs -c conf/rtc2rtmp.conf
 ```
 

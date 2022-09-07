@@ -17,7 +17,7 @@ Run SRS using docker:
 
 ```bash
 docker run --rm -it -p 1935:1935 -p 1985:1985 -p 8080:8080 \
-    ossrs/srs:4 ./objs/srs -c conf/docker.conf
+    ossrs/srs:5 ./objs/srs -c conf/docker.conf
 ```
 
 > Note: The available images is [here](https://hub.docker.com/r/ossrs/srs/tags).
@@ -52,7 +52,7 @@ Run SRS using docker:
 CANDIDATE="192.168.1.10"
 docker run --rm -it -p 1935:1935 -p 1985:1985 -p 8080:8080 -p 1990:1990 -p 8088:8088 \
     --env CANDIDATE=$CANDIDATE -p 8000:8000/udp \
-    ossrs/srs:4 ./objs/srs -c conf/docker.conf
+    ossrs/srs:5 ./objs/srs -c conf/docker.conf
 ```
 
 > Note: Please replace the IP with your server IP.
@@ -75,7 +75,7 @@ Run SRS using docker:
 CANDIDATE="192.168.1.10"
 docker run --rm -it -p 1935:1935 -p 1985:1985 -p 8080:8080 \
     --env CANDIDATE=$CANDIDATE -p 8000:8000/udp \
-    ossrs/srs:4 ./objs/srs -c conf/rtmp2rtc.conf
+    ossrs/srs:5 ./objs/srs -c conf/rtmp2rtc.conf
 ```
 
 > Note: Please replace the IP with your server IP.
@@ -114,7 +114,7 @@ Run SRS using docker:
 CANDIDATE="192.168.1.10"
 docker run --rm -it -p 1935:1935 -p 1985:1985 -p 8080:8080 -p 1990:1990 -p 8088:8088 \
     --env CANDIDATE=$CANDIDATE -p 8000:8000/udp \
-    ossrs/srs:4 ./objs/srs -c conf/https.docker.conf
+    ossrs/srs:5 ./objs/srs -c conf/https.docker.conf
 ```
 
 > Note: Please replace the IP with your server IP.
@@ -143,7 +143,7 @@ SRS supports publishing by SRT for live streaming, and play by SRT or other prot
 
 ```bash
 docker run --rm -it -p 1935:1935 -p 1985:1985 -p 8080:8080 -p 10080:10080/udp \
-    registry.cn-hangzhou.aliyuncs.com/ossrs/srs:4 ./objs/srs -c conf/srt.conf
+    registry.cn-hangzhou.aliyuncs.com/ossrs/srs:5 ./objs/srs -c conf/srt.conf
 ```
 
 Publish stream by [FFmpeg](https://ffmpeg.org/download.html) or [OBS](https://obsproject.com/download) :

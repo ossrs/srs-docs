@@ -177,7 +177,7 @@ env CANDIDATE="192.168.3.10" \
 export CANDIDATE="192.168.3.10"
 docker run --rm --env CANDIDATE=$CANDIDATE \
   -p 1935:1935 -p 8080:8080 -p 1985:1985 -p 8000:8000/udp \
-  registry.cn-hangzhou.aliyuncs.com/ossrs/srs:4 \
+  registry.cn-hangzhou.aliyuncs.com/ossrs/srs:5 \
   objs/srs -c conf/rtc.conf
 ```
 
@@ -259,7 +259,7 @@ WebRTC可以作为直播的一个播放器，播放直播流，延迟比RTMP还�
 export CANDIDATE="192.168.1.10"
 docker run --rm --env CANDIDATE=$CANDIDATE \
   -p 1935:1935 -p 8080:8080 -p 1985:1985 -p 8000:8000/udp \
-  registry.cn-hangzhou.aliyuncs.com/ossrs/srs:4 \
+  registry.cn-hangzhou.aliyuncs.com/ossrs/srs:5 \
   objs/srs -c conf/rtmp2rtc.conf
 ```
 
@@ -299,7 +299,7 @@ WebRTC本身是可以推流和拉流的，全链路延迟都很低。
 export CANDIDATE="192.168.1.10"
 docker run --rm --env CANDIDATE=$CANDIDATE \
   -p 1935:1935 -p 8080:8080 -p 1985:1985 -p 8000:8000/udp \
-  registry.cn-hangzhou.aliyuncs.com/ossrs/srs:4 \
+  registry.cn-hangzhou.aliyuncs.com/ossrs/srs:5 \
   objs/srs -c conf/rtc.conf
 ```
 
@@ -324,7 +324,7 @@ WebRTC推流，可以转成RTMP流播放，SRS只会对音频转码（Opus转AAC
 export CANDIDATE="192.168.1.10"
 docker run --rm --env CANDIDATE=$CANDIDATE \
   -p 1935:1935 -p 8080:8080 -p 1985:1985 -p 8000:8000/udp \
-  registry.cn-hangzhou.aliyuncs.com/ossrs/srs:4 \
+  registry.cn-hangzhou.aliyuncs.com/ossrs/srs:5 \
   objs/srs -c conf/rtc2rtmp.conf
 ```
 
@@ -357,7 +357,7 @@ SRS早就具备了SFU的能力，比如一对一通话、[多人通话](./webrtc
 export CANDIDATE="192.168.1.10"
 docker run --rm --env CANDIDATE=$CANDIDATE \
   -p 1935:1935 -p 8080:8080 -p 1985:1985 -p 8000:8000/udp \
-  registry.cn-hangzhou.aliyuncs.com/ossrs/srs:4 \
+  registry.cn-hangzhou.aliyuncs.com/ossrs/srs:5 \
   objs/srs -c conf/rtc.conf
 ```
 
@@ -418,7 +418,7 @@ SRS支持多人通话的SFU能力，请参考[一对一通话](./webrtc.md#sfu-o
 export CANDIDATE="192.168.1.10"
 docker run --rm --env CANDIDATE=$CANDIDATE \
   -p 1935:1935 -p 8080:8080 -p 1985:1985 -p 8000:8000/udp \
-  registry.cn-hangzhou.aliyuncs.com/ossrs/srs:4 \
+  registry.cn-hangzhou.aliyuncs.com/ossrs/srs:5 \
   objs/srs -c conf/rtc2rtmp.conf
 ```
 

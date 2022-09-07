@@ -17,7 +17,7 @@ hide_table_of_contents: false
 
 ```bash
 docker run --rm -it -p 1935:1935 -p 1985:1985 -p 8080:8080 \
-    registry.cn-hangzhou.aliyuncs.com/ossrs/srs:4 ./objs/srs -c conf/docker.conf
+    registry.cn-hangzhou.aliyuncs.com/ossrs/srs:5 ./objs/srs -c conf/docker.conf
 ```
 
 > Note: 可用镜像在 [这里](https://cr.console.aliyun.com/repository/cn-hangzhou/ossrs/srs/images) 和每个 [Release](https://github.com/ossrs/srs/releases?q=v4&expanded=true) 都会给出来链接。
@@ -52,7 +52,7 @@ SRS支持WebRTC，可以做会议或视频聊天。
 CANDIDATE="192.168.1.10"
 docker run --rm -it -p 1935:1935 -p 1985:1985 -p 8080:8080 -p 1990:1990 -p 8088:8088 \
     --env CANDIDATE=$CANDIDATE -p 8000:8000/udp \
-    registry.cn-hangzhou.aliyuncs.com/ossrs/srs:4 ./objs/srs -c conf/docker.conf
+    registry.cn-hangzhou.aliyuncs.com/ossrs/srs:5 ./objs/srs -c conf/docker.conf
 ```
 
 > Note: 请将IP换成你的SRS的IP地址。
@@ -75,7 +75,7 @@ SRS支持直播转WebRTC，推直播流，使用WebRTC观看。
 CANDIDATE="192.168.1.10"
 docker run --rm -it -p 1935:1935 -p 1985:1985 -p 8080:8080 \
     --env CANDIDATE=$CANDIDATE -p 8000:8000/udp \
-    registry.cn-hangzhou.aliyuncs.com/ossrs/srs:4 ./objs/srs -c conf/rtmp2rtc.conf
+    registry.cn-hangzhou.aliyuncs.com/ossrs/srs:5 ./objs/srs -c conf/rtmp2rtc.conf
 ```
 
 > Note: 请将IP换成你的SRS的IP地址。
@@ -114,7 +114,7 @@ ffmpeg -re -i ./doc/source.flv -c copy -f flv rtmp://localhost/live/livestream
 CANDIDATE="192.168.1.10"
 docker run --rm -it -p 1935:1935 -p 1985:1985 -p 8080:8080 -p 1990:1990 -p 8088:8088 \
     --env CANDIDATE=$CANDIDATE -p 8000:8000/udp \
-    registry.cn-hangzhou.aliyuncs.com/ossrs/srs:4 ./objs/srs -c conf/https.docker.conf
+    registry.cn-hangzhou.aliyuncs.com/ossrs/srs:5 ./objs/srs -c conf/https.docker.conf
 ```
 
 > Note: 请将IP换成你的SRS的IP地址。
@@ -143,7 +143,7 @@ SRS支持SRT推直播流，使用SRT或其他协议观看。
 
 ```bash
 docker run --rm -it -p 1935:1935 -p 1985:1985 -p 8080:8080 -p 10080:10080/udp \
-    registry.cn-hangzhou.aliyuncs.com/ossrs/srs:4 ./objs/srs -c conf/srt.conf
+    registry.cn-hangzhou.aliyuncs.com/ossrs/srs:5 ./objs/srs -c conf/srt.conf
 ```
 
 使用 [FFmpeg(点击下载)](https://ffmpeg.org/download.html) 或 [OBS(点击下载)](https://obsproject.com/download) 推流：
