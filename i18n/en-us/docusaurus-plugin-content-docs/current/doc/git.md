@@ -49,8 +49,8 @@ git pull && git checkout develop
 The release branch is more stable than develop.
 
 * 3.0release, stable release branch.
-* 4.0release, is prepare to release, not stable enough.
-* develop, not stable.
+* 4.0release, stable release branch.
+* develop(5.0), not stable.
 
 Winlin 2014.11
 
