@@ -89,7 +89,7 @@ Online demo URL:
 * Publish：[webrtc://d.ossrs.net/live/show](https://ossrs.net/players/rtc_publisher.html?vhost=d.ossrs.net&server=d.ossrs.net&api=443&autostart=true&schema=https&stream=show)
 * Play：[webrtc://d.ossrs.net/live/show](https://ossrs.net/players/rtc_player.html?vhost=d.ossrs.net&server=d.ossrs.net&api=443&autostart=true&schema=https&stream=show)
 
-The streams for SRS [usage](https://github.com/ossrs/srs/tree/4.0release#usage):
+The streams for SRS:
 
 * VLC(RTMP): rtmp://localhost/live/livestream
 * H5(HTTP-FLV): [http://localhost:8080/live/livestream.flv](http://localhost:8080/players/srs_player.html?autostart=true&stream=livestream.flv&port=8080&schema=http)

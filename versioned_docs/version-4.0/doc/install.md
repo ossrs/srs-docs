@@ -49,8 +49,6 @@ Also easy to start SRS:
 
 Publish RTMP, please read: [Usage: RTMP](./sample-rtmp.md)
 
-More usages, please read: [Usage](https://github.com/ossrs/srs/tree/4.0release#usage)
-
 For service management, please read [Service](./service.md)
 
 Run SRS in docker, please read [srs-docker](https://github.com/ossrs/dev-docker#usage)

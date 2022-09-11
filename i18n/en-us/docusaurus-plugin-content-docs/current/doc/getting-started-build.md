@@ -16,7 +16,7 @@ SRS supports live streaming.
 Get SRS source, recommend [CentOS7](./install.md):
 
 ```
-git clone -b 4.0release https://github.com/ossrs/srs.git
+git clone -b develop https://github.com/ossrs/srs.git
 ```
 
 Build SRS in `srs/trunk`:
@@ -64,7 +64,7 @@ SRS supports WebRTC for video chat.
 Get SRS source, recommend [CentOS7](./install.md):
 
 ```
-git clone -b 4.0release https://github.com/ossrs/srs.git
+git clone -b develop https://github.com/ossrs/srs.git
 ```
 
 Build SRS in `srs/trunk`:
@@ -109,7 +109,7 @@ SRS supports converting live streaming to WebRTC.
 Get SRS source, recommend [CentOS7](./install.md):
 
 ```
-git clone -b 4.0release https://github.com/ossrs/srs.git
+git clone -b develop https://github.com/ossrs/srs.git
 ```
 
 Build SRS in `srs/trunk`:
@@ -154,7 +154,7 @@ If not localhost, for example, to view WebRTC on pad or mobile phone, when SRS i
 Get SRS source, recommend [CentOS7](./install.md):
 
 ```
-git clone -b 4.0release https://github.com/ossrs/srs.git
+git clone -b develop https://github.com/ossrs/srs.git
 ```
 
 Build SRS in `srs/trunk`:

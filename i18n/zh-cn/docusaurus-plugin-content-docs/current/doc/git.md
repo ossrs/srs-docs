@@ -18,7 +18,7 @@ hide_table_of_contents: false
 如何使用国内镜像站点clone，然后把服务器设置为github上？这样和直接从github上clone一模一样了。执行下面的命令就可以了：
 
 ```
-git clone -b 4.0release https://gitee.com/ossrs/srs.git && 
+git clone -b develop https://gitee.com/ossrs/srs.git && 
 cd srs && git remote set-url origin https://github.com/ossrs/srs.git
 ```
 

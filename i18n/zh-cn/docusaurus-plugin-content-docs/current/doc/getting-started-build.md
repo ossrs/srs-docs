@@ -16,7 +16,7 @@ SRS可以从源码编译和启动，但推荐更简单的[Docker](./getting-star
 下载源码，推荐用[CentOS7](./install.md)：
 
 ```
-git clone -b 4.0release https://gitee.com/ossrs/srs.git
+git clone -b develop https://gitee.com/ossrs/srs.git
 ```
 
 编译，注意需要切换到`srs/trunk`目录：
@@ -74,7 +74,7 @@ SRS支持WebRTC，可以做会议或视频聊天。
 下载源码，推荐用[CentOS7](./install.md)：
 
 ```
-git clone -b 4.0release https://gitee.com/ossrs/srs.git
+git clone -b develop https://gitee.com/ossrs/srs.git
 ```
 
 编译，注意需要切换到`srs/trunk`目录：
@@ -129,7 +129,7 @@ SRS支持直播转WebRTC，推直播流，使用WebRTC观看。
 下载源码，推荐用[CentOS7](./install.md)：
 
 ```
-git clone -b 4.0release https://gitee.com/ossrs/srs.git
+git clone -b develop https://gitee.com/ossrs/srs.git
 ```
 
 编译，注意需要切换到`srs/trunk`目录：
@@ -174,7 +174,7 @@ ffmpeg -re -i ./doc/source.flv -c copy -f flv rtmp://localhost/live/livestream
 下载源码，推荐用[CentOS7](./install.md)：
 
 ```
-git clone -b 4.0release https://gitee.com/ossrs/srs.git
+git clone -b develop https://gitee.com/ossrs/srs.git
 ```
 
 编译，注意需要切换到`srs/trunk`目录：
