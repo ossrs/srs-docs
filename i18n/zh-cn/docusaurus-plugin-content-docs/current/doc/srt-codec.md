@@ -5,9 +5,9 @@ hide_title: false
 hide_table_of_contents: false
 ---
 
-# SRT媒体编码支持格式
+# SRT codec support
 
-## 视频支持格式
+## Video codec
 
 当前支持:
 * H264
@@ -21,18 +21,16 @@ srt协议传输媒体是mpegts。mpegts对hevc编码格式是支持封装，标�
     - `ffplay 'srt://127.0.0.1:10080?streamid=#!::h=live/livestream,m=request'` 
 
 
-但是因为rtmp协议本身对hevc编码格式的封装没有定义，所以当前是以国内众多cdn定义的类型值为准。
+但是因为rtmp协议本身对hevc编码格式的封装没有定义，所以当推流是HEVC格式时，即使打开了srt_to_rtmp选项，也无法播放。
 
-* h264 CodecID(协议定义): 7
-* _**hevc CodecID(自定义): 12**_
-
-## 音频支持格式
+## Audio codec
 
 当前支持编码格式：
 * AAC
     - 支持采样率44100, 22050, 11025, 5512.
 
-## FFmpeg SRT 推流
+## FFmpeg push SRT stream
+
 当使用FFmpeg推AAC音频格式的SRT流时, 建议在命令行里加上`-pes_payload_size 0`这个参数。这个参数会阻止合并多个AAC音频帧在一个PES包里,
 这样可以减少延迟以及由于音视频同步问题.
 FFmpeg命令行示例:

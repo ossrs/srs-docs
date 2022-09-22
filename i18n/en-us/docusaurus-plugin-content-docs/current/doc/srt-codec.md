@@ -29,6 +29,7 @@ Current support:
     - Sample rate 44100, 22050, 11025, 5512
 
 ## FFmpeg push SRT stream
+
 We recommend add `-pes_payload_size 0` in FFmpeg command line when publish SRT stream in AAC codec. 
 The parameter prevent merge multi AAC frame in one PES packet, so it can reduce the latency and avoid AV synchronization errors.
 FFmpeg command line example:

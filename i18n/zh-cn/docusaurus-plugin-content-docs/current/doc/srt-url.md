@@ -5,11 +5,12 @@ hide_title: false
 hide_table_of_contents: false
 ---
 
-# SRT直播地址格式简介
+# SRT Live url introduce
 
 介绍srt在live模式下如何构造推/拉流地址。
 
-## rtmp常规地址格式
+## rtmp url
+
 rtmp地址格式简介
 * 常规rtmp格式(无vhost) 
     - rtmp://hostip:port/appname/streamname 
@@ -27,13 +28,15 @@ rtmp如何确认对rtmp url是推流还是拉流：
 * play 
     - rtmp协议中 `play消息` 表示是对该url进行拉流
 
-## srt直播地址格式
+## srt url format
+
 因为srt是四层传输协议，所以无法确定对某个srt url操作是推流还是拉流。
 
 在srt官网中有对推/拉流的推荐：[AccessControl.md](https://github.com/Haivision/srt/blob/master/docs/features/access-control.md) 
 关键方法是通过streamid参数来明确url的作用，strreamid的格式符合YAML格式。
 
-### srt常规地址(无vhost)
+### common srt url format(without vhost)
+
 srt url举例：
 * 推流地址: `srt://127.0.0.1:10080?streamid=#!::r=live/livestream,m=publish` 
 * 拉流地址: `srt://127.0.0.1:10080?streamid=#!::r=live/livestream,m=request` 
@@ -49,7 +52,8 @@ srt url举例：
 
 上面srt对应的rtmp拉流地址为：rtmp://127.0.0.1/live/livestream
 
-### srt复杂地址(有vhost)
+### complex srt url(with vhost)
+
 srt url举例：
 * 推流地址: `srt://127.0.0.1:10080?streamid=#!::h=srs.srt.com.cn,r=live/livestream,m=publish` 
 * 拉流地址: `srt://127.0.0.1:10080?streamid=#!::h=srs.srt.com.cn,r=live/livestream,m=request` 

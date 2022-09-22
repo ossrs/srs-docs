@@ -10,6 +10,7 @@ hide_table_of_contents: false
 Introduce how to generate publish/play url in SRT live mode.
 
 ## rtmp url
+
 rtmp url format
 * common rtmp url format(without vhost)
     - rtmp://hostip:port/appname/streamname 
@@ -28,12 +29,14 @@ How rtmp distinguish the url is use to publish or play stream:
     - In rtmp protocol `play message` indicate the url is use for play stream
 
 ## srt url format
+
 Because srt is in the transport layer, we can't determine the given srt url is use to publish or play stream.
 
 The srt official recommend how to configure url: [AccessControl.md](https://github.com/Haivision/srt/blob/master/docs/features/access-control.md)
 The key method is using paramter in streamid to determine the usage of srt url, the format of streamid in YAML format.
 
 ### common srt url format(without vhost)
+
 srt url example:
 * publish: `srt://127.0.0.1:10080?streamid=#!::r=live/livestream,m=publish` 
 * play: `srt://127.0.0.1:10080?streamid=#!::r=live/livestream,m=request` 
@@ -50,6 +53,7 @@ Note:
 the rtmp url correspond with srt url above is: rtmp://127.0.0.1/live/livestream
 
 ### complex srt url(with vhost)
+
 srt url example:
 * publish: `srt://127.0.0.1:10080?streamid=#!::h=srs.srt.com.cn,r=live/livestream,m=publish` 
 * play: `srt://127.0.0.1:10080?streamid=#!::h=srs.srt.com.cn,r=live/livestream,m=request` 
