@@ -69,7 +69,7 @@ vhost __defaultVhost__ {
 Use FFMPEG to publish stream:
 
 ```bash
-ffmpeg -re -i ./doc/source.flv -c copy -f mpegts 'srt://192.168.1.170:10080?streamid=#!::r=live/livestream,m=publish'
+ffmpeg -re -i ./doc/source.flv -c copy -pes_payload_size 0 -f mpegts 'srt://192.168.1.170:10080?streamid=#!::r=live/livestream,m=publish'
 ```
 
 You're able to play it by ffplay：

@@ -16,7 +16,7 @@ Current support:
 The format of media publish by SRT is mpegts, and it support HEVC with streamtpe 0x24, so we can publish or play HEVC stream by SRT normal.
 
 * HEVC SRT publish
-    - `ffmpeg -re -i source.mp4 -c:v libx265 -c:a aac -f mpegts 'srt://127.0.0.1:10080?streamid=livestream'`
+    - `ffmpeg -re -i source.mp4 -c:v libx265 -c:a aac -pes_payload_size 0 -f mpegts 'srt://127.0.0.1:10080?streamid=livestream'`
 * HEVC SRT play
     - `ffplay 'srt://127.0.0.1:10080?streamid=#!::h=live/livestream,m=request'` 
 

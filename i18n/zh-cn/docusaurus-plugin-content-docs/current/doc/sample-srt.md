@@ -69,7 +69,7 @@ vhost __defaultVhost__ {
 使用FFMPEG命令推流：
 
 ```bash
-ffmpeg -re -i ./doc/source.flv -c copy -f mpegts 'srt://127.0.0.1:10080?streamid=#!::r=live/livestream,m=publish'
+ffmpeg -re -i ./doc/source.flv -c copy -pes_payload_size 0 -f mpegts 'srt://127.0.0.1:10080?streamid=#!::r=live/livestream,m=publish'
 ```
 
 可直接用ffplay播放：

@@ -149,7 +149,7 @@ docker run --rm -it -p 1935:1935 -p 1985:1985 -p 8080:8080 -p 10080:10080/udp \
 使用 [FFmpeg(点击下载)](https://ffmpeg.org/download.html) 或 [OBS(点击下载)](https://obsproject.com/download) 推流：
 
 ```bash
-ffmpeg -re -i ./doc/source.flv -c copy -f mpegts 'srt://127.0.0.1:10080?streamid=#!::r=live/livestream,m=publish'
+ffmpeg -re -i ./doc/source.flv -c copy -pes_payload_size 0 -f mpegts 'srt://127.0.0.1:10080?streamid=#!::r=live/livestream,m=publish'
 ```
 
 使用 [ffplay(点击下载)](https://ffmpeg.org/download.html) 或 [OBS(点击下载)](https://obsproject.com/download) 播放：
