@@ -13,7 +13,6 @@ Current support:
 * H264
 * HEVC
 
-### Note about HEVC support
 The format of media publish by SRT is mpegts, and it support HEVC with streamtpe 0x24, so we can publish or play HEVC stream by SRT normal.
 
 * HEVC SRT publish
@@ -29,7 +28,8 @@ Current support:
 * AAC
     - Sample rate 44100, 22050, 11025, 5512
 
-### Note
+## FFmpeg push SRT stream
+
 We recommend add `-pes_payload_size 0` in FFmpeg command line when publish SRT stream in AAC codec. 
 The parameter prevent merge multi AAC frame in one PES packet, so it can reduce the latency and avoid AV synchronization errors.
 FFmpeg command line example:
