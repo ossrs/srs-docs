@@ -73,7 +73,7 @@ SaaS做直播的好处是不用了解直播的细节，直接就能把直播做�
 * 直播平台：云SRS，SRS，NginxRTMP等。
 * 观看工具：Chrome浏览器，VLC等。
 
-推荐使用云SRS，因为后面也可以用于连麦。最方便的部署SRS的方式使用[云SRS](./SRS-Cloud-Tutorial)，可以用腾讯云镜像一键部署，其他云或自己虚拟机可以用宝塔部署，具体请参考[视频教程](https://www.bilibili.com/video/BV1844y1L7dL/)。若愿意从代码编译和部署SRS，也可以参考[SRS](https://github.com/ossrs/srs#usage)。
+推荐使用云SRS，因为后面也可以用于连麦。最方便的部署SRS的方式使用[云SRS](./SRS-Cloud-Tutorial)，可以用腾讯云镜像一键部署，其他云或自己虚拟机可以用宝塔部署，具体请参考[视频教程](https://www.bilibili.com/video/BV1844y1L7dL/)。
 
 部署好SRS后，可以使用OBS推流到SRS，地址一般比较简单，例如：
 
@@ -136,7 +136,7 @@ OBS(主播) ---RTMP---> SRS ----RTMP/FLV/HLS---> VLC
 
 同样，最简单的通话方案是SaaS，可以选择腾讯会议或Zoom两个通话的SaaS，它们都有自己的客户端和账号体系，只需要下载就可以使用了。
 
-若使用开源搭建，推荐SRS服务器。最方便的部署SRS的方式使用[云SRS](./SRS-Cloud-Tutorial)，可以用腾讯云镜像一键部署，其他云或自己虚拟机可以用宝塔部署，具体请参考[视频教程](https://www.bilibili.com/video/BV1844y1L7dL/)。若愿意从代码编译和部署SRS，也可以参考[SRS](https://github.com/ossrs/srs#usage)。
+若使用开源搭建，推荐SRS服务器。最方便的部署SRS的方式使用[云SRS](./SRS-Cloud-Tutorial)，可以用腾讯云镜像一键部署，其他云或自己虚拟机可以用宝塔部署，具体请参考[视频教程](https://www.bilibili.com/video/BV1844y1L7dL/)。
 
 由于WebRTC推流，必须使用HTTPS，而HTTPS必须要域名和证书，可以参考[如何设置HTTPS](./SRS-Cloud-HTTPS)。当然如果使用自签名证书也可以，需要手动允许自签名证书。
 

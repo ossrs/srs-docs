@@ -349,7 +349,7 @@ docker run --rm --env CANDIDATE=$CANDIDATE \
 SRS早就具备了SFU的能力，比如一对一通话、[多人通话](./webrtc.md#sfu-video-room)、[直播连麦](./webrtc.md#room-to-live)等等。在沟通中，一对一是常用而且典型的场景，
 让我们一起来看看如何用SRS做直播和RTC一体化的一对一通话。
 
-> 下面以Docker中运行DEMO为例子，若希望从代码编译，请参考[这里](https://github.com/ossrs/signaling#build-from-source)。
+> 下面以Docker中运行DEMO为例子，若希望从代码编译，请设置好对应的环境变量和启动命令。
 
 本机启动SRS(参考[usage](https://github.com/ossrs/srs/tree/4.0release#usage))，例如：
 
