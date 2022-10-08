@@ -82,7 +82,7 @@ streamid with default value "#!::r=live/livestream,m=publish". So the SRT url ab
 Note: When streamid empty, only allow publish stream, can not play stream.
 
 FFmpeg example:
-> ffmpeg -re -i source.mp4 -c:v libx265 -c:a -f mpegts 'srt://127.0.0.1:10080'
+> ffmpeg -re -i source.mp4 -c copy -f mpegts 'srt://127.0.0.1:10080'
 
 OBS example:
 > ![](/img/doc-main-concepts-srt-url-001.png)

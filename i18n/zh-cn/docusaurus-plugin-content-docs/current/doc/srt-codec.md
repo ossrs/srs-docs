@@ -34,7 +34,7 @@ srt协议传输媒体是mpegts。mpegts对hevc编码格式是支持封装，标�
 当使用FFmpeg推AAC音频格式的SRT流时, 建议在命令行里加上`-pes_payload_size 0`这个参数。这个参数会阻止合并多个AAC音频帧在一个PES包里,
 这样可以减少延迟以及由于音视频同步问题.
 FFmpeg命令行示例:
-> `ffmpeg -re -i source.mp4 -c:v libx265 -c:a aac -pes_payload_size 0 -f mpegts 'srt://127.0.0.1:10080?streamid=livestream'
+> `ffmpeg -re -i source.mp4 -c copy -pes_payload_size 0 -f mpegts 'srt://127.0.0.1:10080?streamid=livestream'
 
 Runner365 2020.02
 

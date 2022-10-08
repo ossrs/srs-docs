@@ -33,7 +33,7 @@ Current support:
 We recommend add `-pes_payload_size 0` in FFmpeg command line when publish SRT stream in AAC codec. 
 The parameter prevent merge multi AAC frame in one PES packet, so it can reduce the latency and avoid AV synchronization errors.
 FFmpeg command line example:
-> `ffmpeg -re -i source.mp4 -c:v libx265 -c:a aac -pes_payload_size 0 -f mpegts 'srt://127.0.0.1:10080?streamid=livestream'`
+> `ffmpeg -re -i source.mp4 -c copy -pes_payload_size 0 -f mpegts 'srt://127.0.0.1:10080?streamid=livestream'`
 
 Runner365 2020.02
 
