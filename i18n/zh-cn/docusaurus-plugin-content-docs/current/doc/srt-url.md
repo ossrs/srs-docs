@@ -72,6 +72,13 @@ srt url举例：
 
 上面srt对应的rtmp拉流地址为：`rtmp://127.0.0.1/live/livestream?vhost=srs.srt.com.cn`。
 
+## SRT URL with empty streamid
+
+有些设备不支持streamid的输入，或者不支持streamid里面的一些特殊符号，比如'!','#',','等。
+这种情况下，允许仅用ip:port进行推流，比如`srt://127.0.0.1:10080`。对于这种url，SRS会将
+streamid默认为"#!::r=live/livestream,m=publish", 也就是上面的url等同于
+`srt://127.0.0.1:10080?streamid=#!::r=live/livestream,m=publish`。
+
 Runner365 2020.02
 
 ![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/doc/zh/v5/srt-url)
