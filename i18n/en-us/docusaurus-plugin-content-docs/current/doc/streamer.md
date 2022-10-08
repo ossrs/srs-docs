@@ -1,131 +1,150 @@
 ---
-title: Stream Caster
-sidebar_label: Stream Caster 
+title: Stream Converter
+sidebar_label: Stream Converter 
 hide_title: false
 hide_table_of_contents: false
 ---
 
-# Streamer
+# Stream Converter
 
-Streamer is a server feature to accept stream over other protocol, for example, allow user to publish MPEG-TS over UDP to SRS.
+Stream Converters listen at special TCP/UDP ports, accept new connections and receive packets, then convert to and push 
+RTMP stream to SRS server like a RTMP client.
 
-Streamer will cast other stream protocol to rtmp, then publish to SRS itself, to devliery in RTMP/HLS/HTTP.
+In short, it converts other protocols to RTMP, works like this:
+
+```text
+Client ---PUSH--> Stream Converter --RTMP--> SRS --RTMP/FLV/HLS/WebRTC--> Clients
+```
+
+> Note: Some stream protocol contains more than one single stream or even transport connections.
 
 ## Use Scenario
 
-Typically use scenarios:
+There are some use scenarios for stream caster, for example:
 
-* Push MPEG-TS over UDP to SRS, delivery in RTMP/HLS/HTTP.
-* Push RTSP to SRS, delivery in RTMP/HLS/HTTP.
-* POST FLV over HTTP to SRS, delivery in RTMP/HLS/HTTP.
+* Push MPEG-TS over UDP, by some encoder device.
+* Push FLV by HTTP POST, by some mobile device.
 
-Remark: The streamer will demux other protocol then push to SRS over RTMP, so all features of SRS are available, for example, push RTSP to SRS over RTMP to edge vhost which will forward stream to origin, or transcode the rtmp stream, or directly forward to other server. And, all delivery methods are ok, for example, push RTSP to SRS overy RTMP, delivery in RTMP/HLS/HTTP.
+> Note: FFmpeg supports PUSH MPEGTS over UDP and FLV by HTTP POST to SRS.
 
 ## Build
 
-Build SRS with stream caster, read [Build](./install.md)
-
-```
-./configure --stream-caster=on
-```
+Stream Converter is always enabled in SRS, while some protocols might need special configure parameters, please read 
+instructions of each protocol.
 
 ## Protocols
 
-The protocols supported by Streamer:
+The protocols supported by Stream Converter:
 
-* MPEG-TS over UDP: Support encoder to push MPEG-TS over UDP to SRS.
-* Push RTSP to SRS: Support encoder to push RTSP to SRS.
-* POST FLV over HTTP to SRS: Support encoder.
+* MPEG-TS over UDP: MPEG-TS stream over UDP protocol.
+* FLV by HTTP POST: FLV stream over HTTP protocol.
 
 ## Config
 
-The config for stream casters:
+The configuration for stream converter:
 
 ```
-# the streamer cast stream from other protocol to SRS over RTMP.
-# @see https://github.com/ossrs/srs/tree/develop#stream-architecture
+# Push MPEGTS over UDP to SRS.
 stream_caster {
-    # whether stream caster is enabled.
-    # default: off
-    enabled         off;
-    # the caster type of stream, the casters:
-    #       mpegts_over_udp, MPEG-TS over UDP caster.
-    #       rtsp, Real Time Streaming Protocol (RTSP).
-    #       flv, FLV over HTTP POST.
-    caster          mpegts_over_udp;
-    # the output rtmp url.
-    # for mpegts_over_udp caster, the typically output url:
-    #       rtmp://127.0.0.1/live/livestream
-    # for rtsp caster, the typically output url:
-    #       rtmp://127.0.0.1/[app]/[stream]
-    #       for example, the rtsp url:
-    #           rtsp://192.168.1.173:8544/live/livestream.sdp
-    #           where the [app] is "live" and [stream] is "livestream", output is:
+    # Whether stream converter is enabled.
+    # Default: off
+    enabled on;
+    # The type of stream converter, could be:
+    #       mpegts_over_udp, push MPEG-TS over UDP and convert to RTMP.
+    caster mpegts_over_udp;
+    # The output rtmp url.
+    # For mpegts_over_udp converter, the typically output url:
     #           rtmp://127.0.0.1/live/livestream
-    output          rtmp://127.0.0.1/live/livestream;
-    # the listen port for stream caster.
-    #       for mpegts_over_udp caster, listen at udp port. for example, 8935.
-    #       for rtsp caster, listen at tcp port. for example, 554.
-    #       for flv caster, listen at tcp port. for example, 8936.
-    # TODO: support listen at <[ip:]port>
-    listen          8935;
-    # for the rtsp caster, the rtp server local port over udp,
-    # which reply the rtsp setup request message, the port will be used:
-    #       [rtp_port_min, rtp_port_max)
-    rtp_port_min    57200;
-    rtp_port_max    57300;
+    output rtmp://127.0.0.1/live/livestream;
+    # The listen port for stream converter.
+    # For mpegts_over_udp converter, listen at udp port. for example, 8935.
+    listen 8935;
+}
+
+# Push FLV by HTTP POST to SRS.
+stream_caster {
+    # Whether stream converter is enabled.
+    # Default: off
+    enabled on;
+    # The type of stream converter, could be:
+    #       flv, push FLV by HTTP POST and convert to RTMP.
+    caster flv;
+    # The output rtmp url.
+    # For flv converter, the typically output url:
+    #           rtmp://127.0.0.1/[app]/[stream]
+    # For example, POST to url:
+    #           http://127.0.0.1:8936/live/livestream.flv
+    # Where the [app] is "live" and [stream] is "livestream", output is:
+    #           rtmp://127.0.0.1/live/livestream
+    output rtmp://127.0.0.1/[app]/[stream];
+    # The listen port for stream converter.
+    # For flv converter, listen at tcp port. for example, 8936.
+    listen 8936;
 }
 ```
+
+Please follow instructions of specified protocols bellow.
 
 ## Push MPEG-TS over UDP
 
-SRS can listen a udp port, which recv udp packet(SPTS) from encoder, then remux the SPTS to a RTMP stream. All features for RTMP is ok for this RTMP stream.
+You're able to push MPEGTS over UDP to SRS, then covert to RTMP and other protocols.
 
-The config for pushing MPEG-TS over UDP, see `conf/push.mpegts.over.udp.conf`:
+First, start SRS with configuration for MPEGTS:
 
-```
-# the streamer cast stream from other protocol to SRS over RTMP.
-# @see https://github.com/ossrs/srs/tree/develop#stream-architecture
-stream_caster {
-    enabled         on;
-    caster          mpegts_over_udp;
-    output          rtmp://127.0.0.1/live/livestream;
-    listen          1935;
-}
+```bash
+./objs/srs -c conf/push.mpegts.over.udp.conf
 ```
 
-For more information, read https://github.com/ossrs/srs/issues/250#issuecomment-72321769
+> Note: About the detail configuration, please read about the `mpegts_over_udp` section of [config](#config).
 
-# Push RTSP to SRS
+Then, start to push stream, for example, by FFmpeg:
 
-It's deprecated and will be removed in the future, see [#2304](https://github.com/ossrs/srs/issues/2304#issuecomment-826009290).
+```bash
+ffmpeg -re -f flv -i doc/source.flv -c copy -f mpegts udp://127.0.0.1:8935
+```
+
+Finally, play the stream:
+
+* [http://localhost:8080/live/livestream.flv](http://localhost:8080/players/srs_player.html?stream=livestream.flv)
+* [http://localhost:8080/live/livestream.m3u8](http://localhost:8080/players/srs_player.html?stream=livestream.m3u8)
+* [webrtc://localhost/live/livestream](http://localhost:8080/players/rtc_player.html?stream=livestream)
+
+Please note that each UDP port is bind to a RTMP stream.
+
+> Note: About the development notes, please see [#250](https://github.com/ossrs/srs/issues/250).
 
 ## Push HTTP FLV to SRS
 
-SRS can listen at a http port, to which encoder to push stream, then remux the HTTP flv to RTMP. All features for RTMP is ok for this RTMP stream.
+You're also able to push HTTP FLV by HTTP POST, which is very simple for mobile device to send HTTP stream.
 
-The config for pushing HTTP FLV to SRS, read `conf/push.flv.conf`：
+First, start SRS with configuration for FLV:
 
-```
-# the streamer cast stream from other protocol to SRS over RTMP.
-# @see https://github.com/ossrs/srs/tree/develop#stream-architecture
-stream_caster {
-    enabled         on;
-    caster          flv;
-    output          rtmp://127.0.0.1/[app]/[stream];
-    listen          8936;
-}
+```bash
+./objs/srs -c conf/push.flv.conf
 ```
 
-The app publish url: `http://127.0.0.1:8936/live/sea.flv`<br/>
-The RTMP url to play: `rtmp://127.0.0.1/live/sea`<br/>
-The HLS url to play: `http://127.0.0.1:8080/live/sea.m3u8`
+> Note: About the detail configuration, please read about the `flv` section of [config](#config).
 
-Remark: User should enable the HTTP server and HLS, read `conf/push.flv.conf`
+Then, start to push stream, for example, by FFmpeg:
+
+```bash
+ffmpeg -re -f flv -i doc/source.flv -c copy \
+    -f flv http://127.0.0.1:8936/live/livestream.flv
+```
+
+Finally, play the stream:
+
+* [http://localhost:8080/live/livestream.flv](http://localhost:8080/players/srs_player.html?stream=livestream.flv)
+* [http://localhost:8080/live/livestream.m3u8](http://localhost:8080/players/srs_player.html?stream=livestream.m3u8)
+* [webrtc://localhost/live/livestream](http://localhost:8080/players/rtc_player.html?stream=livestream)
+
+> Note: About the development notes, please see [#2611](https://github.com/ossrs/srs/issues/2611).
+
+## Push RTSP to SRS
+
+It's been eliminated, see [#2304](https://github.com/ossrs/srs/issues/2304#issuecomment-826009290).
 
 2015.1
-
-[ap]: https://github.com/ossrs/android-publisher
 
 ![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/doc/en/v5/streamer)
 

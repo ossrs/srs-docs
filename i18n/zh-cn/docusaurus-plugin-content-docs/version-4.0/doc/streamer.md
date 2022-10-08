@@ -1,27 +1,26 @@
 ---
-title: Stream Caster
-sidebar_label: Stream Caster 
+title: Stream Converter
+sidebar_label: Stream Converter 
 hide_title: false
 hide_table_of_contents: false
 ---
 
-# Streamer
+# Stream Converter
 
-Streamer是SRS作为服务器侦听并接收其他协议的流（譬如RTSP，MPEG-TS over UDP等等），将这些协议的流转换成RTMP推送给自己，以使用RTMP/HLS/HTTP分发流。
+Stream Converter是SRS作为服务器侦听并接收其他协议的流（譬如FLV, MPEG-TS over UDP等等），将这些协议的流转换成RTMP推送给自己，以使用RTMP/HLS/HTTP分发流。
 
 ## Use Scenario
 
 常见的应用场景包括：
 
 * Push MPEG-TS over UDP to SRS：通过UDP协议，将MPEG-TS推送到SRS，分发为RTMP/HLS/HTTP流。
-* Push RTSP to SRS：通过RTSP协议，将流推送到SRS，分发为RTMP/HLS/HTTP流。
 * POST FLV over HTTP to SRS: 通过HTTP协议，将FLV流POST到SRS，分发为RTMP/HLS/HTTP流。
 
-备注：Streamer将其他支持的协议推送RTMP给SRS后，所有SRS的功能都能支持。譬如，推RTSP流给Streamer，Streamer转成RTMP推送给SRS，若vhost是edge，SRS将RTMP流转发给源站。或者将RTMP流转码，或者直接转发。另外，所有分发方法都是可用的，譬如推RTSP流给Streamer，Streamer转成RTMP推给SRS，以RTMP/HLS/HTTP分发。
+> Note: Stream Converter将其他支持的协议推送RTMP给SRS后，所有SRS的功能都能支持。譬如，推MPEGTS流给SRS，Stream Converter转成RTMP推送给SRS，若vhost是edge，SRS将RTMP流转发给源站。或者将RTMP流转码，或者直接转发。
 
 ## Build
 
-编译SRS时打开StreamCaster支持，参考[Build](./install.md)：
+编译SRS时打开Stream Converter支持，参考[Build](./install.md)：
 
 ```
 ./configure --stream-caster=on
@@ -29,49 +28,52 @@ Streamer是SRS作为服务器侦听并接收其他协议的流（譬如RTSP，MP
 
 ## Protocols
 
-目前Streamer支持的协议包括：
+目前Stream Converter支持的协议包括：
 
 * MPEG-TS over UDP：已支持，可使用FFMPEG或其他编码器`push MPEG-TS over UDP`到SRS上。
-* Push RTSP to SRS：已支持，可以使用FFMPEG或其他编码器`push rtsp to SRS`。
 * POST FLV over HTTP to SRS: 已支持。
 
 ## Config
 
-The config for stream casters:
+Stream Converter相关的配置如下：
 
 ```
-# the streamer cast stream from other protocol to SRS over RTMP.
-# @see https://github.com/ossrs/srs/tree/develop#stream-architecture
+# Push MPEGTS over UDP to SRS.
 stream_caster {
-    # whether stream caster is enabled.
-    # default: off
-    enabled         off;
-    # the caster type of stream, the casters:
-    #       mpegts_over_udp, MPEG-TS over UDP caster.
-    #       rtsp, Real Time Streaming Protocol (RTSP).
-    #       flv, FLV over HTTP POST.
-    caster          mpegts_over_udp;
-    # the output rtmp url.
-    # for mpegts_over_udp caster, the typically output url:
-    #       rtmp://127.0.0.1/live/livestream
-    # for rtsp caster, the typically output url:
-    #       rtmp://127.0.0.1/[app]/[stream]
-    #       for example, the rtsp url:
-    #           rtsp://192.168.1.173:8544/live/livestream.sdp
-    #           where the [app] is "live" and [stream] is "livestream", output is:
+    # Whether stream converter is enabled.
+    # Default: off
+    enabled on;
+    # The type of stream converter, could be:
+    #       mpegts_over_udp, push MPEG-TS over UDP and convert to RTMP.
+    caster mpegts_over_udp;
+    # The output rtmp url.
+    # For mpegts_over_udp converter, the typically output url:
     #           rtmp://127.0.0.1/live/livestream
-    output          rtmp://127.0.0.1/live/livestream;
-    # the listen port for stream caster.
-    #       for mpegts_over_udp caster, listen at udp port. for example, 8935.
-    #       for rtsp caster, listen at tcp port. for example, 554.
-    #       for flv caster, listen at tcp port. for example, 8936.
-    # TODO: support listen at <[ip:]port>
-    listen          8935;
-    # for the rtsp caster, the rtp server local port over udp,
-    # which reply the rtsp setup request message, the port will be used:
-    #       [rtp_port_min, rtp_port_max)
-    rtp_port_min    57200;
-    rtp_port_max    57300;
+    output rtmp://127.0.0.1/live/livestream;
+    # The listen port for stream converter.
+    # For mpegts_over_udp converter, listen at udp port. for example, 8935.
+    listen 8935;
+}
+
+# Push FLV by HTTP POST to SRS.
+stream_caster {
+    # Whether stream converter is enabled.
+    # Default: off
+    enabled on;
+    # The type of stream converter, could be:
+    #       flv, push FLV by HTTP POST and convert to RTMP.
+    caster flv;
+    # The output rtmp url.
+    # For flv converter, the typically output url:
+    #           rtmp://127.0.0.1/[app]/[stream]
+    # For example, POST to url:
+    #           http://127.0.0.1:8936/live/livestream.flv
+    # Where the [app] is "live" and [stream] is "livestream", output is:
+    #           rtmp://127.0.0.1/live/livestream
+    output rtmp://127.0.0.1/[app]/[stream];
+    # The listen port for stream converter.
+    # For flv converter, listen at tcp port. for example, 8936.
+    listen 8936;
 }
 ```
 
@@ -94,9 +96,9 @@ stream_caster {
 
 参考：https://github.com/ossrs/srs/issues/250#issuecomment-72321769
 
-# Push RTSP to SRS
+## Push RTSP to SRS
 
-这个功能被标记为了过时(Deprecated)，并且会在未来删除，详细原因参考[#2304](https://github.com/ossrs/srs/issues/2304#issuecomment-826009290)。
+这个功能已经被删除，详细原因参考[#2304](https://github.com/ossrs/srs/issues/2304#issuecomment-826009290)。
 
 ## Push HTTP FLV to SRS
 

@@ -149,7 +149,8 @@ docker run --rm -it -p 1935:1935 -p 1985:1985 -p 8080:8080 -p 10080:10080/udp \
 Publish stream by [FFmpeg](https://ffmpeg.org/download.html) or [OBS](https://obsproject.com/download) :
 
 ```bash
-ffmpeg -re -i ./doc/source.flv -c copy -pes_payload_size 0 -f mpegts 'srt://127.0.0.1:10080?streamid=#!::r=live/livestream,m=publish'
+ffmpeg -re -i ./doc/source.flv -c copy -pes_payload_size 0 -f mpegts \
+  'srt://127.0.0.1:10080?streamid=#!::r=live/livestream,m=publish'
 ```
 
 Play stream by [ffplay](https://ffmpeg.org/download.html) or [OBS](https://obsproject.com/download)

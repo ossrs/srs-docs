@@ -39,6 +39,7 @@
         "doc/webrtc",
         "doc/sample-http-flv",
         "doc/sample-srt",
+        "doc/gb28181",
         "doc/sample-dash",
         "doc/http-server"
       ]
@@ -55,6 +56,7 @@
         "doc/delivery-hls",
         "doc/delivery-http-flv",
         "doc/dvr",
+        "doc/streamer",
         "doc/ingest",
         "doc/forward",
         "doc/security",
@@ -146,7 +148,6 @@
         "doc/ffmpeg",
         "doc/client-sdk",
         "doc/raspberrypi",
-        "doc/streamer",
         "doc/sample",
         "doc/nginx-exec",
         "doc/flv-vod-stream",
