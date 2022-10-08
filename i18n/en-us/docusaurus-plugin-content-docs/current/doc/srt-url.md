@@ -72,6 +72,13 @@ Note:
 
 The rtmp url correspond with srt url above is: `rtmp://127.0.0.1/live/livestream?vhost=srs.srt.com.cn`.
 
+## SRT URL with empty streamid
+
+Some SRT devices do not support streamid or specific character in streamid('!' or '#' or ',' ...).
+In this case, we can only use ip:port to publish SRT stream, for example `srt://127.0.0.1:10080`, SRS will set
+streamid with default value "#!::r=live/livestream,m=publish". So the SRT url above is equal to
+`srt://127.0.0.1:10080?streamid=#!::r=live/livestream,m=publish`.
+
 Runner365 2020.02
 
 ![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/doc/en/v5/srt-url)
