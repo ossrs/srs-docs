@@ -113,6 +113,16 @@ srt对端超时时间。
 - 单位：byte，默认值是1316=188x7 
 - 因为srt承载的媒体数据是mpegts封装，而每个mpegts的最小包是188bytes，所以payloadsize是188的倍数，默认是1316bytes(188x7)
 
+### passphrase
+
+SRT连接密码，默认值为空(不加密)。
+- SRT连接密码，长度10-79之间，客户端必须输入正确密码才能建连成功，否则连接将会被拒绝。
+
+### pbkeylen
+
+SRT密钥长度，默认值为0。
+- 推流加密key长度，仅可输入0/16/24/32，对应不同的密钥长度的AES加密。当设置了`passphrase`选项时才需要设置这个参数。
+
 # Recommend SRT config
 ### Latency first
 延迟优先，允许丢包
