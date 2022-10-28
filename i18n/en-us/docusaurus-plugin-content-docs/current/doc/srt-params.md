@@ -116,6 +116,15 @@ Unit: bytes, default value 1316(188x7) <br/>
 Because we use MPEG-TS over SRT, and MPEG-TS packet size is n times 188 bytes. <br/>
 So we must configure payload size n times 188, and the default size is 1316(188x7) bytes.
 
+### passphrase
+
+SRT connection passphrase, default value is empty(no encrypt). <br/>
+- The SRT publish/play passphrase, client must input correct passphrase, or the connection will be reject. <br/>
+
+### pbkeylen
+SRT encrypt key length, default value is 0. <br/>
+- The length of encrypt key, only allow value in 0/16/24/32, representate different key length of AES encrypt algorithm. <br/>
+  This option only set when `passphrase` is seted.
 
 # Recommend SRT config
 ### Latency first
