@@ -73,7 +73,7 @@ env SRS_ENV_ONLY=on SRS_EXPORTER_ENABLED=on SRS_LISTEN=1935 \
 
 > Note: 我们使用环境变量方式配置SRS，不依赖配置文件。当然使用`conf/prometheus.conf`启动也可以。
 
-> Note: SRS启动成功后，可以用`curl http://localhost:9972/metrics`验证，能看到返回指标数据就是成功了。
+> Note: SRS启动成功后，可以打开[http://localhost:9972/metrics](http://localhost:9972/metrics)验证，能看到返回指标数据就是成功了。
 
 接着，我们启动FFmpeg推流：
 
@@ -90,7 +90,7 @@ docker run --rm -p 9100:9100 prom/node-exporter
 
 > Note: 用Docker启动node_exporter数据不准，需要特殊的权限而mac不支持。实际场景请使用二进制直接在主机上启动，可以从[这里](https://github.com/prometheus/node_exporter/releases)下载对应系统的二进制。
 
-> Note: node_exporter启动后，可以用`curl http://localhost:9100/metrics`验证，能看到返回指标数据就是成功了。
+> Note: node_exporter启动后，可以打开[http://localhost:9100/metrics](http://localhost:9100/metrics)验证，能看到返回指标数据就是成功了。
 
 最后，编写配置文件`prometheus.yml`，内容如下：
 
@@ -141,7 +141,7 @@ docker run --rm -it -p 3000:3000 \
   grafana/grafana
 ```
 
-然后打开Grafana页面：http://localhost:3000/
+然后打开Grafana页面：[http://localhost:3000/](http://localhost:3000/)
 
 输入用户名`admin`，以及密码`12345678`就可以进入Grafana后台了。
 

@@ -13,7 +13,7 @@ The observability of SRS is about metrics(Prometheus Exporter), tracing(APM) and
 
 For detail specs, please read [OpenTelemetry](https://opentelemetry.io/docs/concepts/observability-primer).
 
-![](/img/doc-2022-10-30-002.png)
+![](/img/doc-2022-10-30-001.png)
 
 > Note: Please see [Metrics, tracing, and logging](https://peter.bourgon.org/blog/2017/02/21/metrics-tracing-and-logging.html)
 
@@ -67,7 +67,7 @@ env SRS_ENV_ONLY=on SRS_EXPORTER_ENABLED=on SRS_LISTEN=1935 \
 
 > Note: We use envrionment variables to config SRS, without config file. However, you're able to use config file `conf/prometheus.conf` to start the demo.
 
-> Note: Please use `curl http://localhost:9972/metrics` to verify SRS.
+> Note: Please open [http://localhost:9972/metrics](http://localhost:9972/metrics) to verify SRS.
 
 Then, use FFmpeg to push a live stream to SRS:
 
@@ -84,7 +84,7 @@ docker run --rm -p 9100:9100 prom/node-exporter
 
 > Note: Highly recommend downloading from [here](https://github.com/prometheus/node_exporter/releases) and startting by binary file.
 
-> Note: Please use `curl http://localhost:9100/metrics` to verify it.
+> Note: Please open [http://localhost:9100/metrics](http://localhost:9100/metrics) to verify it.
 
 Finally, create a `prometheus.yml` for prometheus:
 
@@ -135,7 +135,7 @@ docker run --rm -it -p 3000:3000 \
   grafana/grafana
 ```
 
-Please access Grafana console by http://localhost:3000/
+Please access Grafana console by [http://localhost:3000/](http://localhost:3000/)
 
 > Note: Please input username `admin` and password `12345678` then click login.
 
