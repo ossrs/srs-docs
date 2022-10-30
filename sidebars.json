@@ -72,7 +72,8 @@
       "collapsed": true,
       "items": [
         "doc/http-api",
-        "doc/http-callback"
+        "doc/http-callback",
+        "doc/exporter"
       ]
     },
     {
