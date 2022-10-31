@@ -167,7 +167,11 @@ Then open [Dashboards](http://localhost:3000/dashboards) in browser, you will se
 
 ![](/img/doc-2022-10-30-003.png)
 
-There are more other dashboards, please get them in [srs-grafana](https://github.com/ossrs/srs-grafana/tree/main/dashboards). Any patch is welcome.
+There are more other dashboards, please get them in [srs-grafana](https://github.com/ossrs/srs-grafana/tree/main/dashboards). 
+
+![](/img/doc-2022-10-30-004.png)
+
+Any patch is welcome.
 
 ![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/doc/en/v5/exporter)
 

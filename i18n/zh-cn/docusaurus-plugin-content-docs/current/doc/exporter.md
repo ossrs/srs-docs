@@ -173,7 +173,11 @@ curl -s -H "Content-Type: application/json" \
 
 ![](/img/doc-2022-10-30-003.png)
 
-我们还提供了更加完整的仪表盘，可以在[srs-grafana](https://github.com/ossrs/srs-grafana/tree/main/dashboards)中看到，欢迎一起来完善SRS仪表盘。
+我们还提供了更加完整的仪表盘，可以在[srs-grafana](https://github.com/ossrs/srs-grafana/tree/main/dashboards)中看到，如下图所示：
+
+![](/img/doc-2022-10-30-004.png)
+
+欢迎一起来完善SRS仪表盘。
 
 ![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/doc/zh/v5/exporter)
 
