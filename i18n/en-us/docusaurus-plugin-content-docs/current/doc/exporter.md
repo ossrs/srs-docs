@@ -155,10 +155,10 @@ curl -s -H "Content-Type: application/json" \
 Run command to [import](https://grafana.com/docs/grafana/latest/developers/http_api/dashboard/#create--update-dashboard) the HelloWorld dashboard:
 
 ```bash
-curl https://raw.githubusercontent.com/ossrs/srs-grafana/main/dashboards/helloworld.json | \
+data=$(curl https://raw.githubusercontent.com/ossrs/srs-grafana/main/dashboards/helloworld-import.json 2>/dev/null)
 curl -s -H "Content-Type: application/json" \
     -XPOST http://admin:12345678@localhost:3000/api/dashboards/db \
-    --data-binary @-
+    --data-binary "{\"dashboard\":${data},\"overwrite\":true,\"inputs\":[],\"folderId\":0}"
 ```
 
 > Note: For other dashboards, please see [srs-grafana](https://github.com/ossrs/srs-grafana/tree/main/dashboards).
