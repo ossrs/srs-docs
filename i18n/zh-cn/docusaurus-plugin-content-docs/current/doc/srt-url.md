@@ -82,7 +82,7 @@ streamid默认为"#!::r=live/livestream,m=publish", 也就是上面的url等同�
 注意: streamid为空的情况下，只允许进行推流，不允许进行拉流。
 
 FFmpeg使用示例:
-> ffmpeg -re -i source.mp4 -c:v libx265 -c:a -f mpegts 'srt://127.0.0.1:10080'
+> ffmpeg -re -i source.mp4 -c copy -f mpegts 'srt://127.0.0.1:10080'
 
 OBS使用:
 > ![](/img/doc-main-concepts-srt-url-001.png)
