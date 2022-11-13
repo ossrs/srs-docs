@@ -28,6 +28,19 @@ RTMP is design for low latency:
 * Low latency, about 0.8-3s.
 * For RTMP is base on TCP, the latency maybe very large for network issue.
 
+## HLS LowLatency
+
+The latency of HLS is larger than RTMP, generally about 5s+, or 15s+ for default config.
+
+Please follow the configurations:
+
+* SRS uses `conf/hls.realtime.conf` to use small pieces, and no wait for keyframe.
+* OBS configures with `Keyframe interval` to 1s.
+* OBS configures with `Profile` to `baseline`, and `Tune` to `zerolatency`.
+* You're not able to control the latency of player, generally about 5s+.
+
+There is a new protocol LLHLS, which has lower startup latency, but the total latency is larger than 3s.
+
 ## Benchmark
 
 We use the clock of mobile phone to test the latency,
