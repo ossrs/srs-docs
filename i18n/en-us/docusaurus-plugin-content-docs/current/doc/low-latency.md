@@ -185,7 +185,7 @@ vhost __defaultVhost__ {
 }
 ```
 
-## Benchmark
+## Benchmark Data
 
 SRS: 0.9.55
 
@@ -216,7 +216,7 @@ Latency: RTMP 2s, HLS 24s.
 
 Read: ![RTMP-HLS-latency](/img/doc-main-concepts-low-latency-001.png)
 
-## Edge benchmark
+## Edge Benchmark Data
 
 SRS RTMP cluster almost not add more latency.
 

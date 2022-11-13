@@ -166,7 +166,7 @@ vhost __defaultVhost__ {
 
 备注：参考conf/full.conf的min.delay.com配置。
 
-## 累积延迟
+## Max Queue Length
 
 除了GOP-Cache，还有一个有关系，就是累积延迟。SRS可以配置直播队列的长度，服务器会将数据放在直播队列中，如果超过这个长度就清空到最后一个I帧：
 
@@ -184,7 +184,7 @@ vhost __defaultVhost__ {
 
 处理累积延迟的最好方法，是客户端检测到缓冲区有很多数据了，如果可以的话，就重连服务器。当然如果网络一直不好，那就没有办法了。
 
-## 低延时配置
+## Low Latency config
 
 考虑GOP-Cache和累积延迟，推荐的低延时配置如下（参考min.delay.com）：
 ```bash
@@ -208,7 +208,7 @@ vhost __defaultVhost__ {
 
 当然，服务器的性能也要考虑，不可以让一个SRS进程跑太高带宽，一般CPU在80%以下不会影响延迟，连接数参考[性能](./performance.md)。
 
-## 实测
+## Benchmark Data
 
 SRS: 0.9.55
 
@@ -238,7 +238,7 @@ vhost __defaultVhost__ {
 
 参考：![RTMP-HLS-latency](/img/doc-main-concepts-low-latency-001.png)
 
-## Edge实测
+## Edge Benchmark Data
 
 SRS集群不会增加延迟。这个是Edge模式比ingest要高级的地方，ingest需要启动进程，延迟会大。ingest主要适配多种协议，也可以主动从源站采集流，但Edge是专业的边缘模式。
 
