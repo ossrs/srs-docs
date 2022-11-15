@@ -106,7 +106,7 @@ ffmpeg -re -i ./doc/source.flv -c copy -f flv rtmp://localhost/live/livestream
 
 ## WebRTC using HTTPS
 
-若需要在非本机使用WebRTC，比如SRS运行在远程服务器，在笔记本或者手机上使用WeBRTC，则需要开启HTTPS API。
+若需要在非本机使用WebRTC，比如SRS运行在远程服务器，在笔记本或者手机上使用WebRTC，则需要开启HTTPS API。
 
 先用Docker启动SRS：
 
