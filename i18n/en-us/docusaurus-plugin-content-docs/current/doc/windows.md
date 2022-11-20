@@ -68,11 +68,11 @@ If want to package by [NSIS](https://nsis.sourceforge.io/Download), please run i
 
 ## Known Issues
 
-- [ ] [Cygwin: Build with SRT is ok, but crash when running. #3251](https://github.com/ossrs/srs/issues/3251)
-- [ ] [Cygwin: Support address sanitizer for windows. #3252](https://github.com/ossrs/srs/issues/3252)
-- [ ] [Cygwin: ST stuck when working in multiple threads mode. #3253](https://github.com/ossrs/srs/issues/3253)
-- [ ] [Cygwin: Support iocp and windows native build. #3256](https://github.com/ossrs/srs/issues/3256)
-- [x] [Cygwin: Build srtp with openssl fail for no srtp_aes_icm_ctx_t #3254](https://github.com/ossrs/srs/issues/3254)
+* [Cygwin: Build with SRT is ok, but crash when running. #3251](https://github.com/ossrs/srs/issues/3251)
+* [Cygwin: Support address sanitizer for windows. #3252](https://github.com/ossrs/srs/issues/3252)
+* [Cygwin: ST stuck when working in multiple threads mode. #3253](https://github.com/ossrs/srs/issues/3253)
+* [Cygwin: Support iocp and windows native build. #3256](https://github.com/ossrs/srs/issues/3256)
+* [Cygwin: Build srtp with openssl fail for no srtp_aes_icm_ctx_t #3254](https://github.com/ossrs/srs/issues/3254)
 
 ## Links
 
