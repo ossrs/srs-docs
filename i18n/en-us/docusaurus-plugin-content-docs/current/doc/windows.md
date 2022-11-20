@@ -23,7 +23,7 @@ git checkout develop
 make
 ```
 
-If success, there should be a `./objs/srs.exe`
+If success, there should be a `./objs/srs.exe`, please follow [Getting Started](./getting-started.md) to use it.
 
 ## Install from binary
 

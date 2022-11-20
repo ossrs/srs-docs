@@ -7,15 +7,15 @@ hide_table_of_contents: false
 
 # SRS for Windows
 
-SRS 5.0.89+ supports Windows(Cygwin64).
+SRS 5.0.89+正式支持Windows，基于Cygwin64平台，支持代码编译，以及流水线，每个5.0的版本都会提供安装包。
 
 ## Build from code
 
-Please install [Cygwin64](https://cygwin.com/install.html).
+如果你需要自己从代码编译Windows版本的SRS，请先安装[Cygwin64](https://cygwin.com/install.html)。
 
-Install packages `gcc-g++` `make` `automake` `patch` `pkg-config` `tcl` `cmake`, please see [packages](https://github.com/cygwin/cygwin-install-action#parameters).
+另外，还需要安装工具`gcc-g++` `make` `automake` `patch` `pkg-config` `tcl` `cmake`，可以参考流水线[说明](https://github.com/cygwin/cygwin-install-action#parameters)。
 
-Build SRS with cygwin terminal:
+安装好环境后，在Cygwin终端中执行命令：
 
 ```bash
 git checkout develop
@@ -23,41 +23,41 @@ git checkout develop
 make
 ```
 
-If success, there should be a `./objs/srs.exe`
+这样就可以编译出Windows版本的SRS了，可执行文件在`./objs/srs.exe`，其他使用说明参考[Getting Started](./getting-started.md)。
 
 ## Install from binary
 
-For each [release](https://github.com/ossrs/srs/releases) of SRS, from SRS 5.0.89, there is always a binary installer of SRS Windows, normally as the artifact of release, which allows you to install and run SRS very easy.
+从5.0.89之后，SRS 5.0每个版本[release](https://github.com/ossrs/srs/releases)，都会附带Windows的安装包。你可以下载后，快速安装和使用SRS。
 
-Bellow is some examples, note that you should always use the latest [release](https://github.com/ossrs/srs/releases), not the fixed one:
+下面是一些安装包的链接，注意你应该用最新版本，而不是使用某个固定版本[release](https://github.com/ossrs/srs/releases)：
 
-* [Latest release](https://github.com/ossrs/srs/releases)
+* [最新版本下载](https://github.com/ossrs/srs/releases)
 * [SRS-Windows-x86_64-5.0.89-setup.exe](https://github.com/ossrs/srs/releases/tag/v5.0.89)
 * [SRS-Windows-x86_64-5.0.19-setup.exe](https://github.com/ossrs/srs/releases/tag/v5.0.19)
 
-> Note: SRS 5.0.89+ supports cygwin pipeline, to build and packge automatically by GitHub Actions.
+> Note: SRS 5.0.89+之后，使用流水线构建Windows安装包，GitHub Actions自动生成。
 
 ![](/img/windows-2022-11-20-001.png)
 
-Run SRS as administrator:
+安装后，使用管理员权限启动SRS：
 
 ![](/img/windows-2022-11-20-002.png)
 
-Publish to SRS Windows by FFmpeg:
+使用FFmpeg或OBS推流到SRS：
 
 ```bash
 ffmpeg -re -i ~/srs/doc/source.flv -c copy -f flv rtmp://win11/live/livestream
 ```
 
-Play by VLC or [srs-player](http://win11:8080/)
+使用VLC或[srs-player](http://win11:8080/)播放流：
 
 ![](/img/windows-2022-11-20-003.png)
 
-Most of SRS features are available in Windows, for example, RTMP, HTTP-FLV, HLS, WebRTC, HTTP-API, Prometheus Exporter, etc.
+基本上SRS现有的功能都能用，比如RTMP, HTTP-FLV, HLS, WebRTC, HTTP-API, Prometheus Exporter等等。
 
 ## Package by NSIS
 
-If want to package by [NSIS](https://nsis.sourceforge.io/Download), please run in cygwin terminal:
+如果你需要自己修改代码并打包，可以使用[NSIS](https://nsis.sourceforge.io/Download)，在Cygwin终端中执行命令：
 
 ```bash
 "/cygdrive/c/Program Files (x86)/NSIS/makensis.exe" \
