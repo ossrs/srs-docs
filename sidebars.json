@@ -58,6 +58,7 @@
         "doc/dvr",
         "doc/streamer",
         "doc/ingest",
+        "doc/windows",
         "doc/forward",
         "doc/security",
         "doc/snapshot"
@@ -144,7 +145,6 @@
       "collapsed": true,
       "items": [
         "doc/hevc",
-        "doc/windows",
         "doc/ide",
         "doc/ffmpeg",
         "doc/client-sdk",
