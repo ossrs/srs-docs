@@ -8,6 +8,8 @@ About milestones of SRS.
 * Release 2.0, 2015~2017, Code: ZhouGuowen
 * Release 1.0, 2013~2014, Code: HuKaiqun
 
+For detail features of SRS, please see [FEATURES](https://github.com/ossrs/srs/blob/develop/trunk/doc/Features.md#features).
+
 ![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/pages/product-en)
 
 
