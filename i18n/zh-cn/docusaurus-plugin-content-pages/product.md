@@ -93,7 +93,7 @@ SRS是全球TOP1的开源视频服务器，支持直播和WebRTC，可应用于�
 
 开发代号：Bee（蜜蜂），代表SRS正式开始开源社区驱动，协作是主要的特点，也不断提示我们做开源项目需要像蜜蜂那样，持续的每天都付出时间，才能做好开源项目。
 感谢所有三百多位开发者，以及技术委员会的核心开发者，特别感谢 [TOC](https://github.com/ossrs/srs/blob/develop/trunk/AUTHORS.md#toc) 持续的努力，
-大家一起在不断做出自己的贡献。2021年6月，SRS进入 [木兰开源社区](https://mulanos.oschina.net/) 孵化，感谢导师阿里云陈绪、周明辉教授、腾讯单致豪，感谢木兰社区杨丽蕴主任的大力支持。特别感谢腾讯Tommy(李郁韬)、Eddie(薛迪)、Leo(刘连响)、Vulture(李志成)、Dragon(兰玉龙)，以及各位开发者领导对于SRS的认可和对开发者参与开源贡献的支持。特别感谢社区经理耿航和刘歧，对社区推广和发展做出的贡献。
+大家一起在不断做出自己的贡献。2021年6月，SRS进入 [木兰开源社区](https://portal.mulanos.cn) 孵化，感谢导师阿里云陈绪、周明辉教授、腾讯单致豪，感谢木兰社区杨丽蕴主任的大力支持。特别感谢腾讯Tommy(李郁韬)、Eddie(薛迪)、Leo(刘连响)、Vulture(李志成)、Dragon(兰玉龙)，以及各位开发者领导对于SRS的认可和对开发者参与开源贡献的支持。特别感谢社区经理耿航和刘歧，对社区推广和发展做出的贡献。
 
 - [x] 优化SRT，支持协程原生架构。[#3010](https://github.com/ossrs/srs/issues/3010)
 - [x] 支持amd/armv7/aarch64多CPU架构的Docker镜像。[#3058](https://github.com/ossrs/srs/issues/3058)
@@ -111,6 +111,7 @@ SRS是全球TOP1的开源视频服务器，支持直播和WebRTC，可应用于�
 - [x] Unity WebRTC，支持Unity平台对接SRS，使用WHIP协议。[srs-unity](https://github.com/ossrs/srs-unity)
 - [x] 支持WHIP协议，推流和拉流，[#2324](https://github.com/ossrs/srs/issues/2324)
 - [x] WebRTC over TCP，支持TCP传输WebRTC，支持TCP端口复用。[#2852](https://github.com/ossrs/srs/issues/2852)
+- [x] 支持HTTP API、HTTP Stream、HTTP Server、WebRTC TCP端口复用。 [#2881](https://github.com/ossrs/srs/issues/2881).
 
 预计5.0会在2022年底完成主要功能开发，预计2023年底发布。
 
