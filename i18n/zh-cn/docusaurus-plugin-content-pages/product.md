@@ -95,7 +95,6 @@ SRS是全球TOP1的开源视频服务器，支持直播和WebRTC，可应用于�
 感谢所有三百多位开发者，以及技术委员会的核心开发者，特别感谢 [TOC](https://github.com/ossrs/srs/blob/develop/trunk/AUTHORS.md#toc) 持续的努力，
 大家一起在不断做出自己的贡献。2021年6月，SRS进入 [木兰开源社区](https://portal.mulanos.cn) 孵化，感谢导师阿里云陈绪、周明辉教授、腾讯单致豪，感谢木兰社区杨丽蕴主任的大力支持。特别感谢腾讯Tommy(李郁韬)、Eddie(薛迪)、Leo(刘连响)、Vulture(李志成)、Dragon(兰玉龙)，以及各位开发者领导对于SRS的认可和对开发者参与开源贡献的支持。特别感谢社区经理耿航和刘歧，对社区推广和发展做出的贡献。
 
-- [x] 优化SRT，支持协程原生架构。[#3010](https://github.com/ossrs/srs/issues/3010)
 - [x] 支持amd/armv7/aarch64多CPU架构的Docker镜像。[#3058](https://github.com/ossrs/srs/issues/3058)
 - [x] Forward增强，支持动态Forward，可以灵活定制转发策略。[#2799](https://github.com/ossrs/srs/pull/2799)
 - [x] GB28181，支持GB2016标准，内置SIP信令，TCP复用端口传输。[#3176](https://github.com/ossrs/srs/issues/3176)
