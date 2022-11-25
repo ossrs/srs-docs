@@ -226,8 +226,8 @@ docker run --rm --env CANDIDATE=$CANDIDATE \
 Use FFmpeg docker to push to localhost:
 
 ```bash
-docker run --rm --network=host ossrs/srs:encoder ffmpeg -re -i ./doc/source.flv \
-  -c copy -f flv rtmp://localhost/live/livestream
+docker run --rm -it ossrs/srs:encoder ffmpeg -stream_loop -1 -re -i doc/source.flv \
+  -c copy -f flv rtmp://host.docker.internal/live/livestream
 ```
 
 Play the stream in browser:

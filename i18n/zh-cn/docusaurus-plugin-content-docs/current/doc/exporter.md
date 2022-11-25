@@ -78,8 +78,8 @@ env SRS_ENV_ONLY=on SRS_EXPORTER_ENABLED=on SRS_LISTEN=1935 \
 接着，我们启动FFmpeg推流：
 
 ```bash
-docker run --rm -it ossrs/srs:encoder ffmpeg -re -i doc/source.flv -c copy \
-  -f flv rtmp://host.docker.internal/live/livestream
+docker run --rm -it registry.cn-hangzhou.aliyuncs.com/ossrs/srs:encoder ffmpeg -stream_loop -1 -re -i doc/source.flv \
+  -c copy -f flv rtmp://host.docker.internal/live/livestream
 ```
 
 然后，启动[node_exporter](https://github.com/prometheus/node_exporter)，收集节点的数据，这样和SRS的服务器数据可以形成完整的监控数据:

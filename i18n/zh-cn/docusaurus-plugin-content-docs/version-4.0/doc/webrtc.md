@@ -194,8 +194,8 @@ docker run --rm --env CANDIDATE=$CANDIDATE \
 使用RTMP推流到本机：
 
 ```bash
-docker run --rm --network=host registry.cn-hangzhou.aliyuncs.com/ossrs/srs:encoder ffmpeg -re -i ./doc/source.flv \
-  -c copy -f flv rtmp://localhost/live/livestream
+docker run --rm -it registry.cn-hangzhou.aliyuncs.com/ossrs/srs:encoder ffmpeg -stream_loop -1 -re -i doc/source.flv \
+  -c copy -f flv rtmp://host.docker.internal/live/livestream
 ```
 
 可播放的流地址：

@@ -25,7 +25,8 @@ docker run --rm -it -p 1935:1935 -p 1985:1985 -p 8080:8080 \
 Use docker of FFmpeg to publish:
 
 ```bash
-docker run --network host --rm ossrs/srs:encoder
+docker run --rm -it ossrs/srs:encoder ffmpeg -stream_loop -1 -re -i doc/source.flv \
+  -c copy -f flv rtmp://host.docker.internal/live/livestream
 ```
 
 Or publish stream by [FFmpeg](https://ffmpeg.org/download.html) or [OBS](https://obsproject.com/download) :
@@ -87,7 +88,8 @@ docker run --rm -it -p 1935:1935 -p 1985:1985 -p 8080:8080 \
 Use docker of FFmpeg to publish:
 
 ```bash
-docker run --network host --rm ossrs/srs:encoder
+docker run --rm -it ossrs/srs:encoder ffmpeg -stream_loop -1 -re -i doc/source.flv \
+  -c copy -f flv rtmp://host.docker.internal/live/livestream
 ```
 
 Or publish stream by [FFmpeg](https://ffmpeg.org/download.html) or [OBS](https://obsproject.com/download) :

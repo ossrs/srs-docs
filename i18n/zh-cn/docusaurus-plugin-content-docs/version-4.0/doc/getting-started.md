@@ -25,7 +25,8 @@ docker run --rm -it -p 1935:1935 -p 1985:1985 -p 8080:8080 \
 使用FFmpeg的Docker推流到本机：
 
 ```bash
-docker run --network host --rm registry.cn-hangzhou.aliyuncs.com/ossrs/srs:encoder
+docker run --rm -it registry.cn-hangzhou.aliyuncs.com/ossrs/srs:encoder ffmpeg -stream_loop -1 -re -i doc/source.flv \
+  -c copy -f flv rtmp://host.docker.internal/live/livestream
 ```
 
 或者使用 [FFmpeg(点击下载)](https://ffmpeg.org/download.html) 或 [OBS(点击下载)](https://obsproject.com/download) 推流：
@@ -87,7 +88,8 @@ docker run --rm -it -p 1935:1935 -p 1985:1985 -p 8080:8080 \
 使用FFmpeg的Docker推流到本机：
 
 ```bash
-docker run --network host --rm registry.cn-hangzhou.aliyuncs.com/ossrs/srs:encoder
+docker run --rm -it registry.cn-hangzhou.aliyuncs.com/ossrs/srs:encoder ffmpeg -stream_loop -1 -re -i doc/source.flv \
+  -c copy -f flv rtmp://host.docker.internal/live/livestream
 ```
 
 或者使用 [FFmpeg(点击下载)](https://ffmpeg.org/download.html) 或 [OBS(点击下载)](https://obsproject.com/download) 推流：
