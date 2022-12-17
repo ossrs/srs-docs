@@ -38,6 +38,17 @@
   > 1. SRS支持用Ingest拉RTSP，不支持推RTSP流到SRS，这不是正确的用法，详细原因请参考 [#2304](https://github.com/ossrs/srs/issues/2304) 。
   > 1. 当然RTSP服务器，RTSP播放，更加不会支持，参考 [#476](https://github.com/ossrs/srs/issues/476)
   > 1. 如果你需要非常多比如1万路摄像头接入，那么用FFmpeg可能会比较费劲，这么大规模的业务，比较推荐的方案是自己用ST+SRS的代码，实现一个拉RTSP转发的服务器。
+       <a name='rtsp'></a>
+
+### [CPU and OS](#cpu-and-os)
+* `CPU and OS`：关于SRS支持的CPU架构和OS操作系统
+  > 1. SRS支持常见的CPU架构，比如x86_64或者amd64，以及armv7/aarch64/AppleM1，还有MIPS或RISCV，以及龙芯loongarch，其他CPU适配请参考[ST#22](https://github.com/ossrs/state-threads/issues/22)。
+  > 1. SRS支持常用的操作系统，比如Linux包括CentOS和Ubuntu等，还有macOS，以及Windows等。
+  > 1. 国产信创系统，SRS也是支持的，如果需要适配新的国产信创系统，可以提issue。
+* `Windows`: 关于Windows的特别说明
+  > 1. 一般用Windows做服务器比较少，但也有一些应用场景，SRS 5.0目前已经支持了Windows，每个版本发布都会有Windows的安装包下载。
+  > 1. 由于大家在Github下载比较困难，我们提供了gitee的镜像下载，具体请看 [Gitee: Releases](https://gitee.com/ossrs/srs/releases) 每个版本的附件。
+  > 1. 在Windows平台还有些问题未解决，也会继续完善支持，详细请参考[#2532](https://github.com/ossrs/srs/issues/2532)
 
 <a name='http-api'></a>
 
@@ -206,14 +217,7 @@
 ```
 
 ```
-GB已经放到独立的仓库 [srs-gb28181](https://github.com/ossrs/srs-gb28181)， 请参考 #2845
-问题请提交到GB的仓库[bug](https://github.com/ossrs/srs-gb28181/issues)，或者[pr](https://github.com/ossrs/srs-gb28181/pulls)
-
-由于265主要在GB中使用，所以265分支也迁移到了 [srs-gb28181](https://github.com/ossrs/srs-gb28181/tree/feature/h265)
-
-云SRS的问题，请提交到[srs-cloud](https://github.com/ossrs/srs-cloud)
-
-该Issue会被删除，请先阅读FAQ：#2716
+云SRS的问题，请提交到[srs-cloud](https://github.com/ossrs/srs-cloud)，该Issue会被删除，请先阅读FAQ：#2716
 ```
 
 ![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/pages/faq-zh)
