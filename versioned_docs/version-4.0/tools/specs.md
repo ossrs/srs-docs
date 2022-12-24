@@ -30,6 +30,8 @@ hide_table_of_contents: false
 1. [H.264-AVC-ISO_IEC_14496-10-2012.pdf, ISO_IEC_14496-10-AVC-2012.pdf](/files/ISO_IEC_14496-10-AVC-2012.pdf), avc codec http://www.itu.int/ITU-T/recommendations/rec.aspx?rec=11466
 1. [H.264-AVC-ISO_IEC_14496-15.pdf, ISO_IEC_14496-15-AVC-format-2012.pdf](/files/ISO_IEC_14496-15-AVC-format-2012.pdf), avc muxer
 1. [H.264_MPEG-4-Part-10-White-Paper.pdf](/files/H.264_MPEG-4-Part-10-White-Paper.pdf), h264
+1. [ISO_IEC_11172-3-MP3-1993.pdf](/files/ISO_IEC_11172-3-MP3-1993.pdf), MPEG-1 Audio, for MP3.
+1. [ISO_IEC_13818-3-MP3-1997.pdf](/files/ISO_IEC_13818-3-MP3-1997.pdf), MPEG-2 Audio, for MP3.
 
 ## HTTP
 
