@@ -87,6 +87,19 @@ vhost __defaultVhost__ {
 
 SRS support dynamic forwarding, to query the forwarding config from your backend API.
 
+So you must write a backend server, which is an HTTP server, or web server. It accepts HTTP requests from SRS, and then 
+responses the content with configs for SRS to do forward. It works like this:
+
+```text
+                        +------+
+Client ---Push-RTMP-->--+ SRS  +---HTTP-Request---> Your Backend Server
+                        |      |                        +
+                        +      +--<---Forward-Config----+
+                        |      |
+                        +      +----Push-RTMP----> RTMP Server
+                        +------+
+```
+
 First, config the `backend` of forward:
 
 ```
@@ -98,7 +111,7 @@ vhost __defaultVhost__ {
 }
 ```
 
-When publishing to SRS, will call your backend server, with request body:
+While client publishing to SRS, SRS will request your HTTP backend server, with request body:
 
 ```json
 {
@@ -114,7 +127,7 @@ When publishing to SRS, will call your backend server, with request body:
 }
 ```
 
-If response with urls, SRS will start forwarding:
+If your backend server responses with RTMP urls, SRS will start forwarding to the RTMP server:
 
 ```json
 {

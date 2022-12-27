@@ -87,6 +87,19 @@ vhost __defaultVhost__ {
 
 SRS支持动态Forward，从你的后端服务查询是否需要转发，以及转发的目标地址。
 
+你必须自己实现一个后端服务器，也就是一个HTTP服务器，或者Web服务器。你的后端服务器接收SRS发起的HTTP请求，然后把需要转发的RTMP服务器地址返回
+给SRS，最后SRS就会将RTMP流转推给目标RTMP服务器。工作流如下：
+
+```text
+                        +------+
+Client ---Push-RTMP-->--+ SRS  +---HTTP-Request---> Your Backend Server
+                        |      |                        +
+                        +      +--<---Forward-Config----+
+                        |      |
+                        +      +----Push-RTMP----> RTMP Server
+                        +------+
+```
+
 首先，配置`backend`，你的后端服务的地址：
 
 ```
@@ -98,7 +111,7 @@ vhost __defaultVhost__ {
 }
 ```
 
-当推流到SRS时，SRS会调用你的后端服务，请求Body如下：
+当推流到SRS时，SRS会调用你的后端服务，SRS的请求Body如下：
 
 ```json
 {
@@ -114,7 +127,7 @@ vhost __defaultVhost__ {
 }
 ```
 
-如果你的后端服务返回了urls，SRS会开始转发：
+如果你的后端服务返回了RTMP urls，SRS会开始转发到这个RTMP地址：
 
 ```json
 {
