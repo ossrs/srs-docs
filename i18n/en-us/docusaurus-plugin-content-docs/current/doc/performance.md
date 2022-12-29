@@ -5,7 +5,365 @@ hide_title: false
 hide_table_of_contents: false
 ---
 
-# Performance Banchmark
+# Performance
+
+There is a set of tools for performance improvement and detecting memory leaking.
+
+> Note: All tools will hurts performance more or less, so never enable these tools unless you need to fix memory issue.
+
+## RTC
+
+RTC is delivering over UDP, so the first and most important configuration is for kernel network:
+
+```bash
+# Query the kernel configuration
+sysctl net.core.rmem_max
+sysctl net.core.rmem_default
+sysctl net.core.wmem_max
+sysctl net.core.wmem_default
+
+# Set the UDP buffer to 16MB
+sysctl net.core.rmem_max=16777216
+sysctl net.core.rmem_default=16777216
+sysctl net.core.wmem_max=16777216
+sysctl net.core.wmem_default=16777216
+```
+
+> Note: For Docker, it read the configuration from host, so you only need to setup the host machine.
+
+> Note：If need to set these configurations in docker, you must run with `--network=host`.
+
+Or, you could also modify the file `/etc/sysctl.conf` to enalbe if when reboot:
+
+```bash
+# vi /etc/sysctl.conf
+# For RTC
+net.core.rmem_max=16777216
+net.core.rmem_default=16777216
+net.core.wmem_max=16777216
+net.core.wmem_default=16777216
+```
+
+Query the network statistics and UDP packets dropping:
+
+```bash
+netstat -suna
+netstat -suna && sleep 30 && netstat -suna
+```
+
+For Example:
+
+* `224911319 packets received` The total received UDP packets.
+* `65731106 receive buffer errors` The total dropped UDP packets before receiving
+* `123534411 packets sent` The total sent UDP packets.
+* `0 send buffer errors` The total dropped UDP packets before sending.
+
+> Note: SRS also prints about the packets dropped in application level, for example `loss=(r:49,s:0)` which means dropped 49 packets before receiving.
+
+> Note：Please note that you must run the command in docker container, not on host machine.
+
+The length of UDP queue:
+
+```bash
+netstat -lpun
+```
+
+For example:
+
+* `Recv-Q 427008` Established: The count of bytes not copied by the user program connected to this socket.
+* `Send-Q 0` Established: The count of bytes not acknowledged by the remote host.
+
+Other useful parameters of netstat:
+
+* `--udp|-u` Filter by UDP protocol.
+* `--numeric|-n` Show numerical addresses instead of trying to determine symbolic host, port or user names.
+* `--statistics|-s` Show statistics.
+* `--all|-a` Show  both  listening and non-listening sockets.  With the --interfaces option, show interfaces that are not up.
+* `--listening|-l` Show only listening sockets.  (These are omitted by default.)
+* `--program|-p` Show the PID and name of the program to which each socket belongs.
+
+## PERF
+
+PERF is Performance analysis tools for Linux.
+
+Show performance bottleneck of SRS:
+
+```
+perf top -p $(pidof srs)
+```
+
+To record the data:
+
+```
+perf record -p $(pidof srs)
+
+# Press CTRL+C after about 30s.
+
+perf report
+```
+
+Show stack or backtrace:
+
+```
+perf record -a --call-graph fp -p $(pidof srs)
+perf report --call-graph --stdio
+```
+
+> Note: Record to file by `perf report --call-graph --stdio >t.txt`。
+
+> Remark: The stack(`-g`) does not work for SRS(ST), because ST modifies the SP.
+
+## ASAN(Google Address Sanitizer)
+
+SRS5+ supports [ASAN](https://github.com/google/sanitizers/wiki/AddressSanitizer) by default.
+
+If you want to disable it, please check bellow configure options:
+
+```bash
+./configure -h |grep asan
+  --sanitizer=on|off        Whether build SRS with address sanitizer(asan). Default: on
+  --sanitizer-static=on|off Whether build SRS with static libasan(asan). Default: off
+  --sanitizer-log=on|off    Whether hijack the log for libasan(asan). Default: off
+```
+
+Highly recommend to enable ASAN because it works great.
+
+## GPROF
+
+GPROF is a GNU tool, see [SRS GPROF](./gprof.md) and [GNU GPROF](http://www.cs.utah.edu/dept/old/texinfo/as/gprof.html).
+
+Usage:
+```
+# Build SRS with GPROF
+./configure --gprof=on && make
+
+# Start SRS with GPROF
+./objs/srs -c conf/console.conf
+
+# Or CTRL+C to stop GPROF
+killall -2 srs
+
+# To analysis result.
+gprof -b ./objs/srs gmon.out
+```
+
+## GPERF
+
+GPERF is  [google tcmalloc](https://github.com/gperftools/gperftools), please see [GPERF](./gperf.md)。
+
+### GPERF: GCP
+
+GCP is for CPU performance analysis, see [GCP](https://gperftools.github.io/gperftools/cpuprofile.html).
+
+Usage:
+
+```
+# Build SRS with GCP
+./configure --gperf=on --gcp=on && make
+
+# Start SRS with GCP
+./objs/srs -c conf/console.conf
+
+# Or CTRL+C to stop GCP
+killall -2 srs
+
+# To analysis cpu profile
+./objs/pprof --text objs/srs gperf.srs.gcp*
+```
+
+> Note: For more details, please read [cpu-profiler](https://github.com/ossrs/srs/tree/4.0release/trunk/research/gperftools/cpu-profiler).
+
+Install tool for graph:
+
+```bash
+yum install -y graphviz
+```
+
+Output svg graph to open by Chrome:
+
+```bash
+./objs/pprof --svg ./objs/srs gperf.srs.gcp >t.svg
+```
+
+### GPERF: GMD
+
+GMD is for memory corrupt detecting, see [GMD](http://blog.csdn.net/win_lin/article/details/50461709).
+
+Usage:
+```
+# Build SRS with GMD.
+./configure --gperf=on --gmd=on && make
+
+# Start SRS with GMD.
+env TCMALLOC_PAGE_FENCE=1 ./objs/srs -c conf/console.conf
+```
+
+> Note: For more details, please read [heap-defense](https://github.com/ossrs/srs/tree/4.0release/trunk/research/gperftools/heap-defense).
+
+> Note: Need link with `libtcmalloc_debug.a` and enable env `TCMALLOC_PAGE_FENCE`.
+
+### GPERF: GMC
+
+GMC is for memory leaking, see [GMC](https://gperftools.github.io/gperftools/heap_checker.html).
+
+Usage:
+
+```
+# Build SRS with GMC
+./configure --gperf=on --gmc=on && make
+
+# Start SRS with GMC
+env PPROF_PATH=./objs/pprof HEAPCHECK=normal ./objs/srs -c conf/console.conf 2>gmc.log 
+
+# Or CTRL+C to stop gmc
+killall -2 srs
+
+# To analysis memory leak
+cat gmc.log
+```
+
+> Note: For more details, please read [heap-checker](https://github.com/ossrs/srs/tree/4.0release/trunk/research/gperftools/heap-checker).
+
+### GPERF: GMP
+
+GMD is for memory performance, see [GMP](https://gperftools.github.io/gperftools/heapprofile.html).
+
+Usage:
+```
+# Build SRS with GMP
+./configure --gperf=on --gmp=on && make
+
+# Start SRS with GMP
+./objs/srs -c conf/console.conf
+
+# Or CTRL+C to stop gmp
+killall -2 srs 
+
+# To analysis memory profile
+./objs/pprof --text objs/srs gperf.srs.gmp*
+```
+
+> Note: For more details, please read [heap-profiler](https://github.com/ossrs/srs/tree/4.0release/trunk/research/gperftools/heap-profiler).
+
+## VALGRIND
+
+SRS3+ also supports valgrind.
+
+```
+valgrind --leak-check=full ./objs/srs -c conf/console.conf
+```
+
+> Remark: For ST to support valgrind, see [state-threads](https://github.com/ossrs/state-threads#usage) and [ST#2](https://github.com/ossrs/state-threads/issues/2).
+
+## Syscall
+
+Please use [strace -c -p PID](https://man7.org/linux/man-pages/man1/strace.1.html) for syscal performance issue.
+
+## OSX
+
+For macOS, please use [Instruments](https://stackoverflow.com/questions/11445619/profiling-c-on-mac-os-x)
+
+```
+instruments -l 30000 -t Time\ Profiler -p 72030
+```
+
+> Remark: You can also click `Sample` button in `Active Monitor`.
+
+## Multiple Process and Softirq
+
+You can run softirq(Kernel Network Transmission) on CPU0, so run SRS on other CPUs:
+
+```bash
+taskset -p 0xfe $(pidof srs)
+```
+
+Or run SRS on CPU1:
+
+```bash
+taskset -pc 1 $(pidof srs)
+```
+
+Then you can run `top` and press `1` to see each CPU statistics:
+
+```bash
+top # Press 1
+#%Cpu0  :  1.8 us,  1.1 sy,  0.0 ni, 90.8 id,  0.0 wa,  0.0 hi,  6.2 si,  0.0 st
+#%Cpu1  : 67.6 us, 17.6 sy,  0.0 ni, 14.9 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
+```
+
+Or use `mpstat -P ALL`
+
+```bash
+mpstat -P ALL
+#01:23:14 PM  CPU    %usr   %nice    %sys %iowait    %irq   %soft  %steal  %guest  %gnice   %idle
+#01:23:14 PM  all   33.33    0.00    8.61    0.04    0.00    3.00    0.00    0.00    0.00   55.02
+#01:23:14 PM    0    2.46    0.00    1.32    0.06    0.00    6.27    0.00    0.00    0.00   89.88
+#01:23:14 PM    1   61.65    0.00   15.29    0.02    0.00    0.00    0.00    0.00    0.00   23.03
+```
+
+> Note: Use `cat /proc/softirqs` to check softirq type, please see [Introduction to deferred interrupts (Softirq, Tasklets and Workqueues)](https://0xax.gitbooks.io/linux-insides/content/Interrupts/linux-interrupts-9.html)
+
+> Note: If SRS run with softirq at CPU0, the total CPU will be larger than total of running on different CPUs.
+
+If you got more CPUs, you can run softirq to multiple CPUs:
+
+```bash
+# grep virtio /proc/interrupts | grep -e in -e out
+ 29:   64580032          0          0          0   PCI-MSI-edge      virtio0-input.0
+ 30:          1         49          0          0   PCI-MSI-edge      virtio0-output.0
+ 31:   48663403          0   11845792          0   PCI-MSI-edge      virtio0-input.1
+ 32:          1          0          0         52   PCI-MSI-edge      virtio0-output.1
+
+# cat /proc/irq/29/smp_affinity
+1 # Bind softirq of virtio0 incoming to CPU0.
+# cat /proc/irq/30/smp_affinity
+2 # Bind softirq of virtio0 outgoing to CPU1.
+# cat /proc/irq/31/smp_affinity
+4 # Bind softirq of virtio1 incoming to CPU2.
+# cat /proc/irq/32/smp_affinity
+8 # Bind softirq of virtio1 outgoing to CPU3.
+```
+
+To disable softirq balance and force to run on CPU0, see [Linux: scaling softirq among many CPU cores](http://natsys-lab.blogspot.com/2012/09/linux-scaling-softirq-among-many-cpu.html) 
+and [SMP IRQ affinity](https://www.kernel.org/doc/Documentation/IRQ-affinity.txt) by:
+
+```bash
+for irq in $(grep virtio /proc/interrupts | grep -e in -e out | cut -d: -f1); do 
+    echo 1 > /proc/irq/$irq/smp_affinity
+done
+```
+
+> Note：Run `echo 3 > /proc/irq/$irq/smp_affinity` if bind to CPU0 and CPU1.
+
+Then run SRS on other CPUs except CPU0:
+
+```bash
+taskset -a -p 0xfe $(cat objs/srs.pid)
+```
+
+You can improve about 20% performance by bind softirq to CPU0.
+
+You can also setup in the startup script.
+
+## Process Priority
+
+You can set SRS to run in higher priority:
+
+```bash
+renice -n -15 -p $(pidof srs)
+```
+
+> Note: The value of nice is `-20` to `19` and default is `0`.
+
+To check the priority, which is the `NI` field of top:
+
+```bash
+top -n1 -p $(pidof srs)
+#  PID USER      PR  NI    VIRT    RES    SHR S  %CPU %MEM     TIME+ COMMAND                
+# 1505 root       5 -15  519920 421556   4376 S  66.7  5.3   4:41.12 srs
+```
+
+## Performance Banchmark
 
 The performance benchmark for SRS, compare with nginx-rtmp single process.
 
@@ -13,7 +371,7 @@ Provides detail benchmark steps.
 
 The latest data, read [performance](https://github.com/ossrs/srs/tree/develop#performance).
 
-## Hardware
+### Hardware
 
 The client and server use lo net interface to test:
 
@@ -22,7 +380,7 @@ The client and server use lo net interface to test:
 * CPU: 3 Intel(R) Core(TM) i7-3520M CPU @ 2.90GHz
 * Memory: 2007MB
 
-## OS
+### OS
 
 Login as root, set the fd limits:
 
@@ -36,7 +394,7 @@ Login as root, set the fd limits:
 
 * Restart SRS：`sudo /etc/init.d/srs restart`
 
-## NGINX-RTMP
+### NGINX-RTMP
 
 NGINX-RTMP version and build command.
 
@@ -84,7 +442,7 @@ rtmp{
 tcp        0      0 0.0.0.0:19350               0.0.0.0:*                   LISTEN      6486/nginx
 ```
 
-## SRS
+### SRS
 
 SRS version and build.
 
@@ -116,7 +474,7 @@ vhost __defaultVhost__ {
 tcp        0      0 0.0.0.0:1935                0.0.0.0:*                   LISTEN      6583/srs
 ```
 
-## Publish and Play
+### Publish and Play
 
 Use centos to publish RTMP:
 
@@ -137,7 +495,7 @@ done
 * Nginx-RTMP stream URL: `rtmp://192.168.2.101:19350/live/livestream`
 * Online play nginx-rtmp RTMP: [Online Player](http://ossrs.net/srs.release/trunk/research/players/srs_player.html?server=192.168.2.101&port=19350&app=live&stream=livestream&vhost=192.168.2.101&autostart=true)
 
-## Client
+### Client
 
 The RTMP load test tool, read [srs-bench](https://github.com/ossrs/srs-bench)
 
@@ -146,14 +504,14 @@ The sb_rtmp_load used to test RTMP load, support 800-3k concurrency for each pro
 * Build: `./configure && make`
 * Start: `./objs/sb_rtmp_load -c 800 -r <rtmp_url>`
 
-## Record Data
+### Record Data
 
 Record data before test:
 
 * Use top command：
 
 ```bash
-srs_pid=`ps aux|grep srs|grep conf|awk '{print $2}'`; \
+srs_pid=$(pidof srs); \
 nginx_pid=`ps aux|grep nginx|grep worker|awk '{print $2}'`; \
 load_pids=`ps aux|grep objs|grep sb_rtmp_load|awk '{ORS=",";print $2}'`; \
 top -p $load_pids$srs_pid,$nginx_pid
@@ -198,7 +556,7 @@ srs-bench(srs-bench/sb): The mock benchmark client tool.
 
 Latency(Lat): The latency of client.
 
-## Benchmark SRS
+### Benchmark SRS
 
 Let's start performance benchmark.
 
@@ -238,7 +596,7 @@ Let's start performance benchmark.
 | ------ | --- | ------- | ------ | ---------- | ---------- | ------ | -------- |
 | SRS | 72.9% | 38MB | 2503 | 500Mbps | 613Mbps | 24% | 0.8s |
 
-## Benchmark NginxRTMP
+### Benchmark NginxRTMP
 
 Let's start performance benchmark.
 
@@ -277,7 +635,7 @@ Let's start performance benchmark.
 | ------ | --- | ------- | ------ | ---------- | ---------- | ------ | -------- |
 | nginx-rtmp | 74.2% | 37MB | 2502 | 500Mbps | 580Mbps | 35% | 0.8s |
 
-## Performance Compare
+### Performance Compare
 
 | Server | CPU | Mem | Conn | ENbps | ANbps | sb | Lat |
 | ------ | --- | ------- | ------ | ---------- | ---------- | ------ | -------- |
@@ -292,7 +650,7 @@ Let's start performance benchmark.
 | nginx-rtmp | 74.2% | 37MB | 2502 | 500Mbps | 580Mbps | 35% | 0.8s |
 | SRS | 72.9% | 38MB | 2503 | 500Mbps | 613Mbps | 24% | 0.8s |
 
-## Performance Banchmark 4k
+### Performance Banchmark 4k
 
 The performance is refined to support about 4k clients.
 
@@ -338,12 +696,12 @@ usr sys idl wai hiq siq| read  writ| recv  send|  in   out | int   csw
 
 ![SRS 4k](/img/doc-advanced-guides-performance-001.png)
 
-## Performance Banchmark 6k
+### Performance Banchmark 6k
 
 SRS2.0.15, not SRS1.0, performance is refined to support 6k clients.
 That is 4Gbps for 522kbps bitrate, for a single SRS process. Read https://github.com/ossrs/srs/issues/194
 
-## Performance Banchmark 7.5k
+### Performance Banchmark 7.5k
 
 SRS2.0.30 refined to support 7.5k clients, read https://github.com/ossrs/srs/issues/217
 

@@ -5,7 +5,367 @@ hide_title: false
 hide_table_of_contents: false
 ---
 
-# Performance Banchmark
+# Performance
+
+SRS提供了一系列工具来定位性能瓶颈和内存泄漏，这些在`./configure && make`后的`summary`中是有给出来用法的，不过不是很方便，所以特地把用法写到这个文章中。
+
+文中所有的工具，对于其他的linux程序也是有用的。
+
+> Note: 所有工具用起来都会导致SRS性能低下，所以除非是排查问题，否则不要开启这些选项。
+
+## RTC
+
+RTC是UDP的协议，先设置`网卡队列缓冲区`，下面命令是UDP分析常用的：
+
+```bash
+# 查看UDP缓冲区长度，默认只有200KB左右。
+sysctl net.core.rmem_max
+sysctl net.core.rmem_default
+sysctl net.core.wmem_max
+sysctl net.core.wmem_default
+
+# 修改缓冲区长度为16MB
+sysctl net.core.rmem_max=16777216
+sysctl net.core.rmem_default=16777216
+sysctl net.core.wmem_max=16777216
+sysctl net.core.wmem_default=16777216
+```
+
+> Note: 对于Docker，在宿主机上设置后容器就自然生效了，注意需要先设置参数然后再启动容器（或者启动容器中的SRS进程），也就是Docker容器启动进程时读取的是宿主机的这个内核配置。
+
+> Note：如果希望在Docker中设置这些参数，只能以`--network=host`方式启动，也就是复用宿主机的网络。注意如果不需要在Docker中设置是不依赖这种方式的。
+
+也可以修改系统文件`/etc/sysctl.conf`，重启也会生效：
+
+```bash
+# vi /etc/sysctl.conf
+# For RTC
+net.core.rmem_max=16777216
+net.core.rmem_default=16777216
+net.core.wmem_max=16777216
+net.core.wmem_default=16777216
+```
+
+查看接收和发送的丢包信息：
+
+```bash
+# 查看丢包
+netstat -suna
+# 查看30秒的丢包差
+netstat -suna && sleep 30 && netstat -suna
+```
+
+实例说明：
+
+* `224911319 packets received`，这是接收到的总包数。
+* `65731106 receive buffer errors`，接收的丢包，来不及处理就丢了。
+* `123534411 packets sent`，这是发送的总包数。
+* `0 send buffer errors`，这是发送的丢包。
+
+> Note: SRS的日志会打出UDP接收丢包和发送丢包，例如`loss=(r:49,s:0)`，意思是每秒有49个包来不及收，发送没有丢包。
+
+> Note：注意Docker虽然读取了宿主机的内核网络参数，但是`netstat -su`获取的数据是和宿主机是不同的，也就是容器的丢包得在容器中执行命令获取。
+
+查看接收和发送的长度：
+```bash
+netstat -lpun
+```
+
+实例说明:
+
+* `Recv-Q 427008`，程序的接收队列中的包数。Established: The count of bytes not copied by the user program connected to this socket.
+* `Send-Q 0`，程序的发送队列中的包数目。Established: The count of bytes not acknowledged by the remote host.
+
+下面是netstat的一些参数:
+
+* `--udp|-u` 筛选UDP协议。
+* `--numeric|-n` 显示数字IP或端口，而不是别名，比如http的数字是80.
+* `--statistics|-s` 显示网卡的统计信息。
+* `--all|-a` 显示所有侦听和非侦听的。
+* `--listening|-l` 只显示侦听的socket。
+* `--program|-p` 显示程序名称，谁在用这个FD。
+
+## PERF
+
+PERF是Linux性能分析工具。
+
+可以实时看到当前的SRS热点函数：
+
+```
+perf top -p $(pidof srs)
+```
+
+或者记录一定时间的数据：
+
+```
+perf record -p $(pidof srs)
+
+# 需要按CTRL+C取消record，然后执行下面的
+
+perf report
+```
+
+记录堆栈，显示调用图：
+
+```
+perf record -a --call-graph fp -p $(pidof srs)
+perf report --call-graph --stdio
+```
+
+> Note: 也可以打印到文件`perf report --call-graph --stdio >t.txt`。
+
+> Remark: 由于ST的堆栈是不正常的，perf开启`-g`后记录的堆栈都是错乱的，所以perf只能看SRS的热点，不能看堆栈信息；如果需要看堆栈，请使用`GPERF: GCP`，参考下面的章节。
+
+## ASAN(Google Address Sanitizer)
+
+SRS5+内置和默认支持[ASAN](https://github.com/google/sanitizers/wiki/AddressSanitizer)，检测内存泄露、野指针和越界等问题。
+
+若你的系统不支持ASAN，可以编译时关闭，相关选项如下：
+
+```bash
+./configure -h |grep asan
+  --sanitizer=on|off        Whether build SRS with address sanitizer(asan). Default: on
+  --sanitizer-static=on|off Whether build SRS with static libasan(asan). Default: off
+  --sanitizer-log=on|off    Whether hijack the log for libasan(asan). Default: off
+```
+
+ASAN检查内存问题很准确，推荐开启。
+
+## GPROF
+
+GPROF是个GNU的CPU性能分析工具。参考[SRS GPROF](./gprof.md)，以及[GNU GPROF](http://www.cs.utah.edu/dept/old/texinfo/as/gprof.html)。
+
+Usage:
+```
+# Build SRS with GPROF
+./configure --gprof=on && make
+
+# Start SRS with GPROF
+./objs/srs -c conf/console.conf
+
+# Or CTRL+C to stop GPROF
+killall -2 srs
+
+# To analysis result.
+gprof -b ./objs/srs gmon.out
+```
+
+## GPERF
+
+GPERF是[google tcmalloc](https://github.com/gperftools/gperftools)提供的cpu和内存工具，参考[GPERF](./gperf.md)。
+
+### GPERF: GCP
+
+GCP是CPU性能分析工具，就是一般讲的性能瓶颈，看哪个函数调用占用过多的CPU。参考[GCP](https://gperftools.github.io/gperftools/cpuprofile.html)。
+
+Usage:
+
+```
+# Build SRS with GCP
+./configure --gperf=on --gcp=on && make
+
+# Start SRS with GCP
+./objs/srs -c conf/console.conf
+
+# Or CTRL+C to stop GCP
+killall -2 srs
+
+# To analysis cpu profile
+./objs/pprof --text objs/srs gperf.srs.gcp*
+```
+
+> Note: 用法可以参考[cpu-profiler](https://github.com/ossrs/srs/tree/4.0release/trunk/research/gperftools/cpu-profiler)。
+
+图形化展示，在CentOS上安装dot：
+
+```bash
+yum install -y graphviz
+```
+
+然后生成svg图片，可以用Chrome打开：
+
+```bash
+./objs/pprof --svg ./objs/srs gperf.srs.gcp >t.svg
+```
+
+### GPERF: GMD
+
+GMD是GPERF提供的内存Defense工具，检测内存越界和野指针。一般在越界写入时，可能不会立刻导致破坏，而是在切换到其他线程使用被破坏的对象时才会发现破坏了，所以这种内存问题很难排查；GMD能在越界和野指针使用时直接core dump，定位在那个出问题的地方。参考[GMD](http://blog.csdn.net/win_lin/article/details/50461709)。
+
+Usage:
+```
+# Build SRS with GMD.
+./configure --gperf=on --gmd=on && make
+
+# Start SRS with GMD.
+env TCMALLOC_PAGE_FENCE=1 ./objs/srs -c conf/console.conf
+```
+
+> Note: 用法可以参考[heap-defense](https://github.com/ossrs/srs/tree/4.0release/trunk/research/gperftools/heap-defense)。
+
+> Note: 注意GMD需要链接`libtcmalloc_debug.a`，并且开启环境变量`TCMALLOC_PAGE_FENCE`。
+
+### GPERF: GMC
+
+GMC是内存泄漏检测工具，参考[GMC](https://gperftools.github.io/gperftools/heap_checker.html)。
+
+Usage:
+
+```
+# Build SRS with GMC
+./configure --gperf=on --gmc=on && make
+
+# Start SRS with GMC
+env PPROF_PATH=./objs/pprof HEAPCHECK=normal ./objs/srs -c conf/console.conf 2>gmc.log 
+
+# Or CTRL+C to stop gmc
+killall -2 srs
+
+# To analysis memory leak
+cat gmc.log
+```
+
+> Note: 用法可以参考[heap-checker](https://github.com/ossrs/srs/tree/4.0release/trunk/research/gperftools/heap-checker)。
+
+### GPERF: GMP
+
+GMP是内存性能分析工具，譬如检测是否有频繁的申请和释放堆内存导致的性能问题。参考[GMP](https://gperftools.github.io/gperftools/heapprofile.html)。
+
+Usage:
+```
+# Build SRS with GMP
+./configure --gperf=on --gmp=on && make
+
+# Start SRS with GMP
+./objs/srs -c conf/console.conf
+
+# Or CTRL+C to stop gmp
+killall -2 srs 
+
+# To analysis memory profile
+./objs/pprof --text objs/srs gperf.srs.gmp*
+```
+
+> Note: 用法可以参考[heap-profiler](https://github.com/ossrs/srs/tree/4.0release/trunk/research/gperftools/heap-profiler)。
+
+## VALGRIND
+
+VALGRIND是大名鼎鼎的C分析工具，SRS3之后支持了。SRS3之前，因为使用了ST，需要给ST打PATCH才能用。
+
+```
+valgrind --leak-check=full ./objs/srs -c conf/console.conf
+```
+
+> Remark: SRS3之前的版本，可以手动给ST打PATCH支持VALGRIND，参考[state-threads](https://github.com/ossrs/state-threads#usage)，详细的信息可以参考[ST#2](https://github.com/ossrs/state-threads/issues/2)。
+
+## Syscall
+
+系统调用的性能排查，参考[strace -c -p PID](https://man7.org/linux/man-pages/man1/strace.1.html)
+
+## OSX
+
+在OSX/Darwin/Mac系统，可以用Instruments，在xcode中选择Open Develop Tools，就可以看到Instruments，也可以直接找这个程序，参考[Profiling c++ on mac os x](https://stackoverflow.com/questions/11445619/profiling-c-on-mac-os-x)
+
+```
+instruments -l 30000 -t Time\ Profiler -p 72030
+```
+
+> Remark: 也可以在Active Monitor中选择进程，然后选择Sample采样。
+
+## Multiple Process and Softirq
+
+多核时，一般网卡软中断(内核网络传输)在CPU0上，可以把SRS调度到其他CPU：
+
+```bash
+taskset -p 0xfe $(pidof srs)
+```
+
+或者，指定SRS运行在CPU1上：
+
+```bash
+taskset -pc 1 $(pidof srs)
+```
+
+调整后，可以运行`top`，然后按数字`1`，可以看到每个CPU的负载：
+
+```bash
+top # 进入界面后按数字1
+#%Cpu0  :  1.8 us,  1.1 sy,  0.0 ni, 90.8 id,  0.0 wa,  0.0 hi,  6.2 si,  0.0 st
+#%Cpu1  : 67.6 us, 17.6 sy,  0.0 ni, 14.9 id,  0.0 wa,  0.0 hi,  0.0 si,  0.0 st
+```
+
+或者使用`mpstat -P ALL`
+
+```bash
+mpstat -P ALL
+#01:23:14 PM  CPU    %usr   %nice    %sys %iowait    %irq   %soft  %steal  %guest  %gnice   %idle
+#01:23:14 PM  all   33.33    0.00    8.61    0.04    0.00    3.00    0.00    0.00    0.00   55.02
+#01:23:14 PM    0    2.46    0.00    1.32    0.06    0.00    6.27    0.00    0.00    0.00   89.88
+#01:23:14 PM    1   61.65    0.00   15.29    0.02    0.00    0.00    0.00    0.00    0.00   23.03
+```
+
+> Note: 可以使用命令`cat /proc/softirqs`，查看所有CPU的具体软中断类型，参考[Introduction to deferred interrupts (Softirq, Tasklets and Workqueues)](https://0xax.gitbooks.io/linux-insides/content/Interrupts/linux-interrupts-9.html)。
+
+> Note: 如果将SRS强制绑定在CPU0上，则会导致较高的`softirq`，这可能是进程和系统的软中断都在CPU0上，可以看到si也比分开的要高很多。
+
+如果是多CPU，比如4CPU，则网卡中断可能会绑定到多个CPU，可以通过下面的命令，查看网卡中断的绑定情况：
+
+```bash
+# grep virtio /proc/interrupts | grep -e in -e out
+ 29:   64580032          0          0          0   PCI-MSI-edge      virtio0-input.0
+ 30:          1         49          0          0   PCI-MSI-edge      virtio0-output.0
+ 31:   48663403          0   11845792          0   PCI-MSI-edge      virtio0-input.1
+ 32:          1          0          0         52   PCI-MSI-edge      virtio0-output.1
+
+# cat /proc/irq/29/smp_affinity
+1 # 意思是virtio0的接收，绑定到CPU0
+# cat /proc/irq/30/smp_affinity
+2 # 意思是virtio0的发送，绑定到CPU1
+# cat /proc/irq/31/smp_affinity
+4 # 意思是virtio1的接收，绑定到CPU2
+# cat /proc/irq/32/smp_affinity
+8 # 意思是virtio1的发送，绑定到CPU3
+```
+
+我们可以强制将网卡软中断绑定到CPU0，参考[Linux: scaling softirq among many CPU cores](http://natsys-lab.blogspot.com/2012/09/linux-scaling-softirq-among-many-cpu.html)和[SMP IRQ affinity](https://www.kernel.org/doc/Documentation/IRQ-affinity.txt)：
+
+```bash
+for irq in $(grep virtio /proc/interrupts | grep -e in -e out | cut -d: -f1); do 
+    echo 1 > /proc/irq/$irq/smp_affinity
+done
+```
+
+> Note：如果要绑定到`CPU 0-1`，执行`echo 3 > /proc/irq/$irq/smp_affinity`
+
+然后将SRS所有线程，绑定到CPU0之外的CPU：
+
+```bash
+taskset -a -p 0xfe $(cat objs/srs.pid)
+```
+
+可以看到，软中断默认分配方式占用较多CPU，将软中断集中在CPU0，降低20%左右CPU。
+
+如果要获取极高的性能，那么可以在SRS的启动脚本中，在启动SRS之前，执行绑核和绑软中断的命令。
+
+## Process Priority
+
+可以设置SRS为更高的优先级，可以获取更多的CPU时间：
+
+```bash
+renice -n -15 -p $(pidof srs)
+```
+
+> Note: nice的值从`-20`到`19`，默认是`0`，一般ECS的优先的进程是`-10`，所以这里设置为`-15`。
+
+可以从ps中，看到进程的nice，也就是`NI`字段：
+
+```bash
+top -n1 -p $(pidof srs)
+#  PID USER      PR  NI    VIRT    RES    SHR S  %CPU %MEM     TIME+ COMMAND                
+# 1505 root       5 -15  519920 421556   4376 S  66.7  5.3   4:41.12 srs
+```
+
+## Performance Banchmark
 
 对比SRS和高性能nginx-rtmp的Performance，SRS为单进程，nginx-rtmp支持多进程，为了对比nginx-rtmp也只开启一个进程。
 
@@ -13,7 +373,7 @@ hide_table_of_contents: false
 
 最新的性能测试数据，请参考[performance](https://github.com/ossrs/srs/tree/develop#performance)。
 
-## Hardware
+### Hardware
 
 本次对比所用到的硬件环境，使用虚拟机，客户端和服务器都运行于一台机器，避开网络瓶颈。
 
@@ -22,7 +382,7 @@ hide_table_of_contents: false
 * CPU: 3 Intel(R) Core(TM) i7-3520M CPU @ 2.90GHz
 * 内存: 2007MB
 
-## OS
+### OS
 
 超过1024的连接数测试需要打开linux的限制。且必须以root登录和执行。
 
@@ -38,7 +398,7 @@ hide_table_of_contents: false
 
 * 注意：启动服务器前必须确保连接数限制打开。
 
-## NGINX-RTMP
+### NGINX-RTMP
 
 NGINX-RTMP使用的版本信息，以及编译参数。
 
@@ -86,7 +446,7 @@ rtmp{
 tcp        0      0 0.0.0.0:19350               0.0.0.0:*                   LISTEN      6486/nginx
 ```
 
-## SRS
+### SRS
 
 SRS接受RTMP流，并转发给nginx-rtmp做为对比。
 
@@ -119,7 +479,7 @@ vhost __defaultVhost__ {
 tcp        0      0 0.0.0.0:1935                0.0.0.0:*                   LISTEN      6583/srs
 ```
 
-## Publish and Play
+### Publish and Play
 
 使用ffmpeg推送SRS的实例流到SRS，SRS转发给nginx-rtmp，可以通过vlc/srs-players观看。
 
@@ -150,7 +510,7 @@ eth0      Link encap:Ethernet  HWaddr 08:00:27:8A:EC:94
 * nginx-rtmp的流地址：`rtmp://192.168.2.101:19350/live/livestream`
 * 通过srs-players播放nginx-rtmp流：[播放nginx-rtmp的流](http://ossrs.net/srs.release/trunk/research/players/srs_player.html?server=192.168.2.101&port=19350&app=live&stream=livestream&vhost=192.168.2.101&autostart=true)
 
-## Client
+### Client
 
 使用linux工具模拟RTMP客户端访问，参考：[srs-bench](https://github.com/ossrs/srs-bench)
 
@@ -159,14 +519,14 @@ sb_rtmp_load为RTMP流负载测试工具，单个进程可以模拟1000至3000�
 * 编译：`./configure && make`
 * 启动参数：`./objs/sb_rtmp_load -c 800 -r <rtmp_url>`
 
-## Record Data
+### Record Data
 
 测试前，记录SRS和nginx-rtmp的各项资源使用指标，用作对比。
 
 * top命令：
 
 ```bash
-srs_pid=`ps aux|grep srs|grep conf|awk '{print $2}'`; \
+srs_pid=$(pidof srs); \
 nginx_pid=`ps aux|grep nginx|grep worker|awk '{print $2}'`; \
 load_pids=`ps aux|grep objs|grep sb_rtmp_load|awk '{ORS=",";print $2}'`; \
 top -p $load_pids$srs_pid,$nginx_pid
@@ -218,7 +578,7 @@ srs-bench(srs-bench/sb)：指模拟500客户端的srs-bench的平均CPU。一般
 * SRS forward RTMP的一个连接。
 * 观看连接：[播放地址](http://ossrs.net/srs.release/trunk/research/players/srs_player.html?server=192.168.2.101&port=19350&app=live&stream=livestream&vhost=192.168.2.101&autostart=true)
 
-## Benchmark SRS
+### Benchmark SRS
 
 开始启动srs-bench模拟客户端并发测试SRS的性能。
 
@@ -264,7 +624,7 @@ srs-bench(srs-bench/sb)：指模拟500客户端的srs-bench的平均CPU。一般
 
 由于虚拟机能力的限制，只能测试到2500并发。
 
-## Benchmark NginxRTMP
+### Benchmark NginxRTMP
 
 开始启动srs-bench模拟客户端并发测试SRS的性能。
 
@@ -309,7 +669,7 @@ srs-bench(srs-bench/sb)：指模拟500客户端的srs-bench的平均CPU。一般
 
 由于虚拟机能力的限制，只能测试到2500并发。
 
-## Performance Compare
+### Performance Compare
 
 CentOS6 x86_64虚拟机，SRS和nginx-rtmp的数据对比如下：
 
@@ -326,7 +686,7 @@ CentOS6 x86_64虚拟机，SRS和nginx-rtmp的数据对比如下：
 | nginx-rtmp | 74.2% | 37MB | 2502 | 500Mbps | 580Mbps | 35% | 0.8秒 |
 | SRS | 72.9% | 38MB | 2503 | 500Mbps | 613Mbps | 24% | 0.8秒 |
 
-## Performance Banchmark 4k
+### Performance Banchmark 4k
 
 今天做了性能优化，默认演示流（即采集doc/source.flv文件为流）达到4k以上并发没有问题。
 
@@ -374,11 +734,11 @@ usr sys idl wai hiq siq| read  writ| recv  send|  in   out | int   csw
 
 不过我是在虚拟机测试，物理机的实际情况还有待数据观察。
 
-## Performance Banchmark 6k
+### Performance Banchmark 6k
 
 SRS2.0.15（注意是SRS2.0，而不是SRS1.0）支持6k客户端，522kbps的流可以跑到近4Gbps带宽，单进程。参考：https://github.com/ossrs/srs/issues/194
 
-## Performance Banchmark 7.5k
+### Performance Banchmark 7.5k
 
 SRS2.0.30支持7.5k客户端，参考：https://github.com/ossrs/srs/issues/217
 
