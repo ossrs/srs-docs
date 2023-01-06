@@ -114,7 +114,7 @@ docker run --rm -v $(pwd)/prometheus.yml:/etc/prometheus/prometheus.yml \
 Please ope [Prometheus: Targets](http://localhost:9090/targets), or [Prometheus: Graph](http://localhost:9090/graph) to query the input bitrate:
 
 ```sql
-rate(srs_receive_bytes_total[10s])*8/1000
+rate(srs_receive_bytes_total[10s])*8
 ```
 
 This query is used to query the input bitrate, which is the bitrate of stream:

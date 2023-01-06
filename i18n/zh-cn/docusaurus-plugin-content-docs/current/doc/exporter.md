@@ -120,7 +120,7 @@ docker run --rm -v $(pwd)/prometheus.yml:/etc/prometheus/prometheus.yml \
 打开[Prometheus: Targets](http://localhost:9090/targets)，可以看到抓取数据的状态。打开[Prometheus: Graph](http://localhost:9090/graph)，输入一下语句，可以验证是否正常：
 
 ```sql
-rate(srs_receive_bytes_total[10s])*8/1000
+rate(srs_receive_bytes_total[10s])*8
 ```
 
 这个语句是计算输入的带宽，也就是直播流的码率，如下图所示：
