@@ -68,7 +68,7 @@ exporter {
 ```bash
 ./configure && make
 env SRS_ENV_ONLY=on SRS_EXPORTER_ENABLED=on SRS_LISTEN=1935 \
-  ./objs/srs
+  ./objs/srs -e
 ```
 
 > Note: 我们使用环境变量方式配置SRS，不依赖配置文件。当然使用`conf/prometheus.conf`启动也可以。

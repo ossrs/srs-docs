@@ -62,7 +62,7 @@ Build and start `SRS 5.0.86+`：
 ```bash
 ./configure && make
 env SRS_ENV_ONLY=on SRS_EXPORTER_ENABLED=on SRS_LISTEN=1935 \
-  ./objs/srs
+  ./objs/srs -e
 ```
 
 > Note: We use envrionment variables to config SRS, without config file. However, you're able to use config file `conf/prometheus.conf` to start the demo.
