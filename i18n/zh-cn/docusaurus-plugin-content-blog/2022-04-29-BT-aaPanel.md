@@ -35,12 +35,10 @@ custom_edit_url: null
 
 ## Installation
 
-宝塔安装可以用云主机的镜像，或者在[bt.cn](https://www.bt.cn/new/download.html)中找到安装脚本，现在云SRS支持的是CentOS 7+和Ubuntu 20+，比如如果你是CentOS 7，可以执行下面的命令：
+宝塔安装可以用云主机的镜像，或者在[bt.cn](https://www.bt.cn/new/download.html)中找到安装脚本，现在云SRS支持的比较好的是Ubuntu 20+，可以执行下面的命令：
 
 ```bash
-yum install -y wget &&
-wget -O install.sh http://download.bt.cn/install/install_6.0.sh &&
-sh install.sh ed8484bec
+wget -O install.sh https://download.bt.cn/install/install-ubuntu_6.0.sh && sudo bash install.sh ed8484bec
 ```
 
 > Note: 最新的命令请在宝塔官网上找哈，这个可能会过时。

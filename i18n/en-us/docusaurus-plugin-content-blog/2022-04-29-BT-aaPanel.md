@@ -30,12 +30,10 @@ To complete this guide, you should have:
 ## Step 1: Install aaPanel
 
 If you don't have aaPanel installed, please follow this [tutorial](https://www.aapanel.com/install.html). Highly
-recommend install aaPanel on CentOS 7:
+recommend install aaPanel on Ubuntu 20+:
 
 ```bash
-yum install -y wget &&
-wget -O install.sh http://www.aapanel.com/script/install_6.0_en.sh &&
-bash install.sh
+wget -O install.sh https://download.bt.cn/install/install-ubuntu_6.0.sh && sudo bash install.sh ed8484bec
 ```
 
 After installation, you will get a url, username and password for login, for example:
