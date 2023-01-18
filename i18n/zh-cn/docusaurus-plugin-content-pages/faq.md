@@ -106,6 +106,13 @@
   > 1. SRS 4.0.174之前可以，更新到之后就不工作了，是因为`rtc.conf`不默认开启RTMP转RTC，需要使用`rtmp2rtc.conf`或者`rtc2rtmp.conf`，参考 71ed6e5dc51df06eaa90637992731a7e75eabcd7
   > 1. 未来也不会自动开启RTC和RTMP的转换，因为SRS必须要考虑到独立的RTMP和独立的RTC场景，转换的场景只是其中一个，但是由于转换的场景导致严重的性能问题，所以不能默认开启，会导致独立的场景出现大问题。
 
+<a name='webrtc-cluster'></a>
+
+### [WebRTC Cluster](#webrtc-cluster)
+* `WebRTC+Cluster`: 关于WebRTC集群的相关问题
+  > 1. WebRTC集群并不是直播集群(Edge+Origin Cluster)，而是叫WebRTC级联，参考[#2091](https://github.com/ossrs/srs/issues/2091)
+  > 1. 除了集群方案，SRS还会支持Proxy方案，比集群更简单，也会具备扩展性和容灾能力，参考[#3138](https://github.com/ossrs/srs/issues/3138)
+
 <a name='webrtc'></a>
 
 ### [WebRTC](#webrtc)
