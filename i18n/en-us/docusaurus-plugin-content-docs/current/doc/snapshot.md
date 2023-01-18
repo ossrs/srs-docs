@@ -18,7 +18,7 @@ This section describes how to use http callbacks to snapshot.
 
 First, start the sample api server:
 ```
-python research/api-server/server.py 8085
+go run research/api-server/server.go 8085
 ```
 
 Second, write the config for SRS to snapshot:

@@ -256,22 +256,14 @@ SRS will disconnect the connection when the response is not 0, or HTTP status is
 
 ## SRS HTTP Callback Server
 
-SRS provides a default HTTP callback server, using cherrypy.
+SRS provides a default HTTP callback server, using golang native http framework.
 
-To start it: `python research/api-server/server.py 8085`
+To start it: `go run research/api-server/server.go 8085`
 
 ```bash
-[winlin@dev6 srs]$ python research/api-server/server.py 8085
-[2014-02-27 09:42:25][trace] api server listen at port: 8085, static_dir: /home/winlin/git/srs/trunk/research/api-server/static-dir
-[2014-02-27 09:42:25][trace] start cherrypy server
-[27/Feb/2014:09:42:25] ENGINE Listening for SIGHUP.
-[27/Feb/2014:09:42:25] ENGINE Listening for SIGTERM.
-[27/Feb/2014:09:42:25] ENGINE Listening for SIGUSR1.
-[27/Feb/2014:09:42:25] ENGINE Bus STARTING
-[27/Feb/2014:09:42:25] ENGINE Started monitor thread '_TimeoutMonitor'.
-[27/Feb/2014:09:42:25] ENGINE Started monitor thread 'Autoreloader'.
-[27/Feb/2014:09:42:25] ENGINE Serving on 0.0.0.0:8085
-[27/Feb/2014:09:42:25] ENGINE Bus STARTED
+panda@ZBMac-MG4YX7D2T trunk % go run research/api-server/server.go 8085
+2023/01/18 22:57:40.835254 server.go:572: api server listen at port:8085, static_dir:/Users/panda/srs/trunk/static-dir
+2023/01/18 22:57:40.835600 server.go:836: start listen on::8085
 ```
 
 > Remark: For SRS4, the HTTP/HTTPS url is supported, see [#1657](https://github.com/ossrs/srs/issues/1657#issuecomment-720889906).
@@ -326,7 +318,7 @@ You could run the example HTTP callback server by:
 
 ```
 cd srs/trunk
-python research/api-server/server.py 8085
+go run research/api-server/server.go 8085
 ```
 
 And you will finger out what's the `right` response.
