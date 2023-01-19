@@ -256,12 +256,12 @@ SRS的回调事件包括：
 
 SRS自带了一个默认的处理HTTP Callback的服务器，启动时需要指定端口，譬如8085端口。
 
-启动方法：`go run research/api-server/server.go 8085`
+启动方法：`cd research/api-server && go run server.go 8085`
 
 启动日志如下：
 
 ```bash
-panda@ZBMac-MG4YX7D2T trunk % go run research/api-server/server.go 8085
+cd research/api-server && go run server.go 8085
 2023/01/18 22:57:40.835254 server.go:572: api server listen at port:8085, static_dir:/Users/panda/srs/trunk/static-dir
 2023/01/18 22:57:40.835600 server.go:836: start listen on::8085
 ```

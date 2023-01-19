@@ -18,7 +18,7 @@ This section describes how to use http callbacks to snapshot.
 
 First, start the sample api server:
 ```
-go run research/api-server/server.go 8085
+cd research/api-server && go run server.go 8085
 ```
 
 Second, write the config for SRS to snapshot:

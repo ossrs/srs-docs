@@ -18,7 +18,7 @@ hide_table_of_contents: false
 
 先启动实例Api服务器：
 ```
-go run research/api-server/server.go 8085
+cd research/api-server && go run server.go 8085
 ```
 
 SRS的配置如下：
