@@ -313,8 +313,7 @@ Content-Length: 11
 可以查看实例回调的响应：
 
 ```
-cd srs/trunk
-go run research/api-server/server.go 8085
+cd srs/trunk/research/api-server && go run server.go 8085
 ```
 
 你会明白什么是正确的响应格式。
