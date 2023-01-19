@@ -262,8 +262,8 @@ To start it: `cd research/api-server && go run server.go 8085`
 
 ```bash
 cd research/api-server && go run server.go 8085
-2023/01/18 22:57:40.835254 server.go:572: api server listen at port:8085, static_dir:/Users/panda/srs/trunk/static-dir
-2023/01/18 22:57:40.835600 server.go:836: start listen on::8085
+#2023/01/18 22:57:40.835254 server.go:572: api server listen at port:8085, static_dir:/Users/panda/srs/trunk/static-dir
+#2023/01/18 22:57:40.835600 server.go:836: start listen on::8085
 
 ```
 
