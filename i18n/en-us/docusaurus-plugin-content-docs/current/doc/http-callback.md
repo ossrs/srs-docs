@@ -258,13 +258,15 @@ SRS will disconnect the connection when the response is not 0, or HTTP status is
 
 SRS provides a default HTTP callback server, using golang native http framework.
 
-To start it: `cd research/api-server && go run server.go 8085`
+To start it: 
 
 ```bash
 cd research/api-server && go run server.go 8085
+```
+
+```bash
 #2023/01/18 22:57:40.835254 server.go:572: api server listen at port:8085, static_dir:/Users/panda/srs/trunk/static-dir
 #2023/01/18 22:57:40.835600 server.go:836: start listen on::8085
-
 ```
 
 > Remark: For SRS4, the HTTP/HTTPS url is supported, see [#1657](https://github.com/ossrs/srs/issues/1657#issuecomment-720889906).
