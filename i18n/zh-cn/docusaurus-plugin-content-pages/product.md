@@ -80,9 +80,9 @@ SRS全面支持[Docker](https://github.com/ossrs/dev-docker)。
 
 SRS是全球TOP1的开源视频服务器，支持直播和WebRTC，可应用于多种视频场景和行业。
 
-* Mission：用开源快速展示视频的未来。
-* Vison：让新手都能跨越视频的门槛，让开发者保持浓密的头发。
-* Values：简单、可靠、开放。
+* Mission：用音视频无门槛赋能小微企业和开发者。
+* Vison：每个小微企业都具备音视频能力。
+* Values：简单、开放、务实。
 
 详细解读请看[欢迎关注SRS：使命、愿景、价值观](https://mp.weixin.qq.com/s/Mx9LMrUVwKq6C3wgHLUibQ)。
 
