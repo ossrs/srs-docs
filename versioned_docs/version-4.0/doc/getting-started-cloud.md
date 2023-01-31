@@ -11,7 +11,7 @@ SRS Cloud is a lightweight open-source video cloud based on Nodejs, SRS, FFmpeg,
 
 ## aaPanel
 
-Pelase read [aaPanel](/blog/BT-aaPanel).
+Please read [aaPanel](/blog/BT-aaPanel).
 
 ## DigitalOcean Droplet
 
