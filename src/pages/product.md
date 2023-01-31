@@ -2,6 +2,7 @@
 
 About milestones of SRS.
 
+* Release 6.0, 2023~Now, Code: Hang
 * Release 5.0, 2022~Now, Code: Bee
 * Release 4.0, 2020~2021, Code: Leo
 * Release 3.0, 2018~2019, Code: OuXuli
