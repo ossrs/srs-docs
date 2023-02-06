@@ -111,7 +111,7 @@ Reload SRS：
 
 ## systemctl
 
-CentOS7使用systemctl管理服务，我们在init.d的基础上新增了systemctl的配置：
+Ubuntu20使用systemctl管理服务，我们在init.d的基础上新增了systemctl的配置：
 
 ```
 ./configure && make && sudo make install &&

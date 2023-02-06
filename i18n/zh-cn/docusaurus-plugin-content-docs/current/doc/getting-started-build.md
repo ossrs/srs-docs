@@ -13,7 +13,7 @@ SRS可以从源码编译和启动，但推荐更简单的[Docker](./getting-star
 
 直播是SRS的典型场景，支持推直播流后多种观看方式。
 
-下载源码，推荐用[CentOS7](./install.md)：
+下载源码，推荐用[Ubuntu20](./install.md)：
 
 ```
 git clone -b develop https://gitee.com/ossrs/srs.git
@@ -71,7 +71,7 @@ ffmpeg -re -i ./doc/source.flv -c copy -f flv rtmp://localhost/live/livestream
 
 SRS支持WebRTC，可以做会议或视频聊天。
 
-下载源码，推荐用[CentOS7](./install.md)：
+下载源码，推荐用[Ubuntu20](./install.md)：
 
 ```
 git clone -b develop https://gitee.com/ossrs/srs.git
@@ -116,7 +116,9 @@ MB0:trunk $ tail -n 30 -f ./objs/srs.log
 [2021-08-13 10:30:36.634][Trace][90408][12c97232] Hybrid cpu=0.00%,0MB, cid=1,1, timer=61,0,0, clock=0,22,25,0,0,0,0,1,0
 ```
 
-使用WebRTC推流到SRS：[WebRTC: Publish](http://localhost:8080/players/rtc_publisher.html?autostart=true&stream=livestream&port=8080&schema=http)
+本机推拉流（即浏览器和SRS都在本机），使用WebRTC推流到SRS：[WebRTC: Publish](http://localhost:8080/players/rtc_publisher.html?autostart=true&stream=livestream&port=8080&schema=http)
+
+> Note: 非本机推拉流，也就是不能用localhost访问SRS时，浏览器限制必须HTTPS才能推拉流，请参考[WebRTC using HTTPS](./getting-started-build.md#webrtc-using-https)，再次强调这是浏览器限制。
 
 打开页面观看WebRTC流：[WebRTC: Play](http://localhost:8080/players/rtc_player.html?autostart=true&stream=livestream&port=8080&schema=http)
 
@@ -126,7 +128,7 @@ MB0:trunk $ tail -n 30 -f ./objs/srs.log
 
 SRS支持直播转WebRTC，推直播流，使用WebRTC观看。
 
-下载源码，推荐用[CentOS7](./install.md)：
+下载源码，推荐用[Ubuntu20](./install.md)：
 
 ```
 git clone -b develop https://gitee.com/ossrs/srs.git
@@ -171,7 +173,7 @@ ffmpeg -re -i ./doc/source.flv -c copy -f flv rtmp://localhost/live/livestream
 
 若需要在非本机使用WebRTC，比如SRS运行在远程服务器，在笔记本或者手机上使用WebRTC，则需要开启HTTPS API。
 
-下载源码，推荐用[CentOS7](./install.md)：
+下载源码，推荐用[Ubuntu20](./install.md)：
 
 ```
 git clone -b develop https://gitee.com/ossrs/srs.git

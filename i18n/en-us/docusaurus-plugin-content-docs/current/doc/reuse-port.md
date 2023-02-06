@@ -18,7 +18,7 @@ SO_REUSEPORT feature for multiple processes edge server.
 
 ![](/img/doc-guides-reuse-port-001.png)
 
-> Remark: The SO_REUSEPORT requires Linux Kernel 3.9+, so you should upgrade your kernel for CentOS6, or you could choose CentOS7.
+> Remark: The SO_REUSEPORT requires Linux Kernel 3.9+, so you should upgrade your kernel for CentOS6, or you could choose Ubuntu20.
 
 First, we start a edge server which listen at 1935:
 

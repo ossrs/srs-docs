@@ -60,7 +60,9 @@ docker run --rm -it -p 1935:1935 -p 1985:1985 -p 8080:8080 -p 1990:1990 -p 8088:
 
 > Note: About CANDIDATE, please read [CANDIDATE](./webrtc.md#config-candidate)
 
-Push stream to SRS by [WebRTC: Publish](http://localhost:8080/players/rtc_publisher.html?autostart=true&stream=livestream&port=8080&schema=http)
+If SRS runs on localhost, push stream to SRS by [WebRTC: Publish](http://localhost:8080/players/rtc_publisher.html?autostart=true&stream=livestream&port=8080&schema=http)
+
+> Note: If not localhost, browser(WebRTC) requires HTTPS, please see [WebRTC using HTTPS](./getting-started.md#webrtc-using-https) for detail.
 
 Play stream of SRS by [WebRTC: Play](http://localhost:8080/players/rtc_player.html?autostart=true&stream=livestream&port=8080&schema=http)
 

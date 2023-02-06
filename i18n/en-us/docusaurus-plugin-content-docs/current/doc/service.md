@@ -114,7 +114,7 @@ For Gracefully Quit(`SIGQUIT`):
 
 ## systemctl
 
-CentOS7 use systemctl to manage services, we also need to install init.d service, then add to systemctl:
+Ubuntu20 use systemctl to manage services, we also need to install init.d service, then add to systemctl:
 
 ```
 ./configure && make && sudo make install &&

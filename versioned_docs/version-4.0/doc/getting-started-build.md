@@ -13,7 +13,7 @@ You can build SRS from source code, but [docker](./getting-started.md) is highly
 
 SRS supports live streaming.
 
-Get SRS source, recommend [CentOS7](./install.md):
+Get SRS source, recommend [Ubuntu20](./install.md):
 
 ```
 git clone -b 4.0release https://github.com/ossrs/srs.git
@@ -61,7 +61,7 @@ Play stream by:
 
 SRS supports WebRTC for video chat.
 
-Get SRS source, recommend [CentOS7](./install.md):
+Get SRS source, recommend [Ubuntu20](./install.md):
 
 ```
 git clone -b 4.0release https://github.com/ossrs/srs.git
@@ -106,7 +106,7 @@ Play stream of SRS by [WebRTC: Play](http://localhost:8080/players/rtc_player.ht
 
 SRS supports converting live streaming to WebRTC.
 
-Get SRS source, recommend [CentOS7](./install.md):
+Get SRS source, recommend [Ubuntu20](./install.md):
 
 ```
 git clone -b 4.0release https://github.com/ossrs/srs.git
@@ -151,7 +151,7 @@ Play stream by:
 
 If not localhost, for example, to view WebRTC on pad or mobile phone, when SRS is running on remote server.
 
-Get SRS source, recommend [CentOS7](./install.md):
+Get SRS source, recommend [Ubuntu20](./install.md):
 
 ```
 git clone -b 4.0release https://github.com/ossrs/srs.git

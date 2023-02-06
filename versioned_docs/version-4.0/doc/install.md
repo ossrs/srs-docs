@@ -11,7 +11,7 @@ You can directly use the release binaries, or build SRS step by step. See: [Gith
 
 ## OS
 
-* <strong>CentOS6/CentOS7</strong> is recommended.
+* <strong>Ubuntu20</strong> is recommended.
 * Use [srs-docker](https://github.com/ossrs/dev-docker/tree/dev) to build SRS.
 * Use [srs-docker](https://github.com/ossrs/dev-docker) to run SRS.
 
