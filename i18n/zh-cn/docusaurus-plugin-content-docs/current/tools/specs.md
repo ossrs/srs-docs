@@ -71,6 +71,7 @@ hide_table_of_contents: false
 ## GB28181
 
 1. [GB28181-2016](/files/GBT28181-2016.pdf)
+1. [GB28181-2016](/files/GBT28181-2022.pdf)
 
 ## Files
 
