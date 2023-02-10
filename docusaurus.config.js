@@ -116,6 +116,10 @@ const config = {
             position: 'left',
             items: [
               {
+                to: '/about',
+                label: 'About',
+              },
+              {
                 to: '/faq',
                 label: 'FAQ',
               },
