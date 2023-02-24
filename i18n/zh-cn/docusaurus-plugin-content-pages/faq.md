@@ -202,7 +202,7 @@
 ```
 
 ```
-咨询和讨论请来[视频号直播间](https://ossrs.net/lts/zh-cn/docs/v4/doc/contact)交流。也可以[加微信群](https://ossrs.net/lts/zh-cn/docs/v4/doc/contact)，在群里交流。
+咨询和讨论请加[付费星球](https://mp.weixin.qq.com/s/HdSf7qAR94v2Mxdzf2qLAQ)交流。也可以[加微信群](https://ossrs.net/lts/zh-cn/docs/v4/doc/contact)，在群里交流。
 该Issue会被删除，请先阅读FAQ：#2716
 ```
 
