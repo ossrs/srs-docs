@@ -62,7 +62,9 @@ SRS3+ uses json-parser, read [#904](https://github.com/ossrs/srs/issues/904).
 
 **SRS4**
 
-[FFmpeg](https://github.com/ossrs/srs/issues/1762) use LGPL, we will support `./configure --ffmpeg-fit=on --shared-ffmpeg=on` to build and link in so, see [d526672](https://github.com/ossrs/srs/commit/d5266725e2e40fd23bf3cbb4af814f392e161304).
+[FFmpeg](https://www.ffmpeg.org/legal.html) use LGPL, and GPL if configure with `--enable-gpl`.
+
+SRS supports `./configure --ffmpeg-fit=on --shared-ffmpeg=on` to build and link in so, see [d526672](https://github.com/ossrs/srs/commit/d5266725e2e40fd23bf3cbb4af814f392e161304) and [#1762](https://github.com/ossrs/srs/issues/1762#issuecomment-912897342).
 
 * [Opus](https://opus-codec.org/license/) uses BSD, to transcode RTC(opus) to Live(aac).
 
