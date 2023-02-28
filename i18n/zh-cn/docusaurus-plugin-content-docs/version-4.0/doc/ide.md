@@ -22,14 +22,6 @@ IDE操作步骤：
 
 若执行失败，也可以右键`CMakeLists.txt`，选择`Reload CMake project`重试，参考： ![](/img/doc-integration-ide-002.png)
 
-也可以直接执行命令：
-
-```bash
-cd trunk/ide/srs_clion &&
-cmake -B cmake-build-debug . && cd cmake-build-debug && 
-make
-```
-
 在IDE调试SRS，对新同学是非常友好的，各种信息扑面而来，有种信心大增的错觉：
 
 ![](/img/doc-integration-ide-005.png)
