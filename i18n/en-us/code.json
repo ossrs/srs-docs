@@ -204,6 +204,9 @@
   "homepage.getStarted": {
     "message": "Get Started"
   },
+  "homepage.getSupport": {
+    "message": "Get Support"
+  },
   "homepage.easyToUseName": {
     "message": "Easy to Use"
   },
