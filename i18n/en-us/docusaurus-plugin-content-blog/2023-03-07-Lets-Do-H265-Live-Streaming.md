@@ -20,6 +20,8 @@ Now, you're able to use HEVC(H.265) in live streaming.
 
 H.265 uses less bandwidth than H.264, which means lower bandwidth cost, or higher quality in same bandwidth.
 
+Generally, H.265 is 50% off than H.264, so you only need to pay 50% bills if H.265.
+
 Furthermore, if want 8K live streaming, you must use H.265, because H.264 doesn't support 8K resolution.
 
 Please note that there are still some traps for H.265 live streaming.
