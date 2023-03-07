@@ -1,16 +1,18 @@
 ---
 slug: lets-do-h265-live-streaming
-title: H.265直播悄然成熟
+title: H.265直播悄然成熟，省一半带宽费用
 authors: []
 tags: [architecture, hevc, h265, codec, live]
 custom_edit_url: null
 ---
 
-# Lets Do H265 Live Streaming
+# Let's Do H265 Live Streaming
 
 > Written by [Winlin](https://github.com/winlinvip), [runner365](https://github.com/runner365), [yinjiaoyuan](https://github.com/yinjiaoyuan), [PieerePi](https://github.com/PieerePi), [qichaoshen82](https://github.com/qichaoshen82), [ZSC714725](https://github.com/ZSC714725), [bluestn](https://github.com/bluestn), [mapengfei53](https://github.com/mapengfei53), [chundonglinlin](https://github.com/chundonglinlin), [duiniuluantanqin](https://github.com/duiniuluantanqin), [panda1986](https://github.com/panda1986)
 
 经过七年的酝酿和开发，SRS在6.0中终于正式支持了HEVC(H.265)，几乎全面支持，包括RTMP、FLV、SRT、TS、HLS、DASH、GB28181、WebRTC(Safari)、DVR FLV、DVR MP4、WordPress SrsPlayer等等。
+
+一般H.265比H.264，可以省50%带宽，就是省50%的钱哈。
 
 <!--truncate-->
 
@@ -20,7 +22,7 @@ custom_edit_url: null
 
 H.265比H.264的编码效率更高，不过一个编解码的更新换代，一般是以N个10年为基准的，现在也不能说H.265就能完全替换H.264，还有不少遗留问题。
 
-H.265的收益就不用说了，可以用更少的带宽，传输同样的质量，这就是省钱啊。一般可以省50%带宽，就是省50%的钱哈。
+H.265的收益就不用说了，可以用更少的带宽，传输同样的质量，这就是省钱啊。
 
 此外，8K的朋友必须H.265，大约在9Mbps码率，而H.264得30Mbps而且最高分辨率无法支持8K。
 

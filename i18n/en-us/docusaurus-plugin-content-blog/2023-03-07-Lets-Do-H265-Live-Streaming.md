@@ -1,16 +1,18 @@
 ---
 slug: lets-do-h265-live-streaming
-title: SRS6.0: Let's Do H.265 Live Streaming
+title: H.265 Live Streaming Saving 50% Cost
 authors: []
 tags: [architecture, hevc, h265, codec, live]
 custom_edit_url: null
 ---
 
-# Lets Do H265 Live Streaming
+# Let's Do H265 Live Streaming
 
 > Written by [Winlin](https://github.com/winlinvip), [runner365](https://github.com/runner365), [yinjiaoyuan](https://github.com/yinjiaoyuan), [PieerePi](https://github.com/PieerePi), [qichaoshen82](https://github.com/qichaoshen82), [ZSC714725](https://github.com/ZSC714725), [bluestn](https://github.com/bluestn), [mapengfei53](https://github.com/mapengfei53), [chundonglinlin](https://github.com/chundonglinlin), [duiniuluantanqin](https://github.com/duiniuluantanqin), [panda1986](https://github.com/panda1986)
 
 SRS 6.0 supports HEVC(H.265), for RTMP, HTTP-FLV, HTTP-TS, HLS, MPEG-DASH, WebRTC(Safari), DVR FLV, DVR MP4 and WordPress SrsPlayer, etc.
+
+Generally, H.265 is 50% off than H.264, so you only need to pay 50% bills if H.265.
 
 <!--truncate-->
 
@@ -19,8 +21,6 @@ Now, you're able to use HEVC(H.265) in live streaming.
 ## Why Important?
 
 H.265 uses less bandwidth than H.264, which means lower bandwidth cost, or higher quality in same bandwidth.
-
-Generally, H.265 is 50% off than H.264, so you only need to pay 50% bills if H.265.
 
 Furthermore, if want 8K live streaming, you must use H.265, because H.264 doesn't support 8K resolution.
 
