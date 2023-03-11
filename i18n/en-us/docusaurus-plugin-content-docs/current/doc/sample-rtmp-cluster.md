@@ -38,7 +38,7 @@ For detail, read [Build](./install.md)
 
 ## Step 3, config origin SRS
 
-For detail, read [RTMP](./delivery-rtmp.md) and [Edge](./edge.md)
+For detail, read [RTMP](./rtmp.md) and [Edge](./edge.md)
 
 Save bellow as config, or use `conf/origin.conf`:
 
@@ -54,7 +54,7 @@ vhost __defaultVhost__ {
 
 ## Step 4, config edge SRS
 
-For detail, read [RTMP](./delivery-rtmp.md) and [Edge](./edge.md)
+For detail, read [RTMP](./rtmp.md) and [Edge](./edge.md)
 
 Save bellow as config, or use `conf/edge.conf`:
 
@@ -74,7 +74,7 @@ vhost __defaultVhost__ {
 
 ## Step 5, start SRS
 
-For detail, read [RTMP](./delivery-rtmp.md) and [Edge](./edge.md)
+For detail, read [RTMP](./rtmp.md) and [Edge](./edge.md)
 
 ```bash
 ./objs/srs -c conf/origin.conf &
@@ -83,7 +83,7 @@ For detail, read [RTMP](./delivery-rtmp.md) and [Edge](./edge.md)
 
 ## Step 6, start Enocder
 
-For detail, read [RTMP](./delivery-rtmp.md) and [Edge](./edge.md)
+For detail, read [RTMP](./rtmp.md) and [Edge](./edge.md)
 
 Use FFMPEG to publish stream:
 
@@ -105,7 +105,7 @@ Stream: livestream
 
 ## Step 7, play RTMP
 
-For detail, read [RTMP](./delivery-rtmp.md) and [Edge](./edge.md)
+For detail, read [RTMP](./rtmp.md) and [Edge](./edge.md)
 
 Origin RTMP url is: `rtmp://192.168.1.170:19350/live/livestream`, User can use vlc to play the RTMP stream.
 

@@ -34,7 +34,7 @@
       },
       "collapsed": true,
       "items": [
-        "doc/sample-rtmp",
+        "doc/rtmp",
         "doc/sample-hls",
         "doc/webrtc",
         "doc/sample-http-flv",
@@ -52,7 +52,6 @@
       },
       "collapsed": true,
       "items": [
-        "doc/delivery-rtmp",
         "doc/delivery-hls",
         "doc/delivery-http-flv",
         "doc/dvr",

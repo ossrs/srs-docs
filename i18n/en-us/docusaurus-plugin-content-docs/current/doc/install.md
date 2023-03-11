@@ -47,7 +47,7 @@ Also easy to start SRS:
 ./objs/srs -c conf/srs.conf
 ```
 
-Publish RTMP, please read: [Usage: RTMP](./sample-rtmp.md)
+Publish RTMP, please read: [Usage: RTMP](./rtmp.md)
 
 For service management, please read [Service](./service.md)
 

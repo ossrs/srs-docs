@@ -13,7 +13,7 @@ The resources of SRS.
 
 The ports used by SRS, kernel services:
 
-* `tcp://1935`, for [RTMP live streaming server](./delivery-rtmp.md).
+* `tcp://1935`, for [RTMP live streaming server](./rtmp.md).
 * `tcp://1985`, HTTP API server, for [HTTP-API](./http-api.md), [WebRTC](./webrtc.md), etc.
 * `tcp://8080`, HTTP live streaming server, [HTTP-FLV](./sample-http-flv.md), [HLS](./sample-hls.md) as such.
 * `udp://8000`, [WebRTC Media](./webrtc.md) server.

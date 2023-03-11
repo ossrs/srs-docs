@@ -13,7 +13,7 @@ RTMP is Adobe RTMP (Realtime Message Protocol), for low latency live streaming, 
 
 HLS is Apple HLS (HTTP Live Streaming), for both live and VOD streaming over HTTP, and the standard protocol on Apple platforms.
 
-Servers delivering both HLS and RTMP can support all screens. For RTMP, see: [RTMP Delivery](./delivery-rtmp.md)。
+Servers delivering both HLS and RTMP can support all screens. For RTMP, see: [RTMP Delivery](./rtmp.md)。
 
 For information comparing RTMP and HLS, read [RTMP PK HLS](./rtmp-pk-http.md).
 

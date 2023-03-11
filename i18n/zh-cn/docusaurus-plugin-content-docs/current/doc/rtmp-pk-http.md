@@ -9,7 +9,7 @@ hide_table_of_contents: false
 
 互联网上的两种主要的分发方式：直播和WebRTC，什么时候用谁，完全决定于应用场景。
 
-* 直播：[HLS](./delivery-hls.md)，[RTMP](./delivery-rtmp.md)和[HTTP-FLV](./delivery-http-flv.md)，主要是娱乐和教育场景。
+* 直播：[HLS](./delivery-hls.md)，[RTMP](./rtmp.md)和[HTTP-FLV](./delivery-http-flv.md)，主要是娱乐和教育场景。
 * WebRTC：[RTC](./webrtc.md)，主要应用于通话，直播连麦，教育等场景。
 
 还有其他的分发方式，这些分发方式不属于互联网常见和通用的方式，不予以比较：
@@ -71,7 +71,7 @@ HLS的主要劣势是：
 
 ## 应用方式
 
-参考[HTTP](./delivery-hls.md)和[RTMP](./delivery-rtmp.md)
+参考[HTTP](./delivery-hls.md)和[RTMP](./rtmp.md)
 
 推荐的方式是：
 * 编码器输出RTMP协议。
