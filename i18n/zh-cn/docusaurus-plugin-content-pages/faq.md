@@ -67,6 +67,11 @@
   > 1. 可以参考[srs-cloud](https://github.com/ossrs/srs-cloud/tree/main/hooks)中DVR的实现。
   > 1. SRS不会支持动态DVR，但给出了一些方案，也可以参考 [#1577](https://github.com/ossrs/srs/issues/1577)
 
+<a name="console"></a>
+### [Console](#console)
+* `Pagination`: 关于控制台流和客户端的分页问题，参考 [#3451](https://github.com/ossrs/srs/issues/3451)
+  > 1. API默认参数为`start=0`, `count=10`，而Console没有支持分页，计划在新的Console支持。
+
 <a name='api-security'></a>
 
 ### [HTTPS](#https)
