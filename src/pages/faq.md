@@ -11,6 +11,10 @@ About Q&A, please follow [rules](https://stackoverflow.com/help/product-support)
 * Why do you? -- [discord community](https://discord.gg/yZ4BnPmHAd) (developer forum etc)
 * When will you? -- [discord community](https://discord.gg/yZ4BnPmHAd)
 
+## FAQ
+
+> Note: This is FAQ about SRS, please see [SRS Cloud FAQ](/faq-srs-cloud) for SRS Cloud.
+
 ## Deleting
 
 ```
