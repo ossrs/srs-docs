@@ -10,14 +10,14 @@ SRS经过十年的发展，已经越来越不Simple了，这篇文章介绍了SR
 详细的功能列表可以看 [Features](https://github.com/ossrs/srs/blob/develop/trunk/doc/Features.md#features) 。
 我们列出了主要的功能的版本，以及相关的Issue和PR链接。
 
-此外，在 [里程碑](./product.md) 的详细描述中，也会介绍这个大的版本，所支持的功能。
+此外，在 [里程碑](/product) 的详细描述中，也会介绍这个大的版本，所支持的功能。
 
 > Note: 如果希望看每个里程碑的Issues，则可以在 [Milestones](https://github.com/ossrs/srs/milestones) 中查看。
 
 特别注意的是，尽管不多，但SRS还是会将某些功能设置为 [Deprecated](https://github.com/ossrs/srs/blob/develop/trunk/doc/Features.md#features) ，
 可以在页面中搜索`Deprecated`或者`Removed`。我们也会详细解释为何要移除这个功能。
 
-如果你想知道我们正在做的功能，可以在 [微信公众号](./contact.md#discussion) 中，点菜单的最新版本，比如`SRS 5.0`或者`SRS 6.0`。
+如果你想知道我们正在做的功能，可以在 [微信公众号](/contact#discussion) 中，点菜单的最新版本，比如`SRS 5.0`或者`SRS 6.0`。
 新的功能完成后，我们也会发布文章到微信公众号，请关注。
 
 ## Releases
@@ -46,13 +46,13 @@ SRS的分支规则，是按版本的分支，比如：
 
 音视频开发者，几乎必然碰到问题，估计大家比较习惯云厂商的贴身服务，来到开源社区就非常不习惯。
 
-其实遇到问题不要慌张，大部分问题都是已经有的，可以在 [FAQ](./faq.md) 中找到答案，或者在文档 [Docs](./getting-started.md) 中找到答案。
+其实遇到问题不要慌张，大部分问题都是已经有的，可以在 [FAQ](/faq) 中找到答案，或者在文档 [Docs](/docs/v5/doc/getting-started) 中找到答案。
 
-也可以在 [支持](./contact.md) 中加微信群，和其他开发者交流，不过请遵守社区规范，否则也得不到支持的。
+也可以在 [支持](/contact) 中加微信群，和其他开发者交流，不过请遵守社区规范，否则也得不到支持的。
 
 作为开发者，我们必须学会看文档，调查问题，然后再在社区中交流。
 
-值得澄清的是，中国开发者的素质也越来越高了，深度开发者我们建议加付费星球，参考 [Support](./contact.md#donation) 。
+值得澄清的是，中国开发者的素质也越来越高了，深度开发者我们建议加付费星球，参考 [Support](/contact#donation) 。
 
 SRS没有商业化的计划，我们目前正在努力建设全球的活跃的开发者社区，开源的价值会越来越大，社区彼此的支持也会越来越多。
 
