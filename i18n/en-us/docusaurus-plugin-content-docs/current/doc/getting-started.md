@@ -110,7 +110,9 @@ Play stream by:
 
 ## WebRTC using HTTPS
 
-If not localhost, for example, to view WebRTC on pad or mobile phone, when SRS is running on remote server.
+When pushing stream to SRS, if not localhost, for example, to view WebRTC on pad or mobile phone, when SRS is running on remote server.
+
+> Note: If only need to play WebRTC stream, HTTP is ok. If wants to push stream, and not localhost, you need HTTPS.
 
 Run SRS using docker:
 
