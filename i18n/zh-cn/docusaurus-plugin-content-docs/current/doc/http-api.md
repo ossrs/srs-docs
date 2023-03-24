@@ -302,59 +302,57 @@ SRS提供了API的导航，即所有支持的API及描述。
 
 ## WebRTC Publish
 
-使用WebRTC推流到SRS时，需要先调用API交换SDK。例如：
+使用WebRTC推流到SRS时，需要先调用API交换SDK，SRS支持[WHIP](https://datatracker.ietf.org/doc/draft-ietf-wish-whip/)协议。例如：
 
-```
-POST /rtc/v1/publish/
+```text
+POST /rtc/v1/whip/?app=live&stream=livestream
 
-Body in JSON:
+Body in SDP, the Content-type is application/sdp:
 
-{
-  "api": "https://d.ossrs.net/rtc/v1/publish/"
-  "streamurl": "webrtc://d.ossrs.net/live/3abd9f34",
-  "sdp": "v=0\r\n......\r\na=ssrc:2064016335 label:c8243ce9-ace5-4d17-9184-41a2543101b5\r\n"
-}
+v=0
+......
+a=ssrc:2064016335 label:c8243ce9-ace5-4d17-9184-41a2543101b5
 ```
 
 服务器响应对应的SDP如下：
 
-```
-{
-  "code": 0
-  "sdp": "v=0\r\n......\r\na=candidate:1 1 udp 2130706431 172.18.0.4 8000 typ host generation 0\r\n"
-  "sessionid": "186tj710:hMub"
-}
+```text
+v=0
+......
+a=candidate:1 1 udp 2130706431 172.18.0.4 8000 typ host generation 0
 ```
 
-具体调用和使用请参考[srs.sdk.js](https://github.com/ossrs/srs/blob/develop/trunk/research/players/js/srs.sdk.js)
+> Note: 按照WHIP的要求，响应的HTTP Status是201，而不是200。
+
+具体调用和使用请参考[srs.sdk.js](https://github.com/ossrs/srs/blob/develop/trunk/research/players/js/srs.sdk.js)和[srs-unity: Publisher](https://github.com/ossrs/srs-unity#usage-publisher)。
 
 ## WebRTC Play
 
-拉流或播放时，需要调用另外的API，请求格式和publish一样。例如：
+拉流或播放时，需要调用另外的API，请求格式和publish一样，SRS支持[WHIP](https://datatracker.ietf.org/doc/draft-ietf-wish-whip/)协议。例如：
 
+```text
+POST /rtc/v1/whip-play/?app=live&stream=livestream
+
+Body in SDP, the Content-type is application/sdp:
+
+v=0
+......
+a=ssrc:2064016335 label:c8243ce9-ace5-4d17-9184-41a2543101b5
 ```
-POST /rtc/v1/play/
 
-Body in JSON:
-
-{
-  "api": "https://d.ossrs.net/rtc/v1/play/"
-  "streamurl": "webrtc://d.ossrs.net/live/3abd9f34",
-  "sdp": "v=0\r\n......\r\na=ssrc:2064016335 label:c8243ce9-ace5-4d17-9184-41a2543101b5\r\n"
-}
-```
+> Note: 虽然WHIP是推流的协议，但是实际上也可以支持播放流，差异只在SDP中；当然有专门为播放涉及的[WHEP](https://datatracker.ietf.org/doc/draft-murillo-whep/)，目前还没有RFC草案。
 
 服务器响应对应的SDP如下：
 
 ```
-{
-  "code": 0
-  "sdp": "v=0\r\n......\r\na=candidate:1 1 udp 2130706431 172.18.0.4 8000 typ host generation 0\r\n"
-  "sessionid": "186tj710:hMub"
-}
+v=0
+......
+a=candidate:1 1 udp 2130706431 172.18.0.4 8000 typ host generation 0
 ```
 
-具体调用和使用请参考[srs.sdk.js](https://github.com/ossrs/srs/blob/develop/trunk/research/players/js/srs.sdk.js)
+> Note: 按照WHIP的要求，响应的HTTP Status是201，而不是200。
+
+具体调用和使用请参考[srs.sdk.js](https://github.com/ossrs/srs/blob/develop/trunk/research/players/js/srs.sdk.js)和[srs-unity: Player](https://github.com/ossrs/srs-unity#usage-player)。
 
 ## Summaries
 

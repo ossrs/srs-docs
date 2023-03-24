@@ -281,63 +281,59 @@ User can access the `http://192.168.1.102:1985/api/v1`, where:
 
 ## WebRTC Publish
 
-To push or publish stream to SRS using WebRTC, client should request the publish API to exchange SDP.
+In order to push stream over WebRTC to SRS, SRS supports [WHIP](https://datatracker.ietf.org/doc/draft-ietf-wish-whip/).
+The request is defined as:
 
-For example:
+```text
+POST /rtc/v1/whip/?app=live&stream=livestream
 
-```
-POST /rtc/v1/publish/
+Body in SDP, the Content-type is application/sdp:
 
-Body in JSON:
-
-{
-  "api": "https://d.ossrs.net/rtc/v1/publish/"
-  "streamurl": "webrtc://d.ossrs.net/live/3abd9f34",
-  "sdp": "v=0\r\n......\r\na=ssrc:2064016335 label:c8243ce9-ace5-4d17-9184-41a2543101b5\r\n"
-}
+v=0
+......
+a=ssrc:2064016335 label:c8243ce9-ace5-4d17-9184-41a2543101b5
 ```
 
-Server response the SDP for WebRTC:
+SRS responses the SDP answer as the HTTP response:
 
-```
-{
-  "code": 0
-  "sdp": "v=0\r\n......\r\na=candidate:1 1 udp 2130706431 172.18.0.4 8000 typ host generation 0\r\n"
-  "sessionid": "186tj710:hMub"
-}
+```text
+v=0
+......
+a=candidate:1 1 udp 2130706431 172.18.0.4 8000 typ host generation 0
 ```
 
-Please see [srs.sdk.js](https://github.com/ossrs/srs/blob/develop/trunk/research/players/js/srs.sdk.js) for detail.
+> Note: The HTTP Status is 201, not 200, according to WHIP specification.
+
+Please also see examples at [srs.sdk.js](https://github.com/ossrs/srs/blob/develop/trunk/research/players/js/srs.sdk.js) and [srs-unity: Publisher](https://github.com/ossrs/srs-unity#usage-publisher).
 
 ## WebRTC Play
 
-To pull or play stream from SRS using WebRTC, please request the bellow API with the same request as WebRTC publish.
+In order to pull stream over WebRTC from SRS, SRS also supports [WHIP](https://datatracker.ietf.org/doc/draft-ietf-wish-whip/). 
+The request is defined as:
 
-For example:
+```text
+POST /rtc/v1/whip-play/?app=live&stream=livestream
 
-```
-POST /rtc/v1/play/
+Body in SDP, the Content-type is application/sdp:
 
-Body in JSON:
-
-{
-  "api": "https://d.ossrs.net/rtc/v1/play/"
-  "streamurl": "webrtc://d.ossrs.net/live/3abd9f34",
-  "sdp": "v=0\r\n......\r\na=ssrc:2064016335 label:c8243ce9-ace5-4d17-9184-41a2543101b5\r\n"
-}
+v=0
+......
+a=ssrc:2064016335 label:c8243ce9-ace5-4d17-9184-41a2543101b5
 ```
 
-Server response the SDP for WebRTC:
+> Note: Although WHIP is defined to push stream to SRS, but you're able to use it for pulling stream from SRS. There is another [WHEP](https://datatracker.ietf.org/doc/draft-murillo-whep/) for players, but not a RFC draft.
+
+SRS responses the SDP answer as the HTTP response:
 
 ```
-{
-  "code": 0
-  "sdp": "v=0\r\n......\r\na=candidate:1 1 udp 2130706431 172.18.0.4 8000 typ host generation 0\r\n"
-  "sessionid": "186tj710:hMub"
-}
+v=0
+......
+a=candidate:1 1 udp 2130706431 172.18.0.4 8000 typ host generation 0
 ```
 
-Please see [srs.sdk.js](https://github.com/ossrs/srs/blob/develop/trunk/research/players/js/srs.sdk.js) for detail.
+> Note: The HTTP Status is 201, not 200, according to WHIP specification.
+
+Please also see examples at [srs.sdk.js](https://github.com/ossrs/srs/blob/develop/trunk/research/players/js/srs.sdk.js) and [srs-unity: Player](https://github.com/ossrs/srs-unity#usage-player).
 
 ## Summaries
 
