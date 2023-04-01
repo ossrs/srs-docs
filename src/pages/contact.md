@@ -20,9 +20,9 @@ Thank you for your contribution to SRS - it really makes a difference!
 
 For global developers:
 
-* Discord: [![](https://badgen.net/discord/members/yZ4BnPmHAd)](https://discord.gg/yZ4BnPmHAd)
-* Twitter: [![](https://badgen.net/twitter/follow/srs_server)](https://twitter.com/srs_server)
-* YouTube: [![](https://img.shields.io/youtube/channel/subscribers/UCP6ZblCL_fIJoEyUzZxC1ng?style=social)](https://www.youtube.com/channel/UCP6ZblCL_fIJoEyUzZxC1ng)
+* Discord: [SRS Community](https://discord.gg/yZ4BnPmHAd)
+* Twitter: [@srs_server](https://twitter.com/srs_server)
+* YouTube: [@srs_server](https://www.youtube.com/@srs_server)
 * Medium: [medium.com/ossrs](https://blog.ossrs.io/)
 
 Rarelly used:
