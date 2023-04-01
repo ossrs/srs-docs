@@ -12,6 +12,8 @@ custom_edit_url: null
 但是，你应该保护好你的HTTP API，防止未授权的访问。
 本文介绍如何保护你的HTTP API。
 
+<!--truncate-->
+
 ## Usage
 
 首先，请升级SRS到5.0.152+或者6.0.40+，这些版本支持HTTP API鉴权。

@@ -12,6 +12,8 @@ After you have built your SRS server, you can use HTTP API to access it by SRS c
 However, you should secure your HTTP API to prevent unauthorized access. 
 This article describes how to secure your HTTP API.
 
+<!--truncate-->
+
 ## Usage
 
 First of all, please upgrade SRS to 5.0.152+ or 6.0.40+, which supports HTTP API security.
