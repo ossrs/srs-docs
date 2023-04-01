@@ -97,4 +97,4 @@ Please see [WebRTC HTTP Callback](/v5/doc/http-callback) and [Token Authenticati
 
 ## Conclusion
 
-This article is written by Winlin and GitHub copilot.
+GitHub Copilot and I wrote this article.
