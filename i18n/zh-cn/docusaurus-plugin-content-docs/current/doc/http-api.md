@@ -68,6 +68,23 @@ http_api {
     # the HTTP RAW API is more powerful api to change srs state and reload.
     raw_api {
         # whether enable the HTTP RAW API.
+        # Overwrite by env SRS_HTTP_API_RAW_API_ENABLED
+        # default: off
+        enabled off;
+        # whether enable rpc reload.
+        # Overwrite by env SRS_HTTP_API_RAW_API_ALLOW_RELOAD
+        # default: off
+        allow_reload off;
+        # whether enable rpc query.
+        # Always off by https://github.com/ossrs/srs/issues/2653
+        #allow_query off;
+        # whether enable rpc update.
+        # Always off by https://github.com/ossrs/srs/issues/2653
+        #allow_update off;
+    }
+    # the HTTP RAW API is more powerful api to change srs state and reload.
+    raw_api {
+        # whether enable the HTTP RAW API.
         # default: off
         enabled             off;
         # whether enable rpc reload.
