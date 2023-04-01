@@ -100,3 +100,5 @@ Please see [WebRTC HTTP Callback](/docs/v5/doc/http-callback) and [Token Authent
 ## Conclusion
 
 GitHub Copilot and I wrote this article.
+
+The code of this feature was written by SRS developers and GitHub Copilot.
