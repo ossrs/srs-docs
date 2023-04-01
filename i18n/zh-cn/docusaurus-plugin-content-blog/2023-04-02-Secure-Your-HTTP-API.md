@@ -92,7 +92,7 @@ http_api {
 
 SRS不支持WebRTC相关的HTTP API的鉴权，因为WebRTC鉴权是通过HTTP回调来实现的。
 
-请参考[WebRTC回调](/v5/doc/http-callback)和[Token鉴权](/v5/doc/drm#token-authentication)等文档。
+请参考[WebRTC回调](/docs/v5/doc/http-callback)和[Token鉴权](/docs/v5/doc/drm#token-authentication)等文档。
 
 ## Conclusion
 

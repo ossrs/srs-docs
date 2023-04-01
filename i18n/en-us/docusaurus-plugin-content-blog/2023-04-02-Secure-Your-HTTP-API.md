@@ -93,7 +93,7 @@ So that the HTTP API is only accessible by the localhost proxy server.
 SRS doesn't support HTTP API authentication for WebRTC,
 instead, you should use the HTTP callback to verify the client.
 
-Please see [WebRTC HTTP Callback](/v5/doc/http-callback) and [Token Authentication](/v5/doc/drm#token-authentication) for more details.
+Please see [WebRTC HTTP Callback](/docs/v5/doc/http-callback) and [Token Authentication](/docs/v5/doc/drm#token-authentication) for more details.
 
 ## Conclusion
 
