@@ -39,7 +39,7 @@ First, download and build SRS:
 ```bash
 git clone http://github.com/ossrs/srs.git
 cd srs/trunk
-./configure
+./configure --h265=on
 make
 ```
 

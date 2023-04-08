@@ -37,9 +37,9 @@ OBS和SRS都支持这个标准。
 首先，下载并编译SRS：
 
 ```bash
-git clone http://github.com/ossrs/srs.git
+git clone http://gitee.com/ossrs/srs.git
 cd srs/trunk
-./configure
+./configure --h265=on
 make
 ```
 
