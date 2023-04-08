@@ -101,3 +101,5 @@ SRS不支持WebRTC相关的HTTP API的鉴权，因为WebRTC鉴权是通过HTTP�
 这篇文章是我和GitHub Copilot一起写的。
 
 代码实现是SRS开发者，和GitHub Copilot一起写的。
+
+![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/blog-zh/23-04-02-Secure-Your-HTTP-API)

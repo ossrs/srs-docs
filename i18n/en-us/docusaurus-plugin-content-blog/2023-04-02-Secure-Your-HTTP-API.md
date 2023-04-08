@@ -102,3 +102,5 @@ Please see [WebRTC HTTP Callback](/docs/v5/doc/http-callback) and [Token Authent
 GitHub Copilot and I wrote this article.
 
 The code of this feature was written by SRS developers and GitHub Copilot.
+
+![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/blog-en/23-04-02-Secure-Your-HTTP-API)
