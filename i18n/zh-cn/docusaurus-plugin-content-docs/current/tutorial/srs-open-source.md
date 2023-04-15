@@ -5,7 +5,7 @@ hide_title: false
 hide_table_of_contents: false
 ---
 
-# SRS
+# SRS Server
 
 ## 开源视频服务器
 * 地址: https://www.bilibili.com/video/BV1M54y1z7jo
