@@ -6,7 +6,7 @@ tags: [youtube, rtmp, rtmps, webrtc, srs, ffmpeg]
 custom_edit_url: null
 ---
 
-如何用浏览器通过RTMP或RTMPS做YouTube直播
+# 如何用浏览器通过RTMP或RTMPS做YouTube直播
 
 > Written by [Winlin](https://github.com/winlinvip) and GPT4
 
@@ -36,11 +36,11 @@ git clone https://github.com/ossrs/srs.git
 ./objs/srs -c conf/rtc2rtmp.conf
 ```
 
-要确认成功安装，请在网络浏览器中访问 http://localhost:8080
+要确认成功安装，请在网络浏览器中访问 [http://localhost:8080](http://localhost:8080)
 
 ## Step 2: Streaming WebRTC to SRS
 
-打开网页 http://localhost:8080/players/whip.html ，通过WebRTC将您的摄像头流传输到SRS。
+打开网页 [http://localhost:8080/players/whip.html](http://localhost:8080/players/whip.html) ，通过WebRTC将您的摄像头流传输到SRS。
 
 ![](/img/blog-2023-05-16-001.png)
 
@@ -48,7 +48,7 @@ git clone https://github.com/ossrs/srs.git
 
 ## Step 3: Routing RTMP to YouTube
 
-访问YouTube直播流控制台，网址为 https://youtube.com/livestreaming/dashboard
+访问YouTube直播流控制台，网址为 [https://youtube.com/livestreaming/dashboard](https://youtube.com/livestreaming/dashboard)
 
 获取流服务器（例如，`rtmp://a.rtmp.youtube.com/live2`）和流密钥（例如，`9xxx-8yyy-3zzz-3iii-7jjj`）。
 

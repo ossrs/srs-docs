@@ -6,7 +6,7 @@ tags: [youtube, rtmp, rtmps, webrtc, srs, ffmpeg]
 custom_edit_url: null
 ---
 
-How to Live Streaming on YouTube via RTMP or RTMPS Using a Web Browser
+# How to Live Streaming on YouTube via RTMP or RTMPS Using a Web Browser
 
 > Written by [Winlin](https://github.com/winlinvip) and GPT4
 
@@ -36,11 +36,11 @@ Lastly, launch SRS with the command:
 ./objs/srs -c conf/rtc2rtmp.conf
 ```
 
-To confirm the successful installation, access http://localhost:8080 in your web browser.
+To confirm the successful installation, access [http://localhost:8080](http://localhost:8080) in your web browser.
 
 ## Step 2: Streaming WebRTC to SRS
 
-Open the webpage http://localhost:8080/players/whip.html to transmit your camera stream to SRS via WebRTC. 
+Open the webpage [http://localhost:8080/players/whip.html](http://localhost:8080/players/whip.html) to transmit your camera stream to SRS via WebRTC. 
 
 ![](/img/blog-2023-05-16-001.png)
 
@@ -48,7 +48,7 @@ To preview the RTMP stream, utilize VLC to play `rtmp://localhost/live/livestrea
 
 ## Step 3: Routing RTMP to YouTube
 
-Access the YouTube live-streaming dashboard at https://youtube.com/livestreaming/dashboard.
+Access the YouTube live-streaming dashboard at [https://youtube.com/livestreaming/dashboard](https://youtube.com/livestreaming/dashboard).
 
 Acquire the stream server (e.g., `rtmp://a.rtmp.youtube.com/live2`) and stream key (e.g., `9xxx-8yyy-3zzz-3iii-7jjj`).
 
