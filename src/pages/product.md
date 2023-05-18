@@ -108,22 +108,22 @@ Vulture (Li Zhicheng), Dragon (Lan Yulong), and all developer leaders for their 
 developers to participate in open-source contributions. Special thanks to community managers Geng Hang and Liu Qi for
 their contributions to community promotion and development.
 
-- [x] Support for amd/armv7/aarch64 multi-CPU architecture Docker images. #3058
-- [x] Enhanced Forward, supporting dynamic Forward, allowing flexible customization of forwarding strategies. #2799
-- [x] GB28181, supporting GB2016 standard, built-in SIP signaling, and TCP port reuse for transmission. #3176
-- [x] Windows, supporting Cygwin compilation, pipeline packaging, and GITEE mirror downloads. #2532
-- [x] Apple M1, supporting Apple M1 chip, new MacPro compilation, and debugging. #2747
-- [x] RISCV architecture support, modifying ST assembly to support RISCV CPU architecture. #3115
+- [x] Support for amd/armv7/aarch64 multi-CPU architecture Docker images. [#3058](https://github.com/ossrs/srs/issues/3058)
+- [x] Enhanced Forward, supporting dynamic Forward, allowing flexible customization of forwarding strategies. [#2799](https://github.com/ossrs/srs/issues/2799)
+- [x] GB28181, supporting GB2016 standard, built-in SIP signaling, and TCP port reuse for transmission. [#3176](https://github.com/ossrs/srs/issues/3176)
+- [x] Windows, supporting Cygwin compilation, pipeline packaging, and GITEE mirror downloads. [#2532](https://github.com/ossrs/srs/issues/2532)
+- [x] Apple M1, supporting Apple M1 chip, new MacPro compilation, and debugging. [#2747](https://github.com/ossrs/srs/issues/2747)
+- [x] RISCV architecture support, modifying ST assembly to support RISCV CPU architecture. [#3115](https://github.com/ossrs/srs/issues/3115)
 - [x] MIPS architecture support, Cygwin platform support, and ARMv7 and AARCH64 support.
-- [x] Loongarch, supporting Loongson architecture and Loongarch64 server platform. #2689
-- [x] Enhanced DASH, solving DASH freezing issues, reaching a commercially viable standard. #3240
-- [x] Support for Google Address Sanitizer, solving wild pointer location issues. #3216
-- [x] Prometheus Exporter, supporting cloud-native observability capabilities, and also supporting Tencent Cloud CLS and APM docking. #2899
-- [x] Enhanced SRT, coroutine-native SRT improvements, more convenient maintenance, and stability. #3010
+- [x] Loongarch, supporting Loongson architecture and Loongarch64 server platform. [#2689](https://github.com/ossrs/srs/issues/2689)
+- [x] Enhanced DASH, solving DASH freezing issues, reaching a commercially viable standard. [#3240](https://github.com/ossrs/srs/issues/3240)
+- [x] Support for Google Address Sanitizer, solving wild pointer location issues. [#3216](https://github.com/ossrs/srs/issues/3216)
+- [x] Prometheus Exporter, supporting cloud-native observability capabilities, and also supporting Tencent Cloud CLS and APM docking. [#2899](https://github.com/ossrs/srs/issues/2899)
+- [x] Enhanced SRT, coroutine-native SRT improvements, more convenient maintenance, and stability. [#3010](https://github.com/ossrs/srs/issues/3010)
 - [x] Unity WebRTC, supporting Unity platform docking with SRS, using WHIP protocol. srs-unity
-- [x] Support for WHIP protocol, push and pull streams. #2324
-- [x] WebRTC over TCP, supporting TCP transmission of WebRTC, and TCP port reuse. #2852
-- [x] Support for HTTP API, HTTP Stream, HTTP Server, and WebRTC TCP port reuse. #2881.
+- [x] Support for WHIP protocol, push and pull streams. [#2324](https://github.com/ossrs/srs/issues/2324)
+- [x] WebRTC over TCP, supporting TCP transmission of WebRTC, and TCP port reuse. [#2852](https://github.com/ossrs/srs/issues/2852)
+- [x] Support for HTTP API, HTTP Stream, HTTP Server, and WebRTC TCP port reuse. [#2881](https://github.com/ossrs/srs/issues/2881)
 
 It is expected that the main features of 5.0 will be completed by the end of 2022, with a planned release by the end of 2023.
 
@@ -136,17 +136,17 @@ Zhu Hui from Datang, Shu Shi from Microsoft, Fu Liang, Zhang Wei, Michael, Liu Q
 Yu Bing from Kuaishou, Yang Mohan and Lei Jian from chnvideo, Bao Yan from LVS, and Shu Du, Zhi Fan, Hua Da,
 Wen Jing, Shi Hao, and Huan Jian from Alibaba. Thanks to my classmates who have grown and coded together.
 
-- [x] Support WebRTC push and playback, refer to #307
-- [x] Support RTMP to RTC, low-latency live streaming scenarios, refer to #307
-- [x] Support RTC to RTMP, conference recording, refer to #307
-- [x] Support RTC single-port reuse, avoiding multi-port issues, refer to #307
-- [x] Improve HTTP-API, support WebRTC and HLS, refer to #2578, #2483, #2509
+- [x] Support WebRTC push and playback, refer to [#307](https://github.com/ossrs/srs/issues/307)
+- [x] Support RTMP to RTC, low-latency live streaming scenarios, refer to [#307](https://github.com/ossrs/srs/issues/307)
+- [x] Support RTC to RTMP, conference recording, refer to [#307](https://github.com/ossrs/srs/issues/307)
+- [x] Support RTC single-port reuse, avoiding multi-port issues, refer to [#307](https://github.com/ossrs/srs/issues/307)
+- [x] Improve HTTP-API, support WebRTC and HLS, refer to [#2578](https://github.com/ossrs/srs/issues/2587), [#2483]((https://github.com/ossrs/srs/issues/2483), [#2509](https://github.com/ossrs/srs/issues/2509)
 - [x] Enhance HTTPS, support HTTPS-FLV, HTTPS-API, HTTPS-Callback
-- [x] Support Docker and K8S docking, cloud-native transformation, refer to #1579, #1595
-- [x] Support RTC client network switching, multi-network card switching issues, refer to #307
+- [x] Support Docker and K8S docking, cloud-native transformation, refer to [#1579](https://github.com/ossrs/srs/issues/1579), [#1595](https://github.com/ossrs/srs/issues/1595)
+- [x] Support RTC client network switching, multi-network card switching issues, refer to [#307](https://github.com/ossrs/srs/issues/307)
 - [x] Support regression testing, RTC automatic testing, refer to srs-bench
-- [x] [experimental] Support SRT push, widely supported new protocol in broadcasting. Refer to: #1147.
-- [x] [feature] Support GB28181 push, camera push through national standard protocol. Refer to: #1500.
+- [x] [experimental] Support SRT push, widely supported new protocol in broadcasting. Refer to: [#1147](https://github.com/ossrs/srs/issues/1147).
+- [x] [feature] Support GB28181 push, camera push through national standard protocol. Refer to: [#1500](https://github.com/ossrs/srs/issues/1500).
 
 Version 4.0 is expected to be released by the end of 2021.
 
@@ -159,17 +159,17 @@ carry our initial dreams and go further.
 
 [SRS Release 3.0](https://github.com/ossrs/srs/tree/3.0release), in the development stage. The main goals are:
 
-- [x] Support NGINX-RTMP's EXEC feature. Refer to: #367.
-- [x] Support NGINX-RTMP's DVR control module feature. Refer to: #459.
-- [x] Support secure, readable, and writable HTTP API (HTTP Security Raw API). Refer to: #470, #319, #459.
-- [x] Support DVR as MP4 files. Refer to: #738.
-- [x] Support screenshots, HttpCallback, and Transcoder in two ways. Refer to: #502.
-- [x] Rewrite error and log handling, use complex errors, and simplify logs. Refer to: #913.
-- [x] Rewrite error handling workflow, accurately define exceptions. Refer to: #1043.
-- [x] Learn English, rewrite English WIKI. Refer to: #967.
-- [x] Support source station cluster, load balancing, and hot backup. Refer to: #464, RTMP 302.
-- [x] Add UTest, covering core critical logic code. Refer to: #1042.
-- [x] [experimental] Support MPEG-DASH, possible future standard. Refer to: #299.
+- [x] Support NGINX-RTMP's EXEC feature. Refer to: [#367](https://github.com/ossrs/srs/issues/367).
+- [x] Support NGINX-RTMP's DVR control module feature. Refer to: [#459](https://github.com/ossrs/srs/issues/459).
+- [x] Support secure, readable, and writable HTTP API (HTTP Security Raw API). Refer to: [#470](https://github.com/ossrs/srs/issues/470), [#319]((https://github.com/ossrs/srs/issues/319), [#459](https://github.com/ossrs/srs/issues/459).
+- [x] Support DVR as MP4 files. Refer to: [#738](https://github.com/ossrs/srs/issues/738).
+- [x] Support screenshots, HttpCallback, and Transcoder in two ways. Refer to: [#502](https://github.com/ossrs/srs/issues/502).
+- [x] Rewrite error and log handling, use complex errors, and simplify logs. Refer to: [#913](https://github.com/ossrs/srs/issues/913).
+- [x] Rewrite error handling workflow, accurately define exceptions. Refer to: [#1043](https://github.com/ossrs/srs/issues/1043).
+- [x] Learn English, rewrite English WIKI. Refer to: [#967](https://github.com/ossrs/srs/issues/967).
+- [x] Support source station cluster, load balancing, and hot backup. Refer to: [#464](https://github.com/ossrs/srs/issues/464), RTMP 302.
+- [x] Add UTest, covering core critical logic code. Refer to: [#1042](https://github.com/ossrs/srs/issues/1042).
+- [x] [experimental] Support MPEG-DASH, possible future standard. Refer to: [#299](https://github.com/ossrs/srs/issues/299).
 
 [SRS Release 3.0](https://github.com/ossrs/srs/tree/3.0release) is expected to be released by the end of 2019.
 
@@ -182,23 +182,23 @@ independent and opening a new chapter in my life.
 The main goals are:
 
 - [x] Translate Chinese wiki into English.
-- [x] Improve performance, support 10k+ playback and 4.5k+ streaming. See: #194, #237 and #251
-- [x] srs-librtmp supports sending h.264 and aac raw streams. See: #66 and #212
-- [x] Learn and simplify st, only keep linux/arm part of the code. See: #182
-- [x] srs-librtmp supports Windows platform. See: bug #213, and srs-librtmp
-- [x] Simplify handshake, use template method instead of union. See: #235
+- [x] Improve performance, support 10k+ playback and 4.5k+ streaming. See: [#194](https://github.com/ossrs/srs/issues/194), [#237](https://github.com/ossrs/srs/issues/237) and [#251](https://github.com/ossrs/srs/issues/251).
+- [x] srs-librtmp supports sending h.264 and aac raw streams. See: [#66](https://github.com/ossrs/srs/issues/66) and [#212](https://github.com/ossrs/srs/issues/212).
+- [x] Learn and simplify st, only keep linux/arm part of the code. See: [#182](https://github.com/ossrs/srs/issues/182).
+- [x] srs-librtmp supports Windows platform. See: bug [#213](https://github.com/ossrs/srs/issues/213), and srs-librtmp
+- [x] Simplify handshake, use template method instead of union. See: [#235](https://github.com/ossrs/srs/issues/235).
 - [x] srs-librtmp supports hijacking IO, applied to srs-bench.
-- [x] Support real-time mode, with a minimum delay of 0.1 seconds. See: #257
-- [x] Support allowing and prohibiting clients from streaming or playing. See: #211
+- [x] Support real-time mode, with a minimum delay of 0.1 seconds. See: [#257](https://github.com/ossrs/srs/issues/257).
+- [x] Support allowing and prohibiting clients from streaming or playing. See: [#211](https://github.com/ossrs/srs/issues/211).
 - [x] DVR supports custom file path and DVR http callback.
-- [x] Commercially available built-in HTTP server, referring to GO's http module. See: #277.
-- [x] RTMP stream encapsulation as HTTP Live flv/aac/mp3/ts stream distribution. See: #293.
-- [x] Enhanced DVR, supports Append/callback, see: #179.
-- [x] Enhanced HTTP API, supports stream/vhost query, see: #316.
-- [x] Support HSTRS (HTTP stream triggers RTMP back-to-source), support HTTP-FLV waiting, support edge back-to-source, see: #324.
-- [x] [experimental] Support HDS, see: #328.
-- [x] [experimental] Support Push MPEG-TS over UDP to SRS, see: #250.
-- [x] [experimental] Support Push RTSP to SRS, see: #133.
+- [x] Commercially available built-in HTTP server, referring to GO's http module. See: [#277](https://github.com/ossrs/srs/issues/277).
+- [x] RTMP stream encapsulation as HTTP Live flv/aac/mp3/ts stream distribution. See: [#293](https://github.com/ossrs/srs/issues/293).
+- [x] Enhanced DVR, supports Append/callback, see: [#179](https://github.com/ossrs/srs/issues/179).
+- [x] Enhanced HTTP API, supports stream/vhost query, see: [#316](https://github.com/ossrs/srs/issues/316).
+- [x] Support HSTRS (HTTP stream triggers RTMP back-to-source), support HTTP-FLV waiting, support edge back-to-source, see: [#324](https://github.com/ossrs/srs/issues/324).
+- [x] [experimental] Support HDS, see: [#328](https://github.com/ossrs/srs/issues/328).
+- [x] [experimental] Support Push MPEG-TS over UDP to SRS, see: [#250](https://github.com/ossrs/srs/issues/250).
+- [x] [experimental] Support Push RTSP to SRS, see: [#133](https://github.com/ossrs/srs/issues/133).
 - [x] [experimental] Support remote console, link: [console](https://github.com/ossrs/srs-console).
 - [x] Other small feature improvements.
 
