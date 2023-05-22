@@ -7,7 +7,7 @@ hide_table_of_contents: false
 
 # SRS Server
 
-## SRS Use Cases
+## Unlock the Power of SRS: Real-World Use Cases and Boosting Your Business with Simple Realtime Server.
 
 [https://youtu.be/WChYr6z7EpY](https://youtu.be/WChYr6z7EpY)
 
