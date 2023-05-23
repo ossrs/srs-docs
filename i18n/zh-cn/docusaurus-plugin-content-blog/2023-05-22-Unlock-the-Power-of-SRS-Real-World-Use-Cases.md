@@ -6,10 +6,8 @@ tags: [srs, use-case]
 custom_edit_url: null
 ---
 
-SRS是一款实时视频服务器，支持多种协议，如 RTMP、WebRTC、HLS、HTTP-FLV、SRT、MPEG-DASH和GB28181。
-它充当媒体网关，实现 RTMP、SRT 和 WebRTC 之间的转换。SRS 有多种用途，包括作为Origin集群、与 SRS Cloud
-进行虚拟直播、与 SRS 播放器 WordPress 插件一起使用、为 Unity 开发者、在广播行业、用于 AI 视频和音频
-处理以及削减直播费用。SRS 与各种开源技术兼容，并正在 Discord 上建立全球开发者社区。
+发掘SRS服务器的能力，这是一款全能的开源媒体服务器解决方案，可以实现无缝的直播流媒体、内容创作和AI等系统集成，
+支持视频号、抖音、B站和快手等平台上的多平台直播。
 
 <!--truncate-->
 

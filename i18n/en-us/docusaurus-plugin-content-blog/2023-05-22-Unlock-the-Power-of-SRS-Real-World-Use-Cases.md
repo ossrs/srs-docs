@@ -6,7 +6,7 @@ tags: [srs, use-case]
 custom_edit_url: null
 ---
 
-Simple Realtime Server (SRS) is a real-time video server that supports various protocols, such as RTMP, WebRTC, HLS, HTTP-FLV, SRT, and MPEG-DASH. It acts as a media gateway, converting between RTMP, SRT, and WebRTC. SRS has several use cases, including as an origin cluster, for virtual live-streaming with SRS Cloud, with the SRS Player WordPress plugin, for Unity developers, in the broadcast industry, for AI video and audio processing, and for cutting live-streaming expenses. SRS is compatible with various open-source technologies and has a global community on Discord.
+Discover SRS, the all-in-one open-source media server solution for seamless live streaming, content creation, and AI integration, simplifying broadcasting across platforms like YouTube, Facebook, Twitch, and TikTok.
 
 <!--truncate-->
 
