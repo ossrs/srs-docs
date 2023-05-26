@@ -16,6 +16,7 @@
 * [安装后无法访问](#unavailable): 安装后提示错误，或者Redis没准备好。
 * [SRS转推和OBS转推的区别](#restream-vs-obs): SRS的多平台转推，和OBS转推插件的区别。
 * [SRS如何转推自定义平台](#restream-custom): SRS的多平台转推，如何推到自定义的直播平台。
+* [如何更换FFmpeg](#use-custom-ffmpeg): 如何更换云SRS中的FFmepg为自定义版本。
 * [宝塔安装SRS非常慢](#install-speedup): 海外用宝塔安装非常慢，访问阿里云镜像太慢。
 * [宝塔如何安装最新的云SRS](#bt-install-manually): 手动安装宝塔插件，安装最新的插件。
 * [宝塔CentOS7安装失败](#bt-centos7-error): CentOS7宝塔安装失败，找不到目录，或GLIBC版本问题。
@@ -276,6 +277,20 @@ rtmp://ip/app/stream
 
 > Note: 最后一个斜杠后面的就是流密钥。
 
+<a name="use-custom-ffmpeg"></a><br/><br/><br/>
+
+## 如何更换FFmpeg
+
+如果使用Docker版本，可以更换云SRS中的FFmepg为自定义版本，启动时指定命令：
+
+```bash
+-v /path/to/ffmpeg:/usr/local/bin/ffmpeg
+```
+
+可以使用命令`which ffmpeg`来查找你的FFmpeg的路径。
+
+> Note: 非Docker版本不支持。
+
 <a name='install-speedup'></a><br/><br/><br/>
 
 ## 宝塔安装SRS非常慢
@@ -511,6 +526,8 @@ SRS云服务器面向鼠标编程，让每个人都能做音视频业务。不�
 
 以下为SRS云服务器的更新记录。
 
+* 2023.05.26, v1.0.296, 微改进
+  * 简化启动脚本，解决bug，目录调整为`/data`一级目录。v1.0.296
 * 2023.04.05, v1.0.295, 结构改进
   * 去掉HTTPS证书申请、管理员授权、NGINX反向代理等功能。v1.0.283
   * 将Release使用Go实现，减少内存需求和镜像大小。v1.0.284
