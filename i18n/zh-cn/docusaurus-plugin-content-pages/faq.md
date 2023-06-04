@@ -98,6 +98,8 @@
 * `Edge HLS/DVR/RTC`: 关于边缘(Edge)支持HLS/DVR/RTC等
   > 1. 边缘(Edge)是直播的集群，只支持直播流协议比如RTMP和FLV，只有源站才能支持HLS/DVR/RTC，参考 [#1066](https://github.com/ossrs/srs/issues/1066)
   > 1. 目前并没有在Edge禁用HLS/DVR/RTC等能力，但未来会禁用，所以请不要这么用，也用不起来。
+  > 1. HLS的集群，请参考文档[HLS Edge Cluster](http://ossrs.net/lts/zh-cn/docs/v5/doc/nginx-for-hls) 
+  > 1. 正在开发WebRTC和SRT的集群能力，参考[#3138](ttps://github.com/ossrs/srs/issues/3138)。
 
 <a name='ffmpeg'></a>
 
@@ -175,6 +177,18 @@
   > 1. 最常见的延迟大的原因，是用VLC播放器，这个播放器的延迟就是几十秒，请换成SRS的H5播放器。
   > 1. 延迟是和每个环节都相关，不仅仅是SRS降低延迟就可以，还有推流工具(FFmpeg/OBS)和播放器都相关，具体请参考 [Realtime](/docs/v4/doc/sample-realtime) 一步步操作，别上来就自己弄些骚操作操作，先按文档搭出来低延迟的环境。
   > 1. 如果一步步操作还是发现延迟高，怎么排查呢？可以参考 [#2742](https://github.com/ossrs/srs/issues/2742)
+
+<a name='hls-fragment-duration'></a>
+* `HLS Fragment Duration`: 关于HLS切片时长
+  > 1. HLS切片时长，和GOP长度、是否等待关键帧`hls_wait_keyframe`，切片时长`hls_fragment`，三个因素决定的。
+  > 1. 举例来说，GOP若设置为`2s`，切片长度`hls_fragment:5`，等待关键帧`hls_wait_keyframe:on`，那么实际每个TS切片可能在5~6秒左右，因为需要等待一个完整的GOP才能关闭切片。
+  > 1. 举例来说，GOP若设置为`10s`，切片长度`hls_fragment:5`，等待关键帧`hls_wait_keyframe:on`，那么实际每个TS切片也是10秒以上。
+  > 1. 举例来说，GOP若设置为`10s`，切片长度`hls_fragment:5`，等待关键帧`hls_wait_keyframe:off`，那么实际每个TS切片是5秒左右。切片不是关键帧开头，所以有些播放器起播可能会花屏，或者出现画面比较慢。
+  > 1. 举例来说，GOP若设置为`2s`，切片长度`hls_fragment:2`，等待关键帧`hls_wait_keyframe:on`，那么实际每个TS切片可能在2秒左右。这样HLS的延迟比较低，而且不会有花屏或解码问题，但是由于GOP比较小，所以编码质量会稍微有所损失。
+  > 1. 虽然切片大小可以设置为小于1秒，比如`hls_fragment:0.5`，但是`#EXT-X-TARGETDURATION`还是1秒，因为它是个整数。而且切片太小，会导致切片数量过多，不利于CDN缓存，也不利于播放器缓存，所以不建议设置太小的切片。
+  > 1. 若希望降低延迟，不要将切片设置为1秒以下，设置为1秒或2秒会比较合适。因为就算设置为1秒，由于播放器有取切片的策略，有缓存策略，并不代表延迟就能和RTMP或HTTP-FLV流一样。一般HLS的最小延迟都在5秒以上。
+  > 1. GOP就是两个关键帧之间的帧数目，需要在编码器上设置，比如FFmpeg的参数`-r 25 -g 50`，就是帧率为25fps，GOP为50帧，也就是2秒。
+  > 1. OBS上是有个`Keyframe Interval(0=auto)`，它最小是`1s`，如果设置为0实际上是代表自动，并不是最低延迟设置。低延迟建议设置为1s或2s。
 
 <a name='performance'></a> <a name='memory'></a>
 
