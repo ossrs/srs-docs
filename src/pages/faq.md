@@ -21,7 +21,7 @@ About Q&A, please follow [rules](https://stackoverflow.com/help/product-support)
 * `Edge HLS/DVR/RTC`: About Edge support for HLS/DVR/RTC, etc.
   > 1. Edge is a live streaming cluster that only supports live streaming protocols such as RTMP and FLV. Only the origin server can support HLS/DVR/RTC. Refer to [#1066](https://github.com/ossrs/srs/issues/1066)
   > 1. Currently, there is no restriction on using HLS/DVR/RTC capabilities in Edge, but they will be disabled in the future. So please do not use them this way, and they won't work.
-  > 1. For the HLS cluster, please refer to the documentation [HLS Edge Cluster](http://ossrs.io/lts/en-us/docs/v5/doc/nginx-for-hls)
+  > 1. For the HLS cluster, please refer to the documentation [HLS Edge Cluster](/docs/v5/doc/nginx-for-hls)
   > 1. The development of WebRTC and SRT clustering capabilities is in progress. Refer to [#3138](ttps://github.com/ossrs/srs/issues/3138)
 
 <a name='hls-fragments'></a>
@@ -37,6 +37,20 @@ About Q&A, please follow [rules](https://stackoverflow.com/help/product-support)
   > 1. If you want to reduce latency, do not set the segment duration to less than 1 second; setting it to 1 or 2 seconds is more appropriate. Because even if it is set to 1 second, due to the player's segment fetching strategy and caching policy, the latency will not be the same as RTMP or HTTP-FLV streams. The minimum latency for HLS is generally over 5 seconds. 
   > 1. GOP refers to the number of frames between two keyframes, which needs to be set in the encoder. For example, the FFmpeg parameter `-r 25 -g 50` sets the frame rate to 25fps and the GOP to 50 frames, which is equivalent to 2 seconds. 
   > 1. In OBS, there is a `Keyframe Interval(0=auto)` setting. Its minimum value is 1s. If set to 0, it actually means automatic, not the lowest latency setting. For low latency, it is recommended to set it to 1s or 2s.
+
+<a name='api-security'></a> <a name='https'></a> <a name='https-h2-3'></a>
+
+### [HTTPS & HTTP2/3](#https-h2-3)
+* `HTTPS`: About HTTPS services, API, Callback, Streaming, WebRTC, etc.
+  > 1. [HTTPS API](/docs/v4/doc/http-api#https-api) provides a transport layer secure API. WebRTC push streaming requires an HTTPS page, so it can only access the HTTPS API.
+  > 1. [HTTPS Callback](/docs/v4/doc/http-callback#https-callback) calls back to an HTTPS service. If your server uses the HTTPS protocol, it is generally used for security purposes in business systems.
+  > 1. [HTTPS Live Streaming](/docs/v4/doc/delivery-http-flv#https-flv-live-stream) provides a transport layer secure stream. Mainly, HTTPS pages can only access HTTPS resources.
+  > 1. Single domain names automatically apply for SSL certificates from `letsencrypt`, which is convenient for small and medium-sized enterprises to deploy SRS and avoids the high overhead of HTTPS proxy for streaming media services. See [#2864](https://github.com/ossrs/srs/issues/2864)
+  > 1. Use Nginx or Caddy for reverse proxy, HTTP/HTTPS Proxy, to provide a unified HTTP/HTTPS service. See[#2881](https://github.com/ossrs/srs/issues/2881)
+* `HTTP2`: About HTTP2-FLV or HTTP2 HLS, etc.
+  > 1. SRS will not implement HTTP2 or HTTP3, but instead recommends using a reverse proxy to convert protocols, such as Nginx or Go.
+  > 1. Since HTTP is a very mature protocol, existing tools and reverse proxy capabilities are well developed, and there is no need for SRS to implement a complete protocol.
+  > 1. SRS has implemented a simple HTTP 1.0 protocol, mainly providing API and Callback capabilities.
 
 ## Deleting
 

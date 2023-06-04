@@ -75,15 +75,19 @@
 * `Pagination`: 关于控制台流和客户端的分页问题，参考 [#3451](https://github.com/ossrs/srs/issues/3451)
   > 1. API默认参数为`start=0`, `count=10`，而Console没有支持分页，计划在新的Console支持。
 
-<a name='api-security'></a>
+<a name='api-security'></a> <a name='https'></a> <a name='https-h2-3'></a>
 
-### [HTTPS](#https)
+### [HTTPS & HTTP2/3](#https-h2-3)
 * `HTTPS`: 关于HTTPS服务、API、Callback、Streaming、WebRTC等
   > 1. [HTTPS API](/docs/v4/doc/http-api#https-api)提供传输层安全的API，WebRTC推流要求是HTTPS页面自然也只能访问HTTPS API。
   > 1. [HTTPS Callback](/docs/v4/doc/http-callback#https-callback)回调HTTPS服务，如果你的服务器是HTTPS协议，一般业务系统为了安全性都是HTTPS协议。
   > 1. [HTTPS Live Streaming](/docs/v4/doc/delivery-http-flv#https-flv-live-stream)提供传输层安全的Stream流，主要是HTTPS的网页只能访问HTTPS的资源。
   > 1. 单域名自动从`letsencrypt`自动申请SSL证书，方便中小企业部署SRS，也避免HTTPS代理因为流媒体业务代理的开销太大了，参考 [#2864](https://github.com/ossrs/srs/issues/2864)
   > 1. 使用Nginx或Caddy等反向代理，HTTP/HTTPS Proxy，提供统一的HTTP/HTTPS服务，参考 [#2881](https://github.com/ossrs/srs/issues/2881)
+* `HTTP2`: 关于HTTP2-FLV或HTTP2 HLS等。
+  > 1. SRS不会实现HTTP2或者HTTP3，而是推荐使用反向代理来转换协议，比如Nginx或者Go。
+  > 1. 由于HTTP是非常非常成熟的协议，现有的工具和反向代理能力非常完善，SRS没有必要实现完整的协议。
+  > 1. SRS已经实现的是一个简单的HTTP 1.0的协议，主要提供API和Callback的能力。 
 
 <a name='source-cleanup'></a>
 
@@ -98,7 +102,7 @@
 * `Edge HLS/DVR/RTC`: 关于边缘(Edge)支持HLS/DVR/RTC等
   > 1. 边缘(Edge)是直播的集群，只支持直播流协议比如RTMP和FLV，只有源站才能支持HLS/DVR/RTC，参考 [#1066](https://github.com/ossrs/srs/issues/1066)
   > 1. 目前并没有在Edge禁用HLS/DVR/RTC等能力，但未来会禁用，所以请不要这么用，也用不起来。
-  > 1. HLS的集群，请参考文档[HLS Edge Cluster](http://ossrs.net/lts/zh-cn/docs/v5/doc/nginx-for-hls) 
+  > 1. HLS的集群，请参考文档[HLS Edge Cluster](/docs/v5/doc/nginx-for-hls) 
   > 1. 正在开发WebRTC和SRT的集群能力，参考[#3138](ttps://github.com/ossrs/srs/issues/3138)。
 
 <a name='ffmpeg'></a>
