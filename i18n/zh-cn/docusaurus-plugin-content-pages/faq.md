@@ -178,7 +178,9 @@
   > 1. 延迟是和每个环节都相关，不仅仅是SRS降低延迟就可以，还有推流工具(FFmpeg/OBS)和播放器都相关，具体请参考 [Realtime](/docs/v4/doc/sample-realtime) 一步步操作，别上来就自己弄些骚操作操作，先按文档搭出来低延迟的环境。
   > 1. 如果一步步操作还是发现延迟高，怎么排查呢？可以参考 [#2742](https://github.com/ossrs/srs/issues/2742)
 
-<a name='hls-fragment-duration'></a>
+<a name='hls-fragments'></a>
+
+### [HLS Fragments](#hls-fragments)
 * `HLS Fragment Duration`: 关于HLS切片时长
   > 1. HLS切片时长，和GOP长度、是否等待关键帧`hls_wait_keyframe`，切片时长`hls_fragment`，三个因素决定的。
   > 1. 举例来说，GOP若设置为`2s`，切片长度`hls_fragment:5`，等待关键帧`hls_wait_keyframe:on`，那么实际每个TS切片可能在5~6秒左右，因为需要等待一个完整的GOP才能关闭切片。

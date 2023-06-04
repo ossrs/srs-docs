@@ -24,7 +24,9 @@ About Q&A, please follow [rules](https://stackoverflow.com/help/product-support)
   > 1. For the HLS cluster, please refer to the documentation [HLS Edge Cluster](http://ossrs.io/lts/en-us/docs/v5/doc/nginx-for-hls)
   > 1. The development of WebRTC and SRT clustering capabilities is in progress. Refer to [#3138](ttps://github.com/ossrs/srs/issues/3138)
 
-<a name='hls-fragment-duration'></a>
+<a name='hls-fragments'></a>
+
+### [HLS Fragments](#hls-fragments)
 * `HLS Fragment Duration`: About HLS segment duration
   > 1. HLS segment duration is determined by three factors: GOP length, whether to wait for a keyframe (`hls_wait_keyframe`), and segment duration (`hls_fragment`).
   > 1. For example, if the GOP is set to 2s, the segment length is `hls_fragment:5`, and `hls_wait_keyframe:on`, then the actual duration of each TS segment may be around 5~6 seconds, as it needs to wait for a complete GOP before closing the segment.
