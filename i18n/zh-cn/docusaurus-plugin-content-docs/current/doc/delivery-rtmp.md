@@ -9,6 +9,6 @@ hide_table_of_contents: false
 
 迁移到了[RTMP](./rtmp.md).
 
-![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/doc/zh/v5/delivery-rtmp)
+![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.net&path=/lts/doc/zh/v5/delivery-rtmp)
 
 

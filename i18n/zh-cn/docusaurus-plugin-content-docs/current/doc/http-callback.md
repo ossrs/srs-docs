@@ -327,6 +327,6 @@ HttpCallback也可以用来截图，参考[snapshot](./snapshot.md#httpcallback)
 
 Winlin 2015.1
 
-![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/doc/zh/v5/http-callback)
+![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.net&path=/lts/doc/zh/v5/http-callback)
 
 

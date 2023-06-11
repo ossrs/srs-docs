@@ -203,4 +203,4 @@ H.265这个功能，核心的贡献都是社区的朋友，有可能会漏掉哈
 
 最后，特别感谢[mpegts.js](https://github.com/xqq/mpegts.js)，谦谦大神的H5播放器，支持了HTTP-FLV和HTTP-TS的H.265能力，这是flv.js的延续的项目，我觉得大家都欠他一个Star哇。
 
-![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/blog-zh/23-03-07-Lets-Do-H265-Live-Streaming)
+![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.net&path=/lts/blog-zh/23-03-07-Lets-Do-H265-Live-Streaming)

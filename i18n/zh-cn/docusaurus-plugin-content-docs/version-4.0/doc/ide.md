@@ -94,6 +94,6 @@ yum install perl-core cmake gcc gcc-c++ gdb -y
 
 Winlin 2015.3
 
-![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/doc/zh/v4/ide)
+![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.net&path=/lts/doc/zh/v4/ide)
 
 

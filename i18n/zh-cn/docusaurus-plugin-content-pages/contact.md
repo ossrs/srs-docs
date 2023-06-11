@@ -48,6 +48,6 @@ SRS的最新消息，请关注 SRS 的公众号。
 
 ![SRS 公众号](/img/srs-wechat-public.jpg)
 
-![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/pages/contact-zh)
+![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.net&path=/lts/pages/contact-zh)
 
 

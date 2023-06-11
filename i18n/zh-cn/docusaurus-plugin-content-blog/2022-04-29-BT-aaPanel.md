@@ -152,6 +152,6 @@ https://gitee.com/ossrs/Typecho-Plugin-SrsPlayer/repository/archive/main.zip
 
 > Note: 操作略复杂了，所以我最后还是选择了WordPress，插件体系更完善，使用更方便些。
 
-![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/blog-zh/22-04-29-BT-aaPanel)
+![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.net&path=/lts/blog-zh/22-04-29-BT-aaPanel)
 
 

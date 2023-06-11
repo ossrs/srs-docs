@@ -292,6 +292,6 @@ open XiaoZhiBoApp.xcworkspace
 
 通过直播连麦，我们了解了直播的全链路原理，直播平台的搭建，WebRTC通话原理，WebRTC通话实现连麦的搭建，以及将连麦转成直播的多种技术方案。此外，我们也了解了如何使用SaaS工具，以及PaaS云平台，实现直播连麦，快速应用到线上业务中。
 
-![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/blog-zh/22-06-30-Video-Chat-Live)
+![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.net&path=/lts/blog-zh/22-06-30-Video-Chat-Live)
 
 

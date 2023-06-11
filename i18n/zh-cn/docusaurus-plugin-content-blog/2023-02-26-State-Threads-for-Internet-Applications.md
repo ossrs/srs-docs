@@ -298,4 +298,4 @@ CPU 3%, MEM 24.3% (4.3K/thread)
 Another example is [SRS](https://github.com/ossrs/srs), which is a simple, high efficiency and realtime video server, 
 supports RTMP, WebRTC, HLS, HTTP-FLV, SRT, MPEG-DASH and GB28181.
 
-![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/blog-zh/22-05-16-State-Threads-for-Internet-Applications)
+![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.net&path=/lts/blog-zh/22-05-16-State-Threads-for-Internet-Applications)

@@ -54,6 +54,16 @@ About Q&A, please follow [rules](https://stackoverflow.com/help/product-support)
 
 ## Deleting
 
+Refer this FAQ by:
+
+```text
+See FAQ:
+* Chinese: https://ossrs.net/lts/zh-cn/faq#https-h2-3
+* English: https://ossrs.io/lts/en-us/faq#https-h2-3
+```
+
+Duplicate or pre-existing issues may be removed, as they are already present in the issues or FAQ section:
+
 ```
 For discussion or idea, please ask in [discord](https://discord.gg/yZ4BnPmHAd).
 
@@ -69,5 +79,3 @@ This issue will be eliminated, see #2716
 ```
 
 ![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/pages/faq-en)
-
-

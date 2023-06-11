@@ -131,5 +131,5 @@ SRS目前使用了以下的技术和规则，保证项目的高质量和高效�
 
 欢迎加入我们，具体请访问 [Contribute](https://github.com/ossrs/srs/contribute) 按要求提交PullRequest。
 
-![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/pages/about-zh)
+![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.net&path=/lts/pages/about-zh)
 

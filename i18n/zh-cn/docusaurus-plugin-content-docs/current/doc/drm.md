@@ -130,6 +130,6 @@ SRS暂时不支持，是RTMP特殊的握手协议。
 
 Winlin 2015.8
 
-![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/doc/zh/v5/drm)
+![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.net&path=/lts/doc/zh/v5/drm)
 
 

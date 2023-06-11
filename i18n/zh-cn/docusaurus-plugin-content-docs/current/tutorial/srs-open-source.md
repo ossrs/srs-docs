@@ -59,6 +59,6 @@ hide_table_of_contents: false
 * 地址: https://www.bilibili.com/video/BV1bY4y1L7Kn
 * 说明: 时光过隙，SRS已经进入第十年了，十年岔路有非常多的挑战和问题，SRS又如何做出调整和选择，SRS对于音视频开源服务器的核心任务有哪些认知的变化，开源社区对SRS的影响又有哪些。
 
-![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/tutorial/zh/v5/srs-open-source)
+![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.net&path=/lts/tutorial/zh/v5/srs-open-source)
 
 

@@ -159,5 +159,5 @@ rtc_server {
 
 你打算在2022年尾巴上错过贡献什么？还有4个月时间，我们就要冻结5.0的功能开发了，赶紧加入我们吧，还有非常多有意思又有价值的功能，等着你来一起完成。
 
-![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/blog-zh/2022-09-05-WebRTC-Over-TCP)
+![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.net&path=/lts/blog-zh/2022-09-05-WebRTC-Over-TCP)
 

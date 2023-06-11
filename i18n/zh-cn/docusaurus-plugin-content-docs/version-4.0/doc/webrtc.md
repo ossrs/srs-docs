@@ -374,6 +374,6 @@ OBS直接捕获浏览器，可以选择WindowCapature（窗口捕获），直接
 
 Winlin 2020.03
 
-![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/doc/zh/v4/webrtc)
+![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.net&path=/lts/doc/zh/v4/webrtc)
 
 

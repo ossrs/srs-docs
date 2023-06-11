@@ -88,6 +88,6 @@ Please see [link](../category/openapi).
 
 Please see [link](../tutorial/srs-open-source).
 
-![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/doc/zh/v5/introduction)
+![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.net&path=/lts/doc/zh/v5/introduction)
 
 

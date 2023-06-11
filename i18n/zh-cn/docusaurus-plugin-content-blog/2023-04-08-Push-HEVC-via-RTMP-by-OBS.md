@@ -83,5 +83,5 @@ OBS HEVC软件编码器性能太差，编不动，会导致卡顿。
 
 这文章是我们和Github Copilot一起写的。
 
-![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/blog-zh/23-04-08-Push-HEVC-via-RTMP-by-OBS)
+![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.net&path=/lts/blog-zh/23-04-08-Push-HEVC-via-RTMP-by-OBS)
 

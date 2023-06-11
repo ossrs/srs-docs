@@ -88,6 +88,6 @@ git clone https://github.com/ossrs/srs.git
 | develop | 0m46.421s | 42MB | git clone -b develop --depth=1 https://gitee.com/ossrs/srs.git |
 | min | 2m22.865s | 217MB | git clone -b min https://gitee.com/ossrs/srs.git |
 | min | 0m36.472s | 11MB | git clone -b min --depth=1 https://gitee.com/ossrs/srs.git |
-![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/doc/zh/v5/resource)
+![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.net&path=/lts/doc/zh/v5/resource)
 
 

@@ -218,6 +218,6 @@ CANDIDATE="192.168.1.10"
 
 若需要交叉编译，请参考[ARM和交叉编译](./arm.md)。
 
-![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/doc/zh/v5/getting-started-build)
+![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.net&path=/lts/doc/zh/v5/getting-started-build)
 
 

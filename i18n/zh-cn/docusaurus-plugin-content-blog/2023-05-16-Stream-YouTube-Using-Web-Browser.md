@@ -76,4 +76,4 @@ ffmpeg -i rtmp://localhost/live/livestream -c copy \
 
 通过遵循这些说明，您可以使用网络浏览器有效地通过RTMP或RTMPS进行YouTube直播。这种技术为OBS提供了一种实用的替代方案，使您能够利用WebRTC、SRS和FFmpeg的功能，实现流畅高效的直播体验。
 
-![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/blog-zh/2023-05-16-Stream-YouTube-Using-Web-Browser)
+![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.net&path=/lts/blog-zh/2023-05-16-Stream-YouTube-Using-Web-Browser)

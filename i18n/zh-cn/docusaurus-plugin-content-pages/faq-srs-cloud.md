@@ -692,4 +692,4 @@ SRS云服务器面向鼠标编程，让每个人都能做音视频业务。不�
   * 支持Lighthouse镜像，参考[SRS Lighthouse](https://mp.weixin.qq.com/s/fWmdkw-2AoFD_pEmE_EIkA)。
 * 2022.01.21, Initialized.
 
-![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/pages/faq-srs-cloud-zh)
+![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.net&path=/lts/pages/faq-srs-cloud-zh)

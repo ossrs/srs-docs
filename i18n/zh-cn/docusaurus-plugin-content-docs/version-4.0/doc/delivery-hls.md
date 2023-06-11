@@ -498,6 +498,6 @@ SRS3支持切片加密，具体使用方法参考[#1093](https://github.com/ossr
 
 Winlin 2015.2
 
-![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/doc/zh/v4/delivery-hls)
+![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.net&path=/lts/doc/zh/v4/delivery-hls)
 
 

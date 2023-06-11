@@ -110,6 +110,11 @@ const config = {
             position: 'left',
           },
           {
+            to: '/security-advisories',
+            label: 'Security',
+            position: 'left',
+          },
+          {
             // See https://docusaurus.io/docs/api/themes/configuration#navbar-dropdown
             type: 'dropdown',
             label: 'Community',

@@ -99,6 +99,6 @@ SRS2以下函数有LICENSE问题，已经在SRS3+替换成了LICENSE兼容的版
 
 > SRS2有些函数用到了FFmpeg的函数，这些是有LICENSE问题；在SRS3之后全部改掉了。请看：[#917](https://github.com/ossrs/srs/issues/917)。
 
-![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/pages/license-zh)
+![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.net&path=/lts/pages/license-zh)
 
 

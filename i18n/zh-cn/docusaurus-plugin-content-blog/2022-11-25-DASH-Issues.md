@@ -108,5 +108,5 @@ Camera/Microphone --WebRTC---> SRS --DASH--> Viewers
 
 DASH是一个相对比较新的流媒体协议。在两年持续不断的解决问题后，SRS 5.0认为DASH功能已经逐渐稳定，可以在生产环境使用了。
 
-![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/blog-zh/2022-11-25-DASH-Issues)
+![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.net&path=/lts/blog-zh/2022-11-25-DASH-Issues)
 

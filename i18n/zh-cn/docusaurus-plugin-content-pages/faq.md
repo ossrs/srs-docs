@@ -255,6 +255,4 @@
 云SRS的问题，请提交到[srs-cloud](https://github.com/ossrs/srs-cloud)，该Issue会被删除，请先阅读FAQ：#2716
 ```
 
-![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/pages/faq-zh)
-
-
+![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.net&path=/lts/pages/faq-zh)

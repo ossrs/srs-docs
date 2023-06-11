@@ -383,6 +383,6 @@ FFMPEG相关链接：
 
 Winlin 2015.6
 
-![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/doc/zh/v5/ffmpeg)
+![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.net&path=/lts/doc/zh/v5/ffmpeg)
 
 
