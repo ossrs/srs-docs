@@ -18,5 +18,12 @@ plugin, for Unity developers, in the broadcast industry, for AI video and audio 
 live-streaming expenses. SRS is compatible with various open-source technologies and has a global community on 
 Discord.
 
+## Ultra Low Latency Streaming with OBS WHIP
+
+[https://youtu.be/SqrazCPWcV0](https://youtu.be/SqrazCPWcV0)
+
+Discover the power of OBS WHIP for low-latency live streaming, its benefits for content creators and broadcasters, 
+and how to set it up with SRS in just three simple steps.
+
 ![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/tutorial/en/v5/srs-open-source)
 

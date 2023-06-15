@@ -21,6 +21,8 @@ OBS现在支持WHIP功能，最近已经合并了这个补丁。这使得OBS WHI
 
 在这个视频中，我将演示如何轻松地将OBS WHIP与SRS结合使用，只需三个简单的步骤。
 
+You can also watch the video on YouTube: [Ultra Low Latency Streaming with OBS WHIP](https://youtu.be/SqrazCPWcV0)
+
 ## Prerequisites
 
 请在继续操作之前安装以下软件：

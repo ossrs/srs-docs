@@ -24,6 +24,8 @@ internet, OBS WHIP maintains a consistently low and stable latency.
 In this video, I will demonstrate how to effortlessly utilize OBS WHIP with SRS in just 
 three simple steps.
 
+You can also watch the video on YouTube: [Ultra Low Latency Streaming with OBS WHIP](https://youtu.be/SqrazCPWcV0)
+
 ## Prerequisites
 
 Please install the following software before proceeding:
