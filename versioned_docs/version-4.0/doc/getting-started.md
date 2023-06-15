@@ -141,7 +141,7 @@ Play stream of SRS by [WebRTC: Play](https://192.168.3.82:8088/players/rtc_playe
 
 SRS supports publishing by SRT for live streaming, and play by SRT or other protocols.
 
-先用Docker启动SRS：
+Firstly, start SRS with Docker：
 
 ```bash
 docker run --rm -it -p 1935:1935 -p 1985:1985 -p 8080:8080 -p 10080:10080/udp \
