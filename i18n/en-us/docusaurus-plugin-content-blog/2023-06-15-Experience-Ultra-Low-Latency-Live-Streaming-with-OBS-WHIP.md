@@ -44,7 +44,7 @@ docker run --rm -it -p 1935:1935 -p 1985:1985 -p 8080:8080 \
     ossrs/srs:5 ./objs/srs -c conf/rtmp2rtc.conf
 ```
 
-> Note: About CANDIDATE, please read [CANDIDATE](/docs/v5/doc/webrtc#config-candidate)
+> Note: Please set the CANDIDATE to your own IP. About CANDIDATE, please read [CANDIDATE](/docs/v5/doc/webrtc#config-candidate)
 
 For configuration details, refer to [this post](/docs/v5/doc/getting-started#webrtc-for-live-streaming).
 

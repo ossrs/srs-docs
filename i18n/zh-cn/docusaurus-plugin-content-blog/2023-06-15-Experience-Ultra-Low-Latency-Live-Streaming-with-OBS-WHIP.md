@@ -1,6 +1,6 @@
 ---
 slug: experience-ultra-low-latency-live-streaming-with-obs-whip
-title: Experience Ultra-Low Latency Live Streaming with OBS WHIP!
+title: 体验OBS WHIP的超低延迟直播！
 authors: []
 tags: [srs, obs, whip]
 custom_edit_url: null
@@ -41,7 +41,7 @@ docker run --rm -it -p 1935:1935 -p 1985:1985 -p 8080:8080 \
     ossrs/srs:5 ./objs/srs -c conf/rtmp2rtc.conf
 ```
 
-> Note: 关于如何设置CANDIDATE, 请参考[CANDIDATE](/docs/v5/doc/webrtc#config-candidate)
+> Note: 请将 CANDIDATE 设置为你的 IP 地址。关于如何设置CANDIDATE, 请参考[CANDIDATE](/docs/v5/doc/webrtc#config-candidate)
 
 有关配置详细信息，请参考[这里](/docs/v5/doc/getting-started#webrtc-for-live-streaming)。
 
