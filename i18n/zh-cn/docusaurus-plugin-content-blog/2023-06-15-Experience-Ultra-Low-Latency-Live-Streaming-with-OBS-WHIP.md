@@ -41,7 +41,9 @@ docker run --rm -it -p 1935:1935 -p 1985:1985 -p 8080:8080 \
     ossrs/srs:5 ./objs/srs -c conf/rtmp2rtc.conf
 ```
 
-有关配置详细信息，请参阅[这里](/docs/v5/doc/getting-started#webrtc-for-live-streaming)。
+> Note: 关于如何设置CANDIDATE, 请参考[CANDIDATE](/docs/v5/doc/webrtc#config-candidate)
+
+有关配置详细信息，请参考[这里](/docs/v5/doc/getting-started#webrtc-for-live-streaming)。
 
 ## Step 2: Run OBS
 
