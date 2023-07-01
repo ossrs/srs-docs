@@ -46,11 +46,15 @@ const config = {
                 : `https://github.com/ossrs/srs-docs/edit/main/i18n/${locale}/docusaurus-plugin-content-docs/version-${version}/${docPath}`;
             }
           },
-          // lastVersion: 'current',
-          lastVersion: versions[0],
+          lastVersion: 'current',
+          //lastVersion: versions[0],
           versions: {
             current: {
-              label: `5.0 🚧`,
+              label: `6.0 🚧`,
+              path: 'v6',
+            },
+            '5.0': {
+              label: '5.0',
               path: 'v5',
             },
             '4.0': {
