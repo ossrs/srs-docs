@@ -266,6 +266,7 @@ const config = {
         theme: lightCodeTheme,
         darkTheme: darkCodeTheme,
       },
+      defaultVersion: '5.0'
     }),
   i18n: {
     defaultLocale: defaultLocale,
