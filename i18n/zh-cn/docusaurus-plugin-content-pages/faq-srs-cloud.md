@@ -4,6 +4,7 @@
 
 * [Video Guides](#video-guides)：视频教程。
 * [如何起步](#getting-started)：买了SRS云服务器怎么用，怎么开头，怎么入门，怎么起步，怎么开始折腾。
+* [如何升级](#how-to-upgrade)：如何升级到最新版本或稳定版本，为何不支持界面点击升级。
 * [支持哪些平台](#support-platform)：支持哪些平台，支持镜像，想直接用服务器或命令行安装，或宝塔安装
 * [如何推多路流](#multiple-streams)：一路流不够，想推多路流，想改默认的流名称和流地址。
 * [带宽太低，提升带宽](#bandwidth)：带宽不够，想提升带宽，在CVM中用云SRS。
@@ -60,6 +61,20 @@
 ![](/img/page-2023-03-04-02.png)
 
 请不要乱试，一定要跟引导做，音视频乱试一定会出问题。
+
+<a name="how-to-upgrade"></a><br/><br/><br/>
+
+## 如何升级
+
+如何升级到最新版本或稳定版本，为何不支持界面点击升级？
+
+由于云SRS支持多个平台，包括docker等，而docker是不能自己升级自己的，所以云SRS也不支持界面升级，需要手动升级。
+
+Docker启动时会指定版本，比如`ossrs/srs-cloud:v1.0.293`，只需要删除容器后指定新版本启动即可，比如`ossrs/srs-cloud:v1.0.299`。
+
+如果使用`ossrs/srs-cloud:1`则是用最新的版本，则需要手动更新，比如`docker pull ossrs/srs-cloud:1`。
+
+如果使用宝塔，则删除应用后重装新版本即可，数据是保存在`/data`目录，不会丢失。
 
 <a name="support-platform"></a><br/><br/><br/>
 
@@ -504,6 +519,7 @@ SRS云服务器面向鼠标编程，让每个人都能做音视频业务。不�
 * `已支持，打磨中` 对接[WordPress](https://mp.weixin.qq.com/s/kOWabmKbYvrmEXG2fPOZxQ)：支持[WordPress插件](https://wordpress.org/plugins/srs-player)和[Typecho插件](https://github.com/ossrs/Typecho-Plugin-SrsPlayer)，在Post中插入直播流地址。
 * `已支持，打磨中` [DigitalOcean镜像](https://mp.weixin.qq.com/s/_GcJm15BGv1qbmHixPQAGQ)：海外支持DigitalOcean Droplet镜像，中英文多语言版本。
 * `已支持，打磨中` [虚拟直播](https://mp.weixin.qq.com/s/I0Kmxtc24txpngO-PiR_tQ)：服务端OBS，将点播文件、图片或流推直播，有简单布局能力。
+* `开发中` [一键自动HTTPS](https://mp.weixin.qq.com/s/O70Fz-mxNedZpxgGXQ8DsA)：上传HTTPS证书，或者一键自动申请Let's Encrypt证书，属于WebRTC场景的基本能力。
 * `规划中` 云摄像头：支持摄像头GB接入，支持云台，云录制。
 * `规划中` 电商直播间：直播间，文字聊天能力，有商品列表和购买等，详细参考 [#2858](https://github.com/ossrs/srs/issues/2858)。
 * `规划中` 互动直播：直播间，支持文件聊天，送礼物和点赞等。
@@ -516,7 +532,6 @@ SRS云服务器面向鼠标编程，让每个人都能做音视频业务。不�
 * `规划中` AI：人脸检测，物体识别，自动字幕等。
 * `规划中` 对接[Moodle](https://stats.moodle.org/)：支持Moodle插件，在线教育开源网站。
 * `规划中` [图形化仪表盘](https://mp.weixin.qq.com/s/ub9ZGmntOy_-S11oxFkxvg)：以图表形式展示后台数据，比如CPU等等，详细参考 [Prometheus](https://github.com/ossrs/srs/issues/2899#prometheus)。
-* `规划中` [一键自动HTTPS](https://mp.weixin.qq.com/s/O70Fz-mxNedZpxgGXQ8DsA)：上传HTTPS证书，或者一键自动申请Let's Encrypt证书，属于WebRTC场景的基本能力。
 
 欢迎加群探讨云SRS的使用，这些SRS的周边服务都是开源的，可以自己定制后部署。
 
@@ -526,10 +541,12 @@ SRS云服务器面向鼠标编程，让每个人都能做音视频业务。不�
 
 以下为SRS云服务器的更新记录。
 
-* 2023.05.26, v1.0.297, 微改进
+* 2023.07.14, v1.0.299, 微改进
   * 简化启动脚本，解决bug，目录调整为`/data`一级目录。v1.0.296
   * 改进消息提示，脚本注释，日志输出。v1.0.297
   * 避免每次启动修改全局目录，在容器和平台脚本中初始化。v1.0.298
+  * 改进发布脚本，检查版本匹配，手动更新版本。v1.0.299
+  * 删除升级功能，保持docker等平台的一致性。v1.0.300
 * 2023.04.05, v1.0.295, 结构改进
   * 去掉HTTPS证书申请、管理员授权、NGINX反向代理等功能。v1.0.283
   * 将Release使用Go实现，减少内存需求和镜像大小。v1.0.284

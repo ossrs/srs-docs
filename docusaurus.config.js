@@ -208,7 +208,7 @@ const config = {
               },
               {
                 label: 'Docs',
-                to: '/docs/v4/doc/getting-started',
+                to: '/docs/v5/doc/getting-started',
               },
               {
                 to: '/blog',
