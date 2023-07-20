@@ -101,6 +101,6 @@ Step 3: Resize the player on your post or page.
 在这个文章中，我们设置了WordPress插件，并且在Post或Page中，实现了直播播放。如果对于SRS有问题，那么可以参考
 [Wiki](/docs/v4/doc/introduction) 。也欢迎加微信群 [这里](/contact) 。
 
-![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/blog-zh/22-04-15-WordPress-Plugin)
+![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.net&path=/lts/blog-zh/22-04-15-WordPress-Plugin)
 
 

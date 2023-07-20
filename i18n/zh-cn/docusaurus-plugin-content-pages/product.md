@@ -2,17 +2,29 @@
 
 关于SRS的来源，定位，愿景和计划。
 
+* [Release6.0](#release60), 2023~至今，开发代号：Hang。
 * [Release5.0](#release50), 2022~至今，开发代号：Bee（蜜蜂）。
 * [Release4.0](#release40), 2020~2021，开发代号：Leo（付亮）。
 * [Release3.0](#release30), 2018~2019，开发代号：OuXuli（欧旭理）。
 * [Release2.0](#release20), 2015~2017，开发代号：ZhouGuowen（周国文）。
 * [Release1.0](#release10), 2013~2014，开发代号：HuKaiqun（胡开群）。
 
+详细功能列表，请参考[FEATURES](https://github.com/ossrs/srs/blob/develop/trunk/doc/Features.md#features)。
+
 ## History
 
 简单介绍下SRS的历史吧，我们倒着说。
 
-2022年6月，组建了SRS的TOC和开发者社区，活跃开发者人数达到42人。
+2023年1月，Star超过20K，开通[付费星球](https://mp.weixin.qq.com/s/2PpGbXt8FK9qH8BfVIDZnw)，云SRS支持[虚拟直播](https://mp.weixin.qq.com/s/I0Kmxtc24txpngO-PiR_tQ)，
+确定6.0开发代号为[Hang](#release60)，推出新的[TOC规则](https://github.com/ossrs/srs/pull/3393)。
+
+2022年11月，组建了SRS的TOC和开发者社区，活跃开发者人数达到47人。SRS 5.0功能完成，新增功能包括[Forward增强](https://github.com/ossrs/srs/pull/2799)，
+[GB28181](https://github.com/ossrs/srs/issues/3176)，[Windows](https://github.com/ossrs/srs/issues/2532)，
+[AppleM1](https://github.com/ossrs/srs/issues/2747)，[RISCV](https://github.com/ossrs/srs/pull/3115)，MIPS，
+[龙芯](https://github.com/ossrs/srs/issues/2689)，[DASH增强](https://github.com/ossrs/srs/pull/3240)，
+[AddressSanitizer](https://github.com/ossrs/srs/issues/3216)，[Prometheus Exporter](https://github.com/ossrs/srs/issues/2899)，
+[SRT增强](https://github.com/ossrs/srs/pull/3010)，[Unity WebRTC](https://github.com/ossrs/srs-unity)，
+[WHIP](https://github.com/ossrs/srs/issues/2324)，[WebRTC over TCP](https://github.com/ossrs/srs/issues/2852)。
 
 2021年1月，[开源技术委员会成立](https://mp.weixin.qq.com/s/NM7zOKYNUbMZPPZLi1wGeA)，
 [4月在LVS分享SRS在阿里云的最佳实践](https://mp.weixin.qq.com/s/keeVd2Lu3ZEYERo_jvZSFg)并支持[AV1](https://mp.weixin.qq.com/s/v7jp58geuvrcet8zskDxdQ)，
@@ -71,22 +83,42 @@ SRS全面支持[Docker](https://github.com/ossrs/dev-docker)。
 
 SRS是全球TOP1的开源视频服务器，支持直播和WebRTC，可应用于多种视频场景和行业。
 
-* Mission：用开源快速展示视频的未来。
-* Vison：让新手都能跨越视频的门槛，让开发者保持浓密的头发。
-* Values：简单、可靠、开放。
+* Mission：用音视频无门槛赋能小微企业和开发者。
+* Vison：每个小微企业都具备音视频能力。
+* Values：简单、开放、务实。
 
 详细解读请看[欢迎关注SRS：使命、愿景、价值观](https://mp.weixin.qq.com/s/Mx9LMrUVwKq6C3wgHLUibQ)。
+
+## Release6.0
+
+开发代号：Hang。预计6.0会在2023年底完成主要功能开发，预计2024年底发布。
+
+> Note: 开发代号`Hang`，由TOC [John](https://github.com/xiaozhihong)命名，具体含义由大家品，仔细品。
 
 ## Release5.0
 
 开发代号：Bee（蜜蜂），代表SRS正式开始开源社区驱动，协作是主要的特点，也不断提示我们做开源项目需要像蜜蜂那样，持续的每天都付出时间，才能做好开源项目。
-感谢所有三百多位开发者，以及技术委员会的核心开发者，特别感谢[TOC](https://github.com/ossrs/srs/blob/develop/trunk/AUTHORS.md#toc)，
-大家一起在不断做出自己的贡献。2021年6月，SRS进入[木兰开源社区](https://mulanos.oschina.net/)孵化，感谢导师阿里云陈绪、周明辉教授、腾讯单致豪，感谢木兰社区杨丽蕴主任的大力支持。特别感谢腾讯Tommy(李郁韬)、Eddie(薛迪)、Leo(刘连响)、Vulture(李志成)、Dragon(兰玉龙)，以及各位开发者领导对于SRS的认可和对开发者参与开源贡献的支持。特别感谢社区经理耿航和刘歧，对社区推广和发展做出的贡献。
+感谢所有三百多位开发者，以及技术委员会的核心开发者，特别感谢 [TOC](https://github.com/ossrs/srs/blob/develop/trunk/AUTHORS.md#toc) 持续的努力，
+大家一起在不断做出自己的贡献。2021年6月，SRS进入 [木兰开源社区](https://portal.mulanos.cn) 孵化，感谢导师阿里云陈绪、周明辉教授、腾讯单致豪，感谢木兰社区杨丽蕴主任的大力支持。特别感谢腾讯Tommy(李郁韬)、Eddie(薛迪)、Leo(刘连响)、Vulture(李志成)、Dragon(兰玉龙)，以及各位开发者领导对于SRS的认可和对开发者参与开源贡献的支持。特别感谢社区经理耿航和刘歧，对社区推广和发展做出的贡献。
 
-- [x] 优化SRT，支持协程原生架构。[#3010](https://github.com/ossrs/srs/issues/3010)
 - [x] 支持amd/armv7/aarch64多CPU架构的Docker镜像。[#3058](https://github.com/ossrs/srs/issues/3058)
+- [x] Forward增强，支持动态Forward，可以灵活定制转发策略。[#2799](https://github.com/ossrs/srs/pull/2799)
+- [x] GB28181，支持GB2016标准，内置SIP信令，TCP复用端口传输。[#3176](https://github.com/ossrs/srs/issues/3176)
+- [x] Windows，支持Cygwin编译，流水线打安装包，GITEE镜像下载。[#2532](https://github.com/ossrs/srs/issues/2532)
+- [x] Apple M1，支持Apple M1芯片，新的MacPro编译和调试。[#2747](https://github.com/ossrs/srs/issues/2747)
+- [x] RISCV架构支持，修改ST汇编支持RISCV CPU架构。[#3115](https://github.com/ossrs/srs/pull/3115)
+- [x] MIPS架构支持，Cygwin平台支持，另外ARMv7和AARCH64早已经支持。
+- [x] Loongarch，支持龙芯架构，支持Loongarch64服务器平台。[#2689](https://github.com/ossrs/srs/issues/2689)
+- [x] DASH增强，解决DASH卡死问题，达到可正式商用标准。[#3240](https://github.com/ossrs/srs/pull/3240)
+- [x] 支持Google Address Sanitizer，解决野指针定位问题。[#3216](https://github.com/ossrs/srs/issues/3216)
+- [x] Prometheus Exporter，支持云原生可观测能力，另也支持腾讯云CLS和APM对接。[#2899](https://github.com/ossrs/srs/issues/2899)
+- [x] SRT增强，协程原生的SRT改进，更便捷的维护和稳定性。[#3010](https://github.com/ossrs/srs/pull/3010)
+- [x] Unity WebRTC，支持Unity平台对接SRS，使用WHIP协议。[srs-unity](https://github.com/ossrs/srs-unity)
+- [x] 支持WHIP协议，推流和拉流，[#2324](https://github.com/ossrs/srs/issues/2324)
+- [x] WebRTC over TCP，支持TCP传输WebRTC，支持TCP端口复用。[#2852](https://github.com/ossrs/srs/issues/2852)
+- [x] 支持HTTP API、HTTP Stream、HTTP Server、WebRTC TCP端口复用。 [#2881](https://github.com/ossrs/srs/issues/2881).
 
-预计5.0会在2023年底发布。
+预计5.0会在2022年底完成主要功能开发，预计2023年底发布。
 
 ## Release4.0
 
@@ -176,6 +208,6 @@ LVS的包研，阿里的叔度、致凡、华大、文景、士豪和还剑。�
 Beijing, 2014.3<br/>
 Winlin
 
-![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/pages/product-zh)
+![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.net&path=/lts/pages/product-zh)
 
 

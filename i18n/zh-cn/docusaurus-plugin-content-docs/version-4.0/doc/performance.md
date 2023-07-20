@@ -384,6 +384,6 @@ SRS2.0.30支持7.5k客户端，参考：https://github.com/ossrs/srs/issues/217
 
 Winlin 2014.2
 
-![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/doc/zh/v4/performance)
+![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.net&path=/lts/doc/zh/v4/performance)
 
 

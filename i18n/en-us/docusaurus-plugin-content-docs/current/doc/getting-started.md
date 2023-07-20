@@ -25,7 +25,8 @@ docker run --rm -it -p 1935:1935 -p 1985:1985 -p 8080:8080 \
 Use docker of FFmpeg to publish:
 
 ```bash
-docker run --network host --rm ossrs/srs:encoder
+docker run --rm -it ossrs/srs:encoder ffmpeg -stream_loop -1 -re -i doc/source.flv \
+  -c copy -f flv rtmp://host.docker.internal/live/livestream
 ```
 
 Or publish stream by [FFmpeg](https://ffmpeg.org/download.html) or [OBS](https://obsproject.com/download) :
@@ -59,7 +60,9 @@ docker run --rm -it -p 1935:1935 -p 1985:1985 -p 8080:8080 -p 1990:1990 -p 8088:
 
 > Note: About CANDIDATE, please read [CANDIDATE](./webrtc.md#config-candidate)
 
-Push stream to SRS by [WebRTC: Publish](http://localhost:8080/players/rtc_publisher.html?autostart=true&stream=livestream&port=8080&schema=http)
+If SRS runs on localhost, push stream to SRS by [WebRTC: Publish](http://localhost:8080/players/rtc_publisher.html?autostart=true&stream=livestream&port=8080&schema=http)
+
+> Note: If not localhost, browser(WebRTC) requires HTTPS, please see [WebRTC using HTTPS](./getting-started.md#webrtc-using-https) for detail.
 
 Play stream of SRS by [WebRTC: Play](http://localhost:8080/players/rtc_player.html?autostart=true&stream=livestream&port=8080&schema=http)
 
@@ -87,7 +90,8 @@ docker run --rm -it -p 1935:1935 -p 1985:1985 -p 8080:8080 \
 Use docker of FFmpeg to publish:
 
 ```bash
-docker run --network host --rm ossrs/srs:encoder
+docker run --rm -it ossrs/srs:encoder ffmpeg -stream_loop -1 -re -i doc/source.flv \
+  -c copy -f flv rtmp://host.docker.internal/live/livestream
 ```
 
 Or publish stream by [FFmpeg](https://ffmpeg.org/download.html) or [OBS](https://obsproject.com/download) :
@@ -106,7 +110,9 @@ Play stream by:
 
 ## WebRTC using HTTPS
 
-If not localhost, for example, to view WebRTC on pad or mobile phone, when SRS is running on remote server.
+When pushing stream to SRS, if not localhost, for example, to view WebRTC on pad or mobile phone, when SRS is running on remote server.
+
+> Note: If only need to play WebRTC stream, HTTP is ok. If wants to push stream, and not localhost, you need HTTPS.
 
 Run SRS using docker:
 
@@ -139,7 +145,7 @@ Play stream of SRS by [WebRTC: Play](https://192.168.3.82:8088/players/rtc_playe
 
 SRS supports publishing by SRT for live streaming, and play by SRT or other protocols.
 
-先用Docker启动SRS：
+First, start SRS with Docker:
 
 ```bash
 docker run --rm -it -p 1935:1935 -p 1985:1985 -p 8080:8080 -p 10080:10080/udp \

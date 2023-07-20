@@ -30,6 +30,8 @@ hide_table_of_contents: false
 1. [H.264-AVC-ISO_IEC_14496-10-2012.pdf, ISO_IEC_14496-10-AVC-2012.pdf](/files/ISO_IEC_14496-10-AVC-2012.pdf), avc标准，编码部分。上面的标准是2003年的，和下面的15是2010年的对不上。http://www.itu.int/ITU-T/recommendations/rec.aspx?rec=11466
 1. [H.264-AVC-ISO_IEC_14496-15.pdf, ISO_IEC_14496-15-AVC-format-2012.pdf](/files/ISO_IEC_14496-15-AVC-format-2012.pdf), avc标准，封装部分。
 1. [H.264_MPEG-4-Part-10-White-Paper.pdf](/files/H.264_MPEG-4-Part-10-White-Paper.pdf), h264简介。
+1. [ISO_IEC_11172-3-MP3-1993.pdf](/files/ISO_IEC_11172-3-MP3-1993.pdf), MPEG-1 Audio, for MP3.
+1. [ISO_IEC_13818-3-MP3-1997.pdf](/files/ISO_IEC_13818-3-MP3-1997.pdf), MPEG-2 Audio, for MP3.
 
 ## HTTP
 
@@ -72,5 +74,5 @@ hide_table_of_contents: false
 1. [ffmpeg-logo.png](/files/ffmpeg-logo.png), [ffmpeg-min.png](/files/ffmpeg-min.png), ffmpeg的logo。
 1. [source.flv](/files/source.flv), [source.200kbps.768x320.flv](/files/source.200kbps.768x320.flv), avatar预告片，400kbps。
 
-![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/tools/zh/v4/specs)
+![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.net&path=/lts/tools/zh/v4/specs)
 

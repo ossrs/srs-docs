@@ -81,6 +81,6 @@ streamid默认为"#!::r=live/livestream,m=publish", 也就是上面的url等同�
 
 Runner365 2020.02
 
-![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/doc/zh/v5/srt-url)
+![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.net&path=/lts/doc/zh/v5/srt-url)
 
 

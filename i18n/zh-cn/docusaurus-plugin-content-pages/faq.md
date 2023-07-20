@@ -11,7 +11,10 @@
 
 ## FAQ
 
-下面是常见的问题，请先在本Issue中搜索：
+下面是常见的问题，如果没有找到你的问题，请先在本[Issue](https://github.com/ossrs/srs/issues)中搜索，如果你确认是个Bug并且没有提交过，
+请按照要求提交Issue。
+
+> Note: 这是关于SRS的FAQ，如果是云SRS的FAQ请参考[SRS Cloud FAQ](/faq-srs-cloud)
 
 <a name='video-guides'></a>
 
@@ -38,6 +41,17 @@
   > 1. SRS支持用Ingest拉RTSP，不支持推RTSP流到SRS，这不是正确的用法，详细原因请参考 [#2304](https://github.com/ossrs/srs/issues/2304) 。
   > 1. 当然RTSP服务器，RTSP播放，更加不会支持，参考 [#476](https://github.com/ossrs/srs/issues/476)
   > 1. 如果你需要非常多比如1万路摄像头接入，那么用FFmpeg可能会比较费劲，这么大规模的业务，比较推荐的方案是自己用ST+SRS的代码，实现一个拉RTSP转发的服务器。
+       <a name='rtsp'></a>
+
+### [CPU and OS](#cpu-and-os)
+* `CPU and OS`：关于SRS支持的CPU架构和OS操作系统
+  > 1. SRS支持常见的CPU架构，比如x86_64或者amd64，以及armv7/aarch64/AppleM1，还有MIPS或RISCV，以及龙芯loongarch，其他CPU适配请参考[ST#22](https://github.com/ossrs/state-threads/issues/22)。
+  > 1. SRS支持常用的操作系统，比如Linux包括CentOS和Ubuntu等，还有macOS，以及Windows等。
+  > 1. 国产信创系统，SRS也是支持的，如果需要适配新的国产信创系统，可以提issue。
+* `Windows`: 关于Windows的特别说明
+  > 1. 一般用Windows做服务器比较少，但也有一些应用场景，SRS 5.0目前已经支持了Windows，每个版本发布都会有Windows的安装包下载。
+  > 1. 由于大家在Github下载比较困难，我们提供了gitee的镜像下载，具体请看 [Gitee: Releases](https://gitee.com/ossrs/srs/releases) 每个版本的附件。
+  > 1. 在Windows平台还有些问题未解决，也会继续完善支持，详细请参考[#2532](https://github.com/ossrs/srs/issues/2532)
 
 <a name='http-api'></a>
 
@@ -56,15 +70,24 @@
   > 1. 可以参考[srs-cloud](https://github.com/ossrs/srs-cloud/tree/main/hooks)中DVR的实现。
   > 1. SRS不会支持动态DVR，但给出了一些方案，也可以参考 [#1577](https://github.com/ossrs/srs/issues/1577)
 
-<a name='api-security'></a>
+<a name="console"></a>
+### [Console](#console)
+* `Pagination`: 关于控制台流和客户端的分页问题，参考 [#3451](https://github.com/ossrs/srs/issues/3451)
+  > 1. API默认参数为`start=0`, `count=10`，而Console没有支持分页，计划在新的Console支持。
 
-### [HTTPS](#https)
+<a name='api-security'></a> <a name='https'></a> <a name='https-h2-3'></a>
+
+### [HTTPS & HTTP2/3](#https-h2-3)
 * `HTTPS`: 关于HTTPS服务、API、Callback、Streaming、WebRTC等
   > 1. [HTTPS API](/docs/v4/doc/http-api#https-api)提供传输层安全的API，WebRTC推流要求是HTTPS页面自然也只能访问HTTPS API。
   > 1. [HTTPS Callback](/docs/v4/doc/http-callback#https-callback)回调HTTPS服务，如果你的服务器是HTTPS协议，一般业务系统为了安全性都是HTTPS协议。
   > 1. [HTTPS Live Streaming](/docs/v4/doc/delivery-http-flv#https-flv-live-stream)提供传输层安全的Stream流，主要是HTTPS的网页只能访问HTTPS的资源。
   > 1. 单域名自动从`letsencrypt`自动申请SSL证书，方便中小企业部署SRS，也避免HTTPS代理因为流媒体业务代理的开销太大了，参考 [#2864](https://github.com/ossrs/srs/issues/2864)
   > 1. 使用Nginx或Caddy等反向代理，HTTP/HTTPS Proxy，提供统一的HTTP/HTTPS服务，参考 [#2881](https://github.com/ossrs/srs/issues/2881)
+* `HTTP2`: 关于HTTP2-FLV或HTTP2 HLS等。
+  > 1. SRS不会实现HTTP2或者HTTP3，而是推荐使用反向代理来转换协议，比如Nginx或者Go。
+  > 1. 由于HTTP是非常非常成熟的协议，现有的工具和反向代理能力非常完善，SRS没有必要实现完整的协议。
+  > 1. SRS已经实现的是一个简单的HTTP 1.0的协议，主要提供API和Callback的能力。 
 
 <a name='source-cleanup'></a>
 
@@ -79,6 +102,8 @@
 * `Edge HLS/DVR/RTC`: 关于边缘(Edge)支持HLS/DVR/RTC等
   > 1. 边缘(Edge)是直播的集群，只支持直播流协议比如RTMP和FLV，只有源站才能支持HLS/DVR/RTC，参考 [#1066](https://github.com/ossrs/srs/issues/1066)
   > 1. 目前并没有在Edge禁用HLS/DVR/RTC等能力，但未来会禁用，所以请不要这么用，也用不起来。
+  > 1. HLS的集群，请参考文档[HLS Edge Cluster](/docs/v5/doc/nginx-for-hls) 
+  > 1. 正在开发WebRTC和SRT的集群能力，参考[#3138](ttps://github.com/ossrs/srs/issues/3138)。
 
 <a name='ffmpeg'></a>
 
@@ -94,6 +119,13 @@
   > 1. WebRTC和RTMP的互相转换，比如RTMP2RTC（RTMP推流RTC播放）， 或者RTC2RTMP（RTC推流RTMP播放），必须要指定转换配置，默认不会开启音频转码，避免较大的性能损失，参考 [#2728](https://github.com/ossrs/srs/issues/2728)
   > 1. SRS 4.0.174之前可以，更新到之后就不工作了，是因为`rtc.conf`不默认开启RTMP转RTC，需要使用`rtmp2rtc.conf`或者`rtc2rtmp.conf`，参考 71ed6e5dc51df06eaa90637992731a7e75eabcd7
   > 1. 未来也不会自动开启RTC和RTMP的转换，因为SRS必须要考虑到独立的RTMP和独立的RTC场景，转换的场景只是其中一个，但是由于转换的场景导致严重的性能问题，所以不能默认开启，会导致独立的场景出现大问题。
+
+<a name='webrtc-cluster'></a>
+
+### [WebRTC Cluster](#webrtc-cluster)
+* `WebRTC+Cluster`: 关于WebRTC集群的相关问题
+  > 1. WebRTC集群并不是直播集群(Edge+Origin Cluster)，而是叫WebRTC级联，参考[#2091](https://github.com/ossrs/srs/issues/2091)
+  > 1. 除了集群方案，SRS还会支持Proxy方案，比集群更简单，也会具备扩展性和容灾能力，参考[#3138](https://github.com/ossrs/srs/issues/3138)
 
 <a name='webrtc'></a>
 
@@ -150,6 +182,20 @@
   > 1. 延迟是和每个环节都相关，不仅仅是SRS降低延迟就可以，还有推流工具(FFmpeg/OBS)和播放器都相关，具体请参考 [Realtime](/docs/v4/doc/sample-realtime) 一步步操作，别上来就自己弄些骚操作操作，先按文档搭出来低延迟的环境。
   > 1. 如果一步步操作还是发现延迟高，怎么排查呢？可以参考 [#2742](https://github.com/ossrs/srs/issues/2742)
 
+<a name='hls-fragments'></a>
+
+### [HLS Fragments](#hls-fragments)
+* `HLS Fragment Duration`: 关于HLS切片时长
+  > 1. HLS切片时长，和GOP长度、是否等待关键帧`hls_wait_keyframe`，切片时长`hls_fragment`，三个因素决定的。
+  > 1. 举例来说，GOP若设置为`2s`，切片长度`hls_fragment:5`，等待关键帧`hls_wait_keyframe:on`，那么实际每个TS切片可能在5~6秒左右，因为需要等待一个完整的GOP才能关闭切片。
+  > 1. 举例来说，GOP若设置为`10s`，切片长度`hls_fragment:5`，等待关键帧`hls_wait_keyframe:on`，那么实际每个TS切片也是10秒以上。
+  > 1. 举例来说，GOP若设置为`10s`，切片长度`hls_fragment:5`，等待关键帧`hls_wait_keyframe:off`，那么实际每个TS切片是5秒左右。切片不是关键帧开头，所以有些播放器起播可能会花屏，或者出现画面比较慢。
+  > 1. 举例来说，GOP若设置为`2s`，切片长度`hls_fragment:2`，等待关键帧`hls_wait_keyframe:on`，那么实际每个TS切片可能在2秒左右。这样HLS的延迟比较低，而且不会有花屏或解码问题，但是由于GOP比较小，所以编码质量会稍微有所损失。
+  > 1. 虽然切片大小可以设置为小于1秒，比如`hls_fragment:0.5`，但是`#EXT-X-TARGETDURATION`还是1秒，因为它是个整数。而且切片太小，会导致切片数量过多，不利于CDN缓存，也不利于播放器缓存，所以不建议设置太小的切片。
+  > 1. 若希望降低延迟，不要将切片设置为1秒以下，设置为1秒或2秒会比较合适。因为就算设置为1秒，由于播放器有取切片的策略，有缓存策略，并不代表延迟就能和RTMP或HTTP-FLV流一样。一般HLS的最小延迟都在5秒以上。
+  > 1. GOP就是两个关键帧之间的帧数目，需要在编码器上设置，比如FFmpeg的参数`-r 25 -g 50`，就是帧率为25fps，GOP为50帧，也就是2秒。
+  > 1. OBS上是有个`Keyframe Interval(0=auto)`，它最小是`1s`，如果设置为0实际上是代表自动，并不是最低延迟设置。低延迟建议设置为1s或2s。
+
 <a name='performance'></a> <a name='memory'></a>
 
 ### [Performance](#performance) and [Memory](#memory)
@@ -184,7 +230,7 @@
 ```
 
 ```
-咨询和讨论请来[视频号直播间](https://ossrs.net/lts/zh-cn/docs/v4/doc/contact)交流。也可以[加微信群](https://ossrs.net/lts/zh-cn/docs/v4/doc/contact)，在群里交流。
+咨询和讨论请加[付费星球](https://mp.weixin.qq.com/s/HdSf7qAR94v2Mxdzf2qLAQ)交流。也可以[加微信群](https://ossrs.net/lts/zh-cn/docs/v4/doc/contact)，在群里交流。
 该Issue会被删除，请先阅读FAQ：#2716
 ```
 
@@ -206,16 +252,7 @@
 ```
 
 ```
-GB已经放到独立的仓库 [srs-gb28181](https://github.com/ossrs/srs-gb28181)， 请参考 #2845
-问题请提交到GB的仓库[bug](https://github.com/ossrs/srs-gb28181/issues)，或者[pr](https://github.com/ossrs/srs-gb28181/pulls)
-
-由于265主要在GB中使用，所以265分支也迁移到了 [srs-gb28181](https://github.com/ossrs/srs-gb28181/tree/feature/h265)
-
-云SRS的问题，请提交到[srs-cloud](https://github.com/ossrs/srs-cloud)
-
-该Issue会被删除，请先阅读FAQ：#2716
+云SRS的问题，请提交到[srs-cloud](https://github.com/ossrs/srs-cloud)，该Issue会被删除，请先阅读FAQ：#2716
 ```
 
-![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/pages/faq-zh)
-
-
+![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.net&path=/lts/pages/faq-zh)

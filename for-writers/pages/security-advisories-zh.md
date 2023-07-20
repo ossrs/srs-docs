@@ -1,0 +1,1 @@
+../../i18n/zh-cn/docusaurus-plugin-content-pages/security-advisories.md

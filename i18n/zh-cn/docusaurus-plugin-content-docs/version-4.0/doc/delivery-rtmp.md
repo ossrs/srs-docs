@@ -82,6 +82,6 @@ RTMP流的延时在1-3秒，比HLS的延时更靠谱，低延时的配置参考�
 
 Winlin 2013.10
 
-![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/doc/zh/v4/delivery-rtmp)
+![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.net&path=/lts/doc/zh/v4/delivery-rtmp)
 
 

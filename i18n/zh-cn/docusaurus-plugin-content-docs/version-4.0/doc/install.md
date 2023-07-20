@@ -11,7 +11,7 @@ hide_table_of_contents: false
 
 ## OS
 
-* 推荐使用<strong>CentOS6/CentOS7</strong>.
+* 推荐使用<strong>Ubuntu20</strong>.
 * 若需要开发和编译SRS，建议用[srs-docker](https://github.com/ossrs/dev-docker/tree/dev).
 * 建议直接使用[srs-docker](https://github.com/ossrs/dev-docker)运行SRS.
 
@@ -63,6 +63,6 @@ Docker启动SRS，参考[srs-docker](https://github.com/ossrs/dev-docker#usage)
 
 Winlin 2014.11
 
-![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/doc/zh/v4/install)
+![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.net&path=/lts/doc/zh/v4/install)
 
 

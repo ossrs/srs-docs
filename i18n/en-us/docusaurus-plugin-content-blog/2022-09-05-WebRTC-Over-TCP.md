@@ -150,3 +150,6 @@ We demostrate the reusing port of WebRTC and HTTP Stream, but you're able to use
 ## Future Plan
 
 We're developing SRS 5.0, and we might close features at the end of 2022, so welcome to join the SRS community by [discord](https://discord.gg/yZ4BnPmHAd).
+
+![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/blog-en/2022-09-05-WebRTC-Over-TCP)
+

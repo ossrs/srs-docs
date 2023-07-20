@@ -66,9 +66,9 @@ SRS3换成了[json-parser](https://github.com/udp/json-parser)，是用的BSD授
 
 **SRS4**
 
-[FFmpeg](https://github.com/ossrs/srs/issues/1762)是LGPL，如果用`--enable-gpl`开启了GPL就是GPL了。
+[FFmpeg](https://www.ffmpeg.org/legal.html)是LGPL，如果用`--enable-gpl`开启了GPL就是GPL了。
 
-SRS支持`./configure --ffmpeg-fit=on --shared-ffmpeg=on`来动态库链接FFmpeg。
+SRS支持`./configure --ffmpeg-fit=on --shared-ffmpeg=on`来动态库链接FFmpeg，参考[#1762](https://github.com/ossrs/srs/issues/1762#issuecomment-912897342)。
 
 * [Opus](https://opus-codec.org/license/) 是 BSD 授权，用来转WebRTC(Opus)到直播流(AAC)。
 
@@ -99,6 +99,6 @@ SRS2以下函数有LICENSE问题，已经在SRS3+替换成了LICENSE兼容的版
 
 > SRS2有些函数用到了FFmpeg的函数，这些是有LICENSE问题；在SRS3之后全部改掉了。请看：[#917](https://github.com/ossrs/srs/issues/917)。
 
-![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/pages/license-zh)
+![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.net&path=/lts/pages/license-zh)
 
 

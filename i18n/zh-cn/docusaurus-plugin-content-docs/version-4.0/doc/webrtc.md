@@ -194,8 +194,8 @@ docker run --rm --env CANDIDATE=$CANDIDATE \
 使用RTMP推流到本机：
 
 ```bash
-docker run --rm --network=host registry.cn-hangzhou.aliyuncs.com/ossrs/srs:encoder ffmpeg -re -i ./doc/source.flv \
-  -c copy -f flv rtmp://localhost/live/livestream
+docker run --rm -it registry.cn-hangzhou.aliyuncs.com/ossrs/srs:encoder ffmpeg -stream_loop -1 -re -i doc/source.flv \
+  -c copy -f flv rtmp://host.docker.internal/live/livestream
 ```
 
 可播放的流地址：
@@ -374,6 +374,6 @@ OBS直接捕获浏览器，可以选择WindowCapature（窗口捕获），直接
 
 Winlin 2020.03
 
-![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/doc/zh/v4/webrtc)
+![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.net&path=/lts/doc/zh/v4/webrtc)
 
 

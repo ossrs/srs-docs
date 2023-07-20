@@ -13,7 +13,7 @@ SRS2的性能有大幅的提升，参考[SRS2性能](https://github.com/ossrs/sr
 
 ![](/img/doc-guides-reuse-port-001.png)
 
-> 注意：SO_REUSEPORT功能需要Linux Kernel 3.9+，所以如果使用CentOS6你可能需要升级你的内核，推荐使用CentOS7。
+> 注意：SO_REUSEPORT功能需要Linux Kernel 3.9+，所以如果使用CentOS6你可能需要升级你的内核，推荐使用Ubuntu20。
 
 首先，我们启动一个边缘服务器，侦听在1935：
 
@@ -61,6 +61,6 @@ srs     383 root    7u     IPv6  17831      0t0        TCP *:macromedia-fcs (LIS
 
 使用VLC播放RTMP流： `rtmp://192.168.1.170:1935/live/livestream`
 
-![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/doc/zh/v4/reuse-port)
+![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.net&path=/lts/doc/zh/v4/reuse-port)
 
 

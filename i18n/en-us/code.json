@@ -196,13 +196,16 @@
     "description": "The title of the tag list page"
   },
   "homepage.subTitle": {
-    "message": "SRS(Simple Realtime Server) is a simple, high efficiency and realtime video server, supports RTMP/WebRTC/HLS/HTTP-FLV/SRT protocols."
+    "message": "SRS is a simple, high efficiency and realtime video server, supports RTMP, WebRTC, HLS, HTTP-FLV, SRT, MPEG-DASH and GB28181."
   },
   "homepage.tutorial": {
     "message": "Take the Tutorial"
   },
   "homepage.getStarted": {
     "message": "Get Started"
+  },
+  "homepage.getSupport": {
+    "message": "Get Support"
   },
   "homepage.easyToUseName": {
     "message": "Easy to Use"

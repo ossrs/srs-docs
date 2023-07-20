@@ -192,6 +192,6 @@ forward还可以结合hls和transcoder功能使用，即在源站将流转码，
 
 Winlin 2014.2
 
-![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/doc/zh/v4/forward)
+![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.net&path=/lts/doc/zh/v4/forward)
 
 

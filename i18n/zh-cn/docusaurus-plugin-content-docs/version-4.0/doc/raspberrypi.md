@@ -232,6 +232,6 @@ cubieboard是armv7 CPU，双核，性能比树莓派强很多。初步测试SRS�
 
 Winlin 2014.3
 
-![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/doc/zh/v4/raspberrypi)
+![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.net&path=/lts/doc/zh/v4/raspberrypi)
 
 

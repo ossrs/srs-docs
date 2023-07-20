@@ -126,6 +126,6 @@ git push tmp bugfix/fix-srt-url
 
 The PR should be updated automatically.
 
-![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/pages/how-to-file-pr-zh)
+![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.net&path=/lts/pages/how-to-file-pr-zh)
 
 

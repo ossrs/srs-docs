@@ -336,6 +336,6 @@ SRS虽然完成了SRT协程化，并没有解决所有的问题。后续的计�
 
 > Note: 腾讯云音视频在音视频领域已有超过21年的技术积累，持续支持国内90%的音视频客户实现云上创新，独家具备 RT-ONE™ 全球网络，在此基础上，构建了业界最完整的 PaaS 产品家族，并通过腾讯云视立方 RT-Cube™ 提供All in One 的终端SDK，助力客户一键获取众多腾讯云音视频能力。腾讯云音视频为全真互联时代，提供坚实的数字化助力。
 
-![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/blog-zh/22-07-01-Coroutine-Native-SRT)
+![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.net&path=/lts/blog-zh/22-07-01-Coroutine-Native-SRT)
 
 

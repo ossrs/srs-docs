@@ -22,16 +22,20 @@ vhost your_vhost {
         # default: off
         enabled         on;
         # the security list, each item format as:
-        #       allow|deny    publish|play    all|<ip>
+        #       allow|deny    publish|play    all|<ip or cidr>
         # for example:
         #       allow           publish     all;
         #       deny            publish     all;
         #       allow           publish     127.0.0.1;
         #       deny            publish     127.0.0.1;
+        #       allow           publish     10.0.0.0/8;
+        #       deny            publish     10.0.0.0/8; 
         #       allow           play        all;
         #       deny            play        all;
         #       allow           play        127.0.0.1;
         #       deny            play        127.0.0.1;
+        #       allow           play        10.0.0.0/8;
+        #       deny            play        10.0.0.0/8;
         # SRS apply the following simple strategies one by one:
         #       1. allow all if security disabled.
         #       2. default to deny all when security enabled.
@@ -66,6 +70,6 @@ SRS应用安全策略的方式是:
 
 Winlin 2015.1
 
-![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/doc/zh/v4/security)
+![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.net&path=/lts/doc/zh/v4/security)
 
 

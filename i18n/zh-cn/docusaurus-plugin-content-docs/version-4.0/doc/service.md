@@ -111,7 +111,7 @@ Reload SRS：
 
 ## systemctl
 
-CentOS7使用systemctl管理服务，我们在init.d的基础上新增了systemctl的配置：
+Ubuntu20使用systemctl管理服务，我们在init.d的基础上新增了systemctl的配置：
 
 ```
 ./configure && make && sudo make install &&
@@ -167,6 +167,6 @@ force_grace_quit off;
 
 Winlin 2019.10
 
-![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/doc/zh/v4/service)
+![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.net&path=/lts/doc/zh/v4/service)
 
 
