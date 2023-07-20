@@ -79,14 +79,6 @@ srt url举例：
 streamid默认为"#!::r=live/livestream,m=publish", 也就是上面的url等同于
 `srt://127.0.0.1:10080?streamid=#!::r=live/livestream,m=publish`。
 
-注意: streamid为空的情况下，只允许进行推流，不允许进行拉流。
-
-FFmpeg使用示例:
-> ffmpeg -re -i source.mp4 -c copy -f mpegts 'srt://127.0.0.1:10080'
-
-OBS使用:
-> ![](/img/doc-main-concepts-srt-url-001.png)
-
 Runner365 2020.02
 
 ![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.net&path=/lts/doc/zh/v5/srt-url)

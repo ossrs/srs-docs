@@ -79,14 +79,6 @@ In this case, we can only use ip:port to publish SRT stream, for example `srt://
 streamid with default value "#!::r=live/livestream,m=publish". So the SRT url above is equal to
 `srt://127.0.0.1:10080?streamid=#!::r=live/livestream,m=publish`.
 
-Note: When streamid empty, only allow publish stream, can not play stream.
-
-FFmpeg example:
-> ffmpeg -re -i source.mp4 -c copy -f mpegts 'srt://127.0.0.1:10080'
-
-OBS example:
-> ![](/img/doc-main-concepts-srt-url-001.png)
-
 Runner365 2020.02
 
 ![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/doc/en/v5/srt-url)
