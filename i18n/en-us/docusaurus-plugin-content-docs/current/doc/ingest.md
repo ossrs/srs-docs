@@ -104,6 +104,6 @@ Read https://github.com/ossrs/srs/issues/55
 
 Winlin 2014.11
 
-![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/doc/en/v5/ingest)
+![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/doc/en/v6/ingest)
 
 

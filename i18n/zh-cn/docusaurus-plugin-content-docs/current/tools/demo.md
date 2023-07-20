@@ -18,6 +18,6 @@ hide_table_of_contents: false
 ### WebRTC
 * [WebRTC](http://ossrs.net/players/rtc_player.html?vhost=d.ossrs.net&server=d.ossrs.net&port=1985&autostart=true)
 
-![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.net&path=/lts/tools/zh/v5/demo)
+![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.net&path=/lts/tools/zh/v6/demo)
 
 

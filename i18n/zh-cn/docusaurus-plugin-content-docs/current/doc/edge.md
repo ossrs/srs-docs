@@ -206,6 +206,6 @@ RTMP回源连接。
 
 Winlin 2015.4
 
-![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.net&path=/lts/doc/zh/v5/edge)
+![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.net&path=/lts/doc/zh/v6/edge)
 
 

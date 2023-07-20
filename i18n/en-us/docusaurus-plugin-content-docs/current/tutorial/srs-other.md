@@ -7,6 +7,6 @@ hide_table_of_contents: false
 
 # SRS Other
 
-![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/tutorial/en/v5/srs-other)
+![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/tutorial/en/v6/srs-other)
 
 

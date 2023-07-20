@@ -37,6 +37,6 @@ FFmpeg command line example:
 
 Runner365 2020.02
 
-![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/doc/en/v5/srt-codec)
+![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/doc/en/v6/srt-codec)
 
 

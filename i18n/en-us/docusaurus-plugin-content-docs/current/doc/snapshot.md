@@ -128,6 +128,6 @@ Note: SRS never choose the best thumbnail.
 
 Winlin 2015.10
 
-![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/doc/en/v5/snapshot)
+![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/doc/en/v6/snapshot)
 
 

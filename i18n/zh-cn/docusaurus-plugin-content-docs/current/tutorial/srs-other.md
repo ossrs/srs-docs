@@ -65,6 +65,6 @@ OBS是使用非常广泛也非常好用的，一个直播推流工具。它有�
 * 地址: https://www.bilibili.com/video/BV1GL4y177FR
 * 说明: LVS开源圆桌。
 
-![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.net&path=/lts/tutorial/zh/v5/srs-other)
+![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.net&path=/lts/tutorial/zh/v6/srs-other)
 
 

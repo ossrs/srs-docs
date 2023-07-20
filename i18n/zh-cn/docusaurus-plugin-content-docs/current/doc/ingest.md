@@ -102,6 +102,6 @@ ingest指令后面是ingest的id，全局需要唯一，用来标识这个ingest
 
 Winlin 2014.4
 
-![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.net&path=/lts/doc/zh/v5/ingest)
+![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.net&path=/lts/doc/zh/v6/ingest)
 
 

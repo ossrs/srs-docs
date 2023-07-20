@@ -146,6 +146,6 @@ For more information, read the config of edge server.
 
 Winlin 2015.4
 
-![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/doc/en/v5/edge)
+![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/doc/en/v6/edge)
 
 

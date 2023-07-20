@@ -64,6 +64,6 @@ hide_table_of_contents: false
 
 著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。
 
-![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.net&path=/lts/doc/zh/v5/learning-path)
+![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.net&path=/lts/doc/zh/v6/learning-path)
 
 

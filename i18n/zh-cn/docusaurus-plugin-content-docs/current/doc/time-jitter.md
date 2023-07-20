@@ -98,6 +98,6 @@ vhost dvr.srs.com {
 
 Winlin 2015.4
 
-![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.net&path=/lts/doc/zh/v5/time-jitter)
+![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.net&path=/lts/doc/zh/v6/time-jitter)
 
 

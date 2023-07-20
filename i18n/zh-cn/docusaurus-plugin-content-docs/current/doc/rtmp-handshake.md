@@ -28,6 +28,6 @@ Flash播放器连接服务器时，若服务器只支持简单握手，则无法
 
 Winlin 2014.2
 
-![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.net&path=/lts/doc/zh/v5/rtmp-handshake)
+![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.net&path=/lts/doc/zh/v6/rtmp-handshake)
 
 

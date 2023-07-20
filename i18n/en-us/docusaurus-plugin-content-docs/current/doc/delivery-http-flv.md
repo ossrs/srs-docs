@@ -265,6 +265,6 @@ Winlin 2015.1
 
 [go-sharp]: https://github.com/ossrs/go-sharp
 
-![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/doc/en/v5/delivery-http-flv)
+![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/doc/en/v6/delivery-http-flv)
 
 

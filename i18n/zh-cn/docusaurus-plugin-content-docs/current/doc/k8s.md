@@ -2107,6 +2107,6 @@ kubectl exec `kubectl get po|grep srs-deploy|awk '{print $1}'` -- tail -f objs/s
 
 Winlin 2020.02
 
-![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.net&path=/lts/doc/zh/v5/k8s)
+![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.net&path=/lts/doc/zh/v6/k8s)
 
 

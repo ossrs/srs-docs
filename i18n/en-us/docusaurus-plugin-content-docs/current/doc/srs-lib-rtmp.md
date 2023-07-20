@@ -13,6 +13,6 @@ please read [#32](https://github.com/ossrs/srs-librtmp/issues/32).
 
 Winlin 2014.11
 
-![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/doc/en/v5/srs-lib-rtmp)
+![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/doc/en/v6/srs-lib-rtmp)
 
 

@@ -181,6 +181,6 @@ You're able to publish multiple streams to SRS, by using different URLs.
 
 > Note: Please see [RTMP URL](./rtmp-url-vhost.md) for detail.
 
-![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/doc/en/v5/getting-started)
+![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/doc/en/v6/getting-started)
 
 

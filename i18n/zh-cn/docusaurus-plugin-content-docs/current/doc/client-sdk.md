@@ -47,6 +47,6 @@ hide_table_of_contents: false
 
 Winlin 2017.4
 
-![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.net&path=/lts/doc/zh/v5/client-sdk)
+![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.net&path=/lts/doc/zh/v6/client-sdk)
 
 

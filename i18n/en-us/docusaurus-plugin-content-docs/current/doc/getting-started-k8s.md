@@ -17,6 +17,6 @@ SRS provides a set of template repository for fast deploy:
 * [TKE(Tencent Kubernetes Engine)](https://github.com/ossrs/srs-tke-template)
 * [ACK(Alibaba Cloud Container Service for Kubernetes)](https://github.com/ossrs/srs-ack-template)
 
-![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/doc/en/v5/getting-started-k8s)
+![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/doc/en/v6/getting-started-k8s)
 
 

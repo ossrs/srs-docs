@@ -81,6 +81,6 @@ streamid with default value "#!::r=live/livestream,m=publish". So the SRT url ab
 
 Runner365 2020.02
 
-![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/doc/en/v5/srt-url)
+![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/doc/en/v6/srt-url)
 
 

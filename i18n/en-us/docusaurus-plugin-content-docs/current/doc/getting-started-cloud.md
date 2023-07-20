@@ -39,6 +39,6 @@ Please read [TencentCloud CVM](https://www.bilibili.com/video/BV1844y1L7dL/): De
 
 Please read [TencentCloud LightHouse](https://www.bilibili.com/video/BV1844y1L7dL/): Deploy SRS to Tencent LightHouse.
 
-![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/doc/en/v5/getting-started-cloud)
+![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/doc/en/v6/getting-started-cloud)
 
 

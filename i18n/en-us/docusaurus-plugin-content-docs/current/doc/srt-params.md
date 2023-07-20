@@ -170,6 +170,6 @@ srt_server {
 
 John 2022.5.24
 
-![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/doc/en/v5/srt-params)
+![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/doc/en/v6/srt-params)
 
 

@@ -49,6 +49,6 @@ SRS精彩答疑话题
 * 地址: https://www.bilibili.com/video/BV1qB4y197ov
 * 说明: 在保证画质的前提下，如何降低码率？我们可以使用动态码率，还可以使用相对空闲的客户端CPU交换码率，还可以在业务上优化，特别多平台推流时需要避免上行码率过高。
 
-![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.net&path=/lts/tutorial/zh/v5/srs-faq)
+![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.net&path=/lts/tutorial/zh/v6/srs-faq)
 
 

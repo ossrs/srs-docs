@@ -9,6 +9,6 @@ hide_table_of_contents: false
 
  
       
-![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/tutorial/en/v5/srs-faq)
+![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/tutorial/en/v6/srs-faq)
 
 
