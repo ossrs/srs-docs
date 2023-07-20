@@ -123,7 +123,7 @@ For more information please read [here](./origin-cluster.md)
 
 For more information please read [here](./origin-cluster.md)
 
-By FFMEPG: 
+By FFmpeg: 
 
 ```bash
     for((;;)); do \

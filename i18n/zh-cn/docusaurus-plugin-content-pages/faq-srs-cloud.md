@@ -17,7 +17,7 @@
 * [安装后无法访问](#unavailable): 安装后提示错误，或者Redis没准备好。
 * [SRS转推和OBS转推的区别](#restream-vs-obs): SRS的多平台转推，和OBS转推插件的区别。
 * [SRS如何转推自定义平台](#restream-custom): SRS的多平台转推，如何推到自定义的直播平台。
-* [如何更换FFmpeg](#use-custom-ffmpeg): 如何更换云SRS中的FFmepg为自定义版本。
+* [如何更换FFmpeg](#use-custom-ffmpeg): 如何更换云SRS中的FFmpeg为自定义版本。
 * [宝塔安装SRS非常慢](#install-speedup): 海外用宝塔安装非常慢，访问阿里云镜像太慢。
 * [宝塔如何安装最新的云SRS](#bt-install-manually): 手动安装宝塔插件，安装最新的插件。
 * [宝塔CentOS7安装失败](#bt-centos7-error): CentOS7宝塔安装失败，找不到目录，或GLIBC版本问题。
@@ -296,7 +296,7 @@ rtmp://ip/app/stream
 
 ## 如何更换FFmpeg
 
-如果使用Docker版本，可以更换云SRS中的FFmepg为自定义版本，启动时指定命令：
+如果使用Docker版本，可以更换云SRS中的FFmpeg为自定义版本，启动时指定命令：
 
 ```bash
 -v /path/to/ffmpeg:/usr/local/bin/ffmpeg

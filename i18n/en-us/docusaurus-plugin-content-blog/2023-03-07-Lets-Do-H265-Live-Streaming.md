@@ -32,7 +32,7 @@ The status of H.265, for different use scenarios.
 
 Part 1, publisher or encoder for H.265.
 
-* [x] Publish SRT stream by FFmepg.
+* [x] Publish SRT stream by FFmpeg.
 * [x] Publish SRT stream by OBS.
 * [x] Publish RTMP stream by FFmpeg, patch is [here](https://github.com/ossrs/srs/issues/465#ffmpeg-tools)
 * [x] Push WebRTC by Safari, should be enabled by user.

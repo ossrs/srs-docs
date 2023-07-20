@@ -11,7 +11,7 @@ Ingest is used to ingest file(flv, mp4, mkv, avi, rmvb...),
 stream(RTMP, RTMPT, RTMPS, RTSP, HTTP, HLS...) and device,
 encode or passthrough then publish as RTMP to SRS.
 
-Ingest actually use FFMEPG, or your tool, to encode or remux
+Ingest actually use FFmpeg, or your tool, to encode or remux
 to suck known data to RTMP to SRS.
 
 How to deploy ingest, read [Ingest](./sample-ingest.md)
@@ -21,7 +21,7 @@ How to deploy ingest, read [Ingest](./sample-ingest.md)
 The main use scenarios:
 * Virtual Live Stream: Convert vod file to live stream.
 * Input RTSP IP Camera: Many IP Camera supports to pull in RTSP, user can ingest the RTSP to RTMP to SRS.
-* Directly ingest device, use the FFMEPG as encoder actually.
+* Directly ingest device, use the FFmpeg as encoder actually.
 * Ingest HTTp stream to RTMP for some old stream server.
 
 In a word, the Ingest is used to ingest any stream supported by FFMPEG to SRS.
