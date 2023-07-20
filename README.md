@@ -62,8 +62,8 @@ The links in docs, relative link, for example:
 The links in blog or pages, absolute url link, for example:
 
 ```markdown
-[Wiki: Getting Started](/docs/v4/doc/getting-started)
-[Developer Documentation](/docs/v4/doc/getting-started)
+[Wiki: Getting Started](/docs/v5/doc/getting-started)
+[Developer Documentation](/docs/v5/doc/getting-started)
 ```
 
 > Note: Please follow this rule, otherwise, the link from searching will fail.
@@ -287,3 +287,55 @@ yarn run docusaurus docs:version 4.2.0
           remarkPlugins: [require('mdx-mermaid')],
         },
 ```
+
+4. how to upgrade version
+  > forzen current version to 5.0, set current version ref to 6.0, do the following steps:
+
+  * run the cmd `yarn docusaurus docs:version 5.0`
+    * it will auto modify ./versions.json to add 5.0:
+      ```
+      [
+        "5.0",
+        "4.0"
+      ]
+      ```
+    * auto generate en-us version-5.0 dir, and version-5.0-sidebars.json
+  * prepare zh-cn 5.0
+    * `cd i18n/zh-cn && cp -af current version-5.0`
+    * `cd i18n/zh-cn && cp current.json version-5.0.json`
+  * update docusaurus.config.js
+  * after upgrade, the dir displayed like:
+
+    ```diff
+    +├── docusaurus.config.js
+    ├── i18n
+    │   ├── en-us
+    │   │   ├── code.json
+    │   │   ├── docusaurus-plugin-content-docs
+    │   │   │   ├── current
+    │   │   │   └── current.json
+    │   └── zh-cn
+    │       ├── code.json
+    │       ├── docusaurus-plugin-content-docs
+    │       │   ├── current
+    │       │   ├── current.json
+    │       │   ├── version-4.0
+    │       │   ├── version-4.0.json
+    +│       │   ├── version-5.0
+    +│       │   └── version-5.0.json
+    ├── sidebars.json
+    ├── versioned_docs
+    │   ├── version-4.0
+    │   │   ├── doc
+    │   │   ├── tools
+    │   │   └── tutorial
+    +│   └── version-5.0
+    │       ├── doc
+    │       ├── tools
+    │       └── tutorial
+    ├── versioned_sidebars
+    │   ├── version-4.0-sidebars.json
+    +│   └── version-5.0-sidebars.json
+    +├── versions.json
+    ├── versionsArchived.json
+    ```  

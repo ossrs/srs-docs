@@ -1,0 +1,169 @@
+{
+  "tutorialSidebar": [
+    "tutorial/srs-open-source",
+    "tutorial/srs-cloud-server",
+    "tutorial/srs-faq",
+    "tutorial/srs-other"
+  ],
+  "toolsSidebar": [
+    "tools/demo",
+    "tools/utility",
+    "tools/specs"
+  ],
+  "docsSidebar": [
+    "doc/introduction",
+    {
+      "type": "category",
+      "label": "Getting Started",
+      "link": {
+        "type": "generated-index"
+      },
+      "collapsed": true,
+      "items": [
+        "doc/getting-started",
+        "doc/getting-started-build",
+        "doc/getting-started-cloud",
+        "doc/getting-started-k8s"
+      ]
+    },
+    {
+      "type": "category",
+      "label": "Main Protocols",
+      "link": {
+        "type": "generated-index"
+      },
+      "collapsed": true,
+      "items": [
+        "doc/rtmp",
+        "doc/sample-hls",
+        "doc/webrtc",
+        "doc/sample-http-flv",
+        "doc/sample-srt",
+        "doc/gb28181",
+        "doc/sample-dash",
+        "doc/http-server"
+      ]
+    },
+    {
+      "type": "category",
+      "label": "Main Features",
+      "link": {
+        "type": "generated-index"
+      },
+      "collapsed": true,
+      "items": [
+        "doc/delivery-hls",
+        "doc/delivery-http-flv",
+        "doc/dvr",
+        "doc/streamer",
+        "doc/ingest",
+        "doc/windows",
+        "doc/forward",
+        "doc/security",
+        "doc/snapshot"
+      ]
+    },
+    {
+      "type": "category",
+      "label": "OpenAPI",
+      "link": {
+        "type": "generated-index"
+      },
+      "collapsed": true,
+      "items": [
+        "doc/http-api",
+        "doc/http-callback",
+        "doc/exporter"
+      ]
+    },
+    {
+      "type": "category",
+      "label": "Clusters",
+      "link": {
+        "type": "generated-index"
+      },
+      "collapsed": true,
+      "items": [
+        "doc/sample-rtmp-cluster",
+        "doc/sample-hls-cluster",
+        "doc/sample-http-flv-cluster",
+        "doc/sample-origin-cluster",
+        "doc/origin-cluster",
+        "doc/edge",
+        "doc/nginx-for-hls",
+        "doc/reuse-port"
+      ]
+    },
+    {
+      "type": "category",
+      "label": "DevOps",
+      "link": {
+        "type": "generated-index"
+      },
+      "collapsed": true,
+      "items": [
+        "doc/log",
+        "doc/log-rotate",
+        "doc/service",
+        "doc/reload",
+        "doc/resource"
+      ]
+    },
+    {
+      "type": "category",
+      "label": "Advanced Guides",
+      "link": {
+        "type": "generated-index"
+      },
+      "collapsed": true,
+      "items": [
+        "doc/low-latency",
+        "doc/arm",
+        "doc/rtmp-pk-http",
+        "doc/time-jitter",
+        "doc/drm",
+        "doc/k8s",
+        "doc/performance",
+        "doc/gperf",
+        "doc/gprof",
+        "doc/perf",
+        "doc/rtmp-url-vhost",
+        "doc/rtmp-handshake",
+        "doc/rtmp-atc",
+        "doc/srt-codec",
+        "doc/srt-params",
+        "doc/srt-url"
+      ]
+    },
+    {
+      "type": "category",
+      "label": "Others",
+      "link": {
+        "type": "generated-index"
+      },
+      "collapsed": true,
+      "items": [
+        "doc/hevc",
+        "doc/ide",
+        "doc/ffmpeg",
+        "doc/client-sdk",
+        "doc/raspberrypi",
+        "doc/sample",
+        "doc/nginx-exec",
+        "doc/flv-vod-stream",
+        "doc/sample-ingest",
+        "doc/sample-forward",
+        "doc/sample-ffmpeg",
+        "doc/sample-transcode-to-hls",
+        "doc/sample-realtime",
+        "doc/sample-http",
+        "doc/delivery-hds",
+        "doc/sample-arm",
+        "doc/git",
+        "doc/special-control",
+        "doc/install",
+        "doc/srs-lib-rtmp"
+      ]
+    }
+  ]
+}

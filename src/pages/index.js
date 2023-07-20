@@ -19,7 +19,7 @@ function HomepageHeader() {
           <Translate id="homepage.subTitle"/>
         </p>
         <div className={styles.buttons}>
-          <Link className="button button--secondary button--lg" to="/docs/v4/doc/getting-started">
+          <Link className="button button--secondary button--lg" to="/docs/v5/doc/getting-started">
             {translate({id: 'homepage.getStarted'})}
           </Link> &nbsp;
           <Link className="button button--secondary button--lg" to="/contact#donation">
