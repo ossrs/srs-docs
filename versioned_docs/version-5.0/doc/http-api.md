@@ -271,9 +271,9 @@ etc. Please read [#2881](https://github.com/ossrs/srs/issues/2881) for details.
 
 Each response of api contains a `server` field, which identify the server. When ServerID changed, SRS already restarted, all information before is invalid.
 
-## API Nevigation
+## API Navigation
 
-SRS provides the nevigation of APIs.
+SRS provides the Navigation of APIs.
 
 User can access the `http://192.168.1.102:1985/api/v1`, where:
 

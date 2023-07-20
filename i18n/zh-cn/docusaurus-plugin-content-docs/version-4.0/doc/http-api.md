@@ -275,7 +275,7 @@ SRS可以和HTTP/HTTPS代理一起工作得很好，比如[Nginx](https://github
 
 SRS返回的api中都会带有`server`的信息，即Server的ID，用来标识服务器。客户端在获取信息时，必须检查ServerID是否改变，改变时就是服务器重启，之前所有的数据都应该作废了。
 
-## API Nevigation
+## API Navigation
 
 SRS提供了API的导航，即所有支持的API及描述。
 
