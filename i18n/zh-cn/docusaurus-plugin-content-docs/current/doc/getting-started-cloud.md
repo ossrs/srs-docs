@@ -14,7 +14,7 @@ SRS Cloud是一个基于Go、Reactjs、SRS、FFmpeg、WebRTC等的轻量级、�
 
 | 比较       | SRS Cloud | SRS      | 说明                            |
 |----------|------|----------|-------------------------------|
-| 许可证      | AGPL | MIT      | SRS Cloud是一个采用AGPL许可证的开源项目。   |
+| 许可证      | MIT | MIT      | 都是MIT许可证的开源项目。                |
 | 直播流      | 是    | 是        | 两者都支持RTMP，HLS和HTTP-FLV协议。     |
 | WebRTC   | 是    | 是        | 两者都支持WebRTC。                  |
 | 控制台      | 增强   | HTTP API | SRS Cloud提供了更强大的控制台。          |

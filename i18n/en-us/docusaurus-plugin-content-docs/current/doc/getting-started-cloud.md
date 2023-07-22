@@ -17,7 +17,7 @@ media services needs.
 
 | Comparison       | SRS Cloud | SRS           | Notes                                                                |
 |------------------|-----------|---------------|----------------------------------------------------------------------|
-| License          | AGPL      | MIT           | SRS Cloud is open-source with an AGPL license.                       |
+| License          | MIT       | MIT           | Both are open-source with an MIT license.                          |
 | Live Streaming   | Yes       | Yes           | Both support RTMP, HLS, and HTTP-FLV protocols.                      |
 | WebRTC           | Yes       | Yes           | WebRTC is supported by both.                                         |
 | Console          | Enhanced  | HTTP API      | SRS Cloud offers a more powerful console.                            |
