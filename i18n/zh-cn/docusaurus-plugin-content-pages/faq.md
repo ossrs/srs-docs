@@ -71,6 +71,7 @@
   > 1. SRS不会支持动态DVR，但给出了一些方案，也可以参考 [#1577](https://github.com/ossrs/srs/issues/1577)
 
 <a name="console"></a>
+
 ### [Console](#console)
 * `Pagination`: 关于控制台流和客户端的分页问题，参考 [#3451](https://github.com/ossrs/srs/issues/3451)
   > 1. API默认参数为`start=0`, `count=10`，而Console没有支持分页，计划在新的Console支持。
@@ -218,15 +219,16 @@
 
 ### [Help](#help)
 * 微信群问问题没人回答？社区提问的艺术？
-  > 1. 一般如果是不看文档随便问的小白问题，肯定没人回答。如果是自己倒腾了几天还弄不出来，那一般会有人回答的。
-  > 1. **为什么大家不回答小白问题？这就好比是四肢健全的青年人，头脑看起来也正常，穿戴整齐，在公共场所讨钱**，你们会给么？这就是为什么在群里问小白问题没人回的原因吧。而且SRS还有直播答疑，欢迎青年们来直播间问，不设门槛，有问必答，集中给钱，不香么？
+  > 1. 请先在社区的各种文档中搜索，不要问已经存在的答案的问题。
+  > 1. 请详细描述问题的背景，请表现出自己已经做出的努力。
+  > 1. 开源社区意味着需要你自己能解决问题，如果不行，请考虑付费咨询。
 
 ## Deleting
 
 如果不符合要求的Issue，一般会打标为Deleting，会在一两周后删除，并回复：
 
 ```
-这个问题在[Wiki](https://ossrs.net/lts/zh-cn/docs/v4/doc/introduction)中有，请看文档。该Issue会被删除，请先阅读FAQ：#2716
+这个问题在[Wiki](https://ossrs.net/lts/en-us/docs/v5/doc/getting-started)中有，请看文档。该Issue会被删除，请先阅读FAQ：#2716
 ```
 
 ```
