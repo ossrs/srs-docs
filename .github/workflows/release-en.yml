@@ -24,8 +24,8 @@ jobs:
       - name: Build droplet variables
         run: |
           doctl compute droplet list --format Name,Region,Status,VCPUs,Memory
-          SRS_DROPLET_EIP=$(doctl compute droplet get production --format PublicIPv4 --no-header)
-          SRS_DROPLET_PIP=$(doctl compute droplet get production --format PrivateIPv4 --no-header)
+          SRS_DROPLET_EIP=$(doctl compute droplet get ossrs --format PublicIPv4 --no-header)
+          SRS_DROPLET_PIP=$(doctl compute droplet get ossrs --format PrivateIPv4 --no-header)
           echo "SRS_DROPLET_EIP=$SRS_DROPLET_EIP" >> $GITHUB_ENV
           echo "SRS_DROPLET_PIP=$SRS_DROPLET_PIP" >> $GITHUB_ENV
       # The github.ref is, for example, refs/tags/v1.0.52
