@@ -83,20 +83,18 @@ http_api {
         # Always off by https://github.com/ossrs/srs/issues/2653
         #allow_update off;
     }
-    # the HTTP RAW API is more powerful api to change srs state and reload.
-    raw_api {
-        # whether enable the HTTP RAW API.
+    # the auth is authentication for http api
+    auth {
+        # whether enable the HTTP AUTH.
+        # Overwrite by env SRS_HTTP_API_AUTH_ENABLED
         # default: off
-        enabled             off;
-        # whether enable rpc reload.
-        # default: off
-        allow_reload        off;
-        # whether enable rpc query.
-        # default: off
-        allow_query         off;
-        # whether enable rpc update.
-        # default: off
-        allow_update        off;
+        enabled         on;
+        # The username of Basic authentication:
+        # Overwrite by env SRS_HTTP_API_AUTH_USERNAME
+        username        admin;
+        # The password of Basic authentication:
+        # Overwrite by env SRS_HTTP_API_AUTH_PASSWORD
+        password        admin;
     }
     # For https_api or HTTPS API.
     https {
@@ -484,6 +482,40 @@ The supported HTTP RAW APi of SRS is:
 ### Other RAW APIs
 
 Other RAW APIs are disabled by SRS 4.0.
+
+## Authentication
+
+Starting from version `5.0.152+` or `6.0.40+`, SRS supports HTTP API authentication, which can be enabled by configuring `http_api.auth`.
+
+```bash
+# conf/http.api.auth.conf
+http_api {
+    enabled on;
+    listen 1985;
+    auth {
+        enabled on;
+        username admin;
+        password admin;
+    }
+}
+```
+
+Otherwise, you can use environment variables to enable it:
+
+```bash
+env SRS_HTTP_API_ENABLED=on SRS_HTTP_SERVER_ENABLED=on \
+    SRS_HTTP_API_AUTH_ENABLED=on SRS_HTTP_API_AUTH_USERNAME=admin SRS_HTTP_API_AUTH_PASSWORD=admin \
+    ./objs/srs -e
+```
+
+Then, you can access the following urls to verify it:
+- Prompt for username and password: http://localhost:1985/api/v1/versions
+- URL with authentication: http://admin:admin@localhost:1985/api/v1/versions
+
+To clean up the username and password, you can access the HTTP API with the username only:
+- http://admin@localhost:1985/api/v1/versions
+
+> Note: authentication is only enabled for the HTTP APIs, neither for the HTTP server nor the WebRTC HTTP APIs.
 
 Winlin 2015.8
 

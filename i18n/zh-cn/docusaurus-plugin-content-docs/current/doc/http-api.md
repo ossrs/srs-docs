@@ -82,20 +82,18 @@ http_api {
         # Always off by https://github.com/ossrs/srs/issues/2653
         #allow_update off;
     }
-    # the HTTP RAW API is more powerful api to change srs state and reload.
-    raw_api {
-        # whether enable the HTTP RAW API.
+    # the auth is authentication for http api
+    auth {
+        # whether enable the HTTP AUTH.
+        # Overwrite by env SRS_HTTP_API_AUTH_ENABLED
         # default: off
-        enabled             off;
-        # whether enable rpc reload.
-        # default: off
-        allow_reload        off;
-        # whether enable rpc query.
-        # default: off
-        allow_query         off;
-        # whether enable rpc update.
-        # default: off
-        allow_update        off;
+        enabled         on;
+        # The username of Basic authentication:
+        # Overwrite by env SRS_HTTP_API_AUTH_USERNAME
+        username        admin;
+        # The password of Basic authentication:
+        # Overwrite by env SRS_HTTP_API_AUTH_PASSWORD
+        password        admin;
     }
     # For https_api or HTTPS API.
     https {
@@ -513,6 +511,40 @@ SRS支持的HTTP RAW API包括：
 ### Other RAW APIs
 
 其他RAW API已经在4.0中删除了。
+
+## Authentication
+
+SRS在`5.0.152+`或者`6.0.40+`版本开始支持HTTP API鉴权，可以通过配置`http_api.auth`开启。
+
+```bash
+# conf/http.api.auth.conf
+http_api {
+    enabled on;
+    listen 1985;
+    auth {
+        enabled on;
+        username admin;
+        password admin;
+    }
+}
+```
+
+或者，通过环境变量设置用户名和密码：
+
+```bash
+env SRS_HTTP_API_ENABLED=on SRS_HTTP_SERVER_ENABLED=on \
+    SRS_HTTP_API_AUTH_ENABLED=on SRS_HTTP_API_AUTH_USERNAME=admin SRS_HTTP_API_AUTH_PASSWORD=admin \
+    ./objs/srs -e
+```
+
+可以访问下面的地址来验证：
+- 提示输入用户名和密码：http://localhost:1985/api/v1/versions
+- 带用户名和密码的URL：http://admin:admin@localhost:1985/api/v1/versions
+
+要清除用户名和密码，可以通过用户名访问HTTP API：
+- http://admin@localhost:1985/api/v1/versions
+
+> 注意：只针对HTTP API开启了鉴权，不包括HTTP服务器和WebRTC HTTP API。
 
 Winlin 2015.8
 
