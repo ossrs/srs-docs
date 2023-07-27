@@ -7,7 +7,7 @@ hide_table_of_contents: false
 
 # LogRotate
 
-Log Rotate就是日志切割，服务器日志越来越大，如何压缩日志，或者丢弃古老的日志？SRS讲日志管理交给外部系统，提供了接口可以切割日志。
+Log Rotate就是日志切割，服务器日志越来越大，如何压缩日志，或者丢弃古老的日志？SRS将日志管理交给外部系统，提供了接口可以切割日志。
 
 1. 首先，将日志文件挪走，譬如：```mv objs/srs.log /tmp/srs.`date +%s`.log```
 1. 然后，发送信号给SRS，SRS重新打开日志文件，譬如 `killall -s SIGUSR1`，SRS会关闭之前的fd，重新打开日志文件并写入。
