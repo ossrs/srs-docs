@@ -4,14 +4,14 @@ Thank you for your PR, please follow this guide.
 
 ## Rules
 
-* Never use your `4.0release` or `develop` branch, use `bugfix/bug-summary` for each PR.
+* Never use your `develop` branch, use `bugfix/bug-summary` for each PR.
 * Don't close PR when update, only update the branch `bugfix/bug-summary`, simple enough.
 * Be focus, one PR fixes exactly one bug/feature, without any noise like space or dead codes.
 * Please study [Pro Git](https://git-scm.com/book/en/v2), it's a very important and basic skill for open-source developer.
 
 ## File New PR
 
-The workflow to patch `4.0release` or any other branches:
+The workflow to patch `develop` or any other branches:
 
 [![Workflow](/img/HowToFilePR.png)](https://www.figma.com/file/5yAeoq2r3wwrXZwq1f93UH/How-to-File-PR-to-SRS)
 
@@ -45,7 +45,7 @@ git fetch --all
 **Step 5:** Checkout a new branch from srs
 
 ```
-git checkout -b bugfix/bug-summary srs/4.0release
+git checkout -b bugfix/bug-summary srs/develop
 ```
 
 > Note: Please name your branch, by summary of bug, for example `bugfix/rtc-listen-ipv6`
@@ -58,7 +58,7 @@ git push -u origin bugfix/bug-summary
 
 > Note: Please use English in code, logs, commit and other text.
 
-**Step 7:** File a [PR](https://github.com/ossrs/srs/compare) from your `bugfix/bug-summary` to SRS `4.0release`
+**Step 7:** File a [PR](https://github.com/ossrs/srs/compare) from your `bugfix/bug-summary` to SRS `develop`
 
 > Remark: Please check the `Allow edits and access to secrets by maintainers`, so we could update the PR.
 

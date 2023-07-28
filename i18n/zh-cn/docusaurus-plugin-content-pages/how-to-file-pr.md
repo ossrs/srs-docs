@@ -4,14 +4,14 @@
 
 ## Rules
 
-* 请不要使用你的`4.0release`或`develop`分支，请使用`bugfix/bug-summary`，每个PR一个独立的分支。
+* 请不要使用你的`develop`分支，请使用`bugfix/bug-summary`，每个PR一个独立的分支。
 * 若需要更新PR，请不要关闭之前的PR，不必新开PR，只需要提交到你自己的`bugfix/bug-summary`分支，PR会自动更新。
 * 请不要夹带无关的代码，一个PR解决一个问题，或者支持一个功能，请不要夹带其他的有干扰的代码。
 * 请花时间学习[Pro Git](https://git-scm.com/book/en/v2)，掌握GIT是非常必要的能力。
 
 ## File New PR
 
-下图是提交到`4.0release`或其他分支的工作流：
+下图是提交到`develop`或其他分支的工作流：
 
 [![Workflow](/img/HowToFilePR.png)](https://www.figma.com/file/5yAeoq2r3wwrXZwq1f93UH/How-to-File-PR-to-SRS)
 
@@ -45,7 +45,7 @@ git fetch --all
 **Step 5:** 为PR创建一个新的分支
 
 ```
-git checkout -b bugfix/bug-summary srs/4.0release
+git checkout -b bugfix/bug-summary srs/develop
 ```
 
 > Note: 请认真给你的分支起一个名字，例如`bugfix/rtc-listen-ipv6`
@@ -58,7 +58,7 @@ git push -u origin bugfix/bug-summary
 
 > Note: 请在代码、注释和Commit中使用英文，请不要使用其他语言，也不要使用中文。
 
-**Step 7:** 点击[这个链接](https://github.com/ossrs/srs/compare)，选择你的分支`bugfix/bug-summary`，提交到SRS的`4.0release`分支
+**Step 7:** 点击[这个链接](https://github.com/ossrs/srs/compare)，选择你的分支`bugfix/bug-summary`，提交到SRS的`develop`分支
 
 > Remark: 请确保勾选上了`Allow edits and access to secrets by maintainers`，这样我们可以更新你的PR。
 
