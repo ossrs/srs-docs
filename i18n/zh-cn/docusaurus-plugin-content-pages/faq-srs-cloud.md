@@ -1,5 +1,7 @@
 # FAQ
 
+> Note: 这是关于SRS Cloud的FAQ，如果是SRS的FAQ请参考[SRS FAQ](/faq)
+
 快速目录
 
 * [Video Guides](#video-guides)：视频教程。
@@ -35,8 +37,6 @@
 * [版本规划](#changelog): 关于版本和里程碑。
 
 你也可以在页面中搜索关键字。
-
-> Note: 这是关于SRS Cloud的FAQ，如果是SRS的FAQ请参考[SRS FAQ](/faq)
 
 <a name='video-guides'></a><br/><br/><br/>
 
@@ -80,10 +80,11 @@ Docker启动时会指定版本，比如`ossrs/srs-cloud:v1.0.293`，只需要删
 
 ## 支持哪些平台
 
-云SRS支持腾讯云Lighthouse和CVM镜像，DigitalOcean镜像，其他平台可以用宝塔安装。
+云SRS支持Docker镜像，安装脚本，腾讯云Lighthouse和CVM镜像，DigitalOcean镜像，其他平台可以用宝塔安装。
 
 云SRS当然是各种云平台多支持，最方便的是镜像，也就是云服务器的镜像，如果想简单省事就请用镜像，其他的方式容易弄出问题来，请不要高估自己的折腾能力，大家真的属于那80%折腾不了的，强烈建议应该用镜像：
 
+* Docker镜像安装：[这里](https://github.com/ossrs/srs-cloud#usage)
 * Lighthouse：腾讯云的轻量云服务器镜像，使用参考[这里](https://mp.weixin.qq.com/s/fWmdkw-2AoFD_pEmE_EIkA)
 * CVM：腾讯云的云服务器镜像，带宽比Lighthouse高可到100Mbps，使用参考[这里](https://mp.weixin.qq.com/s/x-PjoKjJj6HRF-eCKX0KzQ)
 * DigitalOcean: 海外轻量云服务器的镜像，使用参考[这里](https://mp.weixin.qq.com/s/_GcJm15BGv1qbmHixPQAGQ)
@@ -124,7 +125,7 @@ Docker启动时会指定版本，比如`ossrs/srs-cloud:v1.0.293`，只需要删
 
 ## 带宽太低，提升带宽
 
-轻量应用服务器的带宽4~20Mbps不等，对于音视频来说还是会有些限制，如果你想更高带宽，比如到100Mbps，那么可以选择[CVM镜像](https://mp.weixin.qq.com/s/x-PjoKjJj6HRF-eCKX0KzQ)。
+轻量应用服务器的带宽4~20Mbps不等，对于音视频来说还是会有些限制，如果你想更高带宽，比如到100Mbps，那么可以选择CVM主机。
 
 > Note: 云SRS的使用都是一致的，购买和平台配置有所不同。
 
@@ -332,6 +333,8 @@ rtmp://ip/app/stream
 
 ## 宝塔CentOS7安装失败
 
+> 注意：推荐使用Ubuntu20系统。 
+
 CentOS7宝塔安装失败，常见错误如下：
 
 * GLIBC版本问题：```version `GLIBC_2.27' not found```
@@ -347,22 +350,6 @@ CentOS7宝塔安装失败，常见错误如下：
 > Note: 云SRS v4.6.3+，不再强制依赖pm2安装nodejs，只要系统存在nodejs就可以了。你可以选择nodejs管理器安装，或者pm2安装，或者自己安装也可以。
 
 最后，如果安装成功后还不可用，可以重启下系统试试。
-
-<a name="how-to-buy-ai"></a><br/><br/><br/>
-
-## 怎么购买AI换脸服务
-
-最新消息：AI换脸的B站视频已经下架了，B站审核没过。
-
-挺多朋友问：AI换脸怎么实现？怎么买模型？找谁买？
-
-首先，云SRS只在其中实现了推流和拉流，并没有AI的能力，也不卖AI换脸的服务。
-
-在AI换脸那个视频中有介绍，这个AI换脸是其他朋友用云SRS和AI工具以及AI模型搭的，有相关的开源的方案，可以自己搭建。
-
-如果自己不会搭，推荐用云服务。由于AI换脸有很高的政策风险，如果需要购买这个服务，建议走正规渠道购买，也就是用腾讯云的相关的服务，可以用[视立方AI美颜](https://cloud.tencent.com/product/rtcube)或者[腾讯特效智能美颜](https://cloud.tencent.com/product/x-magic)。
-
-如果不想用腾讯云，找找其他视频云厂商的服务也可以。
 
 <a name="rules"></a><br/><br/><br/>
 
@@ -468,23 +455,6 @@ SRS云服务器是把这些系统全部放在一台`Lighthouse/CVM/Droplet/宝�
 4. 创建临时授权。
 
 把临时授权的地址，发给问题排查同学就可以。
-
-<a name="cost-opt"></a><br/><br/><br/>
-
-## 成本优化
-
-SRS云服务器对接了云服务，比如云存储COS、云点播VoD等等，大家习惯免费的方案后，会自然想让SRS对接其他免费的方案，比如某度某盘，类似这样节约成本薅羊毛的想法，统一答复如下：
-
-1. 不要告诉我能省钱，或者仅仅因为人家号称免费就应该去对接，要看收益。
-6. SRS云服务器是生产工具，是能带来额外收入，比如总成本1万，能增加10万收入，那么带来了9万的收益，为什么要优化成本？请不要追求100%的利润，自己吃肉，也给点别人生存的粮食。
-7. 世上没有免费的服务，贪图小便宜用免费的，出问题没人管，广告满天飞，隐私泄露，后期各种收割，难道还不长点记性么。不要追求100%的利润，大家都是成年人，懂的吧？
-8. 如果用SRS云服务器，不能给你带来任何收益，可以选择退货的，别折腾了。
-
-唯一一种情况，我会考虑对接：
-
-1. 如果其他服务或方案，能带来2倍以上的收益，比如现在成本1万，目前成本高没有增加收益，并且对接某盘只需要0.5万，能增加一倍的收益。
-
-如果能给出收益的数据，我会考虑。
 
 <a name="openapi"></a><br/><br/><br/>
 
