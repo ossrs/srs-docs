@@ -2,19 +2,22 @@
 
 SRS has a community of thousands of developers.
 
-On this page we've listed some SRS-related communities that you can be a part of; see the other pages in this section for additional online and in-person learning materials.
+On this page we've listed some SRS-related communities that you can be a part of; see the other pages in this section 
+for additional online and in-person learning materials.
 
 ## Donation
 
-Hello, I'm very glad that you had SRS working well for your business, I'm sure that SRS will help you to do business well.
+Would you like additional assistance from us? By becoming a sponsor or backer of SRS, we can provide you with the 
+support you need:
 
-As you know, live streaming or WebRTC is not easy to maintain, you might get a variety of problem, so would you like more support from community? Welcome to become our backer/sponsor to get more support from us.
+* Backer: $5 per month, online text chat support through Discord.
+* Sponsor: $100 per month, online meeting support, 1 meeting per month in 1 hour.
 
-For example, we work part time about 60 minutes per day, for the whole community. But about 30% or 20 minutes is dedicated support for our backer/sponsor.
+https://opencollective.com/srs-server
 
-Please follow [this link](https://opencollective.com/srs-server/contribute/backer-34941/checkout?interval=month&amount=5) to become backer/sponsor of SRS, via OpenCollective.
-
-Thank you for your contribution to SRS - it really makes a difference!
+SRS is a non-profit community made up of dedicated volunteers who strive to offer enhanced support to sponsors 
+and backers. Although you can also turn to the community for assistance, please be aware that response times might
+not be as quick as desired.
 
 ## Discussion
 
