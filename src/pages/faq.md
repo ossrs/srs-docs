@@ -219,22 +219,22 @@ topic. If your question is similar, please watch the video directly:
 * `WebSocket/WS`: How to support WS-FLV or WS-TS?
   > 1. You can use a Go proxy to convert it once, with a few lines of key code for stability and reliability. Please refer to [mse.go](https://github.com/winlinvip/videojs-flow/blob/master/demo/mse.go)
 
-<a name='knowledge-share-star'></a>
+## Q&A
 
-### [KnowledgeStar](#knowledge-share-star)
-* [Failed to join RTC room or start conversation](https://t.zsxq.com/10o8nU5a5) 泓森, 2023-07-28 09:10
-  ```
-  According to the 5.0 documentation for WebRTC SFU:One to One, I have completed the following configurations:
+### WebRTC Demo Failed
 
-    Configured the CANDIDATE to use the internal IP address 192.168.100.140.
-    Used Docker to start RTC service, Signaling service, and HTTPS service.
-    Successfully accessed http://192.168.100.140/demos/ and was able to open it without any issues.
+**Question** Failed to join RTC room or start conversation
+> According to the 5.0 documentation for [SFU: One to One](/docs/v5/doc/webrtc#sfu-one-to-one), I have completed the following configurations:
+> 1. Configured the CANDIDATE to use the internal IP address 192.168.100.140.
+> 1. Used Docker to start RTC service, Signaling service, and HTTPS service.
+> 1. Successfully accessed http://192.168.100.140/demos/ and was able to open it without any issues.
 
-  However, when I click on "Start Conversation" or "Join Room," my computer's camera briefly lights up but there is no response. I have already used a self-signed 
-    OpenSSL key and crt certificate, but encountered a TLS certificate handshake error.
-  ```
-  > 1. First, it is important to clarify that you strictly followed the documentation.[SFU: One to One](https://ossrs.io/lts/zh-cn/docs/v5/doc/webrtc#sfu-one-to-one)
-  > 1. In order to identify the cause, you can investigate potential factors such as certificate problems, HTTPS connection issues, and browser permission settings etc.
+> However, when I click on "Start Conversation" or "Join Room," my computer's camera briefly lights up but there is no response. 
+> I have already used a self-signed OpenSSL key and crt certificate, but encountered a TLS certificate handshake error.
+
+**Answer**
+> 1. First, it is important to clarify that you strictly followed the documentation.[SFU: One to One](/docs/v5/doc/webrtc#sfu-one-to-one)
+> 1. In order to identify the cause, you can investigate potential factors such as certificate problems, HTTPS connection issues, and browser permission settings etc.
 
 ## Deleting
 
