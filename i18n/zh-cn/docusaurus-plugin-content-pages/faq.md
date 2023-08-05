@@ -224,6 +224,22 @@
 * `WebSocket/WS`：如何支持WS-FLV或WS-TS？
   > 1. 可以用一个Go代理转一次，几行关键代码稳定又可靠，参考[mse.go](https://github.com/winlinvip/videojs-flow/blob/master/demo/mse.go)
 
+## Q&A
+
+### WebRTC Demo Failed
+
+**Question** 加入RTC房间或通话失败
+> 根据5.0文档中的[SFU: One to One](/docs/v5/doc/webrtc#sfu-one-to-one)说明，我已经完成了以下配置：
+> 1. 将CANDIDATE设置为内网地址192.168.100.140
+> 1. 使用Docker启动了RTC服务、信令服务和HTTPS服务
+> 1. 成功访问了http://192.168.100.140/demos/并能够正常打开
+
+> 然而，我在点击开始通话或加入房间后，摄像头会亮一下但没有任何反应。已经使用了自签发的OpenSSL key和crt证书，遇到了一个TLS证书握手错误的提示。
+
+**Answer**
+  > 1. 首先明确严格按照文档[SFU: One to One](/docs/v5/doc/webrtc#sfu-one-to-one)进行操作
+  > 2. 排查证书问题、https连接问题、浏览器权限问题等
+
 ## Deleting
 
 如果不符合要求的Issue，一般会打标为Deleting，会在一两周后删除，并回复：
