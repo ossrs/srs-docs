@@ -7,6 +7,7 @@ Quick Content
 * [Video Guides](#video-guides): Video tutorials.
 * [Getting Started](#getting-started): How to use, start, and get started with SRS Cloud Server.
 * [How to Upgrade](#how-to-upgrade): How to upgrade to the latest or stable version, and why the interface click upgrade is not supported.
+* [How to set a domain](#how-to-set-domain): How to set up a domain to access the admin panel, why can't the admin panel be opened, and why can't the admin panel be accessed via IP.
 * [Supported Platforms](#support-platform): Supported platforms, supported images, want to use the server or command line installation directly, or aaPanel installation.
 * [How to push multiple streams](#multiple-streams): Want to push multiple streams, want to change the default stream name and stream address.
 * [Low bandwidth, increase bandwidth](#bandwidth): Insufficient bandwidth, want to increase bandwidth, use Cloud SRS in CVM.
@@ -75,6 +76,35 @@ The Docker startup specifies the version, such as `ossrs/srs-cloud:v1.0.293`, an
 If you use `ossrs/srs-cloud:1`, it is the latest version, and you need to update manually, such as `docker pull ossrs/srs-cloud:1`.
 
 If you use BT panel, just delete the application and reinstall the new version, the data is saved in the `/data` directory and will not be lost.
+
+<a name="how-to-set-domain"></a><br/><br/><br/>
+
+## How to set a domain
+
+How to set up a domain to access the admin panel, why can't the admin panel be opened, and why can't the admin panel be accessed via IP.
+
+Please replace the following domain names and IPs with your own domain names and IPs, which can be either private or public IPs, as long as your browser can access them.
+
+When installing Cloud SRS with Baota, you need to enter the domain name of the management backend, such as `bt.yourdomain.com`, and it will automatically create the management backend website.
+
+If you install it in other ways, it's the same. You just need to resolve your domain name to the Cloud SRS IP.
+
+There are several ways to set up domain name resolution:
+
+1. DNS domain name resolution: In the backend of your domain name provider, set an A record pointing to the Cloud SRS IP.
+```text
+A bt.yourdomain.com 121.13.75.20
+```
+2. Modify the local `/etc/hosts` file in Linux/Unix to resolve the domain name to the Cloud SRS IP.
+```text
+121.13.75.20 bt.yourdomain.com
+```
+3. Modify the local `C:\Windows\System32\drivers\etc` file in Windows to resolve the domain name to the Cloud SRS IP.
+```text
+121.13.75.20 bt.yourdomain.com
+```
+
+Note: If you need to apply for a free HTTPS certificate through Let's Encrypt, the IP address must be a public IP, and you cannot use the method of modifying the hosts file.
 
 <a name="support-platform"></a><br/><br/><br/>
 

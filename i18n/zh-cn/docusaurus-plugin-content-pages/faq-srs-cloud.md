@@ -7,6 +7,7 @@
 * [Video Guides](#video-guides)：视频教程。
 * [如何起步](#getting-started)：买了SRS云服务器怎么用，怎么开头，怎么入门，怎么起步，怎么开始折腾。
 * [如何升级](#how-to-upgrade)：如何升级到最新版本或稳定版本，为何不支持界面点击升级。
+* [如何设置域名](#how-to-set-domain)：如何设置域名访问管理后台，为何打不开管理后台，为何IP访问不了管理后台。
 * [支持哪些平台](#support-platform)：支持哪些平台，支持镜像，想直接用服务器或命令行安装，或宝塔安装
 * [如何推多路流](#multiple-streams)：一路流不够，想推多路流，想改默认的流名称和流地址。
 * [带宽太低，提升带宽](#bandwidth)：带宽不够，想提升带宽，在CVM中用云SRS。
@@ -75,6 +76,35 @@ Docker启动时会指定版本，比如`ossrs/srs-cloud:v1.0.293`，只需要删
 如果使用`ossrs/srs-cloud:1`则是用最新的版本，则需要手动更新，比如`docker pull ossrs/srs-cloud:1`。
 
 如果使用宝塔，则删除应用后重装新版本即可，数据是保存在`/data`目录，不会丢失。
+
+<a name="how-to-set-domain"></a><br/><br/><br/>
+
+## 如何设置域名
+
+如何设置域名访问管理后台，为何打不开管理后台，为何IP访问不了管理后台。
+
+请将下面的域名和IP都换成你自己的域名和IP，可以是内网IP或公网IP，只要你的浏览器能访问到的IP即可。
+
+使用宝塔安装云SRS时，需要输入管理后台的域名，例如`bt.yourdomain.com`，会自动创建管理后台的网站。
+
+若使用其他方式安装也一样可以，只需要将你的域名解析到云SRS的IP即可。
+
+有几种方式设置域名解析：
+
+1. DNS域名解析，在你的域名供应商的后台，设置一个A记录，指向云SRS的IP。
+```text
+A bt.yourdomain.com 121.13.75.20
+```
+2. Linux/Unix修改本地`/etc/hosts`文件，将域名解析到云SRS的IP。
+```text
+121.13.75.20 bt.yourdomain.com
+```
+3. Windows修改本地的`C:\Windows\System32\drivers\etc`文件，将域名解析到云SRS的IP。
+```text
+121.13.75.20 bt.yourdomain.com
+```
+
+注意：如果是需要通过Let's Encrypt申请免费的HTTPS证书，IP地址必须是公网IP，而且不能通过修改hosts的方式。
 
 <a name="support-platform"></a><br/><br/><br/>
 
