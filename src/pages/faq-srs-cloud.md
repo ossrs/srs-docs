@@ -85,7 +85,7 @@ How to set up a domain to access the admin panel, why can't the admin panel be o
 
 Please replace the following domain names and IPs with your own domain names and IPs, which can be either private or public IPs, as long as your browser can access them.
 
-When installing Cloud SRS with Baota, you need to enter the domain name of the management backend, such as `bt.yourdomain.com`, and it will automatically create the management backend website.
+When installing Cloud SRS with aaPanel, you need to enter the domain name of the management backend, such as `bt.yourdomain.com`, and it will automatically create the management backend website.
 
 If you install it in other ways, it's the same. You just need to resolve your domain name to the Cloud SRS IP.
 
