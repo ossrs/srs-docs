@@ -135,9 +135,9 @@ docker run --rm -it --network=host --name sb ossrs/srs:sb \
 
 可是看到SRS的压力并不大，CPU消耗都在NGINX上。
 
-​NGINX边缘集群成功解决了HLS的分发问题，如果同时需要做​低延迟直播，分发HTTP-FLV，怎么做呢？如果要支持HTTPS HLS，或者HTTPS-FLV呢？
+NGINX边缘集群成功解决了HLS的分发问题，如果同时需要做低延迟直播，分发HTTP-FLV，怎么做呢？如果要支持HTTPS HLS，或者HTTPS-FLV呢？
 
-NGINX完全没问题，下面就看如何配合SRS Edge Server，实现HTTP-FLV和HLS通过​NGINX分发。
+NGINX完全没问题，下面就看如何配合SRS Edge Server，实现HTTP-FLV和HLS通过NGINX分发。
 
 ## Work with SRS Edge Server
 
@@ -166,7 +166,7 @@ location ~ /.+/.*\.(flv)$ {
 
 这样HLS由NGINX管理缓存和回源，而FLV则由SRS Edge缓存和回源。
 
-这个架构虽好，实际上NGINX可以直接作为HLS源站，这样可以更高性能，是否可以呢​？完全没问题，我们看如何完全用NGINX分发HLS。​
+这个架构虽好，实际上NGINX可以直接作为HLS源站，这样可以更高性能，是否可以呢？完全没问题，我们看如何完全用NGINX分发HLS。
 
 ## NGINX Origin Server
 
@@ -260,6 +260,7 @@ add_header X-Cache-Status $upstream_cache_status;
 ```
 
 > 注意：一般宝塔新增站点侦听的是80端口，域名server_name是自己填的域名，其他配置同宝塔配置。或者在宝塔的这个站点配置中，加入上面的cache和location的配置也可以。
+
 ![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.net&path=/lts/doc/zh/v6/nginx-for-hls)
 
 
