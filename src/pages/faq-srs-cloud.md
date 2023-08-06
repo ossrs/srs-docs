@@ -526,12 +526,13 @@ Welcome to join the group to discuss the use of Cloud SRS. All these SRS periphe
 
 The following are the update records for the SRS cloud server.
 
-* 2023.07.14, v1.0.299, minor improvements
+* 2023.08.06, v1.0.300, minor improvements
     * Simplify startup script, fix bug, adjust directory to `/data` top-level directory. v1.0.296
     * Improve message prompts, script comments, and log output. v1.0.297
     * Avoid modifying the global directory every time it starts, initialize it in the container and platform script. v1.0.298
     * Improve release script, check version matching, manually update version. v1.0.299
     * Remove upgrade function, maintain consistency of docker and other platforms. v1.0.300
+    * Improved BT and aaPanel scripts, added test pipeline. v1.0.300
 * 2023.04.05, v1.0.295, structural improvements
     * Remove HTTPS certificate application, administrator authorization, NGINX reverse proxy, and other functions. v1.0.283
     * Implement Release using Go, reducing memory requirements and image size. v1.0.284
