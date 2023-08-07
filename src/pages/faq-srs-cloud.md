@@ -526,6 +526,9 @@ Welcome to join the group to discuss the use of Cloud SRS. All these SRS periphe
 
 The following are the update records for the SRS cloud server.
 
+* 2023.08.07, v1.0.301, minor improvements
+    * Always use the latest SRS 5.0 release.
+    * Use status to check SRS, not by the exit value.
 * 2023.08.06, v1.0.300, minor improvements
     * Simplify startup script, fix bug, adjust directory to `/data` top-level directory. v1.0.296
     * Improve message prompts, script comments, and log output. v1.0.297

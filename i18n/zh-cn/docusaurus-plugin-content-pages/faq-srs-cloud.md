@@ -541,173 +541,176 @@ SRS云服务器面向鼠标编程，让每个人都能做音视频业务。不�
 
 以下为SRS云服务器的更新记录。
 
+* 2023.08.07, v1.0.301, minor improvements
+    * Always use the latest SRS 5.0 release.
+    * Use status to check SRS, not by the exit value.
 * 2023.08.06, v1.0.300, 微改进
-  * 简化启动脚本，解决bug，目录调整为`/data`一级目录。v1.0.296
-  * 改进消息提示，脚本注释，日志输出。v1.0.297
-  * 避免每次启动修改全局目录，在容器和平台脚本中初始化。v1.0.298
-  * 改进发布脚本，检查版本匹配，手动更新版本。v1.0.299
-  * 删除升级功能，保持docker等平台的一致性。v1.0.300
-  * 改进BT和aaPanel脚本，增加测试流水线。v1.0.300
+    * 简化启动脚本，解决bug，目录调整为`/data`一级目录。v1.0.296
+    * 改进消息提示，脚本注释，日志输出。v1.0.297
+    * 避免每次启动修改全局目录，在容器和平台脚本中初始化。v1.0.298
+    * 改进发布脚本，检查版本匹配，手动更新版本。v1.0.299
+    * 删除升级功能，保持docker等平台的一致性。v1.0.300
+    * 改进BT和aaPanel脚本，增加测试流水线。v1.0.300
 * 2023.04.05, v1.0.295, 结构改进
-  * 去掉HTTPS证书申请、管理员授权、NGINX反向代理等功能。v1.0.283
-  * 将Release使用Go实现，减少内存需求和镜像大小。v1.0.284
-  * 去掉dashboard和Prometheus，方便支持单个Docker镜像。v1.0.283
-  * 将mgmt和platform使用Go实现，减少内存需求和镜像大小。v1.0.283
-  * 使用Ubuntu focal(20)作为基础镜像，减少镜像大小。v1.0.283
-  * 支持快速升级，安装在40秒左右，升级在10秒左右完成。v1.0.283
-  * 解决没有流时转发的问题。v1.0.284
-  * 解决上传超大文件卡死问题。v1.0.286
-  * 去掉AI换脸的视频，B站审核没过。v1.0.289 (stable)
-  * 去掉Redis容器，直接在platform中启动redis。v1.0.290
-  * 去掉SRS容器，直接在platform中启动SRS。v1.0.291
-  * 支持单容器启动，包括mgmt一个容器中。v1.0.292
-  * 支持挂载到`/data`目录持久化。v1.0.295
+    * 去掉HTTPS证书申请、管理员授权、NGINX反向代理等功能。v1.0.283
+    * 将Release使用Go实现，减少内存需求和镜像大小。v1.0.284
+    * 去掉dashboard和Prometheus，方便支持单个Docker镜像。v1.0.283
+    * 将mgmt和platform使用Go实现，减少内存需求和镜像大小。v1.0.283
+    * 使用Ubuntu focal(20)作为基础镜像，减少镜像大小。v1.0.283
+    * 支持快速升级，安装在40秒左右，升级在10秒左右完成。v1.0.283
+    * 解决没有流时转发的问题。v1.0.284
+    * 解决上传超大文件卡死问题。v1.0.286
+    * 去掉AI换脸的视频，B站审核没过。v1.0.289 (stable)
+    * 去掉Redis容器，直接在platform中启动redis。v1.0.290
+    * 去掉SRS容器，直接在platform中启动SRS。v1.0.291
+    * 支持单容器启动，包括mgmt一个容器中。v1.0.292
+    * 支持挂载到`/data`目录持久化。v1.0.295
 * 2023.02.01, v1.0.281,  体验改进, Stable version.
-  * 允许用户关闭自动更新，使用手动更新。
-  * 适配宝塔新版本，解决nodejs检测问题。
-  * 宝塔检测插件状态，没安装完之前不能操作。
-  * 改进转发的状态显示，添加`等待中`状态。 v1.0.260
-  * 改进镜像更新，不强依赖certbot。#47
-  * 合并hooks/tencent/ffmpeg镜像到platform。v1.0.269
-  * 转推支持自定义平台。v1.0.270
-  * 支持虚拟直播，文件转直播。v1.0.272
-  * 上传文件限制100GB。v1.0.274
-  * 修复虚拟直播的bug。v1.0.276
-  * Release服务，用Go替换Nodejs，减少镜像大小。v1.0.280
-  * 不用buildx打单架构docker镜像，CentOS会失败。v1.0.281
+    * 允许用户关闭自动更新，使用手动更新。
+    * 适配宝塔新版本，解决nodejs检测问题。
+    * 宝塔检测插件状态，没安装完之前不能操作。
+    * 改进转发的状态显示，添加`等待中`状态。 v1.0.260
+    * 改进镜像更新，不强依赖certbot。#47
+    * 合并hooks/tencent/ffmpeg镜像到platform。v1.0.269
+    * 转推支持自定义平台。v1.0.270
+    * 支持虚拟直播，文件转直播。v1.0.272
+    * 上传文件限制100GB。v1.0.274
+    * 修复虚拟直播的bug。v1.0.276
+    * Release服务，用Go替换Nodejs，减少镜像大小。v1.0.280
+    * 不用buildx打单架构docker镜像，CentOS会失败。v1.0.281
 * 2022.11.20, v1.0.256, 大版本更新，体验改进，Release 4.6
-  * 代理根站点的资源，比如favicon.ico
-  * 支持[SrsPlayer](https://wordpress.org/plugins/srs-player)的WebRTC推流简码。
-  * 支持[本地录制](https://github.com/ossrs/srs-cloud/issues/42)，录制到云SRS本地磁盘。
-  * 支持删除本地录制的文件和任务。
-  * 支持本地录制为MP4文件和下载。
-  * 支持本地录制目录为软链接，存储录制内容到其他磁盘。
-  * 改进录制导航栏，合并为录制。
-  * 解决主页和代理根目录的冲突问题。
-  * 解决升级时未更新NGINX配置的问题。
-  * 解决设置record软链接的Bug。
-  * 镜像全部更换为标准镜像`ossrs/srs`。
-  * 支持设置网站标题和页脚（备案要求）。
-  * 提示管理员密码路径，忘记密码时可以找回密码。
-  * 出错时允许恢复页面，不必刷新页面。
+    * 代理根站点的资源，比如favicon.ico
+    * 支持[SrsPlayer](https://wordpress.org/plugins/srs-player)的WebRTC推流简码。
+    * 支持[本地录制](https://github.com/ossrs/srs-cloud/issues/42)，录制到云SRS本地磁盘。
+    * 支持删除本地录制的文件和任务。
+    * 支持本地录制为MP4文件和下载。
+    * 支持本地录制目录为软链接，存储录制内容到其他磁盘。
+    * 改进录制导航栏，合并为录制。
+    * 解决主页和代理根目录的冲突问题。
+    * 解决升级时未更新NGINX配置的问题。
+    * 解决设置record软链接的Bug。
+    * 镜像全部更换为标准镜像`ossrs/srs`。
+    * 支持设置网站标题和页脚（备案要求）。
+    * 提示管理员密码路径，忘记密码时可以找回密码。
+    * 出错时允许恢复页面，不必刷新页面。
 * 2022.06.06, v1.0.240, 大版本更新, 宝塔, Release 4.5
-  * 减少磁盘占用大小，清理docker镜像
-  * 改进依赖，不再强依赖Redis和Nginx
-  * 支持在[流名称中传secret](https://github.com/ossrs/srs-cloud/issues/4#no-publish-auth)，避免特殊字符
-  * 支持[宝塔](https://mp.weixin.qq.com/s/nutc5eJ73aUa4Hc23DbCwQ)或[aaPanel](https://blog.ossrs.io/how-to-setup-a-video-streaming-service-by-aapanel-9748ae754c8c)插件，支持CentOS或Ubuntu命令行安装
-  * 迁移ossrs.net到轻量服务器，不再依赖K8s。
-  * 登录密码默认改为显示密码。
-  * 停止推流一定时间，清理HLS缓存文件。
-  * 创建2GB的交换区，若内存小于2GB。
-  * 支持收集SRS的coredump。
-  * 直播场景显示SRT推流地址和命令。
-  * 支持设置NGINX的根代理路径。
+    * 减少磁盘占用大小，清理docker镜像
+    * 改进依赖，不再强依赖Redis和Nginx
+    * 支持在[流名称中传secret](https://github.com/ossrs/srs-cloud/issues/4#no-publish-auth)，避免特殊字符
+    * 支持[宝塔](https://mp.weixin.qq.com/s/nutc5eJ73aUa4Hc23DbCwQ)或[aaPanel](https://blog.ossrs.io/how-to-setup-a-video-streaming-service-by-aapanel-9748ae754c8c)插件，支持CentOS或Ubuntu命令行安装
+    * 迁移ossrs.net到轻量服务器，不再依赖K8s。
+    * 登录密码默认改为显示密码。
+    * 停止推流一定时间，清理HLS缓存文件。
+    * 创建2GB的交换区，若内存小于2GB。
+    * 支持收集SRS的coredump。
+    * 直播场景显示SRT推流地址和命令。
+    * 支持设置NGINX的根代理路径。
 * 2022.04.18, v1.0.222, 小版本更新, 容器化Redis
-  * 改进说明，支持禁用推流鉴权。
-  * 持英文的引导，[medium](https://blog.ossrs.io)的文章。
-  * 改进简易播放器，支持静音自动播放。
-  * NGINX分发HLS时，添加CORS支持。
-  * 新增英文引导，[创建SRS](https://blog.ossrs.io/how-to-setup-a-video-streaming-service-by-1-click-e9fe6f314ac6)和[设置HTTPS](https://blog.ossrs.io/how-to-secure-srs-with-lets-encrypt-by-1-click-cb618777639f)，[WordPress](https://blog.ossrs.io/publish-your-srs-livestream-through-wordpress-ec18dfae7d6f)。
-  * 增强密钥长度，加强安全性，避免暴力破解。
-  * 支持WordPress的Shortcode引导。
-  * 支持设置首页的跳转路径，支持和其他网站混跑。
-  * 支持设置反向代理，支持将其他服务挂在NGINX下。
-  * 支持HTTPS申请多个域名，解决`www`前缀域名问题。
-  * 更改`备案`为`网站`，可设置首页跳转和页脚备案号。
-  * 改进NGINX配置文件结构，配置集中在`containers`目录。
-  * 支持简单负载均衡的设置，随机选个后端NGINX做HLS分发。
-  * 容器工作在独立的`srs-cloud`网络中。
-  * 新增`系统 > 工具`选项。
-  * 使用Redis容器，不依赖主机的Redis服务。
+    * 改进说明，支持禁用推流鉴权。
+    * 持英文的引导，[medium](https://blog.ossrs.io)的文章。
+    * 改进简易播放器，支持静音自动播放。
+    * NGINX分发HLS时，添加CORS支持。
+    * 新增英文引导，[创建SRS](https://blog.ossrs.io/how-to-setup-a-video-streaming-service-by-1-click-e9fe6f314ac6)和[设置HTTPS](https://blog.ossrs.io/how-to-secure-srs-with-lets-encrypt-by-1-click-cb618777639f)，[WordPress](https://blog.ossrs.io/publish-your-srs-livestream-through-wordpress-ec18dfae7d6f)。
+    * 增强密钥长度，加强安全性，避免暴力破解。
+    * 支持WordPress的Shortcode引导。
+    * 支持设置首页的跳转路径，支持和其他网站混跑。
+    * 支持设置反向代理，支持将其他服务挂在NGINX下。
+    * 支持HTTPS申请多个域名，解决`www`前缀域名问题。
+    * 更改`备案`为`网站`，可设置首页跳转和页脚备案号。
+    * 改进NGINX配置文件结构，配置集中在`containers`目录。
+    * 支持简单负载均衡的设置，随机选个后端NGINX做HLS分发。
+    * 容器工作在独立的`srs-cloud`网络中。
+    * 新增`系统 > 工具`选项。
+    * 使用Redis容器，不依赖主机的Redis服务。
 * 2022.04.06, v1.0.200, 大版本更新, 多语言, Release 4.4
-  * 支持中英文双语。
-  * 支持DigitalOcean镜像，参考[SRS Droplet](https://marketplace.digitalocean.com/apps/srs)。
-  * 支持OpenAPI获取推流密钥，参考[#19](https://github.com/ossrs/srs-cloud/pull/19)。
-  * 改进更新容器镜像的脚本。
-  * 支持使用NGINX分发HLS，参考[#2989](https://github.com/ossrs/srs/issues/2989#nginx-direclty-serve-hls)。
-  * 改进VoD存储和服务检测。
-  * 改进安装脚本。
+    * 支持中英文双语。
+    * 支持DigitalOcean镜像，参考[SRS Droplet](https://marketplace.digitalocean.com/apps/srs)。
+    * 支持OpenAPI获取推流密钥，参考[#19](https://github.com/ossrs/srs-cloud/pull/19)。
+    * 改进更新容器镜像的脚本。
+    * 支持使用NGINX分发HLS，参考[#2989](https://github.com/ossrs/srs/issues/2989#nginx-direclty-serve-hls)。
+    * 改进VoD存储和服务检测。
+    * 改进安装脚本。
 * 2022.03.18, v1.0.191, 小版本更新, 体验改进
-  * 场景默认显示教程。
-  * 支持SRT地址分离，播放不带secret。
-  * 分离Platform模块，简化mgmt逻辑。
-  * 改进UTest升级测试脚本。
-  * 支持更换流名称，随机生成流名称。
-  * 支持拷贝流名称、配置、地址等。
-  * 分离升级和UI，简化mgmt逻辑。
-  * 分离容器管理和升级。
-  * 快速高效升级，30秒之内升级完成。
-  * 支持CVM镜像，参考[SRS CVM](https://mp.weixin.qq.com/s/x-PjoKjJj6HRF-eCKX0KzQ)。
+    * 场景默认显示教程。
+    * 支持SRT地址分离，播放不带secret。
+    * 分离Platform模块，简化mgmt逻辑。
+    * 改进UTest升级测试脚本。
+    * 支持更换流名称，随机生成流名称。
+    * 支持拷贝流名称、配置、地址等。
+    * 分离升级和UI，简化mgmt逻辑。
+    * 分离容器管理和升级。
+    * 快速高效升级，30秒之内升级完成。
+    * 支持CVM镜像，参考[SRS CVM](https://mp.weixin.qq.com/s/x-PjoKjJj6HRF-eCKX0KzQ)。
 * 2022.03.16, v1.0.162, 大版本更新，错误处理，Release 4.3
-  * 支持React Error Boundary，友好的错误显示。
-  * 支持RTMP推流的二维码，芯象的引导。
-  * 支持简单播放器，播放HTTP-FLV和HLS。
-  * 改进回调，使用React.useCallback创建。
-  * 改进页面缓存时间，提高加载速度。
-  * 增加REACT UI组件和Nodejs项目的测试。
-  * 增加安装依赖包的脚本。
-  * 改进简易播放器，默认不静音，需要用户点击才能播放。
-  * 新增西瓜播放器[xgplayer](https://github.com/bytedance/xgplayer)，播放FLV和HLS
+    * 支持React Error Boundary，友好的错误显示。
+    * 支持RTMP推流的二维码，芯象的引导。
+    * 支持简单播放器，播放HTTP-FLV和HLS。
+    * 改进回调，使用React.useCallback创建。
+    * 改进页面缓存时间，提高加载速度。
+    * 增加REACT UI组件和Nodejs项目的测试。
+    * 增加安装依赖包的脚本。
+    * 改进简易播放器，默认不静音，需要用户点击才能播放。
+    * 新增西瓜播放器[xgplayer](https://github.com/bytedance/xgplayer)，播放FLV和HLS
 * 2022.03.09, v1.0.144, 小版本更新，多平台转推
-  * 支持多平台转推，视频号、B站、快手。
-  * 修改转推配置时，重启转推任务。
-  * 支持设置升级窗口，默认23点到5点升级。
-  * 支持jest单元测试，覆盖mgmt。
-  * 支持切换SRS，稳定版和开发版。
-  * 优化禁用容器的状态显示。
+    * 支持多平台转推，视频号、B站、快手。
+    * 修改转推配置时，重启转推任务。
+    * 支持设置升级窗口，默认23点到5点升级。
+    * 支持jest单元测试，覆盖mgmt。
+    * 支持切换SRS，稳定版和开发版。
+    * 优化禁用容器的状态显示。
 * 2022.03.04, v1.0.132, 小版本更新，云点播
-  *  支持云点播，HLS和MP4下载。
-  *  云点播支持直播中回看，更新SessionKey。
-  *  升级时禁止设置密码，避免环境变量冲突。
-  *  初始化系统时，重启所有依赖.env的容器。
-  *  更新云录制和云点播的区别。
-  *  SRT支持vMix引导教程。
+    *  支持云点播，HLS和MP4下载。
+    *  云点播支持直播中回看，更新SessionKey。
+    *  升级时禁止设置密码，避免环境变量冲突。
+    *  初始化系统时，重启所有依赖.env的容器。
+    *  更新云录制和云点播的区别。
+    *  SRT支持vMix引导教程。
 * 2022.02.25, v1.0.120, 小版本更新，云录制
-  *  改进升级脚本，重启必要的容器。
-  *  修改Redis侦听端口，增强安全性。
-  *  解决云录制，异步超长时间(8h+)的冲突问题。
-  *  改进密钥创建链接，使用云API密钥。
-  *  改进场景和设置TAB，按需加载，URL地址标识。
+    *  改进升级脚本，重启必要的容器。
+    *  修改Redis侦听端口，增强安全性。
+    *  解决云录制，异步超长时间(8h+)的冲突问题。
+    *  改进密钥创建链接，使用云API密钥。
+    *  改进场景和设置TAB，按需加载，URL地址标识。
 * 2022.02.23, v1.0.113, 小版本更新，云录制
-  * 支持重新设置推流密钥。[#2](https://github.com/ossrs/srs-terraform/pull/2)
-  * SRT推流断开，当转RTMP失败时。
-  * 禁用容器时，不再启动容器。
-  * SRT支持扫码二维码推流和播放。[#6](https://github.com/ossrs/srs-terraform/pull/6)
-  * 支持[云录制](https://mp.weixin.qq.com/s/UXR5EBKZ-LnthwKN_rlIjg)，录制到腾讯云COS。
+    * 支持重新设置推流密钥。[#2](https://github.com/ossrs/srs-terraform/pull/2)
+    * SRT推流断开，当转RTMP失败时。
+    * 禁用容器时，不再启动容器。
+    * SRT支持扫码二维码推流和播放。[#6](https://github.com/ossrs/srs-terraform/pull/6)
+    * 支持[云录制](https://mp.weixin.qq.com/s/UXR5EBKZ-LnthwKN_rlIjg)，录制到腾讯云COS。
 * 2022.02.14, v1.0.98, 大版本更新，升级，Release 4.2
-  * 改进react静态资源缓存，提升后续加载速度。
-  * 新增Contact专享群二维码，扫码加群。
-  * 支持设置Redis的值，关闭自动更新。
-  * 自动检测海外区域，使用海外源更新和升级。
-  * 改进升级提示，倒计时和状态检测。
-  * 在页面显示大家制作的视频教程，按播放数排序。
-  * 支持授权平台管理员访问Lighthouse实例。
-  * 小内存系统，自动创建swap，避免升级时OOM。
+    * 改进react静态资源缓存，提升后续加载速度。
+    * 新增Contact专享群二维码，扫码加群。
+    * 支持设置Redis的值，关闭自动更新。
+    * 自动检测海外区域，使用海外源更新和升级。
+    * 改进升级提示，倒计时和状态检测。
+    * 在页面显示大家制作的视频教程，按播放数排序。
+    * 支持授权平台管理员访问Lighthouse实例。
+    * 小内存系统，自动创建swap，避免升级时OOM。
 * 2022.02.05, v1.0.74, 小版本更新，仪表盘
-  * 支持Prometheus监控，WebUI挂载在`/prometheus`，暂无鉴权。
-  * 支持Prometheus NodeExporter，节点监控，Lighthouse的CPU、网络、磁盘等。
-  * 新增仪表盘，增加了CPU的图，可跳转到[Prometheus](https://github.com/ossrs/srs/issues/2899#prometheus)。
-  * 改进certbot，使用docker启动，非安装包。
-  * 改进升级流程，防止重复升级。
-  * 支持1GB内存的机器升级，禁用node的GENERATE_SOURCEMAP防止OOM。
+    * 支持Prometheus监控，WebUI挂载在`/prometheus`，暂无鉴权。
+    * 支持Prometheus NodeExporter，节点监控，Lighthouse的CPU、网络、磁盘等。
+    * 新增仪表盘，增加了CPU的图，可跳转到[Prometheus](https://github.com/ossrs/srs/issues/2899#prometheus)。
+    * 改进certbot，使用docker启动，非安装包。
+    * 改进升级流程，防止重复升级。
+    * 支持1GB内存的机器升级，禁用node的GENERATE_SOURCEMAP防止OOM。
 * 2022.02.01, v1.0.64, 小版本更新，HTTPS
-  * 支持Windows版本的ffplay播放SRT地址
-  * 支持容器启动hooks，流鉴权和认证
-  * 更改Redis侦听在lo和eth0，否则容器无法访问
-  * 支持设置HTTPS证书，Nginx格式，参考 [这里](https://github.com/ossrs/srs/issues/2864#ssl-file)
-  * 支持Let's Encrypt自动申请HTTPS证书，参考 [这里](https://github.com/ossrs/srs/issues/2864#lets-encrypt)
+    * 支持Windows版本的ffplay播放SRT地址
+    * 支持容器启动hooks，流鉴权和认证
+    * 更改Redis侦听在lo和eth0，否则容器无法访问
+    * 支持设置HTTPS证书，Nginx格式，参考 [这里](https://github.com/ossrs/srs/issues/2864#ssl-file)
+    * 支持Let's Encrypt自动申请HTTPS证书，参考 [这里](https://github.com/ossrs/srs/issues/2864#lets-encrypt)
 * 2022.01.31, v1.0.58, 小版本更新，SRT
-  * 支持超清实时直播场景，SRT推拉流，200~500ms延迟，参考 [这里](https://github.com/ossrs/srs/issues/1147#lagging)
-  * 芯象/OBS+SRS+ffplay推拉SRT流地址，支持鉴权。
-  * 支持手动升级到最新版本，支持强制升级。
-  * 改进升级脚本，更新脚本后执行
-  * 支持重启SRS服务器容器
+    * 支持超清实时直播场景，SRT推拉流，200~500ms延迟，参考 [这里](https://github.com/ossrs/srs/issues/1147#lagging)
+    * 芯象/OBS+SRS+ffplay推拉SRT流地址，支持鉴权。
+    * 支持手动升级到最新版本，支持强制升级。
+    * 改进升级脚本，更新脚本后执行
+    * 支持重启SRS服务器容器
 * 2022.01.27, v1.0.42, 大版本更新, 流鉴权，Release 4.1
-  * 支持推流鉴权和管理后台
-  * 支持更新后台，手动更新
-  * 直播间场景，推流和播放引导
-  * SRS源码下载，带GIT
-  * 支持Lighthouse镜像，参考[SRS Lighthouse](https://mp.weixin.qq.com/s/fWmdkw-2AoFD_pEmE_EIkA)。
+    * 支持推流鉴权和管理后台
+    * 支持更新后台，手动更新
+    * 直播间场景，推流和播放引导
+    * SRS源码下载，带GIT
+    * 支持Lighthouse镜像，参考[SRS Lighthouse](https://mp.weixin.qq.com/s/fWmdkw-2AoFD_pEmE_EIkA)。
 * 2022.01.21, Initialized.
 
 ![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.net&path=/lts/pages/faq-srs-cloud-zh)
