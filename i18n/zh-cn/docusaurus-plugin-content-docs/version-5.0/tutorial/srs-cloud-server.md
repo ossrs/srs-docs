@@ -1,11 +1,11 @@
 ---
-title: SRS Cloud
+title: SRS Stack
 sidebar_label: 云SRS
 hide_title: false
 hide_table_of_contents: false
 ---
 
-# SRS Cloud
+# SRS Stack
 
 SRS云服务器，面向鼠标编程，没有服务器和命令行经验，也可以构建自己的在线视频服务。入门的最佳推荐。
 

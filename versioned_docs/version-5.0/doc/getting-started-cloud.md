@@ -7,29 +7,29 @@ hide_table_of_contents: false
 
 # Cloud SRS
 
-SRS Cloud is a video cloud solution that is lightweight, open-source, and based on Go, 
+SRS Stack is a video cloud solution that is lightweight, open-source, and based on Go, 
 Reactjs, SRS, FFmpeg, WebRTC, etc.
 
-Comparing SRS Cloud and SRS, both offer media streaming capabilities at a similar level. 
-However, SRS Cloud provides a more powerful and feature-rich experience for end users, 
-eliminating the need to write any code. Users can directly utilize SRS Cloud for your 
+Comparing SRS Stack and SRS, both offer media streaming capabilities at a similar level. 
+However, SRS Stack provides a more powerful and feature-rich experience for end users, 
+eliminating the need to write any code. Users can directly utilize SRS Stack for your 
 media services needs.
 
-| Comparison       | SRS Cloud | SRS           | Notes                                                              |
+| Comparison       | SRS Stack | SRS           | Notes                                                              |
 |------------------|-----------|---------------|--------------------------------------------------------------------|
 | License          | MIT       | MIT           | Both are open-source with an MIT license.                          |
 | Live Streaming   | Yes       | Yes           | Both support RTMP, HLS, and HTTP-FLV protocols.                    |
 | WebRTC           | Yes       | Yes           | WebRTC is supported by both.                                       |
-| Console          | Enhanced  | HTTP API      | SRS Cloud offers a more powerful console.                          |
-| Authentication   | Yes       | HTTP Callback | SRS Cloud has built-in authentication, while SRS uses callbacks.   |
-| DVR              | Enhanced  | File-based    | SRS Cloud supports DVR to file and cloud storage.                  |
-| Forwarding       | Enhanced  | Basic         | SRS Cloud can forward to multiple platforms via various protocols. |
-| Virtual Live     | Yes       | No            | SRS Cloud provides advanced virtual live streaming capabilities.   |
-| WordPress        | Yes       | No            | SRS Cloud offers a WordPress plugin and step-by-step guidelines.   |
+| Console          | Enhanced  | HTTP API      | SRS Stack offers a more powerful console.                          |
+| Authentication   | Yes       | HTTP Callback | SRS Stack has built-in authentication, while SRS uses callbacks.   |
+| DVR              | Enhanced  | File-based    | SRS Stack supports DVR to file and cloud storage.                  |
+| Forwarding       | Enhanced  | Basic         | SRS Stack can forward to multiple platforms via various protocols. |
+| Virtual Live     | Yes       | No            | SRS Stack provides advanced virtual live streaming capabilities.   |
+| WordPress        | Yes       | No            | SRS Stack offers a WordPress plugin and step-by-step guidelines.   |
 
 ## DigitalOcean Droplet
 
-Please read [DigitalOcean Droplet](https://github.com/ossrs/srs-cloud/wiki/Droplet): Create SRS Droplet.
+Please read [DigitalOcean Droplet](https://github.com/ossrs/srs-stack/wiki/Droplet): Create SRS Droplet.
 
 ## TencentCloud CVM
 

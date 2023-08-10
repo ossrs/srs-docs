@@ -1,5 +1,5 @@
 ---
-title: SRS Cloud
+title: SRS Stack
 sidebar_label: 云SRS
 hide_title: false
 hide_table_of_contents: false

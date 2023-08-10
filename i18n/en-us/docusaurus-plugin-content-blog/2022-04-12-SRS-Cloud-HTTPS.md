@@ -57,7 +57,7 @@ PING ossrs.io (your_public_ipv4): 56 data bytes
 64 bytes from your_public_ipv4: icmp_seq=2 ttl=64 time=12.433 ms
 ```
 
-If you visit `http://your_domain_name/mgmt`, you should see the SRS Cloud console now.
+If you visit `http://your_domain_name/mgmt`, you should see the SRS Stack console now.
 
 ![](/img/blog-2022-04-12-01.png)
 
@@ -86,7 +86,7 @@ Let's finish this tutorial by covering the certificate renewal process.
 
 ## Step 3 - About Certificate Auto-Renewal
 
-Let's Encrypt's certificates are only valid for about 3 months. SRS Cloud will start a timer to verify if it is due to
+Let's Encrypt's certificates are only valid for about 3 months. SRS Stack will start a timer to verify if it is due to
 renew your certificates on a daily basis, and reload Nginx to apply the changes if neccessary.
 
 You can check the renew log by:

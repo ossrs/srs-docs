@@ -67,7 +67,7 @@ SRS云服务器：https://www.bilibili.com/video/BV1844y1L7dL/
 
 ## FAQ
 
-如果你有一些疑问，基本上你的疑问其他人也问过，请先在[FAQ](https://github.com/ossrs/srs-cloud/issues/4)中找一找。
+如果你有一些疑问，基本上你的疑问其他人也问过，请先在[FAQ](https://github.com/ossrs/srs-stack/issues/4)中找一找。
 
 > Note: 这些FAQ会不断更新，请访问Github地址，查看最新的FAQ列表。
 

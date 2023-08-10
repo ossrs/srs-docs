@@ -14,7 +14,7 @@
 下面是常见的问题，如果没有找到你的问题，请先在本[Issue](https://github.com/ossrs/srs/issues)中搜索，如果你确认是个Bug并且没有提交过，
 请按照要求提交Issue。
 
-> Note: 这是关于SRS的FAQ，如果是云SRS的FAQ请参考[SRS Cloud FAQ](/faq-srs-cloud)
+> Note: 这是关于SRS的FAQ，如果是云SRS的FAQ请参考[SRS Stack FAQ](/faq-srs-cloud)
 
 <a name='cdn'></a> <a name='vod'></a>
 
@@ -122,7 +122,7 @@
 * `Dynamic DVR`: 关于动态录制，正则表达式匹配需要录制的流等。
   > 1. 可以用`on_publish`，回调业务系统，由业务系统实现负责的规则。
   > 1. 具体录制文件用`on_hls`，将切片拷贝到录制目录，或者云存储。
-  > 1. 可以参考[srs-cloud](https://github.com/ossrs/srs-cloud/blob/main/platform/srs-hooks.go)中DVR的实现。
+  > 1. 可以参考[srs-cloud](https://github.com/ossrs/srs-stack/blob/main/platform/srs-hooks.go)中DVR的实现。
   > 1. SRS不会支持动态DVR，但给出了一些方案，也可以参考 [#1577](https://github.com/ossrs/srs/issues/1577)
 
 <a name='api-security'></a> <a name='https'></a> <a name='https-h2-3'></a>
@@ -271,7 +271,7 @@
 ```
 
 ```
-云SRS的问题，请提交到[srs-cloud](https://github.com/ossrs/srs-cloud)，该Issue会被删除，请先阅读FAQ：#2716
+云SRS的问题，请提交到[srs-cloud](https://github.com/ossrs/srs-stack)，该Issue会被删除，请先阅读FAQ：#2716
 ```
 
 ![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.net&path=/lts/pages/faq-zh)

@@ -7,7 +7,7 @@ hide_table_of_contents: false
 
 # Cloud SRS
 
-SRS Cloud is a lightweight open-source video cloud based on Nodejs, SRS, FFmpeg, WebRTC, etc.
+SRS Stack is a lightweight open-source video cloud based on Nodejs, SRS, FFmpeg, WebRTC, etc.
 
 ## aaPanel
 
@@ -15,7 +15,7 @@ Pelase read [aaPanel](/blog/BT-aaPanel).
 
 ## DigitalOcean Droplet
 
-Please read [DigitalOcean Droplet](https://github.com/ossrs/srs-cloud/wiki/Droplet): Create SRS Droplet.
+Please read [DigitalOcean Droplet](https://github.com/ossrs/srs-stack/wiki/Droplet): Create SRS Droplet.
 
 ## TencentCloud CVM
 

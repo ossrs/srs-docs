@@ -10,11 +10,11 @@ custom_edit_url: null
 
 ## Introduction
 
-Let's Encrypt可以提供免费证书，SRS Cloud可以一键申请。
+Let's Encrypt可以提供免费证书，SRS Stack可以一键申请。
 
-HTTPS在WebRTC中是必要的，若需要在HTTPS的网站中播放直播流，SRS Cloud也必须是HTTPS的流。
+HTTPS在WebRTC中是必要的，若需要在HTTPS的网站中播放直播流，SRS Stack也必须是HTTPS的流。
 
-这个文章介绍了如何开启SRS Cloud的HTTPS功能，并自动续期。
+这个文章介绍了如何开启SRS Stack的HTTPS功能，并自动续期。
 
 <!--truncate-->
 
@@ -73,7 +73,7 @@ PING ossrs.io (your_public_ipv4): 56 data bytes
 
 ## Step 3 - About Certificate Auto-Renewal
 
-Let's Encrypt证书是3个月过期，SRS Cloud会自动续期，不需要人工干预。
+Let's Encrypt证书是3个月过期，SRS Stack会自动续期，不需要人工干预。
 
 你可以查看续期的日志：
 

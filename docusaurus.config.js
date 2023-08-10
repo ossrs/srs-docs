@@ -130,11 +130,11 @@ const config = {
               },
               {
                 to: '/faq',
-                label: 'FAQ: SRS',
+                label: 'FAQ: SRS OSS',
               },
               {
                 to: '/faq-srs-cloud',
-                label: 'FAQ: SRS Cloud',
+                label: 'FAQ: SRS Stack',
               },
               {
                 to: '/contact',

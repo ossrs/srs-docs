@@ -19,7 +19,7 @@ Streaming video is very popular in a variety of industries, and there are many t
 Literally it's not just a media server, and seems a bit complicated, right? Yep and No!
 
 * Yep! Building a video streaming service is something really difficult, not easy. It requires video streaming engineering, also backend service technology like Nodejs or Go, and frontend skills to build a mgmt and homepage.
-* No! Rather than build all from scratch, we could build a video streaming service based on some open source solution such as [SRS Cloud](https://github.com/ossrs/srs-cloud), and lightweight cloud service such as [DigitalOcean](https://digitalocean.com) or [TencentCloud](https://intl.cloud.tencent.com), it's really simple to build your video streaming service.
+* No! Rather than build all from scratch, we could build a video streaming service based on some open source solution such as [SRS Stack](https://github.com/ossrs/srs-stack), and lightweight cloud service such as [DigitalOcean](https://digitalocean.com) or [TencentCloud](https://intl.cloud.tencent.com), it's really simple to build your video streaming service.
 
 In this tutorial, you will learn how to set-up a video streaming service, supports publishing by browser without a plugin that is converting WebRTC to HLS, to deliver low latency (about 300ms) video streaming  using SRT, and to secure the service by authentication. Furthermore, this solution is open source and very easy to get it done, via even 1-Click.
 
@@ -45,11 +45,11 @@ After the droplet is created, open `http://your_public_ipv4/mgmt/` in the browse
 We have bellow services running in the SRS droplet:
 
 * [SRS Server](https://github.com/ossrs/srs): SRS is a simple, high efficiency and realtime video server, supports RTMP, WebRTC, HLS, HTTP-FLV and SRT. We have both SRS 4.0 and 5.0 images installed. SRS is the media server engine, licensed under MIT or MulanPSL-2.0([compatible with Apache-2.0](https://www.apache.org/legal/resolved.html#category-a)).
-* [SRS Cloud](https://github.com/ossrs/srs-cloud): A lightweight open-source video cloud based on Nodejs, SRS, FFmpeg, WebRTC, etc. SRS-Cloud acts as the framework of a video streaming service, it's also open source, licensed under MIT.
+* [SRS Stack](https://github.com/ossrs/srs-stack): A lightweight open-source video cloud based on Nodejs, SRS, FFmpeg, WebRTC, etc. SRS-Cloud acts as the framework of a video streaming service, it's also open source, licensed under MIT.
 * [FFmpeg](https://ffmpeg.org/): A complete, cross-platform solution to record, convert and stream audio and video. FFmpeg is used as restreaming or transcoding, and many other stream processing features.
 * Other infrastructure like [Docker](https://docker.io/), [Redis](https://redis.io/), [NGINX](https://nginx.org/), [Prometheus](https://prometheus.io/) and [Certbot](https://certbot.eff.org/), to run dependent services as docker container, allow checking and upgrading to stable versions.
 
-> SRS also set-up the firewall, please see [here](https://github.com/ossrs/srs-cloud/blob/main/scripts/setup-droplet/scripts/02-ufw-srs.sh) for details. All ports are `BLOCKED` except 22 (SSH), 80 (HTTP), 443 (HTTPS), 1935 (RTMP), 8000/UDP (WebRTC), 10080/UDP (SRT), 9000/TCP+UDP (GB28181), 5060/TCP+UDP (SIP), 2022 (MGMT) and 56379 (REDIS).
+> SRS also set-up the firewall, please see [here](https://github.com/ossrs/srs-stack/blob/main/scripts/setup-droplet/scripts/02-ufw-srs.sh) for details. All ports are `BLOCKED` except 22 (SSH), 80 (HTTP), 443 (HTTPS), 1935 (RTMP), 8000/UDP (WebRTC), 10080/UDP (SRT), 9000/TCP+UDP (GB28181), 5060/TCP+UDP (SIP), 2022 (MGMT) and 56379 (REDIS).
 
 Now the video streaming service is ready, we could use FFmpeg, OBS or WebRTC to publish the stream, and play the HLS stream.
 
@@ -99,7 +99,7 @@ For RTMP/FLV, the streaming latency is about 3~5s, while 5~10s for HLS. Which pr
 
 WebRTC? No! It's too complicated, and few devices support WebRTC. [WHIP](https://datatracker.ietf.org/doc/draft-ietf-wish-whip/) is a possible choice for live streaming using WebRTC, but it's not a RFC right now(at 2022). It might take a long time to apply WebRTC to the live streaming industry, especially if we get other choices, [SRT](https://www.srtalliance.org/) and [RIST](https://www.rist.tv/) etc.
 
-> Note: Whatever, SRS Cloud allows you to use WebRTC for live streaming, to publish by WebRTC and play by RTMP/HLS/WebRTC.
+> Note: Whatever, SRS Stack allows you to use WebRTC for live streaming, to publish by WebRTC and play by RTMP/HLS/WebRTC.
 
 It's also very easy to use SRT, by clicking `Scenarios > Low Latency > OBS+ffplay`, the guide is use OBS to publish SRT stream, and play by ffplay. The latency of `OBS+ffplay` is about 300ms, the bellow is a lower solution, by `vMix+ffplay`:
 
@@ -109,17 +109,17 @@ It's also very easy to use SRT, by clicking `Scenarios > Low Latency > OBS+ffpla
 
 SRT is supported by a lot of devices of the broadcasting industry, and softwares like OBS/vMix also support SRT, so it's actually the most stable and easy way to get low latency live streaming.
 
-Note that H5 does not support SRT, so you can't use Chrome to play a SRT stream, however, SRS Cloud will convert SRT to HTTP-FLV/HLS to ensure compability with general live streaming.
+Note that H5 does not support SRT, so you can't use Chrome to play a SRT stream, however, SRS Stack will convert SRT to HTTP-FLV/HLS to ensure compability with general live streaming.
 
 ## Other Topics
 
-SRS Cloud also supports restreaming to other platforms, by forking multiple FFmpeg processes, each process for a stream. It's a long story, so let's discuss it in a new tutorial.
+SRS Stack also supports restreaming to other platforms, by forking multiple FFmpeg processes, each process for a stream. It's a long story, so let's discuss it in a new tutorial.
 
 Well DVR is another story, DVR means we convert live streaming to VoD files, so we must save the VoD files to a cloud storage, such as AWS S3 or TencentCloud COS. So we're developing to support more cloud storage now.
 
-We're also considering to integrate a CMS to SRS cloud, to allow users to publish the live streaming rooms, or VoD files like a vlog, etc.
+We're also considering to integrate a CMS to SRS Stack, to allow users to publish the live streaming rooms, or VoD files like a vlog, etc.
 
-SRS Cloud is a single node video streaming service, but SRS is a media server that supports clusters, like [Origin Cluster](/docs/v4/doc/origin-cluster), [RTMP Edge Cluster](/docs/v4/doc/sample-rtmp-cluster) and even [HLS Edge Cluster](/docs/v4/doc/sample-hls-cluster). The HLS Edge Cluster is based on NGINX, and SRS could work well with NGINX, we will publish more tutorials about this topic if you wanna.
+SRS Stack is a single node video streaming service, but SRS is a media server that supports clusters, like [Origin Cluster](/docs/v4/doc/origin-cluster), [RTMP Edge Cluster](/docs/v4/doc/sample-rtmp-cluster) and even [HLS Edge Cluster](/docs/v4/doc/sample-hls-cluster). The HLS Edge Cluster is based on NGINX, and SRS could work well with NGINX, we will publish more tutorials about this topic if you wanna.
 
 ## Conclusion
 

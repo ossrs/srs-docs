@@ -24,7 +24,7 @@ service, for example, to enable live streaming feature for your WordPress websit
 To complete this guide, you should have:
 
 1. A linux server, with aaPanel installed. Please use a CentOS 7+ or Ubuntu 20+ and install aaPanel on it by using [command here](https://www.aapanel.com/install.html).
-2. **NGINX** based framework, if you also need to install websites. [SRS Cloud](https://github.com/ossrs/srs-cloud) requires **NGINX** to proxy to our backend services.
+2. **NGINX** based framework, if you also need to install websites. [SRS Stack](https://github.com/ossrs/srs-stack) requires **NGINX** to proxy to our backend services.
 3. A DNS domain name, if you want to use HTTPS.
 
 ## Step 1: Install aaPanel
@@ -54,15 +54,15 @@ Visit the url in a browser, as demonstrated below:
 You might develop your website with WordPress, however it's optional. In the next step, let's set-up a media server with
 aaPanel for live streaming.
 
-## Step 2: Install SRS Cloud
+## Step 2: Install SRS Stack
 
-There are two ways to install SRS Cloud. If you find the `SRS Cloud` plugin in App Store, you could install it from
+There are two ways to install SRS Stack. If you find the `SRS Stack` plugin in App Store, you could install it from
 there, as shown in the following picture:
 
 ![](/img/blog-2022-04-29-en-002.png)
 
 If not found in App Store, you could also download the latest version of the plugin in the srs-cloud repository on
-Github: [aapanel-srs_cloud.zip](https://github.com/ossrs/srs-cloud/releases/latest/download/aapanel-srs_cloud.zip). Then
+Github: [aapanel-srs_cloud.zip](https://github.com/ossrs/srs-stack/releases/latest/download/aapanel-srs_cloud.zip). Then
 you could upload the zip file and install the plugin, as demonstrated below:
 
 ![](/img/blog-2022-04-29-en-003.png)
@@ -71,28 +71,28 @@ Both approaches will lead you to a installation guide, like this:
 
 ![](/img/blog-2022-04-29-en-004.png)
 
-Please click on `Confirm to install` to continue the plugin installation. In the next step, we will set-up SRS Cloud and
+Please click on `Confirm to install` to continue the plugin installation. In the next step, we will set-up SRS Stack and
 install some dependencies.
 
-## Step 3: Setup SRS Cloud
+## Step 3: Setup SRS Stack
 
-To set-up `SRS Cloud`, please click the `Setting` button under `Operation` field:
+To set-up `SRS Stack`, please click the `Setting` button under `Operation` field:
 
 ![](/img/blog-2022-04-29-en-005.png)
 
-Then click on `Install SRS Cloud` to install the required softwares:
+Then click on `Install SRS Stack` to install the required softwares:
 
 ![](/img/blog-2022-04-29-en-006.png)
 
-SRS Cloud requires NGINX, Nodejs and Docker, please install all of them:
+SRS Stack requires NGINX, Nodejs and Docker, please install all of them:
 
 ![](/img/blog-2022-04-29-en-007.png)
 
-After installing all dependencies, continue to install SRS Cloud:
+After installing all dependencies, continue to install SRS Stack:
 
 ![](/img/blog-2022-04-29-en-008.png)
 
-When completion all the set-up, click on `Dashboard` and then visit the `SRS Cloud Dashboard` via the link on the page:
+When completion all the set-up, click on `Dashboard` and then visit the `SRS Stack Dashboard` via the link on the page:
 
 ![](/img/blog-2022-04-29-en-009.png)
 
@@ -100,7 +100,7 @@ Then set-up the admin password:
 
 ![](/img/blog-2022-04-29-en-010.png)
 
-You could follow the tutorials to use SRS Cloud:
+You could follow the tutorials to use SRS Stack:
 
 ![](/img/blog-2022-04-29-en-011.png)
 
