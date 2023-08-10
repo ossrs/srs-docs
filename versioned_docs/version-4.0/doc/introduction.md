@@ -53,7 +53,7 @@ Please see [link](../category/openapi).
 
 ## Video Guides
 
-Please see [link](../tutorial/srs-open-source).
+Please see [link](../tutorial/srs-server).
 
 ![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/doc/en/v4/introduction)
 

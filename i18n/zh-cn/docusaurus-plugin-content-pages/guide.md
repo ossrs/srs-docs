@@ -12,7 +12,7 @@
 
 > Note: 这个看似很容易，甚至直接在[SRS官网](/docs/v4/tools/demo)中就能点开两个页面，但是一定要自己用SRS搭建出来才算，而不是直接打开线上的演示网页。
 
-具体怎么做呢？请参考[Wiki: Getting Started](/docs/v5/doc/getting-started)。推荐用SRS云服务器快速跑通，你也可以用宝塔快速部署，请看视频教程：[SRS云服务器：起步、购买和入门](https://www.bilibili.com/video/BV1844y1L7dL/)
+具体怎么做呢？请参考[Wiki: Getting Started](/docs/v5/doc/getting-started)。推荐用SRS Stack快速跑通，你也可以用宝塔快速部署，请看视频教程：[SRS Stack：起步、购买和入门](https://www.bilibili.com/video/BV1844y1L7dL/)
 
 接触一个新的东西，首先就要有直观的体验和感觉，这个门槛虽然看起来很简单，但是它涉及到了音视频的几乎全链路的东西：
 
@@ -45,7 +45,7 @@
 
 第三个门槛：了解每个纵向的技术点，应用场景，代码和问题排查，大约`3～6月`左右。
 
-* [视频专栏](/docs/v4/tutorial/srs-open-source)，包括环境搭建，代码分析，还有专业老师的讲解。
+* [视频专栏](/docs/v4/tutorial/srs-server)，包括环境搭建，代码分析，还有专业老师的讲解。
 * [部署方案](/docs/v4/category/main-protocols)，如何部署实现不同的具体功能，这些功能可以组合起来使用。
 * [集群和扩展](/docs/v4/category/clusters)，当业务量上升，如何扩展单机到集群，如何服务不同区域的用户。
 * [集成和定制](/docs/v4/category/openapi)，如何和现有系统对接，如何验证用户，安全和防盗链机制等。

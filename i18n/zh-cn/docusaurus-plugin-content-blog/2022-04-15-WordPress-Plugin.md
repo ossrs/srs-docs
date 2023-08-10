@@ -10,7 +10,7 @@ custom_edit_url: null
 
 ## Introduction
 
-如果你已经有了一台 [SRS云服务器](https://www.bilibili.com/video/BV1844y1L7dL/) ，推流后可以用播放器播放直播流，
+如果你已经有了一台 [SRS Stack](https://www.bilibili.com/video/BV1844y1L7dL/) ，推流后可以用播放器播放直播流，
 可以用H5或[VLC](https://www.videolan.org/) 播放。
 
 但是如果你想在WordPress网站的文章中，播放HLS、HTTP-FLV或WebRTC直播流，要怎么搞？
@@ -24,7 +24,7 @@ custom_edit_url: null
 操作的前提条件是：
 
 1. 安装下OBS，请在 [这里](https://obsproject.com/) 下载和安装OBS。
-1. 安装和设置完 [SRS云服务器](https://www.bilibili.com/video/BV1844y1L7dL/) 。
+1. 安装和设置完 [SRS Stack](https://www.bilibili.com/video/BV1844y1L7dL/) 。
 1. 安装和设置好WordPress，可以用WordPress写文章了，这个麻烦网上搜一搜。很多介绍了。
 
 这个文章中，我们会用`your_public_ipv4`和`your_domain_name`，代表你的SRS服务器的IP和域名，请替换成你的地址。

@@ -104,7 +104,7 @@ const config = {
           },
           {
             type: 'doc',
-            docId: 'tutorial/srs-open-source',
+            docId: 'tutorial/srs-server',
             position: 'left',
             label: 'Tutorial',
           },
@@ -133,7 +133,7 @@ const config = {
                 label: 'FAQ: SRS OSS',
               },
               {
-                to: '/faq-srs-cloud',
+                to: '/faq-srs-stack',
                 label: 'FAQ: SRS Stack',
               },
               {
@@ -208,7 +208,7 @@ const config = {
             items: [
               {
                 label: 'Tutorial',
-                to: '/docs/v4/tutorial/srs-open-source',
+                to: '/docs/v4/tutorial/srs-server',
               },
               {
                 label: 'Docs',

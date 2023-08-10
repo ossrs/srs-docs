@@ -63,11 +63,11 @@ Origin服务器是一种基本且必不可少的服务器，作为 SRS 网关，
 
 你是一个拥有大量高质量视频的视频博主吗？你是否考虑过建立一个直播间来发展你的业务？
 
-通过 SRS 云，您可以轻松地将视频文件转换为直播流，无需亲自直播就可以吸引观众。
+通过 SRS Stack，您可以轻松地将视频文件转换为直播流，无需亲自直播就可以吸引观众。
 
-SRS 云让您只需三个步骤就可以创建 24/7 虚拟直播：上传视频、设置直播间（如 视频号和抖音直播间），然后复制粘贴流密钥开始直播。
+SRS Stack让您只需三个步骤就可以创建 24/7 虚拟直播：上传视频、设置直播间（如 视频号和抖音直播间），然后复制粘贴流密钥开始直播。
 
-这很简单，不需要任何媒体流专业知识，而且 SRS 云甚至可以免费将您的直播流重新发送到其他平台，因为它是开源的。
+这很简单，不需要任何媒体流专业知识，而且 SRS Stack甚至可以免费将您的直播流重新发送到其他平台，因为它是开源的。
 
 ## Video Blogger, empower video bloggers with live streaming.
 
@@ -77,7 +77,7 @@ SRS 云让您只需三个步骤就可以创建 24/7 虚拟直播：上传视频�
 
 但现在，有了 SRS 播放器 WordPress 插件，您可以使用 HTTP-FLV、HLS 和 WebRTC 进行直播，以及通过 HTTP-MP4 进行点播流。
 
-只需使用 WordPress 短代码将直播播放器嵌入，您可以在 SRS 云控制台中找到它。
+只需使用 WordPress 短代码将直播播放器嵌入，您可以在 SRS Stack控制台中找到它。
 
 这个强大的插件让每个人都可以使用直播，甚至在 WooCommerce（一款广泛使用的 WordPress 电子商务插件）中，展示了开源技术的影响力。
 
@@ -139,7 +139,7 @@ HEVC或AV1对于8K直播至关重要，并在VR/AR领域变得越来越流行。
 
 想要在视频号、抖音、B站和快手等多个平台上直播吗？
 
-SRS云简化了这个任务，而且不会占用你的带宽，因为它会为你处理重新推流。
+SRS Stack简化了这个任务，而且不会占用你的带宽，因为它会为你处理重新推流。
 
 ## SRS Prometheus Exporter, make SRS an operatable online product.
 
@@ -147,7 +147,7 @@ SRS云简化了这个任务，而且不会占用你的带宽，因为它会为�
 
 Prometheus是一个著名的开源监控系统，通过其导出器，SRS可以原生支持它，让你可以密切关注SRS服务器。
 
-使用Grafana可视化指标，并期待Prometheus和Grafana将来被整合到SRS云中。
+使用Grafana可视化指标，并期待Prometheus和Grafana将来被整合到SRS Stack中。
 
 ## Support, contributions and donations are welcome.
 

@@ -1,14 +1,14 @@
 ---
 slug: SRS-Cloud-Tutorial
-title: SRS云服务器：起步、购买和入门
+title: SRS Stack：起步、购买和入门
 authors: []
 tags: [turotial, srs, webrtc, streaming]
 custom_edit_url: null
 ---
 
-# SRS云服务器：起步、购买和入门
+# SRS Stack：起步、购买和入门
 
-SRS云服务器，是开箱即用的音视频方案，提供升级和监控运维能力，同时针对不同音视频的应用场景，开箱即用。
+SRS Stack，是开箱即用的音视频方案，提供升级和监控运维能力，同时针对不同音视频的应用场景，开箱即用。
 
 使用起来非常简单，不熟悉服务器和命令行也可以使用，也可以作为开发者的参考实现。
 
@@ -18,12 +18,12 @@ SRS云服务器，是开箱即用的音视频方案，提供升级和监控运�
 
 我们准备了视频教程，非常短只有几分钟时间，可以解决你的很多疑问，请观看下面B站的视频：
 
-SRS云服务器：https://www.bilibili.com/video/BV1844y1L7dL/
+SRS Stack：https://www.bilibili.com/video/BV1844y1L7dL/
 
 特别提醒几点：
 
 * 记得防火墙开特定端口哈，开防火墙也很容易。
-* 关于云服务器有问题，可以扫视频中的二维码加群。
+* 关于SRS Stack有问题，可以扫视频中的二维码加群。
 * 请注意SRS和音视频的相关问题，还是请提到开源社区。
 
 > Note: 这不是SRS的商业版本哈，也不是售后支持群，镜像中涉及的组件都是开源的，大伙儿可以自己随便修改。

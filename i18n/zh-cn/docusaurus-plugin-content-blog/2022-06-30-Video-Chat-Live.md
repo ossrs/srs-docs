@@ -30,7 +30,7 @@ custom_edit_url: null
 
 前提条件，需要具备的知识点，或依赖的工具：
 
-* 一台云主机，带公网IP。推荐[SRS Stack](./SRS-Cloud-Tutorial)，带有音视频服务器SRS的云服务器，腾讯云Lighthouse或CVM有SRS Stack镜像，其他云主机可以用宝塔安装。
+* 一台云主机，带公网IP。推荐[SRS Stack](./SRS-Cloud-Tutorial)，带有音视频服务器SRS Stack，腾讯云Lighthouse或CVM有SRS Stack镜像，其他云主机可以用宝塔安装。
 * 有一定的软件开发基础，虽然设计了比较简单的入门场景，还是有部分场景需要移动端开发能力，以及Linux服务器的操作能力。
 * [可选] 注册的域名，申请合法的HTTPS证书必须得域名，用于WebRTC推流；无域名只能使用自签名证书，操作麻烦些，也是可行的。
 

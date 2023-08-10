@@ -18,6 +18,6 @@ https://youtu.be/68PIGFDGihU
 How to push a MP4 file, or DVR content to a live room? That's virtual live streaming. 
 This video introduce how to do virtual live by SRS Stack.
 
-![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/tutorial/en/v5/srs-cloud-server)
+![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/tutorial/en/v6/srs-stack)
 
 

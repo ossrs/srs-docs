@@ -1,6 +1,6 @@
 ---
-title: SRS
-sidebar_label: SRS
+title: SRS Server
+sidebar_label: SRS Server
 hide_title: false
 hide_table_of_contents: false
 ---
@@ -25,5 +25,5 @@ Discord.
 Discover the power of OBS WHIP for low-latency live streaming, its benefits for content creators and broadcasters, 
 and how to set it up with SRS in just three simple steps.
 
-![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/tutorial/en/v5/srs-open-source)
+![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/tutorial/en/v6/srs-server)
 

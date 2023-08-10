@@ -67,7 +67,7 @@ wget -O install.sh https://download.bt.cn/install/install-ubuntu_6.0.sh && sudo 
 
 ![](/img/blog-2022-04-29-zh-005.png)
 
-> Note: SRS Stack后续操作，详细的使用教程，就请参考我们之前录的视频和文章，[SRS云服务器：起步、购买和入门](https://www.bilibili.com/video/BV1844y1L7dL/)。
+> Note: SRS Stack后续操作，详细的使用教程，就请参考我们之前录的视频和文章，[SRS Stack：起步、购买和入门](https://www.bilibili.com/video/BV1844y1L7dL/)。
 
 一般大家用宝塔都会用来管理网站，SRS Stack是可以和网站一起工作的，不会冲突，下面详细看看网站部分。
 
