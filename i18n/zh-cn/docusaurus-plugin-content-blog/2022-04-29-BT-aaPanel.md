@@ -1,41 +1,41 @@
 ---
 slug: BT-aaPanel
-title: 云SRS：宝塔！宝塔！宝塔！
+title: SRS Stack：宝塔！宝塔！宝塔！
 authors: []
 tags: [tutorial, bt, aapanel, streaming]
 custom_edit_url: null
 ---
 
-# 云SRS：宝塔！宝塔！宝塔！
+# SRS Stack：宝塔！宝塔！宝塔！
 
-云SRS上线几个月了，大家反馈很好用，不过怎么在内网机器上部署呢？怎么在其他云部署呢？怎么在已经部署了网站的主机上部署呢？
+SRS Stack上线几个月了，大家反馈很好用，不过怎么在内网机器上部署呢？怎么在其他云部署呢？怎么在已经部署了网站的主机上部署呢？
 
 宝塔在手，全部拥有！
 
 <!--truncate-->
 
-举个例子，我就有两个云主机，用宝塔部署了网站和云SRS，一鱼多吃，爽啊！之前海外两台机器，每个月10刀，现在只要5刀，每年可以省60美元，一百万年就可以省6000万美元啊，赚大发了：
+举个例子，我就有两个云主机，用宝塔部署了网站和SRS Stack，一鱼多吃，爽啊！之前海外两台机器，每个月10刀，现在只要5刀，每年可以省60美元，一百万年就可以省6000万美元啊，赚大发了：
 
-* 腾讯云Lighthouse，部署了[wp.ossrs.net](https://wp.ossrs.net)网站，写写一些杂七杂八的东西，还部署了[lh.ossrs.net](https://lh.ossrs.net)云SRS，每周六做直播用的。
-* DigitalOcean droplet，部署了[wp.ossrs.io](https://wp.ossrs.io)网站杂七杂八海外版，还部署了[ossrs.io](https://ossrs.io)海外SRS的漂漂亮亮的新官网，还有[r.ossrs.net](https://r.ossrs.net)云SRS做稳定版本演示用的。
+* 腾讯云Lighthouse，部署了[wp.ossrs.net](https://wp.ossrs.net)网站，写写一些杂七杂八的东西，还部署了[lh.ossrs.net](https://lh.ossrs.net)SRS Stack，每周六做直播用的。
+* DigitalOcean droplet，部署了[wp.ossrs.io](https://wp.ossrs.io)网站杂七杂八海外版，还部署了[ossrs.io](https://ossrs.io)海外SRS的漂漂亮亮的新官网，还有[r.ossrs.net](https://r.ossrs.net)SRS Stack做稳定版本演示用的。
 
 > Note: 大家可以ping下这些域名，发现都是同一个机器，都是用宝塔部署的。
 
-我们就来看看，各种场景下怎么用宝塔部署云SRS吧。先看怎么安装，后面是各种情况怎么使用，都需要安装云SRS这步。
+我们就来看看，各种场景下怎么用宝塔部署SRS Stack吧。先看怎么安装，后面是各种情况怎么使用，都需要安装SRS Stack这步。
 
 ## Prerequisites
 
 宝塔虽好，也不是万能的，先请你想好了再动手，先想下下面的问题：
 
 * 宝塔难度是高于云主机镜像的，镜像是完全点下就能用，宝塔是需要自己能维护主机，实际上宝塔简化了主机运维，并不代表你可以完全不了解如何运维主机。
-* 云SRS宝塔插件，更多是面向已经使用了宝塔的用户，如果是新用户，还是建议直接入手云主机的镜像，更简单一些，等搞定了简单的云主机姿势，再来搞复杂的宝塔更合适。
-* 云SRS所有功能都是一样的，不会因为宝塔平台所以功能更多一些，其他平台不支持的宝塔上也不会支持，所以如果觉得云SRS不满足要求，那可以直接放弃而不是换个宝塔。
+* SRS Stack宝塔插件，更多是面向已经使用了宝塔的用户，如果是新用户，还是建议直接入手云主机的镜像，更简单一些，等搞定了简单的云主机姿势，再来搞复杂的宝塔更合适。
+* SRS Stack所有功能都是一样的，不会因为宝塔平台所以功能更多一些，其他平台不支持的宝塔上也不会支持，所以如果觉得SRS Stack不满足要求，那可以直接放弃而不是换个宝塔。
 
 如果你觉得没问题，那就继续拥有你的宝塔吧。
 
 ## Installation
 
-宝塔安装可以用云主机的镜像，或者在[bt.cn](https://www.bt.cn/new/download.html)中找到安装脚本，现在云SRS支持的比较好的是Ubuntu 20+，可以执行下面的命令：
+宝塔安装可以用云主机的镜像，或者在[bt.cn](https://www.bt.cn/new/download.html)中找到安装脚本，现在SRS Stack支持的比较好的是Ubuntu 20+，可以执行下面的命令：
 
 ```bash
 wget -O install.sh https://download.bt.cn/install/install-ubuntu_6.0.sh && sudo bash install.sh ed8484bec
@@ -43,7 +43,7 @@ wget -O install.sh https://download.bt.cn/install/install-ubuntu_6.0.sh && sudo 
 
 > Note: 最新的命令请在宝塔官网上找哈，这个可能会过时。
 
-> Note: 宝塔支持了命令行安装，这样云SRS就不用支持命令行安装了，因为命令行安装要解决各种问题，既然宝塔解决得很好，我们还可以免费的使用，那为何要花时间造这个重复的轮子呢。
+> Note: 宝塔支持了命令行安装，这样SRS Stack就不用支持命令行安装了，因为命令行安装要解决各种问题，既然宝塔解决得很好，我们还可以免费的使用，那为何要花时间造这个重复的轮子呢。
 
 安装完宝塔后，是需要手机号登录的，实名制约束下自己放荡的内心，更有利于健康的网络环境，不要动坏心思的念头，双手支持实名制，哈哈哈。
 
@@ -55,39 +55,39 @@ wget -O install.sh https://download.bt.cn/install/install-ubuntu_6.0.sh && sudo 
 
 ![](/img/blog-2022-04-29-zh-002.png)
 
-这一步还只是安装插件，安装速度很快，安装完成后，点插件名称或`设置`，进入到云SRS插件中，要先安装云SRS和相关依赖，这一步才是真正的安装云SRS，耗时很久请耐心安装：
+这一步还只是安装插件，安装速度很快，安装完成后，点插件名称或`设置`，进入到SRS Stack插件中，要先安装SRS Stack和相关依赖，这一步才是真正的安装SRS Stack，耗时很久请耐心安装：
 
 ![](/img/blog-2022-04-29-zh-003.png)
 
-> Note: 为何要安装这么多依赖呢？因为云SRS不仅仅是一个流媒体服务器，它还有鉴权、转发多平台、更新、录制等多个功能。
+> Note: 为何要安装这么多依赖呢？因为SRS Stack不仅仅是一个流媒体服务器，它还有鉴权、转发多平台、更新、录制等多个功能。
 
 ![](/img/blog-2022-04-29-zh-004.png)
 
-安装完成后，就可以在`管理面板`中，看到云SRS的链接了，打开就看到熟悉的云SRS的后台界面，如下图所示：
+安装完成后，就可以在`管理面板`中，看到SRS Stack的链接了，打开就看到熟悉的SRS Stack的后台界面，如下图所示：
 
 ![](/img/blog-2022-04-29-zh-005.png)
 
-> Note: 云SRS后续操作，详细的使用教程，就请参考我们之前录的视频和文章，[SRS云服务器：起步、购买和入门](https://www.bilibili.com/video/BV1844y1L7dL/)。
+> Note: SRS Stack后续操作，详细的使用教程，就请参考我们之前录的视频和文章，[SRS云服务器：起步、购买和入门](https://www.bilibili.com/video/BV1844y1L7dL/)。
 
-一般大家用宝塔都会用来管理网站，云SRS是可以和网站一起工作的，不会冲突，下面详细看看网站部分。
+一般大家用宝塔都会用来管理网站，SRS Stack是可以和网站一起工作的，不会冲突，下面详细看看网站部分。
 
 ## WebSite
 
-如果你已经宝塔部署了网站，那么也是可以安装云SRS的，安装方法请看前面的说明。
+如果你已经宝塔部署了网站，那么也是可以安装SRS Stack的，安装方法请看前面的说明。
 
-有一点需要注意，云SRS会创建一个srs.cloud.local的站点，并且会将默认站点设置成云SRS，这样大家才能直接播放IP的FLV和HLS流。
+有一点需要注意，SRS Stack会创建一个srs.cloud.local的站点，并且会将默认站点设置成SRS Stack，这样大家才能直接播放IP的FLV和HLS流。
 
-如果云SRS可以是默认站点，那么后面你就不用管了，直接就可以使用云SRS了。当然也可以给站点添加一个子域名，通过子域名访问云SRS。
+如果SRS Stack可以是默认站点，那么后面你就不用管了，直接就可以使用SRS Stack了。当然也可以给站点添加一个子域名，通过子域名访问SRS Stack。
 
-如果你希望默认站点不是云SRS，而是其他网站，那可以先把默认站点设置为空，然后安装云SRS（会把默认站点设置为云SRS），然后再把默认站点设置为你想要的就可以。
+如果你希望默认站点不是SRS Stack，而是其他网站，那可以先把默认站点设置为空，然后安装SRS Stack（会把默认站点设置为SRS Stack），然后再把默认站点设置为你想要的就可以。
 
-这时候你就没法使用IP访问云SRS后台，也没法使用IP来播放直播流了，这时候你可以给云SRS站点，添加一个子域名，比如`srs.yourdomain.com`，需要替换成你的合法的能在浏览器中访问的子域名哈，如下图所示：
+这时候你就没法使用IP访问SRS Stack后台，也没法使用IP来播放直播流了，这时候你可以给SRS Stack站点，添加一个子域名，比如`srs.yourdomain.com`，需要替换成你的合法的能在浏览器中访问的子域名哈，如下图所示：
 
 ![](/img/blog-2022-04-29-zh-006.png)
 
-设置好域名后，就可以通过域名访问云SRS，比如：`http://srs.yourdomain.com/mgmt`
+设置好域名后，就可以通过域名访问SRS Stack，比如：`http://srs.yourdomain.com/mgmt`
 
-> Note: 换成域名后，对应的推拉流地址也会变成域名，这些都是自动的，在云SRS后台可以看到。
+> Note: 换成域名后，对应的推拉流地址也会变成域名，这些都是自动的，在SRS Stack后台可以看到。
 
 和网站域名相关的就是HTTPS设置，这部分是需要特别说明的，下面会详细讲讲需要注意的情况。
 
@@ -95,11 +95,11 @@ wget -O install.sh https://download.bt.cn/install/install-ubuntu_6.0.sh && sudo 
 
 宝塔上申请SSL免费证书非常方便，还能续期和显示过期时间。也支持各种其他的证书，功能更完善。
 
-云SRS也支持申请Lets Encrypt免费证书，需要操作Nginx的配置文件和`.well_known`目录，这个和宝塔冲突了，所以宝塔安装的云SRS，是禁用了这个功能，如下图所示：
+SRS Stack也支持申请Lets Encrypt免费证书，需要操作Nginx的配置文件和`.well_known`目录，这个和宝塔冲突了，所以宝塔安装的SRS Stack，是禁用了这个功能，如下图所示：
 
 ![](/img/blog-2022-04-29-zh-007.png)
 
-在宝塔上添加证书很简单，首先需要给云SRS站点绑定一个子域名，可以参考上面的说明：
+在宝塔上添加证书很简单，首先需要给SRS Stack站点绑定一个子域名，可以参考上面的说明：
 
 ![](/img/blog-2022-04-29-zh-008.png)
 
@@ -109,7 +109,7 @@ wget -O install.sh https://download.bt.cn/install/install-ubuntu_6.0.sh && sudo 
 
 申请后就可以看到SSL生效了，可以通过HTTPS访问你的站点了，比如：`https://srs.yourdomain.com/mgmt`
 
-> Note: 换成HTTPS后，对应的推拉流地址也会变成HTTPS，这些都是自动的，在云SRS后台可以看到。
+> Note: 换成HTTPS后，对应的推拉流地址也会变成HTTPS，这些都是自动的，在SRS Stack后台可以看到。
 
 如何展示我们的直播流呢，可以用CMS，宝塔也可以很方便的安装WordPress和Typecho等。
 

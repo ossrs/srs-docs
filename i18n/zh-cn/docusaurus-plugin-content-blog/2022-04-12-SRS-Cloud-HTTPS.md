@@ -22,7 +22,7 @@ HTTPS在WebRTC中是必要的，若需要在HTTPS的网站中播放直播流，S
 
 操作的前提条件是：
 
-1. 你得有一个SRS云服务器，参考[云SRS](https://www.bilibili.com/video/BV1844y1L7dL/)
+1. 你得有一个SRS云服务器，参考[SRS Stack](https://www.bilibili.com/video/BV1844y1L7dL/)
 1. 必须有个自己的域名，不能随便填别人的域名，可以上[DNS Pod](http://dnspod.com/)上买个域名，并备案。
 
 文章中，我们会用`your_public_ipv4`和`your_domain_name`，代表你的域名和SRS服务器的公网IP，请替换成你自己的。

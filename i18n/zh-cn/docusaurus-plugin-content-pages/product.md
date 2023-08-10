@@ -15,7 +15,7 @@
 
 简单介绍下SRS的历史吧，我们倒着说。
 
-2023年1月，Star超过20K，开通[付费星球](https://mp.weixin.qq.com/s/2PpGbXt8FK9qH8BfVIDZnw)，云SRS支持[虚拟直播](https://mp.weixin.qq.com/s/I0Kmxtc24txpngO-PiR_tQ)，
+2023年1月，Star超过20K，开通[付费星球](https://mp.weixin.qq.com/s/2PpGbXt8FK9qH8BfVIDZnw)，SRS Stack支持[虚拟直播](https://mp.weixin.qq.com/s/I0Kmxtc24txpngO-PiR_tQ)，
 确定6.0开发代号为[Hang](#release60)，推出新的[TOC规则](https://github.com/ossrs/srs/pull/3393)。
 
 2022年11月，组建了SRS的TOC和开发者社区，活跃开发者人数达到47人。SRS 5.0功能完成，新增功能包括[Forward增强](https://github.com/ossrs/srs/pull/2799)，

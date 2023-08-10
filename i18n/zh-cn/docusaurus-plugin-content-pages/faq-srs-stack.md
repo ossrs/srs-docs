@@ -10,24 +10,24 @@
 * [如何设置域名](#how-to-set-domain)：如何设置域名访问管理后台，为何打不开管理后台，为何IP访问不了管理后台。
 * [支持哪些平台](#support-platform)：支持哪些平台，支持镜像，想直接用服务器或命令行安装，或宝塔安装
 * [如何推多路流](#multiple-streams)：一路流不够，想推多路流，想改默认的流名称和流地址。
-* [带宽太低，提升带宽](#bandwidth)：带宽不够，想提升带宽，在CVM中用云SRS。
+* [带宽太低，提升带宽](#bandwidth)：带宽不够，想提升带宽，在CVM中用SRS Stack。
 * [如何设置免费HTTPS](#https)：如何申请免费HTTPS证书，如何申请多个域名的证书。
 * [如何修改推流鉴权的密钥](#update-publish-secret)：更新推流鉴权的密钥，更换推流密钥
 * [如何禁用推流鉴权](#no-publish-auth)：不想要推流鉴权，设备不支持特殊字符。
-* [如何录制到本地磁盘](#record): 如何录制到云SRS的本地磁盘。
+* [如何录制到本地磁盘](#record): 如何录制到SRS Stack的本地磁盘。
 * [云录制和云点播的区别](#cos-vs-vod): 录制是用云录制还是云点播，有何区别。
 * [如何录制到云存储](#dvr-cloud-storage): 录制到COS、OSS或S3等云存储。
 * [安装后无法访问](#unavailable): 安装后提示错误，或者Redis没准备好。
 * [SRS转推和OBS转推的区别](#restream-vs-obs): SRS的多平台转推，和OBS转推插件的区别。
 * [SRS如何转推自定义平台](#restream-custom): SRS的多平台转推，如何推到自定义的直播平台。
-* [如何更换FFmpeg](#use-custom-ffmpeg): 如何更换云SRS中的FFmpeg为自定义版本。
+* [如何更换FFmpeg](#use-custom-ffmpeg): 如何更换SRS Stack中的FFmpeg为自定义版本。
 * [宝塔安装SRS非常慢](#install-speedup): 海外用宝塔安装非常慢，访问阿里云镜像太慢。
-* [宝塔如何安装最新的云SRS](#bt-install-manually): 手动安装宝塔插件，安装最新的插件。
+* [宝塔如何安装最新的SRS Stack](#bt-install-manually): 手动安装宝塔插件，安装最新的插件。
 * [宝塔CentOS7安装失败](#bt-centos7-error): CentOS7宝塔安装失败，找不到目录，或GLIBC版本问题。
 * [怎么购买AI换脸服务](#how-to-buy-ai): AI换脸怎么实现？怎么买模型？找谁买？
 * [提的需求或功能如何实现](#rules)：想要实现更多的功能，想要定制，想要优化改进。
 * [无法实现预期效果](#can-not-replay)：遇到问题，达不到预期效果。
-* [云SRS和SRS的差别](#diff-srs)：云SRS对比SRS的差异，为什么要有云SRS。
+* [SRS Stack和SRS的差别](#diff-srs)：SRS Stack对比SRS的差异，为什么要有SRS Stack。
 * [和宝塔的差别](#diff-baota)：和虚拟机管理软件宝塔的差异。
 * [和视频云的差别](#diff-vcloud)：和一般视频云服务的差异。
 * [如何重装系统](#reinstall)：针对已经有了Lighthouse或CVM的朋友。
@@ -69,7 +69,7 @@
 
 如何升级到最新版本或稳定版本，为何不支持界面点击升级？
 
-由于云SRS支持多个平台，包括docker等，而docker是不能自己升级自己的，所以云SRS也不支持界面升级，需要手动升级。
+由于SRS Stack支持多个平台，包括docker等，而docker是不能自己升级自己的，所以SRS Stack也不支持界面升级，需要手动升级。
 
 Docker启动时会指定版本，比如`ossrs/srs-stack:v1.0.293`，只需要删除容器后指定新版本启动即可，比如`ossrs/srs-stack:v1.0.299`。
 
@@ -85,21 +85,21 @@ Docker启动时会指定版本，比如`ossrs/srs-stack:v1.0.293`，只需要删
 
 请将下面的域名和IP都换成你自己的域名和IP，可以是内网IP或公网IP，只要你的浏览器能访问到的IP即可。
 
-使用宝塔安装云SRS时，需要输入管理后台的域名，例如`bt.yourdomain.com`，会自动创建管理后台的网站。
+使用宝塔安装SRS Stack时，需要输入管理后台的域名，例如`bt.yourdomain.com`，会自动创建管理后台的网站。
 
-若使用其他方式安装也一样可以，只需要将你的域名解析到云SRS的IP即可。
+若使用其他方式安装也一样可以，只需要将你的域名解析到SRS Stack的IP即可。
 
 有几种方式设置域名解析：
 
-1. DNS域名解析，在你的域名供应商的后台，设置一个A记录，指向云SRS的IP。
+1. DNS域名解析，在你的域名供应商的后台，设置一个A记录，指向SRS Stack的IP。
 ```text
 A bt.yourdomain.com 121.13.75.20
 ```
-2. Linux/Unix修改本地`/etc/hosts`文件，将域名解析到云SRS的IP。
+2. Linux/Unix修改本地`/etc/hosts`文件，将域名解析到SRS Stack的IP。
 ```text
 121.13.75.20 bt.yourdomain.com
 ```
-3. Windows修改本地的`C:\Windows\System32\drivers\etc`文件，将域名解析到云SRS的IP。
+3. Windows修改本地的`C:\Windows\System32\drivers\etc`文件，将域名解析到SRS Stack的IP。
 ```text
 121.13.75.20 bt.yourdomain.com
 ```
@@ -110,9 +110,9 @@ A bt.yourdomain.com 121.13.75.20
 
 ## 支持哪些平台
 
-云SRS支持Docker镜像，安装脚本，腾讯云Lighthouse和CVM镜像，DigitalOcean镜像，其他平台可以用宝塔安装。
+SRS Stack支持Docker镜像，安装脚本，腾讯云Lighthouse和CVM镜像，DigitalOcean镜像，其他平台可以用宝塔安装。
 
-云SRS当然是各种云平台多支持，最方便的是镜像，也就是云服务器的镜像，如果想简单省事就请用镜像，其他的方式容易弄出问题来，请不要高估自己的折腾能力，大家真的属于那80%折腾不了的，强烈建议应该用镜像：
+SRS Stack当然是各种云平台多支持，最方便的是镜像，也就是云服务器的镜像，如果想简单省事就请用镜像，其他的方式容易弄出问题来，请不要高估自己的折腾能力，大家真的属于那80%折腾不了的，强烈建议应该用镜像：
 
 * Docker镜像安装：[这里](https://github.com/ossrs/srs-stack#usage)
 * Lighthouse：腾讯云的轻量云服务器镜像，使用参考[这里](https://mp.weixin.qq.com/s/fWmdkw-2AoFD_pEmE_EIkA)
@@ -124,7 +124,7 @@ A bt.yourdomain.com 121.13.75.20
 * 宝塔：其他云平台可以用宝塔安装，要求是CentOS 7+或Ubuntu 20+的系统，使用参考[这里](https://mp.weixin.qq.com/s/nutc5eJ73aUa4Hc23DbCwQ)
 * aaPanel：海外的宝塔，如果你的机器是海外的，一定不要用宝塔而要用aaPanel，使用参考[这里](https://blog.ossrs.io/how-to-setup-a-video-streaming-service-by-aapanel-9748ae754c8c)
 
-> Note: 如果你要命令行安装云SRS，可以先用命令行安装宝塔，然后再安装云SRS。
+> Note: 如果你要命令行安装SRS Stack，可以先用命令行安装宝塔，然后再安装SRS Stack。
 
 这些安装方式都在视频教程中有介绍，请参考[这里](https://www.bilibili.com/video/BV1844y1L7dL/)，几分钟的视频，有分章节的（要在B站App或者PC浏览器打开才有），可以直接跳到对应章节。
 
@@ -157,7 +157,7 @@ A bt.yourdomain.com 121.13.75.20
 
 轻量应用服务器的带宽4~20Mbps不等，对于音视频来说还是会有些限制，如果你想更高带宽，比如到100Mbps，那么可以选择CVM主机。
 
-> Note: 云SRS的使用都是一致的，购买和平台配置有所不同。
+> Note: SRS Stack的使用都是一致的，购买和平台配置有所不同。
 
 CVM云服务器的优势是：
 
@@ -170,13 +170,13 @@ CVM云服务器的劣势是：
 * 操作复杂，CVM的安全组比轻量的防火墙操作复杂多了，请大家自己试试，不行就换轻量吧。
 * 没有后台链接，界面比较复杂，如果不行就换轻量吧。
 
-如果知道了优势和劣势，还是要选择CVM，请参考[云SRS：支持CVM镜像](https://mp.weixin.qq.com/s/x-PjoKjJj6HRF-eCKX0KzQ)。
+如果知道了优势和劣势，还是要选择CVM，请参考[SRS Stack：支持CVM镜像](https://mp.weixin.qq.com/s/x-PjoKjJj6HRF-eCKX0KzQ)。
 
 <a name="https"></a><br/><br/><br/>
 
 ## 如何设置免费HTTPS
 
-云SRS支持申请免费HTTPS证书，而且可以申请多个域名的证书，还可以自动续期。比如，以下HTTPS网站的证书，都是跑了云SRS后一键自动申请的：
+SRS Stack支持申请免费HTTPS证书，而且可以申请多个域名的证书，还可以自动续期。比如，以下HTTPS网站的证书，都是跑了SRS Stack后一键自动申请的：
 
 * https://ossrs.io SRS的海外文档网站。
 * https://www.ossrs.io SRS的海外文档网站。
@@ -185,12 +185,12 @@ CVM云服务器的劣势是：
 操作非常简单，只需要三步，具体请看[这里](https://ossrs.net/lts/blog/2022/04/12/SRS-Cloud-HTTPS)：
 
 1. 购买域名并备案，一定要有自己的合法域名，否则无法申请证书的哈。
-2. 将域名解析到云SRS的公网IP，可以通过域名访问到你的云SRS就可以，可以加多个域名解析，比如 `ossrs.io` `www.ossrs.io` 都是解析到同一个云SRS服务器的。
-3. 在云SRS的 `系统设置 > HTTPS > 自动HTTPS证书` 填写你的域名，多个用分号分割，点申请就行了。
+2. 将域名解析到SRS Stack的公网IP，可以通过域名访问到你的SRS Stack就可以，可以加多个域名解析，比如 `ossrs.io` `www.ossrs.io` 都是解析到同一个SRS Stack服务器的。
+3. 在SRS Stack的 `系统设置 > HTTPS > 自动HTTPS证书` 填写你的域名，多个用分号分割，点申请就行了。
 
 > Note: 申请域名就行了，不要再上传，申请了就可以了，不需要再上传一次。
 
-> Note: 请使用宝塔申请，操作步骤和上面类似。云SRS将不再支持证书申请，原因是certbot不支持多平台的docker镜像，在其他平台上使用会有问题。
+> Note: 请使用宝塔申请，操作步骤和上面类似。SRS Stack将不再支持证书申请，原因是certbot不支持多平台的docker镜像，在其他平台上使用会有问题。
 
 申请成功后，在浏览器敲https加你的域名，就可以访问你的网站了。
 
@@ -232,7 +232,7 @@ CVM云服务器的劣势是：
 
 ## 如何录制到本地磁盘
 
-如何录制到云SRS的本地磁盘？升级到v1.0.252后，在录制中就可以看到有本地录制了。
+如何录制到SRS Stack的本地磁盘？升级到v1.0.252后，在录制中就可以看到有本地录制了。
 
 本地录制的限制和解决方案，请参考 #42
 
@@ -240,13 +240,13 @@ CVM云服务器的劣势是：
 
 ## 云录制和云点播的区别
 
-云SRS提供了云录制和云点播两个类似的功能，录制是用云录制还是云点播，有何区别？
+SRS Stack提供了云录制和云点播两个类似的功能，录制是用云录制还是云点播，有何区别？
 
-云录制可以认为是把直播写到了云盘，保存的是HLS格式，是原始的视频流。如果你是要将HLS下载下来转码和剪辑，那会比较合适。云录制是存储在腾讯云COS云存储的，可以认为是个无限磁盘，避免写爆云SRS的磁盘。
+云录制可以认为是把直播写到了云盘，保存的是HLS格式，是原始的视频流。如果你是要将HLS下载下来转码和剪辑，那会比较合适。云录制是存储在腾讯云COS云存储的，可以认为是个无限磁盘，避免写爆SRS Stack的磁盘。
 
 云点播提供了HLS和MP4两种格式，而且未来会上架更多的功能，比如转出来多码率，加上台标和水印，媒资管理等很多很好用的功能。云点播是一个点播系统，不仅仅是个存储的磁盘，可以认为是个B站或YouTube，如果你要做更丰富的业务那肯定要选云点播。
 
-从费用上看，云点播会比云录制多一些，要看具体用到哪些功能。目前云SRS使用的是HLS转MP4，这个费用非常低，因为没有转码。未来如果要上高级功能，费用会高一些。总体来看，云点播的费用是非常低的，和云录制差不多，如果没有额外的计算费用就和云录制一样的了。
+从费用上看，云点播会比云录制多一些，要看具体用到哪些功能。目前SRS Stack使用的是HLS转MP4，这个费用非常低，因为没有转码。未来如果要上高级功能，费用会高一些。总体来看，云点播的费用是非常低的，和云录制差不多，如果没有额外的计算费用就和云录制一样的了。
 
 简单来说，推荐用云点播，好用不贵。
 
@@ -254,9 +254,9 @@ CVM云服务器的劣势是：
 
 ## 如何录制到云存储
 
-云SRS支持录制到COS，腾讯云存储，请参考[Usage: Cloud Storage](https://mp.weixin.qq.com/s/axN_TPo-Gk_H7CbdqUud6g)。
+SRS Stack支持录制到COS，腾讯云存储，请参考[Usage: Cloud Storage](https://mp.weixin.qq.com/s/axN_TPo-Gk_H7CbdqUud6g)。
 
-云SRS也可以录制到其他云存储，比如阿里云OSS或AWS S3，可以按照云存储的指引，将云存储挂载到云SRS，然后使用本地录制，配置本地路径的存储路径，这样就可以将文件写入到云存储了。
+SRS Stack也可以录制到其他云存储，比如阿里云OSS或AWS S3，可以按照云存储的指引，将云存储挂载到SRS Stack，然后使用本地录制，配置本地路径的存储路径，这样就可以将文件写入到云存储了。
 
 > Note: 修改本地录制的路径，可以在`本地录制/录制文件夹`中，把录制的路径软链到云存储的路径就可以。
 
@@ -272,7 +272,7 @@ CVM云服务器的劣势是：
 
 ![](/img/page-2023-03-04-06.png)
 
-这是因为刚刚安装后，云SRS启动需要时间，等待3到5分钟后刷新页面，就可以了。
+这是因为刚刚安装后，SRS Stack启动需要时间，等待3到5分钟后刷新页面，就可以了。
 
 <a name="restream-vs-obs"></a><br/><br/><br/>
 
@@ -281,7 +281,7 @@ CVM云服务器的劣势是：
 SRS的多平台转推，可以将流转推给多个平台，它的工作图如下：
 
 ```
-OBS/FFmpeg --RTMP--> 云SRS --RTMP--> 视频号、B站、快手等直播平台
+OBS/FFmpeg --RTMP--> SRS Stack --RTMP--> 视频号、B站、快手等直播平台
 ```
 
 其实，OBS也有一个转推插件，它的工作图如下：
@@ -290,7 +290,7 @@ OBS/FFmpeg --RTMP--> 云SRS --RTMP--> 视频号、B站、快手等直播平台
 OBS --RTMP--> 视频号、B站、快手等直播平台
 ```
 
-看起来OBS的链路更短更简单，还不用经过云SRS不用付钱，为何云SRS还要做转推，OBS这个方案有什么缺点？
+看起来OBS的链路更短更简单，还不用经过SRS Stack不用付钱，为何SRS Stack还要做转推，OBS这个方案有什么缺点？
 
 OBS转推的优点是不用钱，直接就转推了。缺点是它的上行/上传带宽是翻倍的，比如2Mbps的流，如果转推3个平台就是6Mbps，如果视频号还需要推多个那会更多，比如推10个平台就是20Mbps。
 
@@ -300,7 +300,7 @@ OBS转推的优点是不用钱，直接就转推了。缺点是它的上行/上�
 
 如果家里是拉的光纤专线，比如买100Mbps的专线，那肯定没问题。问题是100Mbps的专线是非常贵的，就算暂时免费，一样有收费的那一天，因为专线就是专享的资源，不可能永远免费的。就好像人家免费给你金条一样，能免费多久呢。
 
-云SRS其实也是会有带宽翻倍，但是它是下行带宽翻倍，因为它做了一次转换，本质上是其他平台从云SRS这里下载流。下行/下载带宽一般都是更有保障的。而且云SRS和平台之间，都是服务器之间的BGP带宽，比家里到平台质量更有保障。
+SRS Stack其实也是会有带宽翻倍，但是它是下行带宽翻倍，因为它做了一次转换，本质上是其他平台从SRS Stack这里下载流。下行/下载带宽一般都是更有保障的。而且SRS Stack和平台之间，都是服务器之间的BGP带宽，比家里到平台质量更有保障。
 
 <a name="restream-custom"></a><br/><br/><br/>
 
@@ -308,7 +308,7 @@ OBS转推的优点是不用钱，直接就转推了。缺点是它的上行/上�
 
 SRS的多平台转推，是可以推到自定义的直播平台，比如推到视频号的推流地址和流密钥，也可以填任何其他直播平台的。
 
-> Note: 云SRS之所以分成视频号和B站等平台，是为了提供更好的引导，这些平台的RTMP地址格式都是类似的，所以可以随意填，云SRS不会验证具体的平台。
+> Note: SRS Stack之所以分成视频号和B站等平台，是为了提供更好的引导，这些平台的RTMP地址格式都是类似的，所以可以随意填，SRS Stack不会验证具体的平台。
 
 如果直播平台的RTMP地址是一个地址，比如：
 
@@ -327,7 +327,7 @@ rtmp://ip/app/stream
 
 ## 如何更换FFmpeg
 
-如果使用Docker版本，可以更换云SRS中的FFmpeg为自定义版本，启动时指定命令：
+如果使用Docker版本，可以更换SRS Stack中的FFmpeg为自定义版本，启动时指定命令：
 
 ```bash
 -v /path/to/ffmpeg:/usr/local/bin/ffmpeg
@@ -345,17 +345,17 @@ rtmp://ip/app/stream
 
 这是因为海外不能使用宝塔，海外用宝塔安装其他的工具也非常慢，这是因为跨国回源到国内下载数据当然非常慢了。
 
-宝塔海外版本叫[aaPanel](https://aapanel.com)，请使用aaPanel，安装软件很快，云SRS也会切换到海外的镜像下载。
+宝塔海外版本叫[aaPanel](https://aapanel.com)，请使用aaPanel，安装软件很快，SRS Stack也会切换到海外的镜像下载。
 
 宝塔和aaPanel只是安装方法不同，具体用法是一样的，请参考[宝塔](https://ossrs.net/lts/zh-cn/blog/BT-aaPanel)或[aaPanel](https://blog.ossrs.io/how-to-setup-a-video-streaming-service-by-aapanel-9748ae754c8c)。
 
 <a name="bt-install-manually"></a><br/><br/><br/>
 
-## 宝塔如何安装最新的云SRS
+## 宝塔如何安装最新的SRS Stack
 
 有时候宝塔商店的版本比较老，可以手动安装宝塔插件，安装最新的插件。
 
-云SRS最新的版本，可以看[Releases](https://github.com/ossrs/srs-stack/releases)，每个版本的附件中`bt-srs_cloud.zip`就是可以下载的插件。
+SRS Stack最新的版本，可以看[Releases](https://github.com/ossrs/srs-stack/releases)，每个版本的附件中`bt-srs_cloud.zip`就是可以下载的插件。
 
 下载插件后，可以在宝塔`软件商店 > 第三方应用 > 导入插件`，上传下载的`bt-srs_cloud.zip`即可安装。
 
@@ -374,10 +374,10 @@ CentOS7宝塔安装失败，常见错误如下：
 
 解决办法：
 
-* 升级到云SRS v4.6.3+，可以手动安装最新版本，参考[宝塔如何安装最新的云SRS](#bt-install-manually)
+* 升级到SRS Stack v4.6.3+，可以手动安装最新版本，参考[宝塔如何安装最新的SRS Stack](#bt-install-manually)
 * 打开pm2切换到nodejs 16，也可以绕过去这个问题。
 
-> Note: 云SRS v4.6.3+，不再强制依赖pm2安装nodejs，只要系统存在nodejs就可以了。你可以选择nodejs管理器安装，或者pm2安装，或者自己安装也可以。
+> Note: SRS Stack v4.6.3+，不再强制依赖pm2安装nodejs，只要系统存在nodejs就可以了。你可以选择nodejs管理器安装，或者pm2安装，或者自己安装也可以。
 
 最后，如果安装成功后还不可用，可以重启下系统试试。
 
@@ -385,7 +385,7 @@ CentOS7宝塔安装失败，常见错误如下：
 
 ## 提的功能如何实现，如何录视频
 
-欢迎大家给云SRS提问题和新功能，但请说明真实业务。
+欢迎大家给SRS Stack提问题和新功能，但请说明真实业务。
 
 大部分朋友不知道什么是真实业务，一般都是描述的业务的实现方案。而这个方案不一定是最合适的，甚至已经有了其他的技术方案，可以实现这个业务目标。因此，一定要请描述业务而不要描述功能或方案的技术实现。
 
@@ -425,17 +425,17 @@ SRS云服务器这个开源社区就是这样工作的，你提交应用场景�
 
 <a name="diff-srs"></a><br/><br/><br/>
 
-## 云SRS和SRS的差别
+## SRS Stack和SRS的差别
 
 [SRS](https://github.com/ossrs/srs)是一个开源服务器，是一个流媒体服务器，一般会和FFmpeg以及WebRTC等客户端配合起来实现音视频的能力，请看[这个图](https://github.com/ossrs/srs#srssimple-realtime-server)你就明白了什么是SRS。
 
-云SRS是一个音视频的方案，它基于SRS、Nodejs、REACT等实现音视频的常用场景，请看[这个图](https://github.com/ossrs/srs-stack#architecture)你就明白了什么是云SRS。
+SRS Stack是一个音视频的方案，它基于SRS、Nodejs、REACT等实现音视频的常用场景，请看[这个图](https://github.com/ossrs/srs-stack#architecture)你就明白了什么是SRS Stack。
 
-SRS安装后，打开是一个流媒体服务器的演示页面，有播放器和控制台的链接；云SRS安装后，打开是需要登录的管理后台，提供了很多不同场景的引导。
+SRS安装后，打开是一个流媒体服务器的演示页面，有播放器和控制台的链接；SRS Stack安装后，打开是需要登录的管理后台，提供了很多不同场景的引导。
 
-如果你是需要详细研究流媒体服务器，请根据SRS的文档操作，也请加SRS的社区，而不要在云SRS的群里问。SRS是一个开源的音视频服务器，面向的是开发能力非常强的C/C++程序员，你可以随意修改，定制能力很强。
+如果你是需要详细研究流媒体服务器，请根据SRS的文档操作，也请加SRS的社区，而不要在SRS Stack的群里问。SRS是一个开源的音视频服务器，面向的是开发能力非常强的C/C++程序员，你可以随意修改，定制能力很强。
 
-如果你是想要一个直接就能使用的音视频平台，开箱即用，可以线上使用的，就请用云SRS，请不要在SRS社区问。云SRS的含义，就是云上的SRS，它是个基于云的服务，面向的是用户，不需要了解音视频细节，跟着教程操作就可以。
+如果你是想要一个直接就能使用的音视频平台，开箱即用，可以线上使用的，就请用SRS Stack，请不要在SRS社区问。SRS Stack的含义，就是云上的SRS，它是个基于云的服务，面向的是用户，不需要了解音视频细节，跟着教程操作就可以。
 
 两个都是开源的项目，欢迎贡献。
 
@@ -443,9 +443,9 @@ SRS安装后，打开是一个流媒体服务器的演示页面，有播放器�
 
 ## 和宝塔的差别
 
-宝塔是一个虚拟机的管理工具，SRS云服务器是一个音视频的开箱即用的方案，宝塔也可以安装云SRS，请参考[支持哪些平台](#support-platform)。
+宝塔是一个虚拟机的管理工具，SRS云服务器是一个音视频的开箱即用的方案，宝塔也可以安装SRS Stack，请参考[支持哪些平台](#support-platform)。
 
-> Note: 海外的宝塔是叫aaPanel，也支持云SRS；如果你的机器在海外，请不要用宝塔，而要用aaPanel；大家使用的安装源不同，海外用宝塔可能安装非常慢甚至会失败。
+> Note: 海外的宝塔是叫aaPanel，也支持SRS Stack；如果你的机器在海外，请不要用宝塔，而要用aaPanel；大家使用的安装源不同，海外用宝塔可能安装非常慢甚至会失败。
 
 <a name="diff-vcloud"></a><br/><br/><br/>
 
@@ -490,32 +490,32 @@ SRS云服务器是把这些系统全部放在一台`Lighthouse/CVM/Droplet/宝�
 
 ## OpenAPI
 
-关于开放API，使用AP对接云SRS，可以在`系统配置 > OpenAPI`中，根据引导操作。
+关于开放API，使用AP对接SRS Stack，可以在`系统配置 > OpenAPI`中，根据引导操作。
 
-所有云SRS的操作，都是调用API完成，这些API可以通过Chrome的Network面板看到具体请求。
+所有SRS Stack的操作，都是调用API完成，这些API可以通过Chrome的Network面板看到具体请求。
 
-凡是能在云SRS页面完成的操作，都可以通过OpenAPI完成。
+凡是能在SRS Stack页面完成的操作，都可以通过OpenAPI完成。
 
 <a name='features'></a><br/><br/><br/>
 
 ## Features
 
-云SRS（即SRS云服务器）是nodejs实现的开源方案，代码在[srs-cloud](https://github.com/ossrs/srs-stack)，欢迎一起来搞。
+SRS Stack（即SRS云服务器）是nodejs实现的开源方案，代码在[srs-cloud](https://github.com/ossrs/srs-stack)，欢迎一起来搞。
 
 SRS云服务器面向鼠标编程，让每个人都能做音视频业务。不懂音视频的可以，懂音视频的也可以，种地的可以，撸网线的可以，剪电影的可以，背摄像机的也可以，跳舞的可以，唱歌的可以，卖二手货的也可以，开源项目交流也可以，多平台直播也可以，自建源站可以，会用电脑有微信就可以，守法公民都可以。
 
-云SRS的使用说明，请参考视频[SRS云服务器：起步、购买和入门](https://www.bilibili.com/video/BV1844y1L7dL/)。
+SRS Stack的使用说明，请参考视频[SRS云服务器：起步、购买和入门](https://www.bilibili.com/video/BV1844y1L7dL/)。
 
-目前云SRS支持的场景和功能包括：
+目前SRS Stack支持的场景和功能包括：
 
-* [云SRS：起步、购买和入门](https://mp.weixin.qq.com/s/fWmdkw-2AoFD_pEmE_EIkA)：如何购买和设置环境，必看。
+* [SRS Stack：起步、购买和入门](https://mp.weixin.qq.com/s/fWmdkw-2AoFD_pEmE_EIkA)：如何购买和设置环境，必看。
 * `已支持，打磨中` 对接[宝塔](https://mp.weixin.qq.com/s/nutc5eJ73aUa4Hc23DbCwQ)或[aaPanel](https://blog.ossrs.io/how-to-setup-a-video-streaming-service-by-aapanel-9748ae754c8c)：可以用[宝塔](https://www.bt.cn/)安装SRS，支持所有CentOS或Ubuntu的机器，可命令行安装宝塔后装SRS。
 * `已支持，打磨中` [私人直播间](https://mp.weixin.qq.com/s/AKqVWIdk3SBD-6uiTMliyA)：OBS推流到SRS，可以和好朋友看电影，私密直播间，专享BGP带宽，想看啥就看啥。
 * `已支持，打磨中` [超高清实时直播](https://mp.weixin.qq.com/s/HQb3gLRyJHHu56pnyHerxA)：用SRT低延迟推流，也能做会议，比WebRTC清晰太多了，也适合其他低延迟SRT的场景。
-* `已支持，打磨中` [录制本地](https://mp.weixin.qq.com/s/axN_TPo-Gk_H7CbdqUud6g)：录制到云SRS服务器本地文件，提供HLS下载。[#42](https://github.com/ossrs/srs-stack/issues/42)
+* `已支持，打磨中` [录制本地](https://mp.weixin.qq.com/s/axN_TPo-Gk_H7CbdqUud6g)：录制到SRS Stack服务器本地文件，提供HLS下载。[#42](https://github.com/ossrs/srs-stack/issues/42)
 * `已支持，打磨中` [录制到云存储](https://mp.weixin.qq.com/s/axN_TPo-Gk_H7CbdqUud6g)：避免本地磁盘限制，也方便后续直播流的处理，支持录制视频流到云存储，详细参考 [#1193](https://github.com/ossrs/srs/issues/1193)。
 * `已支持，打磨中` [录制到云点播](https://mp.weixin.qq.com/s/axN_TPo-Gk_H7CbdqUud6g)：比云录制更高级的能力，云存储是无限磁盘，云点播则是短视频系统，更方便，姿势更骚。
-* `已支持，打磨中` [多平台转播](https://mp.weixin.qq.com/s/FtaeQIJpb7vpmX2eFguLiQ)：推流到云SRS，转推到视频号、快手、B站、抖音等直播平台，详细参考 [#2676](https://github.com/ossrs/srs/issues/2676)。
+* `已支持，打磨中` [多平台转播](https://mp.weixin.qq.com/s/FtaeQIJpb7vpmX2eFguLiQ)：推流到SRS Stack，转推到视频号、快手、B站、抖音等直播平台，详细参考 [#2676](https://github.com/ossrs/srs/issues/2676)。
 * `已支持，打磨中` 对接[WordPress](https://mp.weixin.qq.com/s/kOWabmKbYvrmEXG2fPOZxQ)：支持[WordPress插件](https://wordpress.org/plugins/srs-player)和[Typecho插件](https://github.com/ossrs/Typecho-Plugin-SrsPlayer)，在Post中插入直播流地址。
 * `已支持，打磨中` [DigitalOcean镜像](https://mp.weixin.qq.com/s/_GcJm15BGv1qbmHixPQAGQ)：海外支持DigitalOcean Droplet镜像，中英文多语言版本。
 * `已支持，打磨中` [虚拟直播](https://mp.weixin.qq.com/s/I0Kmxtc24txpngO-PiR_tQ)：服务端OBS，将点播文件、图片或流推直播，有简单布局能力。
@@ -533,7 +533,7 @@ SRS云服务器面向鼠标编程，让每个人都能做音视频业务。不�
 * `规划中` 对接[Moodle](https://stats.moodle.org/)：支持Moodle插件，在线教育开源网站。
 * `规划中` [图形化仪表盘](https://mp.weixin.qq.com/s/ub9ZGmntOy_-S11oxFkxvg)：以图表形式展示后台数据，比如CPU等等，详细参考 [Prometheus](https://github.com/ossrs/srs/issues/2899#prometheus)。
 
-欢迎加群探讨云SRS的使用，这些SRS的周边服务都是开源的，可以自己定制后部署。
+欢迎加群探讨SRS Stack的使用，这些SRS的周边服务都是开源的，可以自己定制后部署。
 
 <a name='changelog'></a><br/><br/><br/>
 
@@ -586,7 +586,7 @@ SRS云服务器面向鼠标编程，让每个人都能做音视频业务。不�
 * 2022.11.20, v1.0.256, 大版本更新，体验改进，Release 4.6
     * 代理根站点的资源，比如favicon.ico
     * 支持[SrsPlayer](https://wordpress.org/plugins/srs-player)的WebRTC推流简码。
-    * 支持[本地录制](https://github.com/ossrs/srs-stack/issues/42)，录制到云SRS本地磁盘。
+    * 支持[本地录制](https://github.com/ossrs/srs-stack/issues/42)，录制到SRS Stack本地磁盘。
     * 支持删除本地录制的文件和任务。
     * 支持本地录制为MP4文件和下载。
     * 支持本地录制目录为软链接，存储录制内容到其他磁盘。

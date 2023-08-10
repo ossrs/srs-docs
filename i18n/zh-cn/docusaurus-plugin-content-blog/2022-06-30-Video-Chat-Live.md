@@ -30,7 +30,7 @@ custom_edit_url: null
 
 前提条件，需要具备的知识点，或依赖的工具：
 
-* 一台云主机，带公网IP。推荐[云SRS](./SRS-Cloud-Tutorial)，带有音视频服务器SRS的云服务器，腾讯云Lighthouse或CVM有云SRS镜像，其他云主机可以用宝塔安装。
+* 一台云主机，带公网IP。推荐[SRS Stack](./SRS-Cloud-Tutorial)，带有音视频服务器SRS的云服务器，腾讯云Lighthouse或CVM有SRS Stack镜像，其他云主机可以用宝塔安装。
 * 有一定的软件开发基础，虽然设计了比较简单的入门场景，还是有部分场景需要移动端开发能力，以及Linux服务器的操作能力。
 * [可选] 注册的域名，申请合法的HTTPS证书必须得域名，用于WebRTC推流；无域名只能使用自签名证书，操作麻烦些，也是可行的。
 
@@ -70,17 +70,17 @@ SaaS做直播的好处是不用了解直播的细节，直接就能把直播做�
 直播开源方案，推流工具还是用[OBS](https://obsproject.com/)，使用方法也是一样的。但是我们需要自己部署服务器，也需要选择直播观看的客户端：
 
 * 推流工具：OBS，vMix，芯象，腾讯会议等。
-* 直播平台：云SRS，SRS，NginxRTMP等。
+* 直播平台：SRS Stack，SRS，NginxRTMP等。
 * 观看工具：Chrome浏览器，VLC等。
 
-推荐使用云SRS，因为后面也可以用于连麦。最方便的部署SRS的方式使用[云SRS](./SRS-Cloud-Tutorial)，可以用腾讯云镜像一键部署，其他云或自己虚拟机可以用宝塔部署，具体请参考[视频教程](https://www.bilibili.com/video/BV1844y1L7dL/)。
+推荐使用SRS Stack，因为后面也可以用于连麦。最方便的部署SRS的方式使用[SRS Stack](./SRS-Cloud-Tutorial)，可以用腾讯云镜像一键部署，其他云或自己虚拟机可以用宝塔部署，具体请参考[视频教程](https://www.bilibili.com/video/BV1844y1L7dL/)。
 
 部署好SRS后，可以使用OBS推流到SRS，地址一般比较简单，例如：
 
 * Server: `rtmp://your-server-ip/live/`
 * Stream Key: `livestream`
 
-> Note：若使用云SRS，则`Stream Key`中可能有鉴权字符，例如`livestream?secret=******`，可以从云SRS的后台`私人直播间`拷贝就可以。
+> Note：若使用SRS Stack，则`Stream Key`中可能有鉴权字符，例如`livestream?secret=******`，可以从SRS Stack的后台`私人直播间`拷贝就可以。
 
 开源方案的播放器需要自己选择，比较简单的是[VLC](https://www.videolan.org/)，选择`File > Open Network`，然后输入地址：
 
@@ -136,11 +136,11 @@ OBS(主播) ---RTMP---> SRS ----RTMP/FLV/HLS---> VLC
 
 同样，最简单的通话方案是SaaS，可以选择腾讯会议或Zoom两个通话的SaaS，它们都有自己的客户端和账号体系，只需要下载就可以使用了。
 
-若使用开源搭建，推荐SRS服务器。最方便的部署SRS的方式使用[云SRS](./SRS-Cloud-Tutorial)，可以用腾讯云镜像一键部署，其他云或自己虚拟机可以用宝塔部署，具体请参考[视频教程](https://www.bilibili.com/video/BV1844y1L7dL/)。
+若使用开源搭建，推荐SRS服务器。最方便的部署SRS的方式使用[SRS Stack](./SRS-Cloud-Tutorial)，可以用腾讯云镜像一键部署，其他云或自己虚拟机可以用宝塔部署，具体请参考[视频教程](https://www.bilibili.com/video/BV1844y1L7dL/)。
 
 由于WebRTC推流，必须使用HTTPS，而HTTPS必须要域名和证书，可以参考[如何设置HTTPS](./SRS-Cloud-HTTPS)。当然如果使用自签名证书也可以，需要手动允许自签名证书。
 
-安装好云SRS后，我们打开后台`私人直播间`，选择`WebRTC推流`，点击更换流名称按钮，获取推流和播放链接，每个主播一个流地址比如：
+安装好SRS Stack后，我们打开后台`私人直播间`，选择`WebRTC推流`，点击更换流名称按钮，获取推流和播放链接，每个主播一个流地址比如：
 
 * 主播A：`webrtc://lh.ossrs.net:443/live/acagdd?secret=xxx`
 * 主播B：`webrtc://lh.ossrs.net:443/live/ccdkkc?secret=xxx`

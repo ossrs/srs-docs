@@ -43,19 +43,19 @@ SRS云服务器：https://www.bilibili.com/video/BV1844y1L7dL/
 
 ## CVM
 
-如果Lighthouse的带宽太低，可以选择腾讯云CVM，详细请参考[云SRS支持CVM镜像](https://mp.weixin.qq.com/s/x-PjoKjJj6HRF-eCKX0KzQ)。
+如果Lighthouse的带宽太低，可以选择腾讯云CVM，详细请参考[SRS Stack支持CVM镜像](https://mp.weixin.qq.com/s/x-PjoKjJj6HRF-eCKX0KzQ)。
 
 > Note: 我们准备了视频教程，非常短只有几分钟时间，可以解决你的很多疑问，请观看视频教程。
 
 ## DigitalOcean
 
-若你需要在海外使用云SRS，可以选择DigitalOcean的Droplet镜像，详细请参考[云SRS支持DigitalOcean镜像](https://mp.weixin.qq.com/s/_GcJm15BGv1qbmHixPQAGQ)。
+若你需要在海外使用SRS Stack，可以选择DigitalOcean的Droplet镜像，详细请参考[SRS Stack支持DigitalOcean镜像](https://mp.weixin.qq.com/s/_GcJm15BGv1qbmHixPQAGQ)。
 
 > Note: 我们准备了视频教程，非常短只有几分钟时间，可以解决你的很多疑问，请观看视频教程。
 
 ## BT
 
-若你希望在其他云厂商和平台，或者自己的虚拟机，可以使用宝塔安装云SRS，详细请参考[云SRS支持宝塔安装](https://mp.weixin.qq.com/s/nutc5eJ73aUa4Hc23DbCwQ)
+若你希望在其他云厂商和平台，或者自己的虚拟机，可以使用宝塔安装SRS Stack，详细请参考[SRS Stack支持宝塔安装](https://mp.weixin.qq.com/s/nutc5eJ73aUa4Hc23DbCwQ)
 
 > Note: 我们准备了视频教程，非常短只有几分钟时间，可以解决你的很多疑问，请观看视频教程。
 
@@ -73,7 +73,7 @@ SRS云服务器：https://www.bilibili.com/video/BV1844y1L7dL/
 
 ## Features
 
-如果你想知道云SRS支持哪些功能，或者某个功能是否支持了，请看[Features](https://github.com/ossrs/srs/issues/2856)。
+如果你想知道SRS Stack支持哪些功能，或者某个功能是否支持了，请看[Features](https://github.com/ossrs/srs/issues/2856)。
 
 > Note: 这些功能会不断更新，请访问GitHub地址，查看最新的功能列表。
 

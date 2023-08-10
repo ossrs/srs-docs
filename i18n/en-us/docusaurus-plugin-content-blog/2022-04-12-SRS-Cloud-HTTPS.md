@@ -27,7 +27,7 @@ In this tutorial, you will learn how to configure the HTTPS for SRS droplets, an
 
 To complete this guide, you will need:
 
-1. A SRS Droplet with Cloud SRS installed, please follow this [set-up a video streaming service](https://blog.ossrs.io/how-to-setup-a-video-streaming-service-by-1-click-e9fe6f314ac6) tutorial.
+1. A SRS Droplet with SRS Stack installed, please follow this [set-up a video streaming service](https://blog.ossrs.io/how-to-setup-a-video-streaming-service-by-1-click-e9fe6f314ac6) tutorial.
 1. A fully registered domain name, you could purchase a domain name on [Namecheap](https://namecheap.com/) or [GoDaddy](https://godaddy.com/). For the demonstration purpose, however, we will use a placeholder `your_domain_name` throughout this tutorial.
 
 This guide will also use placeholders `your_public_ipv4` and `your_domain_name` throughout. Please replace them with

@@ -36,7 +36,7 @@ This guide will use placeholder `your_public_ipv4` and `your_domain_name` throug
 
 ## Step 1: Create a SRS Droplet
 
-A droplet is a simple and scalable virtual machine of DigitalOcean. A SRS Droplet is a droplet with Cloud SRS installed, to power your video streaming service. 
+A droplet is a simple and scalable virtual machine of DigitalOcean. A SRS Droplet is a droplet with SRS Stack installed, to power your video streaming service. 
 
 You could create `a SRS Droplet` by [clicking here](https://cloud.digitalocean.com/droplets/new?appId=104916642&size=s-1vcpu-1gb&region=sgp1&image=ossrs-srs&type=applications), set-up the droplet `Region` and `Authentication`, then click `Create Droplet` button at the bottom.
 

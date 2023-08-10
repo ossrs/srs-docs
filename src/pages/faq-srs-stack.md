@@ -10,24 +10,24 @@ Quick Content
 * [How to set a domain](#how-to-set-domain): How to set up a domain to access the admin panel, why can't the admin panel be opened, and why can't the admin panel be accessed via IP.
 * [Supported Platforms](#support-platform): Supported platforms, supported images, want to use the server or command line installation directly, or aaPanel installation.
 * [How to push multiple streams](#multiple-streams): Want to push multiple streams, want to change the default stream name and stream address.
-* [Low bandwidth, increase bandwidth](#bandwidth): Insufficient bandwidth, want to increase bandwidth, use Cloud SRS in CVM.
+* [Low bandwidth, increase bandwidth](#bandwidth): Insufficient bandwidth, want to increase bandwidth, use SRS Stack in CVM.
 * [How to set up free HTTPS](#https): How to apply for a free HTTPS certificate, how to apply for certificates for multiple domain names.
 * [How to modify the push authentication key](#update-publish-secret): Update the push authentication key, replace the push key.
 * [How to disable push authentication](#no-publish-auth): Don't want push authentication, the device does not support special characters.
-* [How to record to local disk](#record): How to record to the local disk of Cloud SRS.
+* [How to record to local disk](#record): How to record to the local disk of SRS Stack.
 * [Difference between cloud recording and cloud on-demand](#cos-vs-vod): Whether to use cloud recording or cloud on-demand, and what are the differences.
 * [How to record to cloud storage](#dvr-cloud-storage): Record to COS, OSS, or S3, etc. cloud storage.
 * [Unavailable after installation](#unavailable): Error prompt after installation, or Redis not ready.
 * [Difference between SRS re-streaming and OBS re-streaming](#restream-vs-obs): The difference between SRS multi-platform re-streaming and OBS re-streaming plugin.
 * [How SRS re-streams to custom platforms](#restream-custom): How SRS multi-platform re-streaming pushes to custom live platforms.
-* [How to replace FFmpeg](#use-custom-ffmpeg): How to replace the FFmpeg in Cloud SRS with a custom version.
+* [How to replace FFmpeg](#use-custom-ffmpeg): How to replace the FFmpeg in SRS Stack with a custom version.
 * [aaPanel installation of SRS is very slow](#install-speedup): Overseas aaPanel installation is very slow, access to Alibaba Cloud image is too slow.
-* [How to install the latest Cloud SRS in aaPanel](#bt-install-manually): Manually install aaPanel plugin, install the latest plugin.
+* [How to install the latest SRS Stack in aaPanel](#bt-install-manually): Manually install aaPanel plugin, install the latest plugin.
 * [aaPanel CentOS7 installation failed](#bt-centos7-error): CentOS7 aaPanel installation failed, cannot find the directory, or GLIBC version problem.
 * [How to purchase AI face-swapping service](#how-to-buy-ai): How to implement AI face-swapping? How to buy models? Who to buy from?
 * [How to implement the requirements or features](#rules): Want to implement more features, want to customize, want to optimize and improve.
 * [Unable to achieve the desired effect](#can-not-replay): Encounter problems, cannot achieve the desired effect.
-* [Difference between Cloud SRS and SRS](#diff-srs): The difference between Cloud SRS and SRS, why there is Cloud SRS.
+* [Difference between SRS Stack and SRS](#diff-srs): The difference between SRS Stack and SRS, why there is SRS Stack.
 * [Difference with aaPanel](#diff-baota): Difference with virtual machine management software aaPanel.
 * [Difference with Video Cloud](#diff-vcloud): Difference with general video cloud services.
 * [How to reinstall the system](#reinstall): For friends who already have Lighthouse or CVM.
@@ -69,7 +69,7 @@ Please do not try randomly, be sure to follow the guide, audio and video random 
 
 How to upgrade to the latest version or stable version, and why not support click upgrade on the interface?
 
-Since Cloud SRS supports multiple platforms, including Docker, and Docker cannot upgrade itself, Cloud SRS also does not support interface upgrades and needs to be upgraded manually.
+Since SRS Stack supports multiple platforms, including Docker, and Docker cannot upgrade itself, SRS Stack also does not support interface upgrades and needs to be upgraded manually.
 
 The Docker startup specifies the version, such as `ossrs/srs-stack:v1.0.293`, and you only need to delete the container and start with the new version, such as `ossrs/srs-stack:v1.0.299`.
 
@@ -85,21 +85,21 @@ How to set up a domain to access the admin panel, why can't the admin panel be o
 
 Please replace the following domain names and IPs with your own domain names and IPs, which can be either private or public IPs, as long as your browser can access them.
 
-When installing Cloud SRS with aaPanel, you need to enter the domain name of the management backend, such as `bt.yourdomain.com`, and it will automatically create the management backend website.
+When installing SRS Stack with aaPanel, you need to enter the domain name of the management backend, such as `bt.yourdomain.com`, and it will automatically create the management backend website.
 
-If you install it in other ways, it's the same. You just need to resolve your domain name to the Cloud SRS IP.
+If you install it in other ways, it's the same. You just need to resolve your domain name to the SRS Stack IP.
 
 There are several ways to set up domain name resolution:
 
-1. DNS domain name resolution: In the backend of your domain name provider, set an A record pointing to the Cloud SRS IP.
+1. DNS domain name resolution: In the backend of your domain name provider, set an A record pointing to the SRS Stack IP.
 ```text
 A bt.yourdomain.com 121.13.75.20
 ```
-2. Modify the local `/etc/hosts` file in Linux/Unix to resolve the domain name to the Cloud SRS IP.
+2. Modify the local `/etc/hosts` file in Linux/Unix to resolve the domain name to the SRS Stack IP.
 ```text
 121.13.75.20 bt.yourdomain.com
 ```
-3. Modify the local `C:\Windows\System32\drivers\etc` file in Windows to resolve the domain name to the Cloud SRS IP.
+3. Modify the local `C:\Windows\System32\drivers\etc` file in Windows to resolve the domain name to the SRS Stack IP.
 ```text
 121.13.75.20 bt.yourdomain.com
 ```
@@ -110,9 +110,9 @@ Note: If you need to apply for a free HTTPS certificate through Let's Encrypt, t
 
 ## Supported platforms
 
-Cloud SRS supports Docker, install script, DigitalOcean images, and other platforms can be installed with aaPanel.
+SRS Stack supports Docker, install script, DigitalOcean images, and other platforms can be installed with aaPanel.
 
-Cloud SRS is, of course, supported on various cloud platforms. The most convenient way is to use images, which are images of cloud servers. If you want to keep it simple and save trouble, please use images. Other methods are prone to problems. Please do not overestimate your ability to tinker. Most people really belong to the 80% who can't tinker. It is strongly recommended to use images:
+SRS Stack is, of course, supported on various cloud platforms. The most convenient way is to use images, which are images of cloud servers. If you want to keep it simple and save trouble, please use images. Other methods are prone to problems. Please do not overestimate your ability to tinker. Most people really belong to the 80% who can't tinker. It is strongly recommended to use images:
 
 * [Run by docker image](https://github.com/ossrs/srs-stack#usage)
 * DigitalOcean: Overseas lightweight cloud server image, use reference [here](https://mp.weixin.qq.com/s/_GcJm15BGv1qbmHixPQAGQ)
@@ -121,7 +121,7 @@ If you don't want to use virtual machine images and want to install directly on 
 
 * aaPanel: If your machine is overseas, be sure to use aaPanel instead of BT panel, use reference [here](https://blog.ossrs.io/how-to-setup-a-video-streaming-service-by-aapanel-9748ae754c8c)
 
-> Note: If you want to install Cloud SRS from the command line, you can first install BT panel from the command line, and then install Cloud SRS.
+> Note: If you want to install SRS Stack from the command line, you can first install BT panel from the command line, and then install SRS Stack.
 
 <a name='multile-streams'></a><br/><br/><br/>
 
@@ -152,7 +152,7 @@ As shown in the figure below, you can click the update button to automatically c
 
 The bandwidth of lightweight application servers ranges from 4 to 20Mbps, which is somewhat limited for audio and video. If you want higher bandwidth, such as 100Mbps, you can choose CVM or AWS VPS.
 
-> Note: The usage of Cloud SRS is consistent, but the purchase and platform configuration are different.
+> Note: The usage of SRS Stack is consistent, but the purchase and platform configuration are different.
 
 The advantages of CVM cloud servers are:
 
@@ -165,13 +165,13 @@ The disadvantages of CVM cloud servers are:
 * Complex operation, CVM's security group is much more complicated than the lightweight firewall operation. Please try it yourself. If it doesn't work, switch to lightweight.
 * No background link, the interface is more complex. If it doesn't work, switch to lightweight.
 
-If you still want to choose CVM after knowing the advantages and disadvantages, please refer to [Cloud SRS: Support CVM image](https://mp.weixin.qq.com/s/x-PjoKjJj6HRF-eCKX0KzQ).
+If you still want to choose CVM after knowing the advantages and disadvantages, please refer to [SRS Stack: Support CVM image](https://mp.weixin.qq.com/s/x-PjoKjJj6HRF-eCKX0KzQ).
 
 <a name="https"></a><br/><br/><br/>
 
 ## How to set up free HTTPS
 
-Cloud SRS supports applying for free HTTPS certificates, and you can apply for certificates for multiple domain names and automatically renew them. For example, the certificates for the following HTTPS websites are all automatically applied after running Cloud SRS:
+SRS Stack supports applying for free HTTPS certificates, and you can apply for certificates for multiple domain names and automatically renew them. For example, the certificates for the following HTTPS websites are all automatically applied after running SRS Stack:
 
 * https://ossrs.io SRS's overseas documentation website.
 * https://www.ossrs.io SRS's overseas documentation website.
@@ -180,12 +180,12 @@ Cloud SRS supports applying for free HTTPS certificates, and you can apply for c
 The operation is very simple, just follow these three steps, please see [here](https://ossrs.net/lts/blog/2022/04/12/SRS-Cloud-HTTPS):
 
 1. Purchase a domain name and complete the filing. You must have your own legal domain name, otherwise, you cannot apply for a certificate.
-2. Resolve the domain name to the public IP of Cloud SRS. You can add multiple domain names to resolve, for example, `ossrs.io` and `www.ossrs.io` are both resolved to the same Cloud SRS server.
-3. In Cloud SRS's `System Settings > HTTPS > Automatic HTTPS Certificate`, fill in your domain name, separate multiple domain names with semicolons, and click Apply.
+2. Resolve the domain name to the public IP of SRS Stack. You can add multiple domain names to resolve, for example, `ossrs.io` and `www.ossrs.io` are both resolved to the same SRS Stack server.
+3. In SRS Stack's `System Settings > HTTPS > Automatic HTTPS Certificate`, fill in your domain name, separate multiple domain names with semicolons, and click Apply.
 
 > Note: Just apply for the domain name, do not upload it again. Once applied, you don't need to upload it again.
 
-> Note: Please use aaPanel to apply, the operation steps are similar to the above. Cloud SRS will no longer support certificate application, because certbot does not support multi-platform docker images, and there will be problems when using it on other platforms.
+> Note: Please use aaPanel to apply, the operation steps are similar to the above. SRS Stack will no longer support certificate application, because certbot does not support multi-platform docker images, and there will be problems when using it on other platforms.
 
 After the application is successful, enter https plus your domain name in the browser, and you can access your website.
 
@@ -227,7 +227,7 @@ This way, there is security, and it can support devices that do not support spec
 
 ## How to record to local disk
 
-How to record to the local disk of Cloud SRS? After upgrading to v1.0.252, you can see local recording in the recording.
+How to record to the local disk of SRS Stack? After upgrading to v1.0.252, you can see local recording in the recording.
 
 For the limitations and solutions of local recording, please refer to #42
 
@@ -235,13 +235,13 @@ For the limitations and solutions of local recording, please refer to #42
 
 ## Difference between cloud recording and cloud on-demand
 
-Cloud SRS provides two similar functions, cloud recording and cloud on-demand. What is the difference between using cloud recording or cloud on-demand for recording?
+SRS Stack provides two similar functions, cloud recording and cloud on-demand. What is the difference between using cloud recording or cloud on-demand for recording?
 
-Cloud recording can be considered as writing live streaming to the cloud disk, saving it in HLS format, which is the original video stream. If you want to download HLS for transcoding and editing, it would be more suitable. Cloud recording is stored in Tencent Cloud COS cloud storage, which can be considered as an unlimited disk, avoiding overwriting the disk of Cloud SRS.
+Cloud recording can be considered as writing live streaming to the cloud disk, saving it in HLS format, which is the original video stream. If you want to download HLS for transcoding and editing, it would be more suitable. Cloud recording is stored in Tencent Cloud COS cloud storage, which can be considered as an unlimited disk, avoiding overwriting the disk of SRS Stack.
 
 Cloud on-demand provides both HLS and MP4 formats, and more features will be added in the future, such as outputting multiple bit rates, adding logos and watermarks, media asset management, and many other useful features. Cloud on-demand is a video-on-demand system, not just a storage disk. It can be considered as a Bilibili or YouTube. If you want to do more diverse businesses, you must choose cloud on-demand.
 
-In terms of cost, cloud on-demand will be slightly higher than cloud recording, depending on which features are used. Currently, Cloud SRS uses HLS to MP4 conversion, which is very low in cost because there is no transcoding. In the future, if you want to use advanced features, the cost will be higher. Overall, the cost of cloud on-demand is very low, similar to cloud recording. If there is no additional computing cost, it will be the same as cloud recording.
+In terms of cost, cloud on-demand will be slightly higher than cloud recording, depending on which features are used. Currently, SRS Stack uses HLS to MP4 conversion, which is very low in cost because there is no transcoding. In the future, if you want to use advanced features, the cost will be higher. Overall, the cost of cloud on-demand is very low, similar to cloud recording. If there is no additional computing cost, it will be the same as cloud recording.
 
 In short, it is recommended to use cloud on-demand, which is easy to use and not expensive.
 
@@ -249,9 +249,9 @@ In short, it is recommended to use cloud on-demand, which is easy to use and not
 
 ## How to record to cloud storage
 
-Cloud SRS supports recording to COS, Tencent Cloud Storage. Please refer to [Usage: Cloud Storage](https://mp.weixin.qq.com/s/axN_TPo-Gk_H7CbdqUud6g).
+SRS Stack supports recording to COS, Tencent Cloud Storage. Please refer to [Usage: Cloud Storage](https://mp.weixin.qq.com/s/axN_TPo-Gk_H7CbdqUud6g).
 
-Cloud SRS can also record to other cloud storage, such as Alibaba Cloud OSS or AWS S3. According to the guidance of cloud storage, mount the cloud storage to Cloud SRS, and then use local recording, configure the local storage path, so that you can write files to cloud storage.
+SRS Stack can also record to other cloud storage, such as Alibaba Cloud OSS or AWS S3. According to the guidance of cloud storage, mount the cloud storage to SRS Stack, and then use local recording, configure the local storage path, so that you can write files to cloud storage.
 
 > Note: To modify the local recording path, you can go to `Local Recording/Recording Folder`, and soft link the recording path to the cloud storage path.
 
@@ -267,7 +267,7 @@ Or Redis is not ready, such as:
 
 ![](/img/page-2023-03-04-06.png)
 
-This is because it takes time for Cloud SRS to start after installation. Refresh the page after waiting for 3 to 5 minutes.
+This is because it takes time for SRS Stack to start after installation. Refresh the page after waiting for 3 to 5 minutes.
 
 <a name="restream-vs-obs"></a><br/><br/><br/>
 
@@ -276,7 +276,7 @@ This is because it takes time for Cloud SRS to start after installation. Refresh
 SRS's multi-platform restreaming can push the stream to multiple platforms, and its working diagram is as follows:
 
 ```
-OBS/FFmpeg --RTMP--> Cloud SRS --RTMP--> Video number, Bilibili, Kuaishou, and other live streaming platforms
+OBS/FFmpeg --RTMP--> SRS Stack --RTMP--> Video number, Bilibili, Kuaishou, and other live streaming platforms
 ```
 
 In fact, OBS also has a restreaming plugin, and its working diagram is as follows:
@@ -285,7 +285,7 @@ In fact, OBS also has a restreaming plugin, and its working diagram is as follow
 OBS --RTMP--> Video number, Bilibili, Kuaishou, and other live streaming platforms
 ```
 
-It seems that OBS's link is shorter and simpler, and it doesn't need to go through Cloud SRS or pay money. So why does Cloud SRS still need to do restreaming, and what are the drawbacks of OBS's solution?
+It seems that OBS's link is shorter and simpler, and it doesn't need to go through SRS Stack or pay money. So why does SRS Stack still need to do restreaming, and what are the drawbacks of OBS's solution?
 
 The advantage of OBS restreaming is that it doesn't cost money and can be restreamed directly. The disadvantage is that its uplink/upload bandwidth is doubled. For example, a 2Mbps stream, if restreamed to 3 platforms, will be 6Mbps. If more video numbers need to be pushed, it will be even more, such as pushing to 10 platforms, which will be 20Mbps.
 
@@ -295,7 +295,7 @@ Basically, 80% of live broadcast rollovers are caused by problems with the ancho
 
 If you have a dedicated fiber-optic line at home, such as buying a 100Mbps dedicated line, there will be no problem. The problem is that a 100Mbps dedicated line is very expensive, and even if it is temporarily free, there will be a day when it will be charged because a dedicated line is a dedicated resource and cannot be free forever. It's like someone giving you gold bars for free, how long can it be free?
 
-Cloud SRS also has doubled bandwidth, but it is the downstream bandwidth that is doubled because it has done a conversion, and essentially other platforms are downloading the stream from Cloud SRS. Downstream/download bandwidth is generally more guaranteed. Moreover, between Cloud SRS and the platform, they are all BGP bandwidth between servers, which is more guaranteed in quality than the home-to-platform connection.
+SRS Stack also has doubled bandwidth, but it is the downstream bandwidth that is doubled because it has done a conversion, and essentially other platforms are downloading the stream from SRS Stack. Downstream/download bandwidth is generally more guaranteed. Moreover, between SRS Stack and the platform, they are all BGP bandwidth between servers, which is more guaranteed in quality than the home-to-platform connection.
 
 <a name="restream-custom"></a><br/><br/><br/>
 
@@ -303,7 +303,7 @@ Cloud SRS also has doubled bandwidth, but it is the downstream bandwidth that is
 
 SRS's multi-platform restreaming can push to custom live streaming platforms, such as pushing to the video number's push stream address and stream key, and can also fill in any other live streaming platform.
 
-> Note: The reason why Cloud SRS is divided into video numbers and platforms like Bilibili is to provide better guidance. The RTMP address format of these platforms is similar, so you can fill in any platform, and Cloud SRS will not verify the specific platform.
+> Note: The reason why SRS Stack is divided into video numbers and platforms like Bilibili is to provide better guidance. The RTMP address format of these platforms is similar, so you can fill in any platform, and SRS Stack will not verify the specific platform.
 
 If the RTMP address of the live streaming platform is a single address, such as:
 
@@ -322,7 +322,7 @@ Then, you can split it into:
 
 ## How to Replace FFmpeg
 
-If you are using the Docker version, you can replace the FFmpeg in Cloud SRS with a custom version by specifying the command at startup:
+If you are using the Docker version, you can replace the FFmpeg in SRS Stack with a custom version by specifying the command at startup:
 
 ```bash
 -v /path/to/ffmpeg:/usr/local/bin/ffmpeg
@@ -340,17 +340,17 @@ Some users have reported that overseas Baota installations are very slow, and ac
 
 This is because Baota cannot be used overseas. Installing other tools with Baota overseas is also very slow because downloading data across countries back to China is naturally very slow.
 
-The overseas version of Baota is called [aaPanel](https://aapanel.com). Please use aaPanel, which installs software quickly, and Cloud SRS will also switch to overseas mirror downloads.
+The overseas version of Baota is called [aaPanel](https://aapanel.com). Please use aaPanel, which installs software quickly, and SRS Stack will also switch to overseas mirror downloads.
 
 Baota and aaPanel only have different installation methods, but the specific usage is the same. Please refer to [Baota](https://ossrs.net/lts/zh-cn/blog/BT-aaPanel) or [aaPanel](https://blog.ossrs.io/how-to-setup-a-video-streaming-service-by-aapanel-9748ae754c8c).
 
 <a name="bt-install-manually"></a><br/><br/><br/>
 
-## How to Install the Latest Cloud SRS on Baota
+## How to Install the Latest SRS Stack on Baota
 
 Sometimes the version in the Baota store is older, and you can manually install the Baota plugin to install the latest plugin.
 
-The latest version of Cloud SRS can be found in [Releases](https://github.com/ossrs/srs-stack/releases), and the `aapanel-srs_cloud.zip` attachment in each version can be downloaded as a plugin.
+The latest version of SRS Stack can be found in [Releases](https://github.com/ossrs/srs-stack/releases), and the `aapanel-srs_cloud.zip` attachment in each version can be downloaded as a plugin.
 
 After downloading the plugin, you can go to Baota `Software Store > Third-Party Applications > Import Plugin` and upload the downloaded `aapanel-srs_cloud.zip` to install.
 
@@ -369,10 +369,10 @@ These are all due to problems with nodejs on CentOS7. Generally, after installin
 
 Solution:
 
-* Upgrade to Cloud SRS v4.6.3+ and manually install the latest version. Refer to [How to Install the Latest Cloud SRS on aaPanel](#bt-install-manually)
+* Upgrade to SRS Stack v4.6.3+ and manually install the latest version. Refer to [How to Install the Latest SRS Stack on aaPanel](#bt-install-manually)
 * Open pm2 and switch to nodejs 16, which can also bypass this problem.
 
-> Note: Cloud SRS v4.6.3+ no longer requires pm2 to install nodejs. As long as the system has nodejs, it can be used. You can choose to install it with the nodejs manager, or with pm2, or you can install it yourself.
+> Note: SRS Stack v4.6.3+ no longer requires pm2 to install nodejs. As long as the system has nodejs, it can be used. You can choose to install it with the nodejs manager, or with pm2, or you can install it yourself.
 
 Finally, if it is still not available after successful installation, you can try restarting the system.
 
@@ -380,7 +380,7 @@ Finally, if it is still not available after successful installation, you can try
 
 ## How to implement the proposed features and how to record videos
 
-Welcome everyone to submit questions and new features to Cloud SRS, but please explain the real business.
+Welcome everyone to submit questions and new features to SRS Stack, but please explain the real business.
 
 Most friends don't know what real business is, and generally describe the implementation plan of the business. However, this plan may not be the most suitable, and there may even be other technical solutions that can achieve this business goal. Therefore, please describe the business instead of describing the technical implementation of the function or plan.
 
@@ -410,17 +410,17 @@ Because the only reason everyone has problems is that they think audio and video
 
 <a name="diff-srs"></a><br/><br/><br/>
 
-## The difference between Cloud SRS and SRS
+## The difference between SRS Stack and SRS
 
 [SRS](https://github.com/ossrs/srs) is an open-source server, a streaming media server, which generally works with FFmpeg and WebRTC clients to achieve audio and video capabilities. Please see [this diagram](https://github.com/ossrs/srs#srssimple-realtime-server) to understand what SRS is.
 
-Cloud SRS is an audio and video solution that is based on SRS, Nodejs, REACT, etc. to implement common audio and video scenarios. Please see [this diagram](https://github.com/ossrs/srs-stack#architecture) to understand what Cloud SRS is.
+SRS Stack is an audio and video solution that is based on SRS, Nodejs, REACT, etc. to implement common audio and video scenarios. Please see [this diagram](https://github.com/ossrs/srs-stack#architecture) to understand what SRS Stack is.
 
-After SRS is installed, it opens a streaming media server demo page with links to the player and console; after Cloud SRS is installed, it opens a login management backend that provides guidance for many different scenarios.
+After SRS is installed, it opens a streaming media server demo page with links to the player and console; after SRS Stack is installed, it opens a login management backend that provides guidance for many different scenarios.
 
-If you need to study the streaming media server in detail, please follow the SRS documentation and join the SRS community, and do not ask in the Cloud SRS group. SRS is an open-source audio and video server, aimed at highly skilled C/C++ programmers, and you can modify it at will, with strong customization capabilities.
+If you need to study the streaming media server in detail, please follow the SRS documentation and join the SRS community, and do not ask in the SRS Stack group. SRS is an open-source audio and video server, aimed at highly skilled C/C++ programmers, and you can modify it at will, with strong customization capabilities.
 
-If you want an out-of-the-box audio and video platform that can be used online, please use Cloud SRS and do not ask in the SRS community. The meaning of Cloud SRS is SRS in the cloud. It is a cloud-based service aimed at users who do not need to understand the details of audio and video and can operate according to the tutorial.
+If you want an out-of-the-box audio and video platform that can be used online, please use SRS Stack and do not ask in the SRS community. The meaning of SRS Stack is SRS in the cloud. It is a cloud-based service aimed at users who do not need to understand the details of audio and video and can operate according to the tutorial.
 
 Both are open-source projects, and contributions are welcome.
 
@@ -428,9 +428,9 @@ Both are open-source projects, and contributions are welcome.
 
 ## The difference with aaPanel
 
-aaPanel is a virtual machine management tool, and SRS Stack Server is an out-of-the-box audio and video solution. aaPanel can also install Cloud SRS, please refer to [supported platforms](#support-platform).
+aaPanel is a virtual machine management tool, and SRS Stack Server is an out-of-the-box audio and video solution. aaPanel can also install SRS Stack, please refer to [supported platforms](#support-platform).
 
-> Note: The overseas version of Baota is called aaPanel, which also supports Cloud SRS; if your machine is overseas, please do not use Baota, but use aaPanel; everyone uses different installation sources, and using Baota overseas may be very slow or even fail.
+> Note: The overseas version of Baota is called aaPanel, which also supports SRS Stack; if your machine is overseas, please do not use Baota, but use aaPanel; everyone uses different installation sources, and using Baota overseas may be very slow or even fail.
 
 <a name="diff-vcloud"></a><br/><br/><br/>
 
@@ -475,32 +475,32 @@ Send the temporary authorization address to the troubleshooting classmates.
 
 ## OpenAPI
 
-Regarding the open API, using AP to dock with Cloud SRS, you can follow the guide in `System Configuration > OpenAPI`.
+Regarding the open API, using AP to dock with SRS Stack, you can follow the guide in `System Configuration > OpenAPI`.
 
-All operations of Cloud SRS are done by calling the API, and these APIs can be seen in the Chrome Network panel for specific requests.
+All operations of SRS Stack are done by calling the API, and these APIs can be seen in the Chrome Network panel for specific requests.
 
-All operations that can be completed on the Cloud SRS page can be completed through OpenAPI.
+All operations that can be completed on the SRS Stack page can be completed through OpenAPI.
 
 <a name='features'></a><br/><br/><br/>
 
 ## Features
 
-Cloud SRS (i.e., SRS Stack Server) is an open-source solution implemented in nodejs, with the code in [srs-cloud](https://github.com/ossrs/srs-stack). Everyone is welcome to join.
+SRS Stack (i.e., SRS Stack Server) is an open-source solution implemented in nodejs, with the code in [srs-cloud](https://github.com/ossrs/srs-stack). Everyone is welcome to join.
 
 SRS Stack Server is aimed at mouse programming, allowing everyone to do audio and video business. It is suitable for those who do not understand audio and video, those who understand audio and video, those who farm, those who pull network cables, those who cut movies, those who carry cameras, those who dance, those who sing, those who sell second-hand goods, those who exchange open-source projects, those who live on multiple platforms, those who build their own source stations, those who can use computers and have WeChat, and those who are law-abiding citizens.
 
-For instructions on using Cloud SRS, please refer to the video [SRS Stack Server: Getting Started, Purchasing, and Introduction](https://www.bilibili.com/video/BV1844y1L7dL/).
+For instructions on using SRS Stack, please refer to the video [SRS Stack Server: Getting Started, Purchasing, and Introduction](https://www.bilibili.com/video/BV1844y1L7dL/).
 
-Currently, the scenarios and functions supported by Cloud SRS include:
+Currently, the scenarios and functions supported by SRS Stack include:
 
-* [Cloud SRS: Getting Started, Purchasing, and Introduction](https://mp.weixin.qq.com/s/fWmdkw-2AoFD_pEmE_EIkA): How to purchase and set up the environment, a must-read.
+* [SRS Stack: Getting Started, Purchasing, and Introduction](https://mp.weixin.qq.com/s/fWmdkw-2AoFD_pEmE_EIkA): How to purchase and set up the environment, a must-read.
 * `Supported` Docking with [aaPanel](https://mp.weixin.qq.com/s/nutc5eJ73aUa4Hc23DbCwQ) or [aaPanel](https://blog.ossrs.io/how-to-setup-a-video-streaming-service-by-aapanel-9748ae754c8c): SRS can be installed with [aaPanel](https://aapanel.com/), supporting all CentOS or Ubuntu machines, and can be installed with aaPanel command line after installing SRS.
 * `Supported` [Private Live Room](https://mp.weixin.qq.com/s/AKqVWIdk3SBD-6uiTMliyA): OBS pushes the stream to SRS, and you can watch movies with good friends, private live rooms, exclusive BGP bandwidth, and watch whatever you want.
 * `Supported` [Ultra HD Real-Time Live Streaming](https://mp.weixin.qq.com/s/HQb3gLRyJHHu56pnyHerxA): Using SRT low-latency push streaming, you can also do conferences, much clearer than WebRTC, and suitable for other low-latency SRT scenarios.
-* `Supported` [Local Recording](https://mp.weixin.qq.com/s/axN_TPo-Gk_H7CbdqUud6g): Record to the local file of the Cloud SRS server and provide HLS download. [#42](https://github.com/ossrs/srs-stack/issues/42)
+* `Supported` [Local Recording](https://mp.weixin.qq.com/s/axN_TPo-Gk_H7CbdqUud6g): Record to the local file of the SRS Stack server and provide HLS download. [#42](https://github.com/ossrs/srs-stack/issues/42)
 * `Supported` [Recording to Cloud Storage](https://mp.weixin.qq.com/s/axN_TPo-Gk_H7CbdqUud6g): Avoid local disk limitations and facilitate subsequent live stream processing, support recording video streams to cloud storage, see details in [#1193](https://github.com/ossrs/srs/issues/1193).
 * `Supported` [Recording to Cloud VOD](https://mp.weixin.qq.com/s/axN_TPo-Gk_H7CbdqUud6g): A more advanced capability than cloud recording, cloud storage is unlimited disk, and cloud VOD is a short video system, more convenient and more advanced.
-* `Supported` [Multi-Platform Rebroadcast](https://mp.weixin.qq.com/s/FtaeQIJpb7vpmX2eFguLiQ): Push the stream to Cloud SRS and forward it to video platforms such as Weishi, Kuaishou, Bilibili, Douyin, etc., see details in [#2676](https://github.com/ossrs/srs/issues/2676).
+* `Supported` [Multi-Platform Rebroadcast](https://mp.weixin.qq.com/s/FtaeQIJpb7vpmX2eFguLiQ): Push the stream to SRS Stack and forward it to video platforms such as Weishi, Kuaishou, Bilibili, Douyin, etc., see details in [#2676](https://github.com/ossrs/srs/issues/2676).
 * `Supported` Docking with [WordPress](https://mp.weixin.qq.com/s/kOWabmKbYvrmEXG2fPOZxQ): Support [WordPress plugin](https://wordpress.org/plugins/srs-player) and [Typecho plugin](https://github.com/ossrs/Typecho-Plugin-SrsPlayer), insert live stream address in Post.
 * `Supported` [DigitalOcean Image](https://mp.weixin.qq.com/s/_GcJm15BGv1qbmHixPQAGQ): Overseas support for DigitalOcean Droplet image, multi-language version in Chinese and English.
 * `Supported` [Virtual Live Streaming](https://mp.weixin.qq.com/s/I0Kmxtc24txpngO-PiR_tQ): Server-side OBS, pushing VOD files, images, or streams to live streaming, with simple layout capabilities.
@@ -518,7 +518,7 @@ Currently, the scenarios and functions supported by Cloud SRS include:
 * `In planning` Docking with [Moodle](https://stats.moodle.org/): Support Moodle plugin, open-source online education website.
 * `In planning` [Graphical Dashboard](https://mp.weixin.qq.com/s/ub9ZGmntOy_-S11oxFkxvg): Display background data in the form of charts, such as CPU, etc., see details in [Prometheus](https://github.com/ossrs/srs/issues/2899#prometheus).
 
-Welcome to join the group to discuss the use of Cloud SRS. All these SRS peripheral services are open-source and can be customized and deployed by yourself.
+Welcome to join the group to discuss the use of SRS Stack. All these SRS peripheral services are open-source and can be customized and deployed by yourself.
 
 <a name='changelog'></a><br/><br/><br/>
 

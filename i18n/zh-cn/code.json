@@ -208,7 +208,7 @@
     "message": "简单"
   },
   "homepage.easyToUse": {
-    "message": "基于协程技术，无异步回调难以维护的问题，SRS支持云原生标准（Docker镜像、K8s部署、可观测性日志和监控指标等），提供云SRS无门槛应用"
+    "message": "基于协程技术，无异步回调难以维护的问题，SRS支持云原生标准（Docker镜像、K8s部署、可观测性日志和监控指标等），提供SRS Stack无门槛应用"
   },
   "homepage.focusOnName": {
     "message": "实时"

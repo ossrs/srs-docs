@@ -97,9 +97,9 @@ SRS有很多Issues，但核心的未解决的问题，我在这里特别列出�
 
 SRS不做客户端，因为无论是FFmpeg，还是OBS，还是VLC，还是WebRTC，都是非常成熟和庞大的开源社区，我们和这些社区合作，使用这些社区的产品。
 
-除了SRS服务器，我们还在做云SRS，还有WordPress插件等等，主要的目标还是根据不同行业，做出更简单的应用方式，包括：
+除了SRS服务器，我们还在做SRS Stack，还有WordPress插件等等，主要的目标还是根据不同行业，做出更简单的应用方式，包括：
 
-* [srs-cloud](https://github.com/ossrs/srs-stack) 云SRS或SRS云服务器，是一个开箱即用的单机的视频云，里面有FFmpeg和SRS等，主要是方便不会命令行的用户，直接通过腾讯云镜像或者宝塔，鼠标操作，就可以把音视频的应用搭起来。
+* [srs-cloud](https://github.com/ossrs/srs-stack) SRS Stack或SRS云服务器，是一个开箱即用的单机的视频云，里面有FFmpeg和SRS等，主要是方便不会命令行的用户，直接通过腾讯云镜像或者宝塔，鼠标操作，就可以把音视频的应用搭起来。
 * [WordPress-Plugin-SrsPlayer](https://github.com/ossrs/WordPress-Plugin-SrsPlayer) 出版领域，比如个人博客、网站传媒等，方便用户可以使用音视频的能力。
 * [srs-unity](https://github.com/ossrs/srs-unity) 游戏领域，对接Unity的WebRTC SDK，使用音视频的能力。
 
