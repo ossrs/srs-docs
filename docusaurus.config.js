@@ -130,7 +130,7 @@ const config = {
               },
               {
                 to: '/faq',
-                label: 'FAQ: SRS OSS',
+                label: 'FAQ: SRS Server',
               },
               {
                 to: '/faq-srs-stack',
