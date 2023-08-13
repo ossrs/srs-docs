@@ -541,14 +541,22 @@ SRS Stack的使用说明，请参考视频[SRS Stack：起步、购买和入门]
 
 以下为SRS Stack的更新记录。
 
-* 2023.08.07, v1.0.303, minor improvements
-    * Always use the latest SRS 5.0 release. v1.0.301
-    * Use status to check SRS, not by the exit value. v1.0.301
-    * Refine DigitalOcean droplet image. v1.0.302
-    * Support local test all script. v1.0.302
-    * Rewrite script for lighthouse. v1.0.303
-    * Set nginx max body to 100GB. v1.0.303
-    * Use LEGO instead of certbot. v1.0.304
+* 2023.08.13, v1.0.305, 小改进
+    * 始终使用最新的SRS 5.0版本。v1.0.301
+    * 使用状态检查SRS，而不是通过退出值。v1.0.301
+    * 优化DigitalOcean droplet镜像。v1.0.302
+    * 支持本地测试所有脚本。v1.0.302
+    * 为lighthouse重写脚本。v1.0.303
+    * 将nginx最大body设置为100GB。v1.0.303
+    * 使用LEGO代替certbot。v1.0.304
+    * 将SRS Cloud重命名为SRS Stack。v1.0.304
+    * 通过SSL文件支持HTTPS。v1.0.305
+    * 支持重新加载nginx以进行SSL。v1.0.305
+    * 支持从letsencrypt请求SSL。v1.0.305
+    * 支持与bt/aaPanel ssl一起工作。v1.0.305
+    * 支持默认的自签名证书。v1.0.305
+    * 查询已经配置的SSL证书。v1.0.305
+    * 支持测试线上环境。 v1.0.305
 * 2023.08.06, v1.0.300, 微改进
     * 简化启动脚本，解决bug，目录调整为`/data`一级目录。v1.0.296
     * 改进消息提示，脚本注释，日志输出。v1.0.297

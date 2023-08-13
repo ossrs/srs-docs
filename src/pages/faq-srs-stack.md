@@ -526,7 +526,7 @@ Welcome to join the group to discuss the use of SRS Stack. All these SRS periphe
 
 The following are the update records for the SRS Stack server.
 
-* 2023.08.07, v1.0.303, minor improvements
+* 2023.08.13, v1.0.305, minor improvements
     * Always use the latest SRS 5.0 release. v1.0.301
     * Use status to check SRS, not by the exit value. v1.0.301
     * Refine DigitalOcean droplet image. v1.0.302
@@ -534,6 +534,14 @@ The following are the update records for the SRS Stack server.
     * Rewrite script for lighthouse. v1.0.303
     * Set nginx max body to 100GB. v1.0.303
     * Use LEGO instead of certbot. v1.0.304
+    * Rename SRS Cloud to SRS Stack. v1.0.304
+    * Support HTTPS by SSL file. v1.0.305
+    * Support reload nginx for SSL. v1.0.305
+    * Support request SSL from letsencrypt. v1.0.305
+    * Support work with bt/aaPanel ssl. v1.0.305
+    * Support self-sign certificate by default. v1.0.305
+    * Query configured SSL cert. v1.0.305
+    * Support test online environment. v1.0.305
 * 2023.08.06, v1.0.300, minor improvements
     * Simplify startup script, fix bug, adjust directory to `/data` top-level directory. v1.0.296
     * Improve message prompts, script comments, and log output. v1.0.297
