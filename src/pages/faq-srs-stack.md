@@ -527,8 +527,6 @@ Welcome to join the group to discuss the use of SRS Stack. All these SRS periphe
 The following are the update records for the SRS Stack server.
 
 * 2023.08.13, v1.0.305, v5.7.19
-    * Always use the latest SRS 5.0 release. v1.0.301
-    * Use status to check SRS, not by the exit value. v1.0.301
     * Refine DigitalOcean droplet image. v1.0.302
     * Support local test all script. v1.0.302
     * Rewrite script for lighthouse. v1.0.303
@@ -542,13 +540,15 @@ The following are the update records for the SRS Stack server.
     * Support self-sign certificate by default. v1.0.305
     * Query configured SSL cert. v1.0.305
     * Support test online environment. v1.0.305
-* 2023.08.06, v1.0.300, minor improvements
+* 2023.08.06, v1.0.301, v5.7.18
     * Simplify startup script, fix bug, adjust directory to `/data` top-level directory. v1.0.296
     * Improve message prompts, script comments, and log output. v1.0.297
     * Avoid modifying the global directory every time it starts, initialize it in the container and platform script. v1.0.298
     * Improve release script, check version matching, manually update version. v1.0.299
     * Remove upgrade function, maintain consistency of docker and other platforms. v1.0.300
     * Improved BT and aaPanel scripts, added test pipeline. v1.0.300
+    * Always use the latest SRS 5.0 release. v1.0.301
+    * Use status to check SRS, not by the exit value. v1.0.301
 * 2023.04.05, v1.0.295, structural improvements
     * Remove HTTPS certificate application, administrator authorization, NGINX reverse proxy, and other functions. v1.0.283
     * Implement Release using Go, reducing memory requirements and image size. v1.0.284
