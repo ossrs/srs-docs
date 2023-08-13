@@ -504,7 +504,7 @@ Currently, the scenarios and functions supported by SRS Stack include:
 * `Supported` Docking with [WordPress](https://mp.weixin.qq.com/s/kOWabmKbYvrmEXG2fPOZxQ): Support [WordPress plugin](https://wordpress.org/plugins/srs-player) and [Typecho plugin](https://github.com/ossrs/Typecho-Plugin-SrsPlayer), insert live stream address in Post.
 * `Supported` [DigitalOcean Image](https://mp.weixin.qq.com/s/_GcJm15BGv1qbmHixPQAGQ): Overseas support for DigitalOcean Droplet image, multi-language version in Chinese and English.
 * `Supported` [Virtual Live Streaming](https://mp.weixin.qq.com/s/I0Kmxtc24txpngO-PiR_tQ): Server-side OBS, pushing VOD files, images, or streams to live streaming, with simple layout capabilities.
-* `In development` [One-click Automatic HTTPS](https://mp.weixin.qq.com/s/O70Fz-mxNedZpxgGXQ8DsA): Upload HTTPS certificate, or one-click automatic application for Let's Encrypt certificate, a basic capability of the WebRTC scenario.
+* `Supported` [One-click Automatic HTTPS](https://mp.weixin.qq.com/s/O70Fz-mxNedZpxgGXQ8DsA): Upload HTTPS certificate, or one-click automatic application for Let's Encrypt certificate, a basic capability of the WebRTC scenario.
 * `In planning` Cloud Camera: Support camera GB access, support cloud platform, cloud recording.
 * `In planning` E-commerce Live Room: Live room, text chat capability, with product list and purchase, etc., see details in [#2858](https://github.com/ossrs/srs/issues/2858).
 * `In planning` Interactive Live Streaming: Live room, support file chat, send gifts and likes, etc.

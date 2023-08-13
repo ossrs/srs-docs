@@ -509,17 +509,17 @@ SRS Stack的使用说明，请参考视频[SRS Stack：起步、购买和入门]
 目前SRS Stack支持的场景和功能包括：
 
 * [SRS Stack：起步、购买和入门](https://mp.weixin.qq.com/s/fWmdkw-2AoFD_pEmE_EIkA)：如何购买和设置环境，必看。
-* `已支持，打磨中` 对接[宝塔](https://mp.weixin.qq.com/s/nutc5eJ73aUa4Hc23DbCwQ)或[aaPanel](https://blog.ossrs.io/how-to-setup-a-video-streaming-service-by-aapanel-9748ae754c8c)：可以用[宝塔](https://www.bt.cn/)安装SRS，支持所有CentOS或Ubuntu的机器，可命令行安装宝塔后装SRS。
-* `已支持，打磨中` [私人直播间](https://mp.weixin.qq.com/s/AKqVWIdk3SBD-6uiTMliyA)：OBS推流到SRS，可以和好朋友看电影，私密直播间，专享BGP带宽，想看啥就看啥。
-* `已支持，打磨中` [超高清实时直播](https://mp.weixin.qq.com/s/HQb3gLRyJHHu56pnyHerxA)：用SRT低延迟推流，也能做会议，比WebRTC清晰太多了，也适合其他低延迟SRT的场景。
-* `已支持，打磨中` [录制本地](https://mp.weixin.qq.com/s/axN_TPo-Gk_H7CbdqUud6g)：录制到SRS Stack服务器本地文件，提供HLS下载。[#42](https://github.com/ossrs/srs-stack/issues/42)
-* `已支持，打磨中` [录制到云存储](https://mp.weixin.qq.com/s/axN_TPo-Gk_H7CbdqUud6g)：避免本地磁盘限制，也方便后续直播流的处理，支持录制视频流到云存储，详细参考 [#1193](https://github.com/ossrs/srs/issues/1193)。
-* `已支持，打磨中` [录制到云点播](https://mp.weixin.qq.com/s/axN_TPo-Gk_H7CbdqUud6g)：比云录制更高级的能力，云存储是无限磁盘，云点播则是短视频系统，更方便，姿势更骚。
-* `已支持，打磨中` [多平台转播](https://mp.weixin.qq.com/s/FtaeQIJpb7vpmX2eFguLiQ)：推流到SRS Stack，转推到视频号、快手、B站、抖音等直播平台，详细参考 [#2676](https://github.com/ossrs/srs/issues/2676)。
-* `已支持，打磨中` 对接[WordPress](https://mp.weixin.qq.com/s/kOWabmKbYvrmEXG2fPOZxQ)：支持[WordPress插件](https://wordpress.org/plugins/srs-player)和[Typecho插件](https://github.com/ossrs/Typecho-Plugin-SrsPlayer)，在Post中插入直播流地址。
-* `已支持，打磨中` [DigitalOcean镜像](https://mp.weixin.qq.com/s/_GcJm15BGv1qbmHixPQAGQ)：海外支持DigitalOcean Droplet镜像，中英文多语言版本。
-* `已支持，打磨中` [虚拟直播](https://mp.weixin.qq.com/s/I0Kmxtc24txpngO-PiR_tQ)：服务端OBS，将点播文件、图片或流推直播，有简单布局能力。
-* `开发中` [一键自动HTTPS](https://mp.weixin.qq.com/s/O70Fz-mxNedZpxgGXQ8DsA)：上传HTTPS证书，或者一键自动申请Let's Encrypt证书，属于WebRTC场景的基本能力。
+* `已支持` 对接[宝塔](https://mp.weixin.qq.com/s/nutc5eJ73aUa4Hc23DbCwQ)或[aaPanel](https://blog.ossrs.io/how-to-setup-a-video-streaming-service-by-aapanel-9748ae754c8c)：可以用[宝塔](https://www.bt.cn/)安装SRS，支持所有CentOS或Ubuntu的机器，可命令行安装宝塔后装SRS。
+* `已支持` [私人直播间](https://mp.weixin.qq.com/s/AKqVWIdk3SBD-6uiTMliyA)：OBS推流到SRS，可以和好朋友看电影，私密直播间，专享BGP带宽，想看啥就看啥。
+* `已支持` [超高清实时直播](https://mp.weixin.qq.com/s/HQb3gLRyJHHu56pnyHerxA)：用SRT低延迟推流，也能做会议，比WebRTC清晰太多了，也适合其他低延迟SRT的场景。
+* `已支持` [录制本地](https://mp.weixin.qq.com/s/axN_TPo-Gk_H7CbdqUud6g)：录制到SRS Stack服务器本地文件，提供HLS下载。[#42](https://github.com/ossrs/srs-stack/issues/42)
+* `已支持` [录制到云存储](https://mp.weixin.qq.com/s/axN_TPo-Gk_H7CbdqUud6g)：避免本地磁盘限制，也方便后续直播流的处理，支持录制视频流到云存储，详细参考 [#1193](https://github.com/ossrs/srs/issues/1193)。
+* `已支持` [录制到云点播](https://mp.weixin.qq.com/s/axN_TPo-Gk_H7CbdqUud6g)：比云录制更高级的能力，云存储是无限磁盘，云点播则是短视频系统，更方便，姿势更骚。
+* `已支持` [多平台转播](https://mp.weixin.qq.com/s/FtaeQIJpb7vpmX2eFguLiQ)：推流到SRS Stack，转推到视频号、快手、B站、抖音等直播平台，详细参考 [#2676](https://github.com/ossrs/srs/issues/2676)。
+* `已支持` 对接[WordPress](https://mp.weixin.qq.com/s/kOWabmKbYvrmEXG2fPOZxQ)：支持[WordPress插件](https://wordpress.org/plugins/srs-player)和[Typecho插件](https://github.com/ossrs/Typecho-Plugin-SrsPlayer)，在Post中插入直播流地址。
+* `已支持` [DigitalOcean镜像](https://mp.weixin.qq.com/s/_GcJm15BGv1qbmHixPQAGQ)：海外支持DigitalOcean Droplet镜像，中英文多语言版本。
+* `已支持` [虚拟直播](https://mp.weixin.qq.com/s/I0Kmxtc24txpngO-PiR_tQ)：服务端OBS，将点播文件、图片或流推直播，有简单布局能力。
+* `已支持` [一键自动HTTPS](https://mp.weixin.qq.com/s/O70Fz-mxNedZpxgGXQ8DsA)：上传HTTPS证书，或者一键自动申请Let's Encrypt证书，属于WebRTC场景的基本能力。
 * `规划中` 云摄像头：支持摄像头GB接入，支持云台，云录制。
 * `规划中` 电商直播间：直播间，文字聊天能力，有商品列表和购买等，详细参考 [#2858](https://github.com/ossrs/srs/issues/2858)。
 * `规划中` 互动直播：直播间，支持文件聊天，送礼物和点赞等。
