@@ -16,8 +16,7 @@ SRS supports live streaming.
 Run SRS using docker:
 
 ```bash
-docker run --rm -it -p 1935:1935 -p 1985:1985 -p 8080:8080 \
-    ossrs/srs:5 ./objs/srs -c conf/docker.conf
+docker run --rm -it -p 1935:1935 -p 1985:1985 -p 8080:8080 ossrs/srs:5
 ```
 
 > Note: The available images is [here](https://hub.docker.com/r/ossrs/srs/tags).
@@ -53,7 +52,7 @@ Run SRS using docker:
 CANDIDATE="192.168.1.10"
 docker run --rm -it -p 1935:1935 -p 1985:1985 -p 8080:8080 -p 1990:1990 -p 8088:8088 \
     --env CANDIDATE=$CANDIDATE -p 8000:8000/udp \
-    ossrs/srs:5 ./objs/srs -c conf/docker.conf
+    ossrs/srs:5
 ```
 
 > Note: Please replace the IP with your server IP.

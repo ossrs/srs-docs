@@ -17,7 +17,7 @@ hide_table_of_contents: false
 
 ```bash
 docker run --rm -it -p 1935:1935 -p 1985:1985 -p 8080:8080 \
-    registry.cn-hangzhou.aliyuncs.com/ossrs/srs:5 ./objs/srs -c conf/docker.conf
+    registry.cn-hangzhou.aliyuncs.com/ossrs/srs:5
 ```
 
 > Note: 可用镜像在 [这里](https://cr.console.aliyun.com/repository/cn-hangzhou/ossrs/srs/images) 和每个 [Release](https://github.com/ossrs/srs/releases?q=v4&expanded=true) 都会给出来链接。
@@ -25,8 +25,9 @@ docker run --rm -it -p 1935:1935 -p 1985:1985 -p 8080:8080 \
 使用FFmpeg的Docker推流到本机：
 
 ```bash
-docker run --rm -it registry.cn-hangzhou.aliyuncs.com/ossrs/srs:encoder ffmpeg -stream_loop -1 -re -i doc/source.flv \
-  -c copy -f flv rtmp://host.docker.internal/live/livestream
+docker run --rm -it registry.cn-hangzhou.aliyuncs.com/ossrs/srs:encoder \
+  ffmpeg -stream_loop -1 -re -i doc/source.flv -c copy \
+    -f flv rtmp://host.docker.internal/live/livestream
 ```
 
 或者使用 [FFmpeg(点击下载)](https://ffmpeg.org/download.html) 或 [OBS(点击下载)](https://obsproject.com/download) 推流：
@@ -53,7 +54,7 @@ SRS支持WebRTC，可以做会议或视频聊天。
 CANDIDATE="192.168.1.10"
 docker run --rm -it -p 1935:1935 -p 1985:1985 -p 8080:8080 -p 1990:1990 -p 8088:8088 \
     --env CANDIDATE=$CANDIDATE -p 8000:8000/udp \
-    registry.cn-hangzhou.aliyuncs.com/ossrs/srs:5 ./objs/srs -c conf/docker.conf
+    registry.cn-hangzhou.aliyuncs.com/ossrs/srs:5
 ```
 
 > Note: 请将IP换成你的SRS的IP地址。
