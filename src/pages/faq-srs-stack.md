@@ -526,7 +526,7 @@ Welcome to join the group to discuss the use of SRS Stack. All these SRS periphe
 
 The following are the update records for the SRS Stack server.
 
-* 2023.08.13, v1.0.305, minor improvements
+* 2023.08.13, v1.0.305, v5.7.19
     * Always use the latest SRS 5.0 release. v1.0.301
     * Use status to check SRS, not by the exit value. v1.0.301
     * Refine DigitalOcean droplet image. v1.0.302
