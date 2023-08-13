@@ -1,0 +1,14 @@
+# for-writers
+
+From the perspective of a writer, describe how to write a document for SRS.
+
+## How to link blog in docs?
+
+Link the blog in docs:
+
+```markdown
+[SRS Stack aaPanel Plugin](/blog/BT-aaPanel)
+```
+
+For instance, refer to the `getting-started-stack.md` document for more details.
+

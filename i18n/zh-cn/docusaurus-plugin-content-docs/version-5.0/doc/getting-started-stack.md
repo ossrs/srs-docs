@@ -24,21 +24,31 @@ SRS Stack是一个基于Go、Reactjs、SRS、FFmpeg、WebRTC等的轻量级、�
 | 虚拟直播     | 是    | 否        | SRS Stack提供了先进的虚拟直播功能。        |
 | WordPress | 是    | 否        | SRS Stack提供了WordPress插件和操作指南。 |
 
+特别说明：
+
+* 请选择Ubuntu 20系统，其他系统可能会碰到一些奇怪的问题。
+
+## Docker
+
+SRS Stack 提供了一个 Docker 镜像，关于使用说明，请参考 [SRS Stack Docker](https://github.com/ossrs/srs-stack/issues/44)。
+
+## Script
+
+对于 Ubuntu 20+，您可以下载 [linux-srs_stack-zh.tar.gz](https://github.com/ossrs/srs-stack/releases/latest/download/linux-srs_stack-zh.tar.gz) 
+并安装它。
+
 ## TencentCloud LightHouse
 
-使用方式请参考[TencentCloud LightHouse](https://www.bilibili.com/video/BV1844y1L7dL/)
+在国内做流媒体或RTC业务，可以在腾讯云轻量服务器上购买SRS Stack，参考[SRS Stack：起步、购买和入门](/blog/SRS-Cloud-Tutorial)。
 
 ## BT
 
-使用方式请参考[宝塔](https://mp.weixin.qq.com/s/nutc5eJ73aUa4Hc23DbCwQ)
-
-## TencentCloud CVM
-
-使用方式请参考[TencentCloud CVM](https://mp.weixin.qq.com/s/x-PjoKjJj6HRF-eCKX0KzQ)
+SRS Stack提供了宝塔插件，使用方法参考[宝塔插件](/blog/BT-aaPanel)。
 
 ## DigitalOcean Droplet
 
-使用方式请参考[DigitalOcean Droplet](https://mp.weixin.qq.com/s/_GcJm15BGv1qbmHixPQAGQ)：海外用户，直接创建SRS Droplet。
+若你需要做出海业务，在海外做直播或者RTC，可以很方便的一键创建SRS Stack，参考 
+[DigitalOcean Droplet](https://mp.weixin.qq.com/s/_GcJm15BGv1qbmHixPQAGQ) 使用说明。
 
 ![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.net&path=/lts/doc/zh/v5/getting-started-stack)
 

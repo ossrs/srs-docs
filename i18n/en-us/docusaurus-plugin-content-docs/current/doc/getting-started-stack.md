@@ -27,13 +27,27 @@ media services needs.
 | Virtual Live     | Yes       | No            | SRS Stack provides advanced virtual live streaming capabilities.     |
 | WordPress        | Yes       | No            | SRS Stack offers a WordPress plugin and step-by-step guidelines.     |
 
+Special Note:
+
+* Please choose the Ubuntu 20 system, as other systems may encounter some strange issues.
+
+## Docker
+
+SRS Stack offers a Docker image, for usage instructions refer to the [SRS Stack Docker](https://github.com/ossrs/srs-stack/issues/44).
+
+## Script
+
+For Ubuntu 20+, you can download the [linux-srs_stack-en.tar.gz](https://github.com/ossrs/srs-stack/releases/latest/download/linux-srs_stack-en.tar.gz)
+and install it.
+
 ## DigitalOcean Droplet
 
-Please read [DigitalOcean Droplet](https://github.com/ossrs/srs-stack/wiki/Droplet): Create SRS Droplet.
+Easily set up an SRS Stack with just one click. For more information, check out
+[How to Establish a Video Streaming Service with a Single Click](/blog/SRS-Cloud-Tutorial).
 
-## TencentCloud CVM
+## aaPanel
 
-Please read [TencentCloud CVM](https://www.bilibili.com/video/BV1844y1L7dL/): Deploy SRS to Tencent CVM.
+SRS Stack offers a BaoTa plugin, for usage instructions refer to the [SRS Stack aaPanel Plugin](/blog/BT-aaPanel).
 
 ## TencentCloud LightHouse
 
