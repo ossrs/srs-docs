@@ -15,6 +15,8 @@ support you need:
 
 https://opencollective.com/srs-server
 
+> Note: Please contact us by [Discord](https://discord.gg/yZ4BnPmHAd) after becoming a sponsor or backer.
+
 SRS is a non-profit community made up of dedicated volunteers who strive to offer enhanced support to sponsors 
 and backers. Although you can also turn to the community for assistance, please be aware that response times might
 not be as quick as desired.

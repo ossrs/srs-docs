@@ -12,3 +12,22 @@ Link the blog in docs:
 
 For instance, refer to the `getting-started-stack.md` document for more details.
 
+## How to link document in the sample docs?
+
+Link the document in the sample docs:
+
+```markdown
+[Getting Started](./getting-started.md)
+```
+
+For instance, refer to the `introduction.md` document for more details.
+
+## How to link pages in docs?
+
+Link the pages in docs:
+
+```markdown
+[MIT Licensed](/license)
+```
+
+For instance, refer to the `introduction.md` document for more details.

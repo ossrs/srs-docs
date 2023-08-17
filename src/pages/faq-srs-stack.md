@@ -526,8 +526,13 @@ Welcome to join the group to discuss the use of SRS Stack. All these SRS periphe
 
 The following are the update records for the SRS Stack server.
 
-* 2023.08.14, v1.0.306, v5.7.20
+* 2023.08.17, v1.0.307, v5.7.20
     * Always dispose DO VM and domain for test. v1.0.306
+    * Fix docker start failed, cover by test. v1.0.306
+    * Switch default language to en. v1.0.306
+    * Support include for SRS config. v1.0.306
+    * Support High Performance HLS mode. v1.0.307
+    * Show current config for settings. v1.0.307
 * 2023.08.13, v1.0.305, v5.7.19
     * Refine DigitalOcean droplet image. v1.0.302
     * Support local test all script. v1.0.302
