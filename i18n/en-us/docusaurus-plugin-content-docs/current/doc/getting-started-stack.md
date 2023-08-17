@@ -15,17 +15,17 @@ However, SRS Stack provides a more powerful and feature-rich experience for end 
 eliminating the need to write any code. Users can directly utilize SRS Stack for your
 media services needs.
 
-| Comparison       | SRS Stack | SRS           | Notes                                                                |
-|------------------|-----------|---------------|----------------------------------------------------------------------|
-| License          | MIT       | MIT           | Both are open-source with an MIT license.                          |
-| Live Streaming   | Yes       | Yes           | Both support RTMP, HLS, and HTTP-FLV protocols.                      |
-| WebRTC           | Yes       | Yes           | WebRTC is supported by both.                                         |
-| Console          | Enhanced  | HTTP API      | SRS Stack offers a more powerful console.                            |
-| Authentication   | Yes       | HTTP Callback | SRS Stack has built-in authentication, while SRS uses callbacks.     |
-| DVR              | Enhanced  | File-based    | SRS Stack supports DVR to file and cloud storage.                    |
-| Forwarding       | Enhanced  | Basic         | SRS Stack can forward to multiple platforms via various protocols.   |
-| Virtual Live     | Yes       | No            | SRS Stack provides advanced virtual live streaming capabilities.     |
-| WordPress        | Yes       | No            | SRS Stack offers a WordPress plugin and step-by-step guidelines.     |
+| Comparison       | SRS Stack | SRS                | Notes                                                              |
+|------------------|-----------|--------------------|--------------------------------------------------------------------|
+| License          | MIT       | AGPL-3.0-or-later  | SRS is licenced under MIT, SRS Stack is AGPL-3.0-or-later.         |
+| Live Streaming   | Yes       | Yes                | Both support RTMP, HLS, and HTTP-FLV protocols.                    |
+| WebRTC           | Yes       | Yes                | WebRTC is supported by both.                                       |
+| Console          | Enhanced  | HTTP API           | SRS Stack offers a more powerful console.                          |
+| Authentication   | Yes       | HTTP Callback      | SRS Stack has built-in authentication, while SRS uses callbacks.   |
+| DVR              | Enhanced  | File-based         | SRS Stack supports DVR to file and cloud storage.                  |
+| Forwarding       | Enhanced  | Basic              | SRS Stack can forward to multiple platforms via various protocols. |
+| Virtual Live     | Yes       | No                 | SRS Stack provides advanced virtual live streaming capabilities.   |
+| WordPress        | Yes       | No                 | SRS Stack offers a WordPress plugin and step-by-step guidelines.   |
 
 Special Note:
 

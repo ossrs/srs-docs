@@ -533,6 +533,7 @@ The following are the update records for the SRS Stack server.
     * Support include for SRS config. v1.0.306
     * Support High Performance HLS mode. v1.0.307
     * Show current config for settings. v1.0.307
+    * Switch MIT to AGPL License. v1.0.307
 * 2023.08.13, v1.0.305, v5.7.19
     * Refine DigitalOcean droplet image. v1.0.302
     * Support local test all script. v1.0.302
