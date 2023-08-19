@@ -1,5 +1,5 @@
 ---
-slug: SRS-Cloud-Tutorial
+slug: SRS-Stack-Tutorial
 title: SRS Stack：起步、购买和入门
 authors: []
 tags: [turotial, srs, webrtc, streaming]
@@ -77,6 +77,6 @@ SRS Stack：https://www.bilibili.com/video/BV1844y1L7dL/
 
 > Note: 这些功能会不断更新，请访问GitHub地址，查看最新的功能列表。
 
-![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.net&path=/lts/blog-zh/22-04-09-SRS-Cloud-Tutorial)
+![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.net&path=/lts/blog-zh/22-04-09-SRS-Stack-Tutorial)
 
 

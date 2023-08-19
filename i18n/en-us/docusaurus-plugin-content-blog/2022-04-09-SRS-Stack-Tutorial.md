@@ -1,5 +1,5 @@
 ---
-slug: SRS-Cloud-Tutorial
+slug: SRS-Stack-Tutorial
 title: How to Setup a Video Streaming Service by 1-Click
 authors: []
 tags: [turotial, srs, webrtc, streaming]
@@ -45,7 +45,7 @@ After the droplet is created, open `http://your_public_ipv4/mgmt/` in the browse
 We have bellow services running in the SRS droplet:
 
 * [SRS Server](https://github.com/ossrs/srs): SRS is a simple, high efficiency and realtime video server, supports RTMP, WebRTC, HLS, HTTP-FLV and SRT. We have both SRS 4.0 and 5.0 images installed. SRS is the media server engine, licensed under MIT or MulanPSL-2.0([compatible with Apache-2.0](https://www.apache.org/legal/resolved.html#category-a)).
-* [SRS Stack](https://github.com/ossrs/srs-stack): A lightweight open-source video cloud based on Nodejs, SRS, FFmpeg, WebRTC, etc. SRS-Cloud acts as the framework of a video streaming service, it's also open source, licensed under MIT.
+* [SRS Stack](https://github.com/ossrs/srs-stack): A lightweight open-source video cloud based on Nodejs, SRS, FFmpeg, WebRTC, etc. SRS-Stack acts as the framework of a video streaming service, it's also open source, licensed under MIT.
 * [FFmpeg](https://ffmpeg.org/): A complete, cross-platform solution to record, convert and stream audio and video. FFmpeg is used as restreaming or transcoding, and many other stream processing features.
 * Other infrastructure like [Docker](https://docker.io/), [Redis](https://redis.io/), [NGINX](https://nginx.org/), [Prometheus](https://prometheus.io/) and [Certbot](https://certbot.eff.org/), to run dependent services as docker container, allow checking and upgrading to stable versions.
 
@@ -125,6 +125,6 @@ SRS Stack is a single node video streaming service, but SRS is a media server th
 
 In this tutorial, you build a video streaming service only by 1-Click, but with powerful features like authentication, SRT and WebRTC etc. If you have further questions about SRS, [the wiki](/docs/v4/doc/introduction) is a good place to start. If you'd like to discuss with SRS, you are welcome to [discord](https://discord.gg/yZ4BnPmHAd).
 
-![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/blog-en/22-04-09-SRS-Cloud-Tutorial)
+![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/blog-en/22-04-09-SRS-Stack-Tutorial)
 
 

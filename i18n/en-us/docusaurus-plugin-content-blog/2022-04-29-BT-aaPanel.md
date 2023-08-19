@@ -61,7 +61,7 @@ there, as shown in the following picture:
 
 ![](/img/blog-2022-04-29-en-002.png)
 
-If not found in App Store, you could also download the latest version of the plugin in the srs-cloud repository on
+If not found in App Store, you could also download the latest version of the plugin in the srs-stack repository on
 Github: [aapanel-srs_cloud.zip](https://github.com/ossrs/srs-stack/releases/latest/download/aapanel-srs_cloud.zip). Then
 you could upload the zip file and install the plugin, as demonstrated below:
 

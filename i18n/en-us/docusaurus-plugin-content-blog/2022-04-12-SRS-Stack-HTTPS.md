@@ -1,5 +1,5 @@
 ---
-slug: SRS-Cloud-HTTPS
+slug: SRS-Stack-HTTPS
 title: How to Secure SRS with Let's Encrypt by 1-Click
 authors: []
 tags: [turotial, srs, https]
@@ -113,6 +113,6 @@ In this tutorial, you set-up the DNS A Record, downloaded SSL Certificates for y
 the certificate, and set-up automatic renewal. If you have further questions, please contact us by
 [discord](https://discord.gg/yZ4BnPmHAd).
 
-![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/blog-en/22-04-12-SRS-Cloud-HTTPS)
+![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/blog-en/22-04-12-SRS-Stack-HTTPS)
 
 

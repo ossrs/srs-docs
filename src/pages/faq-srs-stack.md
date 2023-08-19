@@ -177,7 +177,7 @@ SRS Stack supports applying for free HTTPS certificates, and you can apply for c
 * https://www.ossrs.io SRS's overseas documentation website.
 * https://r.ossrs.net SRS's stable version demo server.
 
-The operation is very simple, just follow these three steps, please see [here](https://ossrs.net/lts/blog/2022/04/12/SRS-Cloud-HTTPS):
+The operation is very simple, just follow these three steps, please see [here](https://ossrs.net/lts/blog/2022/04/12/SRS-Stack-HTTPS):
 
 1. Purchase a domain name and complete the filing. You must have your own legal domain name, otherwise, you cannot apply for a certificate.
 2. Resolve the domain name to the public IP of SRS Stack. You can add multiple domain names to resolve, for example, `ossrs.io` and `www.ossrs.io` are both resolved to the same SRS Stack server.
@@ -485,7 +485,7 @@ All operations that can be completed on the SRS Stack page can be completed thro
 
 ## Features
 
-SRS Stack (i.e., SRS Stack Server) is an open-source solution implemented in nodejs, with the code in [srs-cloud](https://github.com/ossrs/srs-stack). Everyone is welcome to join.
+SRS Stack (i.e., SRS Stack Server) is an open-source solution implemented in nodejs, with the code in [srs-stack](https://github.com/ossrs/srs-stack). Everyone is welcome to join.
 
 SRS Stack Server is aimed at mouse programming, allowing everyone to do audio and video business. It is suitable for those who do not understand audio and video, those who understand audio and video, those who farm, those who pull network cables, those who cut movies, those who carry cameras, those who dance, those who sing, those who sell second-hand goods, those who exchange open-source projects, those who live on multiple platforms, those who build their own source stations, those who can use computers and have WeChat, and those who are law-abiding citizens.
 
@@ -526,7 +526,7 @@ Welcome to join the group to discuss the use of SRS Stack. All these SRS periphe
 
 The following are the update records for the SRS Stack server.
 
-* 2023.08.17, v1.0.307, v5.7.20
+* 2023.08.19, v5.8.23
     * Always dispose DO VM and domain for test. v1.0.306
     * Fix docker start failed, cover by test. v1.0.306
     * Switch default language to en. v1.0.306
@@ -534,6 +534,11 @@ The following are the update records for the SRS Stack server.
     * Support High Performance HLS mode. v1.0.307
     * Show current config for settings. v1.0.307
     * Switch MIT to AGPL License. v1.0.307
+    * Use one version strategy. v5.8.20
+    * Always check test result. v5.8.21
+    * Add lfs mp4 samples for test. v5.8.21
+    * SRT: Enable srt in default vhost. v5.8.22
+    * Add utest for HP HLS. v5.8.23
 * 2023.08.13, v1.0.305, v5.7.19
     * Refine DigitalOcean droplet image. v1.0.302
     * Support local test all script. v1.0.302
@@ -624,7 +629,7 @@ The following are the update records for the SRS Stack server.
     * Change `filing` to `website`, can set home page redirection and footer filing number.
     * Improve NGINX configuration file structure, centralize configuration in `containers` directory.
     * Support setting simple load balancing, randomly selecting a backend NGINX for HLS distribution.
-    * Containers work in an independent `srs-cloud` network.
+    * Containers work in an independent `srs-stack` network.
     * Add `System > Tools` option.
     * Use Redis container, not dependent on host Redis service.
 * 2022.04.06, v1.0.200, major version update, multi-language, Release 4.4

@@ -76,7 +76,7 @@ Your player should show up on your WordPress post or page.
 
 > Note: Basic setup of the SRS server does not activate HTTPS. If your WordPress website is HTTPS, it will be unable to
 > show the video coming from a HTTP server. Setting up HTTPS on your server requires additional steps, please follow
-> [set-up HTTPS for SRS](./2022-04-12-SRS-Cloud-HTTPS.md) tutorial.
+> [set-up HTTPS for SRS](./2022-04-12-SRS-Stack-HTTPS.md) tutorial.
 
 Step 3: Resize the player on your post or page.
 
@@ -96,7 +96,7 @@ Your player should have a width of 320 and a height with the corresponding aspec
 If your WordPress website is protected by a SSL certificate and your initial setup of your SRS server is not, your video
 will not play on your website.
 
-Please follow [these instructions](./2022-04-12-SRS-Cloud-HTTPS.md) to
+Please follow [these instructions](./2022-04-12-SRS-Stack-HTTPS.md) to
 setup an SSL certificate for your SRS streaming server. After this setup your video will play on your website.
 
 ## Conclusion

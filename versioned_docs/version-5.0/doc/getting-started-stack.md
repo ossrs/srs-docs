@@ -43,7 +43,7 @@ and install it.
 ## DigitalOcean Droplet
 
 Easily set up an SRS Stack with just one click. For more information, check out 
-[How to Establish a Video Streaming Service with a Single Click](/blog/SRS-Cloud-Tutorial).
+[How to Establish a Video Streaming Service with a Single Click](/blog/SRS-Stack-Tutorial).
 
 ## aaPanel
 

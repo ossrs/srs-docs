@@ -4,4 +4,4 @@
 
 Migrated to [SRS Stack FAQ](./faq-srs-stack).
 
-![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/pages/faq-srs-cloud-en)
+![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/pages/faq-srs-stack-en)

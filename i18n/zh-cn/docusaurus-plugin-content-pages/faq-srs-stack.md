@@ -182,7 +182,7 @@ SRS Stack支持申请免费HTTPS证书，而且可以申请多个域名的证书
 * https://www.ossrs.io SRS的海外文档网站。
 * https://r.ossrs.net SRS的稳定版演示服务器。
 
-操作非常简单，只需要三步，具体请看[这里](https://ossrs.net/lts/blog/2022/04/12/SRS-Cloud-HTTPS)：
+操作非常简单，只需要三步，具体请看[这里](https://ossrs.net/lts/blog/2022/04/12/SRS-Stack-HTTPS)：
 
 1. 购买域名并备案，一定要有自己的合法域名，否则无法申请证书的哈。
 2. 将域名解析到SRS Stack的公网IP，可以通过域名访问到你的SRS Stack就可以，可以加多个域名解析，比如 `ossrs.io` `www.ossrs.io` 都是解析到同一个SRS Stack服务器的。
@@ -500,7 +500,7 @@ SRS Stack是把这些系统全部放在一台`Lighthouse/CVM/Droplet/宝塔`云�
 
 ## Features
 
-SRS Stack（即SRS Stack）是nodejs实现的开源方案，代码在[srs-cloud](https://github.com/ossrs/srs-stack)，欢迎一起来搞。
+SRS Stack（即SRS Stack）是nodejs实现的开源方案，代码在[srs-stack](https://github.com/ossrs/srs-stack)，欢迎一起来搞。
 
 SRS Stack面向鼠标编程，让每个人都能做音视频业务。不懂音视频的可以，懂音视频的也可以，种地的可以，撸网线的可以，剪电影的可以，背摄像机的也可以，跳舞的可以，唱歌的可以，卖二手货的也可以，开源项目交流也可以，多平台直播也可以，自建源站可以，会用电脑有微信就可以，守法公民都可以。
 
@@ -541,7 +541,7 @@ SRS Stack的使用说明，请参考视频[SRS Stack：起步、购买和入门]
 
 以下为SRS Stack的更新记录。
 
-* 2023.08.17, v1.0.307, v5.7.20
+* 2023.08.19, v5.8.23
     * 总是释放DO的临时测试资源。 v1.0.306
     * 修复 Docker 启动失败，通过测试覆盖。v1.0.306
     * 将默认语言切换为英文。v1.0.306
@@ -549,6 +549,11 @@ SRS Stack的使用说明，请参考视频[SRS Stack：起步、购买和入门]
     * 支持高性能HLS分发模式. v1.0.307
     * 显示设置中的配置的当前的值. v1.0.307
     * 从MIT协议切换到AGPL协议. v1.0.307
+    * 使用一个版本策略，统一版本. v5.8.20
+    * 总是检查测试结果，无论超时还是取消. v5.8.21
+    * 使用本地LFS文件作为测试源。 v5.8.21
+    * 开启SRT配置，支持SRT推流。 v5.8.22
+    * 添加高性能HLS的单元测试用例。 v5.8.23
 * 2023.08.13, v1.0.305, v5.7.19
     * 优化DigitalOcean droplet镜像。v1.0.302
     * 支持本地测试所有脚本。v1.0.302
@@ -640,7 +645,7 @@ SRS Stack的使用说明，请参考视频[SRS Stack：起步、购买和入门]
     * 更改`备案`为`网站`，可设置首页跳转和页脚备案号。
     * 改进NGINX配置文件结构，配置集中在`containers`目录。
     * 支持简单负载均衡的设置，随机选个后端NGINX做HLS分发。
-    * 容器工作在独立的`srs-cloud`网络中。
+    * 容器工作在独立的`srs-stack`网络中。
     * 新增`系统 > 工具`选项。
     * 使用Redis容器，不依赖主机的Redis服务。
 * 2022.04.06, v1.0.200, 大版本更新, 多语言, Release 4.4

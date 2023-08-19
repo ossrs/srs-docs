@@ -17,7 +17,7 @@ Here are some common questions. If you can't find your question, please search i
 first. If you are sure it is a bug and it has not been submitted before, please submit an 
 Issue according to the requirements.
 
-> Note: This is FAQ about SRS, please see [SRS Stack FAQ](/faq-srs-cloud) for SRS Stack.
+> Note: This is FAQ about SRS, please see [SRS Stack FAQ](/faq-srs-stack) for SRS Stack.
 
 <a name='cdn'></a> <a name='vod'></a>
 
@@ -125,7 +125,7 @@ Issue according to the requirements.
 * `Dynamic DVR`: About dynamic recording, regular expression matching for streams that need to be recorded, etc.
   > 1. You can use `on_publish` to callback the business system and implement complex rules.
   > 1. For specific recording files, use `on_hls` to copy the slices to the recording directory or cloud storage.
-  > 1. You can refer to the DVR implementation in [srs-cloud](https://github.com/ossrs/srs-stack/blob/main/platform/srs-hooks.go).
+  > 1. You can refer to the DVR implementation in [srs-stack](https://github.com/ossrs/srs-stack/blob/main/platform/srs-hooks.go).
   > 1. SRS will not support dynamic DVR, but some solutions are provided. You can also refer to [#1577](https://github.com/ossrs/srs/issues/1577).
 
 <a name='api-security'></a> <a name='https'></a> <a name='https-h2-3'></a>

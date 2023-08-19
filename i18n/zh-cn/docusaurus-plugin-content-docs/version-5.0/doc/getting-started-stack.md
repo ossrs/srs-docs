@@ -39,7 +39,7 @@ SRS Stack 提供了一个 Docker 镜像，关于使用说明，请参考 [SRS St
 
 ## TencentCloud LightHouse
 
-在国内做流媒体或RTC业务，可以在腾讯云轻量服务器上购买SRS Stack，参考[SRS Stack：起步、购买和入门](/blog/SRS-Cloud-Tutorial)。
+在国内做流媒体或RTC业务，可以在腾讯云轻量服务器上购买SRS Stack，参考[SRS Stack：起步、购买和入门](/blog/SRS-Stack-Tutorial)。
 
 ## BT
 
