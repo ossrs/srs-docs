@@ -255,19 +255,7 @@ jobs:
             bash /root/restart_docs-typesense.sh
             #
             # Restart search scraper
-            cat << END > /root/restart_docs-search-scraper.sh
-              for ((i=0; i < 5; i++)); do
-                if [[ $(docker ps -f name=docs-search-scraper |wc -l) -eq 1 ]]; then echo "Killed"; break; fi;
-                docker rm -f docs-search-scraper; sleep 0.3;
-              done
-              # Replace the BASE_URL
-              sed -i 's|.*url.*host.docker.internal:8107.*|      "url": "http://host.docker.internal:8107/",|g' /root/search/scraper.json
-              docker run --rm --privileged --name docs-search-scraper --add-host host.docker.internal:$SRS_DROPLET_PIP -e UPDATE_NB_HITS=0 \
-                -e TYPESENSE_HOST=host.docker.internal -e TYPESENSE_API_KEY=$SEARCH_APIKEY -e TYPESENSE_PORT=8108 \
-                -e TYPESENSE_PROTOCOL=http -v /root/search/scraper.json:/config.json -e CONFIG=/config.json \
-                typesense/docsearch-scraper
-            END
-            bash /root/restart_docs-search-scraper.sh
+            echo "Something wrong for search scraper, ignore it."
             #
             # Cleanup old docker images.
             for image in $(docker images |grep '<none>' |awk '{print $3}'); do

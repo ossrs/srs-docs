@@ -540,6 +540,7 @@ The following are the update records for the SRS Stack server.
     * SRT: Enable srt in default vhost. v5.8.22
     * 2023.08.19: Add utest for HP HLS. v5.8.23
     * 2023.08.20: Migrate docs to new website. v5.8.23
+    * 2023.08.20: BT and aaPanel plugin ID should match filename. v5.8.24
 * v5.7
     * Refine DigitalOcean droplet image. v1.0.302
     * Support local test all script. v1.0.302
