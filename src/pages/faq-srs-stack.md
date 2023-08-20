@@ -526,7 +526,7 @@ Welcome to join the group to discuss the use of SRS Stack. All these SRS periphe
 
 The following are the update records for the SRS Stack server.
 
-* 2023.08.19, v5.8.23
+* v5.8
     * Always dispose DO VM and domain for test. v1.0.306
     * Fix docker start failed, cover by test. v1.0.306
     * Switch default language to en. v1.0.306
@@ -538,9 +538,9 @@ The following are the update records for the SRS Stack server.
     * Always check test result. v5.8.21
     * Add lfs mp4 samples for test. v5.8.21
     * SRT: Enable srt in default vhost. v5.8.22
-    * Add utest for HP HLS. v5.8.23
-    * Migrate docs to new website. v5.8.23
-* 2023.08.13, v1.0.305, v5.7.19
+    * 2023.08.19: Add utest for HP HLS. v5.8.23
+    * 2023.08.20: Migrate docs to new website. v5.8.23
+* v5.7
     * Refine DigitalOcean droplet image. v1.0.302
     * Support local test all script. v1.0.302
     * Rewrite script for lighthouse. v1.0.303
@@ -553,7 +553,8 @@ The following are the update records for the SRS Stack server.
     * Support work with bt/aaPanel ssl. v1.0.305
     * Support self-sign certificate by default. v1.0.305
     * Query configured SSL cert. v1.0.305
-    * Support test online environment. v1.0.305
+    * 2023.08.13: Support test online environment. v5.7.19
+    * 2023.08.20: BT and aaPanel plugin ID should not change. v5.7.20
 * 2023.08.06, v1.0.301, v5.7.18
     * Simplify startup script, fix bug, adjust directory to `/data` top-level directory. v1.0.296
     * Improve message prompts, script comments, and log output. v1.0.297
