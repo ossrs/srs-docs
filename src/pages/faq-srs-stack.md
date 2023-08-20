@@ -554,7 +554,7 @@ The following are the update records for the SRS Stack server.
     * Support self-sign certificate by default. v1.0.305
     * Query configured SSL cert. v1.0.305
     * 2023.08.13: Support test online environment. v5.7.19
-    * 2023.08.20: BT and aaPanel plugin ID should not change. v5.7.20
+    * 2023.08.20: Fix the BT and aaPanel filename issue. v5.7.20
 * 2023.08.06, v1.0.301, v5.7.18
     * Simplify startup script, fix bug, adjust directory to `/data` top-level directory. v1.0.296
     * Improve message prompts, script comments, and log output. v1.0.297
