@@ -539,6 +539,7 @@ The following are the update records for the SRS Stack server.
     * Add lfs mp4 samples for test. v5.8.21
     * SRT: Enable srt in default vhost. v5.8.22
     * Add utest for HP HLS. v5.8.23
+    * Migrate docs to new website. v5.8.23
 * 2023.08.13, v1.0.305, v5.7.19
     * Refine DigitalOcean droplet image. v1.0.302
     * Support local test all script. v1.0.302
