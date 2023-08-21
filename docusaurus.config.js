@@ -208,19 +208,15 @@ const config = {
             items: [
               {
                 label: 'Tutorial',
-                to: '/docs/v4/tutorial/srs-server',
+                to: '/docs/v6/tutorial/srs-server',
               },
               {
                 label: 'Docs',
-                to: '/docs/v5/doc/getting-started',
+                to: '/docs/v6/doc/getting-started',
               },
               {
                 to: '/blog',
                 label: 'Blog',
-              },
-              {
-                to: '/guide',
-                label: 'Guide',
               },
             ],
           },
@@ -234,10 +230,6 @@ const config = {
               {
                 to: '/how-to-file-pr',
                 label: 'Community',
-              },
-              {
-                label: 'Live',
-                href: 'https://mp.weixin.qq.com/s/6xvXQCRiShSXyjyjAlmPzw',
               },
             ],
           },
@@ -256,10 +248,6 @@ const config = {
               {
                 label: 'Blog',
                 to: '/blog',
-              },
-              {
-                label: 'GitHub',
-                href: 'https://github.com/ossrs/srs',
               },
             ],
           },
