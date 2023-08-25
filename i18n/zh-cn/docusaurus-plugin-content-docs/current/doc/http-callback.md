@@ -151,7 +151,11 @@ vhost your_vhost {
 * `stream_url`: 流的URL，无扩展名信息，例如：`/live/livestream`.
 * `stream_id`: 流的ID，可以通过API查询流的详细信息。
 
-备注：可以参考conf/full.conf配置文件中的hooks.callback.vhost.com实例。
+> Note: 推流的回调是`on_publish`和`on_unpublish`，播放的回调是`on_play`和`on_stop`。
+
+> Note: SRS 4之前，还有`on_connect`和`on_close`，这是RTMP定义的事件，只有RTMP流才有，而且和推流和播放的事件是重叠的，所以不推荐使用。
+
+> Note: 可以参考conf/full.conf配置文件中的hooks.callback.vhost.com实例。
 
 ## Protocol
 

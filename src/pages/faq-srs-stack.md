@@ -536,11 +536,14 @@ The following are the update records for the SRS Stack server.
     * Switch MIT to AGPL License. v1.0.307
     * Use one version strategy. v5.8.20
     * Always check test result. v5.8.21
-    * Add lfs mp4 samples for test. v5.8.21
     * SRT: Enable srt in default vhost. v5.8.22
     * 2023.08.19: Add utest for HP HLS. v5.8.23
     * 2023.08.20: Migrate docs to new website. v5.8.23
     * 2023.08.20: BT and aaPanel plugin ID should match filename. v5.8.24
+    * 2023.08.21: Add Nginx HLS Edge tutorial. v5.8.25
+    * 2023.08.22: Download test file from SRS. v5.8.26
+    * 2023.08.23: Do not require version. v5.8.26
+    * 2023.08.23: Fix Failed to execute 'insertBefore' on 'Node'. v5.8.26
 * v5.7
     * Refine DigitalOcean droplet image. v1.0.302
     * Support local test all script. v1.0.302

@@ -151,7 +151,11 @@ Description about some fields:
 * `stream_url`: The stream identify without extension, such as `/live/livestream`.
 * `stream_id`: The id of stream, by which you can query the stream information.
 
-Note: For more information, read the section hooks.callback.vhost.com in conf/full.conf
+> Note: The callbacks for streaming are `on_publish` and `on_unpublish`, while the callbacks for playback are `on_play` and `on_stop`.
+
+> Note: Before SRS 4, there were `on_connect` and `on_close`, which are events defined by RTMP and only applicable to RTMP streams. These events overlap with streaming and playback events, so their use is not recommended.
+
+> Note: You can refer to the hooks.callback.vhost.com example in the conf/full.conf configuration file.
 
 ## Protocol
 
