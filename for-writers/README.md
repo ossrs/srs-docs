@@ -31,3 +31,17 @@ Link the pages in docs:
 ```
 
 For instance, refer to the `introduction.md` document for more details.
+
+## How to link static resources in external?
+
+Link the files:
+
+```markdown
+![](https://ossrs.io/lts/en-us/files/ffmpeg-min.png)
+```
+
+Link the img:
+
+```markdown
+![](https://ossrs.io/lts/en-us/img/SRS-SingleNode-4.0-hd.png)
+```
