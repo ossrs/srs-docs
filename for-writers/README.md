@@ -32,6 +32,16 @@ Link the pages in docs:
 
 For instance, refer to the `introduction.md` document for more details.
 
+## How to link static resources in docs?
+
+Link the files in docs:
+
+```markdown
+[amf0_spec_121207.pdf](/files/amf0_spec_121207.pdf), adobe amf0
+```
+
+For instance, refer to the `specs.md` document for more details.
+
 ## How to link static resources in external?
 
 Link the files:
@@ -45,3 +55,5 @@ Link the img:
 ```markdown
 ![](https://ossrs.io/lts/en-us/img/SRS-SingleNode-4.0-hd.png)
 ```
+
+For instance, refer to the [README.md](https://github.com/ossrs/srs-stack/blob/main/README.md) for more details.
