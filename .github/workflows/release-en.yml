@@ -222,6 +222,7 @@ jobs:
                 docker rm -f docs-httpx; sleep 0.3;
               done
               docker run -d -it --restart always \
+                --log-driver=json-file --log-opt=max-size=1g --log-opt=max-file=3 \
                 --name docs-httpx -p 20080:80 ossrs/httpx:1 \
                 ./bin/httpx-static -http 80 \
                 -proxy http://$SRS_DROPLET_PIP:8107/lts/ \
@@ -236,7 +237,9 @@ jobs:
                 docker rm -f docs-docs; sleep 0.3;
               done
               docker pull ossrs/docs:en-$SRS_MAJOR
-              docker run -d -it --restart always --privileged --name docs-docs -p 8107:80 ossrs/docs:en-$SRS_MAJOR
+              docker run -d -it --restart always --privileged --name docs-docs -p 8107:80 \
+                --log-driver=json-file --log-opt=max-size=1g --log-opt=max-file=3 \
+                ossrs/docs:en-$SRS_MAJOR
             END
             bash /root/restart_docs-docs.sh
             #
@@ -250,6 +253,7 @@ jobs:
                 docker rm -f docs-typesense; sleep 0.3;
               done
               docker run -d -it --restart always --privileged --name docs-typesense -v /root/search/data:/data -p $SRS_DROPLET_PIP:8108:8108 \
+                --log-driver=json-file --log-opt=max-size=1g --log-opt=max-file=3 \
                 typesense/typesense:0.22.1 --enable-cors --data-dir /data --api-key=$SEARCH_APIKEY
             END
             bash /root/restart_docs-typesense.sh
