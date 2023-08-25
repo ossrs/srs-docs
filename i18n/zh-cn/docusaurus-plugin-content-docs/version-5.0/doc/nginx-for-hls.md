@@ -15,6 +15,10 @@ hide_table_of_contents: false
 
 本文描述的就是HLS或DASH等切片的边缘集群，基于NGINX实现，所以也叫NGINX Edge Cluster。
 
+## SRS Stack
+
+NGINX边缘集群，可以和SRS Stack一起工作，可以实现HLS的分发，详细请参考[SRS Stack HLS CDN](https://github.com/ossrs/srs-stack/tree/main/scripts/nginx-hls-cdn)。
+
 ## NGINX Edge Cluster
 
 NGINX边缘集群，本质上就是带有缓存的反向代理，也就是NGNIX Proxy with Cache。

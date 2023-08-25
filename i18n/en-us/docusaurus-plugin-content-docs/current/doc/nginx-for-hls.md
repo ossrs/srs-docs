@@ -15,6 +15,10 @@ Edge Cluster is designed to solve the problem of many people watching, and it ca
 
 This article describes the edge cluster for HLS or DASH slices, which is based on NGINX implementation, so it is also called NGINX Edge Cluster.
 
+## SRS Stack
+
+The NGINX edge cluster can work together with the SRS Stack to achieve HLS distribution. For more details, please refer to [SRS Stack HLS CDN](https://github.com/ossrs/srs-stack/tree/main/scripts/nginx-hls-cdn).
+
 ## NGINX Edge Cluster
 
 The NGINX edge cluster is essentially a reverse proxy with caching, also known as NGINX Proxy with Cache.
