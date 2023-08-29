@@ -70,6 +70,8 @@ You can use any name you prefer, for example, `the-10-years-anually-for-you`:
 - Publish URL: `rtmp://135.98.31.15/live/the-10-years-anually-for-you?secret=5181a08ee6eab86597e913e1f9e4c294`
 - Play URL: `http://135.98.31.15/live/the-10-years-anually-for-you.m3u8`
 
+> Note: Please note that all streams share the same publish secret.
+
 The SRS Stack allows for an unlimited number of simultaneous streams, with the only constraint being your 
 server's bandwidth capacity. Additionally, you have the freedom to choose any desired stream name.
 
