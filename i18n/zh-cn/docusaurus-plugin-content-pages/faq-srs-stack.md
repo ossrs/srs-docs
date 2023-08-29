@@ -114,21 +114,34 @@ A bt.yourdomain.com 121.13.75.20
 
 SRS Stack支持Docker镜像，安装脚本，腾讯云Lighthouse和CVM镜像，DigitalOcean镜像，其他平台可以用宝塔安装。
 
-SRS Stack当然是各种云平台多支持，最方便的是镜像，也就是云服务器的镜像，如果想简单省事就请用镜像，其他的方式容易弄出问题来，请不要高估自己的折腾能力，大家真的属于那80%折腾不了的，强烈建议应该用镜像：
+推荐使用Docker直接安装，还可以装多个，注意要用Ubuntu 20+系统：
+* Docker镜像安装：[这里](https://ossrs.io/lts/zh-cn/docs/v6/doc/getting-started-stack#docker)
 
-* Docker镜像安装：[这里](https://github.com/ossrs/srs-stack#usage)
+如果你习惯用宝塔，可以用宝塔安装，可以和多个网站并存，注意要用Ubuntu 20+系统：
+* 宝塔：其他云平台可以用宝塔安装，要求是CentOS 7+或Ubuntu 20+的系统，使用参考[这里](https://mp.weixin.qq.com/s/nutc5eJ73aUa4Hc23DbCwQ)
+* aaPanel：海外的宝塔，如果你的机器是海外的，一定不要用宝塔而要用aaPanel，使用参考[这里](https://blog.ossrs.io/how-to-setup-a-video-streaming-service-by-aapanel-9748ae754c8c)
+* Script：直接用脚本也可以，参考[Script](https://ossrs.io/lts/zh-cn/docs/v6/doc/getting-started-stack#script)
+
+支持各种云平台，最方便的是镜像，也就是云服务器的镜像，如果想简单省事就请用镜像：
 * Lighthouse：腾讯云的轻量云服务器镜像，使用参考[这里](https://mp.weixin.qq.com/s/fWmdkw-2AoFD_pEmE_EIkA)
 * CVM：腾讯云的云服务器镜像，带宽比Lighthouse高可到100Mbps，使用参考[这里](https://mp.weixin.qq.com/s/x-PjoKjJj6HRF-eCKX0KzQ)
 * DigitalOcean: 海外轻量云服务器的镜像，使用参考[这里](https://mp.weixin.qq.com/s/_GcJm15BGv1qbmHixPQAGQ)
 
-如果你不想用虚拟机镜像，想直接用服务器或命令行安装，或宝塔安装，也是完全没问题：
+> Note: 这些安装方式都在视频教程中有介绍，请参考[这里](https://www.bilibili.com/video/BV1844y1L7dL/)，几分钟的视频，有分章节的（要在B站App或者PC浏览器打开才有），可以直接跳到对应章节。
 
-* 宝塔：其他云平台可以用宝塔安装，要求是CentOS 7+或Ubuntu 20+的系统，使用参考[这里](https://mp.weixin.qq.com/s/nutc5eJ73aUa4Hc23DbCwQ)
-* aaPanel：海外的宝塔，如果你的机器是海外的，一定不要用宝塔而要用aaPanel，使用参考[这里](https://blog.ossrs.io/how-to-setup-a-video-streaming-service-by-aapanel-9748ae754c8c)
+如果你发现你的功能没有，那可能是你选择的版本比较老，按照功能的更新速度：
 
-> Note: 如果你要命令行安装SRS Stack，可以先用命令行安装宝塔，然后再安装SRS Stack。
+```bash
+Docker/Script > 宝塔/aaPanel > DigitalOcean > Lighthouse/CVM
+```
 
-这些安装方式都在视频教程中有介绍，请参考[这里](https://www.bilibili.com/video/BV1844y1L7dL/)，几分钟的视频，有分章节的（要在B站App或者PC浏览器打开才有），可以直接跳到对应章节。
+如果从便捷角度考虑，比较省事的角度考虑，推荐的顺序是：
+
+```bash
+Lighthouse/CVM/DigitalOcean > 宝塔/aaPanel > Docker/Script
+```
+
+可以根据自己的情况选择平台和安装方式。
 
 <a name='multile-streams'></a><br/><br/><br/>
 

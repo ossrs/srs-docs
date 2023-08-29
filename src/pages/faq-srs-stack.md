@@ -112,18 +112,31 @@ Note: If you need to apply for a free HTTPS certificate through Let's Encrypt, t
 
 ## Supported platforms
 
-SRS Stack supports Docker, install script, DigitalOcean images, and other platforms can be installed with aaPanel.
+SRS Stack supports Docker images, installation scripts, DigitalOcean images, and can be installed on other platforms using aaPanel.
 
-SRS Stack is, of course, supported on various cloud platforms. The most convenient way is to use images, which are images of cloud servers. If you want to keep it simple and save trouble, please use images. Other methods are prone to problems. Please do not overestimate your ability to tinker. Most people really belong to the 80% who can't tinker. It is strongly recommended to use images:
+It is recommended to install directly using Docker, which also allows for multiple installations. Be sure to use Ubuntu 20+ system:
+* Docker image installation: [here](https://ossrs.io/lts/zh-cn/docs/v6/doc/getting-started-stack#docker)
 
-* [Run by docker image](https://github.com/ossrs/srs-stack#usage)
-* DigitalOcean: Overseas lightweight cloud server image, use reference [here](https://mp.weixin.qq.com/s/_GcJm15BGv1qbmHixPQAGQ)
+If you are used to aaPanel, you can install it with aaPanel, which can coexist with multiple websites. Be sure to use Ubuntu 20+ system:
+* aaPanel: You can download the plugin for installation, and refer to [How to Setup a Video Streaming Service with aaPanel](https://blog.ossrs.io/how-to-setup-a-video-streaming-service-by-aapanel-9748ae754c8c) for usage.
+* Script: You can also use the script directly, refer to [Script](https://ossrs.io/lts/zh-cn/docs/v6/doc/getting-started-stack#script)
 
-If you don't want to use virtual machine images and want to install directly on a server or command line, or install with aaPanel, that's no problem:
+It supports various cloud platforms, and the most convenient method is using images, which are cloud server images. If you want to keep it simple and save time, please use images:
+* DigitalOcean: Overseas lightweight cloud server images, refer to [How to Setup a Video Streaming Service by 1-Click](https://blog.ossrs.io/how-to-setup-a-video-streaming-service-by-1-click-e9fe6f314ac6) for usage.
 
-* aaPanel: If your machine is overseas, be sure to use aaPanel instead of BT panel, use reference [here](https://blog.ossrs.io/how-to-setup-a-video-streaming-service-by-aapanel-9748ae754c8c)
+If you find that some features are missing, it may be because the version you chose is older. According to the update speed of features:
 
-> Note: If you want to install SRS Stack from the command line, you can first install BT panel from the command line, and then install SRS Stack.
+```bash
+Docker/Script > aaPanel > DigitalOcean
+```
+
+If you consider convenience and simplicity, the recommended order is:
+
+```bash
+DigitalOcean > aaPanel > Docker/Script
+```
+
+You can choose the platform and installation method according to your situation.
 
 <a name='multile-streams'></a><br/><br/><br/>
 
