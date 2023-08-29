@@ -87,6 +87,8 @@ Docker启动时会指定版本，比如`ossrs/srs-stack:v1.0.293`，只需要删
 
 使用宝塔安装SRS Stack时，需要输入管理后台的域名，例如`bt.yourdomain.com`，会自动创建管理后台的网站。
 
+> Note: 使用宝塔安装时，若希望使用IP访问，可以设置为`bt.yourdomain.com`，然后在宝塔中把`srs.stack.local`这个网站设置为默认网站。
+
 若使用其他方式安装也一样可以，只需要将你的域名解析到SRS Stack的IP即可。
 
 有几种方式设置域名解析：

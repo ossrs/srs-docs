@@ -87,6 +87,8 @@ Please replace the following domain names and IPs with your own domain names and
 
 When installing SRS Stack with aaPanel, you need to enter the domain name of the management backend, such as `bt.yourdomain.com`, and it will automatically create the management backend website.
 
+> Note: When installing with aaPanel, if you want to use IP access, you can set it to `bt.yourdomain.com`, and then set the `srs.stack.local` website as the default website in aaPanel.
+
 If you install it in other ways, it's the same. You just need to resolve your domain name to the SRS Stack IP.
 
 There are several ways to set up domain name resolution:
