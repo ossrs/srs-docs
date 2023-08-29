@@ -32,7 +32,7 @@ SRS Stack是一个强大的工具，帮助用户建立自己的直播服务，�
 
 要设置SRS Stack以实现安全发布，请按照以下步骤操作：
 
-1. 一键创建SRS Stack。有关详细说明，请访问[How to Setup a Video Streaming Service by 1-Click](./2022-04-09-SRS-Stack-Tutorial.md)
+1. 一键创建SRS Stack。有关详细说明，请访问[SRS Stack：起步、购买和入门](./2022-04-09-SRS-Stack-Tutorial.md)
 
 1. 创建后，SRS Stack将自动生成一个Publish Secret，例如`5181a08ee6eab86597e913e1f9e4c294`。您可以从`System / Authentication / Update Stream Secret`设置它。
 

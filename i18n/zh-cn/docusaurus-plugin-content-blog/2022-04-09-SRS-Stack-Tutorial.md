@@ -28,12 +28,30 @@ SRS Stack：https://www.bilibili.com/video/BV1844y1L7dL/
 
 > Note: 这不是SRS的商业版本哈，也不是售后支持群，镜像中涉及的组件都是开源的，大伙儿可以自己随便修改。
 
+## Docker
+
+SRS Stack支持Docker镜像直接运行，参考[Getting Started](/docs/v5/doc/getting-started-stack#docker)。
+
+## Script
+
+SRS Stack支持脚本一键安装，参考[Getting Started](/docs/v5/doc/getting-started-stack#script)。
+
+注意：请使用Ubuntu 20+系统，其他系统可能会有兼容性问题。
+
+## BT
+
+若你希望在其他云厂商和平台，或者自己的虚拟机，可以使用宝塔安装SRS Stack，详细请参考[SRS Stack支持宝塔安装](https://mp.weixin.qq.com/s/nutc5eJ73aUa4Hc23DbCwQ)
+
+> Note: 我们准备了视频教程，非常短只有几分钟时间，可以解决你的很多疑问，请观看视频教程。
+
+注意：请使用Ubuntu 20+系统，其他系统可能会有兼容性问题。
+
 ## Lighthouse
 
 推荐使用腾讯云轻量服务器Lighthouse镜像，一键部署和安装。详细请看视频，要点如下：
 
-1. 首先登录腾讯云控制台，选择[轻量应用服务器](https://console.cloud.tencent.com/lighthouse)，可阅读原文直达。
-1. 点击`购买`或`新建`按钮，在`镜像`中选择`SRS 4.1 Release`，点`购买`就可以了。
+1. 首先登录腾讯云控制台，选择[轻量应用服务器](https://buy.cloud.tencent.com/lighthouse?blueprintType=APP_OS)，可点链接直达。
+1. 在`应用模版`中选择`SRS音视频服务器`，点`购买`就可以了。
 1. 等服务器创建完成后，点击进入管理，在`应用管理`中，可以看到需要开的端口，在`防火墙`开放对应端口。
 1. 在`应用管理`中，点击进入`访问地址`，首次需要设置密码，然后就看各位的造化了。
 
@@ -50,12 +68,6 @@ SRS Stack：https://www.bilibili.com/video/BV1844y1L7dL/
 ## DigitalOcean
 
 若你需要在海外使用SRS Stack，可以选择DigitalOcean的Droplet镜像，详细请参考[SRS Stack支持DigitalOcean镜像](https://mp.weixin.qq.com/s/_GcJm15BGv1qbmHixPQAGQ)。
-
-> Note: 我们准备了视频教程，非常短只有几分钟时间，可以解决你的很多疑问，请观看视频教程。
-
-## BT
-
-若你希望在其他云厂商和平台，或者自己的虚拟机，可以使用宝塔安装SRS Stack，详细请参考[SRS Stack支持宝塔安装](https://mp.weixin.qq.com/s/nutc5eJ73aUa4Hc23DbCwQ)
 
 > Note: 我们准备了视频教程，非常短只有几分钟时间，可以解决你的很多疑问，请观看视频教程。
 
