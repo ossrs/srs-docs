@@ -124,7 +124,6 @@ SRS Stack支持Docker镜像，安装脚本，腾讯云Lighthouse和CVM镜像，D
 
 支持各种云平台，最方便的是镜像，也就是云服务器的镜像，如果想简单省事就请用镜像：
 * Lighthouse：腾讯云的轻量云服务器镜像，使用参考[这里](https://mp.weixin.qq.com/s/fWmdkw-2AoFD_pEmE_EIkA)
-* CVM：腾讯云的云服务器镜像，带宽比Lighthouse高可到100Mbps，使用参考[这里](https://mp.weixin.qq.com/s/x-PjoKjJj6HRF-eCKX0KzQ)
 * DigitalOcean: 海外轻量云服务器的镜像，使用参考[这里](https://mp.weixin.qq.com/s/_GcJm15BGv1qbmHixPQAGQ)
 
 > Note: 这些安装方式都在视频教程中有介绍，请参考[这里](https://www.bilibili.com/video/BV1844y1L7dL/)，几分钟的视频，有分章节的（要在B站App或者PC浏览器打开才有），可以直接跳到对应章节。
