@@ -561,6 +561,8 @@ SRS Stack的使用说明，请参考视频[SRS Stack：起步、购买和入门]
     * 2023.08.23: Fix Failed to execute 'insertBefore' on 'Node'. v5.8.26
     * 2023.08.25: 删除没用的回调事件. v5.8.26
     * 2023.08.25: 支持NGINX HLS CDN镜像. v5.8.27
+    * 2023.08.25: 更新SRS Stack架构图. v5.8.27
+    * 2023.08.29: 支持限流设置. v5.8.28
 * v5.7
     * 优化DigitalOcean droplet镜像。v1.0.302
     * 支持本地测试所有脚本。v1.0.302

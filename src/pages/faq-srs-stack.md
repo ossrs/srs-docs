@@ -546,6 +546,8 @@ The following are the update records for the SRS Stack server.
     * 2023.08.23: Fix Failed to execute 'insertBefore' on 'Node'. v5.8.26
     * 2023.08.25: Eliminate unused callback events. v5.8.26
     * 2023.08.25: Add docker for nginx HLS CDN. v5.8.27
+    * 2023.08.25: Update SRS Stack architecture. v5.8.27
+    * 2023.08.29: Limit: Support limit duration UI. v5.8.28
 * v5.7
     * Refine DigitalOcean droplet image. v1.0.302
     * Support local test all script. v1.0.302
