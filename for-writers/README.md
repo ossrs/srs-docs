@@ -57,3 +57,13 @@ Link the img:
 ```
 
 For instance, refer to the [README.md](https://github.com/ossrs/srs-stack/blob/main/README.md) for more details.
+
+## How to link docs in blog?
+
+Link the docs in blog:
+
+```markdown
+[Getting Started](/docs/v5/doc/getting-started-stack#docker)
+```
+
+For instance, refer to the `2022-04-09-SRS-Stack-Tutorial.md` document for more details.
