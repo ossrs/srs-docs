@@ -8,11 +8,11 @@ custom_edit_url: null
 
 # Ensuring Authentication in Live Streaming Publishing
 
-## Introduction
-
 在当今的数字时代，直播变得越来越受欢迎，像视频号和抖音这样的平台为用户提供了实时直播内容的能力。然而，随着这种越来越受
 欢迎的需求，加强安全性和认证措施以保护播放者和观众变得尤为重要。在这篇全面的指南中，我们将深入探讨直播中安全性和认证的重要性，
 讨论SRS Stack解决方案以实现安全发布，并提供一步一步的指南来为您自己的直播服务设置SRS Stack。
+
+<!--truncate-->
 
 ## The Importance of Authentication in Live Streaming
 

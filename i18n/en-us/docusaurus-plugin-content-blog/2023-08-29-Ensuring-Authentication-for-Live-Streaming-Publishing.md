@@ -8,14 +8,14 @@ custom_edit_url: null
 
 # Ensuring Authentication in Live Streaming Publishing
 
-## Introduction
-
 In today's digital age, live streaming has become increasingly popular, with platforms like YouTube and 
 Twitch offering users the ability to broadcast their content in real-time. However, with this growing 
 popularity comes the need for enhanced security and authentication measures to protect both streamers 
 and viewers. In this comprehensive guide, we will delve into the importance of security and authentication 
 in live streaming, discuss the SRS Stack solution for secure publishing, and provide a step-by-step guide 
 on setting up the SRS Stack for your own live streaming service.
+
+<!--truncate-->
 
 ## The Importance of Authentication in Live Streaming
 
