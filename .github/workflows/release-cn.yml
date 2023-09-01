@@ -202,37 +202,31 @@ jobs:
           command_timeout: 30m
           script: |
             #
+            export SRS_DROPLET_PIP=$(ifconfig eth0 |grep 'inet ' |awk '{print $2}')
+            echo "SRS_DROPLET_PIP=$SRS_DROPLET_PIP"
+            #
             ufw allow 20080
             ufw allow 8107
             ufw allow 8108
             #
-            export SRS_DROPLET_PIP=$(ifconfig eth0 |grep 'inet ' |awk '{print $2}')
-            echo "SRS_DROPLET_PIP=$SRS_DROPLET_PIP"
-            #
             # Restart HTTPX
             cat << END > /root/restart_docs-httpx.sh
-              for ((i=0; i < 5; i++)); do
-                if [[ \$(docker ps -f name=docs-httpx |wc -l) -eq 1 ]]; then echo "Killed"; break; fi;
-                docker rm -f docs-httpx; sleep 0.3;
-              done
-              docker run -d -it --restart always \
-                --log-driver=json-file --log-opt=max-size=1g --log-opt=max-file=3 \
-                --name docs-httpx -p 20080:80 registry.cn-hangzhou.aliyuncs.com/ossrs/httpx:1 \
-                ./bin/httpx-static -http 80 \
-                -proxy http://$SRS_DROPLET_PIP:8107/lts/ \
-                -proxy http://$SRS_DROPLET_PIP:8108/multi_search
+              docker rm -f docs-httpx || sleep 1
+              docker run -d -it --restart always \\
+                --log-driver=json-file --log-opt=max-size=500m --log-opt=max-file=3 \\
+                --name docs-httpx -p 20080:80 registry.cn-hangzhou.aliyuncs.com/ossrs/httpx:1 \\
+                ./bin/httpx-static -http 80 \\
+                  -proxy http://$SRS_DROPLET_PIP:8107/lts/ \\
+                  -proxy http://$SRS_DROPLET_PIP:8108/multi_search
             END
             bash /root/restart_docs-httpx.sh
             #
             # Restart SRS docs
             cat << END > /root/restart_docs-docs.sh
-              for ((i=0; i < 5; i++)); do
-                if [[ \$(docker ps -f name=docs-docs |wc -l) -eq 1 ]]; then echo "Killed"; break; fi;
-                docker rm -f docs-docs; sleep 0.3;
-              done
               docker pull registry.cn-hangzhou.aliyuncs.com/ossrs/docs:cn-$SRS_MAJOR
-              docker run -d -it --restart always --privileged --name docs-docs -p 8107:80 \
-                --log-driver=json-file --log-opt=max-size=1g --log-opt=max-file=3 \
+              docker rm -f docs-docs || sleep 1
+              docker run -d -it --restart always --privileged --name docs-docs -p 8107:80 \\
+                --log-driver=json-file --log-opt=max-size=500m --log-opt=max-file=3 \\
                 registry.cn-hangzhou.aliyuncs.com/ossrs/docs:cn-$SRS_MAJOR
             END
             bash /root/restart_docs-docs.sh
@@ -242,13 +236,12 @@ jobs:
             #
             # Restart typesense
             cat << END > /root/restart_docs-typesense.sh
-              for ((i=0; i < 5; i++)); do
-                if [[ \$(docker ps -f name=docs-typesense |wc -l) -eq 1 ]]; then echo "Killed"; break; fi;
-                docker rm -f docs-typesense; sleep 0.3;
-              done
-              docker run -d -it --restart always --privileged --name docs-typesense -v /root/search/data:/data -p $SRS_DROPLET_PIP:8108:8108 \
-                --log-driver=json-file --log-opt=max-size=1g --log-opt=max-file=3 \
-                registry.cn-hangzhou.aliyuncs.com/ossrs/typesense:0.22.1 --enable-cors --data-dir /data --api-key=$SEARCH_APIKEY
+              docker rm -f docs-typesense || sleep 1
+              docker run -d -it --restart always --privileged --name docs-typesense \\
+                -v /root/search/data:/data -p $SRS_DROPLET_PIP:8108:8108 \\
+                --log-driver=json-file --log-opt=max-size=500m --log-opt=max-file=3 \\
+                registry.cn-hangzhou.aliyuncs.com/ossrs/typesense:0.22.1 \\
+                  --enable-cors --data-dir /data --api-key=$SEARCH_APIKEY
             END
             bash /root/restart_docs-typesense.sh
             #
