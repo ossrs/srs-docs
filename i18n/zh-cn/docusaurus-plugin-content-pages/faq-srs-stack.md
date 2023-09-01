@@ -555,6 +555,9 @@ SRS Stack的使用说明，请参考视频[SRS Stack：起步、购买和入门]
 
 以下为SRS Stack的更新记录。
 
+* v5.9
+    * 2023.09.01: Enable limit duration UI by default. v5.9.1
+    * 2023.09.01: Update NGINX HLS CDN guide. v5.9.2
 * v5.8
     * 总是释放DO的临时测试资源。 v1.0.306
     * 修复 Docker 启动失败，通过测试覆盖。v1.0.306
@@ -563,7 +566,7 @@ SRS Stack的使用说明，请参考视频[SRS Stack：起步、购买和入门]
     * 支持高性能HLS分发模式. v1.0.307
     * 显示设置中的配置的当前的值. v1.0.307
     * 从MIT协议切换到AGPL协议. v1.0.307
-    * 使用一个版本策略，统一版本. v5.8.20
+    * Use one version strategy. [v5.8.20](https://github.com/ossrs/srs-stack/releases/tag/v5.8.20)
     * 总是检查测试结果，无论超时还是取消. v5.8.21
     * 开启SRT配置，支持SRT推流。 v5.8.22
     * 2023.08.19: 添加高性能HLS的单元测试用例。 v5.8.23
@@ -576,7 +579,10 @@ SRS Stack的使用说明，请参考视频[SRS Stack：起步、购买和入门]
     * 2023.08.25: 删除没用的回调事件. v5.8.26
     * 2023.08.25: 支持NGINX HLS CDN镜像. v5.8.27
     * 2023.08.25: 更新SRS Stack架构图. v5.8.27
-    * 2023.08.29: 支持限流设置. v5.8.28
+    * 2023.08.29: 支持限流设置UI部分. v5.8.28
+    * 2023.08.31: Use DO droplet s-1vcpu-1gb for auto test. v5.8.28
+    * 2023.08.31: Use default context when restore hphls. [v5.8.28](https://github.com/ossrs/srs-stack/releases/tag/v5.8.28)
+    * 2023.08.31: Support remote test. v5.8.29
 * v5.7
     * 优化DigitalOcean droplet镜像。v1.0.302
     * 支持本地测试所有脚本。v1.0.302
@@ -590,8 +596,8 @@ SRS Stack的使用说明，请参考视频[SRS Stack：起步、购买和入门]
     * 支持与bt/aaPanel ssl一起工作。v1.0.305
     * 支持默认的自签名证书。v1.0.305
     * 查询已经配置的SSL证书。v1.0.305
-    * 2023.08.13: 支持测试线上环境。 v1.0.305
-    * 2023.08.20: 解决BT文件名不对问题. v5.7.20
+    * 2023.08.13: Support test online environment. [v5.7.19](https://github.com/ossrs/srs-stack/releases/tag/publication-v5.7.19)
+    * 2023.08.20: Fix the BT and aaPanel filename issue. [v5.7.20](https://github.com/ossrs/srs-stack/releases/tag/publication-v5.7.20)
 * 2023.08.06, v1.0.301, v5.7.18
     * 简化启动脚本，解决bug，目录调整为`/data`一级目录。v1.0.296
     * 改进消息提示，脚本注释，日志输出。v1.0.297

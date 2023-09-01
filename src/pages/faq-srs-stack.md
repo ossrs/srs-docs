@@ -541,6 +541,9 @@ Welcome to join the group to discuss the use of SRS Stack. All these SRS periphe
 
 The following are the update records for the SRS Stack server.
 
+* v5.9
+    * 2023.09.01: Enable limit duration UI by default. v5.9.1
+    * 2023.09.01: Update NGINX HLS CDN guide. v5.9.2
 * v5.8
     * Always dispose DO VM and domain for test. v1.0.306
     * Fix docker start failed, cover by test. v1.0.306
@@ -549,7 +552,7 @@ The following are the update records for the SRS Stack server.
     * Support High Performance HLS mode. v1.0.307
     * Show current config for settings. v1.0.307
     * Switch MIT to AGPL License. v1.0.307
-    * Use one version strategy. v5.8.20
+    * Use one version strategy. [v5.8.20](https://github.com/ossrs/srs-stack/releases/tag/v5.8.20)
     * Always check test result. v5.8.21
     * SRT: Enable srt in default vhost. v5.8.22
     * 2023.08.19: Add utest for HP HLS. v5.8.23
@@ -563,6 +566,9 @@ The following are the update records for the SRS Stack server.
     * 2023.08.25: Add docker for nginx HLS CDN. v5.8.27
     * 2023.08.25: Update SRS Stack architecture. v5.8.27
     * 2023.08.29: Limit: Support limit duration UI. v5.8.28
+    * 2023.08.31: Use DO droplet s-1vcpu-1gb for auto test. v5.8.28
+    * 2023.08.31: Use default context when restore hphls. [v5.8.28](https://github.com/ossrs/srs-stack/releases/tag/v5.8.28)
+    * 2023.08.31: Support remote test. v5.8.29
 * v5.7
     * Refine DigitalOcean droplet image. v1.0.302
     * Support local test all script. v1.0.302
@@ -576,8 +582,8 @@ The following are the update records for the SRS Stack server.
     * Support work with bt/aaPanel ssl. v1.0.305
     * Support self-sign certificate by default. v1.0.305
     * Query configured SSL cert. v1.0.305
-    * 2023.08.13: Support test online environment. v5.7.19
-    * 2023.08.20: Fix the BT and aaPanel filename issue. v5.7.20
+    * 2023.08.13: Support test online environment. [v5.7.19](https://github.com/ossrs/srs-stack/releases/tag/publication-v5.7.19)
+    * 2023.08.20: Fix the BT and aaPanel filename issue. [v5.7.20](https://github.com/ossrs/srs-stack/releases/tag/publication-v5.7.20)
 * 2023.08.06, v1.0.301, v5.7.18
     * Simplify startup script, fix bug, adjust directory to `/data` top-level directory. v1.0.296
     * Improve message prompts, script comments, and log output. v1.0.297
