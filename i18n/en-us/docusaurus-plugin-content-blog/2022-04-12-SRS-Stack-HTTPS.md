@@ -1,6 +1,6 @@
 ---
 slug: SRS-Stack-HTTPS
-title: How to Secure SRS with Let's Encrypt by 1-Click
+title: SRS Stack - How to Secure SRS with Let's Encrypt by 1-Click
 authors: []
 tags: [turotial, srs, https]
 custom_edit_url: null

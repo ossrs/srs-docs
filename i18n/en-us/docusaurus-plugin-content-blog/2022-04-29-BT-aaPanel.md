@@ -1,6 +1,6 @@
 ---
 slug: BT-aaPanel
-title: How to Setup a Video Streaming Service with aaPanel
+title: SRS Stack - How to Setup a Video Streaming Service with aaPanel
 authors: []
 tags: [tutorial, bt, aapanel, streaming]
 custom_edit_url: null

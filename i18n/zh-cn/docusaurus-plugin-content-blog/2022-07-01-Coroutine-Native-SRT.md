@@ -1,6 +1,6 @@
 ---
 slug: coroutine-native-srt
-title: SRS5第一大炮：如何实现SRT协程化
+title: SRS Server - 如何实现SRT协程化
 authors: []
 tags: [tutorial, video, srt, streaming]
 custom_edit_url: null

@@ -274,6 +274,8 @@ SRS Stack can also record to other cloud storage, such as Alibaba Cloud OSS or A
 
 ## Unable to access after installation
 
+In the new version of the aaPanel plugin, to avoid conflicts with existing website settings, it no longer automatically sets itself as the default website. Instead, you need to specify a domain or manually set the default website. Please refer to [How to Set a Domain](#how-to-set-domain).
+
 After installation, an error is prompted, such as:
 
 ![](/img/page-2023-03-04-05.png)
@@ -520,6 +522,7 @@ Currently, the scenarios and functions supported by SRS Stack include:
 * `Supported` [DigitalOcean Image](https://mp.weixin.qq.com/s/_GcJm15BGv1qbmHixPQAGQ): Overseas support for DigitalOcean Droplet image, multi-language version in Chinese and English.
 * `Supported` [Virtual Live Streaming](https://mp.weixin.qq.com/s/I0Kmxtc24txpngO-PiR_tQ): Server-side OBS, pushing VOD files, images, or streams to live streaming, with simple layout capabilities.
 * `Supported` [One-click Automatic HTTPS](https://mp.weixin.qq.com/s/O70Fz-mxNedZpxgGXQ8DsA): Upload HTTPS certificate, or one-click automatic application for Let's Encrypt certificate, a basic capability of the WebRTC scenario.
+* `Supported` [Support self-host HLS CDN, to serve 10k+ viewers](https://github.com/ossrs/srs-stack/tree/main/scripts/nginx-hls-cdn)
 * `In planning` Cloud Camera: Support camera GB access, support cloud platform, cloud recording.
 * `In planning` E-commerce Live Room: Live room, text chat capability, with product list and purchase, etc., see details in [#2858](https://github.com/ossrs/srs/issues/2858).
 * `In planning` Interactive Live Streaming: Live room, support file chat, send gifts and likes, etc.
@@ -542,8 +545,17 @@ Welcome to join the group to discuss the use of SRS Stack. All these SRS periphe
 The following are the update records for the SRS Stack server.
 
 * v5.9
-    * 2023.09.01: Enable limit duration UI by default. v5.9.1
     * 2023.09.01: Update NGINX HLS CDN guide. v5.9.2
+    * 2023.09.04：Move DVR and VoD to others. v5.9.3
+    * 2023.09.04: Remove the Tencent CAM setting. v5.9.4
+    * 2023.09.04: Refine Virtual Live start and stop button. v5.9.5
+    * 2023.09.04: Refine Record start and stop button. v5.9.6
+    * 2023.09.04: Refine Forward start and stop button. v5.9.7
+    * 2023.09.04：Move SRT streaming to others. v5.9.8
+    * 2023.09.04: Support vlive to use server file. v5.9.9
+    * 2023.09.04: Add test for virtual live. v5.9.10
+    * 2023.09.05: Add test for record. v5.9.11
+    * 2023.09.06: Add test for forward. v5.9.12
 * v5.8
     * Always dispose DO VM and domain for test. v1.0.306
     * Fix docker start failed, cover by test. v1.0.306
@@ -565,10 +577,11 @@ The following are the update records for the SRS Stack server.
     * 2023.08.25: Eliminate unused callback events. v5.8.26
     * 2023.08.25: Add docker for nginx HLS CDN. v5.8.27
     * 2023.08.25: Update SRS Stack architecture. v5.8.27
-    * 2023.08.29: Limit: Support limit duration UI. v5.8.28
     * 2023.08.31: Use DO droplet s-1vcpu-1gb for auto test. v5.8.28
     * 2023.08.31: Use default context when restore hphls. [v5.8.28](https://github.com/ossrs/srs-stack/releases/tag/v5.8.28)
     * 2023.08.31: Support remote test. v5.8.29
+    * 2023.09.02: Enable CORS and timestamp in HLS. [v5.8.30](https://github.com/ossrs/srs-stack/releases/tag/v5.8.30)
+    * 2023.09.06: Release stable version. [v5.8.31](https://github.com/ossrs/srs-stack/releases/tag/v5.8.31)
 * v5.7
     * Refine DigitalOcean droplet image. v1.0.302
     * Support local test all script. v1.0.302

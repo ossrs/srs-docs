@@ -1,6 +1,6 @@
 ---
-slug: ensuring-authentication-in-live-streaming-publishing
-title: Ensuring Authentication in Live Streaming Publishing
+slug: Ensuring-Authentication-in-Live-Streaming-Publishing
+title: SRS Stack - Ensuring Authentication in Live Streaming Publishing
 authors: []
 tags: [live streaming, security, authentication]
 custom_edit_url: null

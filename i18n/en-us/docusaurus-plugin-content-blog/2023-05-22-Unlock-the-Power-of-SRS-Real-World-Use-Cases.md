@@ -1,6 +1,6 @@
 ---
 slug: unlock-the-power-of-srs-real-world-use-cases
-title: Unlock the Power of SRS, Real-World Use Cases.
+title: SRS Server - Unlock the Power of SRS, Real-World Use Cases.
 authors: []
 tags: [srs, use-case]
 custom_edit_url: null

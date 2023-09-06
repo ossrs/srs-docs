@@ -278,6 +278,8 @@ SRS Stack也可以录制到其他云存储，比如阿里云OSS或AWS S3，可�
 
 ## 安装后无法访问
 
+新版本宝塔插件，避免和现有网站设置冲突，不再自动设置为默认网站，需要指定域名或者手动设置默认网站，请参考[如何设置域名](#how-to-set-domain)。
+
 安装后提示错误，比如：
 
 ![](/img/page-2023-03-04-05.png)
@@ -534,6 +536,7 @@ SRS Stack的使用说明，请参考视频[SRS Stack：起步、购买和入门]
 * `已支持` [DigitalOcean镜像](https://mp.weixin.qq.com/s/_GcJm15BGv1qbmHixPQAGQ)：海外支持DigitalOcean Droplet镜像，中英文多语言版本。
 * `已支持` [虚拟直播](https://mp.weixin.qq.com/s/I0Kmxtc24txpngO-PiR_tQ)：服务端OBS，将点播文件、图片或流推直播，有简单布局能力。
 * `已支持` [一键自动HTTPS](https://mp.weixin.qq.com/s/O70Fz-mxNedZpxgGXQ8DsA)：上传HTTPS证书，或者一键自动申请Let's Encrypt证书，属于WebRTC场景的基本能力。
+* `已支持` [支持自建HLS CDN，提供1万+并发观看](https://github.com/ossrs/srs-stack/tree/main/scripts/nginx-hls-cdn)
 * `规划中` 云摄像头：支持摄像头GB接入，支持云台，云录制。
 * `规划中` 电商直播间：直播间，文字聊天能力，有商品列表和购买等，详细参考 [#2858](https://github.com/ossrs/srs/issues/2858)。
 * `规划中` 互动直播：直播间，支持文件聊天，送礼物和点赞等。
@@ -558,6 +561,16 @@ SRS Stack的使用说明，请参考视频[SRS Stack：起步、购买和入门]
 * v5.9
     * 2023.09.01: Enable limit duration UI by default. v5.9.1
     * 2023.09.01: Update NGINX HLS CDN guide. v5.9.2
+    * 2023.09.04：Move DVR and VoD to others. v5.9.3
+    * 2023.09.04: Remove the Tencent CAM setting. v5.9.4
+    * 2023.09.04: Refine Virtual Live start and stop button. v5.9.5
+    * 2023.09.04: Refine Record start and stop button. v5.9.6
+    * 2023.09.04: Refine Forward start and stop button. v5.9.7
+    * 2023.09.04：Move SRT streaming to others. v5.9.8
+    * 2023.09.04: Support vlive to use server file. v5.9.9
+    * 2023.09.04: Add test for virtual live. v5.9.10
+    * 2023.09.05: Add test for record. v5.9.11
+    * 2023.09.06: Add test for forward. v5.9.12
 * v5.8
     * 总是释放DO的临时测试资源。 v1.0.306
     * 修复 Docker 启动失败，通过测试覆盖。v1.0.306
@@ -583,6 +596,8 @@ SRS Stack的使用说明，请参考视频[SRS Stack：起步、购买和入门]
     * 2023.08.31: Use DO droplet s-1vcpu-1gb for auto test. v5.8.28
     * 2023.08.31: Use default context when restore hphls. [v5.8.28](https://github.com/ossrs/srs-stack/releases/tag/v5.8.28)
     * 2023.08.31: Support remote test. v5.8.29
+    * 2023.09.02: Enable CORS and timestamp in HLS. [v5.8.30](https://github.com/ossrs/srs-stack/releases/tag/v5.8.30)
+    * 2023.09.06: Release stable version. [v5.8.31](https://github.com/ossrs/srs-stack/releases/tag/v5.8.31)
 * v5.7
     * 优化DigitalOcean droplet镜像。v1.0.302
     * 支持本地测试所有脚本。v1.0.302

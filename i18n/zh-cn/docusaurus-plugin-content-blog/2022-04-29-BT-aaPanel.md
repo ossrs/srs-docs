@@ -1,6 +1,6 @@
 ---
 slug: BT-aaPanel
-title: SRS Stack：宝塔！宝塔！宝塔！
+title: SRS Stack - 用宝塔插件做音视频业务
 authors: []
 tags: [tutorial, bt, aapanel, streaming]
 custom_edit_url: null

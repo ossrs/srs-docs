@@ -1,6 +1,6 @@
 ---
-slug: experience-ultra-low-latency-live-streaming-with-obs-whip
-title: 体验OBS WHIP的超低延迟直播！
+slug: Experience-Ultra-Low-Latency-Live-Streaming-with-OBS-WHIP
+title: SRS Server - 体验OBS WHIP超低延迟直播！
 authors: []
 tags: [srs, obs, whip]
 custom_edit_url: null

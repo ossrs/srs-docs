@@ -1,6 +1,6 @@
 ---
 slug: load-balancing-streaming-servers
-title: Load Balancing Streaming Servers
+title: SRS Server - Load Balancing Streaming Servers
 authors: []
 tags: [tutorial, cluster, load, dns, streaming]
 custom_edit_url: null

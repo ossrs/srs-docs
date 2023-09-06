@@ -1,6 +1,6 @@
 ---
 slug: push-hevc-via-rtmp-by-obs
-title: 如何用OBS推送RTMP HEVC流
+title: SRS Server - 如何用OBS推送RTMP HEVC流
 authors: []
 tags: [hevc, rtmp, obs, live]
 custom_edit_url: null

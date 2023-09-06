@@ -1,6 +1,6 @@
 ---
 slug: load-balancing-streaming-servers
-title: 流服务器如何做负载均衡
+title: SRS Server - 流服务器如何做负载均衡
 authors: []
 tags: [tutorial, cluster, load, dns, streaming]
 custom_edit_url: null

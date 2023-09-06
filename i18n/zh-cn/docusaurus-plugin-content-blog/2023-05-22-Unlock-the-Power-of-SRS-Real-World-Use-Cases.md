@@ -1,6 +1,6 @@
 ---
 slug: unlock-the-power-of-srs-real-world-use-cases
-title: 解锁SRS强大功能，真实应用场景
+title: SRS Server - 解锁SRS真实应用场景
 authors: []
 tags: [srs, use-case]
 custom_edit_url: null

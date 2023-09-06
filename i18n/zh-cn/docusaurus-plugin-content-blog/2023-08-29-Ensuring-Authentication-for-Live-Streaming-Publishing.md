@@ -1,6 +1,6 @@
 ---
-slug: ensuring-authentication-in-live-streaming-publishing
-title: 如何实现直播推流鉴权和安全
+slug: Ensuring-Authentication-in-Live-Streaming-Publishing
+title: SRS Stack - 如何实现直播推流鉴权和安全
 authors: []
 tags: [live streaming, security, authentication]
 custom_edit_url: null

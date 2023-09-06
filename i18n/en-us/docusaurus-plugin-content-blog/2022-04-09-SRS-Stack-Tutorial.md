@@ -1,6 +1,6 @@
 ---
 slug: SRS-Stack-Tutorial
-title: How to Setup a Video Streaming Service by 1-Click
+title: SRS Stack - How to Setup a Video Streaming Service by 1-Click
 authors: []
 tags: [turotial, srs, webrtc, streaming]
 custom_edit_url: null

@@ -1,6 +1,6 @@
 ---
 slug: SRS-Stack-Tutorial
-title: SRS Stack：起步、购买和入门
+title: SRS Stack - 起步、购买和入门
 authors: []
 tags: [turotial, srs, webrtc, streaming]
 custom_edit_url: null
