@@ -33,7 +33,7 @@ Special Note:
 
 ## Docker
 
-SRS Stack offers a Docker image, for usage instructions refer to the [SRS Stack Docker](https://github.com/ossrs/srs-stack/issues/44).
+SRS Stack offers a Docker image, for usage instructions refer to the [SRS Stack Docker](https://github.com/ossrs/srs-stack#usage).
 
 ## Script
 

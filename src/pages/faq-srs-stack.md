@@ -556,6 +556,12 @@ The following are the update records for the SRS Stack server.
     * 2023.09.04: Add test for virtual live. v5.9.10
     * 2023.09.05: Add test for record. v5.9.11
     * 2023.09.06: Add test for forward. v5.9.12
+    * 2023.09.06: Refine test to transmux to mp4. [v5.9.13](https://github.com/ossrs/srs-stack/releases/tag/v5.9.13)
+    * 2023.09.07: Upgrade jquery and mpegtsjs. v5.9.14
+    * 2023.09.07: Support authentication for SRS HTTP API. [v5.9.15](https://github.com/ossrs/srs-stack/releases/tag/v5.9.15)
+    * 2023.09.07: Don't expose 1985 API port. v5.9.16
+    * 2023.09.07: Load environment variables from /data/config/.srs.env. v5.9.17
+    * 2023.09.07: Change guide to use $HOME/data as home. v5.9.18
 * v5.8
     * Always dispose DO VM and domain for test. v1.0.306
     * Fix docker start failed, cover by test. v1.0.306

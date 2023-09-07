@@ -30,7 +30,7 @@ SRS Stack是一个基于Go、Reactjs、SRS、FFmpeg、WebRTC等的轻量级、�
 
 ## Docker
 
-SRS Stack 提供了一个 Docker 镜像，关于使用说明，请参考 [SRS Stack Docker](https://github.com/ossrs/srs-stack/issues/44)。
+SRS Stack 提供了一个 Docker 镜像，关于使用说明，请参考 [SRS Stack Docker](https://github.com/ossrs/srs-stack#usage)。
 
 ## Script
 

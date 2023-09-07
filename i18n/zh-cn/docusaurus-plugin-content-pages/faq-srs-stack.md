@@ -571,6 +571,12 @@ SRS Stack的使用说明，请参考视频[SRS Stack：起步、购买和入门]
     * 2023.09.04: Add test for virtual live. v5.9.10
     * 2023.09.05: Add test for record. v5.9.11
     * 2023.09.06: Add test for forward. v5.9.12
+    * 2023.09.06: Refine test to transmux to mp4. v5.9.13
+    * 2023.09.07: Upgrade jquery and mpegtsjs. v5.9.14
+    * 2023.09.07: Support authentication for SRS HTTP API. v5.9.15
+    * 2023.09.07: Don't expose 1985 API port. v5.9.16
+    * 2023.09.07: Load environment variables from /data/config/.srs.env. v5.9.17
+    * 2023.09.07: Change guide to use $HOME/data as home. v5.9.18
 * v5.8
     * 总是释放DO的临时测试资源。 v1.0.306
     * 修复 Docker 启动失败，通过测试覆盖。v1.0.306
