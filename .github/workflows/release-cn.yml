@@ -17,7 +17,7 @@ jobs:
       #   SRS_DROPLET_EIP=1.2.3.4
       - name: Build droplet variables
         run: |
-          SRS_DROPLET_EIP=$(dig +short new.ossrs.net)
+          SRS_DROPLET_EIP=$(dig +short n2.ossrs.net)
           echo "SRS_DROPLET_EIP=$SRS_DROPLET_EIP" >> $GITHUB_ENV
       # The github.ref is, for example, refs/tags/v1.0.52
       # Generate variables like:
