@@ -371,9 +371,9 @@ rtmp://ip/app/stream
 
 有时候宝塔商店的版本比较老，可以手动安装宝塔插件，安装最新的插件。
 
-SRS Stack最新的版本，可以看[Releases](https://github.com/ossrs/srs-stack/releases)，每个版本的附件中`bt-srs_cloud.zip`就是可以下载的插件。
+SRS Stack最新的版本，可以看[Releases](https://github.com/ossrs/srs-stack/releases)，每个版本的附件中`bt-srs_stack.zip`就是可以下载的插件。
 
-下载插件后，可以在宝塔`软件商店 > 第三方应用 > 导入插件`，上传下载的`bt-srs_cloud.zip`即可安装。
+下载插件后，可以在宝塔`软件商店 > 第三方应用 > 导入插件`，上传下载的`bt-srs_stack.zip`即可安装。
 
 <a name="bt-centos7-error"></a><br/><br/><br/>
 

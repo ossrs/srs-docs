@@ -367,9 +367,9 @@ Baota and aaPanel only have different installation methods, but the specific usa
 
 Sometimes the version in the Baota store is older, and you can manually install the Baota plugin to install the latest plugin.
 
-The latest version of SRS Stack can be found in [Releases](https://github.com/ossrs/srs-stack/releases), and the `aapanel-srs_cloud.zip` attachment in each version can be downloaded as a plugin.
+The latest version of SRS Stack can be found in [Releases](https://github.com/ossrs/srs-stack/releases), and the `aapanel-srs_stack.zip` attachment in each version can be downloaded as a plugin.
 
-After downloading the plugin, you can go to Baota `Software Store > Third-Party Applications > Import Plugin` and upload the downloaded `aapanel-srs_cloud.zip` to install.
+After downloading the plugin, you can go to Baota `Software Store > Third-Party Applications > Import Plugin` and upload the downloaded `aapanel-srs_stack.zip` to install.
 
 <a name="bt-centos7-error"></a><br/><br/><br/>
 
