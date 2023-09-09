@@ -562,6 +562,7 @@ The following are the update records for the SRS Stack server.
     * 2023.09.07: Don't expose 1985 API port. v5.9.16
     * 2023.09.07: Load environment variables from /data/config/.srs.env. v5.9.17
     * 2023.09.07: Change guide to use $HOME/data as home. v5.9.18
+    * 2023.09.09: Translate forward to English. v5.9.19
 * v5.8
     * Always dispose DO VM and domain for test. v1.0.306
     * Fix docker start failed, cover by test. v1.0.306

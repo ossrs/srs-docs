@@ -577,6 +577,7 @@ SRS Stack的使用说明，请参考视频[SRS Stack：起步、购买和入门]
     * 2023.09.07: Don't expose 1985 API port. v5.9.16
     * 2023.09.07: Load environment variables from /data/config/.srs.env. v5.9.17
     * 2023.09.07: Change guide to use $HOME/data as home. v5.9.18
+    * 2023.09.09: Translate forward to English. v5.9.19
 * v5.8
     * 总是释放DO的临时测试资源。 v1.0.306
     * 修复 Docker 启动失败，通过测试覆盖。v1.0.306
