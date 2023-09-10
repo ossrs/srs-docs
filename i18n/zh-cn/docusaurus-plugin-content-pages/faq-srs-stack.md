@@ -578,6 +578,8 @@ SRS Stack的使用说明，请参考视频[SRS Stack：起步、购买和入门]
     * 2023.09.07: Load environment variables from /data/config/.srs.env. v5.9.17
     * 2023.09.07: Change guide to use $HOME/data as home. v5.9.18
     * 2023.09.09: Translate forward to English. v5.9.19
+    * 2023.09.10: Refine record, dvr, and vod files. v5.9.20
+    * 2023.09.10: Translate record to English. v5.9.21
 * v5.8
     * 总是释放DO的临时测试资源。 v1.0.306
     * 修复 Docker 启动失败，通过测试覆盖。v1.0.306

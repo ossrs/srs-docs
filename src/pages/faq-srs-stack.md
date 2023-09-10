@@ -563,6 +563,8 @@ The following are the update records for the SRS Stack server.
     * 2023.09.07: Load environment variables from /data/config/.srs.env. v5.9.17
     * 2023.09.07: Change guide to use $HOME/data as home. v5.9.18
     * 2023.09.09: Translate forward to English. v5.9.19
+    * 2023.09.10: Refine record, dvr, and vod files. v5.9.20
+    * 2023.09.10: Translate record to English. v5.9.21
 * v5.8
     * Always dispose DO VM and domain for test. v1.0.306
     * Fix docker start failed, cover by test. v1.0.306
