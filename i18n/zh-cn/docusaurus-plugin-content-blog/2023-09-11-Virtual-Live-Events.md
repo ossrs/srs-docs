@@ -1,6 +1,6 @@
 ---
 slug: Virtual-Live-Events
-title: SRS Stack - Virtual Live Events - Revolutionizing the Way We Experience Entertainment
+title: SRS Stack - 虚拟直播和无人直播间
 authors: []
 tags: [live streaming, virual live events, srs]
 custom_edit_url: null
