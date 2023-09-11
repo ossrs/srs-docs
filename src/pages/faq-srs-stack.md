@@ -545,26 +545,31 @@ Welcome to join the group to discuss the use of SRS Stack. All these SRS periphe
 The following are the update records for the SRS Stack server.
 
 * v5.9
-    * 2023.09.01: Update NGINX HLS CDN guide. v5.9.2
-    * 2023.09.04：Move DVR and VoD to others. v5.9.3
-    * 2023.09.04: Remove the Tencent CAM setting. v5.9.4
-    * 2023.09.04: Refine Virtual Live start and stop button. v5.9.5
-    * 2023.09.04: Refine Record start and stop button. v5.9.6
-    * 2023.09.04: Refine Forward start and stop button. v5.9.7
-    * 2023.09.04：Move SRT streaming to others. v5.9.8
-    * 2023.09.04: Support vlive to use server file. v5.9.9
-    * 2023.09.04: Add test for virtual live. v5.9.10
-    * 2023.09.05: Add test for record. v5.9.11
-    * 2023.09.06: Add test for forward. v5.9.12
-    * 2023.09.06: Refine test to transmux to mp4. [v5.9.13](https://github.com/ossrs/srs-stack/releases/tag/v5.9.13)
-    * 2023.09.07: Upgrade jquery and mpegtsjs. v5.9.14
-    * 2023.09.07: Support authentication for SRS HTTP API. [v5.9.15](https://github.com/ossrs/srs-stack/releases/tag/v5.9.15)
-    * 2023.09.07: Don't expose 1985 API port. v5.9.16
-    * 2023.09.07: Load environment variables from /data/config/.srs.env. v5.9.17
-    * 2023.09.07: Change guide to use $HOME/data as home. v5.9.18
-    * 2023.09.09: Translate forward to English. v5.9.19
-    * 2023.09.10: Refine record, dvr, and vod files. v5.9.20
-    * 2023.09.10: Translate record to English. v5.9.21
+    * Update NGINX HLS CDN guide. v5.9.2
+    * ove DVR and VoD to others. v5.9.3
+    * Remove the Tencent CAM setting. v5.9.4
+    * Refine Virtual Live start and stop button. v5.9.5
+    * Refine Record start and stop button. v5.9.6
+    * Refine Forward start and stop button. v5.9.7
+    * ove SRT streaming to others. v5.9.8
+    * Support vlive to use server file. v5.9.9
+    * Add test for virtual live. v5.9.10
+    * Add test for record. v5.9.11
+    * Add test for forward. v5.9.12
+    * Refine test to transmux to mp4. [v5.9.13](https://github.com/ossrs/srs-stack/releases/tag/v5.9.13)
+    * Upgrade jquery and mpegtsjs. v5.9.14
+    * Support authentication for SRS HTTP API. [v5.9.15](https://github.com/ossrs/srs-stack/releases/tag/v5.9.15)
+    * Don't expose 1985 API port. v5.9.16
+    * Load environment variables from /data/config/.srs.env. v5.9.17
+    * Change guide to use $HOME/data as home. v5.9.18
+    * Translate forward to English. [v5.9.19](https://github.com/ossrs/srs-stack/releases/tag/v5.9.19)
+    * Refine record, dvr, and vod files. v5.9.20
+    * Translate record to English. [v5.9.21](https://github.com/ossrs/srs-stack/releases/tag/v5.9.21)
+    * Refine virtual live files. v5.9.22
+    * Translate virtual live to English. v5.9.23
+    * Support always open tabs. v5.9.24
+    * Remove record and vlive group. [v5.9.25](https://github.com/ossrs/srs-stack/releases/tag/v5.9.25)
+    * Refine project description. v5.9.26
 * v5.8
     * Always dispose DO VM and domain for test. v1.0.306
     * Fix docker start failed, cover by test. v1.0.306
@@ -576,21 +581,21 @@ The following are the update records for the SRS Stack server.
     * Use one version strategy. [v5.8.20](https://github.com/ossrs/srs-stack/releases/tag/v5.8.20)
     * Always check test result. v5.8.21
     * SRT: Enable srt in default vhost. v5.8.22
-    * 2023.08.19: Add utest for HP HLS. v5.8.23
-    * 2023.08.20: Migrate docs to new website. v5.8.23
-    * 2023.08.20: BT and aaPanel plugin ID should match filename. v5.8.24
-    * 2023.08.21: Add Nginx HLS Edge tutorial. v5.8.25
-    * 2023.08.22: Download test file from SRS. v5.8.26
-    * 2023.08.23: Do not require version. v5.8.26
-    * 2023.08.23: Fix Failed to execute 'insertBefore' on 'Node'. v5.8.26
-    * 2023.08.25: Eliminate unused callback events. v5.8.26
-    * 2023.08.25: Add docker for nginx HLS CDN. v5.8.27
-    * 2023.08.25: Update SRS Stack architecture. v5.8.27
-    * 2023.08.31: Use DO droplet s-1vcpu-1gb for auto test. v5.8.28
-    * 2023.08.31: Use default context when restore hphls. [v5.8.28](https://github.com/ossrs/srs-stack/releases/tag/v5.8.28)
-    * 2023.08.31: Support remote test. v5.8.29
-    * 2023.09.02: Enable CORS and timestamp in HLS. [v5.8.30](https://github.com/ossrs/srs-stack/releases/tag/v5.8.30)
-    * 2023.09.06: Release stable version. [v5.8.31](https://github.com/ossrs/srs-stack/releases/tag/v5.8.31)
+    * Add utest for HP HLS. v5.8.23
+    * Migrate docs to new website. v5.8.23
+    * BT and aaPanel plugin ID should match filename. v5.8.24
+    * Add Nginx HLS Edge tutorial. v5.8.25
+    * Download test file from SRS. v5.8.26
+    * Do not require version. v5.8.26
+    * Fix Failed to execute 'insertBefore' on 'Node'. v5.8.26
+    * Eliminate unused callback events. v5.8.26
+    * Add docker for nginx HLS CDN. v5.8.27
+    * Update SRS Stack architecture. v5.8.27
+    * Use DO droplet s-1vcpu-1gb for auto test. v5.8.28
+    * Use default context when restore hphls. [v5.8.28](https://github.com/ossrs/srs-stack/releases/tag/v5.8.28)
+    * Support remote test. v5.8.29
+    * Enable CORS and timestamp in HLS. [v5.8.30](https://github.com/ossrs/srs-stack/releases/tag/v5.8.30)
+    * Release stable version. [v5.8.31](https://github.com/ossrs/srs-stack/releases/tag/v5.8.31)
 * v5.7
     * Refine DigitalOcean droplet image. v1.0.302
     * Support local test all script. v1.0.302
