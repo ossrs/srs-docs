@@ -546,12 +546,12 @@ The following are the update records for the SRS Stack server.
 
 * v5.9
     * Update NGINX HLS CDN guide. v5.9.2
-    * ove DVR and VoD to others. v5.9.3
+    * Move DVR and VoD to others. v5.9.3
     * Remove the Tencent CAM setting. v5.9.4
     * Refine Virtual Live start and stop button. v5.9.5
     * Refine Record start and stop button. v5.9.6
     * Refine Forward start and stop button. v5.9.7
-    * ove SRT streaming to others. v5.9.8
+    * Move SRT streaming to others. v5.9.8
     * Support vlive to use server file. v5.9.9
     * Add test for virtual live. v5.9.10
     * Add test for record. v5.9.11

@@ -559,21 +559,20 @@ SRS Stack的使用说明，请参考视频[SRS Stack：起步、购买和入门]
 以下为SRS Stack的更新记录。
 
 * v5.9
-    * Enable limit duration UI by default. v5.9.1
     * Update NGINX HLS CDN guide. v5.9.2
-    * ove DVR and VoD to others. v5.9.3
+    * Move DVR and VoD to others. v5.9.3
     * Remove the Tencent CAM setting. v5.9.4
-    * Refine Virtual Live start and stop button. v5.9.5
-    * Refine Record start and stop button. v5.9.6
-    * Refine Forward start and stop button. v5.9.7
-    * ove SRT streaming to others. v5.9.8
-    * Support vlive to use server file. v5.9.9
+    * 改进虚拟直播按钮名称体验. v5.9.5
+    * 改进录制按钮名称体验. v5.9.6
+    * 改进多平台转播按钮名称体验. v5.9.7
+    * Move SRT streaming to others. v5.9.8
+    * 虚拟直播支持选择服务器文件. v5.9.9
     * Add test for virtual live. v5.9.10
     * Add test for record. v5.9.11
     * Add test for forward. v5.9.12
     * Refine test to transmux to mp4. v5.9.13
     * Upgrade jquery and mpegtsjs. v5.9.14
-    * Support authentication for SRS HTTP API. v5.9.15
+    * 支持SRS Console和API鉴权访问. v5.9.15
     * Don't expose 1985 API port. v5.9.16
     * Load environment variables from /data/config/.srs.env. v5.9.17
     * Change guide to use $HOME/data as home. v5.9.18
@@ -610,7 +609,7 @@ SRS Stack的使用说明，请参考视频[SRS Stack：起步、购买和入门]
     * Use DO droplet s-1vcpu-1gb for auto test. v5.8.28
     * Use default context when restore hphls. [v5.8.28](https://github.com/ossrs/srs-stack/releases/tag/v5.8.28)
     * Support remote test. v5.8.29
-    * Enable CORS and timestamp in HLS. [v5.8.30](https://github.com/ossrs/srs-stack/releases/tag/v5.8.30)
+    * 开启HLS跨域支持. [v5.8.30](https://github.com/ossrs/srs-stack/releases/tag/v5.8.30)
     * Release stable version. [v5.8.31](https://github.com/ossrs/srs-stack/releases/tag/v5.8.31)
 * v5.7
     * 优化DigitalOcean droplet镜像。v1.0.302
