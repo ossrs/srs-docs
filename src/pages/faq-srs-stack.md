@@ -200,7 +200,13 @@ The operation is very simple, just follow these three steps, please see [here](h
 
 > Note: Just apply for the domain name, do not upload it again. Once applied, you don't need to upload it again.
 
-> Note: Please use aaPanel to apply, the operation steps are similar to the above. SRS Stack will no longer support certificate application, because certbot does not support multi-platform docker images, and there will be problems when using it on other platforms.
+> Note: If you're using aaPanel to install SRS Stack, you can choose to apply through aaPanel or apply within SRS Stack.
+
+If you encounter an error while applying and the message says `Could not obtain certificates: error: one or more domains had a problem`, the possible reasons are:
+
+* The domain is not pointing to the SRS Stack's IP. You must use DNS to point the domain to the SRS Stack's IP, instead of setting it in the hosts file.
+* The IP of the SRS Stack must be publicly accessible, meaning it should be an IP that anyone on the internet can access, not just within a private network.
+* The port must be 80, not 2022, because Let's Encrypt will verify your domain in reverse and access it through port 80.
 
 After the application is successful, enter https plus your domain name in the browser, and you can access your website.
 
@@ -544,6 +550,14 @@ Welcome to join the group to discuss the use of SRS Stack. All these SRS periphe
 
 The following are the update records for the SRS Stack server.
 
+* v5.10
+    * Refine README. v5.10.1
+    * Refine DO and droplet release script. v5.10.2
+    * VLive: Fix bug of link. v5.10.2
+    * Record: Fix bug of change record directory. v5.10.2 (#133)
+    * Streaming: Add SRT streaming. [v5.10.2](https://github.com/ossrs/srs-stack/releases/tag/v5.10.2)
+    * Streaming: Add OBS SRT streaming. v5.10.3
+    * Fix lighthouse script bug. v5.10.4
 * v5.9
     * Update NGINX HLS CDN guide. v5.9.2
     * Move DVR and VoD to others. v5.9.3
@@ -570,6 +584,11 @@ The following are the update records for the SRS Stack server.
     * Support always open tabs. v5.9.24
     * Remove record and vlive group. [v5.9.25](https://github.com/ossrs/srs-stack/releases/tag/v5.9.25)
     * Refine project description. v5.9.26
+    * Refine DO and droplet release script. [v5.9.27](https://github.com/ossrs/srs-stack/releases/tag/v5.9.27)
+    * Fix bug, release stable version. v5.9.28
+    * VLive: Fix bug of link. v5.9.28
+    * Record: Fix bug of change record directory. v5.9.28 (#133)
+    * Streaming: Add SRT streaming. [v5.9.28](https://github.com/ossrs/srs-stack/releases/tag/v5.9.28)
 * v5.8
     * Always dispose DO VM and domain for test. v1.0.306
     * Fix docker start failed, cover by test. v1.0.306

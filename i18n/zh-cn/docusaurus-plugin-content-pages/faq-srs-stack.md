@@ -204,7 +204,13 @@ SRS Stack支持申请免费HTTPS证书，而且可以申请多个域名的证书
 
 > Note: 申请域名就行了，不要再上传，申请了就可以了，不需要再上传一次。
 
-> Note: 请使用宝塔申请，操作步骤和上面类似。SRS Stack将不再支持证书申请，原因是certbot不支持多平台的docker镜像，在其他平台上使用会有问题。
+> Note: 若使用宝塔安装SRS Stack，可以选择在宝塔中申请，或者在SRS Stack中申请。
+
+若出现申请失败的错误，消息为`Could not obtain certificates: error: one or more domains had a problem`，可能原因是：
+
+* 域名没有解析到SRS Stack的IP，必须使用DNS将域名解析到SRS Stack的IP，而不能设置hosts的方式。
+* SRS Stack的IP必须是公网可以访问的IP，必须是互联网上任何人都能访问的IP，而不是内网可以访问的IP。
+* 端口必须是80而不是2022，因为Let's Encrypt会反向验证你的域名，而且访问的是80端口。
 
 申请成功后，在浏览器敲https加你的域名，就可以访问你的网站了。
 
@@ -558,6 +564,14 @@ SRS Stack的使用说明，请参考视频[SRS Stack：起步、购买和入门]
 
 以下为SRS Stack的更新记录。
 
+* v5.10
+    * Refine README. v5.10.1
+    * Refine DO and droplet release script. v5.10.2
+    * VLive: Fix bug of link. v5.10.2
+    * Record: 修改改变录制目录的文本提示. v5.10.2 (#133)
+    * Streaming: 直播推拉流，添加SRT推流. [v5.10.2](https://github.com/ossrs/srs-stack/releases/tag/v5.10.2)
+    * Streaming: Add OBS SRT streaming. v5.10.3
+    * Fix lighthouse script bug. v5.10.4
 * v5.9
     * Update NGINX HLS CDN guide. v5.9.2
     * Move DVR and VoD to others. v5.9.3
@@ -571,7 +585,7 @@ SRS Stack的使用说明，请参考视频[SRS Stack：起步、购买和入门]
     * Add test for record. v5.9.11
     * Add test for forward. v5.9.12
     * Refine test to transmux to mp4. v5.9.13
-    * Upgrade jquery and mpegtsjs. v5.9.14
+    * 升级jquery和mpegtsjs库，解决安全风险. v5.9.14
     * 支持SRS Console和API鉴权访问. v5.9.15
     * Don't expose 1985 API port. v5.9.16
     * Load environment variables from /data/config/.srs.env. v5.9.17
@@ -584,6 +598,11 @@ SRS Stack的使用说明，请参考视频[SRS Stack：起步、购买和入门]
     * Support always open tabs. v5.9.24
     * Remove record and vlive group. [v5.9.25](https://github.com/ossrs/srs-stack/releases/tag/v5.9.25)
     * Refine project description. v5.9.26
+    * Refine DO and droplet release script. [v5.9.27](https://github.com/ossrs/srs-stack/releases/tag/v5.9.27)
+    * Fix bug, release stable version. v5.9.28
+    * VLive: Fix bug of link. v5.9.28
+    * Record: 修改改变录制目录的文本提示. v5.9.28 (#133)
+    * Streaming: 直播推拉流，添加SRT推流. [v5.9.28](https://github.com/ossrs/srs-stack/releases/tag/v5.9.28)
 * v5.8
     * 总是释放DO的临时测试资源。 v1.0.306
     * 修复 Docker 启动失败，通过测试覆盖。v1.0.306
