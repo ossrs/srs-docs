@@ -9,8 +9,10 @@ hide_table_of_contents: false
 
 RTMP is a basic and de facto standard protocol for live streaming for many years.
 
-However, Adobe neither maintaining RTMP protocol nor contributing as a RFC protocol, so many new features
-aren't supported by RTMP, such as HEVC and opus.
+However, Adobe neither maintaining RTMP protocol nor contributing as an RFC protocol, so many new features
+aren't supported by RTMP, such as HEVC and opus. By March 2023, the [Enhanced RTMP](https://github.com/veovera/enhanced-rtmp) 
+project is finally set up, supporting HEVC and AV1. SRS and OBS now support [HEVC](https://github.com/veovera/enhanced-rtmp/issues/4) 
+encoding based on Enhanced RTMP.
 
 For live streaming producing, more recent years, SRT, WebRTC and RIST have been growing rapidly. More and
 more devices supported SRT or RIST in live streaming. You're also able to use WebRTC for live streaming.

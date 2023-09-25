@@ -10,6 +10,8 @@ hide_table_of_contents: false
 RTMP是直播的事实标准，这么多年以来一直是使用最广泛的直播协议。
 
 然而Adobe公司没有一直更新RTMP协议，也没有提交给标准组织比如RFC，因此很多新功能都没有支持，比如HEVC或Opus。
+直到2023.03，终于[Enhanced RTMP](https://github.com/veovera/enhanced-rtmp)项目建立，开始支持了HEVC和AV1，
+SRS和OBS已经支持了基于Enhanced RTMP的[HEVC](https://github.com/veovera/enhanced-rtmp/issues/4)编码。
 
 在流的制作方面，最近几年，SRT、WebRTC和SRT增长迅速，很多设备都支持了SRT和RIST协议。你也可以用WebRTC做直播。
 

@@ -9,7 +9,7 @@ hide_table_of_contents: false
 
 RTMP is a basic and de facto standard protocol for live streaming for many years.
 
-However, Adobe neither maintaining RTMP protocol nor contributing as a RFC protocol, so many new features
+However, Adobe neither maintaining RTMP protocol nor contributing as an RFC protocol, so many new features
 aren't supported by RTMP, such as HEVC and opus.
 
 For live streaming producing, more recent years, SRT, WebRTC and RIST have been growing rapidly. More and
