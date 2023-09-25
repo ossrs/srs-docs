@@ -45,7 +45,7 @@ As I know, the issues for WebRTC in live streaming:
 1. Not used for the whole live streaming economy, especially the encoders, they prefer SRT which is also low latency 200~500ms.
 1. Low quality for content, because WebRTC perfer low latency, so it drops packets when network is bad. It’s hard to support 8Mbps or higher live streaming.
 1. Not friendly for DVR, if you want to DVR your live streaming published by WebRTC, very unhappy experience, please try it.
-1. Audio transcoding cost, because WebRTC use AAC, which need to be transcoded to AAC for live streaming.
+1. Audio transcoding cost, because WebRTC use Opus, which need to be transcoded to AAC for live streaming.
 1. WebRTC stack is not stable, changed over and over, and it also develops more stack like WebTransport/WebCodec, or QUIC/WebAssembly which is smaller and more simple than WebRTC itself.
 1. Last one, sometimes network administrator disable all UDP, er, I know there is something like TURN but …. why not use HTTP/HTTPS/WS/WSS which works perfect at everywhere and any devices.
 
