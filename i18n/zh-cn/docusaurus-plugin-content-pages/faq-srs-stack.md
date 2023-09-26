@@ -10,6 +10,7 @@
 * [如何设置域名](#how-to-set-domain)：如何设置域名访问管理后台，为何打不开管理后台，为何IP访问不了管理后台。
 * [支持哪些平台](#support-platform)：支持哪些平台，支持镜像，想直接用服务器或命令行安装，或宝塔安装
 * [如何推多路流](#multiple-streams)：一路流不够，想推多路流，想改默认的流名称和流地址。
+* [机器资源太多](#multiple-instances)：机器CPU很多，如何支持更多的平台转发，或者更多路流以及录制等。
 * [带宽太低，提升带宽](#bandwidth)：带宽不够，想提升带宽，在CVM中用SRS Stack。
 * [如何设置免费HTTPS](#https)：如何申请免费HTTPS证书，如何申请多个域名的证书。
 * [如何修改推流鉴权的密钥](#update-publish-secret)：更新推流鉴权的密钥，更换推流密钥
@@ -142,7 +143,7 @@ Lighthouse/CVM/DigitalOcean > 宝塔/aaPanel > Docker/Script
 
 可以根据自己的情况选择平台和安装方式。
 
-<a name='multile-streams'></a><br/><br/><br/>
+<a name='multiple-streams'></a><br/><br/><br/>
 
 ## 如何推多路流
 
@@ -164,6 +165,48 @@ Lighthouse/CVM/DigitalOcean > 宝塔/aaPanel > Docker/Script
 ![](/img/page-2023-03-04-03.png)
 
 > Note: 当然了，播放也得改成对应的流名称。
+
+<a name='multiple-instances'></a><br/><br/><br/>
+
+## 机器资源太多
+
+机器CPU很多，如何支持更多的平台转发，或者更多路流以及录制等。
+
+可以选择使用Docker方式启动SRS Stack，可以非常容易跑非常多的SRS Stack实例，这些实例都是隔离的，互不影响，可以将机器资源利用上。
+
+比如启动两个实例，侦听在2022和2023端口，流媒体依次用不同的端口：
+
+```bash
+docker run --rm -it -p 2022:2022 -p 1935:1935 \
+  -p 8080:8080 -p 8000:8000/udp -p 10080:10080/udp --name srs-stack \
+  -v $HOME/data:/data ossrs/srs-stack:5
+```
+
+然后打开 [http://localhost:2022](http://localhost:2022) 即可登录。
+
+```bash
+docker run --rm -it -p 2023:2022 -p 1936:1935 \
+  -p 8081:8080 -p 8001:8000/udp -p 10081:10080/udp --name srs-stack1 \
+  -v $HOME/data2:/data ossrs/srs-stack:5
+```
+
+然后打开 [http://localhost:2023](http://localhost:2023) 即可登录后台。
+
+> Note: 注意端口不要重复，挂载的数据目录也不要重复，保持两个SRS Stack的完全独立。
+
+如果只是用多平台转播，或者虚拟直播，不涉及推流端口，则直接使用即可。
+
+若需要推流到两个SRS Stack实例，则需要指定端口，比如推流到这两个SRS Stack：
+
+* rtmp://ip:1935/live/livestream
+* rtmp://ip:1936/live/livestream
+
+其他的协议端口对应的也要改变，比如HLS：
+
+* http://ip:8080/live/livestream.m3u8
+* http://ip:8081/live/livestream.m3u8
+
+当然也不是意味着你就可以启动上万个SRS Stack，你应该关注你的CPU和内存，以及机器的带宽是否充足。
 
 <a name="bandwidth"></a><br/><br/><br/>
 

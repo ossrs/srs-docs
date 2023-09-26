@@ -10,6 +10,7 @@ Quick Content
 * [How to set a domain](#how-to-set-domain): How to set up a domain to access the admin panel, why can't the admin panel be opened, and why can't the admin panel be accessed via IP.
 * [Supported Platforms](#support-platform): Supported platforms, supported images, want to use the server or command line installation directly, or aaPanel installation.
 * [How to push multiple streams](#multiple-streams): Want to push multiple streams, want to change the default stream name and stream address.
+* [Too many machine resources](#multiple-instances): The machine has a lot of CPU, how can we support more platform forwarding, or more streams and recording, etc.
 * [Low bandwidth, increase bandwidth](#bandwidth): Insufficient bandwidth, want to increase bandwidth, use SRS Stack in CVM.
 * [How to set up free HTTPS](#https): How to apply for a free HTTPS certificate, how to apply for certificates for multiple domain names.
 * [How to modify the push authentication key](#update-publish-secret): Update the push authentication key, replace the push key.
@@ -138,7 +139,7 @@ DigitalOcean > aaPanel > Docker/Script
 
 You can choose the platform and installation method according to your situation.
 
-<a name='multile-streams'></a><br/><br/><br/>
+<a name='multiple-streams'></a><br/><br/><br/>
 
 ## How to push multiple streams
 
@@ -160,6 +161,48 @@ As shown in the figure below, you can click the update button to automatically c
 ![](/img/page-2023-03-04-03.png)
 
 > Note: Of course, the playback must also be changed to the corresponding stream name.
+
+<a name='multiple-instances'></a><br/><br/><br/>
+
+## Too many machine resources
+
+The machine has a lot of CPU, how can we support more platform forwarding, or more streams and recording, etc.
+
+You can choose to use Docker to start SRS Stack, which makes it very easy to run many isolated SRS Stack instances that don't affect each other and utilize the machine resources.
+
+For example, start two instances listening on ports 2022 and 2023, and use different ports for streaming media:
+
+```bash
+docker run --rm -it -p 2022:2022 -p 1935:1935 \
+  -p 8080:8080 -p 8000:8000/udp -p 10080:10080/udp --name srs-stack \
+  -v $HOME/data:/data ossrs/srs-stack:5
+```
+
+Then, open [http://localhost:2022](http://localhost:2022) to log in to the backend.
+
+```bash
+docker run --rm -it -p 2023:2022 -p 1936:1935 \
+  -p 8081:8080 -p 8001:8000/udp -p 10081:10080/udp --name srs-stack1 \
+  -v $HOME/data:/data ossrs/srs-stack:5
+```
+
+Then, open [http://localhost:2023](http://localhost:2023) to log in to the backend.
+
+> Note: Be careful not to use duplicate ports and make sure the mounted data directories are unique. Keep the two SRS Stacks completely separate.
+
+If you only need multi-platform streaming or virtual streaming without involving the push stream port, you can use it directly.
+
+If you need to push streams to two SRS Stack instances, you need to specify the ports, such as pushing streams to these two SRS Stacks:
+
+* rtmp://ip:1935/live/livestream
+* rtmp://ip:1936/live/livestream
+
+Other protocol ports should also be changed accordingly, such as HLS:
+
+* http://ip:8080/live/livestream.m3u8
+* http://ip:8081/live/livestream.m3u8
+
+Of course, this doesn't mean you can start thousands of SRS Stacks. You should pay attention to your CPU and memory, as well as whether your machine has enough bandwidth.
 
 <a name="bandwidth"></a><br/><br/><br/>
 
