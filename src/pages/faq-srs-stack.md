@@ -183,7 +183,7 @@ Then, open [http://localhost:2022](http://localhost:2022) to log in to the backe
 ```bash
 docker run --rm -it -p 2023:2022 -p 1936:1935 \
   -p 8081:8080 -p 8001:8000/udp -p 10081:10080/udp --name srs-stack1 \
-  -v $HOME/data:/data ossrs/srs-stack:5
+  -v $HOME/data1:/data ossrs/srs-stack:5
 ```
 
 Then, open [http://localhost:2023](http://localhost:2023) to log in to the backend.
@@ -194,13 +194,13 @@ If you only need multi-platform streaming or virtual streaming without involving
 
 If you need to push streams to two SRS Stack instances, you need to specify the ports, such as pushing streams to these two SRS Stacks:
 
-* rtmp://ip:1935/live/livestream
-* rtmp://ip:1936/live/livestream
+* `rtmp://ip:1935/live/livestream`
+* `rtmp://ip:1936/live/livestream`
 
 Other protocol ports should also be changed accordingly, such as HLS:
 
-* http://ip:8080/live/livestream.m3u8
-* http://ip:8081/live/livestream.m3u8
+* `http://ip:8080/live/livestream.m3u8`
+* `http://ip:8081/live/livestream.m3u8`
 
 Of course, this doesn't mean you can start thousands of SRS Stacks. You should pay attention to your CPU and memory, as well as whether your machine has enough bandwidth.
 

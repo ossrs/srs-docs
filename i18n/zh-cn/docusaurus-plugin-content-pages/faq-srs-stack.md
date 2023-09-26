@@ -187,7 +187,7 @@ docker run --rm -it -p 2022:2022 -p 1935:1935 \
 ```bash
 docker run --rm -it -p 2023:2022 -p 1936:1935 \
   -p 8081:8080 -p 8001:8000/udp -p 10081:10080/udp --name srs-stack1 \
-  -v $HOME/data2:/data ossrs/srs-stack:5
+  -v $HOME/data1:/data ossrs/srs-stack:5
 ```
 
 然后打开 [http://localhost:2023](http://localhost:2023) 即可登录后台。
@@ -198,13 +198,13 @@ docker run --rm -it -p 2023:2022 -p 1936:1935 \
 
 若需要推流到两个SRS Stack实例，则需要指定端口，比如推流到这两个SRS Stack：
 
-* rtmp://ip:1935/live/livestream
-* rtmp://ip:1936/live/livestream
+* `rtmp://ip:1935/live/livestream`
+* `rtmp://ip:1936/live/livestream`
 
 其他的协议端口对应的也要改变，比如HLS：
 
-* http://ip:8080/live/livestream.m3u8
-* http://ip:8081/live/livestream.m3u8
+* `http://ip:8080/live/livestream.m3u8`
+* `http://ip:8081/live/livestream.m3u8`
 
 当然也不是意味着你就可以启动上万个SRS Stack，你应该关注你的CPU和内存，以及机器的带宽是否充足。
 
