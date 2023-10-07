@@ -7,7 +7,7 @@ hide_table_of_contents: false
 
 # HDS Delivery
 
-HDS is the Http Dynamic Stream of Adobe，similar to Apple [HLS](./delivery-hls.md).
+HDS is the Http Dynamic Stream of Adobe，similar to Apple [HLS](./hls.md).
 
 For specification of HDS, read http://www.adobe.com/devnet/hds.html
 
@@ -50,7 +50,7 @@ vhost __defaultVhost__ {
 }
 ```
 
-The config items are similar to HLS, read [HLS config](./delivery-hls.md#hls-config)
+The config items are similar to HLS, read [HLS config](./hls.md#hls-config)
 
 Winlin 2015.3
 

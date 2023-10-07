@@ -36,7 +36,7 @@ For detail, read [Build](./install.md)
 
 ## Step 3, config SRS
 
-For detail, read [HLS](./delivery-hls.md) and [HTTP Server](./http-server.md)
+For detail, read [HLS](./hls.md) and [HTTP Server](./http-server.md)
 
 Save bellow as config, or use `conf/http.hls.conf`:
 
@@ -59,11 +59,11 @@ vhost __defaultVhost__ {
 }
 ```
 
-Note: The hls_path must exists, srs never create it. For detail, read [HLS](./delivery-hls.md)
+Note: The hls_path must exists, srs never create it. For detail, read [HLS](./hls.md)
 
 ## Step 4, start SRS
 
-For detail, read [HLS](./delivery-hls.md) and [SRS HTTP Server](./http-server.md)
+For detail, read [HLS](./hls.md) and [SRS HTTP Server](./http-server.md)
 
 ```bash
 ./objs/srs -c conf/http.hls.conf
@@ -71,7 +71,7 @@ For detail, read [HLS](./delivery-hls.md) and [SRS HTTP Server](./http-server.md
 
 ## Step 5, start Encoder
 
-For detail, read [HLS](./delivery-hls.md)
+For detail, read [HLS](./hls.md)
 
 Use FFMPEG to publish stream:
 
@@ -97,7 +97,7 @@ The streams on SRS:
 
 ## Step 6, play RTMP
 
-For detail, read [HLS](./delivery-hls.md)
+For detail, read [HLS](./hls.md)
 
 RTMP url is: `rtmp://192.168.1.170:1935/live/livestream`
 
@@ -107,7 +107,7 @@ Note: Please replace all ip 192.168.1.170 to your server ip.
 
 ## Step 7, play HLS
 
-For detail, read [HLS](./delivery-hls.md)
+For detail, read [HLS](./hls.md)
 
 HLS url: `http://192.168.1.170:8080/live/livestream.m3u8`
 

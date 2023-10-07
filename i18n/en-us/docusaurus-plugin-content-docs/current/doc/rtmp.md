@@ -268,7 +268,7 @@ for example, converting RTMP to HTTP-FLV or HTTP-TS.
 
 ## Converting RTMP to HLS
 
-If want to convert RTMP to HLS, please see [HLS](./sample-hls.md).
+If want to convert RTMP to HLS, please see [HLS](./hls.md).
 
 ## Converting RTMP to HTTP-FLV
 

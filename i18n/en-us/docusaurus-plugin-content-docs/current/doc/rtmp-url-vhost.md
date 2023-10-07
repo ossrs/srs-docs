@@ -15,7 +15,7 @@ Let's take a look at the typical use scenaio of vhost.
 
 ![](/img/doc-main-concepts-rtmp-url-vhost-001.png)
 
-The benifit of RTMP and HLS, see: [HLS](./delivery-hls.md)
+The benifit of RTMP and HLS, see: [HLS](./hls.md)
 
 ## Use Scenario
 

@@ -36,7 +36,7 @@ For detail, read [Build](./install.md)
 
 ## Step 3, Config origin srs, to generate HLS files
 
-See [HLS](./delivery-hls.md).
+See [HLS](./hls.md).
 
 Please use config `conf/hls.origin.conf`, or create a config file by:
 

@@ -9,7 +9,7 @@ hide_table_of_contents: false
 
 There are two major methods to deliver video over internet, Live and WebRTC.
 
-* Live streaming: [HLS](./delivery-hls.md), [RTMP](./rtmp.md) and [HTTP-FLV](./delivery-http-flv.md) for entertainment.
+* Live streaming: [HLS](./hls.md), [RTMP](./rtmp.md) and [HTTP-FLV](./delivery-http-flv.md) for entertainment.
 * WebRTC: [RTC](./webrtc.md), for communication.
 
 Ignore other delivery protocol, which is not used on internet:
@@ -72,7 +72,7 @@ HLS is bad for:
 
 ## Use Scenario
 
-See [HTTP](./delivery-hls.md)
+See [HTTP](./hls.md)
 and [RTMP](./rtmp.md)
 
 I recomment to use these delivery protocols in:
