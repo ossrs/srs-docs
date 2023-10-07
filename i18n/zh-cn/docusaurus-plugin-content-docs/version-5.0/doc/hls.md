@@ -395,7 +395,7 @@ mount -o size=7G -t tmpfs none /ramdisk
 * 减少GOP大小，比如设置OBS的GOP为1秒，或者FFmpeg的GOP为FPS的帧数。
 * 减少`hls_fragment`，比如设置为2秒，或者1秒。
 * 减少`hls_window`，比如配置为10秒，或者5秒。
-* 使用低延迟播放器，比如hls.js或者fijkplayer或ffplay，不要使用VLC等很高延迟的播放器。
+* 使用低延迟播放器，比如hls.js或者ijkplayer或ffplay，不要使用VLC等很高延迟的播放器。
 
 参考配置文件`conf/hls.realtime.conf`：
 

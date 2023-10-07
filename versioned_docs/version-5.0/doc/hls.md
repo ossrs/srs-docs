@@ -391,7 +391,7 @@ You can adjust the following three settings to reduce latency to about 6-8 secon
 * Reduce the GOP size, e.g., set OBS's GOP to 1 second or FFmpeg's GOP to the number of FPS frames.
 * Reduce `hls_fragment`, e.g., set it to 2 seconds or 1 second.
 * Reduce `hls_window`, e.g., set it to 10 seconds or 5 seconds.
-* Use low-latency players like hls.js, fijkplayer, or ffplay, and avoid high-latency players like VLC.
+* Use low-latency players like hls.js, ijkplayer, or ffplay, and avoid high-latency players like VLC.
 
 Refer to the configuration file `conf/hls.realtime.conf`:
 
