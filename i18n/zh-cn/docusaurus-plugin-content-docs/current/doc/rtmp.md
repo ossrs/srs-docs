@@ -264,7 +264,7 @@ vhost __defaultVhost__ {
 
 ## Converting RTMP to HLS
 
-如果需要将RTMP转HLS协议，请参考[HLS](./sample-hls.md).
+如果需要将RTMP转HLS协议，请参考[HLS](./hls.md).
 
 ## Converting RTMP to HTTP-FLV
 

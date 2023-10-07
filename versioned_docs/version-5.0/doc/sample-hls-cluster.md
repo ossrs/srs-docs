@@ -53,6 +53,8 @@ http_server {
 vhost __defaultVhost__ {
     hls {
         enabled         on;
+        hls_ctx off;
+        hls_ts_ctx off;
     }
 }
 ```

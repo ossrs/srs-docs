@@ -14,7 +14,7 @@ Vhost(Virtual Host)就是虚拟域，用来隔离客户或业务。如下图所�
 
 ![](/img/doc-main-concepts-rtmp-url-vhost-001.png)
 
-RTMP和HLS的优势参考：[HLS](./delivery-hls.md)
+RTMP和HLS的优势参考：[HLS](./hls.md)
 
 ## Use Scenarios
 

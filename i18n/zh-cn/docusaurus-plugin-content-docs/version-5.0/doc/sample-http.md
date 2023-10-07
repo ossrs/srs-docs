@@ -38,7 +38,7 @@ git pull
 
 ## 第三步，编写SRS配置文件
 
-详细参考[HLS分发](./delivery-hls.md)和[HTTP服务器](./http-server.md)
+详细参考[HLS分发](./hls.md)和[HTTP服务器](./http-server.md)
 
 将以下内容保存为文件，譬如`conf/http.hls.conf`，服务器启动时指定该配置文件(srs的conf文件夹有该文件)。
 
@@ -61,11 +61,11 @@ vhost __defaultVhost__ {
 }
 ```
 
-备注：hls_path必须存在，srs只会自动创建${hls_path}下的app的目录。参考：[HLS分发: HLS流程](./delivery-hls.md)
+备注：hls_path必须存在，srs只会自动创建${hls_path}下的app的目录。参考：[HLS分发: HLS流程](./hls.md)
 
 ## 第四步，启动SRS
 
-详细参考[HLS分发](./delivery-hls.md)和[HTTP服务器](./http-server.md)
+详细参考[HLS分发](./hls.md)和[HTTP服务器](./http-server.md)
 
 ```bash
 ./objs/srs -c conf/http.hls.conf
@@ -77,7 +77,7 @@ vhost __defaultVhost__ {
 
 ## 第五步，启动推流编码器
 
-详细参考[HLS分发](./delivery-hls.md)
+详细参考[HLS分发](./hls.md)
 
 使用FFMPEG命令推流：
 
@@ -103,7 +103,7 @@ Stream: livestream
 
 ## 第六步，观看RTMP流
 
-详细参考[HLS分发](./delivery-hls.md)
+详细参考[HLS分发](./hls.md)
 
 RTMP流地址为：`rtmp://192.168.1.170/live/livestream`
 
@@ -115,7 +115,7 @@ RTMP流地址为：`rtmp://192.168.1.170/live/livestream`
 
 ## 第七步，观看HLS流
 
-详细参考[HLS分发](./delivery-hls.md)
+详细参考[HLS分发](./hls.md)
 
 HLS流地址为： `http://192.168.1.170:8080/live/livestream.m3u8`
 

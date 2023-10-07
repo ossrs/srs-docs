@@ -7,7 +7,7 @@ hide_table_of_contents: false
 
 # Low Latency Live Stream
 
-直播应用中，RTMP和HLS基本上可以覆盖所有客户端观看（参考：[DeliveryHLS](./delivery-hls.md)），HLS主要是延时比较大，RTMP主要优势在于延时低。
+直播应用中，RTMP和HLS基本上可以覆盖所有客户端观看（参考：[DeliveryHLS](./hls.md)），HLS主要是延时比较大，RTMP主要优势在于延时低。
 
 低延迟的部署实例参考：[Usage: Realtime](./sample-realtime.md)
 

@@ -7,7 +7,7 @@ hide_table_of_contents: false
 
 # HDS 分发
 
-HDS指Adobe的Http Dynamic Stream，和Apple的[HLS](./delivery-hls.md)类似。
+HDS指Adobe的Http Dynamic Stream，和Apple的[HLS](./hls.md)类似。
 
 HDS规范参考：http://www.adobe.com/devnet/hds.html
 
@@ -48,7 +48,7 @@ vhost __defaultVhost__ {
 }
 ```
 
-配置项的意义和HLS类似，参考[HLS config](./delivery-hls.md#hls-config)
+配置项的意义和HLS类似，参考[HLS config](./hls.md#hls-config)
 
 ## Why HDS
 

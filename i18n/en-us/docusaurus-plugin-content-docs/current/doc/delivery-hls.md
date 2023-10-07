@@ -114,7 +114,6 @@ vhost __defaultVhost__ {
         # the hls m3u8 target duration ratio,
         #   EXT-X-TARGETDURATION = hls_td_ratio * hls_fragment // init
         #   EXT-X-TARGETDURATION = max(ts_duration, EXT-X-TARGETDURATION) // for each ts
-        # @see https://github.com/ossrs/srs/issues/304#issuecomment-74000081
         # default: 1.5
         hls_td_ratio    1.5;
         # the audio overflow ratio.
@@ -273,7 +272,7 @@ hls_fragment: The length, in seconds, per ts file, for example, 5s.
 gop_size: The stream gop size, for example, the fps is 20, gop is 200frames, then gop_size=gop/fps=10s.
 So, the actual ts duration is max(5, 10)=10s, that is why the ts duration is larger than hls_fragment.
 ```
-* hls_td_ratio: The ratio to calculate the m3u8 EXT-X-TARGETDURATION, read https://github.com/ossrs/srs/issues/304#issuecomment-74000081
+* hls_td_ratio: The ratio to calculate the m3u8 EXT-X-TARGETDURATION
 * hls_aof_ratio: The ratio to determine whether the pure audio should be reap. For example, when hls_fragment is 10s, the hls_aof_ratio is 2.0, for pure audio, reap ts every 10s*2.0=20s.
 * hls_window: The total HLS windows size in seconds, the sum of all ts durations in the m3u8. SRS will drop the old ts file in the m3u8 and delete the files from the filesystem. SRS will keep:
 ```bash

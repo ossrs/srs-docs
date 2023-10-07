@@ -35,7 +35,7 @@
       "collapsed": true,
       "items": [
         "doc/rtmp",
-        "doc/sample-hls",
+        "doc/hls",
         "doc/webrtc",
         "doc/sample-http-flv",
         "doc/sample-srt",
