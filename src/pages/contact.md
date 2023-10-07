@@ -11,7 +11,7 @@ Would you like additional assistance from us? By becoming a sponsor or backer of
 support you need:
 
 * Backer: $5 per month, online text chat support through Discord.
-* Sponsor: $100 per month, online meeting support, 1 meeting per month in 1 hour.
+* Sponsor: $100 per month, online text chat plus online meeting support.
 
 https://opencollective.com/srs-server
 
