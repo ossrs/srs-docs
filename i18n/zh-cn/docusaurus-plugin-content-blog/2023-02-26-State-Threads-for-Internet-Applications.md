@@ -1,6 +1,6 @@
 ---
 slug: state-threads-for-internet-applications
-title: 高性能、高并发、高扩展性和可读性的网络服务器架构
+title: SRS Server - 高性能、高并发、高扩展性和可读性的网络服务器架构
 authors: []
 tags: [coroutine, network, server, performance, architecture]
 custom_edit_url: null

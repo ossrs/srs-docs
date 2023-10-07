@@ -1,6 +1,6 @@
 ---
 slug: WebRTC-Live
-title: 什么时候应该和不应该用WebRTC做直播
+title: SRS Server - 为何不用WebRTC做直播
 authors: []
 tags: [blog, webrtc, streaming]
 custom_edit_url: null

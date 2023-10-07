@@ -1,6 +1,6 @@
 ---
 slug: WebRTC-Live
-title: Why and Why NOT use WebRTC for Live Streaming
+title: SRS Server - Why and Why NOT use WebRTC for Live Streaming
 authors: []
 tags: [blog, webrtc, streaming]
 custom_edit_url: null
