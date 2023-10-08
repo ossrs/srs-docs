@@ -188,7 +188,7 @@ docker run --rm -it -p 8080:8080 -p 1985:1985 -p 8000:8000 \
   -e CANDIDATE="192.168.3.82" \
   -e SRS_RTC_SERVER_TCP_ENABLED=on \
   -e SRS_RTC_SERVER_PROTOCOL=tcp \
-  registry.cn-hangzhou.aliyuncs.com/ossrs/srs:v5.0.60
+  ossrs/srs:v5.0.60
 ```
 
 Please use [FFmpeg](https://ffmpeg.org/download.html) or [OBS](https://obsproject.com/download) to publish stream:

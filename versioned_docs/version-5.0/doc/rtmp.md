@@ -47,7 +47,7 @@ SRS supports converting RTMP to other protocols, described in next sections.
 
 The configuration about RTMP:
 
-```nginx
+```bash
 vhost __defaultVhost__ {
     # whether enable min delay mode for vhost.
     # for min latency mode:
@@ -242,8 +242,8 @@ vhost __defaultVhost__ {
 }
 ```
 
-These configurations are for publish and play. Note that there are some other configurations in other sections,
-for example, converting RTMP to HTTP-FLV or HTTP-TS.
+> Note: These configurations are for publish and play. Note that there are some other configurations in other sections,
+for example, converting RTMP to [HTTP-FLV](./flv.md#config) or HTTP-TS.
 
 ## On Demand Live Streaming
 
@@ -282,7 +282,7 @@ If want to convert RTMP to MPEGTS-DASH, please see [DASH](./sample-dash.md).
 
 ## Converting SRT to RTMP
 
-If want to convert SRT to RTMP, please see [SRT](./sample-srt.md).
+If want to convert SRT to RTMP, please see [SRT](./srt.md).
 
 ## Converting WebRTC to RTMP
 

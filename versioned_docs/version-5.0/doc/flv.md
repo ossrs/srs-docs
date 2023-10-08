@@ -32,7 +32,7 @@ consider using HLS or WASM. Note that for native iOS apps, the ijkplayer can be 
 SRS supports HTTP-FLV distribution, you can use [docker](./getting-started.md) or [build from source](./getting-started-build.md):
 
 ```bash
-docker run --rm -it -p 1935:1935 -p 8080:8080 registry.cn-hangzhou.aliyuncs.com/ossrs/srs:5 \
+docker run --rm -it -p 1935:1935 -p 8080:8080 ossrs/srs:5 \
   ./objs/srs -c conf/http.flv.live.conf
 ```
 

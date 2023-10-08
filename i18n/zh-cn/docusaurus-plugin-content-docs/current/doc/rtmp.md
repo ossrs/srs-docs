@@ -46,7 +46,7 @@ SRS支持将RTMP转换成其他协议，下面会详细描述。
 
 RTMP协议相关配置如下：
 
-```nginx
+```bash
 vhost __defaultVhost__ {
     # whether enable min delay mode for vhost.
     # for min latency mode:
@@ -241,7 +241,7 @@ vhost __defaultVhost__ {
 }
 ```
 
-这里只是推流和拉流的配置，还有些其他的配置是在其他地方的，比如RTMP转HTTP-FLV或HTTP-TS等。
+> Note: 这里只是推流和拉流的配置，还有些其他的配置是在其他地方的，比如RTMP转[HTTP-FLV](./flv.md#config)或HTTP-TS等。
 
 ## On Demand Live Streaming
 
@@ -280,7 +280,7 @@ vhost __defaultVhost__ {
 
 ## Converting SRT to RTMP
 
-如果需要将SRT转RTMP协议，参考[SRT](./sample-srt.md).
+如果需要将SRT转RTMP协议，参考[SRT](./srt.md).
 
 ## Converting WebRTC to RTMP
 

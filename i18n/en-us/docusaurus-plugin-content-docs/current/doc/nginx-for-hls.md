@@ -32,7 +32,7 @@ The NGINX edge cluster is essentially a reverse proxy with caching, also known a
 
 You only need to configure the caching strategy of NGINX, no additional plugins are needed, as NGINX itself supports it.
 
-```nginx
+```bash
 http {
     # For Proxy Cache.
     proxy_cache_path  /tmp/nginx-cache levels=1:2 keys_zone=srs_cache:8m max_size=1000m inactive=600m;
@@ -160,7 +160,7 @@ The NGINX edge cluster can also work with the SRS Edge Server to achieve HLS and
 
 It's very simple to implement. All you need to do is deploy an SRS on the NGINX server and have NGINX work in reverse proxy mode.
 
-```nginx
+```bash
 # For SRS streaming, for example:
 #   http://r.ossrs.net/live/livestream.flv
 location ~ /.+/.*\.(flv)$ {
@@ -180,7 +180,7 @@ In a super high-concurrency NGINX Edge cluster, a small data center-level cluste
 
 Using NGINX to distribute HLS files is actually very simple, you only need to set the root:
 
-```nginx
+```bash
   # For HLS delivery
   location ~ /.+/.*\.(m3u8)$ {
     root /usr/local/srs/objs/nginx/html;
@@ -202,7 +202,7 @@ Using NGINX to distribute HLS files is actually very simple, you only need to se
 
 How to determine if the cache is effective? You can add a field `upstream_cache_status` in the NGINX log and analyze the NGINX log to determine if the cache is effective:
 
-```nginx
+```bash
 log_format  main  '$upstream_cache_status $remote_addr - $remote_user [$time_local] "$request" '
                     '$status $body_bytes_sent "$http_referer" '
                     '"$http_user_agent" "$http_x_forwarded_for"';
@@ -220,7 +220,7 @@ You can see which ones are HIT cache, so you don't need to download files from S
 
 You can also directly add this field to the response header, so you can see in the browser whether each request has HIT:
 
-```nginx
+```bash
 add_header X-Cache-Status $upstream_cache_status;
 ```
 
@@ -230,7 +230,7 @@ add_header X-Cache-Status $upstream_cache_status;
 
 If you are using aaPanel, you can add a new site, and then write the following configuration in the site's configuration:
 
-```nginx
+```bash
     # For Proxy Cache.
     proxy_cache_path  /tmp/nginx-cache levels=1:2 keys_zone=srs_cache:8m max_size=1000m inactive=600m;
     proxy_temp_path /tmp/nginx-cache/tmp; 

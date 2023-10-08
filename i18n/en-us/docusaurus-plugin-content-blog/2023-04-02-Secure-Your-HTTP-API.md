@@ -20,7 +20,7 @@ First of all, please upgrade SRS to 5.0.152+ or 6.0.40+, which supports HTTP API
 
 Then, please enable the HTTP basic authentication by configuration `http_api.auth`:
 
-```nginx
+```bash
 # conf/http.api.auth.conf
 http_api {
     enabled on;
@@ -81,7 +81,7 @@ Browser ---HTTP-with-Authentication---> Nginx ---HTTP---> SRS 4.0
 
 In this solution, you should also change the listen of SRS HTTP API to lo:
 
-```nginx
+```bash
 http_api {
     enabled on;
     listen 127.0.0.1:1985;

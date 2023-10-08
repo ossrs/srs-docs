@@ -12,7 +12,7 @@ hide_table_of_contents: false
 * rtmp
 * httpflv
 * hls
-* srt: 具体见[srt codec wiki](./srt-codec.md)
+* srt: 具体见[srt codec wiki](./srt.md)
 
 ## FLV视频头信息
 因为rtmp在2012年后，协议没有更新，对hevc编码格式的支持在rtmp协议官方文档中没有明确定义。<br/>

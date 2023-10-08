@@ -189,7 +189,7 @@ RTMP URL一般是不带参数，类似于http的query，有时候为了特殊的
 * `http://192.168.1.100/live/livestream.m3u8?vhost=demo.srs.com&token=xxx`
 * `webrtc://192.168.1.100/live/livestream?vhost=demo.srs.com&token=xxx`
 
-> Note: SRT由于协议的特殊性，无法使用这种方式，详细请参考[SRT Parameters](./srt-url.md)
+> Note: SRT由于协议的特殊性，无法使用这种方式，详细请参考[SRT Parameters](./srt.md)
 
 ## URL of SRS
 

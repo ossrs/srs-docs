@@ -189,7 +189,7 @@ It's also applied to other protocols, for example:
 * `http://192.168.1.100/live/livestream.m3u8?vhost=demo.srs.com&token=xxx`
 * `webrtc://192.168.1.100/live/livestream?vhost=demo.srs.com&token=xxx`
 
-> Note: SRT is another story, please read [SRT Parameters](./srt-url.md) for details.
+> Note: SRT is another story, please read [SRT Parameters](./srt.md) for details.
 
 ## URL of SRS
 

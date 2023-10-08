@@ -20,7 +20,7 @@ custom_edit_url: null
 
 然后，请通过配置`http_api.auth`来启用HTTP Basic Authentication：
 
-```nginx
+```bash
 # conf/http.api.auth.conf
 http_api {
     enabled on;
@@ -81,7 +81,7 @@ Browser ---HTTP-with-Authentication---> Nginx ---HTTP---> SRS 4.0
 
 你需要修改HTTP API侦听的端口，比如：
 
-```nginx
+```bash
 http_api {
     enabled on;
     listen 127.0.0.1:1985;

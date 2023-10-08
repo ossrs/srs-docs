@@ -167,7 +167,7 @@ Since this service is provided by yourself, you can decide when to update the me
 
 SRS supports Vhost, which is generally used by CDN platforms to isolate multiple customers. Each customer can have its own domain name, such as:
 
-```nginx
+```bash
 vhost customer.a {
 }
 
@@ -184,7 +184,7 @@ If users push streams to the same IP server but use different vhosts, then they 
 
 In fact, Vhost can also be used for load balancing of multiple origin servers, because in Edge, different customers can be distributed to different origin servers, so that the capabilities of the origin server can be expanded without using `Origin Cluster`:
 
-```nginx
+```bash
 vhost customer.a {
   cluster {
     mode remote;

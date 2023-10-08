@@ -32,7 +32,7 @@ NGINX边缘集群，本质上就是带有缓存的反向代理，也就是NGNIX 
 
 只需要配置NGINX的缓存策略就可以，不需要额外插件，NGINX本身就支持：
 
-```nginx
+```bash
 http {
     # For Proxy Cache.
     proxy_cache_path  /tmp/nginx-cache levels=1:2 keys_zone=srs_cache:8m max_size=1000m inactive=600m;
@@ -160,7 +160,7 @@ NGINX边缘集群，也可以和SRS Edge Server一起工作，可以实现HLS和
 
 实现起来很简单，只需要在NGINX的服务器上，部署一个SRS，并让NGINX工作在反向代理模式就可以。
 
-```nginx
+```bash
 # For SRS streaming, for example:
 #   http://r.ossrs.net/live/livestream.flv
 location ~ /.+/.*\.(flv)$ {
@@ -180,7 +180,7 @@ location ~ /.+/.*\.(flv)$ {
 
 使用NGINX分发HLS文件，其实很简单，只需要设置root就可以了：
 
-```nginx
+```bash
   # For HLS delivery
   location ~ /.+/.*\.(m3u8)$ {
     root /usr/local/srs/objs/nginx/html;
@@ -202,7 +202,7 @@ location ~ /.+/.*\.(flv)$ {
 
 如何判断缓存有没有生效呢？可以在NGINX日志中，加入一个字段`upstream_cache_status`，分析NGINX日志来判断缓存是否生效：
 
-```nginx
+```bash
 log_format  main  '$upstream_cache_status $remote_addr - $remote_user [$time_local] "$request" '
                     '$status $body_bytes_sent "$http_referer" '
                     '"$http_user_agent" "$http_x_forwarded_for"';
@@ -220,7 +220,7 @@ cat /var/log/nginx/access.log | grep '.ts HTTP' \
 
 也可以直接在响应头加入这个字段，这样可以在浏览器中看每个请求，是否HIT了：
 
-```nginx
+```bash
 add_header X-Cache-Status $upstream_cache_status;
 ```
 
@@ -230,7 +230,7 @@ add_header X-Cache-Status $upstream_cache_status;
 
 若使用宝塔，那么可以新增一个站点，然后在站点的配置中写入如下配置：
 
-```nginx
+```bash
     # For Proxy Cache.
     proxy_cache_path  /tmp/nginx-cache levels=1:2 keys_zone=srs_cache:8m max_size=1000m inactive=600m;
     proxy_temp_path /tmp/nginx-cache/tmp; 
