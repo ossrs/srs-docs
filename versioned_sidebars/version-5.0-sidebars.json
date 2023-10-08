@@ -39,8 +39,7 @@
         "doc/webrtc",
         "doc/flv",
         "doc/srt",
-        "doc/gb28181",
-        "doc/sample-dash"
+        "doc/gb28181"
       ]
     },
     {
@@ -114,17 +113,10 @@
       "items": [
         "doc/low-latency",
         "doc/arm",
-        "doc/rtmp-pk-http",
-        "doc/time-jitter",
         "doc/drm",
         "doc/k8s",
         "doc/performance",
-        "doc/gperf",
-        "doc/gprof",
-        "doc/perf",
-        "doc/rtmp-url-vhost",
-        "doc/rtmp-handshake",
-        "doc/rtmp-atc"
+        "doc/rtmp-url-vhost"
       ]
     },
     {
@@ -135,28 +127,19 @@
       },
       "collapsed": true,
       "items": [
-        "doc/sample-rtmp-cluster",
-        "doc/sample-hls-cluster",
-        "doc/sample-http-flv-cluster",
-        "doc/sample-origin-cluster",
         "doc/ide",
+        "doc/git",
+        "doc/sample-dash",
         "doc/ffmpeg",
+        "doc/nginx-exec",
         "doc/client-sdk",
         "doc/raspberrypi",
-        "doc/sample",
-        "doc/nginx-exec",
+        "doc/time-jitter",
+        "doc/rtmp-pk-http",
+        "doc/rtmp-handshake",
+        "doc/rtmp-atc",
         "doc/flv-vod-stream",
-        "doc/sample-ingest",
-        "doc/sample-forward",
-        "doc/sample-ffmpeg",
-        "doc/sample-transcode-to-hls",
-        "doc/sample-realtime",
-        "doc/sample-http",
         "doc/delivery-hds",
-        "doc/sample-arm",
-        "doc/git",
-        "doc/special-control",
-        "doc/install",
         "doc/srs-lib-rtmp"
       ]
     }
