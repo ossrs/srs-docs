@@ -43,25 +43,6 @@ Play stream by:
 
 SRS supports converting RTMP to other protocols, described in next sections.
 
-## On Demand Live Streaming
-
-For some use scenario, the publisher is invited when player want to view the stream:
-
-1. Publisher connects to system, but does not publish any stream to SRS yet.
-2. Player connects to system and start to request the stream.
-3. System notifies publisher to publish stream to SRS.
-4. Player plays the stream from SRS.
-
-Please notice that `system` means your business system, not SRS.
-
-This is what we called `on-demand-live-streaming`, so when the last player stop to view the stream, what happens?
-
-1. System needs to notify publisher to stop publish.
-2. Or, SRS disconnect the publisher when idle(the last player stops playing).
-
-[This PR](https://github.com/ossrs/srs/pull/3105) is for the solution 2, so that the cleanup is very simple,
-your system does not need to notify publisher to stop publish, because SRS has already disconnected the publisher.
-
 ## Config
 
 The configuration about RTMP:
@@ -263,6 +244,25 @@ vhost __defaultVhost__ {
 
 These configurations are for publish and play. Note that there are some other configurations in other sections,
 for example, converting RTMP to HTTP-FLV or HTTP-TS.
+
+## On Demand Live Streaming
+
+For some use scenario, the publisher is invited when player want to view the stream:
+
+1. Publisher connects to system, but does not publish any stream to SRS yet.
+2. Player connects to system and start to request the stream.
+3. System notifies publisher to publish stream to SRS.
+4. Player plays the stream from SRS.
+
+Please notice that `system` means your business system, not SRS.
+
+This is what we called `on-demand-live-streaming`, so when the last player stop to view the stream, what happens?
+
+1. System needs to notify publisher to stop publish.
+2. Or, SRS disconnect the publisher when idle(the last player stops playing).
+
+[This PR](https://github.com/ossrs/srs/pull/3105) is for the solution 2, so that the cleanup is very simple,
+your system does not need to notify publisher to stop publish, because SRS has already disconnected the publisher.
 
 ## Converting RTMP to HLS
 
