@@ -22,7 +22,7 @@ HTTP-FLV only started supporting HEVC and AV1 in March 2023 with the [Enhanced R
 project. As for WebRTC, only Safari supports it currently, and Chrome is said to be in development.
 
 SRS 6.0 officially supports the H.265 feature. If you want to use the H.265 function, please switch to the SRS 
-6.0 version.
+6.0 version. Please refer to [#465](https://github.com/ossrs/srs/issues/465) for the detailed research and development process.
 
 ## Overview
 

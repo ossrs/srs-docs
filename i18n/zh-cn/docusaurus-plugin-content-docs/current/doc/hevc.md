@@ -18,7 +18,7 @@ HEVC，也就是H.265，是H.264的下一代编码，和AV1属于统一代的编
 所以也支持了；RTMP和HTTP-FLV，直到2023.03，终于[Enhanced RTMP](https://github.com/veovera/enhanced-rtmp)项目建立，
 开始支持了HEVC和AV1；而WebRTC目前只有Safari支持了，据说Chrome还在开发中。
 
-SRS 6.0正式支持了H.265的能力，若需要使用H.265功能，请切换到SRS 6.0版本。
+SRS 6.0正式支持了H.265的能力，若需要使用H.265功能，请切换到SRS 6.0版本。研发的详细过程请参考[#465](https://github.com/ossrs/srs/issues/465)。
 
 ## Overview
 

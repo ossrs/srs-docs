@@ -21,6 +21,8 @@ latency and better performance on weak networks than RTMP. RTMP latency is usual
 SRT is a core protocol of SRS. SRS has supported SRT since 2020 and improved its consistency with other core protocols
 in 2022. SRT and RTMP have very high consistency in terms of callbacks and API support.
 
+Please refer to [#1147](https://github.com/ossrs/srs/issues/1147) for the detailed research and development process.
+
 ## Usage
 
 SRS has built-in support for SRT and can be used with [docker](./getting-started.md) or [compiled from source](./getting-started-build.md):

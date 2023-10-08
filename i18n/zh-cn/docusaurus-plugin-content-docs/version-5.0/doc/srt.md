@@ -21,6 +21,8 @@ SRS和OBS已经支持了基于Enhanced RTMP的[HEVC](https://github.com/veovera/
 SRT是SRS的核心协议，SRS早在2020年即支持了SRT协议，并且在2022年实现了SRT协程化，从而大幅提高了SRT和其他核心协议的一致性。
 比如回调和API的支持，SRT和RTMP保持了非常高的一致性。
 
+研发的详细过程请参考[#1147](https://github.com/ossrs/srs/issues/1147)。
+
 ## Usage
 
 SRS内置SRT的支持，可以用[docker](./getting-started.md)或者[从源码编译](./getting-started-build.md):
