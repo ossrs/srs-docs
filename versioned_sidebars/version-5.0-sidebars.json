@@ -40,8 +40,7 @@
         "doc/flv",
         "doc/sample-srt",
         "doc/gb28181",
-        "doc/sample-dash",
-        "doc/http-server"
+        "doc/sample-dash"
       ]
     },
     {
@@ -52,12 +51,11 @@
       },
       "collapsed": true,
       "items": [
-        "doc/delivery-hls",
-        "doc/delivery-http-flv",
+        "doc/http-server",
+        "doc/hevc",
         "doc/dvr",
         "doc/streamer",
         "doc/ingest",
-        "doc/windows",
         "doc/forward",
         "doc/security",
         "doc/snapshot"
@@ -101,6 +99,7 @@
         "doc/log",
         "doc/log-rotate",
         "doc/service",
+        "doc/windows",
         "doc/reload",
         "doc/resource"
       ]
@@ -143,7 +142,6 @@
         "doc/sample-hls-cluster",
         "doc/sample-http-flv-cluster",
         "doc/sample-origin-cluster",
-        "doc/hevc",
         "doc/ide",
         "doc/ffmpeg",
         "doc/client-sdk",

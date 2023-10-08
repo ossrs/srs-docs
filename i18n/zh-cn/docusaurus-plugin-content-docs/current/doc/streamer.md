@@ -1,11 +1,11 @@
 ---
 title: Stream Converter
-sidebar_label: Stream Converter 
+sidebar_label: Caster
 hide_title: false
 hide_table_of_contents: false
 ---
 
-# Stream Converter
+# Stream Caster
 
 Stream Converter侦听特殊的TCP/UDP端口，接受客户端连接和媒体流，并转成RTMP流，推送给SRS。
 

@@ -1,11 +1,11 @@
 ---
 title: Stream Converter
-sidebar_label: Stream Converter 
+sidebar_label: Caster
 hide_title: false
 hide_table_of_contents: false
 ---
 
-# Stream Converter
+# Stream Caster
 
 Stream Converters listen at special TCP/UDP ports, accept new connections and receive packets, then convert to and push 
 RTMP stream to SRS server like a RTMP client.
