@@ -46,7 +46,7 @@ ffmpeg -re -i ./doc/source.flv -c copy -f flv rtmp://localhost/live/livestream
 
 Open the following page to play the stream (if SRS is not on your local machine, replace localhost with the server IP):
 
-* HLS (by [VLC](https://www.videolan.org/)): `http://localhost:8080/live/livestream.m3u8`
+* HLS by SRS player: [http://localhost:8080/live/livestream.m3u8](http://localhost:8080/players/srs_player.html?stream=livestream.m3u8)
 
 > Note: Please wait about 10 seconds before playing the stream, otherwise it will fail, as it takes some time to generate the first segment.
 
@@ -260,6 +260,8 @@ vhost __defaultVhost__ {
 }
 ```
 
+> Note: These settings are only for playing HLS. For streaming settings, please follow your protocol, like referring to [RTMP](./rtmp.md#config), [SRT](./srt.md#config), or [WebRTC](./webrtc.md#config) streaming configurations.
+
 Here are the main settings:
 * enabled: Turn HLS on/off, default is off.
 * hls_fragment: Seconds, specify the minimum length of ts slices. For the actual length of ts files, please refer to the detailed description of [HLS TS Duration](#hls-ts-duration).
@@ -409,7 +411,7 @@ vhost __defaultVhost__ {
 
 Of course, you can't reduce it too much, as it may cause insufficient buffering for the player or skipping when the player's network is poor, possibly resulting in playback failure. The lower the latency, the higher the chance of buffering. HLS latency cannot be less than 5 seconds, especially considering CDN and player compatibility.
 
-If you need latency within 5 seconds, consider using protocols like [HTTP-FLV](./sample-http-flv.md), [SRT](./srt.md), or [WebRTC](./webrtc.md).
+If you need latency within 5 seconds, consider using protocols like [HTTP-FLV](./flv.md), [SRT](./srt.md), or [WebRTC](./webrtc.md).
 
 ## ON HLS Notify
 

@@ -181,7 +181,7 @@ CANDIDATE="192.168.1.10"
 > Remark: Please use your HTTPS key and cert file, please read
 > **[HTTPS API](./http-api.md#https-api)**
 > and **[HTTPS Callback](./http-callback.md#https-callback)**
-> and **[HTTPS Live Streaming](./delivery-http-flv.md#https-flv-live-stream)**,
+> and **[HTTPS Live Streaming](./flv.md#https-flv-live-stream)**,
 > however HTTPS proxy also works perfect with SRS such as Nginx.
 
 Push stream to SRS by [WebRTC: Publish](https://192.168.3.82:8088/players/rtc_publisher.html?autostart=true&stream=livestream&api=1990&schema=https)

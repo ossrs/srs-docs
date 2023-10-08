@@ -266,7 +266,7 @@ vhost __defaultVhost__ {
 
 ## Converting RTMP to HTTP-FLV
 
-如果需要将RTMP转HTTP-FLV或HTTP-TS协议，请参考[HTTP-FLV](./sample-http-flv.md).
+如果需要将RTMP转HTTP-FLV或HTTP-TS协议，请参考[HTTP-FLV](./flv.md).
 
 ## Converting RTMP to WebRTC
 

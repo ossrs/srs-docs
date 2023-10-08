@@ -270,7 +270,7 @@ If want to convert RTMP to HLS, please see [HLS](./hls.md).
 
 ## Converting RTMP to HTTP-FLV
 
-If want to convert RTMP to HTTP-FLV or HTTP-TS, please see [HTTP-FLV](./sample-http-flv.md).
+If want to convert RTMP to HTTP-FLV or HTTP-TS, please see [HTTP-FLV](./flv.md).
 
 ## Converting RTMP to WebRTC
 

@@ -37,7 +37,7 @@
         "doc/rtmp",
         "doc/hls",
         "doc/webrtc",
-        "doc/sample-http-flv",
+        "doc/flv",
         "doc/sample-srt",
         "doc/gb28181",
         "doc/sample-dash",

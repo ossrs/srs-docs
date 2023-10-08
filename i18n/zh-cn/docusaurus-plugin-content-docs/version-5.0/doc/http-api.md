@@ -278,7 +278,7 @@ http_api {
 
 > Remark: 请使用你的证书文件，代替上面配置中的key和cert。
 
-> Note: 若需要开启HTTPS直播流，请参考[HTTPS FLV Live Stream](./delivery-http-flv.md#https-flv-live-stream)
+> Note: 若需要开启HTTPS直播流，请参考[HTTPS FLV Live Stream](./flv.md#https-flv-live-stream)
 
 ## HTTP and HTTPS Proxy
 

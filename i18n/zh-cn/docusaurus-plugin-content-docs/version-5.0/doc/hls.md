@@ -15,7 +15,7 @@ HLS是适配性和兼容性最好的流媒体协议，没有之一。这个世�
 
 当然了，HLS并不是没有毛病，它的问题就是延迟比较高，一般在30秒左右。虽然经过优化可以到8秒左右，但是不同播放器的行为可能不一致。
 对比起其他流媒体协议，优化后的延迟也很高。因此如果你特别在意直播的延迟，那么请使用[RTMP](./rtmp.md)或者
-[HTTP-FLV](./sample-http-flv.md)协议。
+[HTTP-FLV](./flv.md)协议。
 
 HLS主要的应用场景包括：
 * 跨平台：PC主要的直播方案是HLS，可用hls.js库播放HLS。所以实际上如果选一种协议能跨PC/Android/IOS，那就是HLS。
@@ -43,7 +43,7 @@ ffmpeg -re -i ./doc/source.flv -c copy -f flv rtmp://localhost/live/livestream
 
 打开下面的页面播放流（若SRS不在本机，请将localhost更换成服务器IP）:
 
-* HLS (by [VLC](https://www.videolan.org/)): `http://localhost:8080/live/livestream.m3u8`
+* HLS by SRS player: [http://localhost:8080/live/livestream.m3u8](http://localhost:8080/players/srs_player.html?stream=livestream.m3u8)
 
 > Note: 请等待大约10秒左右，再播放流，否则会播放失败，因为生成第一个切片需要一些时间。
 
@@ -257,6 +257,8 @@ vhost __defaultVhost__ {
 }
 ```
 
+> Note: 这些配置只是播放HLS相关的配置，推流的配置请根据你的协议，比如参考[RTMP](./rtmp.md#config)或者[SRT](./srt.md#config)或者[WebRTC](./webrtc.md#config)的推流配置。
+
 主要配置项如下：
 * enabled：是否开启HLS，on/off，默认off。
 * hls_fragment：秒，指定ts切片的最小长度。实际上ts文件的长度请参考[HLS TS Duration](#hls-ts-duration)的详细说明。
@@ -414,7 +416,7 @@ vhost __defaultVhost__ {
 当然，也不能减少得非常少，容易造成播放器缓冲不足，或者播放器网络不佳时跳片，可能会有播放失败。
 延迟越低，卡顿概率越高，HLS的延迟并不能做到5秒之内，特别是考虑CDN和播放器的适配情况。
 
-如果需要5秒之内的延迟，建议使用[HTTP-FLV](./sample-http-flv.md)或者[SRT](./srt.md)或者[WebRTC](./webrtc.md)等协议。
+如果需要5秒之内的延迟，建议使用[HTTP-FLV](./flv.md)或者[SRT](./srt.md)或者[WebRTC](./webrtc.md)等协议。
 
 ## ON HLS Notify
 

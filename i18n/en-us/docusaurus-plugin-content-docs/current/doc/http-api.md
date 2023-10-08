@@ -257,7 +257,7 @@ http_api {
 
 > Remark: Please use your HTTPS key and cert file.
 
-> Note: To enable the HTTPS live streaming, please read [HTTPS FLV Live Stream](./delivery-http-flv.md#https-flv-live-stream)
+> Note: To enable the HTTPS live streaming, please read [HTTPS FLV Live Stream](./flv.md#https-flv-live-stream)
 
 ## HTTP and HTTPS Proxy
 

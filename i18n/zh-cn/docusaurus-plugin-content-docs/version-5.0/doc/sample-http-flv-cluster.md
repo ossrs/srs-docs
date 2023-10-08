@@ -7,7 +7,7 @@ hide_table_of_contents: false
 
 # HTTP-FLV集群部署实例
 
-SRS支持HTTP FLV直播流集群分发，详细参考[HTTP FLV](./delivery-http-flv.md#about-http-flv)
+SRS支持HTTP FLV直播流集群分发，详细参考[HTTP FLV](./flv.md#about-http-flv)
 
 SRS的HTTP FLV边缘只能使用单进程，如何做到多进程呢？请参考[Reuse Port](./reuse-port.md)
 
@@ -40,7 +40,7 @@ git pull
 
 ## 第三步，编写SRS源站配置文件
 
-详细参考[HTTP FLV](./delivery-http-flv.md)
+详细参考[HTTP FLV](./flv.md)
 
 将以下内容保存为文件，譬如`conf/http.flv.live.conf`，服务器启动时指定该配置文件(srs的conf文件夹有该文件)。
 
@@ -64,7 +64,7 @@ vhost __defaultVhost__ {
 
 ## 第四步，编写SRS边缘配置文件
 
-详细参考[HTTP FLV](./delivery-http-flv.md)
+详细参考[HTTP FLV](./flv.md)
 
 将以下内容保存为文件，譬如`conf/http.flv.live.edge1.conf`和`conf/http.flv.live.edge2.conf`，服务器启动时指定该配置文件(srs的conf文件夹有该文件)。
 
@@ -92,7 +92,7 @@ vhost __defaultVhost__ {
 
 ## 第五步，启动SRS
 
-详细参考[HTTP FLV](./delivery-http-flv.md)
+详细参考[HTTP FLV](./flv.md)
 
 ```bash
 ./objs/srs -c conf/http.flv.live.conf &
@@ -102,7 +102,7 @@ vhost __defaultVhost__ {
 
 ## 第六步，启动推流编码器
 
-详细参考[HTTP FLV](./delivery-http-flv.md)
+详细参考[HTTP FLV](./flv.md)
 
 使用FFMPEG命令推流：
 
@@ -136,7 +136,7 @@ Stream: livestream
 
 ## 第七步，观看RTMP流
 
-详细参考[HTTP FLV](./delivery-http-flv.md)
+详细参考[HTTP FLV](./flv.md)
 
 源站RTMP流地址为：`rtmp://192.168.1.170/live/livestream`，可以使用VLC观看，或者使用在线SRS播放器播放：[srs-player](https://ossrs.net/players/srs_player.html)
 
@@ -148,7 +148,7 @@ Stream: livestream
 
 ## 第八步，观看HTTP流
 
-详细参考[HTTP FLV](./delivery-http-flv.md)
+详细参考[HTTP FLV](./flv.md)
 
 源站HTTP FLV流地址为： `http://192.168.1.170:8080/live/livestream.flv`，可以使用VLC观看，或者使用在线SRS播放器播放：[srs-player](https://ossrs.net/players/srs_player.html)
 
