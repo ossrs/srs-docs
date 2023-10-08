@@ -124,10 +124,7 @@
         "doc/perf",
         "doc/rtmp-url-vhost",
         "doc/rtmp-handshake",
-        "doc/rtmp-atc",
-        "doc/srt-codec",
-        "doc/srt-params",
-        "doc/srt-url"
+        "doc/rtmp-atc"
       ]
     },
     {
