@@ -7,15 +7,15 @@ hide_table_of_contents: false
 
 # K8s
 
-Highly recommend that you [Deploy to Cloud Platforms](./k8s.md#deploy-to-cloud-platforms).
+We recommend using the HELM method to deploy SRS, see [srs-helm](https://github.com/ossrs/srs-helm). Of course, 
+SRS also supports direct deployment with K8s, refer to [SRS K8s](./k8s.md).
 
-SRS provides a set of template repository for fast deploy:
+Actually, HELM is based on K8s and deploys K8s pods, which can be managed with kubectl. However, HELM offers a 
+more convenient way to manage and install applications, so SRS will mainly support HELM in the future.
 
-* [General K8s](https://github.com/ossrs/srs-k8s-template)
-* [EKS(Amazon Elastic Kubernetes Service)](https://github.com/ossrs/srs-eks-template)
-* [AKS(Azure Kubernetes Service)](https://github.com/ossrs/srs-aks-template)
-* [TKE(Tencent Kubernetes Engine)](https://github.com/ossrs/srs-tke-template)
-* [ACK(Alibaba Cloud Container Service for Kubernetes)](https://github.com/ossrs/srs-ack-template)
+Compared to Docker, HELM and K8s are mainly for medium to large scale deployments. If your business is not that 
+big, we recommend using Docker or SRS Stack directly. Generally, if you have less than a thousand streams, please 
+do not use HELM or K8s.
 
 ![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/doc/en/v6/getting-started-k8s)
 

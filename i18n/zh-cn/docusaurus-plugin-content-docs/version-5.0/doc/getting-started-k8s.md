@@ -7,15 +7,14 @@ hide_table_of_contents: false
 
 # K8s
 
-推荐使用K8s部署SRS，参考[Deploy to Cloud Platforms](./k8s.md#deploy-to-cloud-platforms)，视频教程[Bilibili: SRS-027-用K8s零命令行部署SRS](https://www.bilibili.com/video/BV1g44y1j7Vz/)
+推荐使用HELM方式部署SRS，参考[srs-helm](https://github.com/ossrs/srs-helm)。当然，SRS也支持K8s方式直接部署，
+参考[SRS K8s](./k8s.md)。
 
-SRS提供了一系列的模版项目，可以快速部署到云平台K8s：
+其实HELM是基于K8s的，HELM最终部署的也是K8s的pod，而且可以使用kubectl管理。不过，HELM提供了更加方便的应用管理和安装方式，
+因此，未来SRS主要支持的是HELM方式。
 
-* [TKE(腾讯云K8s)](https://github.com/ossrs/srs-tke-template)
-* [通用K8s](https://github.com/ossrs/srs-k8s-template)
-* [ACK(阿里云K8s)](https://github.com/ossrs/srs-ack-template)
-* [EKS(亚马逊AWS K8s)](https://github.com/ossrs/srs-eks-template)
-* [AKS(微软Azure K8s)](https://github.com/ossrs/srs-aks-template)
+和Docker方式相比，HELM和K8s主要是中大规模的部署。如果你的业务规模并不大，那么推荐直接使用Docker或者SRS Stack方式。
+一般而言，如果你的流没有超过一千路，请不要使用HELM或K8s的方式。
 
 ![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.net&path=/lts/doc/zh/v5/getting-started-k8s)
 
