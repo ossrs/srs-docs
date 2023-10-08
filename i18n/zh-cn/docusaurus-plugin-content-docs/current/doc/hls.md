@@ -395,6 +395,7 @@ mount -o size=7G -t tmpfs none /ramdisk
 我们可以调整下面三个配置，可以将延迟降低到6到8秒左右：
 
 * 减少GOP大小，比如设置OBS的GOP为1秒，或者FFmpeg的GOP为FPS的帧数。
+* 减少编码器的延迟，比如设置OBS为`配置(Profile)`为`baseline`，选择`微调(Tune)`为`zerolatency`。
 * 减少`hls_fragment`，比如设置为2秒，或者1秒。
 * 减少`hls_window`，比如配置为10秒，或者5秒。
 * 使用低延迟播放器，比如hls.js或者ijkplayer或ffplay，不要使用VLC等很高延迟的播放器。
@@ -416,6 +417,8 @@ vhost __defaultVhost__ {
 当然，也不能减少得非常少，容易造成播放器缓冲不足，或者播放器网络不佳时跳片，可能会有播放失败。
 延迟越低，卡顿概率越高，HLS的延迟并不能做到5秒之内，特别是考虑CDN和播放器的适配情况。
 
+尽管调整后HLS的延迟会降低，但是也不会低于5秒，而且LLHLS协议也不能再降低延迟，因为LLHLS只是尝试解决了开始播放时的GOP的影响，
+在上面的配置中，我们通过编码器的配置同样降低了GOP的影响，而网络抖动和播放器策略都是HLS延迟偏高的原因，而且无法解决。
 如果需要5秒之内的延迟，建议使用[HTTP-FLV](./flv.md)或者[SRT](./srt.md)或者[WebRTC](./webrtc.md)等协议。
 
 ## ON HLS Notify

@@ -84,10 +84,6 @@
       },
       "collapsed": true,
       "items": [
-        "doc/sample-rtmp-cluster",
-        "doc/sample-hls-cluster",
-        "doc/sample-http-flv-cluster",
-        "doc/sample-origin-cluster",
         "doc/origin-cluster",
         "doc/edge",
         "doc/nginx-for-hls",
@@ -143,6 +139,10 @@
       },
       "collapsed": true,
       "items": [
+        "doc/sample-rtmp-cluster",
+        "doc/sample-hls-cluster",
+        "doc/sample-http-flv-cluster",
+        "doc/sample-origin-cluster",
         "doc/hevc",
         "doc/ide",
         "doc/ffmpeg",

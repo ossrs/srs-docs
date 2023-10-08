@@ -391,6 +391,7 @@ How to reduce HLS latency? The key is to reduce the number of slices and the num
 You can adjust the following three settings to reduce latency to about 6-8 seconds:
 
 * Reduce the GOP size, e.g., set OBS's GOP to 1 second or FFmpeg's GOP to the number of FPS frames.
+* Reduce the encoder's delay, for example, set OBS to `Profile` as `baseline` and choose `Tune` as `zerolatency`.
 * Reduce `hls_fragment`, e.g., set it to 2 seconds or 1 second.
 * Reduce `hls_window`, e.g., set it to 10 seconds or 5 seconds.
 * Use low-latency players like hls.js, ijkplayer, or ffplay, and avoid high-latency players like VLC.
@@ -411,6 +412,7 @@ vhost __defaultVhost__ {
 
 Of course, you can't reduce it too much, as it may cause insufficient buffering for the player or skipping when the player's network is poor, possibly resulting in playback failure. The lower the latency, the higher the chance of buffering. HLS latency cannot be less than 5 seconds, especially considering CDN and player compatibility.
 
+Even after adjusting, the HLS delay won't be less than 5 seconds, and the LLHLS protocol can't reduce it further. This is because LLHLS only tries to solve the impact of the initial GOP during playback. In the above settings, we also reduced the GOP's impact through the encoder's configuration. However, network jitter and player strategy are reasons for the higher HLS delay, and they can't be solved.
 If you need latency within 5 seconds, consider using protocols like [HTTP-FLV](./flv.md), [SRT](./srt.md), or [WebRTC](./webrtc.md).
 
 ## ON HLS Notify

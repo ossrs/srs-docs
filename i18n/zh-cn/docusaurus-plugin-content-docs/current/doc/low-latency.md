@@ -30,14 +30,7 @@ RTMP的特点如下：
 
 HLS的延迟会比RTMP要大，一般是5秒以上延迟，如果不特别配置可能在15秒以上延迟。
 
-如果想降低HLS延迟，按如下配置：
-
-* SRS使用`conf/hls.realtime.conf`配置，减少切片的大小，不等待关键帧。
-* OBS推流配置，降低gop大小，也就是关键帧间隔(Keyframe interval)为1秒。
-* OBS推流配置，选择`配置(Profile)`为`baseline`，选择`微调(Tune)`为`zerolatency`。
-* 播放器上延迟无法控制，一般在5秒起步。
-
-当然HLS也推出了LLHLS，降低起播延迟，但线上环境，不会低于3秒延迟。
+如果想降低HLS延迟，请参考[HLS LowLatency](./hls.md#hls-low-latency)。
 
 ## Benchmark
 
