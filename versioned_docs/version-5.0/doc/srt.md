@@ -39,7 +39,9 @@ ffmpeg -re -i ./doc/source.flv -c copy -pes_payload_size 0 -f mpegts \
 
 Open the following page to play the stream (if SRS is not on your local machine, replace localhost with the server IP):
 
+* RTMP(VLC/ffplay): `rtmp://localhost/live/livestream`
 * HLS by SRS player: [http://localhost:8080/live/livestream.flv](http://localhost:8080/players/srs_player.html)
+* SRT(VLC/ffplay): `srt://127.0.0.1:10080?streamid=#!::r=live/livestream,m=request`
 
 SRS supports converting SRT to other protocols, which will be described in detail below.
 
@@ -195,6 +197,42 @@ srt_server {
 }
 ```
 
+This section describes how to reduce the latency of SRT, which is relevant to each link. The summary is as follows:
+
+* Pay attention to the client's Ping and CPU, which are easily overlooked but can affect latency.
+* Please use SRS Stack as the server, as it has been adjusted and will not cause additional latency.
+* An increase in RTT will affect latency. Generally, with an RTT of below 60ms, it can be stable at the expected latency.
+* With an RTT of 100ms, latency is approximately 300ms, and with an RTT of 150ms, latency increases to around 430ms.
+* Packet loss will affect quality. With a packet loss rate of over 10%, there will be screen flickering and dropped frames, but it does not affect latency significantly, particularly for audio.
+* Currently, the lowest latency can be achieved by using vmix or Xinxiang to stream SRT and playing it with ffplay, resulting in a latency of around 200ms.
+* When streaming SRT with OBS and playing it with ffplay, the latency is around 350ms.
+
+> Special Note: Based on current tests, the latency ceiling for SRT is 300ms. Although vmix can be set to a 1ms latency, it does not work and the actual latency will only be worse, not better. However, if the network is well maintained, a latency of 300ms is sufficient.
+
+Recommended solution for ultra high-definition, ultra low-latency, SRT live streaming:
+
+* Streaming: Xinxiang (230ms), vMix (200ms), OBS (300ms).
+* Playback: ffplay (200ms), vMix (230ms), Xinxiang (400ms).
+
+| - | ffplay | vMix Playback | Xinxiang Playback |
+| ---           | ----      |  ---         | ---           |
+| vMix Push | 200ms | 300ms | - |
+| OBS Push | 300ms | - | - |
+| Xinxiang Push (http://www.sinsam.com/) | 230ms | - | 400ms |
+
+Latency involves each link, below are the detailed configurations for each link. The directory is as follows:
+
+* [CPU](https://github.com/ossrs/srs/issues/3464#lagging-cpu) Client CPU can cause latency.
+* [Ping](https://github.com/ossrs/srs/issues/3464#lagging-ping) Client network RTT affects latency.
+* [Encoder](https://github.com/ossrs/srs/issues/3464#lagging-encoder) Configuring encoder for low latency mode.
+* [Server](https://github.com/ossrs/srs/issues/3464#lagging-server) Configuring the server for low latency.
+* [SRT](https://github.com/ossrs/srs/issues/3464#lagging-srt) Special configuration for SRT servers.
+* [Player](https://github.com/ossrs/srs/issues/3464#lagging-player) Configuring the player for low latency.
+* [Benchmark](https://github.com/ossrs/srs/issues/3464#lagging-benchmark) Accurately measuring latency.
+* [Bitrate](https://github.com/ossrs/srs/issues/3464#lagging-bitrate) Impact of different bitrates (0.5 to 6Mbps) on latency.
+* [Network Jitter](https://github.com/ossrs/srs/issues/3464#lagging-jitter) Impact of packet loss and different RTT on latency.
+* [Report](https://github.com/ossrs/srs/issues/3464#lagging-report) Test report.
+
 ## High Quality Mode
 
 If you want the highest quality and can't tolerate even a small chance of screen glitches, but can accept increased latency, consider this configuration.
@@ -295,6 +333,57 @@ In other words, the following two addresses are equivalent:
 * `srt://127.0.0.1:10080`
 * `srt://127.0.0.1:10080?streamid=#!::r=live/livestream,m=publish`
 
+## Authentication
+
+For the definition of SRT URLs, please refer to [SRT URL Schema](#srt-url).
+
+Here is a special note on how to include authentication information, see [SRS URL: Token](./rtmp-url-vhost.md#parameters-in-url).
+If you need to include authentication information such as the secret parameter, you can specify it in the streamid, for example:
+
+```
+streamid=#!::r=live/livestream,secret=xxx
+```
+
+Here is a specific example:
+
+```
+ffmpeg -re -i doc/source.flv -c copy -f mpegts \
+    'srt://127.0.0.1:10080?streamid=#!::r=live/livestream,secret=xxx,m=publish'
+```
+
+The address for forwarding to SRS would be like this:
+
+```
+rtmp://127.0.0.1:1935/live/livestream?secret=xxx
+```
+
+## SRT Encoder
+
+SRT Encoder is an encoder based on the SRT adaptive bitrate. It predicts low-latency outbound bandwidth based on information such as RTT, maxBw, and inflight in the SRT protocol, dynamically adjusting the encoding bitrate to be based on the network outbound bandwidth.
+
+GitHub address: [runner365/srt_encoder](https://github.com/runner365/srt_encoder)
+
+Based on the basic congestion control algorithm of BBR, the encoder predicts the state machine of the encoding bitrate (keep, increase, decrease) based on the minRTT, maxBw, and current inflight within one cycle (1~2 seconds).
+
+Note:
+1) This example is just a basic BBR algorithm example, and users can implement the interfaces in the CongestionCtrlI class to improve the BBR algorithm.
+2) SRT is still an evolving protocol, and the accuracy of its congestion control and external parameter updates is also improving.
+
+Easy to use, after compiling, you can directly use the ffmpeg command line.
+
+## Coroutine Native SRT
+
+How does SRS implement SRT? Based on coroutine-based SRT architecture, we need to adapt it to ST as SRT has its own IO scheduling, so that we can achieve the best maintainability.
+
+* For the specific code submission, please refer to [#3010](https://github.com/ossrs/srs/pull/3010) or [1af30dea](https://github.com/ossrs/srs/commit/1af30dea324d0f1729aabd22536ea62e03497d7d)
+
+> Note: Please note that the SRT in SRS 4.0 is a non-ST architecture, and it is implemented by launching a separate thread, which may not have the same level of maintainability as the native ST coroutine architecture.
+
+## Q&A
+
+1. Does SRS support forwarding SRT streams to Nginx?
+
+> Yes, it is supported. You can use OBS/FFmpeg to push SRT streams to SRS, and SRS will convert the SRT stream into the RTMP protocol. Then, you can convert RTMP to HLS, FLV, WebRTC, and also forward the RTMP stream to Nginx.
 
 ![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.net&path=/lts/doc/en/v5/srt)
 

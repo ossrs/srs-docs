@@ -40,7 +40,9 @@ ffmpeg -re -i ./doc/source.flv -c copy -pes_payload_size 0 -f mpegts \
 
 打开下面的页面播放流（若SRS不在本机，请将localhost更换成服务器IP）:
 
+* RTMP(VLC/ffplay): `rtmp://localhost/live/livestream`
 * HLS by SRS player: [http://localhost:8080/live/livestream.flv](http://localhost:8080/players/srs_player.html)
+* SRT(VLC/ffplay): `srt://127.0.0.1:10080?streamid=#!::r=live/livestream,m=request`
 
 SRS支持将SRT转换成其他协议，下面会详细描述。
 
@@ -197,6 +199,42 @@ srt_server {
 }
 ```
 
+本节介绍如何降低SRT的延迟，与每个环节都有关。总结如下：
+
+* 注意客户端的Ping和CPU，这些容易被忽视，但会影响延迟。
+* 请使用LightHouse SRS作为服务器，因为它已经调整过，不会造成额外的延迟。
+* RTT的增加会影响延迟。通常，RTT低于60ms时，可以稳定在预期延迟。
+* RTT为100ms时，延迟约为300ms；RTT为150ms时，延迟增加到约430ms。
+* 丢包会影响画质。丢包率超过10%时，会出现画面闪烁和丢帧，但对延迟影响不大，尤其是音频。
+* 目前，使用vmix或芯象推送SRT并用ffplay播放，可实现最低约200ms的延迟。
+* 使用OBS推送SRT并用ffplay播放时，延迟约为350ms。
+
+特别提示：根据目前的测试，SRT的延迟上限为300ms。虽然vmix可以设置为1ms延迟，但实际上并不起作用，实际延迟只会更糟，而不是更好。但是，如果网络维护得好，300ms的延迟是足够的。
+
+超高清、超低延迟SRT直播推荐方案：
+
+* 推流：芯象（230ms）、vMix（200ms）、OBS（300ms）。
+* 播放：ffplay（200ms）、vMix（230ms）、芯象（400ms）。
+
+| - | ffplay | vMix播放 | 芯象播放 |
+| ---           | ----      |  ---         | ---           |
+| vMix推送 | 200ms | 300ms | - |
+| OBS推送 | 300ms | - | - |
+| 芯象推送(http://www.sinsam.com/) | 230ms - | 400ms |
+
+延迟涉及每个环节，以下是每个环节的详细配置。目录如下：
+
+* [CPU](https://github.com/ossrs/srs/issues/3464#lagging-cpu) 客户端CPU会导致延迟。
+* [Ping](https://github.com/ossrs/srs/issues/3464#lagging-ping) 客户端网络RTT影响延迟。
+* [编码器](https://github.com/ossrs/srs/issues/3464#lagging-encoder) 配置编码器低延迟模式。
+* [服务器](https://github.com/ossrs/srs/issues/3464#lagging-server) 配置服务器低延迟。
+* [SRT](https://github.com/ossrs/srs/issues/3464#lagging-srt) SRT服务器特殊配置。
+* [播放器](https://github.com/ossrs/srs/issues/3464#lagging-player) 配置播放器低延迟。
+* [基准测试](https://github.com/ossrs/srs/issues/3464#lagging-benchmark) 准确测量延迟。
+* [码率](https://github.com/ossrs/srs/issues/3464#lagging-bitrate) 不同码率（0.5至6Mbps）对延迟的影响。
+* [网络抖动](https://github.com/ossrs/srs/issues/3464#lagging-jitter) 丢包和不同RTT对延迟的影响。
+* [报告](https://github.com/ossrs/srs/issues/3464#lagging-report) 测试报告。
+
 ## High Quality Mode
 
 若你希望最高质量，极小概率花屏也不能容忍，可以容忍延迟变大，则可以考虑这个配置。
@@ -301,6 +339,58 @@ streamid默认为`#!::r=live/livestream,m=publish`。
 也就是说，下面两个地址等价：
 * `srt://127.0.0.1:10080`
 * `srt://127.0.0.1:10080?streamid=#!::r=live/livestream,m=publish`
+
+## Authentication
+
+关于SRT URL的定义，请参考[SRT URL Schema](#srt-url)。
+
+这里有一个特别说明，如何包含认证信息，参考[SRS URL: Token](./rtmp-url-vhost.md#parameters-in-url)。
+如果您需要包含诸如密钥参数的认证信息，您可以在streamid中指定，例如：
+
+```
+streamid=#!::r=live/livestream,secret=xxx
+```
+
+这是一个具体的例子：
+
+```
+ffmpeg -re -i doc/source.flv -c copy -f mpegts \
+    'srt://127.0.0.1:10080?streamid=#!::r=live/livestream,secret=xxx,m=publish'
+```
+
+对应的RTMP的地址将如下所示：
+
+```
+rtmp://127.0.0.1:1935/live/livestream?secret=xxx
+```
+
+## SRT Encoder
+
+SRT编码器是基于SRT自适应比特率的编码器。它根据SRT协议中的RTT、maxBw和inflight等信息预测低延迟的出站带宽，动态调整编码比特率以便适配网络出口带宽。
+
+GitHub地址：[runner365/srt_encoder](https://github.com/runner365/srt_encoder)
+
+基于BBR的基本拥塞控制算法，编码器根据一个周期（1~2秒）内的minRTT、maxBw和当前inflight预测编码比特率的状态机（保持、增加、减少）。
+
+注意：
+1) 这个例子只是一个基本的BBR算法示例，用户可以实现CongestionCtrlI类中的接口来改进BBR算法。
+2) SRT仍然是一个不断发展的协议，其拥塞控制和外部参数更新的准确性也在不断提高。
+
+使用简单，编译后，您可以直接使用ffmpeg命令行。
+
+## Coroutine Native SRT
+
+SRS如何实现SRT？基于协程的SRT架构，我们需要将其适配到ST，因为SRT有自己的IO调度，这样我们才能实现最佳的可维护性。
+
+* 关于具体的代码提交，请参考[#3010](https://github.com/ossrs/srs/pull/3010)或[1af30dea](https://github.com/ossrs/srs/commit/1af30dea324d0f1729aabd22536ea62e03497d7d)
+
+> 注意：请注意，SRS 4.0中的SRT是非ST架构，它是通过启动一个单独的线程来实现的，可能没有原生ST协程架构的可维护性。
+
+## Q&A
+
+1. SRS是否支持将SRT流转发到Nginx？
+
+> 是的，支持。您可以使用OBS/FFmpeg将SRT流推送到SRS，SRS将SRT流转换为RTMP协议。然后，您可以将RTMP转换为HLS、FLV、WebRTC，并将RTMP流转发到Nginx。
 
 ![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.net&path=/lts/doc/zh/v5/srt)
 
