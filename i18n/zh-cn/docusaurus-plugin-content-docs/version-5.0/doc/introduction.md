@@ -7,6 +7,8 @@ hide_table_of_contents: false
 
 # Introduction
 
+> 注意：SRS5已经稳定，可在生产环境使用。
+
 SRS是一个开源的（[MIT协议](/license)）简单高效的实时视频服务器，支持RTMP、WebRTC、HLS、HTTP-FLV、SRT、MPEG-DASH和GB28181等协议。
 SRS媒体服务器和[FFmpeg](https://ffmpeg.org)、[OBS](https://obsproject.com)、[VLC](https://www.videolan.org)、
 [WebRTC](https://webrtc.org)等客户端配合使用，提供[流的接收和分发](./getting-started.md)的能力，是一个典型的发布

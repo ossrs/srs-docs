@@ -7,6 +7,8 @@ hide_table_of_contents: false
 
 # Introduction
 
+> Note: SRS5 is now stable and available for use in your product environment.
+
 SRS is a open-source ([MIT Licensed](/license)), simple, high-efficiency, real-time video server supporting RTMP,
 WebRTC, HLS, HTTP-FLV, SRT, MPEG-DASH, and GB28181. SRS media server works with clients like [FFmpeg](https://ffmpeg.org),
 [OBS](https://obsproject.com), [VLC](https://www.videolan.org), and [WebRTC](https://webrtc.org) to provide
