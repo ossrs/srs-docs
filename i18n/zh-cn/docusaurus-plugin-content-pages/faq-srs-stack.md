@@ -615,6 +615,9 @@ SRS Stack的使用说明，请参考视频[SRS Stack：起步、购买和入门]
     * Streaming: 直播推拉流，添加SRT推流. [v5.10.2](https://github.com/ossrs/srs-stack/releases/tag/v5.10.2)
     * Streaming: Add OBS SRT streaming. v5.10.3
     * Fix lighthouse script bug. v5.10.4
+    * VLive: 支持拉流转推，拉流直播，拉流虚拟直播。v5.10.5
+    * VLive: 清理上传过程中的临时文件和异常文件. v5.10.6
+    * VLive: Use TCP transport when pull RTSP stream. v5.10.7
 * v5.9
     * Update NGINX HLS CDN guide. v5.9.2
     * Move DVR and VoD to others. v5.9.3
@@ -646,6 +649,7 @@ SRS Stack的使用说明，请参考视频[SRS Stack：起步、购买和入门]
     * VLive: Fix bug of link. v5.9.28
     * Record: 修改改变录制目录的文本提示. v5.9.28 (#133)
     * Streaming: 直播推拉流，添加SRT推流. [v5.9.28](https://github.com/ossrs/srs-stack/releases/tag/v5.9.28)
+    * Fix lighthouse HTTPS bug. v5.9.29
 * v5.8
     * 总是释放DO的临时测试资源。 v1.0.306
     * 修复 Docker 启动失败，通过测试覆盖。v1.0.306

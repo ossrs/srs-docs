@@ -82,4 +82,4 @@ docker run --rm -it -p 2022:2022 -p 2443:2443 -p 1935:1935 \
 创建虚拟现场活动就像点击鼠标几下一样简单，让您能够与观众互动并创造难忘的体验。无论您是举办音乐会、
 体育赛事还是在线课程，虚拟现场活动都是娱乐的未来，而SRS Stack将帮助您充分利用这一趋势。
 
-![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/blog-zh/2023-09-11-Virtual-Live-Events.md)
+![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/blog-zh/2023-09-11-Virtual-Live-Events)

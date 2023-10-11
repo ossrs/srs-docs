@@ -601,6 +601,9 @@ The following are the update records for the SRS Stack server.
     * Streaming: Add SRT streaming. [v5.10.2](https://github.com/ossrs/srs-stack/releases/tag/v5.10.2)
     * Streaming: Add OBS SRT streaming. v5.10.3
     * Fix lighthouse script bug. v5.10.4
+    * VLive: Support forward stream. v5.10.5
+    * VLive: Cleanup temporary file when uploading. v5.10.6
+    * VLive: Use TCP transport when pull RTSP stream. v5.10.7
 * v5.9
     * Update NGINX HLS CDN guide. v5.9.2
     * Move DVR and VoD to others. v5.9.3
@@ -632,6 +635,7 @@ The following are the update records for the SRS Stack server.
     * VLive: Fix bug of link. v5.9.28
     * Record: Fix bug of change record directory. v5.9.28 (#133)
     * Streaming: Add SRT streaming. [v5.9.28](https://github.com/ossrs/srs-stack/releases/tag/v5.9.28)
+    * Fix lighthouse HTTPS bug. v5.9.29
 * v5.8
     * Always dispose DO VM and domain for test. v1.0.306
     * Fix docker start failed, cover by test. v1.0.306

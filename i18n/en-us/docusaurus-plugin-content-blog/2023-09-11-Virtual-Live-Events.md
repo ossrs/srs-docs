@@ -104,4 +104,4 @@ experiences. Whether you're hosting a concert, a sports event, or an online cour
 live events are the future of entertainment, and SRS Stack is here to help you make the most
 of it.
 
-![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/blog-en/2023-09-11-Virtual-Live-Events.md)
+![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/blog-en/2023-09-11-Virtual-Live-Events)

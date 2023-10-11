@@ -87,4 +87,4 @@ docker run --rm -it -p 2022:2022 -p 2443:2443 -p 1935:1935 \
 
 在多个平台上进行直播是触及更广泛受众和提高参与度的有效方法。SRS Stack使此过程变得简单高效，让您专注于创建高质量内容，而它负责处理技术方面的问题。通过遵循本博客中概述的步骤，您可以轻松地在视频号、B站、快手等多个平台上设置直播，并将您的内容提升到一个新的水平。
 
-![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/blog-zh/2023-09-09-Multi-Platform-Streaming.md)
+![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/blog-zh/2023-09-09-Multi-Platform-Streaming)
