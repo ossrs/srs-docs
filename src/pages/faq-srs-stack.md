@@ -557,33 +557,7 @@ SRS Stack Server is aimed at mouse programming, allowing everyone to do audio an
 
 For instructions on using SRS Stack, please refer to the video [SRS Stack Server: Getting Started, Purchasing, and Introduction](https://www.bilibili.com/video/BV1844y1L7dL/).
 
-Currently, the scenarios and functions supported by SRS Stack include:
-
-* [SRS Stack: Getting Started, Purchasing, and Introduction](https://mp.weixin.qq.com/s/fWmdkw-2AoFD_pEmE_EIkA): How to purchase and set up the environment, a must-read.
-* `Supported` Docking with [aaPanel](https://mp.weixin.qq.com/s/nutc5eJ73aUa4Hc23DbCwQ) or [aaPanel](https://blog.ossrs.io/how-to-setup-a-video-streaming-service-by-aapanel-9748ae754c8c): SRS can be installed with [aaPanel](https://aapanel.com/), supporting all CentOS or Ubuntu machines, and can be installed with aaPanel command line after installing SRS.
-* `Supported` [Private Live Room](https://mp.weixin.qq.com/s/AKqVWIdk3SBD-6uiTMliyA): OBS pushes the stream to SRS, and you can watch movies with good friends, private live rooms, exclusive BGP bandwidth, and watch whatever you want.
-* `Supported` [Ultra HD Real-Time Live Streaming](https://mp.weixin.qq.com/s/HQb3gLRyJHHu56pnyHerxA): Using SRT low-latency push streaming, you can also do conferences, much clearer than WebRTC, and suitable for other low-latency SRT scenarios.
-* `Supported` [Local Recording](https://mp.weixin.qq.com/s/axN_TPo-Gk_H7CbdqUud6g): Record to the local file of the SRS Stack server and provide HLS download. [#42](https://github.com/ossrs/srs-stack/issues/42)
-* `Supported` [Recording to Cloud Storage](https://mp.weixin.qq.com/s/axN_TPo-Gk_H7CbdqUud6g): Avoid local disk limitations and facilitate subsequent live stream processing, support recording video streams to cloud storage, see details in [#1193](https://github.com/ossrs/srs/issues/1193).
-* `Supported` [Recording to Cloud VOD](https://mp.weixin.qq.com/s/axN_TPo-Gk_H7CbdqUud6g): A more advanced capability than cloud recording, cloud storage is unlimited disk, and cloud VOD is a short video system, more convenient and more advanced.
-* `Supported` [Multi-Platform Rebroadcast](https://mp.weixin.qq.com/s/FtaeQIJpb7vpmX2eFguLiQ): Push the stream to SRS Stack and forward it to video platforms such as Weishi, Kuaishou, Bilibili, Douyin, etc., see details in [#2676](https://github.com/ossrs/srs/issues/2676).
-* `Supported` Docking with [WordPress](https://mp.weixin.qq.com/s/kOWabmKbYvrmEXG2fPOZxQ): Support [WordPress plugin](https://wordpress.org/plugins/srs-player) and [Typecho plugin](https://github.com/ossrs/Typecho-Plugin-SrsPlayer), insert live stream address in Post.
-* `Supported` [DigitalOcean Image](https://mp.weixin.qq.com/s/_GcJm15BGv1qbmHixPQAGQ): Overseas support for DigitalOcean Droplet image, multi-language version in Chinese and English.
-* `Supported` [Virtual Live Streaming](https://mp.weixin.qq.com/s/I0Kmxtc24txpngO-PiR_tQ): Server-side OBS, pushing VOD files, images, or streams to live streaming, with simple layout capabilities.
-* `Supported` [One-click Automatic HTTPS](https://mp.weixin.qq.com/s/O70Fz-mxNedZpxgGXQ8DsA): Upload HTTPS certificate, or one-click automatic application for Let's Encrypt certificate, a basic capability of the WebRTC scenario.
-* `Supported` [Support self-host HLS CDN, to serve 10k+ viewers](https://github.com/ossrs/srs-stack/tree/main/scripts/nginx-hls-cdn)
-* `In planning` Cloud Camera: Support camera GB access, support cloud platform, cloud recording.
-* `In planning` E-commerce Live Room: Live room, text chat capability, with product list and purchase, etc., see details in [#2858](https://github.com/ossrs/srs/issues/2858).
-* `In planning` Interactive Live Streaming: Live room, support file chat, send gifts and likes, etc.
-* `In planning` Cloud Live Streaming: Docking with cloud live streaming or CDN distribution, support millions of people watching, docking with CDN distribution stream.
-* `In planning` One-on-one chat: One-on-one chat on all platforms, see details in [#2857](https://github.com/ossrs/srs/issues/2857).
-* `In planning` Video Conference: Multi-person video conference, see details in [#2924](https://github.com/ossrs/srs/issues/2924).
-* `In planning` Live Transcoding: Use FFmpeg to transcode live streams into multiple live streams, allowing different devices to watch different bit rates, see details in [#2869](https://github.com/ossrs/srs/issues/2869).
-* `In planning` Cloud Director: Cloud OBS, add watermark, LOGO, background music, multi-channel switching to live stream.
-* `In planning` Development Environment: Contains the source code of audio and video related tools, such as OBS and WebRTC, development environment, see details in [#2891](https://github.com/ossrs/srs/issues/2891).
-* `In planning` AI: Face detection, object recognition, automatic subtitles, etc.
-* `In planning` Docking with [Moodle](https://stats.moodle.org/): Support Moodle plugin, open-source online education website.
-* `In planning` [Graphical Dashboard](https://mp.weixin.qq.com/s/ub9ZGmntOy_-S11oxFkxvg): Display background data in the form of charts, such as CPU, etc., see details in [Prometheus](https://github.com/ossrs/srs/issues/2899#prometheus).
+Currently, the scenarios and functions supported by SRS Stack, see [Features](https://github.com/ossrs/srs-stack#features).
 
 Welcome to join the group to discuss the use of SRS Stack. All these SRS peripheral services are open-source and can be customized and deployed by yourself.
 
@@ -603,7 +577,8 @@ The following are the update records for the SRS Stack server.
     * Fix lighthouse script bug. v5.10.4
     * VLive: Support forward stream. v5.10.5
     * VLive: Cleanup temporary file when uploading. v5.10.6
-    * VLive: Use TCP transport when pull RTSP stream. v5.10.7
+    * VLive: Use TCP transport when pull RTSP stream. [v5.10.7](https://github.com/ossrs/srs-stack/releases/tag/v5.10.7)
+    * Refine statistic and report data. v5.10.8
 * v5.9
     * Update NGINX HLS CDN guide. v5.9.2
     * Move DVR and VoD to others. v5.9.3

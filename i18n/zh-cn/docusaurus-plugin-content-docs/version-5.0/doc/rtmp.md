@@ -250,15 +250,25 @@ vhost __defaultVhost__ {
 3. 系统通知推流端，开始推流到SRS。
 4. 播放器从SRS拉流播放。
 
-请注意`系统`是指你的业务系统，而不是SRS。
+> Note: 请注意`系统`是指你的业务系统，而不是SRS。
 
 这就是我们所说的`按需直播`或`按需推流`。如果播放器停止拉流，会怎么样？
 
 1. 系统需要通知推流端停止推流。
 2. 或者，在最后一个播放器停止拉流时，SRS等待一定时间后断开推流。
 
-[这个PR](https://github.com/ossrs/srs/pull/3105)就是第2个解决方案，这样这个功能就非常容易使用。你的系统
-不再需要通知推流端停止推流，因为SRS会主动断开。
+推荐第2个解决方案，这样这个功能就非常容易使用。你的系统不再需要通知推流端停止推流，因为SRS会主动断开。你只需要开启如下配置：
+
+```bash
+# The timeout in seconds to disconnect publisher when idle, which means no players.
+# Note that 0 means no timeout or this feature is disabled.
+# Note that this feature conflicts with forward, because it disconnect the publisher stream.
+# Overwrite by env SRS_VHOST_PUBLISH_KICKOFF_FOR_IDLE for all vhosts.
+# default: 0
+kickoff_for_idle 0;
+```
+
+详细过程可以参考[这个PR](https://github.com/ossrs/srs/pull/3105)。
 
 ## Converting RTMP to HLS
 

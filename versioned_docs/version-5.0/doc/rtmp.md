@@ -247,22 +247,32 @@ for example, converting RTMP to [HTTP-FLV](./flv.md#config) or HTTP-TS.
 
 ## On Demand Live Streaming
 
-For some use scenario, the publisher is invited when player want to view the stream:
+In some situations, you might want to start streaming only when someone starts watching:
 
-1. Publisher connects to system, but does not publish any stream to SRS yet.
-2. Player connects to system and start to request the stream.
-3. System notifies publisher to publish stream to SRS.
-4. Player plays the stream from SRS.
+1. The streaming source connects to the system but doesn't send the stream to SRS.
+2. The player connects to the system and requests to play the stream.
+3. The system tells the streaming source to start sending the stream to SRS.
+4. The player gets the stream from SRS and plays it.
 
-Please notice that `system` means your business system, not SRS.
+> Note: The "system" here refers to your business system, not SRS.
 
-This is what we called `on-demand-live-streaming`, so when the last player stop to view the stream, what happens?
+This is called "on-demand live streaming" or "on-demand streaming." What happens if the player stops watching?
 
-1. System needs to notify publisher to stop publish.
-2. Or, SRS disconnect the publisher when idle(the last player stops playing).
+1. The system needs to tell the streaming source to stop sending the stream.
+2. Or, when the last player stops watching, SRS waits for a while and then disconnects the stream.
 
-[This PR](https://github.com/ossrs/srs/pull/3105) is for the solution 2, so that the cleanup is very simple,
-your system does not need to notify publisher to stop publish, because SRS has already disconnected the publisher.
+The second solution is recommended, as it's easier to use. Your system won't need to tell the streaming source to stop, because SRS will disconnect it automatically. You just need to enable the following configuration:
+
+```bash
+# The timeout in seconds to disconnect publisher when idle, which means no players.
+# Note that 0 means no timeout or this feature is disabled.
+# Note that this feature conflicts with forward, because it disconnect the publisher stream.
+# Overwrite by env SRS_VHOST_PUBLISH_KICKOFF_FOR_IDLE for all vhosts.
+# default: 0
+kickoff_for_idle 0;
+```
+
+For more details, you can refer to [this PR](https://github.com/ossrs/srs/pull/3105).
 
 ## Converting RTMP to HLS
 
