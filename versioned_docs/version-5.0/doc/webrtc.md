@@ -207,7 +207,66 @@ ffmpeg -re -i ./doc/source.flv -c copy -f flv rtmp://localhost/live/livestream
 
 ## HTTP API
 
-About the API for WebRTC, please read [publish](./http-api.md#webrtc-publish) and [play](./http-api.md#webrtc-play).
+SRS supports WHIP and WHEP for WebRTC.
+
+* WHIP: [http://localhost:1985/rtc/v1/whip/?app=live&stream=livestream](http://localhost:8080/players/whip.html)
+* WHEP: [http://localhost:1985/rtc/v1/whep/?app=live&stream=livestream](http://localhost:8080/players/whep.html)
+
+SRS also support legacy HTTP API for WebRTC, please read [publish](./http-api.md#webrtc-publish) and [play](./http-api.md#webrtc-play).
+
+## Connection Failures
+
+Some developer come to SRS community to get help, because they get error when use OBS WHIP to connect to online WHIP 
+server, because online server must use HTTPS and the UDP port might be more available, and it's hard to debug or 
+login to the online server for privacy or network issue.
+
+So we find some ways to troubleshoot the connection failures in OBS WHIP, generally it's caused by HTTPS API setup 
+or UDP port not available issue.
+
+Use curl to test WHIP HTTP or HTTPS API:
+
+```bash
+curl "http://localhost:1985/rtc/v1/whip/?ice-ufrag=6pk11386&ice-pwd=l91z529147ri9163933p51c4&app=live&stream=livestream-$(date +%s)" \
+  -H 'Origin: http://localhost' -H 'Referer: http://localhost' \
+  -H 'Accept: */*' -H 'Content-type: application/sdp' \
+  -H 'User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7)' \
+  --data-raw 'v=0\r\no=- 7788101884696796876 2 IN IP4 127.0.0.1\r\ns=-\r\nt=0 0\r\na=group:BUNDLE 0 1\r\na=extmap-allow-mixed\r\na=msid-semantic: WMS\r\nm=audio 9 UDP/TLS/RTP/SAVPF 111\r\nc=IN IP4 0.0.0.0\r\na=rtcp:9 IN IP4 0.0.0.0\r\na=ice-ufrag:J8X7\r\na=ice-pwd:Dpq7/fW/osYcPeLsCW2Ek1JH\r\na=ice-options:trickle\r\na=fingerprint:sha-256 26:04:DF:BF:5E:87:1F:94:CF:5C:DE:99:B4:53:6D:2A:86:F3:A5:BF:22:E4:CF:17:8E:CE:2E:D1:98:88:64:97\r\na=setup:actpass\r\na=mid:0\r\na=extmap:1 urn:ietf:params:rtp-hdrext:ssrc-audio-level\r\na=extmap:2 http://www.webrtc.org/experiments/rtp-hdrext/abs-send-time\r\na=extmap:3 http://www.ietf.org/id/draft-holmer-rmcat-transport-wide-cc-extensions-01\r\na=extmap:4 urn:ietf:params:rtp-hdrext:sdes:mid\r\na=sendonly\r\na=msid:- a2f262a8-4780-4694-919b-32bc07275224\r\na=rtcp-mux\r\na=rtpmap:111 opus/48000/2\r\na=rtcp-fb:111 transport-cc\r\na=fmtp:111 minptime=10;useinbandfec=1\r\na=ssrc:3184534672 cname:TPpRJpEeliM/kmO3\r\na=ssrc:3184534672 msid:- a2f262a8-4780-4694-919b-32bc07275224\r\nm=video 9 UDP/TLS/RTP/SAVPF 106\r\nc=IN IP4 0.0.0.0\r\na=rtcp:9 IN IP4 0.0.0.0\r\na=ice-ufrag:J8X7\r\na=ice-pwd:Dpq7/fW/osYcPeLsCW2Ek1JH\r\na=ice-options:trickle\r\na=fingerprint:sha-256 26:04:DF:BF:5E:87:1F:94:CF:5C:DE:99:B4:53:6D:2A:86:F3:A5:BF:22:E4:CF:17:8E:CE:2E:D1:98:88:64:97\r\na=setup:actpass\r\na=mid:1\r\na=extmap:14 urn:ietf:params:rtp-hdrext:toffset\r\na=extmap:2 http://www.webrtc.org/experiments/rtp-hdrext/abs-send-time\r\na=extmap:13 urn:3gpp:video-orientation\r\na=extmap:3 http://www.ietf.org/id/draft-holmer-rmcat-transport-wide-cc-extensions-01\r\na=extmap:5 http://www.webrtc.org/experiments/rtp-hdrext/playout-delay\r\na=extmap:6 http://www.webrtc.org/experiments/rtp-hdrext/video-content-type\r\na=extmap:7 http://www.webrtc.org/experiments/rtp-hdrext/video-timing\r\na=extmap:8 http://www.webrtc.org/experiments/rtp-hdrext/color-space\r\na=extmap:4 urn:ietf:params:rtp-hdrext:sdes:mid\r\na=extmap:10 urn:ietf:params:rtp-hdrext:sdes:rtp-stream-id\r\na=extmap:11 urn:ietf:params:rtp-hdrext:sdes:repaired-rtp-stream-id\r\na=sendonly\r\na=msid:- df032417-2927-420b-a5c4-0944a9c7df3d\r\na=rtcp-mux\r\na=rtcp-rsize\r\na=rtpmap:106 H264/90000\r\na=rtcp-fb:106 goog-remb\r\na=rtcp-fb:106 transport-cc\r\na=rtcp-fb:106 ccm fir\r\na=rtcp-fb:106 nack\r\na=rtcp-fb:106 nack pli\r\na=fmtp:106 level-asymmetry-allowed=1;packetization-mode=1;profile-level-id=42e01f\r\na=ssrc-group:FID 512761356 684544361\r\na=ssrc:512761356 cname:TPpRJpEeliM/kmO3\r\na=ssrc:512761356 msid:- df032417-2927-420b-a5c4-0944a9c7df3d\r\na=ssrc:684544361 cname:TPpRJpEeliM/kmO3\r\na=ssrc:684544361 msid:- df032417-2927-420b-a5c4-0944a9c7df3d\r\n' \
+  -v -k
+```
+
+> Note: You can replace `http://localhost` with `https://yourdomain.com` to test HTTPS API.
+
+The answer contains the candidate, the UDP server IP, such as `127.0.0.1`:
+
+```
+a=candidate:0 1 udp 2130706431 127.0.0.1 8000 typ host generation 0
+```
+
+Use `nc` to send UDP packet to SRS WHIP server:
+
+```bash
+echo -en "\x00\x01\x00\x50\x21\x12\xa4\x42\x74\x79\x6d\x7a\x41\x51\x2b\x2f\x4a\x4b\x77\x52\x00\x06\x00\x0d\x36\x70\x6b\x31\x31\x33\x38\x36\x3a\x4a\x38\x58\x37\x00\x00\x00\xc0\x57\x00\x04\x00\x01\x00\x0a\x80\x2a\x00\x08\xda\xad\x1d\xce\xe8\x95\x5a\x83\x00\x24\x00\x04\x6e\x7f\x1e\xff\x00\x08\x00\x14\x56\x8f\x1e\x1e\x4f\x5f\x17\xf9\x2e\xa1\xec\xbd\x51\xd9\xa2\x27\xe4\xfd\xda\xb1\x80\x28\x00\x04\x84\xd3\x5a\x79" \
+  |nc -w 3 -u 127.0.0.1 8000 |od -Ax -c -t x1 |grep '000' && \
+  echo "Success" || echo "Failed"
+```
+
+> Note: You also can use `nc` or [server.go](https://github.com/ossrs/srs/pull/3837) as the UDP server for test.
+
+If use SRS as WHIP server, should response with:
+
+```
+0000000  001 001  \0   @   ! 022 244   B   t   y   m   z   A   Q   +   /
+0000010    J   K   w   R  \0 006  \0  \r   6   p   k   1   1   3   8   6
+0000020    :   J   8   X   7  \0  \0  \0  \0      \0  \b  \0 001 376   `
+0000030    ầ  **  ** 027  \0  \b  \0 024 206 263   +   ŉ  ** 025   G 215
+0000040    I 335   P   ^   "   7   }   N   ? 017 037 224 200   (  \0 004
+0000050  303   < 250 272                                                
+0000054
+Success
+```
+
+> Note: Should be SRS 5.0.191+, see [#3837](https://github.com/ossrs/srs/pull/3837), you can also use 
+> [server.go](https://github.com/ossrs/srs/issues/2843) as the UDP server for test.
 
 ## RTMP to RTC
 
