@@ -29,8 +29,8 @@ You can also watch the video on YouTube: [Ultra Low Latency Streaming with OBS W
 
 - [OBS Studio](https://obsproject.com/download)
 
-> 注意：目前，OBS WHIP已经合并到主分支，但尚未发布。
-> 您可以登录GitHub并从[这里](https://github.com/obsproject/obs-studio/actions/runs/5227109208?pr=7926)下载。
+> 注意：OBS WHIP已经合并到主分支，将在OBS 30版本中支持该功能。
+> 您可以从[这里](https://github.com/obsproject/obs-studio/releases/tag/30.0.0-rc1)下载。
 
 ## Step 1: Run SRS
 

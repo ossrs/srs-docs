@@ -6,15 +6,23 @@ SRS用到了一些第三方库，可能是有自己的LICENSE，这个WIKI介绍
 
 ## SRS
 
-**SRS v1/v2/v3/v4/v5**
+**SRS v1/v2/v3/v4/v5+**
 
 `SRS v1/v2/v3`使用的是[MIT](https://github.com/ossrs/srs/blob/develop/LICENSE)协议，非常宽松，可以在商业化中使用的。
 
-`SRS v4`(以及后续版本)，简化和规范了LICENSE申明，参考[Use SPDX-License-Identifier: MIT](https://github.com/ossrs/srs/commit/67272f0721db044d98e324df23bc0d2a3e8817c8#commitcomment-51515520)。[SPDX](https://spdx.org/ids/)是Linux基金会的规范，被[POCO](https://github.com/pocoproject/poco/blob/master/LICENSE)和[Linux Kernel](https://www.kernel.org/doc/html/latest/process/license-rules.html#license-identifier-syntax)等广泛使用。
+`SRS v4`(以及后续版本)，简化和规范了LICENSE申明，参考[Use SPDX-License-Identifier: MIT](https://github.com/ossrs/srs/commit/67272f0721db044d98e324df23bc0d2a3e8817c8#commitcomment-51515520)。
+[SPDX](https://spdx.org/ids/)是Linux基金会的规范，被[POCO](https://github.com/pocoproject/poco/blob/master/LICENSE)和
+[Linux Kernel](https://www.kernel.org/doc/html/latest/process/license-rules.html#license-identifier-syntax)等广泛使用。
 
-`SRS v5`授权可以选择[MIT](https://github.com/ossrs/srs/blob/develop/LICENSE)或[MulanPSL-2.0](https://spdx.org/licenses/MulanPSL-2.0.html)协议。[MulanPSL-2.0](https://spdx.org/licenses/MulanPSL-2.0.html)是兼容Apache-2.0协议，详细请看[这里](https://www.apache.org/legal/resolved.html#category-a)。
+`SRS v5+`默认授权是[MIT](https://github.com/ossrs/srs/blob/develop/LICENSE)，你也可以选择[MIT](https://github.com/ossrs/srs/blob/develop/LICENSE)
+或[MulanPSL-2.0](https://spdx.org/licenses/MulanPSL-2.0.html)协议。[MulanPSL-2.0](https://spdx.org/licenses/MulanPSL-2.0.html)
+是兼容Apache-2.0协议，详细请看[这里](https://www.apache.org/legal/resolved.html#category-a)。
 
-## State Threads
+## Library
+
+下面依赖的库，SRS支持以静态库或动态库链接。
+
+### State Threads
 
 State Threads库是由Netscape发起的项目，采用双LICENSE授权，可以用MPL 1.1，或者GPL v2(或更新)。
 
@@ -32,15 +40,44 @@ ST使用[GPLv2](https://github.com/ossrs/state-threads/blob/st-1.9/public.h#L25)
 
 > 注意SRS如果需要使用State Threads的MPL授权，那么要开启`./configure --shared-st=on`，采用库的方式链接。
 
-## OpenSSL
+### OpenSSL
 
 OpenSSL是BSD风格的LICENSE，如果有疑问可以用动态库链接`./configure --use-sys-ssl`。
 
-## http-parser
+### SRT
+
+**SRS4**
+
+[libsrt](https://github.com/Haivision/srt/blob/master/LICENSE) 是MPL 2.0授权，参考[#1147](https://github.com/ossrs/srs/issues/1147)。
+
+可以用`./configure --srt=on --shared-srt=on`动态库链接。
+
+### FFmpeg
+
+**SRS4**
+
+[FFmpeg](https://www.ffmpeg.org/legal.html)是LGPL，如果用`--enable-gpl`开启了GPL就是GPL了。
+
+SRS支持`./configure --ffmpeg-fit=on --shared-ffmpeg=on`来动态库链接FFmpeg，参考[#1762](https://github.com/ossrs/srs/issues/1762#issuecomment-912897342)。
+
+* [Opus](https://opus-codec.org/license/) 是 BSD 授权，用来转WebRTC(Opus)到直播流(AAC)。
+
+### SRTP
+
+[libsrtp](https://github.com/cisco/libsrtp) 库使用 [3-clause BSD](https://chromium.googlesource.com/chromium/deps/libsrtp/+/refs/heads/main/README.chromium) 
+许可证，您可以在 [LICENSE](https://github.com/cisco/libsrtp/blob/main/LICENSE) 文件中查看。
+
+对于 SRS 5+，使用命令 `./configure --shared-srtp=on` 来启用动态库链接的功能。
+
+## Embeded in Code
+
+下面的依赖库，直接代码方式嵌入在SRS项目中。
+
+### http-parser
 
 [http-parser](https://github.com/nodejs/http-parser)是NGINX的一部分，授权是用的[2-clause BSD-like license](http://nginx.org/LICENSE)授权。
 
-## JSON
+### JSON
 
 **SRS2**
 
@@ -54,37 +91,18 @@ SRS2用到了NXJSON，是用的LGPL授权。SRS3已经替换成了[json-parser](
 
 SRS3换成了[json-parser](https://github.com/udp/json-parser)，是用的BSD授权，参考[#904](https://github.com/ossrs/srs/issues/904)。
 
-## SRT
+### LIBUUID
 
-**SRS4**
+[libuuid](https://sourceforge.net/p/libuuid/code/ci/master/tree/COPYING) 是 BSD-3 LICENSE. 
+参考 [SRS2](https://github.com/ossrs/srs/commit/c8871413e4c5ed72abfad3ff9523c0b0d1a6bb50), 
+[SRS3](https://github.com/ossrs/srs/commit/5c6bb63bf25b500a2f785e087befbea7cf58a0d8), 
+[SRS4+](https://github.com/ossrs/srs/commit/48ef3dcd832cc5ce34f97c26d81c3ed03e4cebd8).
 
-[libsrt](https://github.com/Haivision/srt/blob/master/LICENSE) 是MPL 2.0授权，参考[#1147](https://github.com/ossrs/srs/issues/1147)。
+## Not Used in Code
 
-可以用`./configure --srt=on --shared-srt=on`动态库链接。
+以下库，使用启动进程方式，或者暂时未使用到，或曾经用到但目前已经移除或替换。
 
-## FFmpeg
-
-**SRS4**
-
-[FFmpeg](https://www.ffmpeg.org/legal.html)是LGPL，如果用`--enable-gpl`开启了GPL就是GPL了。
-
-SRS支持`./configure --ffmpeg-fit=on --shared-ffmpeg=on`来动态库链接FFmpeg，参考[#1762](https://github.com/ossrs/srs/issues/1762#issuecomment-912897342)。
-
-* [Opus](https://opus-codec.org/license/) 是 BSD 授权，用来转WebRTC(Opus)到直播流(AAC)。
-
-## USRSCTP
-
-**SRS4**
-
-[usrsctp](https://github.com/sctplab/usrsctp)是[BSD-3-Clause](https://github.com/sctplab/usrsctp/blob/master/LICENSE.md)授权。
-
-用在支持DataChannel中，参考[#1809](https://github.com/ossrs/srs/pull/1809)。
-
-## LIBUUID
-
-[libuuid](https://sourceforge.net/p/libuuid/code/ci/master/tree/COPYING) 是 BSD-3 LICENSE. 参考 [SRS2](https://github.com/ossrs/srs/commit/c8871413e4c5ed72abfad3ff9523c0b0d1a6bb50), [SRS3](https://github.com/ossrs/srs/commit/5c6bb63bf25b500a2f785e087befbea7cf58a0d8), [SRS4+](https://github.com/ossrs/srs/commit/48ef3dcd832cc5ce34f97c26d81c3ed03e4cebd8).
-
-## Utility
+### Utility
 
 SRS启动了FFmpeg进程实现转码和Ingest，可以替换成其他工具。启动进程方式，没有LICENSE问题。
 
@@ -97,7 +115,17 @@ SRS2以下函数有LICENSE问题，已经在SRS3+替换成了LICENSE兼容的版
 1. `srs_crc32_mpegts`: TS实现CRC32校验。SRS3参考pycrc的实现替换了它，请看[0a63448](https://github.com/ossrs/srs/commit/0a63448b86bfa2998f14055402896406a33de109) 以及 [#917](https://github.com/ossrs/srs/issues/917#issuecomment-406839996).
 1. `srs_crc32_ieee`: Kafka协议实现CRC32校验。SRS3参考pycrc的实现替换了它，请看[0a63448](https://github.com/ossrs/srs/commit/0a63448b86bfa2998f14055402896406a33de109) 以及 [#917](https://github.com/ossrs/srs/issues/917#issuecomment-406795463).
 
-> SRS2有些函数用到了FFmpeg的函数，这些是有LICENSE问题；在SRS3之后全部改掉了。请看：[#917](https://github.com/ossrs/srs/issues/917)。
+> Note: SRS2有些函数用到了FFmpeg的函数，这些是有LICENSE问题；在SRS3之后全部改掉了。请看：[#917](https://github.com/ossrs/srs/issues/917)。
+
+### USRSCTP
+
+**SRS4**
+
+[usrsctp](https://github.com/sctplab/usrsctp)是[BSD-3-Clause](https://github.com/sctplab/usrsctp/blob/master/LICENSE.md)授权。
+
+用在支持DataChannel中，参考[srs-sctp](https://github.com/ossrs/srs-sctp)。
+
+> Note: 目前还没有合并到SRS代码中，还在功能分支状态。
 
 ![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.net&path=/lts/pages/license-zh)
 

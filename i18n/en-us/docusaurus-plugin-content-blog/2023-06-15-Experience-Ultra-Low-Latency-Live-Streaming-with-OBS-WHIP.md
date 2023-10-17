@@ -32,8 +32,8 @@ Please install the following software before proceeding:
 
 - [OBS Studio](https://obsproject.com/download)
 
-> Note: Currently, OBS WHIP has been merged into the master branch but has not been released yet.
-> You can login GitHub and download it from [here](https://github.com/obsproject/obs-studio/actions/runs/5227109208?pr=7926).
+> Note: OBS WHIP has been merged into the master branch and will be released in OBS 30.
+> You can download it from [here](https://github.com/obsproject/obs-studio/releases/tag/30.0.0-rc1).
 
 ## Step 1: Run SRS
 
