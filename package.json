@@ -5,7 +5,7 @@
   "scripts": {
     "prepare": "husky install",
     "docusaurus": "docusaurus",
-    "start": "cross-env SEARCH_APIKEY='test' REGION='en-us' BASE_URL='/lts/en-us/' docusaurus start --locale en-us",
+    "start": "cross-env SEARCH_APIKEY='test' docusaurus start",
     "start-en": "cross-env SEARCH_APIKEY='test' REGION='en-us' BASE_URL='/lts/en-us/' docusaurus start --locale en-us",
     "start-cn": "cross-env SEARCH_APIKEY='test' REGION='zh-cn' BASE_URL='/lts/zh-cn/' docusaurus start --locale zh-cn",
     "build": "cross-env REGION='zh-cn' docusaurus build",
