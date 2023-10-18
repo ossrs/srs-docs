@@ -1,0 +1,13 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="start-en" type="js.build_tools.npm">
+    <package-json value="$PROJECT_DIR$/package.json" />
+    <command value="start" />
+    <arguments value="--locale en-us" />
+    <node-interpreter value="project" />
+    <envs>
+      <env name="REGION" value="en-us" />
+      <env name="BASE_URL" value="/lts/en-us/" />
+    </envs>
+    <method v="2" />
+  </configuration>
+</component>
