@@ -50,15 +50,15 @@ const config = {
           //lastVersion: versions[0],
           versions: {
             current: {
-              label: `6.0 🚧`,
+              label: `6.0 (Unstable) 🚧`,
               path: 'v6',
             },
             '5.0': {
-              label: '5.0',
+              label: '5.0 (Stable) ✅',
               path: 'v5',
             },
             '4.0': {
-              label: '4.0',
+              label: '4.0 (Archived) 📦',
               path: 'v4',
             },
           },
@@ -265,8 +265,11 @@ const config = {
     locales: ['en-us', 'zh-cn'],
     localeConfigs: {
       'en-us': {
-        label: 'English',
+        label: 'English'
       },
+      'zh-cn': {
+        label: '简体中文'
+      }
     },
   },
   plugins: [
