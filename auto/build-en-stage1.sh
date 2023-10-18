@@ -8,7 +8,7 @@ if [[ -d /usr/local/srs-docs-cache/srs-docs ]]; then
 fi
 
 yarn &&
-yarn cross-env REGION='en-us' BASE_URL='/lts/en-us/' \
+yarn cross-env REGION='zh-cn' BASE_URL='/lts/en-us/' \
   SEARCH_HTTPS_HOST=ossrs.io SEARCH_HTTPS_PORT=443 \
   SEARCH_HTTP_HOST=ossrs.io SEARCH_HTTP_PORT=80 \
   SEARCH_APIKEY=$SEARCH_APIKEY \
