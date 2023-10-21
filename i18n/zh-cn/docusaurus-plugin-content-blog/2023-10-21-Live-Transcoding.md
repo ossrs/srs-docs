@@ -50,14 +50,17 @@ docker run --rm -it --name srs-stack -v $HOME/data:/data \
 
 ## Step 3: Transcode the Live Stream to Lower Bitrate
 
-假设您使用 OBS 将 8Mbps 流发送到 SRS Stack，并且您无法在 OBS 中调整比特率。这可能是因为流是由您无法控制的供应商发布的，或者您需要记录原始高分辨率流，或者某些设备（如 4K/8K 电视）需要高分辨率流。
+假设您使用 OBS 将 8Mbps 流发送到 SRS Stack，并且您无法在 OBS 中调整比特率。这可能是因为流是由您无法控制的供应商发布的，
+或者您需要记录原始高分辨率流，或者某些设备（如 4K/8K 电视）需要高分辨率流。
 
-然而，您的大多数观众在移动设备上观看直播，他们不需要 8Mbps 流。对于移动设备来说，2Mbps 流就足够了，他们的带宽可能只支持 2Mbps 比特率。在这种情况下，您可以使用转码将 8Mbps 流转换为 2Mbps 直播流。
+然而，您的大多数观众在移动设备上观看直播，他们不需要 8Mbps 流。对于移动设备来说，2Mbps 流就足够了，他们的带宽可能只支持 
+2Mbps 比特率。在这种情况下，您可以使用转码将 8Mbps 流转换为 2Mbps 直播流。
 
 ![](/img/blog-2023-10-21-05.png)
 
 转码流后，您可以预览 2Mbps 版本或将其转发到另一个直播平台。
-请参阅[轻松将您的 RTSP IP 摄像头流式传输到 YouTube、Twitch 或 Facebook](./2023-10-11-Stream-IP-Camera-Events.md)了解更多信息。您还可以从 SRS Stack 拉取 RTMP 流并将其转发到其他地方。
+请参阅[如何做RTSP监控摄像头直播](./2023-10-11-Stream-IP-Camera-Events.md)
+了解更多信息。您还可以从 SRS Stack 拉取 RTMP 流并将其转发到其他地方。
 
 ## Check Transcoding Status
 
@@ -66,7 +69,8 @@ docker run --rm -it --name srs-stack -v $HOME/data:/data \
 ![](/img/blog-2023-10-21-06.png)
 
 您可以点击预览链接检查转码流，或将其转发到另一个直播平台。
-请参阅[轻松将您的 RTSP IP 摄像头流式传输到 YouTube、Twitch 或 Facebook](./2023-10-11-Stream-IP-Camera-Events.md)了解更多信息。
+请参阅[如何做RTSP监控摄像头直播](./2023-10-11-Stream-IP-Camera-Events.md)
+了解更多信息。
 
 ## 结论
 
