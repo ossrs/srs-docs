@@ -152,7 +152,10 @@ To back the project, think about donating via OpenCollective.
 
 ![](/img/blog-2023-05-22-012.png)
 
-Thanks for watching this video on SRS (Simple Realtime Server). If you found it helpful, please give it a thumbs up and subscribe to our channel for more short videos like this. See you in the next one!
+Thanks for watching this video on SRS (Simple Realtime Server). If you found it helpful, please give it a thumbs up 
+and subscribe to our channel for more short videos like this. See you in the next one!
+
+Welcome for more discussion at [discord](https://discord.gg/bQUPDRqy79).
 
 ![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/blog-en/2023-05-22-Unlock-the-Power-of-SRS-Real-World-Use-Cases)
 

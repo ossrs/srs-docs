@@ -91,6 +91,11 @@ After publishing your stream on all platforms, you can check the multiple stream
 
 ### Conclusion
 
-Live streaming to multiple platforms is an effective way to reach a broader audience and increase engagement. SRS Stack makes this process simple and efficient, allowing you to focus on creating quality content while it takes care of the technical aspects. By following the steps outlined in this blog, you can easily set up live streaming on multiple platforms like YouTube, Twitch, and Facebook, and take your content to the next level.
+Live streaming to multiple platforms is an effective way to reach a broader audience and increase engagement. 
+SRS Stack makes this process simple and efficient, allowing you to focus on creating quality content while it takes 
+care of the technical aspects. By following the steps outlined in this blog, you can easily set up live streaming 
+on multiple platforms like YouTube, Twitch, and Facebook, and take your content to the next level.
+
+Welcome for more discussion at [discord](https://discord.gg/bQUPDRqy79).
 
 ![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/blog-en/2023-09-09-Multi-Platform-Streaming)

@@ -594,6 +594,8 @@ SRS Stack的使用说明，请参考视频[SRS Stack：起步、购买和入门]
     * VLive: Use TCP transport when pull RTSP stream. [v5.10.7](https://github.com/ossrs/srs-stack/releases/tag/v5.10.7)
     * Refine statistic and report data. v5.10.8
     * 改进文件上传按钮，支持多语言. [v5.10.9](https://github.com/ossrs/srs-stack/releases/tag/v5.10.9)
+    * Report language. v5.10.10
+    * Transcode: 支持直播转码功能. [v5.10.11](https://github.com/ossrs/srs-stack/releases/tag/v5.10.11)
 * v5.9
     * Update NGINX HLS CDN guide. v5.9.2
     * Move DVR and VoD to others. v5.9.3

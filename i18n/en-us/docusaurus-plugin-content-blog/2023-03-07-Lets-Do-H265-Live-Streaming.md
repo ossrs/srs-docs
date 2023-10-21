@@ -196,4 +196,6 @@ There are some developers that contributed to SRS HEVC feature:
 
 Really appreciated for [mpegts.js](https://github.com/xqq/mpegts.js), which supports HEVC for HTTP-FLV and HTTP-TS.
 
+Welcome for more discussion at [discord](https://discord.gg/bQUPDRqy79).
+
 ![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/blog-en/23-03-07-Lets-Do-H265-Live-Streaming)

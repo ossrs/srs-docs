@@ -327,6 +327,8 @@ Here, some of SRT's most troublesome problems are the high retransmission rate a
 1. Addition of the BBR congestion control algorithm: The native SRT congestion control is weak, and the evaluated bandwidth fluctuates greatly, both of which are resolved by adding the BBR congestion control algorithm.
 1. SRT multi-linkage transfer improved with bandwidth aggregation: The auto mode for live streaming is added to SRT, in addition to its native backup and broadcast modes. In this way, the bandwidths of multiple ENIs are aggregated for live streaming, with smart and dynamic linkage selection.
 
+Welcome for more discussion at [discord](https://discord.gg/bQUPDRqy79).
+
 ![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/blog-en/22-07-01-Coroutine-Native-SRT)
 
 

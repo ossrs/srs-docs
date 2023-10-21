@@ -580,6 +580,8 @@ The following are the update records for the SRS Stack server.
     * VLive: Use TCP transport when pull RTSP stream. [v5.10.7](https://github.com/ossrs/srs-stack/releases/tag/v5.10.7)
     * Refine statistic and report data. v5.10.8
     * Support file picker with language. [v5.10.9](https://github.com/ossrs/srs-stack/releases/tag/v5.10.9)
+    * Report language. v5.10.10
+    * Transcode: Support live stream transcoding. [v5.10.11](https://github.com/ossrs/srs-stack/releases/tag/v5.10.11)
 * v5.9
     * Update NGINX HLS CDN guide. v5.9.2
     * Move DVR and VoD to others. v5.9.3

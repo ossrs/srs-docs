@@ -98,4 +98,6 @@ straightforward solution for those building their own streaming services. By fol
 in this guide, you can ensure that your live streaming service remains secure and accessible only to 
 authorized users.
 
+Welcome for more discussion at [discord](https://discord.gg/bQUPDRqy79).
+
 ![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/blog-en/2023-08-29-Ensuring-Authentication-for-Live-Streaming-Publishing)

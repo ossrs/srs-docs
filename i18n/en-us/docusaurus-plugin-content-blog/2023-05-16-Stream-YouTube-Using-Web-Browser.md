@@ -74,6 +74,10 @@ ffmpeg -i rtmp://localhost/live/livestream -c copy \
 
 ## Conclusion
 
-By adhering to these instructions, you can effectively live stream to YouTube via RTMP or RTMPS using a web browser. This technique offers a practical alternative to OBS, enabling you to harness the power of WebRTC, SRS, and FFmpeg for a smooth and efficient streaming experience.
+By adhering to these instructions, you can effectively live stream to YouTube via RTMP or RTMPS using a web browser. 
+This technique offers a practical alternative to OBS, enabling you to harness the power of WebRTC, SRS, and FFmpeg 
+for a smooth and efficient streaming experience.
+
+Welcome for more discussion at [discord](https://discord.gg/bQUPDRqy79).
 
 ![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/blog-en/2023-05-16-Stream-YouTube-Using-Web-Browser)
