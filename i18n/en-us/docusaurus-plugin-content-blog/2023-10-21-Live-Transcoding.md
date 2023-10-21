@@ -12,16 +12,16 @@ custom_edit_url: null
 
 In today's digital world, live streaming has become an essential tool for businesses, content creators, and 
 individuals alike. With the increasing number of viewers tuning in to watch live streams, it's crucial to optimize 
-the streaming experience for everyone, regardless of their internet speed or device capabilities. One effective way
-to achieve this is through live streaming transcoding, a process that can help reduce bandwidth and save costs 
-without compromising on video quality. In this blog, we'll explore the benefits of using SRS Stack for 
-efficient live streaming transcoding and how it can lead to significant cost savings.
+the streaming experience and cost for everyone, regardless of their internet speed or device capabilities. One 
+effective way to achieve this is through live streaming transcoding, a process that can help reduce bandwidth 
+and save costs without compromising on video quality. In this blog, we'll explore the benefits of using SRS Stack 
+for efficient live streaming transcoding and how it can lead to significant cost savings.
 
 <!--truncate-->
 
 Live streaming transcoding involves converting a live stream from SRS Stack using FFmpeg into various bitrates and 
 resolutions, before pushing it back to SRS Stack. This process allows for a reduction in bandwidth while maintaining 
-the same resolution, simply by lowering the bitrate of the stream. As a result, the overall viewing bandwidth is
+the same quality, simply by lowering the bitrate of the stream. As a result, the overall viewing bandwidth is
 decreased, leading to cost savings for both the streamer and the viewer.
 
 For instance, consider a live streaming scenario with 10,000 viewers all watching the same 2Mbps bitrate stream. 
