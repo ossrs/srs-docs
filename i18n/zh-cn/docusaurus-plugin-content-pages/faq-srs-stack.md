@@ -581,6 +581,8 @@ SRS Stack的使用说明，请参考视频[SRS Stack：起步、购买和入门]
 
 以下为SRS Stack的更新记录。
 
+* v5.11
+    * VLive: 降低虚拟直播的整体延迟. v5.11.1
 * v5.10
     * Refine README. v5.10.1
     * Refine DO and droplet release script. v5.10.2
@@ -597,6 +599,7 @@ SRS Stack的使用说明，请参考视频[SRS Stack：起步、购买和入门]
     * Report language. v5.10.10
     * Transcode: 支持直播转码功能. [v5.10.11](https://github.com/ossrs/srs-stack/releases/tag/v5.10.11)
     * Transcode: Fix param bug. v5.10.12
+    * Fix default stream name bug. v5.10.13
 * v5.9
     * Update NGINX HLS CDN guide. v5.9.2
     * Move DVR and VoD to others. v5.9.3

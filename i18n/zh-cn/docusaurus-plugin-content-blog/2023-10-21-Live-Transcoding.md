@@ -72,7 +72,7 @@ docker run --rm -it --name srs-stack -v $HOME/data:/data \
 请参阅[如何做RTSP监控摄像头直播](./2023-10-11-Stream-IP-Camera-Events.md)
 了解更多信息。
 
-## 结论
+## Conclusion
 
 总之，我们讨论了使用 SRS Stack 和 FFmpeg 进行直播转码的好处。转码优化了具有不同网络速度和设备的观众的流媒体观看体验，
 减少了带宽使用并节省了成本。我们介绍了设置 SRS Stack 和 FFmpeg、创建配置文件以及将转码流推送回 SRS Stack 的方法。
