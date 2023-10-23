@@ -15,10 +15,7 @@ This wiki describes the licenses about SRS and related libraries.
 to make it more simple, by following the specification of [SPDX](https://spdx.org/ids/), which is also used by 
 [POCO](https://github.com/pocoproject/poco/blob/master/LICENSE) and [Linux Kernel](https://www.kernel.org/doc/html/latest/process/license-rules.html#license-identifier-syntax), etc.
 
-`SRS v5+`, by default, uses the [MIT](https://github.com/ossrs/srs/blob/develop/LICENSE) license. You can choose either
-the [MIT](https://github.com/ossrs/srs/blob/develop/LICENSE) or [MulanPSL-2.0](https://spdx.org/licenses/MulanPSL-2.0.html) 
-license. The [MulanPSL-2.0](https://spdx.org/licenses/MulanPSL-2.0.html) license is compatible with the Apache-2.0 
-license. For more details, please see [here](https://www.apache.org/legal/resolved.html#category-a).
+`SRS v5+` uses the [MIT](https://github.com/ossrs/srs/blob/develop/LICENSE) license.
 
 ## Library
 

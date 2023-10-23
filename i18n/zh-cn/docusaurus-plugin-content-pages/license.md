@@ -14,9 +14,7 @@ SRS用到了一些第三方库，可能是有自己的LICENSE，这个WIKI介绍
 [SPDX](https://spdx.org/ids/)是Linux基金会的规范，被[POCO](https://github.com/pocoproject/poco/blob/master/LICENSE)和
 [Linux Kernel](https://www.kernel.org/doc/html/latest/process/license-rules.html#license-identifier-syntax)等广泛使用。
 
-`SRS v5+`默认授权是[MIT](https://github.com/ossrs/srs/blob/develop/LICENSE)，你也可以选择[MIT](https://github.com/ossrs/srs/blob/develop/LICENSE)
-或[MulanPSL-2.0](https://spdx.org/licenses/MulanPSL-2.0.html)协议。[MulanPSL-2.0](https://spdx.org/licenses/MulanPSL-2.0.html)
-是兼容Apache-2.0协议，详细请看[这里](https://www.apache.org/legal/resolved.html#category-a)。
+`SRS v5+`授权是[MIT](https://github.com/ossrs/srs/blob/develop/LICENSE)。
 
 ## Library
 
