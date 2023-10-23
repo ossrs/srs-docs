@@ -583,6 +583,7 @@ SRS Stack的使用说明，请参考视频[SRS Stack：起步、购买和入门]
 
 * v5.11
     * VLive: 降低虚拟直播的整体延迟. v5.11.1
+    * Live: Refine multiple language. v5.11.2
 * v5.10
     * Refine README. v5.10.1
     * Refine DO and droplet release script. v5.10.2

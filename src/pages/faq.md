@@ -223,6 +223,7 @@ Issue according to the requirements.
   > 1. What is RTMP's tcURL, and how to get the stream address? Refer to this [link](https://stackoverflow.com/a/70920881/17679565).
   > 1. How to play RTMP streams in H5 without using Flash and Nginx? Refer to this [link](https://stackoverflow.com/a/70920989/17679565).
   > 1. Can WebRTC replace RTMP, and is live streaming only possible with WebRTC? Refer to this [link](https://stackoverflow.com/a/75491330/17679565).
+  > 1. How to do a video live stream through a VPS? Refer to this [link](https://video.stackexchange.com/a/36925/42693).
 
 <a name='source-cleanup'></a>
 

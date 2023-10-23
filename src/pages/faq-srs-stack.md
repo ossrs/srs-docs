@@ -569,6 +569,7 @@ The following are the update records for the SRS Stack server.
 
 * v5.11
     * VLive: Decrease the latency for virtual live. v5.11.1
+    * Live: Refine multiple language. v5.11.2
 * v5.10
     * Refine README. v5.10.1
     * Refine DO and droplet release script. v5.10.2

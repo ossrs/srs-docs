@@ -220,6 +220,7 @@
   > 1. RTMP的tcURL是什么，如何获取流地址，参考[链接](https://stackoverflow.com/a/70920881/17679565)
   > 1. 不用Flash和Nginx，H5如何播放RTMP流，参考[链接](https://stackoverflow.com/a/70920989/17679565)
   > 1. WebRTC是否能替代RTMP，直播是否只能WebRTC，参考[链接](https://stackoverflow.com/a/75491330/17679565)
+  > 1. 如何使用云主机自建流媒体系统，参考[链接](https://video.stackexchange.com/a/36925/42693)
 
 <a name='source-cleanup'></a>
 
