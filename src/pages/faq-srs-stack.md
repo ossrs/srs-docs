@@ -36,6 +36,7 @@ Quick Content
 * [Cost Optimization](#cost-opt): About cost and cost optimization.
 * [OpenAPI](#openapi): About open API, using API to get related information.
 * [Feature List](#features): About the list of supported features.
+* [HTTP Callback](#http-callback): About HTTP callback.
 * [Version Planning](#changelog): About versions and milestones.
 
 You can also search for keywords on the page.
@@ -560,6 +561,72 @@ For instructions on using SRS Stack, please refer to the video [SRS Stack Server
 Currently, the scenarios and functions supported by SRS Stack, see [Features](https://github.com/ossrs/srs-stack#features).
 
 Welcome to join the group to discuss the use of SRS Stack. All these SRS peripheral services are open-source and can be customized and deployed by yourself.
+
+<a name='http-callback'></a><br/><br/><br/>
+
+## HTTP Callback
+
+All requests should be:
+
+* `Content-Type: application-json`
+
+All responses should use:
+
+* `Status: 200 OK` and `"code": 0` for success.
+* Otherwise, error or fail.
+
+See examples in [HTTP Callback](/docs/v6/doc/http-callback#go-example)
+
+### HTTP Callback: on_publish
+
+For HTTP callback `on_publish` event:
+
+```json
+Request:
+{
+  "action": "on_unpublish",
+  "opaque": "mytoken",
+  "vhost": "__defaultVhost__",
+  "app": "live",
+  "stream": "livestream",
+  "param": "?secret=8f7605d657c74d69b6b48f532c469bc9",
+  "server_id": "vid-f91k836",
+  "client_id": "e8d29ue3"
+}
+
+Response:
+{
+  "code": 0
+}
+```
+
+* Allow publishing if response success.
+* Reject publishing if response error.
+
+### HTTP Callback: on_unpublish
+
+For HTTP callback `on_unpublish` event:
+
+```json
+Request:
+{
+  "action": "on_unpublish",
+  "opaque": "mytoken",
+  "vhost": "__defaultVhost__",
+  "app": "live",
+  "stream": "livestream",
+  "param": "?secret=8f7605d657c74d69b6b48f532c469bc9",
+  "server_id": "vid-f91k836",
+  "client_id": "e8d29ue3"
+}
+
+Response:
+{
+  "code": 0
+}
+```
+
+* Ignore any response error.
 
 <a name='changelog'></a><br/><br/><br/>
 

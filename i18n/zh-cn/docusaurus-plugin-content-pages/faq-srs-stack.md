@@ -36,6 +36,7 @@
 * [成本优化](#cost-opt)：关于成本和成本优化。
 * [OpenAPI](#openapi): 关于开放API，使用API获取相关信息。
 * [功能列表](#features): 关于支持的功能清单。
+* [HTTP Callback](#http-callback): 关于支持的HTTP回调。
 * [版本规划](#changelog): 关于版本和里程碑。
 
 你也可以在页面中搜索关键字。
@@ -574,6 +575,72 @@ SRS Stack的使用说明，请参考视频[SRS Stack：起步、购买和入门]
 目前SRS Stack支持的场景和功能，参考[Features](https://github.com/ossrs/srs-stack#features)。
 
 欢迎加群探讨SRS Stack的使用，这些SRS的周边服务都是开源的，可以自己定制后部署。
+
+<a name='http-callback'></a><br/><br/><br/>
+
+## HTTP Callback
+
+所有请求的格式是json：
+
+* `Content-Type: application-json`
+
+所有响应都应该遵守：
+
+* 成功：`Status: 200 OK` and `"code": 0`
+* 其他代表失败或错误。
+
+关于如何实现回调的处理，请参考[HTTP Callback](/docs/v6/doc/http-callback#go-example)
+
+### HTTP Callback: on_publish
+
+对于回调事件`on_publish`，协议定义如下：
+
+```json
+Request:
+{
+  "action": "on_unpublish",
+  "opaque": "mytoken",
+  "vhost": "__defaultVhost__",
+  "app": "live",
+  "stream": "livestream",
+  "param": "?secret=8f7605d657c74d69b6b48f532c469bc9",
+  "server_id": "vid-f91k836",
+  "client_id": "e8d29ue3"
+}
+
+Response:
+{
+  "code": 0
+}
+```
+
+* 返回成功，则允许推流。
+* 返回失败，则禁止推流。
+
+### HTTP Callback: on_unpublish
+
+对于回调事件`on_unpublish`，协议定义如下：
+
+```json
+Request:
+{
+  "action": "on_unpublish",
+  "opaque": "mytoken",
+  "vhost": "__defaultVhost__",
+  "app": "live",
+  "stream": "livestream",
+  "param": "?secret=8f7605d657c74d69b6b48f532c469bc9",
+  "server_id": "vid-f91k836",
+  "client_id": "e8d29ue3"
+}
+
+Response:
+{
+  "code": 0
+}
+```
+
+* 错误时忽略。
 
 <a name='changelog'></a><br/><br/><br/>
 
