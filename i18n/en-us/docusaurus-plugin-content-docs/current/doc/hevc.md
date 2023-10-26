@@ -154,8 +154,9 @@ The status of protocols and HEVC:
 The FFmpeg in `ossrs/srs:encoder` or `ossrs/srs:6` is built with libx265 and patched with HEVC over RTMP support. So you're able to directly use:
 
 ```bash
-docker run --rm -it ossrs/srs:encoder ffmpeg -re -i doc/source.flv -acodec copy \
-  -vcodec libx265 -f flv rtmp://localhost/live/livestream
+docker run --rm -it --net host ossrs/srs:encoder \
+  ffmpeg -re -i doc/source.flv -acodec copy -vcodec libx265 \
+    -f flv rtmp://localhost/live/livestream
 ```
 
 If you want to build from code, please read the bellow instructions. Before build FFmpeg, we must build 

@@ -152,8 +152,10 @@ The status of protocols and HEVC:
 镜像 `ossrs/srs:encoder` 或 `ossrs/srs:6` 中的 FFmpeg 是使用 libx265 构建的，并且支持 RTMP 上的 HEVC。因此，您可以直接使用：
 
 ```bash
-docker run --rm -it ossrs/srs:encoder ffmpeg -re -i doc/source.flv -acodec copy \
-  -vcodec libx265 -f flv rtmp://localhost/live/livestream
+docker run --rm -it --net host \
+  registry.cn-hangzhou.aliyuncs.com/ossrs/srs:encoder \
+    ffmpeg -re -i doc/source.flv -acodec copy -vcodec libx265 \
+      -f flv rtmp://localhost/live/livestream
 ```
 
 如果您想从代码构建，请阅读以下说明。在构建 FFmpeg 之前，我们必须先构建 [libx264](https://www.videolan.org/developers/x264.html)：
