@@ -29,6 +29,7 @@
   > 1. 可以用NGINX结合SRS Edge分发HTTP-FLV，实现所有HTTP协议的分发，参考 [Nginx For HLS](/docs/v4/doc/nginx-for-hls#work-with-srs-edge-server)
 * SRS源站集群，多流热备，流切换，推流容灾，提问关于直播流的容灾和切换，参考[链接](https://stackoverflow.com/a/70629002/17679565)
 * 如何构建一个服务器网络，解决就近服务，和扩展服务器容量，SRS的Edge集群，参考[链接](https://stackoverflow.com/a/71030396/17679565)
+* 如何做多流备份，多个流取可用的一个，流的灾备和切换，参考[链接](https://stackoverflow.com/a/77363633/17679565)
 
 <a name="console"></a>
 

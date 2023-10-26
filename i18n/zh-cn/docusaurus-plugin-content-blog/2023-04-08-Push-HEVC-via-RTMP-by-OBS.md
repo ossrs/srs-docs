@@ -30,23 +30,16 @@ OBS和SRS都支持这个标准。
 * 更新SRS到6.0.42+，或者使用最新的develop分支。
 * 使用OBS 29.1+。你可以从[这里](https://github.com/obsproject/obs-studio/releases)下载beta版本。
 * 对于H5播放器，SRS已经升级了[mpegjs.js](https://github.com/xqq/mpegts.js)到1.7.3+
-* FFmpeg还不支持RTMP的HEVC，但是一些维护者正在努力中了。
+* FFmpeg 6已经支持RTMP的HEVC。
 
 ## Usage
 
-首先，下载并编译SRS：
+首先，直接使用Docker运行：
 
 ```bash
-git clone http://gitee.com/ossrs/srs.git
-cd srs/trunk
-./configure --h265=on
-make
-```
-
-然后，启动SRS，确保SRS的版本是6.0.42+：
-
-```bash
-./objs/srs -c conf/http.ts.live.conf
+docker run --rm -it -p 1935:1935 -p 8080:8080 \
+  registry.cn-hangzhou.aliyuncs.com/ossrs/srs:6 \
+  ./objs/srs -c conf/hevc.flv.conf
 ```
 
 然后，使用OBS推流，设置如下：
@@ -62,16 +55,13 @@ make
 ![](/img/blog-2023-04-08-002.png)
 
 现在，你可以使用H5播放器播放了，如下：
-[http://localhost:8080/live/livestream.ts](http://localhost:8080/players/srs_player.html?stream=livestream.ts).
+[http://localhost:8080/live/livestream.flv](http://localhost:8080/players/srs_player.html).
 
-如果需要用HLS或HTTP-FLV播放，开启对应的SRS配置即可。
+如果需要用HLS或HTTP-TS播放，开启对应的SRS配置即可。
 
 ## What’s Next
 
-FFMpeg不支持RTMP的HEVC，但是一些维护者正在努力中了。
-你可以给FFmpeg打补丁，支持RTMP的HEVC，参考[FFmpeg HEVC](http://claire-chang.com/2023/03/09/%e7%82%basrs6%e7%b7%a8%e8%ad%af%e6%94%af%e6%8c%81http-flv%e7%9a%84ffmpeg%e6%aa%94%e6%a1%88/)
-
-SRS支持HEVC WebRTC，支持的是Safari浏览器，但SRS不支持RTMP转WebRTC，我们正在开发中了。
+SRS支持HEVC WebRTC，支持的是Safari浏览器，但SRS不支持HEVC over RTMP转WebRTC，我们正在开发中了。
 
 OBS HEVC软件编码器性能太差，编不动，会导致卡顿。
 

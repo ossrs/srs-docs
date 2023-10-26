@@ -32,6 +32,7 @@ Issue according to the requirements.
   > 1. You can use NGINX in conjunction with SRS Edge to distribute HTTP-FLV, implementing the distribution of all HTTP protocols. Please refer to [Nginx For HLS](/docs/v4/doc/nginx-for-hls#work-with-srs-edge-server)
 * SRS source cluster, multi-stream hot backup, stream switching, push stream disaster recovery, questions about live stream disaster recovery and switching, refer to [link](https://stackoverflow.com/a/70629002/17679565).
 * How can you build a server network to provide nearby services and expand server capacity? You can use the SRS Edge cluster as a solution. For more information, refer to this [link](https://stackoverflow.com/a/71030396/17679565).
+* How to create multi-stream backup and switch between them: Use multiple streams and select one that is available. For stream disaster recovery and switching, refer to this [link](https://stackoverflow.com/a/77363633/17679565).
 
 <a name="console"></a>
 

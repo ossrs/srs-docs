@@ -98,29 +98,26 @@ MSE HEVC requires GPU hardware decoding, please open `chrome://gpu` then search 
 
 This is an example fo H.265 live streaming.
 
-First, build SRS 6.0.31+, and enable H.265:
+First, run SRS in docker:
 
 ```bash
-git checkout develop
-./configure --h265=on && make
+docker run --rm -it -p 1935:1935 -p 8080:8080 ossrs/srs:6 \
+  ./objs/srs -c conf/docker.conf
 ```
 
-Next, run SRS with SRT, HTTP-FLV and HLS:
+Use FFmepg to publish HEVC over RTMP, see [FFmpeg Tools](#ffmpeg-tools):
 
 ```bash
-env SRS_LISTEN=1935 SRS_DAEMON=off SRS_LOG_TANK=console \
-  SRS_SRT_SERVER_ENABLED=on SRS_VHOST_SRT_ENABLED=on SRS_VHOST_SRT_TO_RTMP=on \
-  SRS_HTTP_SERVER_ENABLED=on SRS_VHOST_HTTP_REMUX_ENABLED=on \
-  SRS_VHOST_HTTP_REMUX_MOUNT=[vhost]/[app]/[stream].flv SRS_VHOST_HLS_ENABLED=on \
-  ./objs/srs -e
+# For macOS
+docker run --rm -it ossrs/srs:encoder ffmpeg -stream_loop -1 -re -i doc/source.flv \
+  -acodec copy -vcodec libx265 -f flv rtmp://host.docker.internal/live/livestream
+
+# For linux
+docker run --net=host --rm -it ossrs/srs:encoder ffmpeg -stream_loop -1 -re -i doc/source.flv \
+  -acodec copy -vcodec libx265 -f flv rtmp://127.0.0.1/live/livestream
 ```
 
-Now, run FFmpeg to publish by SRT with H.265 stream:
-
-```bash
-ffmpeg -stream_loop -1 -re -i doc/source.flv -acodec copy -vcodec libx265 \
-  -pes_payload_size 0 -f mpegts 'srt://127.0.0.1:10080?streamid=#!::r=live/livestream,m=publish'
-```
+> Note: Please change the ip `host.docker.internal` to your SRS's IP.
 
 Done, please open links bellow in browser:
 
@@ -146,11 +143,8 @@ Note that MSE doesn't support AV1.
 
 ## FFmpeg Patch
 
-FFmpeg/ffplay doesn't suport HEVC over RTMP/HTTP-FLV, there are some patches:
-
-* Runner365, support FFmpeg 4/5/6, please see [ffmpeg_rtmp_h265](https://github.com/runner365/ffmpeg_rtmp_h265). SRS also uses this patch.
-* Intel [0001-Add-SVT-HEVC-FLV-support-on-FFmpeg.patch](https://github.com/VCDP/CDN/blob/master/FFmpeg_patches/0001-Add-SVT-HEVC-FLV-support-on-FFmpeg.patch)
-* Ksvc updates FLV [specfication](https://github.com/ksvc/FFmpeg/wiki) and [usage](https://github.com/ksvc/FFmpeg/wiki/hevcpush).
+FFmpeg 6 has supported HEVC over RTMP, if you want to build from code, please see
+[FFmpeg Tools](/docs/v6/doc/hevc#ffmpeg-tools#ffmpeg-tools).
 
 SRS dev-docker already patched FFmpeg, ffplay and ffprobe, so user can use it:
 
@@ -164,9 +158,7 @@ docker run --net=host --rm -it ossrs/srs:encoder ffmpeg -stream_loop -1 -re -i d
   -acodec copy -vcodec libx265 -f flv rtmp://127.0.0.1/live/livestream
 ```
 
-> Note: You can also copy the binary from the docker, or refer to [Dockerfile](https://github.com/ossrs/dev-docker/blob/ubuntu20/Dockerfile.base51) to build by yourself.
-
-Please see [FFmpeg Tools](https://github.com/ossrs/srs/issues/465#ffmpeg-tools) for detail.
+Please see [FFmpeg Tools](/docs/v6/doc/hevc#ffmpeg-tools#ffmpeg-tools) for detail.
 
 ## Known Issues
 

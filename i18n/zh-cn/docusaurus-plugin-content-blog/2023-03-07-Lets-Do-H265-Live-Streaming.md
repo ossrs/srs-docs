@@ -104,29 +104,29 @@ MSE HEVC依赖GPU硬件解码，可以打开`chrome://gpu`，搜索下`hevc`，�
 
 我们看一个最简单的H.265直播的例子。
 
-首先，编译SRS，注意开启HEVC(H.265)支持，SRS 6.0.31+：
+首先，使用Docker启动SRS：
 
 ```bash
-git checkout develop
-./configure --h265=on && make
+docker run --rm -it -p 1935:1935 -p 8080:8080 \
+  registry.cn-hangzhou.aliyuncs.com/ossrs/srs:6 \
+  ./objs/srs -c conf/docker.conf
 ```
 
-然后，启动SRS服务器，我们启动了SRT、HTTP-FLV和HLS：
+接着，启动FFmpeg推流，HEVC RTMP流，参考 [FFmpeg Tools](#ffmpeg-tools):
 
 ```bash
-env SRS_LISTEN=1935 SRS_DAEMON=off SRS_LOG_TANK=console \
-  SRS_SRT_SERVER_ENABLED=on SRS_VHOST_SRT_ENABLED=on SRS_VHOST_SRT_TO_RTMP=on \
-  SRS_HTTP_SERVER_ENABLED=on SRS_VHOST_HTTP_REMUX_ENABLED=on \
-  SRS_VHOST_HTTP_REMUX_MOUNT=[vhost]/[app]/[stream].flv SRS_VHOST_HLS_ENABLED=on \
-  ./objs/srs -e
+# For macOS
+docker run --rm -it registry.cn-hangzhou.aliyuncs.com/ossrs/srs:encoder \
+  ffmpeg -stream_loop -1 -re -i doc/source.flv \
+  -acodec copy -vcodec libx265 -f flv rtmp://host.docker.internal/live/livestream
+
+# For linux
+docker run --net=host --rm -it registry.cn-hangzhou.aliyuncs.com/ossrs/srs:encoder \
+  ffmpeg -stream_loop -1 -re -i doc/source.flv \
+  -acodec copy -vcodec libx265 -f flv rtmp://127.0.0.1/live/livestream
 ```
 
-接着，启动FFmpeg推流，我们选择SRT推流，天然兼容HEVC：
-
-```bash
-ffmpeg -stream_loop -1 -re -i doc/source.flv -acodec copy -vcodec libx265 \
-  -pes_payload_size 0 -f mpegts 'srt://127.0.0.1:10080?streamid=#!::r=live/livestream,m=publish'
-```
+> Note: 请将域名`host.docker.internal`换成你的服务器的IP。
 
 就可以直接打开网页播放HTTP-FLV流了，也可以使用ffplay或VLC播放HLS：
 
@@ -151,11 +151,7 @@ WebRTC对于AV1的支持更完善，Safari/Chrome/Firefox也都支持，具体�
 
 ## FFmpeg Patch
 
-众所周知，FFmpeg/ffplay是不支持HEVC over RTMP/HTTP-FLV，当然一般用FFmpeg的朋友都是有自己改代码的能力，下面是一些相关的Patch：
-
-* 施维(runner365)，支持FFmpeg 4/5/6版本的patch，参考[ffmpeg_rtmp_h265](https://github.com/runner365/ffmpeg_rtmp_h265)，SRS使用的是这个Patch。
-* Intel [0001-Add-SVT-HEVC-FLV-support-on-FFmpeg.patch](https://github.com/VCDP/CDN/blob/master/FFmpeg_patches/0001-Add-SVT-HEVC-FLV-support-on-FFmpeg.patch)
-* 金山云修改的FLV的[specfication](https://github.com/ksvc/FFmpeg/wiki)以及对应的[usage](https://github.com/ksvc/FFmpeg/wiki/hevcpush)。
+FFmpeg 6支持了HEVC over RTMP，如果需要自己编译，参考[FFmpeg Tools](/docs/v6/doc/hevc#ffmpeg-tools#ffmpeg-tools).
 
 SRS提供了打过Patch的FFmpeg、ffplay和ffprobe，可以直接用SRS Docker推流：
 
@@ -169,9 +165,7 @@ docker run --net=host --rm -it ossrs/srs:encoder ffmpeg -stream_loop -1 -re -i d
   -acodec copy -vcodec libx265 -f flv rtmp://127.0.0.1/live/livestream
 ```
 
-> Note: 也可以把二进制拷贝出来使用，或者参考[Dockerfile](https://github.com/ossrs/dev-docker/blob/ubuntu20/Dockerfile.base51)编译。
-
-可以详细参考[FFmpeg Tools](https://github.com/ossrs/srs/issues/465#ffmpeg-tools)
+可以详细参考[FFmpeg Tools](/docs/v6/doc/hevc#ffmpeg-tools#ffmpeg-tools)
 
 ## Known Issues
 

@@ -651,6 +651,7 @@ Response:
 * v5.11
     * VLive: 降低虚拟直播的整体延迟. v5.11.1
     * Live: Refine multiple language. v5.11.2
+    * Hooks: Support HTTP Callback and test. [v5.11.3](https://github.com/ossrs/srs-stack/releases/tag/v5.11.3)
 * v5.10
     * Refine README. v5.10.1
     * Refine DO and droplet release script. v5.10.2
@@ -668,6 +669,8 @@ Response:
     * Transcode: 支持直播转码功能. [v5.10.11](https://github.com/ossrs/srs-stack/releases/tag/v5.10.11)
     * Transcode: Fix param bug. v5.10.12
     * Fix default stream name bug. v5.10.13
+    * Update doc. v5.10.14
+    * New stable release. [v5.10.15](https://github.com/ossrs/srs-stack/releases/tag/v5.10.15)
 * v5.9
     * Update NGINX HLS CDN guide. v5.9.2
     * Move DVR and VoD to others. v5.9.3

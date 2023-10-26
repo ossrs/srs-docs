@@ -38,9 +38,10 @@ For live streaming:
     * You're able to play mp4 directly by H5 video, or by MSE if HTTP-FLV/HTTP-TS/HLS etc.
     * Please use [mpegts.js](https://github.com/xqq/mpegts.js) to play HTTP-TS with HEVC.
     * There is a plan for mpegts.js to support HTTP-FLV with HEVC, see [mpegts.js#64](https://github.com/xqq/mpegts.js/issues/64)
+* [OBS 29+](https://github.com/obsproject/obs-studio/releases/tag/29.1.3) supports HEVC over RTMP.
 * FFmpeg or ffplay supports libx265
-    * The `libx265` is available if install by `brew` on macOS.
-    * Need some patch for HEVC over RTMP/FLV, see **[FFmpeg Tools](#ffmpeg-tools)** bellow.
+    * FFmpeg 6 supports HEVC over RTMP, see [637c761b](https://github.com/FFmpeg/FFmpeg/commit/637c761be1bf9c3e1f0f347c5c3a390d7c32b282) for detail.
+    * FFmpeg 4 or 5, need some patch for HEVC over RTMP/FLV, see **[FFmpeg Tools](#ffmpeg-tools)** bellow.
 * SRS also supports HEVC.
     * We have merged HEVC support into SRS 6.0
     * The original supports for HEVC is [srs-gb28181/feature/h265](https://github.com/ossrs/srs-gb28181/commits/feature/h265) by [runner365](https://github.com/runner365)
@@ -98,13 +99,13 @@ Play the HEVC live streams by:
 
 The status of protocols and HEVC:
 
-* [x] PUSH HEVC over RTMP by FFmpeg, with none-official patch for FFmpeg. [v6.0.2](https://github.com/ossrs/srs/commit/178e40a5fc3cf0856ace914ae61696a73007f5bf)
+* [x] PUSH HEVC over RTMP by FFmpeg. [v6.0.2](https://github.com/ossrs/srs/commit/178e40a5fc3cf0856ace914ae61696a73007f5bf)
 * [x] PUSH HEVC over SRT by FFmpeg. [v6.0.20](https://github.com/ossrs/srs/pull/3366)
 * [x] PUSH HEVC over RTMP by OBS. [#3464](https://github.com/ossrs/srs/issues/3464) https://github.com/obsproject/obs-studio/pull/8522
 * [x] PUSH HEVC over SRT by OBS. [v6.0.20](https://github.com/ossrs/srs/pull/3366)
 * [x] PUSH HEVC over GB28181. [v6.0.25](https://github.com/ossrs/srs/pull/3408)
-* [x] PULL HEVC over RTMP by FFmpeg, with none-official [patch](#ffmpeg-tools) for FFmpeg. [v6.0.2](https://github.com/ossrs/srs/commit/178e40a5fc3cf0856ace914ae61696a73007f5bf)
-* [x] PULL HEVC over HTTP-FLV by FFmpeg, with none-official [patch](#ffmpeg-tools) for FFmpeg. [v6.0.2](https://github.com/ossrs/srs/commit/178e40a5fc3cf0856ace914ae61696a73007f5bf)
+* [x] PULL HEVC over RTMP by FFmpeg, with [patch](#ffmpeg-tools) for FFmpeg. [v6.0.2](https://github.com/ossrs/srs/commit/178e40a5fc3cf0856ace914ae61696a73007f5bf)
+* [x] PULL HEVC over HTTP-FLV by FFmpeg, with [patch](#ffmpeg-tools) for FFmpeg. [v6.0.2](https://github.com/ossrs/srs/commit/178e40a5fc3cf0856ace914ae61696a73007f5bf)
 * [x] PULL HEVC over HTTP-TS by FFmpeg [v6.0.4](https://github.com/ossrs/srs/commit/70d5618979e5c8dc41b7cd87c78db7ca2b8a10e8)
 * [x] PULL HEVC over HLS by FFmpeg [v6.0.11](https://github.com/ossrs/srs/commit/fff8d9863c3fba769b01782428257edf40f80a12)
 * [x] PULL HEVC over MPEG-DASH  by FFmpeg [v6.0.14](https://github.com/ossrs/srs/commit/edba2c25f13c0fa915bd8e8093a4005df6077858)
@@ -119,8 +120,8 @@ The status of protocols and HEVC:
 * [ ] Play HEVC over HLS by [hls.js](https://github.com/video-dev/hls.js)
 * [ ] Play HEVC over MPEG-DASH by [dash.js](https://github.com/Dash-Industry-Forum/dash.js)
 * [x] Play HEVC over HTTP-TS by ffplay, by offical release. [v6.0.4](https://github.com/ossrs/srs/commit/70d5618979e5c8dc41b7cd87c78db7ca2b8a10e8)
-* [x] PULL HEVC over RTMP by ffplay, with none-official [patch](#ffmpeg-tools) for FFmpeg. [v6.0.2](https://github.com/ossrs/srs/commit/178e40a5fc3cf0856ace914ae61696a73007f5bf)
-* [x] Play HEVC over HTTP-FLV by ffplay, with none-official [patch](#ffmpeg-tools) for FFmpeg. [v6.0.2](https://github.com/ossrs/srs/commit/178e40a5fc3cf0856ace914ae61696a73007f5bf)
+* [x] PULL HEVC over RTMP by ffplay, with [patch](#ffmpeg-tools) for FFmpeg. [v6.0.2](https://github.com/ossrs/srs/commit/178e40a5fc3cf0856ace914ae61696a73007f5bf)
+* [x] Play HEVC over HTTP-FLV by ffplay, with [patch](#ffmpeg-tools) for FFmpeg. [v6.0.2](https://github.com/ossrs/srs/commit/178e40a5fc3cf0856ace914ae61696a73007f5bf)
 * [x] Play pure video(no audio) HEVC by ffplay.
 * [x] Play HEVC over HLS by ffplay. [v6.0.11](https://github.com/ossrs/srs/commit/fff8d9863c3fba769b01782428257edf40f80a12)
 * [x] Play HEVC over MPEG-DASH by ffplay. [v6.0.14](https://github.com/ossrs/srs/commit/edba2c25f13c0fa915bd8e8093a4005df6077858)
@@ -157,15 +158,11 @@ docker run --rm -it ossrs/srs:encoder ffmpeg -re -i doc/source.flv -acodec copy 
   -vcodec libx265 -f flv rtmp://localhost/live/livestream
 ```
 
-If you want to build from code, please read the bellow instructions.
-
-The [specfication](https://github.com/ksvc/FFmpeg/wiki) and [usage](https://github.com/ksvc/FFmpeg/wiki/hevcpush) to support HEVC over RTMP or FLV. There is a [patch for FFmpeg 4.1/5.1/6.0](https://github.com/runner365/ffmpeg_rtmp_h265) from [runner365](https://github.com/runner365) for FFmpeg to support HEVC over RTMP or FLV. There is also a [patch](https://github.com/VCDP/CDN/blob/master/FFmpeg_patches/0001-Add-SVT-HEVC-FLV-support-on-FFmpeg.patch) from Intel for this feature.
-
-Before build FFmpeg, we must build [libx264](https://www.videolan.org/developers/x264.html):
+If you want to build from code, please read the bellow instructions. Before build FFmpeg, we must build 
+[libx264](https://www.videolan.org/developers/x264.html):
 
 ```bash
-cd ~/git
-git clone https://code.videolan.org/videolan/x264.git
+git clone https://code.videolan.org/videolan/x264.git ~/git/x264
 cd ~/git/x264
 ./configure --prefix=$(pwd)/build --disable-asm --disable-cli --disable-shared --enable-static
 make -j10
@@ -175,34 +172,34 @@ make install
 And then [libx265](https://www.videolan.org/developers/x265.html):
 
 ```bash
-cd ~/git
-git clone https://bitbucket.org/multicoreware/x265_git.git
+git clone https://bitbucket.org/multicoreware/x265_git.git ~/git/x265_git
 cd ~/git/x265_git/build/linux
 cmake -DCMAKE_INSTALL_PREFIX=$(pwd)/build -DENABLE_SHARED=OFF ../../source
 make -j10
 make install
 ```
 
-Now, please clone FFmepg and checkout to 5.1:
+Keep in mind that FFmpeg 6.0 does not support HEVC over RTMP until the following commit 
+[637c761b](https://github.com/FFmpeg/FFmpeg/commit/637c761be1bf9c3e1f0f347c5c3a390d7c32b282):
 
-```bash
-cd ~/git
-git clone https://github.com/FFmpeg/FFmpeg.git
-cd ~/git/FFmpeg && git checkout n5.1.2
+```
+commit 637c761be1bf9c3e1f0f347c5c3a390d7c32b282
+Author: Steven Liu <liuqi05@kuaishou.com>
+Date:   Mon Aug 28 09:59:24 2023 +0800
+
+    avformat/rtmpproto: support enhanced rtmp
+    
+    add option named rtmp_enhanced_codec,
+    it would support hvc1,av01,vp09 now,
+    the fourcc is using Array of strings.
+    
+    Signed-off-by: Steven Liu <lq@chinaffmpeg.org>
 ```
 
-Then, patch for [HEVC over RTMP/FLV](https://github.com/runner365/ffmpeg_rtmp_h265):
+So, if you are using FFmpeg 6, you can build FFmpeg without any patch, directly by the following commands:
 
 ```bash
-cd ~/git
-git clone -b 5.1 https://github.com/runner365/ffmpeg_rtmp_h265.git
-cp ~/git/ffmpeg_rtmp_h265/flv.h ~/git/FFmpeg/libavformat/
-cp ~/git/ffmpeg_rtmp_h265/flv*.c ~/git/FFmpeg/libavformat/
-```
-
-Build ffmpeg with libx265:
-
-```bash
+git clone -b master https://github.com/FFmpeg/FFmpeg.git ~/git/FFmpeg
 cd ~/git/FFmpeg
 env PKG_CONFIG_PATH=~/git/x264/build/lib/pkgconfig:~/git/x265_git/build/linux/build/lib/pkgconfig \
 ./configure \
@@ -228,7 +225,30 @@ Play HEVC over RTMP by ffplay:
 ./ffplay rtmp://localhost/live/livestream
 ```
 
-It works.
+It works like magic!
+
+If you want to use HEVC over RTMP in FFmpeg 4.1 or 5.1, please read the following instructions. Please clone FFmepg
+and checkout to 5.1:
+
+> Note: The [specfication](https://github.com/ksvc/FFmpeg/wiki) and [usage](https://github.com/ksvc/FFmpeg/wiki/hevcpush)
+to support HEVC over RTMP or FLV. There is a [patch for FFmpeg 4.1/5.1/6.0](https://github.com/runner365/ffmpeg_rtmp_h265)
+from [runner365](https://github.com/runner365) for FFmpeg to support HEVC over RTMP or FLV. There is also a
+[patch](https://github.com/VCDP/CDN/blob/master/FFmpeg_patches/0001-Add-SVT-HEVC-FLV-support-on-FFmpeg.patch)
+from Intel for this feature.
+
+```bash
+git clone -b n5.1.2 https://github.com/FFmpeg/FFmpeg.git ~/git/FFmpeg
+```
+
+Then, patch for [HEVC over RTMP/FLV](https://github.com/runner365/ffmpeg_rtmp_h265):
+
+```bash
+git clone -b 5.1 https://github.com/runner365/ffmpeg_rtmp_h265.git ~/git/ffmpeg_rtmp_h265
+cp ~/git/ffmpeg_rtmp_h265/flv.h ~/git/FFmpeg/libavformat/
+cp ~/git/ffmpeg_rtmp_h265/flv*.c ~/git/FFmpeg/libavformat/
+```
+
+Finally, follow the previous instructions to build FFmpeg.
 
 ## MSE for HEVC
 
