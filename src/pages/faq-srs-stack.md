@@ -638,6 +638,9 @@ The following are the update records for the SRS Stack server.
     * VLive: Decrease the latency for virtual live. v5.11.1
     * Live: Refine multiple language. v5.11.2
     * Hooks: Support HTTP Callback and test. [v5.11.3](https://github.com/ossrs/srs-stack/releases/tag/v5.11.3)
+    * HELM: Support resolve name to ip for rtc. v5.11.4
+    * HELM: Disable NAME_LOOKUP by default. [v5.11.5](https://github.com/ossrs/srs-stack/releases/tag/v5.11.5)
+    * Refine env variable for bool. v5.11.7
 * v5.10
     * Refine README. v5.10.1
     * Refine DO and droplet release script. v5.10.2
@@ -657,6 +660,9 @@ The following are the update records for the SRS Stack server.
     * Fix default stream name bug. v5.10.13
     * Update doc. v5.10.14
     * New stable release. [v5.10.15](https://github.com/ossrs/srs-stack/releases/tag/v5.10.15)
+    * Fix js missing bug. v5.10.16
+    * Support docker images for helm. [v5.10.17](https://github.com/ossrs/srs-stack/releases/tag/v5.10.17)
+    * Use WHIP and WHEP for RTC. v5.10.18
 * v5.9
     * Update NGINX HLS CDN guide. v5.9.2
     * Move DVR and VoD to others. v5.9.3

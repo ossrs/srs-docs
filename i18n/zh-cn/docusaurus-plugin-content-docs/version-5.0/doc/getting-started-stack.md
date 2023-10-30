@@ -23,6 +23,7 @@ SRS Stack是一个基于Go、Reactjs、SRS、FFmpeg、WebRTC等的轻量级、�
 | 转发       | 增强   | 基本       | SRS Stack可以通过各种协议转发到多个平台。     |
 | 虚拟直播     | 是    | 否        | SRS Stack提供了先进的虚拟直播功能。        |
 | WordPress | 是    | 否        | SRS Stack提供了WordPress插件和操作指南。 |
+| Transcoding | 是 | 否 | SRS Stack提供了直播转码的能力。|
 
 特别说明：
 

@@ -26,6 +26,7 @@ media services needs.
 | Forwarding       | Enhanced  | Basic               | SRS Stack can forward to multiple platforms via various protocols. |
 | Virtual Live     | Yes       | No                  | SRS Stack provides advanced virtual live streaming capabilities.   |
 | WordPress        | Yes       | No                  | SRS Stack offers a WordPress plugin and step-by-step guidelines.   |
+| Transcoding      | Yes       | No                  | SRS Stack supports live stream transcoding.                        |
 
 Special Note:
 
