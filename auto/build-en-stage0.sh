@@ -3,10 +3,6 @@
 pwd
 du -sh *
 
-if [[ -d /usr/local/srs-docs-cache/srs-docs ]]; then
-  cp -R /usr/local/srs-docs-cache/srs-docs/node_modules .
-fi
-
 yarn &&
 yarn cross-env REGION='zh-cn' BASE_URL='/lts/zh-cn/' \
   SEARCH_HTTPS_HOST=ossrs.io SEARCH_HTTPS_PORT=443 \

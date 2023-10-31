@@ -90,7 +90,7 @@ jobs:
         run: |
           echo "Build build/zh-cn"
           docker run --rm -v $(pwd):/git -w /git -e SEARCH_APIKEY=${{ secrets.SEARCH_APIKEY }} \
-            ossrs/docs:docs-cache bash auto/build-en-stage0.sh
+            ossrs/node:18 bash auto/build-en-stage0.sh
       - uses: actions/upload-artifact@v2
         with:
           name: zh-cn
@@ -108,7 +108,7 @@ jobs:
         run: |
           echo "Build build/en-us"
           docker run --rm -v $(pwd):/git -w /git -e SEARCH_APIKEY=${{ secrets.SEARCH_APIKEY }} \
-            ossrs/docs:docs-cache bash auto/build-en-stage1.sh
+            ossrs/node:18 bash auto/build-en-stage1.sh
       - uses: actions/upload-artifact@v2
         with:
           name: en-us
