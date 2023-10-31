@@ -141,7 +141,11 @@ to contact us.
 
 In this tutorial, you create a live streaming service with aaPanel, publish a stream with OBS and then play it through a
 browser or WordPress. If you have further questions about SRS, [the wiki](/docs/v4/doc/introduction)
-is a good place to start. If you'd like to discuss with SRS community members, you are welcome to join us on [discord](https://discord.gg/yZ4BnPmHAd).
+is a good place to start.
+
+## Contact
+
+If you'd like to discuss with SRS community members, you are welcome to join us on [discord](https://discord.gg/yZ4BnPmHAd).
 
 ![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/blog-en/22-04-29-BT-aaPanel)
 

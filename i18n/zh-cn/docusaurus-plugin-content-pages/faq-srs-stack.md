@@ -580,6 +580,20 @@ SRS Stack的使用说明，请参考视频[SRS Stack：起步、购买和入门]
 
 ## HTTP Callback
 
+HTTP回调是指在Docker容器中运行的SRS Stack，向target URL发起HTTP请求。例如，以下过程说明了当OBS发送RTMP流时，
+SRS Stack会给你的服务器发起一个请求，你可以通过target URL来配置你的服务器地址。
+
+```bash
+              +-----------------------+
+              +                       +
+              +     +-----------+     +                 +--------------+
+OBS --RTMP->--+-----+ SRS Stack +-----+----HTTP--->-----+  Your Server +
+              +     +-----------+     +  (Target URL)   +--------------+
+              +                       +
+              +       Docker          +
+              +-----------------------+
+```
+
 所有请求的格式是json：
 
 * `Content-Type: application-json`
@@ -590,6 +604,33 @@ SRS Stack的使用说明，请参考视频[SRS Stack：起步、购买和入门]
 * 其他代表失败或错误。
 
 关于如何实现回调的处理，请参考[HTTP Callback](/docs/v6/doc/http-callback#go-example)
+
+### HTTP Callback: Connectivity Check
+
+有时，您可能需要验证网络是否可访问并确定要使用的适当目标URL。通过在Docker容器内使用curl命令，您可以模拟此请求并确认
+target URL是否可以通过curl或SRS Stack访问。
+
+首先，在SRS Stack的容器中安装curl：
+
+```bash
+docker exec -it srs-stack apt-get update -y
+docker exec -it srs-stack apt-get install -y curl
+```
+
+然后，用curl模拟SRS Stack发起一个HTTP请求：
+
+```bash
+docker exec -it srs-stack curl http://your-target-URL
+```
+
+你可以使用任何合法的target URL来测试，包括：
+
+* 内网IP：`http://192.168.1.10/check`
+* 公网IP：`http://159.133.96.20/check`
+* HTTP地址，使用域名： `http://your-domain.com/check`
+* HTTPS地址，使用域名：`https://your-domain.com/check`
+
+请记住，您应在SRS Stack Docker中测试与target URL的连通性，并避免从其他服务器运行curl命令。
 
 ### HTTP Callback: on_publish
 

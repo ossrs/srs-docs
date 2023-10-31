@@ -118,8 +118,11 @@ to contact us.
 ## Conclusion
 
 In this tutorial, you set-up the DNS A Record, downloaded SSL Certificates for your domain, configured Nginx to apply
-the certificate, and set-up automatic renewal. If you have further questions, please contact us by
-[discord](https://discord.gg/yZ4BnPmHAd).
+the certificate, and set-up automatic renewal.
+
+## Contact
+
+If you have further questions, please contact us by [discord](https://discord.gg/yZ4BnPmHAd).
 
 ![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/blog-en/22-04-12-SRS-Stack-HTTPS)
 

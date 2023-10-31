@@ -110,8 +110,11 @@ to contact us.
 ## Conclusion
 
 In this tutorial you’ve learned to set up the SRS WordPress plugin and embedded a stream on your post or page. If you
-have further questions about SRS, [the wiki](/docs/v4/doc/introduction) is a good place to start. If
-you’d like to discuss with SRS, you are welcome to [discord](https://discord.gg/yZ4BnPmHAd).
+have further questions about SRS, [the wiki](/docs/v4/doc/introduction) is a good place to start.
+
+## Contact
+
+If you’d like to discuss with SRS, you are welcome to [discord](https://discord.gg/yZ4BnPmHAd).
 
 ![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/blog-en/22-04-15-WordPress-Plugin)
 

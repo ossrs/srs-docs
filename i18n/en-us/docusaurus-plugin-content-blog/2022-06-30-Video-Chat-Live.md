@@ -24,6 +24,10 @@ algorithms, better performance on weak networks, client SDKs for all platforms, 
 to view the online demo. If you have any questions, please join our [Discord](https://discord.gg/DCCH6HyhuT) channel
 to contact us.
 
+## Contact
+
+Welcome for more discussion at [discord](https://discord.gg/bQUPDRqy79).
+
 ![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/blog-en/22-06-30-Video-Chat-Live)
 
 

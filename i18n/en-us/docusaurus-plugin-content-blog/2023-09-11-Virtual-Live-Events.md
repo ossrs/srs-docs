@@ -129,6 +129,8 @@ inexperienced streamers and enabling 24/7 streaming, virtual live events offer n
 various industries. SRS Stack simplifies the process of creating and broadcasting these events, catering 
 to the increasing demand for such interactive experiences in today's fast-paced world.
 
+## Contact
+
 Welcome for more discussion at [discord](https://discord.gg/bQUPDRqy79).
 
 ![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/blog-en/2023-09-11-Virtual-Live-Events)

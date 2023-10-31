@@ -83,6 +83,8 @@ downloading your live streams is simplified, making it easy for you to manage an
 content. By following the steps outlined in this blog, you can quickly and efficiently record your live 
 streams and make them available for your audience to access whenever they want.
 
+## Contact
+
 Welcome for more discussion at [discord](https://discord.gg/bQUPDRqy79).
 
 ![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/blog-en/2023-09-10-Record-Live-Streaming)

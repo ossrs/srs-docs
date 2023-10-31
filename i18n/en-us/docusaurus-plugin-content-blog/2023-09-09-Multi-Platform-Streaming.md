@@ -104,6 +104,8 @@ SRS Stack makes this process simple and efficient, allowing you to focus on crea
 care of the technical aspects. By following the steps outlined in this blog, you can easily set up live streaming 
 on multiple platforms like YouTube, Twitch, and Facebook, and take your content to the next level.
 
+## Contact
+
 Welcome for more discussion at [discord](https://discord.gg/bQUPDRqy79).
 
 ![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/blog-en/2023-09-09-Multi-Platform-Streaming)

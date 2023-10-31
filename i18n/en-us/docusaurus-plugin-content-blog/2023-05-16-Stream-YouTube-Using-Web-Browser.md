@@ -86,6 +86,8 @@ By adhering to these instructions, you can effectively live stream to YouTube vi
 This technique offers a practical alternative to OBS, enabling you to harness the power of WebRTC, SRS, and FFmpeg 
 for a smooth and efficient streaming experience.
 
+## Contact
+
 Welcome for more discussion at [discord](https://discord.gg/bQUPDRqy79).
 
 ![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/blog-en/2023-05-16-Stream-YouTube-Using-Web-Browser)

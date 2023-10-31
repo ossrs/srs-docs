@@ -122,6 +122,8 @@ and SRS media server, making it simpler for users to benefit from the bandwidth 
 By following the steps in this guide, you can create your own live streaming platform with HEVC and RTMP, and 
 play the streams using HTML5 players like mpegts.js, or VLC and ffplay for HLS streaming.
 
+## Contact
+
 Welcome for more discussion at [discord](https://discord.gg/bQUPDRqy79).
 
 ![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/blog-en/23-10-26-Unlock-the-Power-of-HEVC-via-RTMP)

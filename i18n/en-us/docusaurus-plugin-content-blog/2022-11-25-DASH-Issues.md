@@ -122,8 +122,11 @@ to contact us.
 ## Conclusion
 
 DASH is a relative new and good live streaming protocol. After about two years, SRS 5.0 has always been fixing bug and 
-now we think it's ready and stable to use DASH in your online product if you want. If you'd like to discuss with SRS, 
-you are welcome to [discord](https://discord.gg/yZ4BnPmHAd)
+now we think it's ready and stable to use DASH in your online product if you want.
+
+## Contact
+
+If you'd like to discuss with SRS, you are welcome to [discord](https://discord.gg/yZ4BnPmHAd)
 
 ![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/blog-en/2022-11-25-DASH-Issues)
 

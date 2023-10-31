@@ -111,6 +111,8 @@ GitHub Copilot and I wrote this article.
 
 The code of this feature was written by SRS developers and GitHub Copilot.
 
+## Contact
+
 Welcome for more discussion at [discord](https://discord.gg/bQUPDRqy79).
 
 ![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/blog-en/23-04-02-Secure-Your-HTTP-API)

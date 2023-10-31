@@ -566,16 +566,60 @@ Welcome to join the group to discuss the use of SRS Stack. All these SRS periphe
 
 ## HTTP Callback
 
-All requests should be:
+HTTP Callback refers to the SRS Stack running within a Docker container, initiating an HTTP request to 
+a target URL. For instance, the following process illustrates that when OBS publishs an RTMP stream to SRS Stack,
+the SRS Stack informs your server about the event by sending an HTTP request to the target URL.
+
+```bash
+              +-----------------------+
+              +                       +
+              +     +-----------+     +                 +--------------+
+OBS --RTMP->--+-----+ SRS Stack +-----+----HTTP--->-----+  Your Server +
+              +     +-----------+     +  (Target URL)   +--------------+
+              +                       +
+              +       Docker          +
+              +-----------------------+
+```
+
+All HTTP requests should be:
 
 * `Content-Type: application-json`
 
 All responses should use:
 
-* `Status: 200 OK` and `"code": 0` for success.
+* `Status: 200 OK` and `{"code": 0}` for success.
 * Otherwise, error or fail.
 
 See examples in [HTTP Callback](/docs/v6/doc/http-callback#go-example)
+
+### HTTP Callback: Connectivity Check
+
+Occasionally, you might need to verify if the network is accessible and determine the appropriate target URL to 
+use. By using the curl command inside the Docker container, you can simulate this request and confirm if the 
+target URL can be accessed by curl or the SRS Stack.
+
+First, install curl in SRS Stack:
+
+```bash
+docker exec -it srs-stack apt-get update -y
+docker exec -it srs-stack apt-get install -y curl
+```
+
+Then, simulate an HTTP request to your server:
+
+```bash
+docker exec -it srs-stack curl http://your-target-URL
+```
+
+You can use any target URL to test, such as:
+
+* Intranet IP: `http://192.168.1.10/check`
+* Internet IP: `http://159.133.96.20/check`
+* URL via HTTP: `http://your-domain.com/check`
+* URL in HTTPS: `https://your-domain.com/check`
+
+Keep in mind that you should test the connection to the target URL within the SRS Stack Docker, and avoid 
+running the curl command from a different server.
 
 ### HTTP Callback: on_publish
 

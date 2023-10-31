@@ -98,6 +98,8 @@ covered setting up SRS Stack and FFmpeg, creating a configuration file, and push
 SRS Stack. Monitoring and adjusting settings is crucial for optimal viewer experience, and transcoding can also 
 convert high-resolution streams to lower resolutions for mobile devices.
 
+## Contact
+
 Welcome for more discussion at [discord](https://discord.gg/bQUPDRqy79).
 
 ![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/blog-en/2023-10-21-Live-Transcoding)

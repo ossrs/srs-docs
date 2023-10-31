@@ -118,6 +118,8 @@ been easier, thanks to SRS Stack. With just a few simple steps, you can set up y
 live to various platforms, enhancing your live streaming experience. So, go ahead and give SRS Stack a try, and 
 enjoy the convenience and flexibility it offers for your IP camera streaming needs.
 
+## Contact
+
 Welcome for more discussion at [discord](https://discord.gg/bQUPDRqy79).
 
 ![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/blog-en/2023-10-11-Stream-IP-Camera-Events)
