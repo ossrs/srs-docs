@@ -94,7 +94,7 @@ jobs:
       - uses: actions/upload-artifact@v2
         with:
           name: zh-cn
-          path: build/zh-cn.tar.bz2
+          path: build/zh-cn.tar
 
   docker1:
     name: docker1
@@ -112,7 +112,7 @@ jobs:
       - uses: actions/upload-artifact@v2
         with:
           name: en-us
-          path: build/en-us.tar.bz2
+          path: build/en-us.tar
 
   docker:
     name: docker
