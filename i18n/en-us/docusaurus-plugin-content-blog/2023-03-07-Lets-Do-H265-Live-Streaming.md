@@ -169,7 +169,15 @@ The known issues for HEVC live streaming:
 3. All browsers support MSE except iOS, and note that HEVC MSE requires GPU hardware decoding.
 4. For H5 player, only mpegts.js supports HEVC, neither hls.js nor dash.js support it.
 
-On some use scenario, HEVC is available now, please evaluate it by yourself. 
+On some use scenario, HEVC is available now, please evaluate it by yourself.
+
+## TRTC Cloud Service
+
+We also recommend the TRTC cloud services, because it supports global network acceleration, improved congestion control
+algorithms, better performance on weak networks, client SDKs for all platforms, and a monthly free quota. Click
+[here](https://trtc.io/demo?utm_source=community&utm_medium=ossrs&utm_campaign=OBS-WHIP-TRTC&_channel_track_key=lfJKyOlF)
+to view the online demo. If you have any questions, please join our [Discord](https://discord.gg/DCCH6HyhuT) channel
+to contact us.
 
 ## Thanks
 

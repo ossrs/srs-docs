@@ -1,20 +1,30 @@
 ---
 slug: Virtual-Live-Events
-title: SRS Stack - Virtual Live Events - Revolutionizing the Way We Experience Entertainment
+title: SRS Stack - Virtual Live Events - Harness the Power of Pre-Recorded Content for Seamless and Engaging Live Streaming Experiences
 authors: []
 tags: [live streaming, virual live events, srs]
 custom_edit_url: null
 ---
 
-# Virtual Live Events: Revolutionizing the Way We Experience Entertainment
+# Mastering Virtual Live Events: Harness the Power of Pre-Recorded Content for Seamless and Engaging Live Streaming Experiences
 
 ## Introduction
+
+Virtual live events refers to converting recorded video files, devices, or network streams into live 
+broadcasts and pushing them to live streaming platforms. For example, in e-commerce live streaming, 
+you can pre-record product explanations and demonstrations. In educational live streaming, you can 
+pre-record lessons and play them in the live classroom. For online speeches and sharing, you can 
+play pre-recorded content in the live room. 
+
+Virtual live events allows streamers to have plenty of preparation time, making the content more polished. 
+It helps reduce anxiety for inexperienced streamers, prevents network issues, enables 24/7 live streaming, 
+reaches a wider audience, and offers more possibilities for live broadcasts.
+
+<!--truncate-->
 
 SRS Stack enables you to create virtual live events with just one click, broadcasting them to multiple platforms
 like YouTube, Twitch, and Facebook. In this blog post, we'll walk you through the steps to create a virtual live
 event using SRS Stack.
-
-<!--truncate-->
 
 In today's fast-paced world, virtual live events are becoming increasingly popular due to the convenience 
 they offer. Whether it's a concert, a soccer game, or an online course, you can now create a virtual live 
@@ -95,14 +105,29 @@ Open the SRS Stack dashboard and click on `Scenarios > VirtualLive > Facebook`. 
 
 ![](/img/blog-2023-09-11-13.png)
 
+## (Optional) Upload Video File by Other Tools
+
+You can also upload the video file to the `/data/upload` folder using tools like FTP or SCP. After that, choose 
+`Use server file`, enter the video file's path, and utilize it as a virtual live source.
+
+This method enables you to upload very large files, particularly when webpage-based uploads fail. By using professional 
+upload tools, you can resume uploads or accelerate the process with multi-threading and other features.
+
+## TRTC Cloud Service
+
+We also recommend the TRTC cloud services, because it supports global network acceleration, improved congestion control
+algorithms, better performance on weak networks, client SDKs for all platforms, and a monthly free quota. Click
+[here](https://trtc.io/demo?utm_source=community&utm_medium=ossrs&utm_campaign=OBS-WHIP-TRTC&_channel_track_key=lfJKyOlF)
+to view the online demo. If you have any questions, please join our [Discord](https://discord.gg/DCCH6HyhuT) channel
+to contact us.
+
 ## Conclusion
 
-Virtual live events have revolutionized the way we experience entertainment, making it more 
-accessible and interactive than ever before. With SRS Stack, creating a virtual live event 
-is as easy as a few clicks, allowing you to engage with your audience and create memorable 
-experiences. Whether you're hosting a concert, a sports event, or an online course, virtual 
-live events are the future of entertainment, and SRS Stack is here to help you make the most
-of it.
+In conclusion, virtual live events provide a convenient and efficient way to broadcast pre-recorded content on 
+various platforms, making it more polished and accessible to a wider audience. By reducing anxiety for 
+inexperienced streamers and enabling 24/7 streaming, virtual live events offer numerous possibilities for 
+various industries. SRS Stack simplifies the process of creating and broadcasting these events, catering 
+to the increasing demand for such interactive experiences in today's fast-paced world.
 
 Welcome for more discussion at [discord](https://discord.gg/bQUPDRqy79).
 

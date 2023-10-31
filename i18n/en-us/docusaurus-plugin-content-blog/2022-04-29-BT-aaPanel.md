@@ -129,6 +129,14 @@ either use a browser, or through WordPress:
 For details about WordPress shortcodes, please read this tutorial: [how to publish your SRS livestream through WordPress](https://blog.ossrs.io/publish-your-srs-livestream-through-wordpress-ec18dfae7d6f).
 There is also a live demonstration here [SRS Player Demo](https://wp.ossrs.io/2022/04/25/srs-player/).
 
+## TRTC Cloud Service
+
+We also recommend the TRTC cloud services, because it supports global network acceleration, improved congestion control
+algorithms, better performance on weak networks, client SDKs for all platforms, and a monthly free quota. Click
+[here](https://trtc.io/demo?utm_source=community&utm_medium=ossrs&utm_campaign=OBS-WHIP-TRTC&_channel_track_key=lfJKyOlF)
+to view the online demo. If you have any questions, please join our [Discord](https://discord.gg/DCCH6HyhuT) channel
+to contact us.
+
 ## Conclusion
 
 In this tutorial, you create a live streaming service with aaPanel, publish a stream with OBS and then play it through a

@@ -20,7 +20,7 @@ Why should you use [k8s](https://docs.kubernetes.io/docs/concepts/overview/what-
 This tutorial highlights how to build SRS cluster for a variety of scenarios in [ACK(AlibabaCloud Container Service for Kubernetes)](https://www.alibabacloud.com/product/kubernetes).
 
 1. [Deploy to Cloud Platforms](./k8s.md#deploy-to-cloud-platforms): Clone template project and use actions to deploy.
-2. [Quick Start](./k8s.md#quick-start): Deployment a SRS origin server in ACK.
+2. [Quick Start](./k8s.md#quick-start): Deployment an SRS origin server in ACK.
 3. [SRS Shares Volume with Nginx](./k8s.md#srs-shares-volume-with-nginx): SRS is able to deliver simple HTTP content, or work with Nginx, SRS delivers RTMP/HTTP-FLV and write HLS to a share volume, then Nginx reads and delivers HLS.
 4. [SRS Edge Cluster for High Concurrency Streaming](./k8s.md#srs-edge-cluster-with-slb): SRS edge cluster, which is configured and updated automatically, to provide services for huge players.
 5. [SRS Origin Cluster for a Large Number of Streams](./k8s.md#srs-origin-cluster-for-a-large-number-of-streams): SRS origin cluster is designed to serve a large number of streams.

@@ -77,6 +77,14 @@ I tested the TRTC cloud service and it works great with OBS WHIP. If you're look
 a WHIP cloud service that has 24/7 support, I definitely suggest trying TRTC. To see a 
 demo, click [here](https://tencent-rtc.github.io/obs-trtc/).
 
+## TRTC Cloud Service
+
+We also recommend the TRTC cloud services, because it supports global network acceleration, improved congestion control
+algorithms, better performance on weak networks, client SDKs for all platforms, and a monthly free quota. Click
+[here](https://trtc.io/demo?utm_source=community&utm_medium=ossrs&utm_campaign=OBS-WHIP-TRTC&_channel_track_key=lfJKyOlF)
+to view the online demo. If you have any questions, please join our [Discord](https://discord.gg/DCCH6HyhuT) channel
+to contact us.
+
 ## Conclusion
 
 In this tutorial, we explored the ultra-low latency live streaming capabilities of OBS WHIP and 

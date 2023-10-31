@@ -99,6 +99,14 @@ will not play on your website.
 Please follow [these instructions](./2022-04-12-SRS-Stack-HTTPS.md) to
 setup an SSL certificate for your SRS streaming server. After this setup your video will play on your website.
 
+## TRTC Cloud Service
+
+We also recommend the TRTC cloud services, because it supports global network acceleration, improved congestion control
+algorithms, better performance on weak networks, client SDKs for all platforms, and a monthly free quota. Click
+[here](https://trtc.io/demo?utm_source=community&utm_medium=ossrs&utm_campaign=OBS-WHIP-TRTC&_channel_track_key=lfJKyOlF)
+to view the online demo. If you have any questions, please join our [Discord](https://discord.gg/DCCH6HyhuT) channel
+to contact us.
+
 ## Conclusion
 
 In this tutorial you’ve learned to set up the SRS WordPress plugin and embedded a stream on your post or page. If you
