@@ -19,7 +19,7 @@ Streaming video is very popular in a variety of industries, and there are many t
 Literally it's not just a media server, and seems a bit complicated, right? Yep and No!
 
 * Yep! Building a video streaming service is something really difficult, not easy. It requires video streaming engineering, also backend service technology like Nodejs or Go, and frontend skills to build a mgmt and homepage.
-* No! Rather than build all from scratch, we could build a video streaming service based on some open source solution such as [SRS Stack](https://github.com/ossrs/srs-stack), and lightweight cloud service such as [DigitalOcean](https://digitalocean.com) or [TencentCloud](https://intl.cloud.tencent.com), it's really simple to build your video streaming service.
+* No! Rather than build all from scratch, we could build a video streaming service based on some open source solution such as [SRS Stack](https://github.com/ossrs/srs-stack), and lightweight cloud service such as [DigitalOcean](https://digitalocean.com) or [AWS](https://console.aws.amazon.com), it's really simple to build your video streaming service.
 
 In this tutorial, you will learn how to set-up a video streaming service, supports publishing by browser without a plugin that is converting WebRTC to HLS, to deliver low latency (about 300ms) video streaming  using SRT, and to secure the service by authentication. Furthermore, this solution is open source and very easy to get it done, via even 1-Click.
 
@@ -30,7 +30,7 @@ In this tutorial, you will learn how to set-up a video streaming service, suppor
 To complete this guide, you need:
 
 1. OBS installed, following instructions [here](https://obsproject.com/) to download and install OBS.
-1. An account of [DigitalOcean](https://cloud.digitalocean.com/login) or [TencentCloud](https://intl.cloud.tencent.com/login), to create a lightweight cloud server.
+1. An account of [DigitalOcean](https://cloud.digitalocean.com/login) or [AWS](https://console.aws.amazon.com), to create a lightweight cloud server.
 
 This guide will use placeholder `your_public_ipv4` and `your_domain_name` throughout for streaming URLs. Please replace them with your own IP address or domain name.
 
