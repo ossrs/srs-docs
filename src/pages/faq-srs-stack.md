@@ -616,7 +616,7 @@ You can use any target URL to test, such as:
 * Intranet IP: `http://192.168.1.10/check`
 * Internet IP: `http://159.133.96.20/check`
 * URL via HTTP: `http://your-domain.com/check`
-* URL in HTTPS: `https://your-domain.com/check`
+* URL via HTTPS: `https://your-domain.com/check`
 
 Keep in mind that you should test the connection to the target URL within the SRS Stack Docker, and avoid 
 running the curl command from a different server.
