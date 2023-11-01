@@ -289,6 +289,9 @@ SRS supports WHIP and WHEP protocols. After installing SRS, you can test it with
 * To use WHEP for playback: [http://localhost:1985/rtc/v1/whep/?app=live&stream=livestream](http://localhost:8080/players/whep.html)
 
 For details on the protocols, refer to [WHIP](./http-api.md#webrtc-publish) and [WHEP](./http-api.md#webrtc-play).
+Bellow is the workflow:
+
+[![](/img/doc-whip-whep-workflow.png)](https://www.figma.com/file/fA75Nl6Fr6v8hsrJba5Xrn/How-Does-WHIP%2FWHEP-Work%3F?type=whiteboard&node-id=0-1)
 
 If you install SRS on a Mac or Linux, you can test the local SRS service with localhost. However, if you're using 
 Windows, a remote Linux server, or need to test on other devices, you must use HTTPS for WHIP streaming, while 

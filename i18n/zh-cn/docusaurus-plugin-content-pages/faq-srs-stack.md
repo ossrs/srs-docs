@@ -697,6 +697,7 @@ Response:
     * HELM: Disable NAME_LOOKUP by default. [v5.11.5](https://github.com/ossrs/srs-stack/releases/tag/v5.11.5)
     * Refine env variable for bool. v5.11.7
     * RTC: Refine WHIP player and enable NAME_LOOKUP by default. v5.11.8
+    * RTC: Update WHIP and WHEP player. v5.11.9
 * v5.10
     * Refine README. v5.10.1
     * Refine DO and droplet release script. v5.10.2

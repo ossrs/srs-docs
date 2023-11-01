@@ -278,7 +278,9 @@ SRS支持WHIP和WHEP协议。安装好SRS后，可以直接点击下面的地址
 * 使用WHIP推流: [http://localhost:1985/rtc/v1/whip/?app=live&stream=livestream](http://localhost:8080/players/whip.html)
 * 使用WHEP播放: [http://localhost:1985/rtc/v1/whep/?app=live&stream=livestream](http://localhost:8080/players/whep.html)
 
-关于协议的具体实现细节，请参考[WHIP](./http-api.md#webrtc-publish)和[WHEP](./http-api.md#webrtc-play).
+关于协议的具体实现细节，请参考[WHIP](./http-api.md#webrtc-publish)和[WHEP](./http-api.md#webrtc-play)。下面是交互图：
+
+[![](/img/doc-whip-whep-workflow.png)](https://www.figma.com/file/fA75Nl6Fr6v8hsrJba5Xrn/How-Does-WHIP%2FWHEP-Work%3F?type=whiteboard&node-id=0-1)
 
 如果是在Mac或Linux上安装SRS，可以通过localhost测试本机的SRS服务。但是若在Windows，或者远程Linux服务器，或者需要在其他
 设备上测试，则必须使用HTTPS WHIP推流，而WHEP则依然可以HTTP。可以开启SRS的HTTPS参考[HTTPS API](./http-api.md#https-api)，
