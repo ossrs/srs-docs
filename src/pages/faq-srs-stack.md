@@ -571,14 +571,14 @@ a target URL. For instance, the following process illustrates that when OBS publ
 the SRS Stack informs your server about the event by sending an HTTP request to the target URL.
 
 ```bash
-              +-----------------------+
-              +                       +
-              +     +-----------+     +                 +--------------+
-OBS --RTMP->--+-----+ SRS Stack +-----+----HTTP--->-----+  Your Server +
-              +     +-----------+     +  (Target URL)   +--------------+
-              +                       +
-              +       Docker          +
-              +-----------------------+
+                   +-----------------------+
+                   +                       +
++-------+          +     +-----------+     +                 +--------------+
++  OBS  +--RTMP->--+-----+ SRS Stack +-----+----HTTP--->-----+  Your Server +
++-------+          +     +-----------+     +  (Target URL)   +--------------+
+                   +                       +
+                   +       Docker          +
+                   +-----------------------+
 ```
 
 All HTTP requests should be:
@@ -685,6 +685,7 @@ The following are the update records for the SRS Stack server.
     * HELM: Support resolve name to ip for rtc. v5.11.4
     * HELM: Disable NAME_LOOKUP by default. [v5.11.5](https://github.com/ossrs/srs-stack/releases/tag/v5.11.5)
     * Refine env variable for bool. v5.11.7
+    * RTC: Refine WHIP player and enable NAME_LOOKUP by default. v5.11.8
 * v5.10
     * Refine README. v5.10.1
     * Refine DO and droplet release script. v5.10.2

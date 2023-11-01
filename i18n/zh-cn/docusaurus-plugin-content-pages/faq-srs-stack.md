@@ -584,14 +584,14 @@ HTTP回调是指在Docker容器中运行的SRS Stack，向target URL发起HTTP�
 SRS Stack会给你的服务器发起一个请求，你可以通过target URL来配置你的服务器地址。
 
 ```bash
-              +-----------------------+
-              +                       +
-              +     +-----------+     +                 +--------------+
-OBS --RTMP->--+-----+ SRS Stack +-----+----HTTP--->-----+  Your Server +
-              +     +-----------+     +  (Target URL)   +--------------+
-              +                       +
-              +       Docker          +
-              +-----------------------+
+                   +-----------------------+
+                   +                       +
++-------+          +     +-----------+     +                 +--------------+
++  OBS  +--RTMP->--+-----+ SRS Stack +-----+----HTTP--->-----+  Your Server +
++-------+          +     +-----------+     +  (Target URL)   +--------------+
+                   +                       +
+                   +       Docker          +
+                   +-----------------------+
 ```
 
 所有请求的格式是json：
@@ -696,6 +696,7 @@ Response:
     * HELM: Support resolve name to ip for rtc. v5.11.4
     * HELM: Disable NAME_LOOKUP by default. [v5.11.5](https://github.com/ossrs/srs-stack/releases/tag/v5.11.5)
     * Refine env variable for bool. v5.11.7
+    * RTC: Refine WHIP player and enable NAME_LOOKUP by default. v5.11.8
 * v5.10
     * Refine README. v5.10.1
     * Refine DO and droplet release script. v5.10.2

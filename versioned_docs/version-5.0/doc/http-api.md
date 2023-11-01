@@ -323,11 +323,11 @@ Please also see examples at [srs.sdk.js](https://github.com/ossrs/srs/blob/devel
 
 ## WebRTC Play
 
-In order to pull stream over WebRTC from SRS, SRS also supports [WHIP](https://datatracker.ietf.org/doc/draft-ietf-wish-whip/). 
+In order to pull stream over WebRTC from SRS, SRS also supports [WHEP](https://datatracker.ietf.org/doc/draft-murillo-whep/). 
 The request is defined as:
 
 ```text
-POST /rtc/v1/whip-play/?app=live&stream=livestream
+POST /rtc/v1/whep/?app=live&stream=livestream
 
 Body in SDP, the Content-type is application/sdp:
 

@@ -7,24 +7,57 @@ hide_table_of_contents: false
 
 # WebRTC
 
-WebRTC是通信的能力，从技术上看是两个或多个客户端，让用户具备互动的能力。
-人对于延迟的感知是400ms，也就是一般的对话能顺利进行，这是RTC的核心指标。
-由于端和端之间有关联，导致系统复杂度比直播高了多个数量级，这是很多问题的根源。
+WebRTC是Google开源的在线实时通信的方案，简单来讲就是互联网音视频会议，由于是RFC标准协议，并且浏览器支持，
+因此也不断的在拓展边界，应用在低延迟的音视频场景，比如在线会议、直播连麦、低延迟直播、远程机器人控制、远程桌面、
+云游戏、智能门铃、直播的网页推流等。
+
+WebRTC实际上是两个Web浏览器之间直接通信的标准，主要包含了信令(Signaling)和媒体(Media)两个部分的协议。
+信令解决两个设备之间的能力的协商的问题，比如支持的编解码能力。媒体解决两个设备之间加密和低延迟媒体包传输的能力。
+除此之外，WebRTC本身还实现了语言处理技术比如3A，网络拥塞控制比如NACK、FEC和GCC，音视频编解码，平滑和低延迟播放技术。
+
+```bash
++----------------+                        +----------------+
++    Browser     +----<--Signaling----->--+    Browser     +
++ (like Chrome)  +----<----Media----->----+ (like Chrome)  +
++----------------+                        +----------------+
+```
+
+> Note: WebRTC已经是RFC正式标准，因此各种浏览器都已经支持，而开源的实现也很多，因此不限于浏览器，移动端的浏览器和
+> Native库也有很多，因此为了沟通的简单起见，本文一般以浏览器指代所有支持WebRTC协议的客户端或设备。
+
+实际上，在互联网上，两个浏览器几乎无法直接通信，特别是不在一个局域网，而且是在远距离跨城市甚至跨国家时，两个浏览器之间
+传输数据会经过非常多的网络路由器和防火墙，因此传输质量无法保障。因此，实际应用是需要经过服务器中转，而WebRTC服务器有
+几种类型：
+
+* Signaling Server: 信令服务，两个浏览器之间交换SDP的服务。如果是多人会议，则需要提供房间服务，本质上都是为各个浏览器交换SDP。而在流媒体领域，为了可以使用WebRTC推流和播放，像推送和播放RTMP/SRT/HLS流一样，WHIP/WHEP协议被设计出来了。
+* TURN Server: 转发服务，帮助两个浏览器之间转发媒体数据的服务。这是一种透明转发服务，并不会实现数据缓存，因此当多人会议时，浏览器之间需要传输`N*N + N*(N-2)`份数据。一般只应用在非常少的通信场景中，比如一对一。
+* SFU Server: 选择性转发服务，服务器上有缓存数据，因此浏览器只需要上传一份数据，服务器会复制给其他参会者。SRS就是SFU，关于SFU的作用可以参考[这里](https://stackoverflow.com/a/75491178/17679565)。目前主要的WebRTC服务器都是SFU服务器，会有`N*N`份流传输，比TURN少`N*(N-2)`份上行数据传输，能解决大部分的传输问题。
+* MCU Server: 多点控制服务，服务器将会议中的流合并成一路，这样浏览器只需要传输`N*2`份数据，上传一路下载一路数据。但由于需要编解码，服务器支持的流的数量比SFU要少一个量级，只有在某些特定场景才会采用，具体参考[#3625](https://github.com/ossrs/srs/discussions/3625)
+
+我们重点介绍SFU的工作流，因为SFU是在WebTC服务器中使用最多的，它本质上就是一个浏览器：
+
+```bash
++----------------+                        +---------+
++    Browser     +----<--Signaling----->--+   SFU   +
++ (like Chrome)  +----<----Media----->----+  Server +
++----------------+                        +---------+
+```
+
+> Note: SFU一般都会有Signaling的能力，其实可以把RTMP地址也可以看成是一种非常简化的信令协议，只是WebRTC的信令需要协商
+> 媒体和传输能力，所以比较复杂。在复杂的WebRTC系统中，可能有独立的Signaling和Room集群，但是SFU同样也会有简化的Signaling能力，
+> 只是可能是用于和其他服务通信。
+
+SRS是一个媒体服务器，提供了Signaling和SFU Server的能力。和其他SFU比如Janus不同的是，SRS是基于Stream的，尽管房间中
+可以有多个参与者，本质上都是有人在推流，其他人在订阅这个流。这样可以避免将房间中的所有流，都耦合到一个SFU传输，可以分散到
+多个SFU传输，这样可以支持更多人的会议。
+
+SRS支持的Signaling就是WHIP和WHEP，具体请参考[HTTP API](#http-api)部分。和直播很不一样的是，由于Signaling和Media分离，
+因此需要设置Candidate，详细参考[Candidate](#config-candidate)。Media默认使用UDP传输，若UDP不可用也可以用TCP参考
+[TCP](#webrtc-over-tcp)。若遇到不可用的情况，很有可能是Candidate设置不对，也有可能是防火墙或端口不通，请参考
+[Connectivity](#connection-failures)使用工具检查。SRS还支持了不同协议的转换，比如推流RTMP后用WebRTC观看参考
+[RTMP to WebRTC](#rtmp-to-rtc)，或者用WebRTC推流后用HLS观看参考[RTC to RTMP](#rtc-to-rtmp)。
 
 SRS是在2020年支持的WebRTC协议，研发的详细过程请参考[#307](https://github.com/ossrs/srs/issues/307)。
-直播和RTC的协议或能力，是SRS的核心能力，新的音视频开发者，将不会区分直播和RTC，因为都是互联网视频能力。
-
-SRS对直播和RTC这两种能力的抽象，是流(Stream)，一个流会有多个消费者(Consumer)，流之间没有关联。
-基于流，我们构造了各种业务的能力，比如集群、录制、转码、转发。
-基于这些业务能力，我们提供了各种场景下的DEMO，比如低延迟直播、一对一通话、多人通话、连麦等等。
-
-开源最强大的是开放，因为开放所以和每个开发者有关系。
-开源最大的问题是没有SLA，只能提供DEMO不能提供服务，也不能及时给予开发者支持。
-和开源结合的云服务，弥补了开源的短板，SRS的开源方案，会和云服务对接，利用云服务的能力补充开源没有SLA的短板。
-
-对于RTC，SRS提供两个关键的能力：
-* 开源的全链路能力、方案和DEMO，能快速搭建和了解RTC系统。
-* 无缝（尽量）对接云服务，平滑（尽量）迁移到云，保障业务的发展。
 
 ## Config
 
@@ -186,30 +219,23 @@ docker run --rm --env CANDIDATE=$CANDIDATE \
 
 ## Stream URL
 
-直播和WebRTC的基本概念都是流(Stream)，流的URL定义有很高的概念一致性，
-参考下面SRS的几个演示流：
+在SRS中，直播和WebRTC的基本概念都是流(Stream)，因此，流的URL定义有很高的概念一致性。参考下面SRS的几种不同协议的流地址，
+安装完SRS后可以直接打开：
 
-* [webrtc://d.ossrs.net/live/livestream](http://ossrs.net/players/rtc_player.html?vhost=d.ossrs.net&server=d.ossrs.net&port=1985&autostart=true)
-* [http://d.ossrs.net/live/livestream.flv](http://ossrs.net/players/srs_player.html?app=live&stream=livestream.flv&server=d.ossrs.net&port=80&autostart=true&vhost=d.ossrs.net&schema=http)
-* rtmp://d.ossrs.net/live/livestream
-
-在线演示，WebRTC推流，WebRTC播放：
-
-* 推流：[webrtc://d.ossrs.net/live/show](https://ossrs.net/players/rtc_publisher.html?vhost=d.ossrs.net&server=d.ossrs.net&api=443&autostart=true&schema=https&stream=show)
-* 播放：[webrtc://d.ossrs.net/live/show](https://ossrs.net/players/rtc_player.html?vhost=d.ossrs.net&server=d.ossrs.net&api=443&autostart=true&schema=https&stream=show)
-
-> Remark: 可能会比较卡，因为服务器支持3个并发观看。
+* 使用RTMP推流或播放: `rtmp://localhost/live/livestream`
+* 使用HTTP-FLV播放流: [http://localhost:8080/live/livestream.flv](http://localhost:8080/players/srs_player.html)
+* 使用HLS播放流: [http://localhost:8080/live/livestream.m3u8](http://localhost:8080/players/srs_player.html?stream=livestream.m3u8)
+* 使用WHIP推流: [http://localhost:1985/rtc/v1/whip/?app=live&stream=livestream](http://localhost:8080/players/whip.html)
+* 使用WHEP播放流: [http://localhost:1985/rtc/v1/whep/?app=live&stream=livestream](http://localhost:8080/players/whep.html)
 
 > Remark: 由于Flash已经被禁用，RTMP流无法在Chrome播放，请使用VLC播放。
 
-本机启动SRS(参考[usage](https://github.com/ossrs/srs/tree/4.0release#usage))，开启直播和RTC，对应的流地址是：
+早期还没有WHIP和WHEP时，SRS支持过另外一种格式，只是HTTP API的格式不同，做的事情还是交换SDP。现在已经不推荐使用了：
 
-* VLC(RTMP): rtmp://localhost/live/livestream
-* H5(HTTP-FLV): [http://localhost:8080/live/livestream.flv](http://localhost:8080/players/srs_player.html?autostart=true&stream=livestream.flv&port=8080&schema=http)
-* H5(HLS): [http://localhost:8080/live/livestream.m3u8](http://localhost:8080/players/srs_player.html?autostart=true&stream=livestream.m3u8&port=8080&schema=http)
-* H5(WebRTC): [webrtc://localhost/live/livestream](http://localhost:8080/players/rtc_player.html?autostart=true)
+* Publish: [webrtc://localhost/live/livestream](http://localhost:8080/players/rtc_publisher.html)
+* Play: [webrtc://localhost/live/livestream](http://localhost:8080/players/rtc_player.html)
 
-SRS的URL定义，遵守的是HTTP的URL定义，不同的流的schema不同，比如RTC的是`webrtc`。
+> Note: 这里没有给出SRT的地址，因为SRT的地址设计并不是常见的URL格式。
 
 ## WebRTC over TCP
 
@@ -247,12 +273,18 @@ ffmpeg -re -i ./doc/source.flv -c copy -f flv rtmp://localhost/live/livestream
 
 ## HTTP API
 
-SRS支持WHIP和WHEP协议。
+SRS支持WHIP和WHEP协议。安装好SRS后，可以直接点击下面的地址测试：
 
-* WHIP: [http://localhost:1985/rtc/v1/whip/?app=live&stream=livestream](http://localhost:8080/players/whip.html)
-* WHEP: [http://localhost:1985/rtc/v1/whep/?app=live&stream=livestream](http://localhost:8080/players/whep.html)
+* 使用WHIP推流: [http://localhost:1985/rtc/v1/whip/?app=live&stream=livestream](http://localhost:8080/players/whip.html)
+* 使用WHEP播放: [http://localhost:1985/rtc/v1/whep/?app=live&stream=livestream](http://localhost:8080/players/whep.html)
 
-SRS也支持遗留的私有HTTP API，请参考[publish](./http-api.md#webrtc-publish)和[play](./http-api.md#webrtc-play).
+关于协议的具体实现细节，请参考[WHIP](./http-api.md#webrtc-publish)和[WHEP](./http-api.md#webrtc-play).
+
+如果是在Mac或Linux上安装SRS，可以通过localhost测试本机的SRS服务。但是若在Windows，或者远程Linux服务器，或者需要在其他
+设备上测试，则必须使用HTTPS WHIP推流，而WHEP则依然可以HTTP。可以开启SRS的HTTPS参考[HTTPS API](./http-api.md#https-api)，
+也可以使用Web服务器代理比如Nginx参考[HTTPS Proxy](./http-api.md#http-and-https-proxy)。
+
+若需要测试是否HTTP API正常工作，可以使用`curl`工具，具体请参考[Connectivity Check](#connection-failures)。
 
 ## Connection Failures
 

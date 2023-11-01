@@ -7,7 +7,75 @@ hide_table_of_contents: false
 
 # WebRTC
 
-https://github.com/ossrs/srs/issues/307
+WebRTC is an online real-time communication solution open-sourced by Google. In simple terms, it is an 
+internet audio and video conference system. As it follows the RFC standard protocol and is supported 
+by browsers, its boundaries are constantly expanding. It is used in low-latency audio and video scenarios,
+such as online meetings, live streaming video chat with guests, low-latency live broadcasts, remote 
+robot control, remote desktop, cloud video game, smart doorbells, and live web page streaming.
+
+WebRTC is essentially a standard for direct communication between two web browsers, mainly consisting
+of signaling and media protocols. Signaling deals with the negotiation of capabilities between two
+devices, such as supported encoding and decoding abilities. Media handles the encryption and low-latency
+transmission of media packets between devices. In addition, WebRTC itself also implements audio processing
+technologies like 3A, network congestion control such as NACK, FEC, and GCC, audio and video encoding
+and decoding, as well as smooth and low-latency playback technologies.
+
+```bash
++----------------+                        +----------------+
++    Browser     +----<--Signaling----->--+    Browser     +
++ (like Chrome)  +----<----Media----->----+ (like Chrome)  +
++----------------+                        +----------------+
+```
+
+> Note: WebRTC is now an official RFC standard, so it is supported by various browsers. There are many
+> open-source implementations, making it available not only in browsers but also in mobile browsers and
+> native libraries. For simplicity, in this post, the term "browser" refers to any client or device that
+> supports the WebRTC protocol.
+
+In reality, on the internet, it's almost impossible for two browsers to communicate directly, especially 
+when they're not on the same local network and are located far apart, like in different cities or countries. 
+The data transfer between the two browsers goes through many network routers and firewalls, making it hard 
+to ensure good transmission quality. Therefore, in practical applications, data needs to be relayed through 
+servers. There are several types of WebRTC servers to help with this process:
+
+* Signaling Server: This is a service that helps two browsers exchange SDP (Session Description Protocol) information. For multi-person conferences, room services are needed, but the main purpose is still to exchange SDP between browsers. In the streaming media field, to enable WebRTC for streaming and playback, similar to RTMP/SRT/HLS streaming, the WHIP/WHEP protocols have been designed.
+* TURN Server: Relay service that helps two browsers forward media data between them. This is a transparent forwarding service without data caching, so during multi-person meetings, browsers need to transfer `N*N + N*(N-2)` copies of data. It is generally used in very few communication scenarios, such as one-on-one.
+* SFU Server: Selective forwarding service with cached data on the server, allowing browsers to upload only one copy of data, which the server then replicates to other participants. SRS is an example of an SFU. For more information on SFU's role, refer to [this link](https://stackoverflow.com/a/75491178/17679565). Most current WebRTC servers are SFU servers, with `N*N` streams being transferred, reducing the amount of data transfer by `N*(N-2)` compared to TURN servers. This helps solve most transmission issues.
+* MCU Server: Multipoint Control Unit Server, the server merges the streams in a conference into one, so the browser only needs to transfer `N*2` sets of data, uploading one and downloading one. However, due to the need for encoding and decoding, the number of streams supported by the server is an order of magnitude less than SFU, and it is only used in certain specific scenarios. For more details, refer to [#3625](https://github.com/ossrs/srs/discussions/3625).
+
+We primarily focus on explaining the SFU (Selective Forwarding Unit) workflow, as it is widely used in
+WebRTC servers, and it essentially functions like a browser:
+
+```bash
++----------------+                        +---------+
++    Browser     +----<--Signaling----->--+   SFU   +
++ (like Chrome)  +----<----Media----->----+  Server +
++----------------+                        +---------+
+```
+
+> Note: Generally, SFUs have Signaling capabilities. In fact, RTMP addresses can be considered as a very
+> simplified signaling protocol. However, WebRTC signaling requires more complex negotiation of media and
+> transport capabilities. In complex WebRTC systems, there might be separate Signaling and Room clusters,
+> but SFUs also have simplified Signaling capabilities, which may be used for communication with other
+> services.
+
+SRS is a media server that provides Signaling and SFU Server capabilities. Unlike other SFUs like Janus, 
+SRS is based on streams. Even though there can be multiple participants in a room, essentially, someone is 
+pushing a stream, and others are subscribing to it. This way, it avoids coupling all the streams in a room to 
+a single SFU transmission and can distribute them across multiple SFU transmissions, allowing for larger 
+conferences with more participants.
+
+SRS supports signaling protocols WHIP and WHEP. For more details, please refer to the [HTTP API](#http-api) 
+section. Unlike live streaming, signaling and media are separated, so you need to set up Candidates, see 
+[Candidate](#config-candidate). Media uses UDP by default, but if UDP is unavailable, you can use TCP as described in 
+[TCP](#webrtc-over-tcp). If you encounter issues, it could be due to incorrect Candidate settings or firewall/port 
+restrictions, refer to [Connectivity](#connection-failures) and use the provided tools to check. SRS also supports 
+converting between different protocols, such as streaming RTMP and viewing with WebRTC, as explained in 
+[RTMP to WebRTC](#rtmp-to-rtc), or streaming with WebRTC and viewing with HLS, as described in 
+[RTC to RTMP](#rtc-to-rtmp).
+
+SRS supported the WebRTC protocol in 2020. For more information on the development process, please refer
+to [#307](https://github.com/ossrs/srs/issues/307).
 
 ## Config
 
@@ -161,17 +229,25 @@ docker run --rm --env CANDIDATE=$CANDIDATE \
 
 ## Stream URL
 
-Online demo URL:
+In SRS, both live streaming and WebRTC are based on the concept of `streams`. So, the URL definition for 
+streams is very consistent. Here are some different stream addresses for various protocols in SRS, which 
+you can access after installing SRS:
 
-* Publish：[webrtc://d.ossrs.net/live/show](https://ossrs.net/players/rtc_publisher.html?vhost=d.ossrs.net&server=d.ossrs.net&api=443&autostart=true&schema=https&stream=show)
-* Play：[webrtc://d.ossrs.net/live/show](https://ossrs.net/players/rtc_player.html?vhost=d.ossrs.net&server=d.ossrs.net&api=443&autostart=true&schema=https&stream=show)
+* Publish or play stream over RTMP: `rtmp://localhost/live/livestream`
+* Play stream over HTTP-FLV: [http://localhost:8080/live/livestream.flv](http://localhost:8080/players/srs_player.html)
+* Play stream over HLS: [http://localhost:8080/live/livestream.m3u8](http://localhost:8080/players/srs_player.html?stream=livestream.m3u8)
+* Publish stream over WHIP: [http://localhost:1985/rtc/v1/whip/?app=live&stream=livestream](http://localhost:8080/players/whip.html)
+* Play stream over WHEP: [http://localhost:1985/rtc/v1/whep/?app=live&stream=livestream](http://localhost:8080/players/whep.html)
 
-The streams for SRS:
+> Remark: Since Flash is disabled, RTMP streams cannot be played in Chrome. Please use VLC to play them.
 
-* VLC(RTMP): rtmp://localhost/live/livestream
-* H5(HTTP-FLV): [http://localhost:8080/live/livestream.flv](http://localhost:8080/players/srs_player.html?autostart=true&stream=livestream.flv&port=8080&schema=http)
-* H5(HLS): [http://localhost:8080/live/livestream.m3u8](http://localhost:8080/players/srs_player.html?autostart=true&stream=livestream.m3u8&port=8080&schema=http)
-* H5(WebRTC): [webrtc://localhost/live/livestream](http://localhost:8080/players/rtc_player.html?autostart=true)
+Before WHIP and WHEP were introduced, SRS supported another format with a different HTTP API format, but it 
+still exchanged SDP. It is no longer recommended:
+
+* Publish: [webrtc://localhost/live/livestream](http://localhost:8080/players/rtc_publisher.html)
+* Play: [webrtc://localhost/live/livestream](http://localhost:8080/players/rtc_player.html)
+
+> Note: SRT addresses are not provided here because their design is not in a common URL format.
 
 ## WebRTC over TCP
 
@@ -207,12 +283,20 @@ ffmpeg -re -i ./doc/source.flv -c copy -f flv rtmp://localhost/live/livestream
 
 ## HTTP API
 
-SRS supports WHIP and WHEP for WebRTC.
+SRS supports WHIP and WHEP protocols. After installing SRS, you can test it with the following links:
 
-* WHIP: [http://localhost:1985/rtc/v1/whip/?app=live&stream=livestream](http://localhost:8080/players/whip.html)
-* WHEP: [http://localhost:1985/rtc/v1/whep/?app=live&stream=livestream](http://localhost:8080/players/whep.html)
+* To use WHIP for streaming: [http://localhost:1985/rtc/v1/whip/?app=live&stream=livestream](http://localhost:8080/players/whip.html)
+* To use WHEP for playback: [http://localhost:1985/rtc/v1/whep/?app=live&stream=livestream](http://localhost:8080/players/whep.html)
 
-SRS also support legacy HTTP API for WebRTC, please read [publish](./http-api.md#webrtc-publish) and [play](./http-api.md#webrtc-play).
+For details on the protocols, refer to [WHIP](./http-api.md#webrtc-publish) and [WHEP](./http-api.md#webrtc-play).
+
+If you install SRS on a Mac or Linux, you can test the local SRS service with localhost. However, if you're using 
+Windows, a remote Linux server, or need to test on other devices, you must use HTTPS for WHIP streaming, while 
+WHEP can still use HTTP. To enable SRS HTTPS, refer to [HTTPS API](./http-api.md#https-api), or use a web server 
+proxy like Nginx by referring to [HTTPS Proxy](./http-api.md#http-and-https-proxy).
+
+If you need to test if the HTTP API is working properly, you can use the `curl` tool. For more details, please
+refer to [Connectivity Check](#connection-failures).
 
 ## Connection Failures
 

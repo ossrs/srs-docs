@@ -343,10 +343,10 @@ a=candidate:1 1 udp 2130706431 172.18.0.4 8000 typ host generation 0
 
 ## WebRTC Play
 
-拉流或播放时，需要调用另外的API，请求格式和publish一样，SRS支持[WHIP](https://datatracker.ietf.org/doc/draft-ietf-wish-whip/)协议。例如：
+拉流或播放时，需要调用另外的API，请求格式和publish一样，SRS支持[WHEP](https://datatracker.ietf.org/doc/draft-murillo-whep/)协议。例如：
 
 ```text
-POST /rtc/v1/whip-play/?app=live&stream=livestream
+POST /rtc/v1/whep/?app=live&stream=livestream
 
 Body in SDP, the Content-type is application/sdp:
 
