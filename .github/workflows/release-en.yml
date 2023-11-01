@@ -246,7 +246,7 @@ jobs:
               docker run -d -it --restart always --privileged --name docs-typesense \\
                 -v /root/search/data:/data -p $SRS_DROPLET_PIP:8108:8108 \\
                 --log-driver=json-file --log-opt=max-size=500m --log-opt=max-file=3 \\
-                ossrs/typesense:0.22.1 \\
+                typesense/typesense:0.22.1 \\
                   --enable-cors --data-dir /data --api-key=$SEARCH_APIKEY
             END
             bash /root/restart_docs-typesense.sh
