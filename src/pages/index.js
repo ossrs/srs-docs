@@ -10,7 +10,7 @@ import hldHdImage from "../../static/img/SRS-SingleNode-4.0-hd.png";
 import hldSdImage from "../../static/img/SRS-SingleNode-4.0-sd.png";
 
 function HomepageHeader() {
-  const {siteConfig} = useDocusaurusContext();
+  const {siteConfig, i18n} = useDocusaurusContext();
   return (<>
     <header className={clsx('hero hero--primary', styles.heroBanner)}>
       <div className="container">
@@ -21,7 +21,12 @@ function HomepageHeader() {
         <div className={styles.buttons}>
           <Link className="button button--secondary button--lg" to="/docs/v5/doc/getting-started">
             {translate({id: 'homepage.getStarted'})}
-          </Link>
+          </Link>&nbsp;
+          {i18n.currentLocale === 'en-us' &&
+            <Link className="button button--secondary button--lg" to="/docs/v5/doc/cloud">
+              {translate({id: 'homepage.cloudService'})}
+            </Link>
+          }
         </div>
       </div>
       <div className={clsx('container', styles.imageHLD)}>

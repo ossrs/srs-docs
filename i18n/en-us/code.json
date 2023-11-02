@@ -204,6 +204,9 @@
   "homepage.getStarted": {
     "message": "Get Started"
   },
+  "homepage.cloudService": {
+    "message": "Cloud Service"
+  },
   "homepage.easyToUseName": {
     "message": "Easy to Use"
   },
