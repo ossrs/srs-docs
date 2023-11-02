@@ -10,7 +10,7 @@
 * [如何设置域名](#how-to-set-domain)：如何设置域名访问管理后台，为何打不开管理后台，为何IP访问不了管理后台。
 * [支持哪些平台](#support-platform)：支持哪些平台，支持镜像，想直接用服务器或命令行安装，或宝塔安装
 * [如何推多路流](#multiple-streams)：一路流不够，想推多路流，想改默认的流名称和流地址。
-* [机器资源太多](#multiple-instances)：机器CPU很多，如何支持更多的平台转发，或者更多路流以及录制等。
+* [如何启动多个实例](#multiple-instances)：机器CPU很多，如何支持更多的平台转发，或者更多路流以及录制等。
 * [带宽太低，提升带宽](#bandwidth)：带宽不够，想提升带宽，在CVM中用SRS Stack。
 * [如何设置免费HTTPS](#https)：如何申请免费HTTPS证书，如何申请多个域名的证书。
 * [如何修改推流鉴权的密钥](#update-publish-secret)：更新推流鉴权的密钥，更换推流密钥
@@ -169,7 +169,7 @@ Lighthouse/CVM/DigitalOcean > 宝塔/aaPanel > Docker/Script
 
 <a name='multiple-instances'></a><br/><br/><br/>
 
-## 机器资源太多
+## 如何启动多个实例
 
 机器CPU很多，如何支持更多的平台转发，或者更多路流以及录制等。
 
@@ -180,7 +180,7 @@ Lighthouse/CVM/DigitalOcean > 宝塔/aaPanel > Docker/Script
 ```bash
 docker run --rm -it -p 2022:2022 -p 1935:1935 \
   -p 8080:8080 -p 8000:8000/udp -p 10080:10080/udp --name srs-stack \
-  -v $HOME/data:/data ossrs/srs-stack:5
+  -v $HOME/data0:/data ossrs/srs-stack:5
 ```
 
 然后打开 [http://localhost:2022](http://localhost:2022) 即可登录。
@@ -194,6 +194,9 @@ docker run --rm -it -p 2023:2022 -p 1936:1935 \
 然后打开 [http://localhost:2023](http://localhost:2023) 即可登录后台。
 
 > Note: 注意端口不要重复，挂载的数据目录也不要重复，保持两个SRS Stack的完全独立。
+
+> Note: 尽管在Web界面上，看不到不同的RTMP端口，因为在容器中看到的都是1935端口，但这不会有影响，
+> 你还是可以往两个不同的端口推流到这两个不同的实例。
 
 如果只是用多平台转播，或者虚拟直播，不涉及推流端口，则直接使用即可。
 
