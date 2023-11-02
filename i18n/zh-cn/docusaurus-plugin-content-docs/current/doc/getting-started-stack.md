@@ -31,7 +31,19 @@ SRS Stack是一个基于Go、Reactjs、SRS、FFmpeg、WebRTC等的轻量级、�
 
 ## Docker
 
-SRS Stack 提供了一个 Docker 镜像，关于使用说明，请参考 [SRS Stack Docker](https://github.com/ossrs/srs-stack#usage)。
+推荐使用Docker运行SRS Stack：
+
+```bash
+docker run --rm -it --name srs-stack -v $HOME/data:/data \
+  -p 2022:2022 -p 2443:2443 -p 1935:1935 -p 8000:8000/udp -p 10080:10080/udp \
+  registry.cn-hangzhou.aliyuncs.com/ossrs/srs-stack:5
+```
+
+关于使用说明，请参考 [SRS Stack Docker](https://github.com/ossrs/srs-stack#usage)。
+
+## BT
+
+SRS Stack提供了宝塔插件，使用方法参考[宝塔插件](/blog/BT-aaPanel)。
 
 ## Script
 
@@ -42,14 +54,14 @@ SRS Stack 提供了一个 Docker 镜像，关于使用说明，请参考 [SRS St
 
 在国内做流媒体或RTC业务，可以在腾讯云轻量服务器上购买SRS Stack，参考[SRS Stack：起步、购买和入门](/blog/SRS-Stack-Tutorial)。
 
-## BT
-
-SRS Stack提供了宝塔插件，使用方法参考[宝塔插件](/blog/BT-aaPanel)。
-
 ## DigitalOcean Droplet
 
 若你需要做出海业务，在海外做直播或者RTC，可以很方便的一键创建SRS Stack，参考
 [DigitalOcean Droplet](https://mp.weixin.qq.com/s/_GcJm15BGv1qbmHixPQAGQ) 使用说明。
+
+## FAQ
+
+若使用SRS Stack时遇到问题，请先阅读[FAQ](/faq-srs-stack)。
 
 ## Blogs
 

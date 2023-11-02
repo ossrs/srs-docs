@@ -34,7 +34,15 @@ Special Note:
 
 ## Docker
 
-SRS Stack offers a Docker image, for usage instructions refer to the [SRS Stack Docker](https://github.com/ossrs/srs-stack#usage).
+Strongly recommend running SRS Stack with docker:
+
+```bash
+docker run --rm -it --name srs-stack -v $HOME/data:/data \
+  -p 2022:2022 -p 2443:2443 -p 1935:1935 -p 8000:8000/udp -p 10080:10080/udp \
+  ossrs/srs-stack:5
+```
+
+For more details, please refer to [SRS Stack Docker](https://github.com/ossrs/srs-stack#usage).
 
 ## Script
 
@@ -53,6 +61,10 @@ SRS Stack offers a BaoTa plugin, for usage instructions refer to the [SRS Stack 
 ## TencentCloud LightHouse
 
 Please read [TencentCloud LightHouse](https://www.bilibili.com/video/BV1844y1L7dL/): Deploy SRS to Tencent LightHouse.
+
+## FAQ
+
+If you encounter issues while using SRS Stack, please read the [FAQ](/faq-srs-stack) first.
 
 ## Blogs
 
