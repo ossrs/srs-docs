@@ -10,7 +10,7 @@
 
 ![](/img/page-guide-001.png)
 
-> Note: 这个看似很容易，甚至直接在[SRS官网](/docs/v4/tools/demo)中就能点开两个页面，但是一定要自己用SRS搭建出来才算，而不是直接打开线上的演示网页。
+> Note: 这个看似很容易，但是一定要自己用SRS搭建出来才算，而不是直接打开线上的演示网页。
 
 具体怎么做呢？请参考[Wiki: Getting Started](/docs/v5/doc/getting-started)。推荐用SRS Stack快速跑通，你也可以用宝塔快速部署，请看视频教程：[SRS Stack：起步、购买和入门](https://www.bilibili.com/video/BV1844y1L7dL/)
 

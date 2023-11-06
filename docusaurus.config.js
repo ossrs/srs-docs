@@ -146,7 +146,7 @@ const config = {
               },
               {
                 type: 'doc',
-                docId: 'tools/demo',
+                docId: 'tools/utility',
                 label: 'Tools',
               },
               {
