@@ -286,8 +286,8 @@ Safari supports WebRTC, if you enable it by:
 
 Then open the url in safari, to publish or play WebRTC stream:
 
-* Play [webrtc://localhost/live/livestream?codec=hevc](http://localhost:8080/players/rtc_player.html?codec=hevc)
-* Publish [webrtc://localhost/live/livestream?codec=hevc](http://localhost:8080/players/rtc_publisher.html?codec=hevc)
+* Play [http://localhost:1985/rtc/v1/whep/?app=live&stream=livestream&codec=hevc](http://localhost:8080/players/whep.html?autostart=true&codec=hevc)
+* Publish [http://localhost:1985/rtc/v1/whip/?app=live&stream=livestream&codec=hevc](http://localhost:8080/players/whip.html?autostart=true&codec=hevc)
 
 Please follow other section to publish HEVC stream.
 

@@ -118,7 +118,7 @@ MB0:trunk $ tail -n 30 -f ./objs/srs.log
 
 使用WebRTC推流到SRS：[WebRTC: Publish](http://localhost:8080/players/rtc_publisher.html?autostart=true&stream=livestream&port=8080&schema=http)
 
-打开页面观看WebRTC流：[WebRTC: Play](http://localhost:8080/players/rtc_player.html?autostart=true&stream=livestream&port=8080&schema=http)
+打开页面观看WebRTC流：[WebRTC: Play](http://localhost:8080/players/rtc_player.html?autostart=true&stream=livestream&schema=http)
 
 > Note: 可以打开不同的页面，推拉不同的流，就可以实现视频聊天了。
 
@@ -163,7 +163,7 @@ ffmpeg -re -i ./doc/source.flv -c copy -f flv rtmp://localhost/live/livestream
 
 打开下面的页面播放流（若SRS不在本机，请将localhost更换成服务器IP）:
 
-* WebRTC: [webrtc://localhost/live/livestream](http://localhost:8080/players/rtc_player.html?autostart=true&stream=livestream&port=8080&schema=http)
+* WebRTC: [http://localhost:1985/rtc/v1/whep/?app=live&stream=livestream](http://localhost:8080/players/whep.html?autostart=true)
 * H5(HTTP-FLV): [http://localhost:8080/live/livestream.flv](http://localhost:8080/players/srs_player.html?autostart=true&stream=livestream.flv&port=8080&schema=http)
 * H5(HLS): [http://localhost:8080/live/livestream.m3u8](http://localhost:8080/players/srs_player.html?autostart=true&stream=livestream.m3u8&port=8080&schema=http)
 

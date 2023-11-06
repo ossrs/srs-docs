@@ -70,7 +70,8 @@ The token authentication similar to referer, but the token is put in the url, no
 rtmp://vhost/app/stream?token=xxxx
 http://vhost/app/stream.flv?token=xxxx
 http://vhost/app/stream.m3u8?token=xxxx
-webrtc://vhost/app/stream?token=xxxx
+http://vhost/rtc/v1/whip/?app=live&stream=livestream&token=xxx
+http://vhost/rtc/v1/whep/?app=live&stream=livestream&token=xxx
 ```
 
 SRS will pass the token in the http-callback. read [HTTP callback](./http-callback.md)

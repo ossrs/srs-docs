@@ -153,7 +153,7 @@ ffmpeg -re -f flv -i doc/source.flv -c copy -f mpegts udp://127.0.0.1:8935
 
 * [http://localhost:8080/live/livestream.flv](http://localhost:8080/players/srs_player.html?stream=livestream.flv)
 * [http://localhost:8080/live/livestream.m3u8](http://localhost:8080/players/srs_player.html?stream=livestream.m3u8)
-* [webrtc://localhost/live/livestream](http://localhost:8080/players/rtc_player.html?stream=livestream)
+* [http://localhost:1985/rtc/v1/whep/?app=live&stream=livestream](http://localhost:8080/players/whep.html?autostart=true)
 
 注意MPEGTS UDP是每个端口对应一个具体的RTMP流。
 
@@ -182,7 +182,7 @@ ffmpeg -re -f flv -i doc/source.flv -c copy \
 
 * [http://localhost:8080/live/livestream.flv](http://localhost:8080/players/srs_player.html?stream=livestream.flv)
 * [http://localhost:8080/live/livestream.m3u8](http://localhost:8080/players/srs_player.html?stream=livestream.m3u8)
-* [webrtc://localhost/live/livestream](http://localhost:8080/players/rtc_player.html?stream=livestream)
+* [http://localhost:1985/rtc/v1/whep/?app=live&stream=livestream](http://localhost:8080/players/whep.html?autostart=true)
 
 > Note: 关于开发的一些细节，请参考[#2611](https://github.com/ossrs/srs/issues/2611).
 

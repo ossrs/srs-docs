@@ -157,7 +157,7 @@ docker run --rm --env CANDIDATE=$CANDIDATE \
 * VLC(RTMP): rtmp://localhost/live/livestream
 * H5(HTTP-FLV): [http://localhost:8080/live/livestream.flv](http://localhost:8080/players/srs_player.html?autostart=true&stream=livestream.flv&port=8080&schema=http)
 * H5(HLS): [http://localhost:8080/live/livestream.m3u8](http://localhost:8080/players/srs_player.html?autostart=true&stream=livestream.m3u8&port=8080&schema=http)
-* H5(WebRTC): [webrtc://localhost/live/livestream](http://localhost:8080/players/rtc_player.html?autostart=true)
+* H5(WebRTC): [http://localhost:1985/rtc/v1/whep/?app=live&stream=livestream](http://localhost:8080/players/whep.html?autostart=true)
 
 SRS的URL定义，遵守的是HTTP的URL定义，不同的流的schema不同，比如RTC的是`webrtc`。
 
@@ -200,7 +200,7 @@ docker run --rm -it registry.cn-hangzhou.aliyuncs.com/ossrs/srs:encoder ffmpeg -
 
 可播放的流地址：
 
-* WebRTC播放：[webrtc://localhost/live/livestream](http://localhost:8080/players/rtc_player.html?autostart=true)
+* WebRTC播放：[http://localhost:1985/rtc/v1/whep/?app=live&stream=livestream](http://localhost:8080/players/whep.html?autostart=true)
 * HTTP-FLV播放：[http://localhost:8080/live/livestream.flv](http://localhost:8080/players/srs_player.html?autostart=true&stream=livestream.flv&port=8080&schema=http)
 
 > Remark: 默认静音(H5自动播放要求的)，可以点右下角小喇叭开启声音。

@@ -73,8 +73,8 @@ docker run --rm -it -p 8080:8080/tcp \
   registry.cn-hangzhou.aliyuncs.com/ossrs/srs:v5.0.60
 ```
 
-* 推流(WebRTC over TCP): [webrtc://localhost:8080/live/livestream](http://localhost:8080/players/rtc_publisher.html?api=8080&autostart=true)
-* 播放(WebRTC over TCP): [webrtc://localhost:8080/live/livestream](http://localhost:8080/players/rtc_player.html?api=8080&autostart=true)
+* 推流(WebRTC over TCP): [http://localhost:8080/rtc/v1/whip/?app=live&stream=livestream](http://localhost:8080/players/whip.html?autostart=true&api=8080)
+* 播放(WebRTC over TCP): [http://localhost:8080/rtc/v1/whep/?app=live&stream=livestream](http://localhost:8080/players/whep.html?autostart=true&api=8080)
 
 一般需要支持直播，所以下面，只用一个TCP(8080)端口，支持RTC和直播：
 
@@ -89,8 +89,8 @@ docker run --rm -it -p 8080:8080/tcp \
   registry.cn-hangzhou.aliyuncs.com/ossrs/srs:v5.0.60
 ```
 
-* 推流(WebRTC over TCP): [webrtc://localhost:8080/live/livestream](http://localhost:8080/players/rtc_publisher.html?api=8080&autostart=true)
-* 播放(WebRTC over TCP): [webrtc://localhost:8080/live/livestream](http://localhost:8080/players/rtc_player.html?api=8080&autostart=true)
+* 推流(WebRTC over TCP): [http://localhost:8080/rtc/v1/whip/?app=live&stream=livestream](http://localhost:8080/players/whip.html?autostart=true&api=8080)
+* 播放(WebRTC over TCP): [http://localhost:8080/rtc/v1/whep/?app=live&stream=livestream](http://localhost:8080/players/whep.html?autostart=true&api=8080)
 * 播放(HTTP FLV): [http://localhost:8080/live/livestream.flv](http://localhost:8080/players/srs_player.html?autostart=true)
 * 播放(HLS): [http://localhost:8080/live/livestream.m3u8](http://localhost:8080/players/srs_player.html?stream=livestream.m3u8&autostart=true)
 

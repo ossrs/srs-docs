@@ -263,7 +263,7 @@ docker run --rm -it -p 8080:8080 -p 1985:1985 -p 8000:8000 \
 ffmpeg -re -i ./doc/source.flv -c copy -f flv rtmp://localhost/live/livestream
 ```
 
-* 播放(WebRTC over TCP): [webrtc://localhost/live/livestream](http://localhost:8080/players/rtc_player.html?autostart=true)
+* 播放(WebRTC over TCP): [http://localhost:1985/rtc/v1/whep/?app=live&stream=livestream](http://localhost:8080/players/whep.html?autostart=true)
 * 播放(HTTP FLV): [http://localhost:8080/live/livestream.flv](http://localhost:8080/players/srs_player.html?autostart=true)
 * 播放(HLS): [http://localhost:8080/live/livestream.m3u8](http://localhost:8080/players/srs_player.html?stream=livestream.m3u8&autostart=true)
 
@@ -375,7 +375,7 @@ docker run --rm -it registry.cn-hangzhou.aliyuncs.com/ossrs/srs:encoder ffmpeg -
 
 可播放的流地址：
 
-* WebRTC播放：[webrtc://localhost/live/livestream](http://localhost:8080/players/rtc_player.html?autostart=true)
+* WebRTC播放：[http://localhost:1985/rtc/v1/whep/?app=live&stream=livestream](http://localhost:8080/players/whep.html?autostart=true)
 * HTTP-FLV播放：[http://localhost:8080/live/livestream.flv](http://localhost:8080/players/srs_player.html?autostart=true&stream=livestream.flv&port=8080&schema=http)
 
 > Remark: 默认静音(H5自动播放要求的)，可以点右下角小喇叭开启声音。

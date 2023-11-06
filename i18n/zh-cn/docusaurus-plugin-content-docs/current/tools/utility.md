@@ -11,8 +11,8 @@ hide_table_of_contents: false
 * [App 应用下载](https://ossrs.net/releases/app.html)
 * [HTTP-REST](https://ossrs.net/http-rest/)
 * [HTTP-FLV Player](https://ossrs.net/releases/demo.html?page=srs_player.html)
-* [WebRTC Player](https://ossrs.net/releases/demo.html?page=rtc_player.html)
-* [GB28181 Player](https://ossrs.net/releases/demo.html?page=srs_gb28181.html)
+* [WebRTC WHIP Publisher](https://ossrs.net/releases/demo.html?page=whip.html)
+* [WebRTC WHEP Player](https://ossrs.net/releases/demo.html?page=whep.html)
 
 ![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.net&path=/lts/tools/zh/v6/utility)
 

@@ -94,7 +94,7 @@ The streams for SRS:
 * VLC(RTMP): rtmp://localhost/live/livestream
 * H5(HTTP-FLV): [http://localhost:8080/live/livestream.flv](http://localhost:8080/players/srs_player.html?autostart=true&stream=livestream.flv&port=8080&schema=http)
 * H5(HLS): [http://localhost:8080/live/livestream.m3u8](http://localhost:8080/players/srs_player.html?autostart=true&stream=livestream.m3u8&port=8080&schema=http)
-* H5(WebRTC): [webrtc://localhost/live/livestream](http://localhost:8080/players/rtc_player.html?autostart=true)
+* H5(WebRTC): [http://localhost:1985/rtc/v1/whep/?app=live&stream=livestream](http://localhost:8080/players/whep.html?autostart=true)
 
 ## HTTP API
 
@@ -123,7 +123,7 @@ docker run --rm -it ossrs/srs:encoder ffmpeg -stream_loop -1 -re -i doc/source.f
 
 Play the stream in browser:
 
-* WebRTC：[webrtc://localhost/live/livestream](http://localhost:8080/players/rtc_player.html?autostart=true)
+* WebRTC：[http://localhost:1985/rtc/v1/whep/?app=live&stream=livestream](http://localhost:8080/players/whep.html?autostart=true)
 * HTTP-FLV：[http://localhost:8080/live/livestream.flv](http://localhost:8080/players/srs_player.html?autostart=true&stream=livestream.flv&port=8080&schema=http)
 
 ## RTC to RTC

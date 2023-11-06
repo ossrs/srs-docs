@@ -73,8 +73,8 @@ docker run --rm -it -p 8080:8080/tcp \
   registry.cn-hangzhou.aliyuncs.com/ossrs/srs:v5.0.60
 ```
 
-* Publish WebRTC over TCP: [webrtc://localhost:8080/live/livestream](http://localhost:8080/players/rtc_publisher.html?api=8080&autostart=true)
-* Play WebRTC over TCP: [webrtc://localhost:8080/live/livestream](http://localhost:8080/players/rtc_player.html?api=8080&autostart=true)
+* Publish WebRTC over TCP: [http://localhost:8080/rtc/v1/whip/?app=live&stream=livestream](http://localhost:8080/players/whip.html?autostart=true&api=8080)
+* Play WebRTC over TCP: [http://localhost:8080/rtc/v1/whep/?app=live&stream=livestream](http://localhost:8080/players/whep.html?autostart=true&api=8080)
 
 SRS allows coverting RTC to live streaming, so we use TCP(8080) for both WebRTC and HTTP live streaming:
 
@@ -89,8 +89,8 @@ docker run --rm -it -p 8080:8080/tcp \
   registry.cn-hangzhou.aliyuncs.com/ossrs/srs:v5.0.60
 ```
 
-* Publish WebRTC over TCP: [webrtc://localhost:8080/live/livestream](http://localhost:8080/players/rtc_publisher.html?api=8080&autostart=true)
-* Play WebRTC over TCP: [webrtc://localhost:8080/live/livestream](http://localhost:8080/players/rtc_player.html?api=8080&autostart=true)
+* Publish WebRTC over TCP: [http://localhost:8080/rtc/v1/whip/?app=live&stream=livestream](http://localhost:8080/players/whip.html?autostart=true&api=8080)
+* Play WebRTC over TCP: [http://localhost:8080/rtc/v1/whep/?app=live&stream=livestream](http://localhost:8080/players/whep.html?autostart=true&api=8080)
 * Play HTTP FLV: [http://localhost:8080/live/livestream.flv](http://localhost:8080/players/srs_player.html?autostart=true)
 * Play HLS: [http://localhost:8080/live/livestream.m3u8](http://localhost:8080/players/srs_player.html?stream=livestream.m3u8&autostart=true)
 

@@ -66,7 +66,8 @@ token类似于referer，不过是放在URL中，在请求参数中，譬如：
 rtmp://vhost/app/stream?token=xxxx
 http://vhost/app/stream.flv?token=xxxx
 http://vhost/app/stream.m3u8?token=xxxx
-webrtc://vhost/app/stream?token=xxxx
+http://vhost/rtc/v1/whip/?app=live&stream=livestream&token=xxx
+http://vhost/rtc/v1/whep/?app=live&stream=livestream&token=xxx
 ```
 
 这样服务器在`on_publish`或`on_play`回调接口中， 就会把url带过去验证。参考：[HTTP callback](./http-callback.md)

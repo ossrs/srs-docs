@@ -691,6 +691,9 @@ The following are the update records for the SRS Stack server.
     * Refine env variable for bool. v5.11.7
     * RTC: Refine WHIP player and enable NAME_LOOKUP by default. v5.11.8
     * RTC: Update WHIP and WHEP player. v5.11.9
+    * RTC: Resolve candidate for lo and docker. v5.11.10
+    * RTC: Refine test and tutorial for WHIP/WHEP. [v5.11.10](https://github.com/ossrs/srs-stack/releases/tag/v5.11.10)
+    * Refine player open speed. v5.11.11
 * v5.10
     * Refine README. v5.10.1
     * Refine DO and droplet release script. v5.10.2

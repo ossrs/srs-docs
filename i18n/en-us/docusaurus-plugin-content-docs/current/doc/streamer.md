@@ -107,7 +107,7 @@ Finally, play the stream:
 
 * [http://localhost:8080/live/livestream.flv](http://localhost:8080/players/srs_player.html?stream=livestream.flv)
 * [http://localhost:8080/live/livestream.m3u8](http://localhost:8080/players/srs_player.html?stream=livestream.m3u8)
-* [webrtc://localhost/live/livestream](http://localhost:8080/players/rtc_player.html?stream=livestream)
+* [http://localhost:1985/rtc/v1/whep/?app=live&stream=livestream](http://localhost:8080/players/whep.html?autostart=true)
 
 Please note that each UDP port is bind to a RTMP stream.
 
@@ -136,7 +136,7 @@ Finally, play the stream:
 
 * [http://localhost:8080/live/livestream.flv](http://localhost:8080/players/srs_player.html?stream=livestream.flv)
 * [http://localhost:8080/live/livestream.m3u8](http://localhost:8080/players/srs_player.html?stream=livestream.m3u8)
-* [webrtc://localhost/live/livestream](http://localhost:8080/players/rtc_player.html?stream=livestream)
+* [http://localhost:1985/rtc/v1/whep/?app=live&stream=livestream](http://localhost:8080/players/whep.html?autostart=true)
 
 > Note: About the development notes, please see [#2611](https://github.com/ossrs/srs/issues/2611).
 
