@@ -52,10 +52,12 @@ Strongly recommend running SRS Stack with HELM:
 
 ```bash
 helm repo add srs http://helm.ossrs.io/stable
-helm install srs srs/srs-stack --set persistence.path=$HOME/data
+helm install srs srs/srs-stack --set persistence.path=$HOME/data \
+  --set service.http=2022 --set service.https=2443 --set service.rtmp=1935 \
+  --set service.rtc=8000 --set service.srt=10080
 ```
 
-Then you can open [http://localhost](http://localhost) to use SRS Stack.
+Then you can open [http://localhost:2022](http://localhost:2022) to use SRS Stack.
 
 ## Script
 

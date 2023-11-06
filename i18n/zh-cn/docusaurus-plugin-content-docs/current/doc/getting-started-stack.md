@@ -49,10 +49,12 @@ docker run --rm -it --name srs-stack -v $HOME/data:/data \
 
 ```bash
 helm repo add srs http://helm.ossrs.io/stable
-helm install srs srs/srs-stack --set persistence.path=$HOME/data
+helm install srs srs/srs-stack --set persistence.path=$HOME/data \
+  --set service.http=2022 --set service.https=2443 --set service.rtmp=1935 \
+  --set service.rtc=8000 --set service.srt=10080
 ```
 
-请打开页面[http://localhost](http://localhost)开始使用SRS Stack。
+请打开页面[http://localhost:2022](http://localhost:2022)开始使用SRS Stack。
 
 ## BT
 
