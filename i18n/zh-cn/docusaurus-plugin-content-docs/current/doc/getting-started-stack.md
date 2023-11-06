@@ -39,7 +39,20 @@ docker run --rm -it --name srs-stack -v $HOME/data:/data \
   registry.cn-hangzhou.aliyuncs.com/ossrs/srs-stack:5
 ```
 
+请打开页面[http://localhost:2022](http://localhost:2022)开始使用SRS Stack。
+
 关于使用说明，请参考 [SRS Stack Docker](https://github.com/ossrs/srs-stack#usage)。
+
+## HELM
+
+推荐使用HELM安装和运行SRS Stack：
+
+```bash
+helm repo add srs http://helm.ossrs.io/stable
+helm install srs srs/srs-stack
+```
+
+请打开页面[http://localhost](http://localhost)开始使用SRS Stack。
 
 ## BT
 

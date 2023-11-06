@@ -73,6 +73,8 @@
 
 由于SRS Stack支持多个平台，包括docker等，而docker是不能自己升级自己的，所以SRS Stack也不支持界面升级，需要手动升级。
 
+如果您使用HELM，并安装了srs-stack `1.0.1`，那么您可以通过`helm upgrade srs srs/srs-stack --version 1.0.2`进行升级，如果想回滚到`1.0.1`，可以使用`helm rollback srs`。
+
 Docker启动时会指定版本，比如`ossrs/srs-stack:v1.0.293`，只需要删除容器后指定新版本启动即可，比如`ossrs/srs-stack:v1.0.299`。
 
 如果使用`ossrs/srs-stack:1`则是用最新的版本，则需要手动更新，比如`docker pull ossrs/srs-stack:1`。

@@ -73,6 +73,8 @@ How to upgrade to the latest version or stable version, and why not support clic
 
 Since SRS Stack supports multiple platforms, including Docker, and Docker cannot upgrade itself, SRS Stack also does not support interface upgrades and needs to be upgraded manually.
 
+If you use HELM, and get srs-stack `1.0.1` installed, then you can upgrade by `helm upgrade srs srs/srs-stack --version 1.0.2` and `helm rollback srs` if want to rollback to `1.0.1`.
+
 The Docker startup specifies the version, such as `ossrs/srs-stack:v1.0.293`, and you only need to delete the container and start with the new version, such as `ossrs/srs-stack:v1.0.299`.
 
 If you use `ossrs/srs-stack:1`, it is the latest version, and you need to update manually, such as `docker pull ossrs/srs-stack:1`.

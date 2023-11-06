@@ -42,7 +42,20 @@ docker run --rm -it --name srs-stack -v $HOME/data:/data \
   ossrs/srs-stack:5
 ```
 
+Then you can open [http://localhost:2022](http://localhost:2022) to use SRS Stack.
+
 For more details, please refer to [SRS Stack Docker](https://github.com/ossrs/srs-stack#usage).
+
+## HELM
+
+Strongly recommend running SRS Stack with HELM:
+
+```bash
+helm repo add srs http://helm.ossrs.io/stable
+helm install srs srs/srs-stack
+```
+
+Then you can open [http://localhost](http://localhost) to use SRS Stack.
 
 ## Script
 
