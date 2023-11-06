@@ -52,7 +52,7 @@ Strongly recommend running SRS Stack with HELM:
 
 ```bash
 helm repo add srs http://helm.ossrs.io/stable
-helm install srs srs/srs-stack
+helm install srs srs/srs-stack --set persistence.path=$HOME/data
 ```
 
 Then you can open [http://localhost](http://localhost) to use SRS Stack.
