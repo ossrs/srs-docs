@@ -14,7 +14,7 @@ function HomepageHeader() {
   const {siteConfig, i18n} = useDocusaurusContext();
   const shanghaiTimezone = new Date().getTimezoneOffset() === -480;
   const enLanguage = i18n.currentLocale === 'en-us';
-  const alwaysShowCloudService = window.location.href.indexOf('cloud=1') > 0;
+  const alwaysShowCloudService = window?.location?.href?.indexOf('cloud=1') > 0;
 
   React.useEffect(() => {
     console.log(`?cloud=1 to show cloud service, current: ${alwaysShowCloudService}`);
@@ -51,17 +51,15 @@ function HomepageHeader() {
 
 export default function Home() {
   return (
-    <BrowserOnly>
-      <Layout
-        title={`SRS (Simple Realtime Server)`}
-        description={translate({id: 'homepage.subTitle'})}
-      >
-        <HomepageHeader/>
-        <main>
-          <HomepageFeatures/>
-        </main>
-        <img src='https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/index'/>
-      </Layout>
-    </BrowserOnly>
+    <Layout
+      title={`SRS (Simple Realtime Server)`}
+      description={translate({id: 'homepage.subTitle'})}
+    >
+      <HomepageHeader/>
+      <main>
+        <HomepageFeatures/>
+      </main>
+      <img src='https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/index'/>
+    </Layout>
   );
 }
