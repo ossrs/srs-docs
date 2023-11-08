@@ -8,6 +8,7 @@ import styles from './index.module.css';
 import HomepageFeatures from '../components/HomepageFeatures';
 import hldHdImage from "../../static/img/SRS-SingleNode-4.0-hd.png";
 import hldSdImage from "../../static/img/SRS-SingleNode-4.0-sd.png";
+import BrowserOnly from "@docusaurus/core/lib/client/exports/BrowserOnly";
 
 function HomepageHeader() {
   const {siteConfig, i18n} = useDocusaurusContext();
@@ -50,15 +51,17 @@ function HomepageHeader() {
 
 export default function Home() {
   return (
-    <Layout
-      title={`SRS (Simple Realtime Server)`}
-      description={translate({id: 'homepage.subTitle'})}
-    >
-      <HomepageHeader/>
-      <main>
-        <HomepageFeatures/>
-      </main>
-      <img src='https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/index'/>
-    </Layout>
+    <BrowserOnly>
+      <Layout
+        title={`SRS (Simple Realtime Server)`}
+        description={translate({id: 'homepage.subTitle'})}
+      >
+        <HomepageHeader/>
+        <main>
+          <HomepageFeatures/>
+        </main>
+        <img src='https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/index'/>
+      </Layout>
+    </BrowserOnly>
   );
 }
