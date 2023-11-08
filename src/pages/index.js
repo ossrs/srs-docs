@@ -11,6 +11,14 @@ import hldSdImage from "../../static/img/SRS-SingleNode-4.0-sd.png";
 
 function HomepageHeader() {
   const {siteConfig, i18n} = useDocusaurusContext();
+  const shanghaiTimezone = new Date().getTimezoneOffset() === -480;
+  const enLanguage = i18n.currentLocale === 'en-us';
+  const alwaysShowCloudService = window.location.href.indexOf('cloud=1') > 0;
+
+  React.useEffect(() => {
+    console.log(`?cloud=1 to show cloud service, current: ${alwaysShowCloudService}`);
+  }, []);
+
   return (<>
     <header className={clsx('hero hero--primary', styles.heroBanner)}>
       <div className="container">
@@ -19,11 +27,11 @@ function HomepageHeader() {
           <Translate id="homepage.subTitle"/>
         </p>
         <div className={styles.buttons}>
-          <Link className="button button--secondary button--lg" to="/docs/v5/doc/getting-started">
+          <Link className="button button--secondary button--lg" to="/docs/v6/doc/getting-started">
             {translate({id: 'homepage.getStarted'})}
           </Link>&nbsp;
-          {i18n.currentLocale === 'en-us' &&
-            <Link className="button button--secondary button--lg" to="/docs/v5/doc/cloud">
+          {(alwaysShowCloudService || (enLanguage && !shanghaiTimezone)) &&
+            <Link className="button button--secondary button--lg" to="/docs/v6/doc/cloud">
               {translate({id: 'homepage.cloudService'})}
             </Link>
           }
