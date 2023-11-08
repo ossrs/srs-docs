@@ -8,12 +8,14 @@ import styles from './index.module.css';
 import HomepageFeatures from '../components/HomepageFeatures';
 import hldHdImage from "../../static/img/SRS-SingleNode-4.0-hd.png";
 import hldSdImage from "../../static/img/SRS-SingleNode-4.0-sd.png";
+import useIsBrowser from "@docusaurus/core/lib/client/exports/useIsBrowser";
 
 function HomepageHeader() {
   const {siteConfig, i18n} = useDocusaurusContext();
+  const isBrowser = useIsBrowser();
   const shanghaiTimezone = new Date().getTimezoneOffset() === -480;
   const enLanguage = i18n.currentLocale === 'en-us';
-  const alwaysShowCloudService = window?.location?.href?.indexOf('cloud=1') > 0;
+  const alwaysShowCloudService = isBrowser ? window.location.href.indexOf('cloud=1') > 0 : false;
 
   React.useEffect(() => {
     console.log(`?cloud=1 to show cloud service, current: ${alwaysShowCloudService}`);
