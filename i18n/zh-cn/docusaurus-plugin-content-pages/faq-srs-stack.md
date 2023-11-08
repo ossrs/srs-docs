@@ -706,6 +706,10 @@ Response:
     * RTC: Resolve candidate for lo and docker. v5.11.10
     * RTC: Refine test and tutorial for WHIP/WHEP. [v5.11.10](https://github.com/ossrs/srs-stack/releases/tag/v5.11.10)
     * Refine player open speed. v5.11.11
+    * HTTPS: Check dashboard and ssl domain. v5.11.12
+    * API: Add curl and jQuery example. v5.11.12
+    * API: Allow CORS by default. v5.11.13
+    * API: Remove duplicated CORS headers. [v5.11.14](https://github.com/ossrs/srs-stack/releases/tag/v5.11.14)
 * v5.10
     * Refine README. v5.10.1
     * Refine DO and droplet release script. v5.10.2
