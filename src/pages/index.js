@@ -8,7 +8,6 @@ import styles from './index.module.css';
 import HomepageFeatures from '../components/HomepageFeatures';
 import hldHdImage from "../../static/img/SRS-SingleNode-4.0-hd.png";
 import hldSdImage from "../../static/img/SRS-SingleNode-4.0-sd.png";
-import BrowserOnly from "@docusaurus/core/lib/client/exports/BrowserOnly";
 
 function HomepageHeader() {
   const {siteConfig, i18n} = useDocusaurusContext();
