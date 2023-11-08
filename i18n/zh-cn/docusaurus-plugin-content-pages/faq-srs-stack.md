@@ -73,11 +73,14 @@
 
 由于SRS Stack支持多个平台，包括docker等，而docker是不能自己升级自己的，所以SRS Stack也不支持界面升级，需要手动升级。
 
-如果您使用HELM，并安装了srs-stack `1.0.1`，那么您可以通过`helm upgrade srs srs/srs-stack --version 1.0.2`进行升级，如果想回滚到`1.0.1`，可以使用`helm rollback srs`。
+如果您使用HELM，并安装了srs-stack `1.0.1`，那么您可以通过`helm upgrade srs srs/srs-stack --version 1.0.2`进行升级，
+如果想回滚到`1.0.1`，可以使用`helm rollback srs`。
 
-Docker启动时会指定版本，比如`ossrs/srs-stack:v1.0.293`，只需要删除容器后指定新版本启动即可，比如`ossrs/srs-stack:v1.0.299`。
+Docker启动时会指定版本，比如`registry.cn-hangzhou.aliyuncs.com/ossrs/srs-stack:v1.0.293`，只需要删除容器后指定新
+版本启动即可，比如`registry.cn-hangzhou.aliyuncs.com/ossrs/srs-stack:v1.0.299`。
 
-如果使用`ossrs/srs-stack:1`则是用最新的版本，则需要手动更新，比如`docker pull ossrs/srs-stack:1`。
+如果使用`registry.cn-hangzhou.aliyuncs.com/ossrs/srs-stack:1`则是用最新的版本，则需要手动更新，
+比如`docker pull registry.cn-hangzhou.aliyuncs.com/ossrs/srs-stack:1`。
 
 如果使用宝塔，则删除应用后重装新版本即可，数据是保存在`/data`目录，不会丢失。
 
@@ -181,24 +184,31 @@ Lighthouse/CVM/DigitalOcean > 宝塔/aaPanel > Docker/Script
 
 ```bash
 docker run --rm -it -p 2022:2022 -p 1935:1935 \
-  -p 8080:8080 -p 8000:8000/udp -p 10080:10080/udp --name srs-stack \
-  -v $HOME/data0:/data ossrs/srs-stack:5
+  -p 8000:8000/udp -p 10080:10080/udp --name srs-stack \
+  -v $HOME/data0:/data registry.cn-hangzhou.aliyuncs.com/ossrs/srs-stack:5
 ```
 
 然后打开 [http://localhost:2022](http://localhost:2022) 即可登录。
 
 ```bash
 docker run --rm -it -p 2023:2022 -p 1936:1935 \
-  -p 8081:8080 -p 8001:8000/udp -p 10081:10080/udp --name srs-stack1 \
-  -v $HOME/data1:/data ossrs/srs-stack:5
+  -p 8001:8000/udp -p 10081:10080/udp --name srs-stack1 \
+  -v $HOME/data1:/data registry.cn-hangzhou.aliyuncs.com/ossrs/srs-stack:5
 ```
 
 然后打开 [http://localhost:2023](http://localhost:2023) 即可登录后台。
 
 > Note: 注意端口不要重复，挂载的数据目录也不要重复，保持两个SRS Stack的完全独立。
 
-> Note: 尽管在Web界面上，看不到不同的RTMP端口，因为在容器中看到的都是1935端口，但这不会有影响，
-> 你还是可以往两个不同的端口推流到这两个不同的实例。
+尽管在Web界面上，看不到不同的RTMP端口，因为在容器中看到的都是1935端口，但这不会有影响，
+你还是可以往两个不同的端口推流到这两个不同的实例。当然，你可以明确指定端口：
+
+```bash
+docker run --rm -it -p 2023:2022 -p 1936:1935 \
+  -p 8001:8000/udp -p 10081:10080/udp --name srs-stack1 \
+  -e HTTP_PORT=2023 -e RTMP_PORT=1936 -e RTC_PORT=8001 -e SRT_PORT=10081 \
+  -v $HOME/data1:/data registry.cn-hangzhou.aliyuncs.com/ossrs/srs-stack:5
+```
 
 如果只是用多平台转播，或者虚拟直播，不涉及推流端口，则直接使用即可。
 
@@ -209,8 +219,8 @@ docker run --rm -it -p 2023:2022 -p 1936:1935 \
 
 其他的协议端口对应的也要改变，比如HLS：
 
-* `http://ip:8080/live/livestream.m3u8`
-* `http://ip:8081/live/livestream.m3u8`
+* `http://ip:2022/live/livestream.m3u8`
+* `http://ip:2023/live/livestream.m3u8`
 
 当然也不是意味着你就可以启动上万个SRS Stack，你应该关注你的CPU和内存，以及机器的带宽是否充足。
 
@@ -710,6 +720,7 @@ Response:
     * API: Add curl and jQuery example. v5.11.12
     * API: Allow CORS by default. v5.11.13
     * API: Remove duplicated CORS headers. [v5.11.14](https://github.com/ossrs/srs-stack/releases/tag/v5.11.14)
+    * Support expose ports for multiple containers. v5.11.15
 * v5.10
     * Refine README. v5.10.1
     * Refine DO and droplet release script. v5.10.2

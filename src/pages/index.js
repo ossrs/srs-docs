@@ -13,9 +13,16 @@ import useIsBrowser from "@docusaurus/core/lib/client/exports/useIsBrowser";
 function HomepageHeader() {
   const {siteConfig, i18n} = useDocusaurusContext();
   const isBrowser = useIsBrowser();
-  const shanghaiTimezone = new Date().getTimezoneOffset() === -480;
+  const shanghaiTimezone = function () {
+    return [
+      'Asia/Shanghai', 'Asia/Harbin', 'Asia/Chongqing', 'Asia/Kashgar', 'Asia/Urumqi'
+    ].includes(Intl.DateTimeFormat().resolvedOptions().timeZone);
+  } ();
   const enLanguage = i18n.currentLocale === 'en-us';
-  const alwaysShowCloudService = isBrowser ? window.location.href.indexOf('cloud=1') > 0 : false;
+  const alwaysShowCloudService = function() {
+    if (!isBrowser) return false;
+    return window.location.hostname === 'localhost' || window.location.href.indexOf('cloud=1') > 0;
+  } ();
 
   React.useEffect(() => {
     console.log(`?cloud=1 to show cloud service, current: ${alwaysShowCloudService}`);

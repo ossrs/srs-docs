@@ -177,7 +177,7 @@ For example, start two instances listening on ports 2022 and 2023, and use diffe
 
 ```bash
 docker run --rm -it -p 2022:2022 -p 1935:1935 \
-  -p 8080:8080 -p 8000:8000/udp -p 10080:10080/udp --name srs-stack \
+  -p 8000:8000/udp -p 10080:10080/udp --name srs-stack \
   -v $HOME/data0:/data ossrs/srs-stack:5
 ```
 
@@ -185,7 +185,7 @@ Then, open [http://localhost:2022](http://localhost:2022) to log in to the backe
 
 ```bash
 docker run --rm -it -p 2023:2022 -p 1936:1935 \
-  -p 8081:8080 -p 8001:8000/udp -p 10081:10080/udp --name srs-stack1 \
+  -p 8001:8000/udp -p 10081:10080/udp --name srs-stack1 \
   -v $HOME/data1:/data ossrs/srs-stack:5
 ```
 
@@ -194,8 +194,16 @@ Then, open [http://localhost:2023](http://localhost:2023) to log in to the backe
 > Note: Be careful not to use duplicate ports and make sure the mounted data directories are unique. Keep 
 > the two SRS Stacks completely separate.
 
-> Note: Although the SRS Stack web UI doesn't display the RTMP port because it uses the same port 1935 within 
-> the docker, this doesn't cause any issues. You can still publish to each stack using different RTMP ports.
+Although the SRS Stack web UI doesn't display the RTMP port because it uses the same port 1935 within 
+the docker, this doesn't cause any issues. You can still publish to each stack using different RTMP ports.
+However, you can setup the exposed ports:
+
+```bash
+docker run --rm -it -p 2023:2022 -p 1936:1935 \
+  -p 8001:8000/udp -p 10081:10080/udp --name srs-stack1 \
+  -e HTTP_PORT=2023 -e RTMP_PORT=1936 -e RTC_PORT=8001 -e SRT_PORT=10081 \
+  -v $HOME/data1:/data ossrs/srs-stack:5
+```
 
 If you only need multi-platform streaming or virtual streaming without involving the push stream port, you can use it directly.
 
@@ -206,8 +214,8 @@ If you need to push streams to two SRS Stack instances, you need to specify the 
 
 Other protocol ports should also be changed accordingly, such as HLS:
 
-* `http://ip:8080/live/livestream.m3u8`
-* `http://ip:8081/live/livestream.m3u8`
+* `http://ip:2022/live/livestream.m3u8`
+* `http://ip:2023/live/livestream.m3u8`
 
 Of course, this doesn't mean you can start thousands of SRS Stacks. You should pay attention to your CPU and memory, as well as whether your machine has enough bandwidth.
 
@@ -700,6 +708,7 @@ The following are the update records for the SRS Stack server.
     * API: Add curl and jQuery example. v5.11.12
     * API: Allow CORS by default. v5.11.13
     * API: Remove duplicated CORS headers. [v5.11.14](https://github.com/ossrs/srs-stack/releases/tag/v5.11.14)
+    * Support expose ports for multiple containers. v5.11.15
 * v5.10
     * Refine README. v5.10.1
     * Refine DO and droplet release script. v5.10.2
