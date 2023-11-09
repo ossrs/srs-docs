@@ -271,6 +271,15 @@ SRS Stack支持申请免费HTTPS证书，而且可以申请多个域名的证书
 * SRS Stack的IP必须是公网可以访问的IP，必须是互联网上任何人都能访问的IP，而不是内网可以访问的IP。
 * 端口必须是80而不是2022，因为Let's Encrypt会反向验证你的域名，而且访问的是80端口。
 
+若使用docker直接启动，可以添加80和443端口的映射：
+
+```bash
+docker run --rm -it --name srs-stack -v $HOME/data:/data \
+  -p 2022:2022 -p 2443:2443 -p 1935:1935 -p 8000:8000/udp -p 10080:10080/udp \
+  -p 80:20222 -p 443:2443 \
+  registry.cn-hangzhou.aliyuncs.com/ossrs/srs-stack:5
+```
+
 申请成功后，在浏览器敲https加你的域名，就可以访问你的网站了。
 
 <a name="update-publish-secret"></a><br/><br/><br/>
@@ -721,6 +730,7 @@ Response:
     * API: Allow CORS by default. v5.11.13
     * API: Remove duplicated CORS headers. [v5.11.14](https://github.com/ossrs/srs-stack/releases/tag/v5.11.14)
     * Support expose ports for multiple containers. v5.11.15
+    * HTTPS: Check dashboard hostname and port. v5.11.15
 * v5.10
     * Refine README. v5.10.1
     * Refine DO and droplet release script. v5.10.2

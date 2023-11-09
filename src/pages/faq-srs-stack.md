@@ -266,6 +266,15 @@ If you encounter an error while applying and the message says `Could not obtain 
 * The IP of the SRS Stack must be publicly accessible, meaning it should be an IP that anyone on the internet can access, not just within a private network.
 * The port must be 80, not 2022, because Let's Encrypt will verify your domain in reverse and access it through port 80.
 
+If use docker to start SRS Stack, you can add port mapping for 80 and 443:
+
+```bash
+docker run --rm -it --name srs-stack -v $HOME/data:/data \
+  -p 2022:2022 -p 2443:2443 -p 1935:1935 -p 8000:8000/udp -p 10080:10080/udp \
+  -p 80:20222 -p 443:2443 \
+  ossrs/srs-stack:5
+```
+
 After the application is successful, enter https plus your domain name in the browser, and you can access your website.
 
 <a name="update-publish-secret"></a><br/><br/><br/>
@@ -709,6 +718,7 @@ The following are the update records for the SRS Stack server.
     * API: Allow CORS by default. v5.11.13
     * API: Remove duplicated CORS headers. [v5.11.14](https://github.com/ossrs/srs-stack/releases/tag/v5.11.14)
     * Support expose ports for multiple containers. v5.11.15
+    * HTTPS: Check dashboard hostname and port. v5.11.15
 * v5.10
     * Refine README. v5.10.1
     * Refine DO and droplet release script. v5.10.2
