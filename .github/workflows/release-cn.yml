@@ -35,39 +35,6 @@ jobs:
       SRS_TAG: ${{ env.SRS_TAG }}
       SRS_MAJOR: ${{ env.SRS_MAJOR }}
 
-  files:
-    name: files
-    runs-on: ubuntu-20.04
-    needs:
-      - envs
-    steps:
-      - name: Covert output to env
-        run: |
-          echo "SRS_DROPLET_EIP=${{ needs.envs.outputs.SRS_DROPLET_EIP }}" >> $GITHUB_ENV
-      # Git checkout
-      - name: Checkout repository
-        uses: actions/checkout@v2
-      # Run scp first, because ufw limit the rate.
-      - name: Prepare the droplet
-        uses: appleboy/ssh-action@master
-        with:
-          host: ${{ env.SRS_DROPLET_EIP }}
-          username: root
-          key: ${{ secrets.DIGITALOCEAN_SSHKEY }}
-          port: 22
-          script: |
-            mkdir -p /root/search
-      # Run scp first, because ufw limit the rate.
-      - name: Copy the files to droplet
-        uses: appleboy/scp-action@master
-        with:
-          host: ${{ env.SRS_DROPLET_EIP }}
-          username: root
-          key: ${{ secrets.DIGITALOCEAN_SSHKEY }}
-          source: "search/scraper.json"
-          target: "/root/search/"
-          strip_components: 1
-
   docker0:
     name: docker0
     runs-on: ubuntu-20.04
@@ -79,8 +46,7 @@ jobs:
       - name: Build SRS docker image
         run: |
           echo "Build build/zh-cn"
-          docker run --rm -v $(pwd):/git -w /git -e SEARCH_APIKEY=${{ secrets.SEARCH_APIKEY }} \
-            ossrs/node:18 bash auto/build-cn-stage0.sh
+          docker run --rm -v $(pwd):/git -w /git ossrs/node:18 bash auto/build-cn-stage0.sh
       - uses: actions/upload-artifact@v2
         with:
           name: zh-cn
@@ -97,8 +63,7 @@ jobs:
       - name: Build SRS docker image
         run: |
           echo "Build build/en-us"
-          docker run --rm -v $(pwd):/git -w /git -e SEARCH_APIKEY=${{ secrets.SEARCH_APIKEY }} \
-            ossrs/node:18 bash auto/build-cn-stage1.sh
+          docker run --rm -v $(pwd):/git -w /git ossrs/node:18 bash auto/build-cn-stage1.sh
       - uses: actions/upload-artifact@v2
         with:
           name: en-us
@@ -180,7 +145,6 @@ jobs:
     needs:
       - envs
       - aliyun
-      - files
     steps:
       - name: Covert output to env
         run: |
@@ -189,15 +153,13 @@ jobs:
           echo "SRS_DROPLET_EIP=${{ needs.envs.outputs.SRS_DROPLET_EIP }}" >> $GITHUB_ENV
       # Execute command in a ssh, because ufw limit the rate.
       - name: Restart the containers
-        env:
-          SEARCH_APIKEY: ${{ secrets.SEARCH_APIKEY }}
         uses: appleboy/ssh-action@master
         with:
           host: ${{ env.SRS_DROPLET_EIP }}
           username: root
           key: ${{ secrets.DIGITALOCEAN_SSHKEY }}
           port: 22
-          envs: SRS_TAG,SRS_MAJOR,SEARCH_APIKEY
+          envs: SRS_TAG,SRS_MAJOR
           timeout: 60s
           command_timeout: 30m
           script: |
@@ -207,7 +169,6 @@ jobs:
             #
             ufw allow 20080
             ufw allow 8107
-            ufw allow 8108
             #
             # Restart HTTPX
             cat << END > /root/restart_docs-httpx.sh
@@ -216,8 +177,7 @@ jobs:
                 --log-driver=json-file --log-opt=max-size=500m --log-opt=max-file=3 \\
                 --name docs-httpx -p 20080:80 registry.cn-hangzhou.aliyuncs.com/ossrs/httpx:1 \\
                 ./bin/httpx-static -http 80 \\
-                  -proxy http://$SRS_DROPLET_PIP:8107/lts/ \\
-                  -proxy http://$SRS_DROPLET_PIP:8108/multi_search
+                  -proxy http://$SRS_DROPLET_PIP:8107/lts/
             END
             bash /root/restart_docs-httpx.sh
             #
@@ -230,12 +190,6 @@ jobs:
                 registry.cn-hangzhou.aliyuncs.com/ossrs/docs:cn-$SRS_MAJOR
             END
             bash /root/restart_docs-docs.sh
-            #
-            # Use 8107/tcp as port.
-            sed -i 's/host.docker.internal:3000/host.docker.internal:8107/g' /root/search/scraper.json
-            #
-            # Restart search scraper
-            echo "Something wrong for search scraper, ignore it."
             #
             # Cleanup old docker images.
             for image in $(docker images |grep '<none>' |awk '{print $3}'); do
