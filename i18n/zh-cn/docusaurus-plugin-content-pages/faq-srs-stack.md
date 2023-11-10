@@ -276,7 +276,7 @@ SRS Stack支持申请免费HTTPS证书，而且可以申请多个域名的证书
 ```bash
 docker run --rm -it --name srs-stack -v $HOME/data:/data \
   -p 2022:2022 -p 2443:2443 -p 1935:1935 -p 8000:8000/udp -p 10080:10080/udp \
-  -p 80:20222 -p 443:2443 \
+  -p 80:2022 -p 443:2443 \
   registry.cn-hangzhou.aliyuncs.com/ossrs/srs-stack:5
 ```
 
