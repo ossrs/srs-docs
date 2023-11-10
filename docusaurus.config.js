@@ -6,11 +6,6 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 const versions = require('./versions.json');
 const versionsArchived = require('./versionsArchived.json');
 
-const typesenseHttpsHost = process.env.SEARCH_HTTPS_HOST;
-const typesenseHttpsPort = process.env.SEARCH_HTTPS_PORT;
-const typesenseHttpHost = process.env.SEARCH_HTTP_HOST || 'localhost';
-const typesenseHttpPort = process.env.SEARCH_HTTP_PORT || 8108;
-const typesenseApiKey = process.env.SEARCH_APIKEY || 'test';
 const regionConfig = process.env.REGION === 'zh-cn' ? require('./config/zh-cn') : require('./config/default');
 const url = process.env.URL || regionConfig.url;
 const baseUrl = process.env.BASE_URL || regionConfig.baseUrl;
@@ -82,8 +77,6 @@ const config = {
       }),
     ],
   ],
-
-  themes: ['docusaurus-theme-search-typesense'],
 
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
@@ -177,28 +170,12 @@ const config = {
             type: 'localeDropdown',
             position: 'right',
           },
+          {
+            href: 'https://chat.openai.com/g/g-FxEZ7G0XX-srs',
+            label: 'AI Search',
+            position: 'right',
+          },
         ],
-      },
-      typesense: {
-        // See https://typesense.org/docs/guide/docsearch.html#step-2-add-a-search-bar-to-your-documentation-site
-        typesenseCollectionName: 'srs-docs',
-        typesenseServerConfig: {
-          nodes: [
-            typesenseHttpsHost && {
-              host: typesenseHttpsHost,
-              port: typesenseHttpsPort,
-              protocol: 'https',
-            },
-            typesenseHttpHost && {
-              host: typesenseHttpHost,
-              port: typesenseHttpPort,
-              protocol: 'http',
-            },
-          ].filter((e) => e),
-          apiKey: typesenseApiKey,
-        },
-        // Optional
-        contextualSearch: true,
       },
       footer: {
         style: 'dark',

@@ -234,17 +234,6 @@ jobs:
             # Use 8107/tcp as port.
             sed -i 's/host.docker.internal:3000/host.docker.internal:8107/g' /root/search/scraper.json
             #
-            # Restart typesense
-            cat << END > /root/restart_docs-typesense.sh
-              docker rm -f docs-typesense || sleep 1
-              docker run -d -it --restart always --privileged --name docs-typesense \\
-                -v /root/search/data:/data -p $SRS_DROPLET_PIP:8108:8108 \\
-                --log-driver=json-file --log-opt=max-size=500m --log-opt=max-file=3 \\
-                registry.cn-hangzhou.aliyuncs.com/ossrs/typesense:0.22.1 \\
-                  --enable-cors --data-dir /data --api-key=$SEARCH_APIKEY
-            END
-            bash /root/restart_docs-typesense.sh
-            #
             # Restart search scraper
             echo "Something wrong for search scraper, ignore it."
             #
