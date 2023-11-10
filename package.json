@@ -25,7 +25,6 @@
     "@docusaurus/theme-classic": "^3.0.0",
     "@mdx-js/react": "^1.6.21",
     "clsx": "^1.1.1",
-    "docusaurus-theme-search-typesense": "^0.2.0",
     "mdx-mermaid": "^1.2.2",
     "mermaid": "^8.14.0",
     "prism-react-renderer": "^1.2.1",

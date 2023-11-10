@@ -2,13 +2,6 @@
 # yarn lockfile v1
 
 
-"@algolia/autocomplete-core@1.2.1":
-  version "1.2.1"
-  resolved "https://registry.yarnpkg.com/@algolia/autocomplete-core/-/autocomplete-core-1.2.1.tgz#95fc07cfa40b5a38e3f80acd75d1fb94968215a8"
-  integrity sha512-/SLS6636Wpl7eFiX7eEy0E3wBo60sUm1qRYybJBDt1fs8reiJ1+OSy+dZgrLBfLL4mSFqRIIUHXbVp25QdZ+iw==
-  dependencies:
-    "@algolia/autocomplete-shared" "1.2.1"
-
 "@algolia/autocomplete-core@1.5.0":
   version "1.5.0"
   resolved "https://registry.npmmirror.com/@algolia/autocomplete-core/download/@algolia/autocomplete-core-1.5.0.tgz#6c91c9de7748e9c103846828a58dfe92bd4d6689"
@@ -16,24 +9,12 @@
   dependencies:
     "@algolia/autocomplete-shared" "1.5.0"
 
-"@algolia/autocomplete-preset-algolia@1.2.1":
-  version "1.2.1"
-  resolved "https://registry.yarnpkg.com/@algolia/autocomplete-preset-algolia/-/autocomplete-preset-algolia-1.2.1.tgz#bda1741823268ff76ba78306259036f000198e01"
-  integrity sha512-Lf4PpPVgHNXm1ytrnVdrZYV7hAYSCpAI/TrebF8UC6xflPY6sKb1RL/2OfrO9On7SDjPBtNd+6MArSar5JmK0g==
-  dependencies:
-    "@algolia/autocomplete-shared" "1.2.1"
-
 "@algolia/autocomplete-preset-algolia@1.5.0":
   version "1.5.0"
   resolved "https://registry.npmmirror.com/@algolia/autocomplete-preset-algolia/download/@algolia/autocomplete-preset-algolia-1.5.0.tgz#61671f09c0c77133d9baf1356719f8378c48437a"
   integrity sha1-YWcfCcDHcTPZuvE1Zxn4N4xIQ3o=
   dependencies:
     "@algolia/autocomplete-shared" "1.5.0"
-
-"@algolia/autocomplete-shared@1.2.1":
-  version "1.2.1"
-  resolved "https://registry.yarnpkg.com/@algolia/autocomplete-shared/-/autocomplete-shared-1.2.1.tgz#96f869fb2285ed6a34a5ac2509722c065df93016"
-  integrity sha512-RHCwcXAYFwDXTlomstjWRFIzOfyxtQ9KmViacPE5P5hxUSSjkmG3dAb77xdydift1PaZNbho5TNTCi5UZe0RpA==
 
 "@algolia/autocomplete-shared@1.5.0":
   version "1.5.0"
@@ -2155,11 +2136,6 @@
   resolved "https://registry.yarnpkg.com/@discoveryjs/json-ext/-/json-ext-0.5.7.tgz#1d572bfbbe14b7704e0ba0f39b74815b84870d70"
   integrity sha512-dBVuXR082gk3jsFp7Rd/JI4kytwGHecnCoTtXFb7DB6CNHp4rg5k1bhg0nWdLGLnOV71lmDzGQaLMy8iPLY0pw==
 
-"@docsearch/css@3.0.0-alpha.39":
-  version "3.0.0-alpha.39"
-  resolved "https://registry.yarnpkg.com/@docsearch/css/-/css-3.0.0-alpha.39.tgz#1ebd390d93e06aad830492f5ffdc8e05d058813f"
-  integrity sha512-lr10MFTgcR3NRea/FtJ7uNtIpQz0XVwYxbpO5wxykgfHu1sxZTr6zwkuPquRgFYXnccxsTvfoIiK3rMH0fLr/w==
-
 "@docsearch/css@3.0.0-alpha.42":
   version "3.0.0-alpha.42"
   resolved "https://registry.npmmirror.com/@docsearch/css/download/@docsearch/css-3.0.0-alpha.42.tgz#deb6049e999d6ca9451eba4793cb5b6da28c8773"
@@ -4138,7 +4114,7 @@ ajv@^8.0.0, ajv@^8.8.0:
     require-from-string "^2.0.2"
     uri-js "^4.2.2"
 
-algoliasearch-helper@^3.3.4, algoliasearch-helper@^3.5.5:
+algoliasearch-helper@^3.5.5:
   version "3.7.0"
   resolved "https://registry.npmmirror.com/algoliasearch-helper/download/algoliasearch-helper-3.7.0.tgz#c0a0493df84d850360f664ad7a9d4fc78a94fd78"
   integrity sha512-XJ3QfERBLfeVCyTVx80gon7r3/rgm/CE8Ha1H7cbablRe/X7SfYQ14g/eO+MhjVKIQp+gy9oC6G5ilmLwS1k6w==
@@ -6370,23 +6346,6 @@ doctrine@^3.0.0:
   dependencies:
     esutils "^2.0.2"
 
-docusaurus-theme-search-typesense@^0.2.0:
-  version "0.2.0"
-  resolved "https://registry.yarnpkg.com/docusaurus-theme-search-typesense/-/docusaurus-theme-search-typesense-0.2.0.tgz#469c815942f40cf12252db80e76ce5b94cedadc9"
-  integrity sha512-ah05gTACQ+Yt450KqyPzrMKecK5/WnxqKQirbTAlFzOGLhfzcZZrb/rE366ENWLIIc1J14GRVzUTheyx2rM8Jw==
-  dependencies:
-    "@docusaurus/core" "2.0.0-beta.14"
-    "@docusaurus/theme-common" "2.0.0-beta.14"
-    "@docusaurus/utils" "2.0.0-beta.14"
-    "@docusaurus/utils-validation" "2.0.0-beta.14"
-    algoliasearch-helper "^3.3.4"
-    clsx "^1.1.1"
-    eta "^1.12.1"
-    lodash "^4.17.20"
-    typesense "^0.14.0"
-    typesense-docsearch-react "^0.0.1"
-    typesense-instantsearch-adapter "^2.2.0-1"
-
 dom-converter@^0.2.0:
   version "0.2.0"
   resolved "https://registry.npm.taobao.org/dom-converter/download/dom-converter-0.2.0.tgz#6721a9daee2e293682955b6afe416771627bb768"
@@ -6883,7 +6842,7 @@ esutils@^2.0.2:
   resolved "https://registry.npm.taobao.org/esutils/download/esutils-2.0.3.tgz#74d2eb4de0b8da1293711910d50775b9b710ef64"
   integrity sha1-dNLrTeC42hKTcRkQ1Qd1ubcQ72Q=
 
-eta@^1.12.1, eta@^1.12.3:
+eta@^1.12.3:
   version "1.12.3"
   resolved "https://registry.nlark.com/eta/download/eta-1.12.3.tgz#2982d08adfbef39f9fa50e2fbd42d7337e7338b1"
   integrity sha1-KYLQit++85+fpQ4vvULXM35zOLE=
@@ -8986,11 +8945,6 @@ log-update@^4.0.0:
     cli-cursor "^3.1.0"
     slice-ansi "^4.0.0"
     wrap-ansi "^6.2.0"
-
-loglevel@^1.7.1:
-  version "1.8.0"
-  resolved "https://registry.yarnpkg.com/loglevel/-/loglevel-1.8.0.tgz#e7ec73a57e1e7b419cb6c6ac06bf050b67356114"
-  integrity sha512-G6A/nJLRgWOuuwdNuA6koovfEV1YpqqAG4pRUlFaz3jj2QNZ8M4vBqnVA+HBTmU/AMNUtlOsMmSpF6NyOjztbA==
 
 longest-streak@^3.0.0:
   version "3.1.0"
@@ -13006,33 +12960,6 @@ typedarray-to-buffer@^3.1.5:
   integrity sha1-qX7nqf9CaRufeD/xvFES/j/KkIA=
   dependencies:
     is-typedarray "^1.0.0"
-
-typesense-docsearch-react@^0.0.1:
-  version "0.0.1"
-  resolved "https://registry.yarnpkg.com/typesense-docsearch-react/-/typesense-docsearch-react-0.0.1.tgz#d7c5eb3a46fd347c972b99c32fa6fd175b5bdcfb"
-  integrity sha512-B8Rm7jkh2Ij3ulBTagdLcyAOq9Ep45RZWP2GI78Wx5o9kRySLLWAl9fnK7mds4vDDQJbLXN+YSSSdj71fbrSYA==
-  dependencies:
-    "@algolia/autocomplete-core" "1.2.1"
-    "@algolia/autocomplete-preset-algolia" "1.2.1"
-    "@docsearch/css" "3.0.0-alpha.39"
-    algoliasearch "^4.0.0"
-    typesense "^0.14.0"
-    typesense-instantsearch-adapter "^2.0.1"
-
-typesense-instantsearch-adapter@^2.0.1, typesense-instantsearch-adapter@^2.2.0-1:
-  version "2.2.0"
-  resolved "https://registry.yarnpkg.com/typesense-instantsearch-adapter/-/typesense-instantsearch-adapter-2.2.0.tgz#6d42ba7293490bdf02854f454ed5b7db16d89b2f"
-  integrity sha512-VRmE2cnQhNZc/SgunvHCWUa6AtzDh+Li7DiJLAwC+0JT30y31TBr4sHZ1U5SOtk6OwOhWyyZU8JvZhB0GCrNaA==
-  dependencies:
-    typesense "^0.14.0"
-
-typesense@^0.14.0:
-  version "0.14.0"
-  resolved "https://registry.yarnpkg.com/typesense/-/typesense-0.14.0.tgz#c7a61ccadcd5186e3700a973188d6b93648b2fdd"
-  integrity sha512-9ZLkjwhCYXCZuYmvS6En5hJm3AMhFZMbZ7hRMVFJlyK3essNqd8MSWEt2bpAvbvTN+1FgGLBQPJnpYdsbkVsKg==
-  dependencies:
-    axios "^0.21.1"
-    loglevel "^1.7.1"
 
 ua-parser-js@^0.7.30:
   version "0.7.31"
