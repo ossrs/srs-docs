@@ -4,7 +4,7 @@ pwd
 du -sh *
 
 yarn &&
-yarn cross-env REGION='zh-cn' BASE_URL='/lts/en-us/' \
+yarn cross-env REGION='zh-cn' BASE_URL='/lts/en-us/' SRS_OS_LOCALE='zh-cn' \
   docusaurus build --locale en-us --out-dir build/en-us &&
 
 (cd build && tar cf en-us.tar en-us) &&
