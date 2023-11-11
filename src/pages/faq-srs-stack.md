@@ -719,6 +719,8 @@ The following are the update records for the SRS Stack server.
     * API: Remove duplicated CORS headers. [v5.11.14](https://github.com/ossrs/srs-stack/releases/tag/v5.11.14)
     * Support expose ports for multiple containers. v5.11.15
     * HTTPS: Check dashboard hostname and port. v5.11.15
+    * Error when eslint fail. v5.11.16
+    * Use upx to make binary smaller. v5.11.16
 * v5.10
     * Refine README. v5.10.1
     * Refine DO and droplet release script. v5.10.2

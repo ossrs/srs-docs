@@ -171,7 +171,7 @@ const config = {
             position: 'right',
           },
           {
-            href: 'https://chat.openai.com/g/g-FxEZ7G0XX-srs',
+            href: '../../gpt/g/g-FxEZ7G0XX-srs',
             label: 'AI Assistant',
             position: 'right',
           },
