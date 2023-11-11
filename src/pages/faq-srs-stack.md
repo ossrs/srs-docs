@@ -721,6 +721,7 @@ The following are the update records for the SRS Stack server.
     * HTTPS: Check dashboard hostname and port. v5.11.15
     * Error when eslint fail. v5.11.16
     * Use upx to make binary smaller. v5.11.16
+    * Refine transcode test case. [v5.11.17](https://github.com/ossrs/srs-stack/releases/tag/v5.11.17)
 * v5.10
     * Refine README. v5.10.1
     * Refine DO and droplet release script. v5.10.2
