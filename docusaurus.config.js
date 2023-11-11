@@ -10,7 +10,7 @@ const regionConfig = process.env.REGION === 'zh-cn' ? require('./config/zh-cn') 
 const url = process.env.URL || regionConfig.url;
 const baseUrl = process.env.BASE_URL || regionConfig.baseUrl;
 const defaultLocale = process.env.DEFAULT_LOCALE || regionConfig.defaultLocale;
-const sitePrefix = process.env.REGION === 'zh-cn' ? 'https://ossrs.net' : 'https://ossrs.io';
+const sitePrefix = process.env.SRS_OS_LOCALE === 'zh-cn' ? 'https://ossrs.net' : 'https://ossrs.io';
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {

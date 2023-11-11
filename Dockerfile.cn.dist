@@ -10,6 +10,7 @@ ADD build/en-us.tar /usr/local/srs-docs/
 RUN cd /usr/local/srs-docs && ln -sf . lts && du -sh * && \
   du -sh zh-cn/* && du -sh en-us/*
 
+ENV SRS_OS_LOCALE=zh-cn
 WORKDIR /usr/local
 CMD ["./bin/httpx-static", \
     "-http=80", "-root=./srs-docs", \
