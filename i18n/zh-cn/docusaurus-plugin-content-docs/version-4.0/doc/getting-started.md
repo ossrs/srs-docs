@@ -168,6 +168,7 @@ ffplay 'srt://127.0.0.1:10080?streamid=#!::r=live/livestream,m=request'
 * `rtmp://ip/live/livesteam`
 * `rtmp://ip/live/livesteamN`
 * `rtmp://ip/liveN/livestreamN`
+* `rtmp://ip/whatever/doesnotmatter`
 * `srt://ip:10080?streamid=#!::r=anyM/streamN,m=publish`
 * `webrtc://localhost/anyM/streamN`
 * `http://ip:8080/anyM/streamN.flv`

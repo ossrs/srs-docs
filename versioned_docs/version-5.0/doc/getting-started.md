@@ -166,19 +166,24 @@ ffplay 'srt://127.0.0.1:10080?streamid=#!::r=live/livestream,m=request'
 
 ## Multiple Streams
 
-You're able to publish multiple streams to SRS, by using different URLs.
+You can send multiple streams to SRS by using different URLs. There's no need to change any settings; 
+just change the URL for the stream you're publishing and playing. It's very easy and straightforward.
 
 * `rtmp://ip/live/livesteam`
 * `rtmp://ip/live/livesteamN`
 * `rtmp://ip/liveN/livestreamN`
+* `rtmp://ip/whatever/doesnotmatter`
 * `srt://ip:10080?streamid=#!::r=anyM/streamN,m=publish`
-* `webrtc://localhost/anyM/streamN`
+* `http://ip:1985/rtc/v1/whip/?app=anyM&stream=streamN`
+* `http://ip:1985/rtc/v1/whep/?app=anyM&stream=streamN`
 * `http://ip:8080/anyM/streamN.flv`
 * `http://ip:8080/anyM/streamN.m3u8`
 * `https://ip:8080/anyM/streamN.flv`
 * `https://ip:8080/anyM/streamN.m3u8`
 
-> Note: Please see [RTMP URL](./rtmp-url-vhost.md) for detail.
+SRS uses a configuration at the virtual host (vhost) level. All applications(app) and streams within the 
+same vhost share this configuration. For more information, please refer to the [RTMP URL](./rtmp-url-vhost.md) 
+documentation.
 
 ![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/doc/en/v5/getting-started)
 
