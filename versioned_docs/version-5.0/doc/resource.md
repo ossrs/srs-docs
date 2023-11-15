@@ -41,18 +41,15 @@ The API used by SRS:
 * `/rtc/v1/` The HTTP API path for RTC.
 * `/sig/v1/` The [demo signaling](https://github.com/ossrs/signaling) API.
 
-Other API used by [ossrs.net](https://ossrs.net):
+Other API used by ossrs.net:
 
 * `/gif/v1` The statistic API.
 * `/service/v1/` The latest available version API.
-* `/ws-service/v1/` The latest available version API, by websocket.
-* `/im-service/v1/` The latest available version API, by IM.
-* `/code-service/v1/` The latest available version API, by Code verification.
 
-The statistic path for [ossrs.net](https://ossrs.net):
+The statistic path for ossrs.net:
 
 * `/srs/xxx` The GitHub pages for [srs](https://github.com/ossrs/srs)
-* `/release/xxx` The pages for [ossrs.net](https://ossrs.net)
+* `/release/xxx` The pages for ossrs.net
 * `/console/xxx` The pages for [console](http://ossrs.net/console/)
 * `/player/xxx` The pages for [players and publishers](http://ossrs.net/players/)
 * `/k8s/xxx` The template and repository deploy by K8s, like [srs-k8s-template](https://github.com/ossrs/srs-k8s-template)
@@ -88,6 +85,6 @@ git clone https://github.com/ossrs/srs.git
 | develop | 0m46.421s | 42MB | git clone -b develop --depth=1 https://gitee.com/ossrs/srs.git |
 | min | 2m22.865s | 217MB | git clone -b min https://gitee.com/ossrs/srs.git |
 | min | 0m36.472s | 11MB | git clone -b min --depth=1 https://gitee.com/ossrs/srs.git |
-![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/doc/en/v5/resource)
+![](https://ossrs.io/gif/v1/sls.gif?site=ossrs.io&path=/lts/doc/en/v5/resource)
 
 

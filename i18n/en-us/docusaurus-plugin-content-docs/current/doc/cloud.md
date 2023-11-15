@@ -17,4 +17,4 @@ client SDKs for all platforms, and a monthly free quota. Click [here](https://os
 to view the online demo. If you have any questions, please join our [Discord](https://discord.gg/DCCH6HyhuT) channel
 to contact us.
 
-![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/doc/en/v6/cloud)
+![](https://ossrs.io/gif/v1/sls.gif?site=ossrs.io&path=/lts/doc/en/v6/cloud)

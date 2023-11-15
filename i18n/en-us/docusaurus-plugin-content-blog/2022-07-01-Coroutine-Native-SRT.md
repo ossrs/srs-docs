@@ -339,6 +339,6 @@ Here, some of SRT's most troublesome problems are the high retransmission rate a
 
 Welcome for more discussion at [discord](https://discord.gg/bQUPDRqy79).
 
-![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/blog-en/22-07-01-Coroutine-Native-SRT)
+![](https://ossrs.io/gif/v1/sls.gif?site=ossrs.io&path=/lts/blog-en/22-07-01-Coroutine-Native-SRT)
 
 

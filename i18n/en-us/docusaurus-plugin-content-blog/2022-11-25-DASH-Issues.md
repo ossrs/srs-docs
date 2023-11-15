@@ -128,5 +128,5 @@ now we think it's ready and stable to use DASH in your online product if you wan
 
 If you'd like to discuss with SRS, you are welcome to [discord](https://discord.gg/yZ4BnPmHAd)
 
-![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/blog-en/2022-11-25-DASH-Issues)
+![](https://ossrs.io/gif/v1/sls.gif?site=ossrs.io&path=/lts/blog-en/2022-11-25-DASH-Issues)
 

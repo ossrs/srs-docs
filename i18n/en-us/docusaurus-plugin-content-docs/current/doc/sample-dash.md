@@ -104,6 +104,6 @@ Please use VLC to play.
 
 Winlin 2020.01
 
-![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/doc/en/v6/sample-dash)
+![](https://ossrs.io/gif/v1/sls.gif?site=ossrs.io&path=/lts/doc/en/v6/sample-dash)
 
 

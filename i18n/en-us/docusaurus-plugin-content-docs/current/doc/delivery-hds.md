@@ -21,7 +21,7 @@ We can disable or enable HDS when build SRS, read [Build](./install.md)
 
 ## Player
 
-The OSMF player can play HDS. For example, use [OSMF player](http://www.ossrs.net/players/osmf.html) to play the following HDS:
+The OSMF player can play HDS. For example, use VLC to play the following HDS:
 
 ```
 http://ossrs.net:8081/live/livestream.f4m
@@ -54,6 +54,6 @@ The config items are similar to HLS, read [HLS config](./hls.md#hls-config)
 
 Winlin 2015.3
 
-![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/doc/en/v6/delivery-hds)
+![](https://ossrs.io/gif/v1/sls.gif?site=ossrs.io&path=/lts/doc/en/v6/delivery-hds)
 
 

@@ -173,5 +173,5 @@ There are more other dashboards, please get them in [srs-grafana](https://github
 
 Any patch is welcome.
 
-![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/doc/en/v5/exporter)
+![](https://ossrs.io/gif/v1/sls.gif?site=ossrs.io&path=/lts/doc/en/v5/exporter)
 

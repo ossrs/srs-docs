@@ -244,6 +244,6 @@ The changing of dvr and reload will restart the dvr, that is, to close current d
 
 Winlin 2015.1
 
-![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/doc/en/v5/dvr)
+![](https://ossrs.io/gif/v1/sls.gif?site=ossrs.io&path=/lts/doc/en/v5/dvr)
 
 

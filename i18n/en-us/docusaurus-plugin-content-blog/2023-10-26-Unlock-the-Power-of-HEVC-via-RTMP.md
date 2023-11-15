@@ -126,4 +126,4 @@ play the streams using HTML5 players like mpegts.js, or VLC and ffplay for HLS s
 
 Welcome for more discussion at [discord](https://discord.gg/bQUPDRqy79).
 
-![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/blog-en/23-10-26-Unlock-the-Power-of-HEVC-via-RTMP)
+![](https://ossrs.io/gif/v1/sls.gif?site=ossrs.io&path=/lts/blog-en/23-10-26-Unlock-the-Power-of-HEVC-via-RTMP)

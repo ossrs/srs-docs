@@ -89,6 +89,6 @@ If you encounter issues while using SRS Stack, please read the [FAQ](/faq-srs-st
 * [SRS Stack - How to Setup a Video Streaming Service with aaPanel](/blog/BT-aaPanel)
 * [SRS Stack - Ensuring Authentication in Live Streaming Publishing](/blog/Ensuring-Authentication-in-Live-Streaming-Publishing)
 
-![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/doc/en/v6/getting-started-stack)
+![](https://ossrs.io/gif/v1/sls.gif?site=ossrs.io&path=/lts/doc/en/v6/getting-started-stack)
 
 

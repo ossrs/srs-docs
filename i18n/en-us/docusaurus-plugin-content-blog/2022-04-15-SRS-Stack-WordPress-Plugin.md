@@ -116,6 +116,6 @@ have further questions about SRS, [the wiki](/docs/v4/doc/introduction) is a goo
 
 If you’d like to discuss with SRS, you are welcome to [discord](https://discord.gg/yZ4BnPmHAd).
 
-![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/blog-en/22-04-15-WordPress-Plugin)
+![](https://ossrs.io/gif/v1/sls.gif?site=ossrs.io&path=/lts/blog-en/22-04-15-WordPress-Plugin)
 
 

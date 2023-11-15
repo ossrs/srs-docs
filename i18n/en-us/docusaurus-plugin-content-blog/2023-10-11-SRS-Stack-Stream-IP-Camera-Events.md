@@ -122,4 +122,4 @@ enjoy the convenience and flexibility it offers for your IP camera streaming nee
 
 Welcome for more discussion at [discord](https://discord.gg/bQUPDRqy79).
 
-![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/blog-en/2023-10-11-Stream-IP-Camera-Events)
+![](https://ossrs.io/gif/v1/sls.gif?site=ossrs.io&path=/lts/blog-en/2023-10-11-Stream-IP-Camera-Events)

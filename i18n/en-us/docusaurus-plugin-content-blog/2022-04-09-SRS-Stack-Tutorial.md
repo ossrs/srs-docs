@@ -199,6 +199,6 @@ start.
 
 If you'd like to discuss with SRS, you are welcome to [discord](https://discord.gg/yZ4BnPmHAd).
 
-![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/blog-en/22-04-09-SRS-Stack-Tutorial)
+![](https://ossrs.io/gif/v1/sls.gif?site=ossrs.io&path=/lts/blog-en/22-04-09-SRS-Stack-Tutorial)
 
 

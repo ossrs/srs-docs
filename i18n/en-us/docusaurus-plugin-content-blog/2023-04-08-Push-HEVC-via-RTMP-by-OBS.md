@@ -85,5 +85,5 @@ We wrote this article with the help of GitHub Copilot.
 
 Welcome for more discussion at [discord](https://discord.gg/bQUPDRqy79).
 
-![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/blog-en/23-04-08-Push-HEVC-via-RTMP-by-OBS)
+![](https://ossrs.io/gif/v1/sls.gif?site=ossrs.io&path=/lts/blog-en/23-04-08-Push-HEVC-via-RTMP-by-OBS)
 

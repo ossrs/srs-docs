@@ -9,7 +9,7 @@ hide_table_of_contents: false
 
 SRS provides HTTP api, to external application to manage SRS, and support crossdomain for js.
 
-Once HTTP API enabled, you can use [srs-console](http://ossrs.net:1985/console) to connect to your SRS server.
+Once HTTP API enabled, you can use [srs-console](http://ossrs.net/console/) to connect to your SRS server.
 
 ## Goals
 
@@ -519,6 +519,6 @@ To clean up the username and password, you can access the HTTP API with the user
 
 Winlin 2015.8
 
-![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/doc/en/v6/http-api)
+![](https://ossrs.io/gif/v1/sls.gif?site=ossrs.io&path=/lts/doc/en/v6/http-api)
 
 

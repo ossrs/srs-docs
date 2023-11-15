@@ -14,6 +14,6 @@ hide_table_of_contents: false
 * [App Download](https://ossrs.net/releases/app.html)
 * [HTTP-REST](https://ossrs.net/http-rest/)
 
-![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/tools/en/v6/utility)
+![](https://ossrs.io/gif/v1/sls.gif?site=ossrs.io&path=/lts/tools/en/v6/utility)
 
 

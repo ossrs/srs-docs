@@ -17,6 +17,6 @@ Compared to Docker, HELM and K8s are mainly for medium to large scale deployment
 big, we recommend using Docker or SRS Stack directly. Generally, if you have less than a thousand streams, please
 do not use HELM or K8s.
 
-![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/doc/en/v5/getting-started-k8s)
+![](https://ossrs.io/gif/v1/sls.gif?site=ossrs.io&path=/lts/doc/en/v5/getting-started-k8s)
 
 

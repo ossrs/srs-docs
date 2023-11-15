@@ -9,7 +9,7 @@ hide_table_of_contents: false
 
 SRS提供HTTP接口，供外部程序管理服务器，并支持跨域（js可以直接控制和获取服务器的各种信息）。
 
-通过HTTP API，可以使用[srs-console](http://ossrs.net:1985/console)连接到你的服务器。
+通过HTTP API，可以使用[srs-console](http://ossrs.net/console/)连接到你的服务器。
 
 ## Goals
 

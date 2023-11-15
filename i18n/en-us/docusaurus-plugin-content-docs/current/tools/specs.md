@@ -58,5 +58,5 @@ hide_table_of_contents: false
 1. [ffmpeg-logo.png](/files/ffmpeg-logo.png), [ffmpeg-min.png](/files/ffmpeg-min.png), ffmpeg logo
 1. [source.flv](/files/source.flv), [source.200kbps.768x320.flv](/files/source.200kbps.768x320.flv), avatar, 400kbps
 
-![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/tools/en/v6/specs)
+![](https://ossrs.io/gif/v1/sls.gif?site=ossrs.io&path=/lts/tools/en/v6/specs)
 

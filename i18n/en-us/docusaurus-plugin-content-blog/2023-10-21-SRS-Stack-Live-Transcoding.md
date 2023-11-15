@@ -102,4 +102,4 @@ convert high-resolution streams to lower resolutions for mobile devices.
 
 Welcome for more discussion at [discord](https://discord.gg/bQUPDRqy79).
 
-![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/blog-en/2023-10-21-Live-Transcoding)
+![](https://ossrs.io/gif/v1/sls.gif?site=ossrs.io&path=/lts/blog-en/2023-10-21-Live-Transcoding)

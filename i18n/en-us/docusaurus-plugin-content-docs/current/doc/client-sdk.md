@@ -47,6 +47,6 @@ Although the number of PC users are smaller, there are still some use scenarios 
 
 Winlin 2017.4
 
-![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/doc/en/v6/client-sdk)
+![](https://ossrs.io/gif/v1/sls.gif?site=ossrs.io&path=/lts/doc/en/v6/client-sdk)
 
 

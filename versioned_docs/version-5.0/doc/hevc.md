@@ -24,6 +24,6 @@ project. As for WebRTC, only Safari supports it currently, and Chrome is said to
 As H.265 becomes more complete, SRS initially had a branch supporting H.265 (see [feature/h265](https://github.com/ossrs/srs-gb28181/tree/feature/h265)
 ). However, SRS 5.0 does not support H.265. If you need to use the H.265 feature, please switch to the SRS 6.0 version.
 
-![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/doc/en/v5/hevc)
+![](https://ossrs.io/gif/v1/sls.gif?site=ossrs.io&path=/lts/doc/en/v5/hevc)
 
 

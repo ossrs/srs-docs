@@ -57,7 +57,7 @@ Publish stream:
 ffmpeg -re -i doc/source.flv -c copy -f flv rtmp://127.0.0.1:1935/live/livestream
 ```
 
-Play stream：http://ossrs.net/srs.release/trunk/research/players/srs_player.html?app=live&stream=livestream&server=localhost&port=1935&autostart=true&vhost=localhost
+Play stream：[http://localhost:8080/live/livestream.flv](http://localhost:8080/players/srs_player.html?autostart=true&stream=livestream.flv&port=8080&schema=http)
 
 ![image](https://user-images.githubusercontent.com/2777660/72774670-7108c980-3c46-11ea-9e8b-d4fb3a475ea2.png)
 
@@ -99,7 +99,7 @@ Publish stream:
 ffmpeg -re -i doc/source.flv -c copy -f flv rtmp://127.0.0.1:1935/live/livestream
 ```
 
-Play stream：http://ossrs.net/srs.release/trunk/research/players/srs_player.html?app=live&stream=livestream&server=localhost&port=1935&autostart=true&vhost=localhost
+Play stream：[http://localhost:8080/live/livestream.flv](http://localhost:8080/players/srs_player.html?autostart=true&stream=livestream.flv&port=8080&schema=http)
 
 ## Ubuntu Cross Build SRS: ARMv7
 
@@ -139,7 +139,7 @@ Publish stream:
 ffmpeg -re -i doc/source.flv -c copy -f flv rtmp://127.0.0.1:1935/live/livestream
 ```
 
-Play stream：http://ossrs.net/srs.release/trunk/research/players/srs_player.html?app=live&stream=livestream&server=localhost&port=1935&autostart=true&vhost=localhost
+Play stream：[http://localhost:8080/live/livestream.flv](http://localhost:8080/players/srs_player.html?autostart=true&stream=livestream.flv&port=8080&schema=http)
 
 ## Ubuntu Cross Build SRS: hisiv500(arm)
 
@@ -155,7 +155,7 @@ SRS configure options for cross build:
 Presets:
   --cross-build             Enable cross-build, please set bellow Toolchain also. Default: off
   
-Cross Build options:        @see https://ossrs.net/lts/zh-cn/docs/v4/doc/arm#ubuntu-cross-build-srs
+Cross Build options:        @see https://ossrs.io/lts/en-us/docs/v6/doc/arm#ubuntu-cross-build-srs
   --cpu=<CPU>               Toolchain: Select the minimum required CPU. For example: --cpu=24kc
   --arch=<ARCH>             Toolchain: Select architecture. For example: --arch=aarch64
   --host=<BUILD>            Toolchain: Build programs to run on HOST. For example: --host=aarch64-linux-gnu
@@ -173,6 +173,6 @@ Toolchain options:
 
 Winlin 2014.11
 
-![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/doc/en/v6/arm)
+![](https://ossrs.io/gif/v1/sls.gif?site=ossrs.io&path=/lts/doc/en/v6/arm)
 
 

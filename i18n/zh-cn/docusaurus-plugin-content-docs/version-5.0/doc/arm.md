@@ -63,7 +63,7 @@ docker run -it --rm -v `pwd`:/srs -w /srs ossrs/srs:aarch64 \
 ffmpeg -re -i doc/source.flv -c copy -f flv rtmp://127.0.0.1:1935/live/livestream
 ```
 
-播放：http://ossrs.net/srs.release/trunk/research/players/srs_player.html?app=live&stream=livestream&server=localhost&port=1935&autostart=true&vhost=localhost
+播放：[http://localhost:8080/live/livestream.flv](http://localhost:8080/players/srs_player.html?autostart=true&stream=livestream.flv&port=8080&schema=http)
 
 ![image](https://user-images.githubusercontent.com/2777660/72774670-7108c980-3c46-11ea-9e8b-d4fb3a475ea2.png)
 
@@ -114,7 +114,7 @@ cd ~/git/srs/trunk && docker run --rm -it -v `pwd`:/srs -w /srs \
 ffmpeg -re -i doc/source.flv -c copy -f flv rtmp://127.0.0.1:1935/live/livestream
 ```
 
-播放：http://ossrs.net/srs.release/trunk/research/players/srs_player.html?app=live&stream=livestream&server=localhost&port=1935&autostart=true&vhost=localhost
+播放：[http://localhost:8080/live/livestream.flv](http://localhost:8080/players/srs_player.html?autostart=true&stream=livestream.flv&port=8080&schema=http)
 
 ## Ubuntu Cross Build SRS: ARMv7
 
@@ -159,7 +159,7 @@ cd ~/git/srs/trunk && docker run --rm -it -v `pwd`:/srs -w /srs \
 ffmpeg -re -i doc/source.flv -c copy -f flv rtmp://127.0.0.1:1935/live/livestream
 ```
 
-播放：http://ossrs.net/srs.release/trunk/research/players/srs_player.html?app=live&stream=livestream&server=localhost&port=1935&autostart=true&vhost=localhost
+播放：[http://localhost:8080/live/livestream.flv](http://localhost:8080/players/srs_player.html?autostart=true&stream=livestream.flv&port=8080&schema=http)
 
 ## Ubuntu Cross Build SRS: ARMv7(hisiv500)
 
@@ -216,7 +216,7 @@ SRS相关的参数如下：
 Presets:
   --cross-build             Enable cross-build, please set bellow Toolchain also. Default: off
   
-Cross Build options:        @see https://ossrs.net/lts/zh-cn/docs/v4/doc/arm#ubuntu-cross-build-srs
+Cross Build options:        @see https://ossrs.net/lts/zh-cn/docs/v5/doc/arm#ubuntu-cross-build-srs
   --cpu=<CPU>               Toolchain: Select the minimum required CPU. For example: --cpu=24kc
   --arch=<ARCH>             Toolchain: Select architecture. For example: --arch=aarch64
   --host=<BUILD>            Toolchain: Build programs to run on HOST. For example: --host=aarch64-linux-gnu

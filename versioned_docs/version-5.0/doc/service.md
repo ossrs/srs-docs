@@ -11,7 +11,7 @@ There are many ways to startup SRS:
 * Directly run srs at the trunk/objs, and need start again when system restart.
 * Linux service, the init.d scirpt at `srs/trunk/etc/init.d/srs`, and user can add to linux service when linked to the /etc/init.d/srs then add as service `/sbin/chkconfig --add srs`.
 
-The SRS release binary can be downloaded from release site, we can install as system service, see: [Github: release](http://ossrs.net/srs.release) or [Mirror for China: release](http://www.ossrs.net)
+The SRS release binary can be downloaded from release site, we can install as system service.
 
 ## Manual
 
@@ -170,6 +170,6 @@ force_grace_quit off;
 
 Winlin 2019.10
 
-![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/doc/en/v5/service)
+![](https://ossrs.io/gif/v1/sls.gif?site=ossrs.io&path=/lts/doc/en/v5/service)
 
 

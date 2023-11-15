@@ -209,5 +209,5 @@ Why use HTTP FLV? HTTP FLV streaming is becoming more popular. The main advantag
 5. Universality: Flash can play both RTMP and HTTP FLV. Custom apps and mainstream players also support HTTP FLV playback.
 6. Simplicity: FLV is the simplest streaming media encapsulation, and HTTP is the most widely used protocol. Combining these two makes maintenance much easier than RTMP.
 
-![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.net&path=/lts/doc/en/v6/flv)
+![](https://ossrs.io/gif/v1/sls.gif?site=ossrs.net&path=/lts/doc/en/v6/flv)
 

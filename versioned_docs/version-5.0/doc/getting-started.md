@@ -185,6 +185,6 @@ SRS uses a configuration at the virtual host (vhost) level. All applications(app
 same vhost share this configuration. For more information, please refer to the [RTMP URL](./rtmp-url-vhost.md) 
 documentation.
 
-![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/doc/en/v5/getting-started)
+![](https://ossrs.io/gif/v1/sls.gif?site=ossrs.io&path=/lts/doc/en/v5/getting-started)
 
 

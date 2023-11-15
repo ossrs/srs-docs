@@ -95,4 +95,4 @@ latency, making it an excellent option for low-latency live streaming.
 
 If you're interested in discussing SRS, feel free to join us on [Discord](https://discord.gg/yZ4BnPmHAd).
 
-![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/blog-en/2023-06-15-Experience-Ultra-Low-Latency-Live-Streaming-with-OBS-WHIP)
+![](https://ossrs.io/gif/v1/sls.gif?site=ossrs.io&path=/lts/blog-en/2023-06-15-Experience-Ultra-Low-Latency-Live-Streaming-with-OBS-WHIP)

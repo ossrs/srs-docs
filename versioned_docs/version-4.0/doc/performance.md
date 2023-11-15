@@ -133,9 +133,7 @@ done
 ```
 
 * SRS RTMP stream URL: `rtmp://192.168.2.101:1935/live/livestream`
-* Online play SRS RTMP: [Online Player](http://ossrs.net/srs.release/trunk/research/players/srs_player.html?server=192.168.2.101&port=1935&app=live&stream=livestream&vhost=192.168.2.101&autostart=true)
 * Nginx-RTMP stream URL: `rtmp://192.168.2.101:19350/live/livestream`
-* Online play nginx-rtmp RTMP: [Online Player](http://ossrs.net/srs.release/trunk/research/players/srs_player.html?server=192.168.2.101&port=19350&app=live&stream=livestream&vhost=192.168.2.101&autostart=true)
 
 ## Client
 

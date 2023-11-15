@@ -80,10 +80,9 @@ for((;;)); do \
     sleep 1; 
 done
 ```
-```
 
 * Play RTMP: `rtmp://192.168.1.105:1935/live/livestream`
-* Online Play: [Online Player](http://ossrs.net/srs.release/trunk/research/players/srs_player.html?server=192.168.1.105&port=1935&app=live&stream=livestream&vhost=192.168.1.105&autostart=true)
+* Online Play: [Online Player](http://localhost:8080/players/srs_player.html?autostart=true&stream=livestream.flv&port=8080&schema=http)
 
 ## Client
 

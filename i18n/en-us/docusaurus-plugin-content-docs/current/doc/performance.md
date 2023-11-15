@@ -491,9 +491,7 @@ done
 ```
 
 * SRS RTMP stream URL: `rtmp://192.168.2.101:1935/live/livestream`
-* Online play SRS RTMP: [Online Player](http://ossrs.net/srs.release/trunk/research/players/srs_player.html?server=192.168.2.101&port=1935&app=live&stream=livestream&vhost=192.168.2.101&autostart=true)
 * Nginx-RTMP stream URL: `rtmp://192.168.2.101:19350/live/livestream`
-* Online play nginx-rtmp RTMP: [Online Player](http://ossrs.net/srs.release/trunk/research/players/srs_player.html?server=192.168.2.101&port=19350&app=live&stream=livestream&vhost=192.168.2.101&autostart=true)
 
 ### Client
 
@@ -707,6 +705,6 @@ SRS2.0.30 refined to support 7.5k clients, read https://github.com/ossrs/srs/iss
 
 Winlin 2014.11
 
-![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/doc/en/v6/performance)
+![](https://ossrs.io/gif/v1/sls.gif?site=ossrs.io&path=/lts/doc/en/v6/performance)
 
 

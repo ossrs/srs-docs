@@ -9,6 +9,6 @@ hide_table_of_contents: false
 
 Migrated to [SRT](./srt.md).
 
-![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/doc/en/v6/sample-srt)
+![](https://ossrs.io/gif/v1/sls.gif?site=ossrs.io&path=/lts/doc/en/v6/sample-srt)
 
 

@@ -146,6 +146,6 @@ It's been eliminated, see [#2304](https://github.com/ossrs/srs/issues/2304#issue
 
 2015.1
 
-![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/doc/en/v5/streamer)
+![](https://ossrs.io/gif/v1/sls.gif?site=ossrs.io&path=/lts/doc/en/v5/streamer)
 
 

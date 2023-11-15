@@ -9,6 +9,6 @@ hide_table_of_contents: false
 
 Migrated to [HLS](./hls.md).
 
-![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/doc/en/v5/sample-hls)
+![](https://ossrs.io/gif/v1/sls.gif?site=ossrs.io&path=/lts/doc/en/v5/sample-hls)
 
 

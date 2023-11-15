@@ -99,7 +99,7 @@ docker logs platform |grep renew
 Output
 Thread #crontab: auto renew the Let's Encrypt ssl
 Thread #crontab: renew ssl updated=false, message is 
-Processing /etc/letsencrypt/renewal/lh.ossrs.net.conf
+Processing /etc/letsencrypt/renewal/lh.ossrs.io.conf
 Certificate not yet due for renewal
 The following certificates are not due for renewal yet:
 No renewals were attempted.
@@ -124,6 +124,6 @@ the certificate, and set-up automatic renewal.
 
 If you have further questions, please contact us by [discord](https://discord.gg/yZ4BnPmHAd).
 
-![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/blog-en/22-04-12-SRS-Stack-HTTPS)
+![](https://ossrs.io/gif/v1/sls.gif?site=ossrs.io&path=/lts/blog-en/22-04-12-SRS-Stack-HTTPS)
 
 

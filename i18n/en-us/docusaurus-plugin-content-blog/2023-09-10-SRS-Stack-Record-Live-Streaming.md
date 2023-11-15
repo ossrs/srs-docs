@@ -87,4 +87,4 @@ streams and make them available for your audience to access whenever they want.
 
 Welcome for more discussion at [discord](https://discord.gg/bQUPDRqy79).
 
-![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/blog-en/2023-09-10-Record-Live-Streaming)
+![](https://ossrs.io/gif/v1/sls.gif?site=ossrs.io&path=/lts/blog-en/2023-09-10-Record-Live-Streaming)

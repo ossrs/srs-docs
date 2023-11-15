@@ -9,7 +9,7 @@ hide_table_of_contents: false
 
 SRS provides HTTP api, to external application to manage SRS, and support crossdomain for js.
 
-Once HTTP API enabled, you can use [srs-console](http://ossrs.net:1985/console) to connect to your SRS server.
+Once HTTP API enabled, you can use [srs-console](http://ossrs.net/console/) to connect to your SRS server.
 
 ## Goals
 

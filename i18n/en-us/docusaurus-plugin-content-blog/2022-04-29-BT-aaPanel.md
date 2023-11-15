@@ -147,6 +147,6 @@ is a good place to start.
 
 If you'd like to discuss with SRS community members, you are welcome to join us on [discord](https://discord.gg/yZ4BnPmHAd).
 
-![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/blog-en/22-04-29-BT-aaPanel)
+![](https://ossrs.io/gif/v1/sls.gif?site=ossrs.io&path=/lts/blog-en/22-04-29-BT-aaPanel)
 
 

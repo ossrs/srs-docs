@@ -126,7 +126,7 @@ srs-service   LoadBalancer   172.21.12.131   28.170.32.118
 Then you can publish and play with `28.170.32.118`:
 
 * Publish RTMP to `rtmp://28.170.32.118/live/livestream`
-* Play RTMP from [rtmp://28.170.32.118/live/livestream](http://ossrs.net/players/srs_player.html?app=live&stream=livestream&server=28.170.32.118&port=1935&autostart=true&vhost=28.170.32.118)
+* Play RTMP from `rtmp://28.170.32.118/live/livestream`
 * Play HTTP-FLV from [http://28.170.32.118:8080/live/livestream.flv](http://ossrs.net/players/srs_player.html?app=live&stream=livestream.flv&server=28.170.32.118&port=8080&autostart=true&vhost=28.170.32.118&schema=http)
 * Play HLS from [http://28.170.32.118:8080/live/livestream.m3u8](http://ossrs.net/players/srs_player.html?app=live&stream=livestream.m3u8&server=28.170.32.118&port=8080&autostart=true&vhost=28.170.32.118&schema=http)
 
@@ -519,7 +519,7 @@ Step 3: Now, you made it. you can push retmp stream to the edge, and pull hls st
 
 * Publish RTMP to rtmp://28.170.32.118/live/livestream or [Publish Demo Streams to SRS](./k8s.md#ack-srs-publish-demo-stream-to-edge).
 
-* Play RTMP from [rtmp://28.170.32.118/live/livestream](http://ossrs.net/players/srs_player.html?app=live&stream=livestream&server=28.170.32.118&port=1935&autostart=true&vhost=28.170.32.118)
+* Play RTMP from `rtmp://28.170.32.118/live/livestream`
 
 * Play HTTP-FLV from [http://28.170.32.118:8080/live/livestream.flv](http://ossrs.net/players/srs_player.html?app=live&stream=livestream.flv&server=28.170.32.118&port=8080&autostart=true&vhost=28.170.32.118&schema=http)
 
@@ -574,6 +574,6 @@ Coming soon...
 
 Winlin 2020.02
 
-![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/doc/en/v6/k8s)
+![](https://ossrs.io/gif/v1/sls.gif?site=ossrs.io&path=/lts/doc/en/v6/k8s)
 
 

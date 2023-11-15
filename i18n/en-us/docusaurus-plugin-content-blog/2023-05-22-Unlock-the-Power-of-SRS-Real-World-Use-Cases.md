@@ -167,5 +167,5 @@ and subscribe to our channel for more short videos like this. See you in the nex
 
 Welcome for more discussion at [discord](https://discord.gg/bQUPDRqy79).
 
-![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/blog-en/2023-05-22-Unlock-the-Power-of-SRS-Real-World-Use-Cases)
+![](https://ossrs.io/gif/v1/sls.gif?site=ossrs.io&path=/lts/blog-en/2023-05-22-Unlock-the-Power-of-SRS-Real-World-Use-Cases)
 

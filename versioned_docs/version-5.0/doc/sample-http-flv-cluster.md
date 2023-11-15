@@ -150,16 +150,16 @@ Note: Please replace all ip 192.168.1.170 to your server ip.
 
 For detail, read [HTTP FLV](./flv.md)
 
-Origin HTTP FLV url: `http://192.168.1.170:8080/live/livestream.flv`, User can use vlc to play the HLS stream. Or, use online SRS player(you must input the flv url): [srs-player](https://ossrs.net/players/srs_player.html)
+Origin HTTP FLV url: `http://192.168.1.170:8080/live/livestream.flv`, User can use vlc to play the HLS stream. Or, use online SRS player(you must input the flv url): [srs-player](http://localhost:8080/players/srs_player.html)
 
-Edge1 HTTP FLV url: `http://192.168.1.170:8081/live/livestream.flv`, User can use vlc to play the HLS stream. Or, use online SRS player(you must input the flv url): [srs-player](https://ossrs.net/players/srs_player.html)
+Edge1 HTTP FLV url: `http://192.168.1.170:8081/live/livestream.flv`, User can use vlc to play the HLS stream. Or, use online SRS player(you must input the flv url): [srs-player](http://localhost:8080/players/srs_player.html)
 
-Edge2 HTTP FLV url: `http://192.168.1.170:8082/live/livestream.flv`, User can use vlc to play the HLS stream. Or, use online SRS player(you must input the flv url): [srs-player](https://ossrs.net/players/srs_player.html)
+Edge2 HTTP FLV url: `http://192.168.1.170:8082/live/livestream.flv`, User can use vlc to play the HLS stream. Or, use online SRS player(you must input the flv url): [srs-player](http://localhost:8080/players/srs_player.html)
 
 Note: Please replace all ip 192.168.1.170 to your server ip.
 
 Winlin 2014.11
 
-![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/doc/en/v5/sample-http-flv-cluster)
+![](https://ossrs.io/gif/v1/sls.gif?site=ossrs.io&path=/lts/doc/en/v5/sample-http-flv-cluster)
 
 

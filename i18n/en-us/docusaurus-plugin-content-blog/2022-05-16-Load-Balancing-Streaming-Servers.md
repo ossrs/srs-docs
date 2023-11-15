@@ -140,11 +140,11 @@ In the above Round Robin part, we focused on load balancing within the service, 
 
 In fact, there is no difference between DNS and HTTP DNS in terms of scheduling capabilities, and even lots of DNS and HTTP DNS systems have the same decision-making system, because they have to solve the same problem: how to use user’s IP, and other information (such as RTT or more detection data) to allocate more appropriate nodes. (usually the nearest one, also considering the cost)
 
-DNS is the basis of the Internet. It can be considered as a name translator. For example, when we PING the server of SRS,  it resolves `ossrs.net` into the IP address `182.92.233.108`. There is no load balancing capability here, because It's just a server, DNS is just name resolution here:
+DNS is the basis of the Internet. It can be considered as a name translator. For example, when we PING the server of SRS,  it resolves `ossrs.io` into the IP address `182.92.233.108`. There is no load balancing capability here, because It's just a server, DNS is just name resolution here:
 
 ```bash
-ping ossrs.net
-PING ossrs.net (182.92.233.108): 56 data bytes
+ping ossrs.io
+PING ossrs.io (182.92.233.108): 56 data bytes
 64 bytes from 182.92.233.108: icmp_seq=0 ttl=64 time=24.350 ms
 ```
 
@@ -155,7 +155,7 @@ This means that DNS can withstand very large concurrency, because it is not a ce
 Therefore, HTTP DNS comes out. It can be considered that DNS is the basic network service provided by ISPs, while HTTP DNS can be implemented by streaming media platforms developers. It is a name service, or you can call an HTTP API to resolve, for example:
 
 ```bash
-curl http://your-http-dns-service/resolve?domain=ossrs.net
+curl http://your-http-dns-service/resolve?domain=ossrs.io
 {["182.92.233.108"]}
 ```
 
@@ -358,6 +358,6 @@ to contact us.
 
 Welcome for more discussion at [discord](https://discord.gg/bQUPDRqy79).
 
-![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/blog-en/22-05-16-Load-Balancing-Streaming-Servers)
+![](https://ossrs.io/gif/v1/sls.gif?site=ossrs.io&path=/lts/blog-en/22-05-16-Load-Balancing-Streaming-Servers)
 
 
