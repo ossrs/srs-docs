@@ -15,12 +15,12 @@ media server, using [SRS](https://github.com/ossrs/srs) or [NGINX-RTMP](https://
 that host stream does not rely on other service providers. But if we want to build a online video streaming 
 service, it's  much more than only a media server:
 
-1. [Authentication](./2023-08-29-Ensuring-Authentication-for-Live-Streaming-Publishing.md): Because the server is on the public internet with a public IPv4 address, how to do authentication? How to block all users except they have the correct token?
+1. [Authentication](./2023-08-29-SRS-Stack-Ensuring-Authentication-for-Live-Streaming-Publishing.md): Because the server is on the public internet with a public IPv4 address, how to do authentication? How to block all users except they have the correct token?
 1. Multiple Protocols: Rather than publishing RTMP using OBS, you might need [WebRTC or H5 to publish live streaming](https://blog.ossrs.io/how-to-live-streaming-on-youtube-via-rtmp-or-rtmps-using-a-web-browser-e05819ee2228), or [OBS WHIP Server](https://blog.ossrs.io/experience-ultra-low-latency-live-streaming-with-obs-whip-9cdcd7874daf) for it's easy to use. You might also use [SRT](https://www.srtalliance.org) with some broadcasting devices. How to convert RTMP/WebRTC/SRT to HLS?
-1. [Restreaming](./2023-09-09-Multi-Platform-Streaming.md) and [DVR](./2023-09-10-Record-Live-Streaming.md): To help you boost engagement and reach, you could connect other service providers to restream,  such as YouTube, Twitch and Facebook. Well, DVR allows you to continue engagement after live events have ended, generating revenue via VoD(on-demand video).
-1. [Transcoding](./2023-10-21-Live-Transcoding.md): Optimizes streaming for viewers with different internet speeds and devices, reduces bandwidth usage, and saves costs.
-1. [Virtual Live Events](./2023-09-11-Virtual-Live-Events.md): Create seamless and engaging live streaming experiences using pre-recorded content for various applications, such as e-commerce, education, and online speeches.
-1. [IP Camera Streaming](./2023-10-11-Stream-IP-Camera-Events.md): Effortlessly stream your RTSP IP camera to popular platforms like YouTube, Twitch, or Facebook.
+1. [Restreaming](./2023-09-09-SRS-Stack-Multi-Platform-Streaming.md) and [DVR](./2023-09-10-SRS-Stack-Record-Live-Streaming.md): To help you boost engagement and reach, you could connect other service providers to restream,  such as YouTube, Twitch and Facebook. Well, DVR allows you to continue engagement after live events have ended, generating revenue via VoD(on-demand video).
+1. [Transcoding](./2023-10-21-SRS-Stack-Live-Transcoding.md): Optimizes streaming for viewers with different internet speeds and devices, reduces bandwidth usage, and saves costs.
+1. [Virtual Live Events](./2023-09-11-SRS-Stack-Virtual-Live-Events.md): Create seamless and engaging live streaming experiences using pre-recorded content for various applications, such as e-commerce, education, and online speeches.
+1. [IP Camera Streaming](./2023-10-11-SRS-Stack-Stream-IP-Camera-Events.md): Effortlessly stream your RTSP IP camera to popular platforms like YouTube, Twitch, or Facebook.
 
 Literally it's not just a media server, and seems a bit complicated, right? Yep and No!
 

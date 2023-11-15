@@ -69,7 +69,7 @@ use transcoding to convert the 8Mbps stream into a 2Mbps live stream.
 ![](/img/blog-2023-10-21-02.png)
 
 After transcoding the stream, you can preview the 2Mbps version or forward it to another live streaming platform.
-See [Easily Stream Your RTSP IP Camera to YouTube, Twitch, or Facebook](./2023-10-11-Stream-IP-Camera-Events.md) 
+See [Easily Stream Your RTSP IP Camera to YouTube, Twitch, or Facebook](./2023-10-11-SRS-Stack-Stream-IP-Camera-Events.md) 
 for more information. You can also pull the RTMP stream from SRS Stack and forward it elsewhere.
 
 ## Check Transcoding Status
@@ -79,7 +79,7 @@ You can check the transcoding status in the SRS Stack dashboard.
 ![](/img/blog-2023-10-21-03.png)
 
 You can click the preview link to check the transcoded stream, or forward it to another live streaming platform.
-See [Easily Stream Your RTSP IP Camera to YouTube, Twitch, or Facebook](./2023-10-11-Stream-IP-Camera-Events.md)
+See [Easily Stream Your RTSP IP Camera to YouTube, Twitch, or Facebook](./2023-10-11-SRS-Stack-Stream-IP-Camera-Events.md)
 for more information.
 
 ## TRTC Cloud Service
