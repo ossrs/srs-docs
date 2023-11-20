@@ -13,6 +13,7 @@ Quick Content
 * [How to run multiple instances](#multiple-instances): The machine has a lot of CPU, how can we support more platform forwarding, or more streams and recording, etc.
 * [Low bandwidth, get more bandwidth](#bandwidth): Insufficient bandwidth, want to increase bandwidth, use SRS Stack in CVM.
 * [How to set up free HTTPS](#https): How to apply for a free HTTPS certificate, how to apply for certificates for multiple domain names.
+* [How to use server file for virtual live events](#virtual-live-server-file): How to upload file to server and use it in virtual live events.
 * [How to modify the push authentication key](#update-publish-secret): Update the push authentication key, replace the push key.
 * [How to disable push authentication](#no-publish-auth): Don't want push authentication, the device does not support special characters.
 * [How to record to local disk](#record): How to record to the local disk of SRS Stack.
@@ -88,7 +89,7 @@ the container and start with the new version, such as `ossrs/srs-stack:v1.0.299`
 If you use `ossrs/srs-stack:1`, it is the latest version, and you need to update manually, such as 
 `docker pull ossrs/srs-stack:1`.
 
-If you use BT panel, just delete the application and reinstall the new version, the data is saved in the 
+If you use aaPanel panel, just delete the application and reinstall the new version, the data is saved in the 
 `/data` directory and will not be lost.
 
 <a name="how-to-set-domain"></a><br/><br/><br/>
@@ -309,6 +310,35 @@ docker run --rm -it --name srs-stack -v $HOME/data:/data \
 
 After the application is successful, enter https plus your domain name in the browser, and you can 
 access your website.
+
+<a name="virtual-live-server-file"></a><br/><br/><br/>
+
+## How to use server file for virtual live events
+
+How to upload file to server and use it in virtual live events.
+
+You can use other tools like FTP or SCP to upload large files to the server, and then use these uploaded
+files in Virtual Live Events. However, it's required that the uploaded files be located in the `/data` 
+directory.
+
+SRS Stack runs inside a container, so the `/data` path mentioned refers to a directory within the container. 
+You can map a directory from your host machine to the `/data` directory inside the container. For example, 
+by using `docker run -v /your-host-dir:/data/my-upload`, you can access the `/data/my-upload` directory 
+inside the container. 
+
+Then, when you upload a file to your host directory, such as `my-file.mp4`, the file in the host is 
+`/your-host-dir/my-file.mp4`, you can access it within SRS Stack by specifying 
+`/data/my-upload/my-file.mp4`.
+
+After uploading files, you can also enter the SRS Stack container to check if the files are present. 
+For example, you can execute the command:
+
+```bash
+docker exec -it srs-stack ls -lh /data/my-upload/my-file.mp4
+```
+
+If it indicates that the file exists, you can use this file in SRS Stack's Virtual Live Events. If not, 
+please check whether the path was mapped correctly when starting Docker.
 
 <a name="update-publish-secret"></a><br/><br/><br/>
 

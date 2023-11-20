@@ -13,6 +13,7 @@
 * [如何启动多个实例](#multiple-instances)：机器CPU很多，如何支持更多的平台转发，或者更多路流以及录制等。
 * [带宽太低，提升带宽](#bandwidth)：带宽不够，想提升带宽，在CVM中用SRS Stack。
 * [如何设置免费HTTPS](#https)：如何申请免费HTTPS证书，如何申请多个域名的证书。
+* [如何用服务器的文件做虚拟直播](#virtual-live-server-file): 如何用其他工具上传文件，并在虚拟直播中使用
 * [如何修改推流鉴权的密钥](#update-publish-secret)：更新推流鉴权的密钥，更换推流密钥
 * [如何禁用推流鉴权](#no-publish-auth)：不想要推流鉴权，设备不支持特殊字符。
 * [如何录制到本地磁盘](#record): 如何录制到SRS Stack的本地磁盘。
@@ -281,6 +282,30 @@ docker run --rm -it --name srs-stack -v $HOME/data:/data \
 ```
 
 申请成功后，在浏览器敲https加你的域名，就可以访问你的网站了。
+
+<a name="virtual-live-server-file"></a><br/><br/><br/>
+
+## 如何用服务器的文件做虚拟直播
+
+如何用其他工具上传文件，并在虚拟直播中使用。
+
+你可以使用其他工具比如ftp或者scp上传大的文件到服务器，然后在虚拟直播中使用上传的文件。但是要求上传的文件在
+`/data`目录下面。
+
+SRS Stack是在容器中运行的，所以它这个`/data`说的是容器中的路径，所以你可以在启动SRS Stack的容器时，把你host机器的
+路径映射到`/data`下面， 比如：`docker run -v /your-host-dir:/data/my-upload`，这样在容器中就可以访问`/data/my-upload`
+这个目录了。
+
+然后你再上传文件到你的host的目录比如文件`my-file.mp4`，在物理机中该文件的路径是`/your-host-dir/my-file.mp4`，
+你在SRS Stack中就可以输入`/data/my-upload/my-file.mp4`访问这个文件。
+
+你也可以在上传文件后，进入SRS Stack容器，查看文件是否存在，比如执行命令：
+
+```bash
+docker exec -it srs-stack ls -lh /data/my-upload/my-file.mp4
+```
+
+如果提示文件存在，则可以在SRS Stack的Virtual Live Events使用这个文件，否则请检查启动Docker时路径是否映射对了。
 
 <a name="update-publish-secret"></a><br/><br/><br/>
 
