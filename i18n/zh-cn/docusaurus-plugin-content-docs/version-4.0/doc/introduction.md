@@ -67,6 +67,8 @@ Please read [Getting Started](../doc/getting-started).
 * [B站专栏(视频)：SRS开源服务器](https://space.bilibili.com/430256302/channel/detail?cid=136049)
 * [零声学院(视频)：SRS流媒体服务器实战](https://www.bilibili.com/video/BV1XZ4y1P7um)
 * [音视频开发为什么要学SRS流媒体服务器](https://zhuanlan.zhihu.com/p/190182314)
+* [《SRS原理》- 罗上文，SRS的第一本书，定制二次开发必备](https://srs.xianwaizhiyin.net/)
+
 
 ## Cluster Guides
 
