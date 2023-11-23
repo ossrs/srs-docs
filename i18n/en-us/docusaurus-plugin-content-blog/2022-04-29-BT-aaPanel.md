@@ -129,13 +129,16 @@ either use a browser, or through WordPress:
 For details about WordPress shortcodes, please read this tutorial: [how to publish your SRS livestream through WordPress](https://blog.ossrs.io/publish-your-srs-livestream-through-wordpress-ec18dfae7d6f).
 There is also a live demonstration here [SRS Player Demo](https://wp.ossrs.io/2022/04/25/srs-player/).
 
-## TRTC Cloud Service
+## Cloud Service
 
-We also recommend the [TRTC cloud service](https://ossrs.io/trtc/pricing?utm_source=community&utm_medium=ossrs&utm_campaign=OBS-WHIP-TRTC&_channel_track_key=yb4mTLui), 
-because it supports global network acceleration, improved congestion control algorithms, better performance on weak networks, 
-client SDKs for all platforms, and a monthly free quota. Click [here](https://ossrs.io/trtc/demo?utm_source=community&utm_medium=ossrs&utm_campaign=OBS-WHIP-TRTC&_channel_track_key=lfJKyOlF)
-to view the online demo. If you have any questions, please join our [Discord](https://discord.gg/DCCH6HyhuT) channel
-to contact us.
+At SRS, our goal is to establish a non-profit, open-source community dedicated to creating an all-in-one, 
+out-of-the-box, open-source video solution for live streaming and WebRTC online services.
+
+Additionally, we offer a [cloud](/docs/v6/doc/cloud) service for those who prefer to use cloud service instead of building from 
+scratch. Our cloud service features global network acceleration, enhanced congestion control algorithms, 
+client SDKs for all platforms, and some free quota.
+
+To learn more about our cloud service, click [here](/docs/v6/doc/cloud).
 
 ## Conclusion
 
