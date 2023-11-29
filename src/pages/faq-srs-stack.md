@@ -806,14 +806,13 @@ For HTTP callback `on_publish` event:
 ```json
 Request:
 {
+  "request_id": "b8ffdd76-e1a9-43c8-b238-4649aef76d77",
   "action": "on_unpublish",
   "opaque": "mytoken",
   "vhost": "__defaultVhost__",
   "app": "live",
   "stream": "livestream",
-  "param": "?secret=8f7605d657c74d69b6b48f532c469bc9",
-  "server_id": "vid-f91k836",
-  "client_id": "e8d29ue3"
+  "param": "?secret=8f7605d657c74d69b6b48f532c469bc9"
 }
 
 Response:
@@ -832,14 +831,12 @@ For HTTP callback `on_unpublish` event:
 ```json
 Request:
 {
+  "request_id": "b8ffdd76-e1a9-43c8-b238-4649aef76d77",
   "action": "on_unpublish",
   "opaque": "mytoken",
   "vhost": "__defaultVhost__",
   "app": "live",
-  "stream": "livestream",
-  "param": "?secret=8f7605d657c74d69b6b48f532c469bc9",
-  "server_id": "vid-f91k836",
-  "client_id": "e8d29ue3"
+  "stream": "livestream"
 }
 
 Response:
@@ -848,6 +845,61 @@ Response:
 }
 ```
 
+* Ignore any response error.
+
+### HTTP Callback: on_record_begin
+
+For HTTP callback `on_record_begin` event:
+
+```json
+Request:
+{
+  "request_id": "b8ffdd76-e1a9-43c8-b238-4649aef76d77",
+  "action": "on_record_begin",
+  "opaque": "mytoken",
+  "vhost": "__defaultVhost__",
+  "app": "live",
+  "stream": "livestream",
+  "uuid": "824b96f9-8d51-4046-ba1e-a9aec7d57c95"
+}
+
+Response:
+{
+"code": 0
+}
+```
+
+* Ignore any response error.
+
+### HTTP Callback: on_record_end
+
+For HTTP callback `on_record_end` event:
+
+```json
+Request:
+{
+  "request_id": "b8ffdd76-e1a9-43c8-b238-4649aef76d77",
+  "action": "on_record_end",
+  "opaque": "mytoken",
+  "vhost": "__defaultVhost__",
+  "app": "live",
+  "stream": "livestream",
+  "uuid": "824b96f9-8d51-4046-ba1e-a9aec7d57c95",
+  "artifact_code": 0,
+  "artifact_path": "/data/record/824b96f9-8d51-4046-ba1e-a9aec7d57c95/index.mp4",
+  "artifact_url": "http://localhost:2022/terraform/v1/hooks/record/hls/824b96f9-8d51-4046-ba1e-a9aec7d57c95/index.mp4"
+}
+
+Response:
+{
+  "code": 0
+}
+```
+
+* The `uuid` is the UUID of record task.
+* The `artifact_code` indicates the error code. If no error, it's 0.
+* The `artifact_path` is the path of artifact mp4 in the container.
+* The `artifact_url` is the URL path to access the artifact mp4.
 * Ignore any response error.
 
 <a name='changelog'></a><br/><br/><br/>
