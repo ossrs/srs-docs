@@ -319,7 +319,7 @@ Join the SRS open-source community to make a powerful streaming media server ava
 At SRS, our goal is to establish a non-profit, open-source community dedicated to creating an all-in-one, 
 out-of-the-box, open-source video solution for live streaming and WebRTC online services.
 
-Additionally, we offer a [cloud](/docs/v6/doc/cloud) service for those who prefer to use cloud service instead of building from 
+Additionally, we offer a [cloud](/cloud) service for those who prefer to use cloud service instead of building from 
 scratch. Our cloud service features global network acceleration, enhanced congestion control algorithms, 
 client SDKs for all platforms, and some free quota.
 
