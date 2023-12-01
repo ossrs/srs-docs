@@ -13,6 +13,13 @@ SRS Stack是一个开源的音视频服务方案，多个音视频场景中开�
 
 SRS Stack：让音视频的力量，赋能所有小微企业。
 
+## 24/7 Live Stream: Easy Stream Your Camera to YouTube with DDNS & VPS - No PC or OBS Required!
+
+https://youtu.be/JMz68_wuVvM
+
+在本逐步教程中，探索如何使用DDNS和VPS轻松地将您的摄像头24/7实时流式传输到YouTube。告别使用PC或OBS的需求，享受更稳定、
+无缝的直播体验。
+
 ## SRS Stack：起步、购买和入门
 * 地址: https://www.bilibili.com/video/BV1844y1L7dL
 * 说明: 如何购买SRS Stack？如何使用云厂商的镜像一键部署SRS Stack？如何在宝塔或aaPanel中安装SRS Stack？如何设置防火墙和安全组？
