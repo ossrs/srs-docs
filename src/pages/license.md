@@ -132,6 +132,6 @@ for WebRTC DataChannel, [#1809](https://github.com/ossrs/srs/pull/1809).
 
 Please read [srs-sctp](https://github.com/ossrs/srs-sctp).
 
-![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/pages/license-en)
+![](https://ossrs.io/gif/v1/sls.gif?site=ossrs.io&path=/lts/pages/license-en)
 
 

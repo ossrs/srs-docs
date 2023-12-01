@@ -97,6 +97,11 @@ const config = {
             label: 'Docs',
           },
           {
+            to: '/cloud',
+            label: 'Cloud',
+            position: 'left',
+          },
+          {
             type: 'doc',
             docId: 'tutorial/srs-server',
             position: 'left',

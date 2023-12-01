@@ -334,4 +334,4 @@ If want some discussion, here's the [discord](https://discord.gg/yZ4BnPmHAd).
 This issue will be eliminated, see #2716
 ```
 
-![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/pages/faq-en)
+![](https://ossrs.io/gif/v1/sls.gif?site=ossrs.io&path=/lts/pages/faq-en)

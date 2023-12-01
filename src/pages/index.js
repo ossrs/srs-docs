@@ -40,7 +40,7 @@ function HomepageHeader() {
             {translate({id: 'homepage.getStarted'})}
           </Link>&nbsp;
           {(alwaysShowCloudService || (enLanguage && !shanghaiTimezone)) &&
-            <Link className="button button--secondary button--lg" to="/docs/v6/doc/cloud">
+            <Link className="button button--secondary button--lg" to="/cloud">
               {translate({id: 'homepage.cloudService'})}
             </Link>
           }

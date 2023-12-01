@@ -50,6 +50,6 @@ and read the following articles：
 ## News
 For the latest news about SRS, please stay tuned to our [Discord channel](https://discord.gg/DfJFjpxmC7)
 
-![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/pages/contact-en)
+![](https://ossrs.io/gif/v1/sls.gif?site=ossrs.io&path=/lts/pages/contact-en)
 
 

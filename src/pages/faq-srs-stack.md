@@ -908,4 +908,4 @@ Response:
 
 Migrated to [CHANGELOG.md](https://github.com/ossrs/srs-stack/blob/main/DEVELOPER.md#changelog).
 
-![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/pages/faq-srs-stack-en)
+![](https://ossrs.io/gif/v1/sls.gif?site=ossrs.io&path=/lts/pages/faq-srs-stack-en)

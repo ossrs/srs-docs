@@ -221,6 +221,6 @@ The main goals are:
 
 [SRS Release 1.0](https://github.com/ossrs/srs/tree/1.0release) was released on schedule on December 5, 2014.
 
-![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/pages/product-en)
+![](https://ossrs.io/gif/v1/sls.gif?site=ossrs.io&path=/lts/pages/product-en)
 
 
