@@ -11,14 +11,14 @@ import hldSdImage from "../../static/img/SRS-SingleNode-4.0-sd.png";
 import useIsBrowser from "@docusaurus/core/lib/client/exports/useIsBrowser";
 
 function HomepageHeader() {
-  const {siteConfig, i18n} = useDocusaurusContext();
+  const context = useDocusaurusContext();
   const isBrowser = useIsBrowser();
   const shanghaiTimezone = function () {
     return [
       'Asia/Shanghai', 'Asia/Harbin', 'Asia/Chongqing', 'Asia/Kashgar', 'Asia/Urumqi'
     ].includes(Intl.DateTimeFormat().resolvedOptions().timeZone);
   } ();
-  const enLanguage = i18n.currentLocale === 'en-us';
+  const enLanguage = context.i18n.currentLocale === 'en-us';
   const alwaysShowCloudService = function() {
     if (!isBrowser) return false;
     return window.location.hostname === 'localhost' || window.location.href.indexOf('cloud=1') > 0;
@@ -31,7 +31,7 @@ function HomepageHeader() {
   return (<>
     <header className={clsx('hero hero--primary', styles.heroBanner)}>
       <div className="container">
-        <h1 className="hero__title">{siteConfig.title}</h1>
+        <h1 className="hero__title">{context.siteConfig.title}</h1>
         <p className="hero__subtitle">
           <Translate id="homepage.subTitle"/>
         </p>

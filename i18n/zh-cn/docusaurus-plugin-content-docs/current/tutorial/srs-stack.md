@@ -20,6 +20,12 @@ https://youtu.be/JMz68_wuVvM
 在本逐步教程中，探索如何使用DDNS和VPS轻松地将您的摄像头24/7实时流式传输到YouTube。告别使用PC或OBS的需求，享受更稳定、
 无缝的直播体验。
 
+## Ultimate Unmanned Live Streaming Solution: Easy, Affordable & No PC Required! Perfect for Slow Media, Sleep Music, ASMR, Movie Streaming & More!
+
+https://youtu.be/CjXkRmNRtHA
+
+无人直播终极方案，简单、便宜、不占用电脑，自媒体慢直播、无人直播带货、睡眠音乐直播、ASMR直播、电影直播等必备方案
+
 ## SRS Stack：起步、购买和入门
 * 地址: https://www.bilibili.com/video/BV1844y1L7dL
 * 说明: 如何购买SRS Stack？如何使用云厂商的镜像一键部署SRS Stack？如何在宝塔或aaPanel中安装SRS Stack？如何设置防火墙和安全组？

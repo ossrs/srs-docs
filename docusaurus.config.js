@@ -97,11 +97,6 @@ const config = {
             label: 'Docs',
           },
           {
-            to: '/cloud',
-            label: 'Cloud',
-            position: 'left',
-          },
-          {
             type: 'doc',
             docId: 'tutorial/srs-server',
             position: 'left',
@@ -261,7 +256,10 @@ const config = {
       './config/docusaurus-rewrite-siteconfig-plugin',
       {
         rewriteSiteConfig: (context) => {
-          if ('zh-cn' === context.i18n.currentLocale) {
+          const enLanguage = context.i18n.currentLocale === 'en-us';
+
+          // For zh-cn, replace the Discord with Wechat.
+          if (!enLanguage) {
             context.siteConfig.themeConfig.footer.links.forEach(function ({ items }) {
               items.forEach(function (item) {
                 if (item.label === 'Discord') {
