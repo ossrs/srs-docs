@@ -19,6 +19,7 @@ Quick Content
 * [How to record to local disk](#record): How to record to the local disk of SRS Stack.
 * [Difference between cloud recording and cloud on-demand](#cos-vs-vod): Whether to use cloud recording or cloud on-demand, and what are the differences.
 * [How to record to cloud storage](#dvr-cloud-storage): Record to COS, OSS, or S3, etc. cloud storage.
+* [Recording doesn't stop when the stream is stopped](#dvr-continue-when-unpublish): Why the recording doesn't stop immediately when the stream is stopped, but instead waits for a certain period before stopping.
 * [Unavailable after installation](#unavailable): Error prompt after installation, or Redis not ready.
 * [Difference between SRS re-streaming and OBS re-streaming](#restream-vs-obs): The difference between SRS multi-platform re-streaming and OBS re-streaming plugin.
 * [How SRS re-streams to custom platforms](#restream-custom): How SRS multi-platform re-streaming pushes to custom live platforms.
@@ -424,6 +425,20 @@ configure the local storage path, so that you can write files to cloud storage.
 
 > Note: To modify the local recording path, you can go to `Local Recording/Recording Folder`, and soft
 > link the recording path to the cloud storage path.
+
+<a name="dvr-continue-when-unpublish"></a><br/><br/><br/>
+
+## Recording doesn't stop when the stream is stopped
+
+Why the recording doesn't stop immediately when the stream is stopped, but instead waits for a certain 
+period before stopping.
+
+Some live streams only push the content once without any interruptions. In this case, if the stream stops 
+recording, it's okay to stop the recording as well. This will only generate one file.
+
+Some broadcasters experience interruptions during live streaming. For instance, if there's a 30-second pause 
+in between a 5-minute stream, stopping the recording at the pause will create multiple files. This situation 
+poses a problem.
 
 <a name="unavailable"></a><br/><br/><br/>
 
