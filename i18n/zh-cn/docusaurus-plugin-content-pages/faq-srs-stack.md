@@ -18,7 +18,7 @@
 * [如何禁用推流鉴权](#no-publish-auth)：不想要推流鉴权，设备不支持特殊字符。
 * [如何录制到本地磁盘](#record): 如何录制到SRS Stack的本地磁盘。
 * [云录制和云点播的区别](#cos-vs-vod): 录制是用云录制还是云点播，有何区别。
-* [如何修改录制的目录](update-dvr-directory): 如何修改录制的目录为其他磁盘目录。
+* [如何修改录制的目录](#update-dvr-directory): 如何修改录制的目录为其他磁盘目录。
 * [停止推流时录制没有停止](#dvr-continue-when-unpublish): 为何不能在停止推流时停止录制，而是等待一定时间才停止。
 * [如何快速生成录制文件](#dvr-fastly-generate): 停止推流后，如何快速生成录制文件。
 * [如何录制到S3云存储](#dvr-s3-cloud-storage): 录制到AWS、Azure、DigitalOcean Space等S3兼容的存储上。
