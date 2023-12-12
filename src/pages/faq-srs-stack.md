@@ -495,7 +495,11 @@ ls -lh /data/srs-s3-bucket
 
 Next, in the SRS Stack recording settings, choose `Setup Recording Rules > Post Processing > Copy Record File`, and 
 enter the folder `/data/srs-s3-bucket`. This way, after the recording file is generated, it will be copied to 
-the S3 storage, and the file path in the S3 storage will be provided in the recording callback.
+the S3 storage, and the file path in the S3 storage generally should be:
+
+```bash
+/data/srs-s3-bucket/{RECORD-UUID}.mp4
+```
 
 You can use the S3 HTTP viewing feature or CDN distribution to directly watch the recorded files or process 
 them further.

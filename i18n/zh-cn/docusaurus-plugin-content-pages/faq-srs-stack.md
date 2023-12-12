@@ -432,7 +432,11 @@ ls -lh /data/srs-s3-bucket
 > Remark: 特别注意，挂载存储后，需要重启SRS Stack才能访问到挂载的目录。
 
 然后在SRS Stack的录制中，选择`设置录制规则 > 录制后处理 > 拷贝录制文件`，输入文件夹`/data/srs-s3-bucket`，这样在录制生成文件后，
-就会将录制文件拷贝到S3存储了，并在录制回调中给出S3存储的文件路径。
+就会将录制文件拷贝到S3存储了，路径一般是：
+
+```bash
+/data/srs-s3-bucket/{RECORD-UUID}.mp4
+```
 
 可以使用S3的HTTP观看，或者CDN分发功能，直接观看录制的文件，或者进行加工和处理。
 
