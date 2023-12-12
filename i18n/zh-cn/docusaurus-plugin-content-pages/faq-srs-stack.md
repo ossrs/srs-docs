@@ -18,7 +18,7 @@
 * [如何禁用推流鉴权](#no-publish-auth)：不想要推流鉴权，设备不支持特殊字符。
 * [如何录制到本地磁盘](#record): 如何录制到SRS Stack的本地磁盘。
 * [云录制和云点播的区别](#cos-vs-vod): 录制是用云录制还是云点播，有何区别。
-* [如何录制到云存储](#dvr-cloud-storage): 录制到COS、OSS或S3等云存储。
+* [如何修改录制的目录](update-dvr-directory): 如何修改录制的目录为其他磁盘目录。
 * [停止推流时录制没有停止](#dvr-continue-when-unpublish): 为何不能在停止推流时停止录制，而是等待一定时间才停止。
 * [如何快速生成录制文件](#dvr-fastly-generate): 停止推流后，如何快速生成录制文件。
 * [如何录制到S3云存储](#dvr-s3-cloud-storage): 录制到AWS、Azure、DigitalOcean Space等S3兼容的存储上。
@@ -366,15 +366,28 @@ SRS Stack提供了云录制和云点播两个类似的功能，录制是用云�
 
 简单来说，推荐用云点播，好用不贵。
 
-<a name="dvr-cloud-storage"></a><br/><br/><br/>
+<a name="update-dvr-directory"></a><br/><br/><br/>
 
-## 如何录制到云存储
+## 如何修改录制的目录
 
-SRS Stack支持录制到COS，腾讯云存储，请参考[Usage: Cloud Storage](https://mp.weixin.qq.com/s/axN_TPo-Gk_H7CbdqUud6g)。
+打开`本地录制/录制文件夹`，可以看到录制的默认目录，若希望使用其他目录，操作方法如下。
 
-SRS Stack也可以录制到其他云存储，比如阿里云OSS或AWS S3，可以按照云存储的指引，将云存储挂载到SRS Stack，然后使用本地录制，配置本地路径的存储路径，这样就可以将文件写入到云存储了。
+若使用docker直接启动SRS Stack，可以将目录挂载为其他路径，比如：
 
-> Note: 修改本地录制的路径，可以在`本地录制/录制文件夹`中，把录制的路径软链到云存储的路径就可以。
+```bash
+docker run -v /your-host-dir:/data/record
+```
+
+若使用其他方式安装SRS Stack，则可以将默认数据目录软链接为其他目录，比如：
+
+```bash
+rm -rf /data && ln -sf /your-host-dir /data
+```
+
+> Note: 请不要直接软链接`/data/record`，因为SRS Stack是在docker中运行，看不到你软链接的目录。
+
+特别注意：若希望使用S3等云存储，请不要用挂载方式，因为频繁的录制写入可能会造成云存储挂起而无法访问，应该使用拷贝文件的方法，
+具体请参考[如何录制到S3云存储](#dvr-s3-cloud-storage)。
 
 <a name="dvr-continue-when-unpublish"></a><br/><br/><br/>
 

@@ -18,7 +18,7 @@ Quick Content
 * [How to disable push authentication](#no-publish-auth): Don't want push authentication, the device does not support special characters.
 * [How to record to local disk](#record): How to record to the local disk of SRS Stack.
 * [Difference between cloud recording and cloud on-demand](#cos-vs-vod): Whether to use cloud recording or cloud on-demand, and what are the differences.
-* [How to record to cloud storage](#dvr-cloud-storage): Record to COS, OSS, or S3, etc. cloud storage.
+* [How to change the recording directory](update-dvr-directory): How to modify the recording directory to another disk directory.
 * [Recording doesn't stop when the stream is stopped](#dvr-continue-when-unpublish): Why the recording doesn't stop immediately when the stream is stopped, but instead waits for a certain period before stopping.
 * [How to quickly generate a recorded file](#dvr-fastly-generate): After stopping the stream, how to rapidly create a recorded file.
 * [How to Record to S3 Cloud Storage](#dvr-s3-cloud-storage): Record to AWS, Azure, DigitalOcean Space, and other S3-compatible storage options.
@@ -415,18 +415,32 @@ computing cost, it will be the same as cloud recording.
 
 In short, it is recommended to use cloud on-demand, which is easy to use and not expensive.
 
-<a name="dvr-cloud-storage"></a><br/><br/><br/>
+<a name="update-dvr-directory"></a><br/><br/><br/>
 
-## How to record to cloud storage
+## How to Change the Recording Directory
 
-SRS Stack supports recording to COS, Tencent Cloud Storage. Please refer to [Usage: Cloud Storage](https://mp.weixin.qq.com/s/axN_TPo-Gk_H7CbdqUud6g).
+Open `Record / Record Directory` to see the default recording directory. If you want to use a different directory, 
+follow these steps:
 
-SRS Stack can also record to other cloud storage, such as Alibaba Cloud OSS or AWS S3. According to 
-the guidance of cloud storage, mount the cloud storage to SRS Stack, and then use local recording, 
-configure the local storage path, so that you can write files to cloud storage.
+If you are using Docker to start the SRS Stack, you can mount the directory to another path, like this:
 
-> Note: To modify the local recording path, you can go to `Local Recording/Recording Folder`, and soft
-> link the recording path to the cloud storage path.
+```bash
+docker run -v /your-host-dir:/data/record
+```
+
+If you installed the SRS Stack using another method, you can create a symbolic link from the default data 
+directory to another directory, like this:
+
+```bash
+rm -rf /data && ln -sf /your-host-dir /data
+```
+
+> Note: Please do not directly create a symbolic link for `/data/record`, as the SRS Stack runs in Docker and 
+> cannot see your linked directory.
+
+Important: If you want to use cloud storage like S3, do not use the mounting method, as frequent recording 
+writes may cause the cloud storage to hang and become inaccessible. Instead, use the file copying method. For 
+more information, please refer to [How to Record to S3 Cloud Storage](#dvr-s3-cloud-storage).
 
 <a name="dvr-continue-when-unpublish"></a><br/><br/><br/>
 
