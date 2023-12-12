@@ -422,19 +422,24 @@ rm -rf /data && ln -sf /your-host-dir /data
 
 SRS Stack支持录制到AWS、Azure、DigitalOcean Space等S3兼容的存储上。
 
-首先使用[s3fs](https://github.com/s3fs-fuse/s3fs-fuse)将S3存储挂载到本地磁盘，比如`/media/srs-bucket`目录，
+首先使用[s3fs](https://github.com/s3fs-fuse/s3fs-fuse)将S3存储挂载到本地磁盘，比如`/data/srs-s3-bucket`目录，
 具体请参考你使用的云厂商的手册，网上的资料非常多。可以执行下面的命令，如果能获取到S3存储中的文件，就准备好了：
 
 ```bash
-ls -lh /media/srs-bucket/
+ls -lh /data/srs-s3-bucket
 ```
 
-然后在SRS Stack的录制中，选择`设置录制规则 > 录制后处理 > 拷贝录制文件`，输入文件夹`/media/srs-bucket`，这样在录制生成文件后，
+> Remark: 特别注意，挂载存储后，需要重启SRS Stack才能访问到挂载的目录。
+
+然后在SRS Stack的录制中，选择`设置录制规则 > 录制后处理 > 拷贝录制文件`，输入文件夹`/data/srs-s3-bucket`，这样在录制生成文件后，
 就会将录制文件拷贝到S3存储了，并在录制回调中给出S3存储的文件路径。
 
 可以使用S3的HTTP观看，或者CDN分发功能，直接观看录制的文件，或者进行加工和处理。
 
 若需要禁用这个功能，则可以把目标文件夹设置为空。
+
+特别注意，必须要挂载到`/data`目录的子目录下，SRS Stack才能正常访问到，若只能挂载到其他目录，则建议使用Docker启动SRS Stack，
+并指定`-v /your-host-dir:/data/srs-s3-bucket`，这样SRS Stack就可以访问到了。
 
 <a name="unavailable"></a><br/><br/><br/>
 

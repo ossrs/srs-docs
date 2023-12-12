@@ -483,22 +483,28 @@ will stop the stream and request the end of the recording task.
 Record to AWS, Azure, DigitalOcean Space, and other S3-compatible storage options.
 
 First, use [s3fs](https://github.com/s3fs-fuse/s3fs-fuse) to mount the S3 storage to your local disk, such 
-as the `/media/srs-bucket` directory. Please refer to the manual of your cloud provider for specific details, 
+as the `/data/srs-s3-bucket` directory. Please refer to the manual of your cloud provider for specific details, 
 as there are many resources available online. You can run the following command to check if you can access 
 the files in the S3 storage:
 
 ```bash
-ls -lh /media/srs-bucket/
+ls -lh /data/srs-s3-bucket
 ```
 
+> Note: It is essential to restart the SRS Stack after mounting the storage to access the mounted directory.
+
 Next, in the SRS Stack recording settings, choose `Setup Recording Rules > Post Processing > Copy Record File`, and 
-enter the folder `/media/srs-bucket`. This way, after the recording file is generated, it will be copied to 
+enter the folder `/data/srs-s3-bucket`. This way, after the recording file is generated, it will be copied to 
 the S3 storage, and the file path in the S3 storage will be provided in the recording callback.
 
 You can use the S3 HTTP viewing feature or CDN distribution to directly watch the recorded files or process 
 them further.
 
 If you need to disable this feature, you can set the target folder to be empty.
+
+Please note that it is essential to mount the directory under the `/data` subdirectory for SRS Stack to 
+access it properly. If you can only mount to other directories, it is recommended to use Docker to start 
+SRS Stack and specify `-v /your-host-dir:/data/srs-s3-bucket`, allowing SRS Stack to access the files.
 
 <a name="unavailable"></a><br/><br/><br/>
 
