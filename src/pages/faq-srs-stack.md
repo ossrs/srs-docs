@@ -20,6 +20,8 @@ Quick Content
 * [Difference between cloud recording and cloud on-demand](#cos-vs-vod): Whether to use cloud recording or cloud on-demand, and what are the differences.
 * [How to record to cloud storage](#dvr-cloud-storage): Record to COS, OSS, or S3, etc. cloud storage.
 * [Recording doesn't stop when the stream is stopped](#dvr-continue-when-unpublish): Why the recording doesn't stop immediately when the stream is stopped, but instead waits for a certain period before stopping.
+* [How to quickly generate a recorded file](#dvr-fastly-generate): After stopping the stream, how to rapidly create a recorded file.
+* [How to Record to S3 Cloud Storage](#dvr-s3-cloud-storage): Record to AWS, Azure, DigitalOcean Space, and other S3-compatible storage options.
 * [Unavailable after installation](#unavailable): Error prompt after installation, or Redis not ready.
 * [Difference between SRS re-streaming and OBS re-streaming](#restream-vs-obs): The difference between SRS multi-platform re-streaming and OBS re-streaming plugin.
 * [How SRS re-streams to custom platforms](#restream-custom): How SRS multi-platform re-streaming pushes to custom live platforms.
@@ -440,6 +442,50 @@ Some broadcasters experience interruptions during live streaming. For instance, 
 in between a 5-minute stream, stopping the recording at the pause will create multiple files. This situation 
 poses a problem.
 
+<a name="dvr-fastly-generate"></a><br/><br/><br/>
+
+## How to quickly generate a recorded file
+
+As mentioned earlier in [Recording doesn't stop when the stream is stopped](#dvr-continue-when-unpublish), to 
+achieve recording as a single file, especially when merging into one file after interrupting the stream, the 
+SRS Stack does not immediately generate a recorded file when the stream is stopped. Instead, it waits for a 
+certain period before generating the file due to a timeout.
+
+So, how can we quickly generate a recorded file after stopping the stream? You can click a button on the 
+interface or use the HTTP API to request the end of the recording task after the stream is stopped. This way, 
+the recorded file can be generated as quickly as possible.
+
+Similar to YouTube's live room, there is usually an `End Stream` button in the live room. Clicking this button
+will stop the stream and request the end of the recording task.
+
+> Note: Requesting the end of the recording task is an asynchronous interface. The recorded file will not be 
+> generated immediately after the call, as processing live slices takes time. Wait for a certain period before 
+> the final recorded file is generated, based on the callback event.
+
+<a name="dvr-s3-cloud-storage"></a><br/><br/><br/>
+
+##How to Record to S3 Cloud Storage
+
+Record to AWS, Azure, DigitalOcean Space, and other S3-compatible storage options.
+
+First, use [s3fs](https://github.com/s3fs-fuse/s3fs-fuse) to mount the S3 storage to your local disk, such 
+as the `/media/srs-bucket` directory. Please refer to the manual of your cloud provider for specific details, 
+as there are many resources available online. You can run the following command to check if you can access 
+the files in the S3 storage:
+
+```bash
+ls -lh /media/srs-bucket/
+```
+
+Next, in the SRS Stack recording settings, choose `Setup Recording Rules > Post Processing > Copy Record File`, and 
+enter the folder `/media/srs-bucket`. This way, after the recording file is generated, it will be copied to 
+the S3 storage, and the file path in the S3 storage will be provided in the recording callback.
+
+You can use the S3 HTTP viewing feature or CDN distribution to directly watch the recorded files or process 
+them further.
+
+If you need to disable this feature, you can set the target folder to be empty.
+
 <a name="unavailable"></a><br/><br/><br/>
 
 ## Unable to access after installation
@@ -821,7 +867,7 @@ For HTTP callback `on_publish` event:
 ```json
 Request:
 {
-  "request_id": "b8ffdd76-e1a9-43c8-b238-4649aef76d77",
+  "request_id": "3ab26a09-59b0-42f7-98e3-a281c7d0712b",
   "action": "on_unpublish",
   "opaque": "mytoken",
   "vhost": "__defaultVhost__",
@@ -846,7 +892,7 @@ For HTTP callback `on_unpublish` event:
 ```json
 Request:
 {
-  "request_id": "b8ffdd76-e1a9-43c8-b238-4649aef76d77",
+  "request_id": "9ea987fa-1563-4c28-8c6c-a0e9edd4f536",
   "action": "on_unpublish",
   "opaque": "mytoken",
   "vhost": "__defaultVhost__",
@@ -869,7 +915,7 @@ For HTTP callback `on_record_begin` event:
 ```json
 Request:
 {
-  "request_id": "b8ffdd76-e1a9-43c8-b238-4649aef76d77",
+  "request_id": "80ad1ddf-1731-450c-83ec-735ea79dd6a3",
   "action": "on_record_begin",
   "opaque": "mytoken",
   "vhost": "__defaultVhost__",
@@ -893,7 +939,7 @@ For HTTP callback `on_record_end` event:
 ```json
 Request:
 {
-  "request_id": "b8ffdd76-e1a9-43c8-b238-4649aef76d77",
+  "request_id": "d13a0e60-e2fe-42cd-a8d8-f04c7e71b5f5",
   "action": "on_record_end",
   "opaque": "mytoken",
   "vhost": "__defaultVhost__",
