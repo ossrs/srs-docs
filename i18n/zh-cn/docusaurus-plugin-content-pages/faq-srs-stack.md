@@ -442,6 +442,9 @@ ls -lh /data/srs-s3-bucket
 
 若需要禁用这个功能，则可以把目标文件夹设置为空。
 
+特别注意，请不要将整个`/data`或者`/data/record`目录，挂载到云盘，由于Record目录会有很多临时文件，在预览录制的流时也会访问这个目录，
+造成云存储的压力非常大，甚至可能会挂起。建议使用目录`/data/srs-s3-bucket`，或者更详细的子目录，比如`/data/srs-s3-bucket/yours`等。
+
 特别注意，必须要挂载到`/data`目录的子目录下，SRS Stack才能正常访问到，若只能挂载到其他目录，则建议使用Docker启动SRS Stack，
 并指定`-v /your-host-dir:/data/srs-s3-bucket`，这样SRS Stack就可以访问到了。
 

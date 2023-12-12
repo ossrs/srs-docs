@@ -506,6 +506,11 @@ them further.
 
 If you need to disable this feature, you can set the target folder to be empty.
 
+Please pay special attention not to mount the entire `/data` or `/data/record` directory to the cloud drive. 
+The Record directory contains many temporary files, and accessing this directory while previewing recorded 
+streams can cause significant stress on the cloud storage, potentially leading to suspension. It is recommended 
+to use the `/data/srs-s3-bucket` directory or more specific subdirectories, such as `/data/srs-s3-bucket/yours`.
+
 Please note that it is essential to mount the directory under the `/data` subdirectory for SRS Stack to 
 access it properly. If you can only mount to other directories, it is recommended to use Docker to start 
 SRS Stack and specify `-v /your-host-dir:/data/srs-s3-bucket`, allowing SRS Stack to access the files.
