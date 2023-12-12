@@ -1,6 +1,6 @@
 ---
 slug: live-streams-transcription
-title: SRS Server - Revolutionizing Live Streams with AI Transcription - Creating Accessible, Multilingual Subtitles for Diverse Audiences
+title: SRS Stack - Revolutionizing Live Streams with AI Transcription - Creating Accessible, Multilingual Subtitles for Diverse Audiences
 authors: []
 tags: [live, ai, transcription, asr, subtitles]
 custom_edit_url: null

@@ -21,8 +21,11 @@ streaming with a latency of around 200ms.
 Furthermore, even in situations with poor network connections or when streaming over the 
 internet, OBS WHIP maintains a consistently low and stable latency.
 
-In this video, I will demonstrate how to effortlessly utilize OBS WHIP with SRS in just 
+In this tutorial, I will demonstrate how to effortlessly utilize OBS WHIP with SRS in just 
 three simple steps.
+
+The SRS Stack also supports OBS WHIP, enabling you to establish a WHIP service with just one click. 
+Refer to [Effortlessly Create a Public Internet WHIP Service for OBS](./2023-12-12-SRS-Stack-OBS-WHIP-Service.md).
 
 You can also watch the video on YouTube: [Ultra Low Latency Streaming with OBS WHIP](https://youtu.be/SqrazCPWcV0)
 

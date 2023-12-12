@@ -1,6 +1,6 @@
 ---
 slug: live-streams-transcription
-title: SRS Server - 直播流AI自动字幕
+title: SRS Stack - 直播流AI自动字幕
 authors: []
 tags: [live, ai, transcription, asr, subtitles]
 custom_edit_url: null
@@ -12,6 +12,8 @@ custom_edit_url: null
 
 在这篇博客中，我们将探讨一种正在改变直播体验的创新方法：使用自动语音识别（ASR）来创建实时字幕。您是否曾想过如何使
 直播对听力障碍者或说不同语言的人更具包容性？答案在于一项正在重塑我们体验直播内容的创新技术。
+
+<!--truncate-->
 
 我们的重点是ASR领域的一个颠覆性工具——OpenAI的Whisper。这不仅仅是一项技术；它是一个强大的AI服务，能够理解世界上
 几乎所有的语言，并以惊人的准确度转录语音。忘掉过去需要昂贵专业人士进行现场翻译和转录的日子。有了OpenAI的Whisper，
@@ -76,9 +78,5 @@ docker run --rm -it -p 2022:2022 -p 2443:2443 -p 1935:1935 \
 SRS Stack将OpenAI的Whisper和FFmpeg整合在一起，彻底改变了直播方式，使观众体验更佳，通过提供包容性的AI驱动字幕。
 这种从手动转录到自动化转录的转变既节约成本又扩大了全球可及性，克服了语言和听力障碍。我们正在进入一个AI增强数字包容性
 的未来，丰富了我们在线分享和消费内容的方式。
-
-## Contact
-
-Welcome for more discussion at [discord](https://discord.gg/bQUPDRqy79).
 
 ![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/blog-zh/23-11-28-SRS-Stack-Live-Streams-Transcription)
