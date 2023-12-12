@@ -18,7 +18,7 @@ Quick Content
 * [How to disable push authentication](#no-publish-auth): Don't want push authentication, the device does not support special characters.
 * [How to record to local disk](#record): How to record to the local disk of SRS Stack.
 * [Difference between cloud recording and cloud on-demand](#cos-vs-vod): Whether to use cloud recording or cloud on-demand, and what are the differences.
-* [How to change the recording directory](update-dvr-directory): How to modify the recording directory to another disk directory.
+* [How to change the recording directory](#update-dvr-directory): How to modify the recording directory to another disk directory.
 * [Recording doesn't stop when the stream is stopped](#dvr-continue-when-unpublish): Why the recording doesn't stop immediately when the stream is stopped, but instead waits for a certain period before stopping.
 * [How to quickly generate a recorded file](#dvr-fastly-generate): After stopping the stream, how to rapidly create a recorded file.
 * [How to Record to S3 Cloud Storage](#dvr-s3-cloud-storage): Record to AWS, Azure, DigitalOcean Space, and other S3-compatible storage options.
