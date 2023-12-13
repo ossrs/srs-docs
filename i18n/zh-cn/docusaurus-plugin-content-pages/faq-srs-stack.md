@@ -22,6 +22,7 @@
 * [停止推流时录制没有停止](#dvr-continue-when-unpublish): 为何不能在停止推流时停止录制，而是等待一定时间才停止。
 * [如何快速生成录制文件](#dvr-fastly-generate): 停止推流后，如何快速生成录制文件。
 * [如何录制到S3云存储](#dvr-s3-cloud-storage): 录制到AWS、Azure、DigitalOcean Space等S3兼容的存储上。
+* [如何录制特定的流](#dvr-specific-streams): 如何按特定规则录制，如何录制指定的流
 * [安装后无法访问](#unavailable): 安装后提示错误，或者Redis没准备好。
 * [SRS转推和OBS转推的区别](#restream-vs-obs): SRS的多平台转推，和OBS转推插件的区别。
 * [SRS如何转推自定义平台](#restream-custom): SRS的多平台转推，如何推到自定义的直播平台。
@@ -447,6 +448,21 @@ ls -lh /data/srs-s3-bucket
 
 特别注意，必须要挂载到`/data`目录的子目录下，SRS Stack才能正常访问到，若只能挂载到其他目录，则建议使用Docker启动SRS Stack，
 并指定`-v /your-host-dir:/data/srs-s3-bucket`，这样SRS Stack就可以访问到了。
+
+<a name="dvr-specific-streams"></a><br/><br/><br/>
+
+## 如何录制特定的流
+
+如何按特定规则录制，如何录制指定的流。
+
+SRS Stack允许您配置Glob匹配规则，该过滤器仅录制符合定义规则的流。要设置Glob匹配规则，请选择
+`本地录制 > 设置录制规则 > 额外Glob匹配规则`。
+
+例如，如果将匹配规则配置为`/live/*`，它将仅录制live应用程序中的流，例如`/live/livestream`
+和`/live/show`，但不包括`/other/livestream`。
+
+即使在录制过程中，也可以修改Glob匹配规则，而无需重新启动录制。即使流已经在发布，您也可以设置过滤器。
+更新的过滤器将应用于流的新片段。
 
 <a name="unavailable"></a><br/><br/><br/>
 

@@ -7,36 +7,37 @@ Quick Content
 * [Video Guides](#video-guides): Video tutorials.
 * [Getting Started](#getting-started): How to use, start, and get started with SRS Stack Server.
 * [How to Upgrade](#how-to-upgrade): How to upgrade to the latest or stable version, and why the interface click upgrade is not supported.
-* [How to set a domain](#how-to-set-domain): How to set up a domain to access the admin panel, why can't the admin panel be opened, and why can't the admin panel be accessed via IP.
+* [How to Set a Domain](#how-to-set-domain): How to set up a domain to access the admin panel, why can't the admin panel be opened, and why can't the admin panel be accessed via IP.
 * [Supported Platforms](#support-platform): Supported platforms, supported images, want to use the server or command line installation directly, or aaPanel installation.
-* [How to push multiple streams](#multiple-streams): Want to push multiple streams, want to change the default stream name and stream address.
-* [How to run multiple instances](#multiple-instances): The machine has a lot of CPU, how can we support more platform forwarding, or more streams and recording, etc.
-* [Low bandwidth, get more bandwidth](#bandwidth): Insufficient bandwidth, want to increase bandwidth, use SRS Stack in CVM.
-* [How to set up free HTTPS](#https): How to apply for a free HTTPS certificate, how to apply for certificates for multiple domain names.
-* [How to use server file for virtual live events](#virtual-live-server-file): How to upload file to server and use it in virtual live events.
-* [How to modify the push authentication key](#update-publish-secret): Update the push authentication key, replace the push key.
-* [How to disable push authentication](#no-publish-auth): Don't want push authentication, the device does not support special characters.
-* [How to record to local disk](#record): How to record to the local disk of SRS Stack.
-* [Difference between cloud recording and cloud on-demand](#cos-vs-vod): Whether to use cloud recording or cloud on-demand, and what are the differences.
-* [How to change the recording directory](#update-dvr-directory): How to modify the recording directory to another disk directory.
-* [Recording doesn't stop when the stream is stopped](#dvr-continue-when-unpublish): Why the recording doesn't stop immediately when the stream is stopped, but instead waits for a certain period before stopping.
-* [How to quickly generate a recorded file](#dvr-fastly-generate): After stopping the stream, how to rapidly create a recorded file.
+* [How to Push Multiple Streams](#multiple-streams): Want to push multiple streams, want to change the default stream name and stream address.
+* [How to Run Multiple Instances](#multiple-instances): The machine has a lot of CPU, how can we support more platform forwarding, or more streams and recording, etc.
+* [Low bandwidth, Get More Bandwidth](#bandwidth): Insufficient bandwidth, want to increase bandwidth, use SRS Stack in CVM.
+* [How to Set up Free HTTPS](#https): How to apply for a free HTTPS certificate, how to apply for certificates for multiple domain names.
+* [How to Use Server File for Virtual Live Events](#virtual-live-server-file): How to upload file to server and use it in virtual live events.
+* [How to Modify the Push Authentication Key](#update-publish-secret): Update the push authentication key, replace the push key.
+* [How to Disable Push Authentication](#no-publish-auth): Don't want push authentication, the device does not support special characters.
+* [How to Record to Local Disk](#record): How to record to the local disk of SRS Stack.
+* [Difference Between Cloud Recording and Cloud On-Demand](#cos-vs-vod): Whether to use cloud recording or cloud on-demand, and what are the differences.
+* [How to Change the Recording Directory](#update-dvr-directory): How to modify the recording directory to another disk directory.
+* [Recording Doesn't Stop When the Stream is Stopped](#dvr-continue-when-unpublish): Why the recording doesn't stop immediately when the stream is stopped, but instead waits for a certain period before stopping.
+* [How to Quickly Generate a Recorded File](#dvr-fastly-generate): After stopping the stream, how to rapidly create a recorded file.
 * [How to Record to S3 Cloud Storage](#dvr-s3-cloud-storage): Record to AWS, Azure, DigitalOcean Space, and other S3-compatible storage options.
-* [Unavailable after installation](#unavailable): Error prompt after installation, or Redis not ready.
-* [Difference between SRS re-streaming and OBS re-streaming](#restream-vs-obs): The difference between SRS multi-platform re-streaming and OBS re-streaming plugin.
-* [How SRS re-streams to custom platforms](#restream-custom): How SRS multi-platform re-streaming pushes to custom live platforms.
-* [How to replace FFmpeg](#use-custom-ffmpeg): How to replace the FFmpeg in SRS Stack with a custom version.
-* [aaPanel installation of SRS is very slow](#install-speedup): Overseas aaPanel installation is very slow, access to Alibaba Cloud image is too slow.
-* [How to install the latest SRS Stack in aaPanel](#bt-install-manually): Manually install aaPanel plugin, install the latest plugin.
-* [aaPanel CentOS7 installation failed](#bt-centos7-error): CentOS7 aaPanel installation failed, cannot find the directory, or GLIBC version problem.
-* [How to purchase AI face-swapping service](#how-to-buy-ai): How to implement AI face-swapping? How to buy models? Who to buy from?
-* [How to implement the requirements or features](#rules): Want to implement more features, want to customize, want to optimize and improve.
-* [Unable to achieve the desired effect](#can-not-replay): Encounter problems, cannot achieve the desired effect.
-* [Difference between SRS Stack and SRS](#diff-srs): The difference between SRS Stack and SRS, why there is SRS Stack.
-* [Difference with aaPanel](#diff-baota): Difference with virtual machine management software aaPanel.
-* [Difference with Video Cloud](#diff-vcloud): Difference with general video cloud services.
-* [How to reinstall the system](#reinstall): For friends who already have Lighthouse or CVM.
-* [How to authorize troubleshooting](#auth-bt): How to authorize machine permissions when encountering problems.
+* [How to Record a Specific Stream](#dvr-specific-streams): How to record according to specific rules, how to record a particular stream.
+* [Unavailable After Installation](#unavailable): Error prompt after installation, or Redis not ready.
+* [Difference Between SRS Re-streaming and OBS Re-streaming](#restream-vs-obs): The difference between SRS multi-platform re-streaming and OBS re-streaming plugin.
+* [How SRS Re-streams to Custom Platforms](#restream-custom): How SRS multi-platform re-streaming pushes to custom live platforms.
+* [How to Replace FFmpeg](#use-custom-ffmpeg): How to replace the FFmpeg in SRS Stack with a custom version.
+* [aaPanel Installation of SRS is Very Slow](#install-speedup): Overseas aaPanel installation is very slow, access to Alibaba Cloud image is too slow.
+* [How to Install the Latest SRS Stack in aaPanel](#bt-install-manually): Manually install aaPanel plugin, install the latest plugin.
+* [aaPanel CentOS7 Installation Failed](#bt-centos7-error): CentOS7 aaPanel installation failed, cannot find the directory, or GLIBC version problem.
+* [How to Purchase AI Face-swapping Service](#how-to-buy-ai): How to implement AI face-swapping? How to buy models? Who to buy from?
+* [How to Implement the Requirements or Features](#rules): Want to implement more features, want to customize, want to optimize and improve.
+* [Unable to Achieve the Desired Effect](#can-not-replay): Encounter problems, cannot achieve the desired effect.
+* [The Difference Between SRS Stack and SRS](#diff-srs): The difference between SRS Stack and SRS, why there is SRS Stack.
+* [The Difference with aaPanel](#diff-baota): Difference with virtual machine management software aaPanel.
+* [The Difference with Video Cloud](#diff-vcloud): Difference with general video cloud services.
+* [How to Reinstall the System](#reinstall): For friends who already have Lighthouse or CVM.
+* [How to Authorize Troubleshooting](#auth-bt): How to authorize machine permissions when encountering problems.
 * [Cost Optimization](#cost-opt): About cost and cost optimization.
 * [OpenAPI](#openapi): About open API, using API to get related information.
 * [Feature List](#features): About the list of supported features.
@@ -98,7 +99,7 @@ If you use aaPanel panel, just delete the application and reinstall the new vers
 
 <a name="how-to-set-domain"></a><br/><br/><br/>
 
-## How to set a domain
+## How to Set a Domain
 
 How to set up a domain to access the admin panel, why can't the admin panel be opened, and why can't the 
 admin panel be accessed via IP.
@@ -170,7 +171,7 @@ You can choose the platform and installation method according to your situation.
 
 <a name='multiple-streams'></a><br/><br/><br/>
 
-## How to push multiple streams
+## How to Push Multiple Streams
 
 By default, there is only one push stream address. What if you want to push multiple streams? How to 
 change the stream address?
@@ -195,7 +196,7 @@ and playback name:
 
 <a name='multiple-instances'></a><br/><br/><br/>
 
-## How to run multiple instances
+## How to Run Multiple Instances
 
 The machine has a lot of CPU, how can we support more platform forwarding, or more streams and recording, 
 etc.
@@ -255,7 +256,7 @@ and memory, as well as whether your machine has enough bandwidth.
 
 <a name="bandwidth"></a><br/><br/><br/>
 
-## Low bandwidth, get more bandwidth
+## Low bandwidth, Get More Bandwidth
 
 The bandwidth of lightweight application servers ranges from 4 to 20Mbps, which is somewhat limited for 
 audio and video. If you want higher bandwidth, such as 100Mbps, you can choose CVM or AWS VPS.
@@ -277,7 +278,7 @@ If you still want to choose CVM after knowing the advantages and disadvantages, 
 
 <a name="https"></a><br/><br/><br/>
 
-## How to set up free HTTPS
+## How to Set up Free HTTPS
 
 SRS Stack supports applying for free HTTPS certificates, and you can apply for certificates for multiple
 domain names and automatically renew them. For example, the certificates for the following HTTPS websites 
@@ -317,7 +318,7 @@ access your website.
 
 <a name="virtual-live-server-file"></a><br/><br/><br/>
 
-## How to use server file for virtual live events
+## How to Use Server File for Virtual Live Events
 
 How to upload file to server and use it in virtual live events.
 
@@ -346,7 +347,7 @@ please check whether the path was mapped correctly when starting Docker.
 
 <a name="update-publish-secret"></a><br/><br/><br/>
 
-## How to modify the push authentication key
+## How to Modify the Push Authentication Key
 
 If you need to update the push authentication key or change the push key, you can follow these steps:
 
@@ -364,7 +365,7 @@ If you need to disable push authentication, please refer to the instructions bel
 
 <a name="no-publish-auth"></a><br/><br/><br/>
 
-## How to disable push authentication
+## How to Disable Push Authentication
 
 In the scene page, the standard push format is with `?secret=xxx` authentication, such as `rtmp://ip/live/livestream?secret=xxx`
 
@@ -384,7 +385,7 @@ the push key can be changed, so you can change it to the way you want.
 
 <a name="record"></a><br/><br/><br/>
 
-## How to record to local disk
+## How to Record to Local Disk
 
 How to record to the local disk of SRS Stack? After upgrading to v1.0.252, you can see local recording in 
 the recording.
@@ -393,7 +394,7 @@ For the limitations and solutions of local recording, please refer to #42
 
 <a name="cos-vs-vod"></a><br/><br/><br/>
 
-## Difference between cloud recording and cloud on-demand
+## Difference Between Cloud Recording and Cloud On-Demand
 
 SRS Stack provides two similar functions, cloud recording and cloud on-demand. What is the difference 
 between using cloud recording or cloud on-demand for recording?
@@ -445,7 +446,7 @@ more information, please refer to [How to Record to S3 Cloud Storage](#dvr-s3-cl
 
 <a name="dvr-continue-when-unpublish"></a><br/><br/><br/>
 
-## Recording doesn't stop when the stream is stopped
+## Recording Doesn't Stop When the Stream is Stopped
 
 Why the recording doesn't stop immediately when the stream is stopped, but instead waits for a certain 
 period before stopping.
@@ -459,9 +460,9 @@ poses a problem.
 
 <a name="dvr-fastly-generate"></a><br/><br/><br/>
 
-## How to quickly generate a recorded file
+## How to Quickly Generate a Recorded File
 
-As mentioned earlier in [Recording doesn't stop when the stream is stopped](#dvr-continue-when-unpublish), to 
+As mentioned earlier in [Recording Doesn't Stop When the Stream is Stopped](#dvr-continue-when-unpublish), to 
 achieve recording as a single file, especially when merging into one file after interrupting the stream, the 
 SRS Stack does not immediately generate a recorded file when the stream is stopped. Instead, it waits for a 
 certain period before generating the file due to a timeout.
@@ -479,7 +480,7 @@ will stop the stream and request the end of the recording task.
 
 <a name="dvr-s3-cloud-storage"></a><br/><br/><br/>
 
-##How to Record to S3 Cloud Storage
+## How to Record to S3 Cloud Storage
 
 Record to AWS, Azure, DigitalOcean Space, and other S3-compatible storage options.
 
@@ -515,6 +516,22 @@ to use the `/data/srs-s3-bucket` directory or more specific subdirectories, such
 Please note that it is essential to mount the directory under the `/data` subdirectory for SRS Stack to 
 access it properly. If you can only mount to other directories, it is recommended to use Docker to start 
 SRS Stack and specify `-v /your-host-dir:/data/srs-s3-bucket`, allowing SRS Stack to access the files.
+
+<a name="dvr-specific-streams"></a><br/><br/><br/>
+
+## How to Record a Specific Stream
+
+How to record according to specific rules, how to record a particular stream?
+
+The SRS Stack allows you to configure a Glob Filter, which records only the streams that adhere to the defined 
+rule. To set the Glob Filter, navigate to `Record > Setup Record Rules > Extra Glob Filters`.
+
+For instance, if the filter is configured as `/live/*`, it will record only streams within the live app, such 
+as `/live/livestream` and `/live/show`, but not `/other/livestream`.
+
+It is possible to modify Glob Filters even after initiating the recording, without restart the recording 
+process. You can establish the filter even if the stream is already being published. The updated filters 
+will be applied to new segments of the stream.
 
 <a name="unavailable"></a><br/><br/><br/>
 
@@ -698,7 +715,7 @@ will prioritize implementation, using real nails to choose hammers, and welcome 
 
 <a name="can-not-replay"></a><br/><br/><br/>
 
-## Unable to achieve the desired effect
+## Unable to Achieve the Desired Effect
 
 If the expected effect is not achieved, such as high latency or failure to push and pull streams, the 
 following methods can solve all problems:
@@ -713,7 +730,7 @@ random changes!
 
 <a name="diff-srs"></a><br/><br/><br/>
 
-## The difference between SRS Stack and SRS
+## The Difference Between SRS Stack and SRS
 
 [SRS](https://github.com/ossrs/srs) is an open-source server, a streaming media server, which generally 
 works with FFmpeg and WebRTC clients to achieve audio and video capabilities. Please see [this diagram](https://github.com/ossrs/srs#srssimple-realtime-server) 
@@ -741,7 +758,7 @@ Both are open-source projects, and contributions are welcome.
 
 <a name="diff-baota"></a><br/><br/><br/>
 
-## The difference with aaPanel
+## The Difference with aaPanel
 
 aaPanel is a virtual machine management tool, and SRS Stack Server is an out-of-the-box audio and video
 solution. aaPanel can also install SRS Stack, please refer to [supported platforms](#support-platform).
@@ -752,7 +769,7 @@ solution. aaPanel can also install SRS Stack, please refer to [supported platfor
 
 <a name="diff-vcloud"></a><br/><br/><br/>
 
-## The difference with Video Cloud
+## The Difference with Video Cloud
 
 Video Cloud is a large-scale service scenario, such as cloud live broadcasting, TRTC, IM, cloud on-demand,
 CDN, Tencent Meeting or ZOOM, which are all super-large-scale systems.
@@ -768,7 +785,7 @@ business grows.
 
 <a name="reinstall"></a><br/><br/><br/>
 
-## How to reinstall the system
+## How to Reinstall the System
 
 If you already have a `Lighthouse/CVM/Droplet`, or there is a problem with the image, you can reinstall
 the image to solve it. Do not log in and mess around by yourself, it will only cause more problems, it 
@@ -788,7 +805,7 @@ Finally, click Confirm and OK, and it will be reinstalled very quickly.
 
 <a name="auth-bt"></a><br/><br/><br/>
 
-## How to authorize troubleshooting
+## How to Authorize Troubleshooting
 
 How to authorize machine permissions when a problem occurs? It is recommended to use aaPanel:
 
