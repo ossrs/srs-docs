@@ -1,12 +1,12 @@
 ---
 slug: Record-Live-Streaming
-title: SRS Stack - 如何录制直播流为MP4文件
+title: SRS Stack - 如何录制直播流为MP4文件和对接云存储
 authors: []
 tags: [live streaming, record, dvr, srs]
 custom_edit_url: null
 ---
 
-# How to Record Live Streaming to MP4 File with SRS Stack
+# Effortless Live Stream Recording with SRS Stack: A Step-by-Step Guide to Server-Side Recording and AWS S3 Integration
 
 ## Introduction
 
@@ -59,6 +59,21 @@ SRS Stack将在几分钟后（例如5分钟）自动停止录制任务。
 录制停止后，SRS Stack将把录制的文件转换为MP4格式。然后，您可以预览并下载MP4文件以供进一步使用或分发。
 
 ![](/img/blog-2023-09-10-03.png)
+
+![](/img/blog-2023-09-10-03.png)
+
+## How to Record Specific Streams?
+
+参考 [如何录制特定的流](/faq-srs-stack#how-to-record-a-specific-stream)
+
+## How to Record to S3 Cloud Storage?
+
+参考 [如何录制到S3云存储](/faq-srs-stack#how-to-record-to-s3-cloud-storage)
+
+## How to Merge to One Mp4 File?
+
+参考 [为何不能在停止推流时停止录制](/faq-srs-stack#recording-doesnt-stop-when-the-stream-is-stopped)
+和 [如何快速生成录制文件](/faq-srs-stack#how-to-quickly-generate-a-recorded-file)
 
 ## Conclusion
 

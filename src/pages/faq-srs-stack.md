@@ -11,13 +11,12 @@ Quick Content
 * [Supported Platforms](#support-platform): Supported platforms, supported images, want to use the server or command line installation directly, or aaPanel installation.
 * [How to Push Multiple Streams](#multiple-streams): Want to push multiple streams, want to change the default stream name and stream address.
 * [How to Run Multiple Instances](#multiple-instances): The machine has a lot of CPU, how can we support more platform forwarding, or more streams and recording, etc.
-* [Low bandwidth, Get More Bandwidth](#bandwidth): Insufficient bandwidth, want to increase bandwidth, use SRS Stack in CVM.
+* [Insufficient Bandwidth, Acquire Additional Bandwidth](#bandwidth): Insufficient bandwidth, want to increase bandwidth, use SRS Stack in CVM.
 * [How to Set up Free HTTPS](#https): How to apply for a free HTTPS certificate, how to apply for certificates for multiple domain names.
 * [How to Use Server File for Virtual Live Events](#virtual-live-server-file): How to upload file to server and use it in virtual live events.
 * [How to Modify the Push Authentication Key](#update-publish-secret): Update the push authentication key, replace the push key.
 * [How to Disable Push Authentication](#no-publish-auth): Don't want push authentication, the device does not support special characters.
 * [How to Record to Local Disk](#record): How to record to the local disk of SRS Stack.
-* [Difference Between Cloud Recording and Cloud On-Demand](#cos-vs-vod): Whether to use cloud recording or cloud on-demand, and what are the differences.
 * [How to Change the Recording Directory](#update-dvr-directory): How to modify the recording directory to another disk directory.
 * [Recording Doesn't Stop When the Stream is Stopped](#dvr-continue-when-unpublish): Why the recording doesn't stop immediately when the stream is stopped, but instead waits for a certain period before stopping.
 * [How to Quickly Generate a Recorded File](#dvr-fastly-generate): After stopping the stream, how to rapidly create a recorded file.
@@ -30,19 +29,15 @@ Quick Content
 * [aaPanel Installation of SRS is Very Slow](#install-speedup): Overseas aaPanel installation is very slow, access to Alibaba Cloud image is too slow.
 * [How to Install the Latest SRS Stack in aaPanel](#bt-install-manually): Manually install aaPanel plugin, install the latest plugin.
 * [aaPanel CentOS7 Installation Failed](#bt-centos7-error): CentOS7 aaPanel installation failed, cannot find the directory, or GLIBC version problem.
-* [How to Purchase AI Face-swapping Service](#how-to-buy-ai): How to implement AI face-swapping? How to buy models? Who to buy from?
 * [How to Implement the Requirements or Features](#rules): Want to implement more features, want to customize, want to optimize and improve.
 * [Unable to Achieve the Desired Effect](#can-not-replay): Encounter problems, cannot achieve the desired effect.
 * [The Difference Between SRS Stack and SRS](#diff-srs): The difference between SRS Stack and SRS, why there is SRS Stack.
 * [The Difference with aaPanel](#diff-baota): Difference with virtual machine management software aaPanel.
 * [The Difference with Video Cloud](#diff-vcloud): Difference with general video cloud services.
-* [How to Reinstall the System](#reinstall): For friends who already have Lighthouse or CVM.
-* [How to Authorize Troubleshooting](#auth-bt): How to authorize machine permissions when encountering problems.
-* [Cost Optimization](#cost-opt): About cost and cost optimization.
 * [OpenAPI](#openapi): About open API, using API to get related information.
-* [Feature List](#features): About the list of supported features.
+* [Features](#features): About the list of supported features.
 * [HTTP Callback](#http-callback): About HTTP callback.
-* [Version Planning](#changelog): About versions and milestones.
+* [Changelog](#changelog): About versions and milestones.
 
 You can also search for keywords on the page.
 
@@ -58,7 +53,7 @@ If your question is similar, please watch the video directly:
 
 <a name='getting-started'></a><br/><br/><br/>
 
-## How to get started
+## Getting Started
 
 Please purchase and set up [SRS Stack Server](https://cloud.digitalocean.com/droplets/new?appId=133468816&size=s-1vcpu-512mb-10gb&region=sgp1&image=ossrs-srs&type=applications) 
 first. 
@@ -78,7 +73,7 @@ cause problems.
 
 <a name="how-to-upgrade"></a><br/><br/><br/>
 
-## How to upgrade
+## How to Upgrade
 
 How to upgrade to the latest version or stable version, and why not support click upgrade on the interface?
 
@@ -136,7 +131,7 @@ public IP, and you cannot use the method of modifying the hosts file.
 
 <a name="support-platform"></a><br/><br/><br/>
 
-## Supported platforms
+## Supported Platforms
 
 SRS Stack supports Docker images, installation scripts, DigitalOcean images, and can be installed on other 
 platforms using aaPanel.
@@ -144,6 +139,8 @@ platforms using aaPanel.
 It is recommended to install directly using Docker, which also allows for multiple installations. Be sure 
 to use Ubuntu 20+ system:
 * Docker image installation: [here](https://ossrs.io/lts/zh-cn/docs/v6/doc/getting-started-stack#docker)
+
+SRS Stack also support HELM, see [srs-helm](https://github.com/ossrs/srs-helm) for detail.
 
 If you are used to aaPanel, you can install it with aaPanel, which can coexist with multiple websites. Be 
 sure to use Ubuntu 20+ system:
@@ -256,7 +253,7 @@ and memory, as well as whether your machine has enough bandwidth.
 
 <a name="bandwidth"></a><br/><br/><br/>
 
-## Low bandwidth, Get More Bandwidth
+## Insufficient Bandwidth, Acquire Additional Bandwidth
 
 The bandwidth of lightweight application servers ranges from 4 to 20Mbps, which is somewhat limited for 
 audio and video. If you want higher bandwidth, such as 100Mbps, you can choose CVM or AWS VPS.
@@ -392,31 +389,6 @@ the recording.
 
 For the limitations and solutions of local recording, please refer to #42
 
-<a name="cos-vs-vod"></a><br/><br/><br/>
-
-## Difference Between Cloud Recording and Cloud On-Demand
-
-SRS Stack provides two similar functions, cloud recording and cloud on-demand. What is the difference 
-between using cloud recording or cloud on-demand for recording?
-
-Cloud recording can be considered as writing live streaming to the cloud disk, saving it in HLS format,
-which is the original video stream. If you want to download HLS for transcoding and editing, it would be 
-more suitable. Cloud recording is stored in Tencent Cloud COS cloud storage, which can be considered as 
-an unlimited disk, avoiding overwriting the disk of SRS Stack.
-
-Cloud on-demand provides both HLS and MP4 formats, and more features will be added in the future, such 
-as outputting multiple bit rates, adding logos and watermarks, media asset management, and many other 
-useful features. Cloud on-demand is a video-on-demand system, not just a storage disk. It can be considered 
-as a Bilibili or YouTube. If you want to do more diverse businesses, you must choose cloud on-demand.
-
-In terms of cost, cloud on-demand will be slightly higher than cloud recording, depending on which 
-features are used. Currently, SRS Stack uses HLS to MP4 conversion, which is very low in cost because 
-there is no transcoding. In the future, if you want to use advanced features, the cost will be higher. 
-Overall, the cost of cloud on-demand is very low, similar to cloud recording. If there is no additional
-computing cost, it will be the same as cloud recording.
-
-In short, it is recommended to use cloud on-demand, which is easy to use and not expensive.
-
 <a name="update-dvr-directory"></a><br/><br/><br/>
 
 ## How to Change the Recording Directory
@@ -535,7 +507,7 @@ will be applied to new segments of the stream.
 
 <a name="unavailable"></a><br/><br/><br/>
 
-## Unable to access after installation
+## Unavailable After Installation
 
 In the new version of the aaPanel plugin, to avoid conflicts with existing website settings, it no 
 longer automatically sets itself as the default website. Instead, you need to specify a domain or manually
@@ -554,7 +526,7 @@ for 3 to 5 minutes.
 
 <a name="restream-vs-obs"></a><br/><br/><br/>
 
-## Difference between SRS Restream and OBS Restream
+## Difference Between SRS Re-streaming and OBS Re-streaming
 
 SRS's multi-platform restreaming can push the stream to multiple platforms, and its working diagram 
 is as follows:
@@ -639,7 +611,7 @@ You can use the command `which ffmpeg` to find the path of your FFmpeg.
 
 <a name='install-speedup'></a><br/><br/><br/>
 
-## Baota Installation of SRS is Very Slow
+## aaPanel Installation of SRS is Very Slow
 
 Some users have reported that overseas Baota installations are very slow, and accessing Alibaba 
 Cloud's mirror is too slow.
@@ -655,7 +627,7 @@ refer to [Baota](https://ossrs.net/lts/zh-cn/blog/BT-aaPanel) or [aaPanel](https
 
 <a name="bt-install-manually"></a><br/><br/><br/>
 
-## How to Install the Latest SRS Stack on Baota
+## How to Install the Latest SRS Stack in aaPanel
 
 Sometimes the version in the Baota store is older, and you can manually install the Baota plugin 
 to install the latest plugin.
@@ -668,7 +640,7 @@ and upload the downloaded `aapanel-srs_stack.zip` to install.
 
 <a name="bt-centos7-error"></a><br/><br/><br/>
 
-## aaPanel CentOS7 Installation Failure
+## aaPanel CentOS7 Installation Failed
 
 > Note: Ubuntu 20 (Focal) is highly recommend, please don't use CentOS.
 
@@ -692,26 +664,17 @@ Finally, if it is still not available after successful installation, you can try
 
 <a name="rules"></a><br/><br/><br/>
 
-## How to implement the proposed features and how to record videos
+## How to Implement the Requirements or Features
 
-Welcome everyone to submit questions and new features to SRS Stack, but please explain the real 
-business.
+The plan and milestone can be found [here](https://github.com/orgs/ossrs/projects/2/views/4).
 
-Most friends don't know what real business is, and generally describe the implementation plan of the
-business. However, this plan may not be the most suitable, and there may even be other technical solutions
-that can achieve this business goal. Therefore, please describe the business instead of describing the 
-technical implementation of the function or plan.
+If you like additional support from us. By becoming a sponsor or backer of SRS, we can provide you with the support you need:
+* Backer: $5 per month, online text chat support through Discord.
+* Sponsor: $100 per month, online text chat plus online meeting support.
 
-Please describe the business scenario in detail and try to answer the following questions:
+Please visit [OpenCollective](https://opencollective.com/srs-server) to become a backer or sponsor, and send me a direct message on Discord.
 
-1. What kind of business are you in? As an ordinary person, how can I use your products and services? Please give a real example.
-2. What problems are you solving in your business with SRS? Please give a real example.
-3. How is the demand or function you proposed for SRS applied in the business? Please give an example.
-
-> Note: If it is inconvenient to talk in the group, you can send it to me privately on WeChat.
-
-The SRS Stack server open-source community works like this: you submit application scenarios, and we
-will prioritize implementation, using real nails to choose hammers, and welcome everyone to participate.
+We at SRS aim to establish a non-profit, open-source community that assists developers worldwide in creating your own high-quality streaming and RTC platforms to support your businesses.
 
 <a name="can-not-replay"></a><br/><br/><br/>
 
@@ -782,39 +745,6 @@ and can run and slowly see how to implement.
 Of course, in the future, SRS Stack Server will also support migration to mature video cloud services,
 allowing everyone to quickly meet business requirements while also getting scalable support as the 
 business grows.
-
-<a name="reinstall"></a><br/><br/><br/>
-
-## How to Reinstall the System
-
-If you already have a `Lighthouse/CVM/Droplet`, or there is a problem with the image, you can reinstall
-the image to solve it. Do not log in and mess around by yourself, it will only cause more problems, it 
-is better to choose to reinstall the system directly.
-
-Take Lighthouse as an example, other platforms operate similarly. First, in the application management,
-select Reinstall System:
-
-![](/img/page-2023-03-04-07.png)
-
-Then, in the image type, select `Application Image`, and then select the corresponding `SRS` image, as 
-shown below:
-
-![](/img/page-2023-03-04-08.png)
-
-Finally, click Confirm and OK, and it will be reinstalled very quickly.
-
-<a name="auth-bt"></a><br/><br/><br/>
-
-## How to Authorize Troubleshooting
-
-How to authorize machine permissions when a problem occurs? It is recommended to use aaPanel:
-
-1. Panel settings.
-2. Security settings.
-3. Temporary access authorization management.
-4. Create temporary authorization.
-
-Send the temporary authorization address to the troubleshooting classmates.
 
 <a name="openapi"></a><br/><br/><br/>
 

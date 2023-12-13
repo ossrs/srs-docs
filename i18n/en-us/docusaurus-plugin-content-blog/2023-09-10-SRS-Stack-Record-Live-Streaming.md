@@ -1,12 +1,12 @@
 ---
 slug: Record-Live-Streaming
-title: SRS Stack - How to Record Live Streaming to MP4 File
+title: SRS Stack - Effortless Live Stream Recording with SRS Stack - A Step-by-Step Guide to Server-Side Recording and AWS S3 Integration
 authors: []
 tags: [live streaming, record, dvr, srs]
 custom_edit_url: null
 ---
 
-# How to Record Live Streaming to MP4 File with SRS Stack
+# Effortless Live Stream Recording with SRS Stack: A Step-by-Step Guide to Server-Side Recording and AWS S3 Integration
 
 ## Introduction
 
@@ -66,6 +66,19 @@ After the recording has stopped, SRS Stack will transmux the recorded file to MP
 and download the MP4 file for further use or distribution.
 
 ![](/img/blog-2023-09-10-03.png)
+
+## How to Record Specific Streams?
+
+See [How to Record a Specific Stream](/faq-srs-stack#how-to-record-a-specific-stream)
+
+## How to Record to S3 Cloud Storage?
+
+See [How to Record to S3 Cloud Storage](/faq-srs-stack#how-to-record-to-s3-cloud-storage)
+
+## How to Merge to One Mp4 File?
+
+See [Recording Doesn't Stop When the Stream is Stopped](/faq-srs-stack#recording-doesnt-stop-when-the-stream-is-stopped)
+and [How to Quickly Generate a Recorded File](/faq-srs-stack#how-to-quickly-generate-a-recorded-file)
 
 ## Cloud Service
 
