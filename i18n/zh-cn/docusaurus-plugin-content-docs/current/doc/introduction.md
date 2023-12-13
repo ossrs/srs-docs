@@ -15,6 +15,11 @@ SRS媒体服务器和[FFmpeg](https://ffmpeg.org)、[OBS](https://obsproject.com
 （推流）和订阅（播放）服务器模型。 SRS支持互联网广泛应用的音视频协议转换，比如可以将[RTMP](./rtmp.md)或[SRT](./srt.md)，
 转成[HLS](./hls.md)或[HTTP-FLV](./flv.md)或[WebRTC](./webrtc.md)等协议。
 
+SRS主要用于直播和WebRTC领域。在直播领域，SRS支持RTMP、HLS、SRT、MPEG-DASH和HTTP-FLV等典型协议。在WebRTC领域，SRS支持WebRTC、
+WHIP和WHEP等协议。SRS可以为直播和WebRTC实现协议转换。作为媒体服务器，SRS通常与FFmpeg、OBS和WebRTC等其他开源项目一起工作。
+SRS Stack作为一个开箱即用的媒体解决方案，整合了众多开源项目和工具，更多详细信息，请参考SRS Stack的
+[介绍](./getting-started-stack.md#introduction)。
+
 SRS提供了[HTTP API](./http-api.md)开放接口，可以查询系统的状态和流状态。同时还支持[HTTP Callback](./http-callback.md)
 支持回调能力，主动通知你的系统，并可以实现流的鉴权能力和业务定制（比如动态DVR）。SRS也支持官方的[Prometheus Exporter](./exporter.md)
 对接到云原生的监控系统，具备强大的可观测性。SRS支持会话级别[可追踪日志](./log.md)，极大降低了系统维护成本。

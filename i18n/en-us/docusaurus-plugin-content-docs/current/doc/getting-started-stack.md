@@ -10,6 +10,16 @@ hide_table_of_contents: false
 SRS Stack is a video cloud solution that is lightweight, open-source, and based on Go,
 Reactjs, SRS, FFmpeg, WebRTC, etc.
 
+## Introduction
+
+SRS Stack, an open-source out-of-the-box audio and video solution, is built entirely based on various scenarios. 
+Common examples include push-pull streaming scenarios that support different protocols and can be embedded into 
+websites like WordPress. In recording scenarios, it supports merging multiple streams, setting filters, and 
+recording specific streams only. For forwarding and virtual live streaming, files and other streams can be sent 
+to different platforms or to SRS Stack itself. With AI automatic subtitles, OpenAI's capabilities can be utilized 
+to automatically recognize and embed subtitles into the video stream. One-click automatic HTTPS makes it easy to 
+enable HTTPS capabilities. More diverse scenarios will be available in the future.
+
 Comparing SRS Stack and SRS, both offer media streaming capabilities at a similar level.
 However, SRS Stack provides a more powerful and feature-rich experience for end users,
 eliminating the need to write any code. Users can directly utilize SRS Stack for your

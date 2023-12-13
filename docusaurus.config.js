@@ -97,15 +97,30 @@ const config = {
             label: 'Docs',
           },
           {
-            type: 'doc',
-            docId: 'tutorial/srs-server',
+            type: 'dropdown',
+            label: 'FAQ',
             position: 'left',
-            label: 'Tutorial',
+            items: [
+              {
+                to: '/faq',
+                label: 'SRS Server',
+              },
+              {
+                to: '/faq-srs-stack',
+                label: 'SRS Stack',
+              }
+            ]
           },
           {
             to: '/blog',
             label: 'Blog',
             position: 'left',
+          },
+          {
+            type: 'doc',
+            docId: 'tutorial/srs-server',
+            position: 'left',
+            label: 'Tutorial',
           },
           {
             to: '/security-advisories',

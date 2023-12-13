@@ -52,7 +52,8 @@ You can also search for keywords on the page.
 The following are video materials for answering questions, which explain a certain topic in detail. 
 If your question is similar, please watch the video directly:
 
-* [How to Do Virtual Live Streaming by SRS Stack](https://youtu.be/68PIGFDGihU)
+* [Ultimate Unmanned Live Streaming Solution: Easy, Affordable & No PC Required! Perfect for Slow Media, Sleep Music, ASMR, Movie Streaming & More!](https://youtu.be/68PIGFDGihU)
+* [24/7 Live Stream: Easy Stream Your Camera to YouTube with DDNS & VPS - No PC or OBS Required!](https://youtu.be/nNOBFRshO6Q)
 
 <a name='getting-started'></a><br/><br/><br/>
 

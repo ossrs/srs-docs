@@ -17,6 +17,13 @@ subscribe (play) server model. SRS supports widely used internet audio and video
 such as converting [RTMP](./rtmp.md) or [SRT](./srt.md) to [HLS](./hls.md), [HTTP-FLV](./flv.md), or 
 [WebRTC](./webrtc.md).
 
+SRS is primarily used in the Live streaming and WebRTC fields. In the live streaming domain, SRS supports typical 
+protocols such as RTMP, HLS, SRT, MPEG-DASH, and HTTP-FLV. In the WebRTC field, SRS supports protocols like WebRTC, 
+WHIP, and WHEP. SRS facilitates protocol conversion for both Live streaming and WebRTC. As a media server, SRS 
+typically works alongside other open-source projects such as FFmpeg, OBS, and WebRTC. SRS Stack as an out-of-the-box 
+media solution, incorporating numerous open-source projects and tools, please refer to the [introduction](./getting-started-stack.md#introduction) 
+of SRS Stack.
+
 SRS provides an [HTTP API](./http-api.md) open interface to query system and stream status. It also supports 
 [HTTP Callback](./http-callback.md) for callback capabilities, actively notifying your system and implementing 
 stream authentication and business customization (such as dynamic DVR). SRS also supports the official 
