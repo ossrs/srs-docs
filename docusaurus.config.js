@@ -186,11 +186,11 @@ const config = {
             type: 'localeDropdown',
             position: 'right',
           },
-          {
-            href: `${sitePrefix}/gpt/g/g-FxEZ7G0XX-srs`,
-            label: 'AI Assistant',
-            position: 'right',
-          },
+          //{
+          //  href: `${sitePrefix}/gpt/g/g-FxEZ7G0XX-srs`,
+          //  label: 'AI Assistant',
+          //  position: 'right',
+          //},
         ],
       },
       footer: {

@@ -4,6 +4,21 @@ echo "Train target: $TARGET"
 
 rm -f $TARGET/*.md
 
+echo ""
+echo "Train one file:"
+DIRS=(~/git/srs-docs/for-writers/doc-en-6.0/doc \
+    ~/git/srs-docs/for-writers/blog-en \
+    ~/git/srs-docs/for-writers/pages\
+)
+for dir in ${DIRS[*]}; do
+    cd $dir
+    files=$(ls *.md |grep -iv zh)
+    for file in $files; do
+        echo $file; echo "SRS Server File: $file" >> $TARGET/srs-one.md; cat $file >> $TARGET/srs-one.md
+    done
+done
+
+echo ""
 echo "Train SRS server files:"
 cd ~/git/srs-docs/for-writers/doc-en-6.0/doc
 FILES=(drm.md dvr.md edge.md exporter.md ffmpeg.md flv.md forward.md gb28181.md \
