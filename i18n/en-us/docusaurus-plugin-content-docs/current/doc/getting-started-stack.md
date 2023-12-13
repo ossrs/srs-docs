@@ -14,33 +14,18 @@ Reactjs, SRS, FFmpeg, WebRTC, etc.
 
 SRS Stack, an open-source out-of-the-box audio and video solution, is built entirely based on various scenarios. 
 Common examples include push-pull streaming scenarios that support different protocols and can be embedded into 
-websites like WordPress. In recording scenarios, it supports merging multiple streams, setting filters, and 
-recording specific streams only. For forwarding and virtual live streaming, files and other streams can be sent 
-to different platforms or to SRS Stack itself. With AI automatic subtitles, OpenAI's capabilities can be utilized 
-to automatically recognize and embed subtitles into the video stream. One-click automatic HTTPS makes it easy to 
-enable HTTPS capabilities. More diverse scenarios will be available in the future.
+websites like WordPress. 
 
-Comparing SRS Stack and SRS, both offer media streaming capabilities at a similar level.
-However, SRS Stack provides a more powerful and feature-rich experience for end users,
-eliminating the need to write any code. Users can directly utilize SRS Stack for your
-media services needs.
+In recording scenarios, it supports merging multiple streams, setting filters, and recording specific streams only. 
+For forwarding and virtual live streaming, files and other streams can be sent to different platforms or to SRS Stack 
+itself. With AI automatic subtitles, OpenAI's capabilities can be utilized to automatically recognize and embed 
+subtitles into the video stream. One-click automatic HTTPS makes it easy to enable HTTPS capabilities. 
 
-| Comparison     | SRS Stack | SRS               | Notes                                                              |
-|----------------|-----------|-------------------|--------------------------------------------------------------------|
-| License        | MIT       | AGPL-3.0-or-later | SRS is licenced under MIT, SRS Stack is AGPL-3.0-or-later.         |
-| Live Streaming | Yes       | Yes               | Both support RTMP, HLS, and HTTP-FLV protocols.                    |
-| WebRTC         | Yes       | Yes               | WebRTC is supported by both.                                       |
-| Console        | Enhanced  | HTTP API          | SRS Stack offers a more powerful console.                          |
-| Authentication | Yes       | HTTP Callback     | SRS Stack has built-in authentication, while SRS uses callbacks.   |
-| DVR            | Enhanced  | File-based        | SRS Stack supports DVR to file and cloud storage.                  |
-| Forwarding     | Enhanced  | Basic             | SRS Stack can forward to multiple platforms via various protocols. |
-| Virtual Live   | Yes       | No                | SRS Stack provides advanced virtual live streaming capabilities.   |
-| WordPress      | Yes       | No                | SRS Stack offers a WordPress plugin and step-by-step guidelines.   |
-| Transcoding    | Yes       | No                | SRS Stack supports live stream transcoding.                        |
+More diverse scenarios will be available in the future.
 
-Special Note:
+## FAQ
 
-* Please choose the Ubuntu 20 system, as other systems may encounter some strange issues.
+If you encounter issues while using SRS Stack, please read the [FAQ](/faq-srs-stack) first.
 
 ## Docker
 
@@ -83,13 +68,29 @@ Easily set up an SRS Stack with just one click. For more information, check out
 
 SRS Stack offers a BaoTa plugin, for usage instructions refer to the [SRS Stack aaPanel Plugin](/blog/BT-aaPanel).
 
-## TencentCloud LightHouse
+## Compare to SRS
 
-Please read [TencentCloud LightHouse](https://www.bilibili.com/video/BV1844y1L7dL/): Deploy SRS to Tencent LightHouse.
+Comparing SRS Stack and SRS, both offer media streaming capabilities at a similar level.
+However, SRS Stack provides a more powerful and feature-rich experience for end users,
+eliminating the need to write any code. Users can directly utilize SRS Stack for your
+media services needs.
 
-## FAQ
+| Comparison     | SRS Stack | SRS               | Notes                                                              |
+|----------------|-----------|-------------------|--------------------------------------------------------------------|
+| License        | MIT       | AGPL-3.0-or-later | SRS is licenced under MIT, SRS Stack is AGPL-3.0-or-later.         |
+| Live Streaming | Yes       | Yes               | Both support RTMP, HLS, and HTTP-FLV protocols.                    |
+| WebRTC         | Yes       | Yes               | WebRTC is supported by both.                                       |
+| Console        | Enhanced  | HTTP API          | SRS Stack offers a more powerful console.                          |
+| Authentication | Yes       | HTTP Callback     | SRS Stack has built-in authentication, while SRS uses callbacks.   |
+| DVR            | Enhanced  | File-based        | SRS Stack supports DVR to file and cloud storage.                  |
+| Forwarding     | Enhanced  | Basic             | SRS Stack can forward to multiple platforms via various protocols. |
+| Virtual Live   | Yes       | No                | SRS Stack provides advanced virtual live streaming capabilities.   |
+| WordPress      | Yes       | No                | SRS Stack offers a WordPress plugin and step-by-step guidelines.   |
+| Transcoding    | Yes       | No                | SRS Stack supports live stream transcoding.                        |
 
-If you encounter issues while using SRS Stack, please read the [FAQ](/faq-srs-stack) first.
+Special Note:
+
+* Please choose the Ubuntu 20 system, as other systems may encounter some strange issues.
 
 ## Blogs
 

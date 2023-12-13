@@ -11,30 +11,18 @@ SRS Stack是一个基于Go、Reactjs、SRS、FFmpeg、WebRTC等的轻量级、�
 
 ## Introduction
 
-SRS Stack作为开源的开箱即用的音视频方案，是完全基于场景构建的。常见的比如推拉流场景，支持各种不同协议的推拉流，
-并且支持嵌入到WordPress等网站。比如录制场景，支持合并多次推流，支持设置过滤器，只录制特定的流。比如转发和虚拟直播，
-可以将文件和其他流，转发到不同的平台，或者转发到SRS Stack自身。比如AI自动字幕，可以使用OpenAI的能力，自动识别字幕
-并将字幕嵌入到视频流中。比如一键自动HTTPS，可以非常方便的开启HTTPS能力。未来还会有更多丰富的场景。
+SRS Stack作为开源的开箱即用的音视频方案，是完全基于场景构建的。 常见的比如推拉流场景，支持各种不同协议的推拉流，
+并且支持嵌入到WordPress等网站。
 
-在比较SRS Stack和SRS时，两者都提供相似级别的媒体流功能。然而，SRS Stack为终端用户提供了更强大且功能丰富的体验，
-无需编写任何代码。用户可以直接使用SRS Stack满足您的媒体服务需求。
+比如录制场景，支持合并多次推流，支持设置过滤器，只录制特定的流。比如转发和虚拟直播，可以将文件和其他流，转发到不同的平台，
+或者转发到SRS Stack自身。比如AI自动字幕，可以使用OpenAI的能力，自动识别字幕并将字幕嵌入到视频流中。比如一键自动HTTPS，
+可以非常方便的开启HTTPS能力。
 
-| 比较       | SRS Stack | SRS      | 说明                            |
-|----------|------|----------|-------------------------------|
-| 许可证      | MIT | AGPL-3.0-or-later      | SRS是MIT，而SRS Stack是AGPL-3.0-or-later。          |
-| 直播流      | 是    | 是        | 两者都支持RTMP，HLS和HTTP-FLV协议。     |
-| WebRTC   | 是    | 是        | 两者都支持WebRTC。                  |
-| 控制台      | 增强   | HTTP API | SRS Stack提供了更强大的控制台。          |
-| 身份验证     | 是    | HTTP回调   | SRS Stack具有内置身份验证，而SRS使用回调。   |
-| DVR      | 增强   | 基于文件     | SRS Stack支持将DVR存储到文件和云存储。     |
-| 转发       | 增强   | 基本       | SRS Stack可以通过各种协议转发到多个平台。     |
-| 虚拟直播     | 是    | 否        | SRS Stack提供了先进的虚拟直播功能。        |
-| WordPress | 是    | 否        | SRS Stack提供了WordPress插件和操作指南。 |
-| Transcoding | 是 | 否 | SRS Stack提供了直播转码的能力。|
+未来还会有更多丰富的场景。
 
-特别说明：
+## FAQ
 
-* 请选择Ubuntu 20系统，其他系统可能会碰到一些奇怪的问题。
+若使用SRS Stack时遇到问题，请先阅读[FAQ](/faq-srs-stack)。
 
 ## Docker
 
@@ -76,14 +64,27 @@ SRS Stack提供了宝塔插件，使用方法参考[宝塔插件](/blog/BT-aaPan
 
 在国内做流媒体或RTC业务，可以在腾讯云轻量服务器上购买SRS Stack，参考[SRS Stack：起步、购买和入门](/blog/SRS-Stack-Tutorial)。
 
-## DigitalOcean Droplet
+## Compare to SRS
 
-若你需要做出海业务，在海外做直播或者RTC，可以很方便的一键创建SRS Stack，参考
-[DigitalOcean Droplet](https://mp.weixin.qq.com/s/_GcJm15BGv1qbmHixPQAGQ) 使用说明。
+在比较SRS Stack和SRS时，两者都提供相似级别的媒体流功能。然而，SRS Stack为终端用户提供了更强大且功能丰富的体验，
+无需编写任何代码。用户可以直接使用SRS Stack满足您的媒体服务需求。
 
-## FAQ
+| 比较       | SRS Stack | SRS      | 说明                            |
+|----------|------|----------|-------------------------------|
+| 许可证      | MIT | AGPL-3.0-or-later      | SRS是MIT，而SRS Stack是AGPL-3.0-or-later。          |
+| 直播流      | 是    | 是        | 两者都支持RTMP，HLS和HTTP-FLV协议。     |
+| WebRTC   | 是    | 是        | 两者都支持WebRTC。                  |
+| 控制台      | 增强   | HTTP API | SRS Stack提供了更强大的控制台。          |
+| 身份验证     | 是    | HTTP回调   | SRS Stack具有内置身份验证，而SRS使用回调。   |
+| DVR      | 增强   | 基于文件     | SRS Stack支持将DVR存储到文件和云存储。     |
+| 转发       | 增强   | 基本       | SRS Stack可以通过各种协议转发到多个平台。     |
+| 虚拟直播     | 是    | 否        | SRS Stack提供了先进的虚拟直播功能。        |
+| WordPress | 是    | 否        | SRS Stack提供了WordPress插件和操作指南。 |
+| Transcoding | 是 | 否 | SRS Stack提供了直播转码的能力。|
 
-若使用SRS Stack时遇到问题，请先阅读[FAQ](/faq-srs-stack)。
+特别说明：
+
+* 请选择Ubuntu 20系统，其他系统可能会碰到一些奇怪的问题。
 
 ## Blogs
 
