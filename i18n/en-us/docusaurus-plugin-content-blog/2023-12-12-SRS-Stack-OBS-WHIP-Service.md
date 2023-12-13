@@ -36,7 +36,7 @@ docker run --rm -it --name srs-stack -v $HOME/data:/data \
   ossrs/srs-stack:5
 ```
 
-After creating the SRS Stack, you can access it through `http://your-server-ip/mgmt`.
+After creating the SRS Stack, you can access it through `http://your-server-ip/mgmt` via a browser.
 
 ## Step 2: Get the WHIP URL from SRS Stack
 

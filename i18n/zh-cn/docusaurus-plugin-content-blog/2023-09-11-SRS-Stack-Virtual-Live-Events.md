@@ -35,7 +35,7 @@ docker run --rm -it -p 80:2022 -p 443:2443 -p 1935:1935 \
   -v $HOME/data:/data registry.cn-hangzhou.aliyuncs.com/ossrs/srs-stack:5
 ```
 
-创建SRS Stack后，您可以通过 `http://your-server-ip/mgmt` 或 `http://your-server-ip:2022/mgmt` 访问它。
+创建SRS Stack后，您可以通过 `http://your-server-ip/mgmt` 访问它。
 
 ## Step 2: Upload your video file
 

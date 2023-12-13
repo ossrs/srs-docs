@@ -45,8 +45,7 @@ docker run --rm -it --name srs-stack -v $HOME/data:/data \
   ossrs/srs-stack:5
 ```
 
-After creating the SRS Stack, you can access it through `http://your-server-ip/mgmt` or 
-`http://your-server-ip:2022/mgmt` if you use port `2022`.
+After creating the SRS Stack, you can access it through `http://your-server-ip/mgmt` via a browser.
 
 ## Step 2: Publish a Live Stream to SRS Stack
 
