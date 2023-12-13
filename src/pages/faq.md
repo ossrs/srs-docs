@@ -43,7 +43,7 @@ Issue according to the requirements.
 <a name='cors'></a>
 
 ### [CORS](#cors)
-* `CORS`: Questions about cross-domain access for HTTP APIs or streams
+* `CORS`: How to setup cross-domain access for HTTP APIs or streams
   > 1. SRS 3.0 supports cross-domain (CORS) access, so there is no need for additional HTTP proxies, as it is built-in and enabled by default. Please refer to [#717](https://github.com/ossrs/srs/issues/717) [#798](https://github.com/ossrs/srs/issues/798) [#1002](https://github.com/ossrs/srs/issues/1002)
   > 1. Of course, using an Nginx proxy server can also solve cross-domain issues, so there is no need to set it in SRS. Note that you only need to proxy the API, not the media stream, because the bandwidth consumption of the stream is too high, which will cause the proxy to crash and is not necessary.
   > 1. Use Nginx or Caddy proxy to provide a unified HTTP/HTTPS service. Please refer to [#2881](https://github.com/ossrs/srs/issues/2881)
@@ -51,7 +51,7 @@ Issue according to the requirements.
 <a name='cpu-and-os'></a>
 
 ### [CPU and OS](#cpu-and-os)
-* `CPU and OS`: About the CPU architecture and OS operating system supported by SRS
+* `CPU and OS`: What's the CPU architecture and OS operating system supported by SRS
   > 1. SRS supports common CPU architectures, such as x86_64 or amd64, as well as armv7/aarch64/AppleM1, MIPS or RISCV, and Loongson loongarch. For other CPU adaptations, please refer to [ST#22](https://github.com/ossrs/state-threads/issues/22).
   > 1. SRS supports commonly used operating systems, such as Linux including CentOS and Ubuntu, macOS, and Windows.
   > 1. SRS also supports domestic Xin Chuang systems. If you need to adapt to a new domestic Xin Chuang system, you can submit an issue.
@@ -64,7 +64,7 @@ Issue according to the requirements.
 
 ### [DVR](#dvr)
 
-* `Dynamic DVR`: About dynamic recording, regular expression matching for streams that need to be recorded, etc.
+* `Dynamic DVR`: How to do dynamic recording, regular expression matching for streams that need to be recorded, etc.
   > 1. You can use `on_publish` to callback the business system and implement complex rules.
   > 1. For specific recording files, use `on_hls` to copy the slices to the recording directory or cloud storage.
   > 1. You can refer to the DVR implementation in [srs-stack](https://github.com/ossrs/srs-stack/blob/main/platform/srs-hooks.go).
@@ -74,7 +74,7 @@ Issue according to the requirements.
 <a name='edge-hls-dvr-rtc'></a>
 
 ### [Edge HLS/DVR/RTC](#edge-hls-dvr-rtc)
-* `Edge HLS/DVR/RTC`: About Edge support for HLS/DVR/RTC, etc.
+* `Edge HLS/DVR/RTC`: Does Edge Cluster support for HLS/DVR/RTC, etc.
   > 1. Edge is a live streaming cluster that only supports live streaming protocols such as RTMP and FLV. Only the origin server can support HLS/DVR/RTC. Refer to [#1066](https://github.com/ossrs/srs/issues/1066)
   > 1. Currently, there is no restriction on using HLS/DVR/RTC capabilities in Edge, but they will be disabled in the future. So please do not use them this way, and they won't work.
   > 1. For the HLS cluster, please refer to the documentation [HLS Edge Cluster](/docs/v5/doc/nginx-for-hls)
@@ -98,7 +98,7 @@ Issue according to the requirements.
 <a name='gb28181'></a>
 
 ### [GB28181](#gb28181)
-* `GB28181`: Questions about GB status and roadmap
+* `GB28181`: What about GB28181 status and roadmap
   > 1. GB has been moved to a separate repository [srs-gb28181](https://github.com/ossrs/srs-gb28181), please refer to [#2845](https://github.com/ossrs/srs/issues/2845)
   > 1. For GB usage, please refer to [#1500](https://github.com/ossrs/srs/issues/1500). Currently, GB is still in the [feature/gb28181](https://github.com/ossrs/srs-gb28181/tree/feature/gb28181) branch. It will be merged into develop and then released after it is stable. It is expected to be released in SRS 5.0.
   > 1. SRS support for GB will not be comprehensive, and will only be used as an access protocol. The highly concerned [intercom](https://github.com/ossrs/srs-gb28181/issues/1898) is planned to be supported.
@@ -115,13 +115,13 @@ Issue according to the requirements.
 
 ### [HEVC/H.265](#hevc)
 
-* `RTMP for HEVC`: How RTMP supports HEVC.
+* `RTMP for HEVC`: Does RTMP support HEVC.
   > 1. How to support RTMP FLV HEVC streaming, refer to the [link](https://video.stackexchange.com/a/36922/42693).
 
 <a name='hls-fragments'></a>
 
 ### [HLS Fragments](#hls-fragments)
-* `HLS Fragment Duration`: About HLS segment duration
+* `HLS Fragment Duration`: How to setup HLS segment duration
   > 1. HLS segment duration is determined by three factors: GOP length, whether to wait for a keyframe (`hls_wait_keyframe`), and segment duration (`hls_fragment`).
   > 1. For example, if the GOP is set to 2s, the segment length is `hls_fragment:5`, and `hls_wait_keyframe:on`, then the actual duration of each TS segment may be around 5~6 seconds, as it needs to wait for a complete GOP before closing the segment.
   > 1. For example, if the GOP is set to 10s, the segment length is `hls_fragment:5`, and `hls_wait_keyframe:on`, then the actual duration of each TS segment is also over 10 seconds.
@@ -135,27 +135,27 @@ Issue according to the requirements.
 <a name='http-api'></a>
 
 ### [HTTP API](#http-api)
-* `HTTP RAW API`: About RAW API, dynamic recording DVR, etc.
+* `HTTP RAW API`: Why removed RAW API, dynamic recording DVR, etc.
   > 1. Due to various problems with the RAW API, it may lead to overuse. The feature has been removed in version 4.0. For detailed reasons, please see [#2653](https://github.com/ossrs/srs/issues/2653).
   > 1. Again, do not use HTTP RAW API for business implementation. This is what your business system should do. You can use Go or Node.js to handle it.
 
-* `Secure HTTP API`: About API authentication, API security, etc. <a name='api-security' href='#api-security'>#api-security</a>
+* `Secure HTTP API`: How to do API authentication, API security, etc.
   > 1. Regarding HTTP API authentication and how to prevent everyone from accessing it, it is currently recommended to use Nginx proxy to solve this issue. The support will be enhanced in the future. For details, please see [#1657](https://github.com/ossrs/srs/issues/1657).
   > 1. You can also use HTTP Callback to implement authentication. When pushing or playing a stream, call your business system's API to implement the hook.
 
-* `HTTP Callback`: About HTTP callback and authentication.
+* `HTTP Callback`: How to do HTTP callback and authentication.
   > 1. SRS uses HTTP callback for authentication. To learn how to return error codes in HTTP Callback and Response, please refer to this [link](https://stackoverflow.com/a/70358233/17679565).
 
 <a name='api-security'></a> <a name='https'></a> <a name='https-h2-3'></a>
 
 ### [HTTPS & HTTP2/3](#https-h2-3)
-* `HTTPS`: Regarding HTTPS services, API, Callback, Streaming, WebRTC, etc.
+* `HTTPS`: How to use HTTPS services, API, Callback, Streaming, WebRTC, etc.
   > 1. [HTTPS API](/docs/v4/doc/http-api#https-api) provides transport layer security for the API. WebRTC push streaming requires HTTPS pages, which can only access HTTPS APIs.
   > 1. [HTTPS Callback](/docs/v4/doc/http-callback#https-callback) calls back to HTTPS services. If your server uses the HTTPS protocol, most business systems use HTTPS for security purposes.
   > 1. [HTTPS Live Streaming](/docs/v4/doc/delivery-http-flv#https-flv-live-stream) provides transport layer security for streaming, mainly because HTTPS pages can only access HTTPS resources.
   > 1. Automatically apply for SSL certificates from `letsencrypt` for a single domain, making it easier for small and medium-sized enterprises to deploy SRS and avoiding the high overhead of HTTPS proxies for streaming media businesses. See [#2864](https://github.com/ossrs/srs/issues/2864)
   > 1. Use Nginx or Caddy as reverse proxies for HTTP/HTTPS Proxy to provide unified HTTP/HTTPS services. See [#2881](https://github.com/ossrs/srs/issues/2881)
-* `HTTP2`: Regarding HTTP2-FLV or HTTP2 HLS, etc.
+* `HTTP2`: How to do HTTP2-FLV or HTTP2 HLS, etc.
   > 1. SRS will not implement HTTP2 or HTTP3, but instead recommends using reverse proxies to convert protocols, such as Nginx or Go.
   > 1. Since HTTP is a very mature protocol, existing tools and reverse proxy capabilities are very comprehensive, and SRS does not need to implement a complete protocol.
   > 1. SRS has implemented a simple HTTP 1.0 protocol, mainly providing API and Callback capabilities.
@@ -163,21 +163,21 @@ Issue according to the requirements.
 <a name='latency'></a>
 
 ### [Latency](#latency)
-* `Latency`: Questions about how to reduce latency, how to do low-latency live streaming, and how much latency WebRTC has.
+* `Latency`: How to reduce latency, how to do low-latency live streaming, and how much latency WebRTC has.
   > 1. Live streaming latency is generally 1 to 3 seconds, WebRTC latency is around 100ms, why is the latency of the self-built environment so high?
   > 1. The most common reason for high latency is using the VLC player, which has a latency of tens of seconds. Please switch to the SRS H5 player.
   > 1. Latency is related to each link, not just SRS reducing latency. It is also related to the push tool (FFmpeg/OBS) and the player. Please refer to [Realtime](/docs/v4/doc/sample-realtime) and follow the steps to set up a low-latency environment. Don't start with your own fancy operations, just follow the documentation.
   > 1. If you still find high latency after following the steps, how to troubleshoot? Please refer to [#2742](https://github.com/ossrs/srs/issues/2742)
-* `HLS Latency`: About the latency of HLS.
+* `HLS Latency`: How to reduce the latency of HLS.
   > 1. HLS has a large delay, and it takes a long time to watch after switching content. How to reduce HLS latency? Refer to the [link](https://video.stackexchange.com/a/36923/42693).
   > 1. How to config SRS for [HLS Latency](/docs/v6/doc/hls#hls-low-latency)
-* `Benchmark`: Measuring and testing latency.
+* `Benchmark`: How to benchmark and testing latency.
   > 1. How to measure and optimize live streaming latency, latency in different stages and protocols, how to improve and measure latency, refer to this [link](https://stackoverflow.com/a/70402476/17679565).
 
 <a name='performance'></a> <a name='memory'></a>
 
 ### [Performance](#performance) and [Memory](#memory)
-* `Performance`: About performance optimization, concurrency, stress testing, memory leaks, and wild pointers
+* `Performance`: How to do performance optimization, concurrency, stress testing, and memory leaks
   > 1. Performance is a comprehensive topic, including the quality of the project, the capacity and concurrency it supports, how to optimize performance, and even memory issues, such as memory leaks (leading to reduced performance), out-of-bounds and wild pointer problems.
   > 1. If you need to understand the concurrency of SRS, you must divide it into separate concurrency for live streaming and WebRTC. Live streaming can use [srs-bench](https://github.com/ossrs/srs-bench), and WebRTC can use the [feature/rtc](https://github.com/ossrs/srs-bench/tree/feature/rtc) branch for stress testing to obtain the concurrency supported by your hardware and software environment under specific bitrates, latency, and business characteristics.
   > 1. SRS also provides official concurrency data, which can be found in [Performance](https://github.com/ossrs/srs/blob/4.0release/trunk/doc/PERFORMANCE.md#performance). It also explains how to measure this concurrency, the conditions under which the data is obtained, and specific optimization code.
@@ -188,14 +188,14 @@ Issue according to the requirements.
 
 ### [Player](#player)
 
-* `Player`: About the choice of players and platform support.
+* `Player`: How to choose players and OS platforms.
   > 1. How to choose a live streaming player, as well as the introduction of corresponding protocols and latency, recommend RTMP for playing HTTP-FLV/HLS/WebRTC: refer to the [link](https://stackoverflow.com/a/70358918/17679565)
   > 1. How to play HTTP-FLV with HTML5, MSE compatibility, HTML5 players on various platforms, and how to use WASM to play FLV on iOS: refer to the [link](https://stackoverflow.com/a/70429640/17679565)
 
 <a name='rtsp'></a>
 
 ### [RTSP](#rtsp)
-* `RTSP`: RTSP streaming, RTSP server, RTSP playback, etc.
+* `RTSP`: How to support RTSP streaming, RTSP server, RTSP playback, etc.
   > 1. SRS supports pulling RTSP with Ingest, but does not support pushing RTSP stream to SRS, which is not the correct usage. For detailed reasons, please refer to [#2304](https://github.com/ossrs/srs/issues/2304).
   > 1. Of course, RTSP server and RTSP playback will not be supported either, please refer to [#476](https://github.com/ossrs/srs/issues/476).
   > 1. If you need a large number of camera connections, such as 10,000, using FFmpeg may be more difficult. For such large-scale businesses, the recommended solution is to use ST+SRS code to implement an RTSP forwarding server.
@@ -207,11 +207,11 @@ Issue according to the requirements.
 <a name='solution'></a>
 
 ### [Solution](#solution)
-* `Media Stream Server`: About media servers and comparisons.
+* `Media Stream Server`: What's the difference between media servers.
   > 1. How to do live streaming or calls, the differences and focus points between live streaming and RTC (Real-Time Communication), refer to this [link](https://stackoverflow.com/a/70401471/17679565).
   > 1. How to do live streaming between Android devices, including live streaming servers and players, and how to transfer video between two Android devices, refer to this [link](https://stackoverflow.com/a/70400557/17679565).
   > 1. Recommended media servers and protocol introductions, various protocols used in live streaming, refer to this [link](https://stackoverflow.com/a/70400495/17679565).
-* `Raspberry Pi`: Support for Raspberry Pi.
+* `Raspberry Pi`: How to run in Raspberry Pi.
   > 1. Remote control of Raspberry Pi camera and car, live streaming and pure WebRTC solution, refer to this [link](https://stackoverflow.com/a/70675353/17679565).
 * `Others`: Other solutions and common questions.
   > 1. Why do two RTMP streams gradually go out of sync, and how can SRT or WebRTC be used to keep two different streams synchronized? Refer to this [link](https://stackoverflow.com/a/71273229/17679565).
@@ -229,7 +229,7 @@ Issue according to the requirements.
 <a name='source-cleanup'></a>
 
 ### [Source Cleanup](#source-cleanup)
-* `Source Cleanup`: Regarding memory growth for a large number of streams
+* `Source Cleanup`: How to fix memory growth for a large number of streams
   > 1. The Source object for push streaming is not cleaned up, and memory will increase as the number of push streams increases. For now, you can use [Gracefully Quit](https://github.com/ossrs/srs/issues/413#issuecomment-917771521) as a workaround, and this issue will be addressed in the future. See [#413](https://github.com/ossrs/srs/issues/413)
   > 1. To reiterate, you can use [Gracefully Quit](https://github.com/ossrs/srs/issues/413#issuecomment-917771521) as a workaround. Even if this issue is resolved in the future, this solution is the most reliable and optimal one. Restarting is always a good option.
 
@@ -252,14 +252,14 @@ topic. If your question is similar, please watch the video directly:
 <a name='webrtc-cluster'></a>
 
 ### [WebRTC Cluster](#webrtc-cluster)
-* `WebRTC+Cluster`: Questions related to WebRTC clustering
+* `WebRTC+Cluster`: Does SRS support WebRTC clustering?
   > 1. WebRTC clustering is not the same as live streaming clustering (Edge+Origin Cluster), but it is called WebRTC cascading. Please refer to [#2091](https://github.com/ossrs/srs/issues/2091)
   > 1. In addition to the clustering solution, SRS will also support the Proxy solution, which is simpler than clustering and will have scalability and disaster recovery capabilities. Please refer to [#3138](https://github.com/ossrs/srs/issues/3138)
 
 <a name='webrtc-live'></a>
 
 ### [WebRTC Live](#webrtc-live)
-* `WebRTC+Live`: Questions related to WebRTC and live streaming
+* `WebRTC+Live`: How to convert Live stream with WebRTC.
   > 1. For the conversion between WebRTC and RTMP, such as RTMP2RTC (RTMP push stream RTC playback) or RTC2RTMP (RTC push stream RTMP playback), you must specify the conversion configuration. Audio transcoding is not enabled by default to avoid significant performance loss. Please refer to [#2728](https://github.com/ossrs/srs/issues/2728)
   > 1. If SRS 4.0.174 or earlier works, but it does not work after updating, it is because `rtc.conf` does not enable RTMP to RTC by default. You need to use `rtmp2rtc.conf` or `rtc2rtmp.conf`. Please refer to 71ed6e5dc51df06eaa90637992731a7e75eabcd7
   > 1. In the future, the conversion between RTC and RTMP will not be enabled automatically, because SRS must consider the independent RTMP and independent RTC scenarios. The conversion scenario is just one of them, but due to the serious performance problems caused by the conversion scenario, it cannot be enabled by default, which will cause major problems in independent scenarios.

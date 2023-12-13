@@ -136,7 +136,7 @@
   > 1. 由于RAW API有各种问题，会导致过度使用，4.0已经将该功能删除，详细原因请看 [#2653](https://github.com/ossrs/srs/issues/2653)
   > 1. 再次强调不要用HTTP RAW API实现业务，这是你的业务系统该做的，用Go或Nodejs搞下就可以。
 
-* `Secure HTTP API`: 关于API鉴权，API安全等 <a name='api-security' href='#api-security'>#api-security</a>
+* `Secure HTTP API`: 关于API鉴权，API安全等
   > 1. 关于HTTP API鉴权，如何防止所有人访问，目前建议用Nginx代理解决，后续会增强，详细请看 [#1657](https://github.com/ossrs/srs/issues/1657)
   > 1. 还可以使用HTTP Callback来实现鉴权，在推流或播放时，调用你的业务系统的API，实现hook。
 

@@ -11,19 +11,17 @@
 * [Supported Platforms](#support-platform)：支持哪些平台: 支持哪些平台，支持镜像，想直接用服务器或命令行安装，或宝塔安装
 * [How to Push Multiple Streams](#multiple-streams)：如何推多路流: 一路流不够，想推多路流，想改默认的流名称和流地址。
 * [How to Run Multiple Instances](#multiple-instances)：如何启动多个实例: 机器CPU很多，如何支持更多的平台转发，或者更多路流以及录制等。
-* [Low bandwidth, Get More Bandwidth](#bandwidth)：带宽太低，提升带宽: 带宽不够，想提升带宽，在CVM中用SRS Stack。
 * [How to Set up Free HTTPS](#https)：如何设置免费HTTPS: 如何申请免费HTTPS证书，如何申请多个域名的证书。
 * [How to Use Server File for Virtual Live Events](#virtual-live-server-file): 如何用服务器的文件做虚拟直播: 如何用其他工具上传文件，并在虚拟直播中使用
 * [How to Modify the Push Authentication Key](#update-publish-secret)：如何修改推流鉴权的密钥: 更新推流鉴权的密钥，更换推流密钥
 * [How to Disable Push Authentication](#no-publish-auth)：如何禁用推流鉴权: 不想要推流鉴权，设备不支持特殊字符。
-* [How to Record to Local Disk](#record): 如何录制到本地磁盘: 如何录制到SRS Stack的本地磁盘。
 * [How to Change the Recording Directory](#update-dvr-directory): 如何修改录制的目录: 如何修改录制的目录为其他磁盘目录。
 * [Recording Doesn't Stop When the Stream is Stopped](#dvr-continue-when-unpublish): 停止推流时录制没有停止: 为何不能在停止推流时停止录制，而是等待一定时间才停止。
 * [How to Quickly Generate a Recorded File](#dvr-fastly-generate): 如何快速生成录制文件: 停止推流后，如何快速生成录制文件。
 * [How to Record to S3 Cloud Storage](#dvr-s3-cloud-storage): 如何录制到S3云存储: 录制到AWS、Azure、DigitalOcean Space等S3兼容的存储上。
 * [How to Record a Specific Stream](#dvr-specific-streams): 如何录制特定的流: 如何按特定规则录制，如何录制指定的流
 * [Unavailable After Installation](#unavailable): 安装后无法访问: 安装后提示错误，或者Redis没准备好。
-* [Difference Between SRS Re-streaming and OBS Re-streaming](#restream-vs-obs): SRS转推和OBS转推的区别: SRS的多平台转推，和OBS转推插件的区别。
+* [Difference Between SRS Restream and OBS Restream](#restream-vs-obs): SRS转推和OBS转推的区别: SRS的多平台转推，和OBS转推插件的区别。
 * [How SRS Re-streams to Custom Platforms](#restream-custom): SRS如何转推自定义平台: SRS的多平台转推，如何推到自定义的直播平台。
 * [How to Replace FFmpeg](#use-custom-ffmpeg): 如何更换FFmpeg: 如何更换SRS Stack中的FFmpeg为自定义版本。
 * [aaPanel Installation of SRS is Very Slow](#install-speedup): 宝塔安装SRS非常慢: 海外用宝塔安装非常慢，访问阿里云镜像太慢。
@@ -226,27 +224,6 @@ docker run --rm -it -p 2023:2022 -p 1936:1935 \
 
 当然也不是意味着你就可以启动上万个SRS Stack，你应该关注你的CPU和内存，以及机器的带宽是否充足。
 
-<a name="bandwidth"></a><br/><br/><br/>
-
-## Insufficient Bandwidth, Acquire Additional Bandwidth
-
-轻量应用服务器的带宽4~20Mbps不等，对于音视频来说还是会有些限制，如果你想更高带宽，比如到100Mbps，那么可以选择CVM主机。
-
-> Note: SRS Stack的使用都是一致的，购买和平台配置有所不同。
-
-CVM云服务器的优势是：
-
-* 带宽最高100Mbps，可以用多平台转发到另外CVM服务器，十台CVM就可以实现1Gbps带宽，当然得摸摸自己腰包了哈。
-* 按量计费，可以随时停机不收费，需要使用时再开机使用。对于比较低频的应用场景比较友好。
-
-CVM云服务器的劣势是：
-
-* 成本高，没有送的流量包。轻量服务器成本低，送的流量包基本上够一般的直播了。所以请大家自己算一算成本。
-* 操作复杂，CVM的安全组比轻量的防火墙操作复杂多了，请大家自己试试，不行就换轻量吧。
-* 没有后台链接，界面比较复杂，如果不行就换轻量吧。
-
-如果知道了优势和劣势，还是要选择CVM，请参考[SRS Stack：支持CVM镜像](https://mp.weixin.qq.com/s/x-PjoKjJj6HRF-eCKX0KzQ)。
-
 <a name="https"></a><br/><br/><br/>
 
 ## How to Set up Free HTTPS
@@ -341,14 +318,6 @@ docker exec -it srs-stack ls -lh /data/my-upload/my-file.mp4
 > Note: 当然了，播放也得改成一样的流名称才行，也要有密钥，因为这里是把密钥放在流名称中了，播放当然也得改了。
 
 这样的方式，是有安全性，也能支持不支持特殊字符的设备，加上推流密钥本来就可以改，所以可以改成自己想要的方式。
-
-<a name="record"></a><br/><br/><br/>
-
-## How to Record to Local Disk
-
-如何录制到SRS Stack的本地磁盘？升级到v1.0.252后，在录制中就可以看到有本地录制了。
-
-本地录制的限制和解决方案，请参考 #42
 
 <a name="update-dvr-directory"></a><br/><br/><br/>
 
@@ -465,7 +434,7 @@ SRS Stack允许您配置Glob匹配规则，该过滤器仅录制符合定义规�
 
 <a name="restream-vs-obs"></a><br/><br/><br/>
 
-## Difference Between SRS Re-streaming and OBS Re-streaming
+## Difference Between SRS Restream and OBS Restream
 
 SRS的多平台转推，可以将流转推给多个平台，它的工作图如下：
 

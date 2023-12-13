@@ -11,19 +11,17 @@ Quick Content
 * [Supported Platforms](#support-platform): Supported platforms, supported images, want to use the server or command line installation directly, or aaPanel installation.
 * [How to Push Multiple Streams](#multiple-streams): Want to push multiple streams, want to change the default stream name and stream address.
 * [How to Run Multiple Instances](#multiple-instances): The machine has a lot of CPU, how can we support more platform forwarding, or more streams and recording, etc.
-* [Insufficient Bandwidth, Acquire Additional Bandwidth](#bandwidth): Insufficient bandwidth, want to increase bandwidth, use SRS Stack in CVM.
 * [How to Set up Free HTTPS](#https): How to apply for a free HTTPS certificate, how to apply for certificates for multiple domain names.
 * [How to Use Server File for Virtual Live Events](#virtual-live-server-file): How to upload file to server and use it in virtual live events.
 * [How to Modify the Push Authentication Key](#update-publish-secret): Update the push authentication key, replace the push key.
 * [How to Disable Push Authentication](#no-publish-auth): Don't want push authentication, the device does not support special characters.
-* [How to Record to Local Disk](#record): How to record to the local disk of SRS Stack.
 * [How to Change the Recording Directory](#update-dvr-directory): How to modify the recording directory to another disk directory.
 * [Recording Doesn't Stop When the Stream is Stopped](#dvr-continue-when-unpublish): Why the recording doesn't stop immediately when the stream is stopped, but instead waits for a certain period before stopping.
 * [How to Quickly Generate a Recorded File](#dvr-fastly-generate): After stopping the stream, how to rapidly create a recorded file.
 * [How to Record to S3 Cloud Storage](#dvr-s3-cloud-storage): Record to AWS, Azure, DigitalOcean Space, and other S3-compatible storage options.
 * [How to Record a Specific Stream](#dvr-specific-streams): How to record according to specific rules, how to record a particular stream.
 * [Unavailable After Installation](#unavailable): Error prompt after installation, or Redis not ready.
-* [Difference Between SRS Re-streaming and OBS Re-streaming](#restream-vs-obs): The difference between SRS multi-platform re-streaming and OBS re-streaming plugin.
+* [Difference Between SRS Restream and OBS Restream](#restream-vs-obs): The difference between SRS multi-platform re-streaming and OBS re-streaming plugin.
 * [How SRS Re-streams to Custom Platforms](#restream-custom): How SRS multi-platform re-streaming pushes to custom live platforms.
 * [How to Replace FFmpeg](#use-custom-ffmpeg): How to replace the FFmpeg in SRS Stack with a custom version.
 * [aaPanel Installation of SRS is Very Slow](#install-speedup): Overseas aaPanel installation is very slow, access to Alibaba Cloud image is too slow.
@@ -201,8 +199,7 @@ etc.
 You can choose to use Docker to start SRS Stack, which makes it very easy to run many isolated SRS Stack
 instances that don't affect each other and utilize the machine resources.
 
-For example, start two instances listening on ports 2022 and 2023, and use different ports for streaming 
-media:
+For example, start two instances listening on ports 2022 and 2023, and use different ports for streaming media:
 
 ```bash
 docker run --rm -it -p 2022:2022 -p 1935:1935 \
@@ -250,28 +247,6 @@ Other protocol ports should also be changed accordingly, such as HLS:
 
 Of course, this doesn't mean you can start thousands of SRS Stacks. You should pay attention to your CPU 
 and memory, as well as whether your machine has enough bandwidth.
-
-<a name="bandwidth"></a><br/><br/><br/>
-
-## Insufficient Bandwidth, Acquire Additional Bandwidth
-
-The bandwidth of lightweight application servers ranges from 4 to 20Mbps, which is somewhat limited for 
-audio and video. If you want higher bandwidth, such as 100Mbps, you can choose CVM or AWS VPS.
-
-> Note: The usage of SRS Stack is consistent, but the purchase and platform configuration are different.
-
-The advantages of CVM cloud servers are:
-
-* The bandwidth can be up to 100Mbps, and multiple platforms can be used to forward to other CVM servers. Ten CVMs can achieve 1Gbps bandwidth, but of course, you have to consider your budget.
-* Pay-as-you-go, you can stop the machine at any time without charge, and use it again when needed. It is more friendly for low-frequency application scenarios.
-
-The disadvantages of CVM cloud servers are:
-
-* High cost, no free traffic package. Lightweight servers have low cost, and the free traffic package is basically enough for general live streaming. So please calculate the cost yourself.
-* Complex operation, CVM's security group is much more complicated than the lightweight firewall operation. Please try it yourself. If it doesn't work, switch to lightweight.
-* No background link, the interface is more complex. If it doesn't work, switch to lightweight.
-
-If you still want to choose CVM after knowing the advantages and disadvantages, please refer to [SRS Stack: Support CVM image](https://mp.weixin.qq.com/s/x-PjoKjJj6HRF-eCKX0KzQ).
 
 <a name="https"></a><br/><br/><br/>
 
@@ -379,15 +354,6 @@ as: `rtmp://ip/live/xxx`.
 
 This way, there is security, and it can support devices that do not support special characters. In addition, 
 the push key can be changed, so you can change it to the way you want.
-
-<a name="record"></a><br/><br/><br/>
-
-## How to Record to Local Disk
-
-How to record to the local disk of SRS Stack? After upgrading to v1.0.252, you can see local recording in 
-the recording.
-
-For the limitations and solutions of local recording, please refer to #42
 
 <a name="update-dvr-directory"></a><br/><br/><br/>
 
@@ -526,7 +492,7 @@ for 3 to 5 minutes.
 
 <a name="restream-vs-obs"></a><br/><br/><br/>
 
-## Difference Between SRS Re-streaming and OBS Re-streaming
+## Difference Between SRS Restream and OBS Restream
 
 SRS's multi-platform restreaming can push the stream to multiple platforms, and its working diagram 
 is as follows:
