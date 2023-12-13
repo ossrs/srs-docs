@@ -38,12 +38,13 @@ Please see [How to Setup a Video Streaming Service by 1-Click](./2022-04-09-SRS-
 You can also use Docker to create an SRS Stack with a single command line:
 
 ```bash
-docker run --rm -it -p 2022:2022 -p 2443:2443 -p 1935:1935 \
+docker run --rm -it -p 80:2022 -p 443:2443 -p 1935:1935 \
   -p 8080:8080 -p 8000:8000/udp -p 10080:10080/udp --name srs-stack \
   -v $HOME/data:/data ossrs/srs-stack:5
 ```
 
-After creating the SRS Stack, you can access it through `http://your-server-ip/mgmt`.
+After creating the SRS Stack, you can access it through `http://your-server-ip/mgmt` or 
+`http://your-server-ip:2022/mgmt` if you use port `2022`.
 
 ## Step 2: Upload your video file
 

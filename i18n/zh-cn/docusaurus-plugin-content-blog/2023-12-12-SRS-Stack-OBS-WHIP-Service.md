@@ -26,7 +26,7 @@ custom_edit_url: null
 您还可以使用Docker通过单个命令行创建SRS Stack：
 
 ```bash
-docker run --rm -it -p 2022:2022 -p 2443:2443 -p 1935:1935 \
+docker run --rm -it -p 80:2022 -p 443:2443 -p 1935:1935 \
   -p 8080:8080 -p 8000:8000/udp -p 10080:10080/udp --name srs-stack \
   -v $HOME/data:/data registry.cn-hangzhou.aliyuncs.com/ossrs/srs-stack:5
 ```
