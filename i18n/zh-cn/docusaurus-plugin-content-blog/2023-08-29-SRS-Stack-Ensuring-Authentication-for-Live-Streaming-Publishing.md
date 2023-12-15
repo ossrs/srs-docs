@@ -83,4 +83,4 @@ SRS Stack允许无限数量的同时流，唯一的限制是您的服务器带�
 总之，安全性和认证是直播的重要方面，SRS Stack为那些建立自己的流媒体服务的人提供了一个简单的解决方案。
 通过遵循本指南中概述的步骤，您可以确保您的直播服务保持安全并仅对授权用户可访问。
 
-![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/blog-zh/2023-08-29-Ensuring-Authentication-for-Live-Streaming-Publishing)
+![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.net&path=/lts/blog-zh/2023-08-29-Ensuring-Authentication-for-Live-Streaming-Publishing)

@@ -90,4 +90,4 @@ docker run --rm -it -p 80:2022 -p 443:2443 -p 1935:1935 \
 您就可以在这些平台上为您的IP摄像头设置连续24/7的流式传输。通过使用SRS Stack，您还可以连接多个IP摄像头并实时流式传输到各种平台，
 从而增强您的实时流式传输体验。所以，请尝试使用SRS Stack，并享受它为您的IP摄像头流式传输需求提供的便利和灵活性。
 
-![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/blog-zh/2023-10-11-Stream-IP-Camera-Events)
+![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.net&path=/lts/blog-zh/2023-10-11-Stream-IP-Camera-Events)

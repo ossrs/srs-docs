@@ -79,4 +79,4 @@ SRS Stack将OpenAI的Whisper和FFmpeg整合在一起，彻底改变了直播方�
 这种从手动转录到自动化转录的转变既节约成本又扩大了全球可及性，克服了语言和听力障碍。我们正在进入一个AI增强数字包容性
 的未来，丰富了我们在线分享和消费内容的方式。
 
-![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/blog-zh/23-11-28-SRS-Stack-Live-Streams-Transcription)
+![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.net&path=/lts/blog-zh/23-11-28-SRS-Stack-Live-Streams-Transcription)

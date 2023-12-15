@@ -66,4 +66,4 @@ WordPress 网站中。
 您现在可以毫不费力地仅通过单击一下即可构建自己的WHIP服务，无需应对复杂的安全性、认证和WebRTC问题。有了这个新发现的知识，
 您可以彻底改变您的在线会议和直播体验，充分利用OBS的WHIP支持实现亚秒级流媒体和无缝OBS-RTC房间连接。
 
-![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/blog-zh/2023-12-12-SRS-Stack-OBS-WHIP-Service)
+![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.net&path=/lts/blog-zh/2023-12-12-SRS-Stack-OBS-WHIP-Service)

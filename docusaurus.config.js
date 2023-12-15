@@ -123,6 +123,11 @@ const config = {
             label: 'Tutorial',
           },
           {
+            to: '/contact#donation',
+            position: 'left',
+            label: 'Donate',
+          },
+          {
             to: '/security-advisories',
             label: 'Security',
             position: 'left',

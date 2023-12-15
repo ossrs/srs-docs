@@ -81,4 +81,4 @@ SRS Stack将在几分钟后（例如5分钟）自动停止录制任务。
 下载直播流的过程得到了简化，使您更容易管理和分发录制的内容。按照本博客中概述的步骤，您可以快速高效地录制直播流，
 并使观众随时观看。
 
-![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/blog-zh/2023-09-10-Record-Live-Streaming)
+![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.net&path=/lts/blog-zh/2023-09-10-Record-Live-Streaming)

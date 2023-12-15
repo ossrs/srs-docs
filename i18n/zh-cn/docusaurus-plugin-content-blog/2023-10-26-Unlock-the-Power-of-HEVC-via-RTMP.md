@@ -105,4 +105,4 @@ SRS播放器已集成了mpegts.js，因此您只需打开URL即可播放HEVC流�
 按照本指南中的步骤，您可以使用HEVC和RTMP创建自己的直播平台，并使用像mpegts.js这样的HTML5播放器播放流，或者使用VLC和ffplay进行
 HLS流播放。
 
-![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/blog-zh/23-10-26-Unlock-the-Power-of-HEVC-via-RTMP)
+![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.net&path=/lts/blog-zh/23-10-26-Unlock-the-Power-of-HEVC-via-RTMP)

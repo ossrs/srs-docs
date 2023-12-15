@@ -97,4 +97,4 @@ docker run --rm -it -p 80:2022 -p 443:2443 -p 1935:1935 \
 直播者的焦虑并实现7x24直播，虚拟直播活动为各行各业带来了诸多可能性。SRS Stack 简化了创建和播放这些活动的过程，
 满足了当今快节奏世界对这种互动体验的日益增长的需求。
 
-![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/blog-zh/2023-09-11-Virtual-Live-Events)
+![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.net&path=/lts/blog-zh/2023-09-11-Virtual-Live-Events)
