@@ -38,7 +38,7 @@ Please see [How to Setup a Video Streaming Service by 1-Click](./2022-04-09-SRS-
 You can also use Docker to create an SRS Stack with a single command line:
 
 ```bash
-docker run --rm -it --name srs-stack -v $HOME/data:/data \
+docker run --restart always -d -it --name srs-stack -v $HOME/data:/data \
   -p 80:2022 -p 443:2443 -p 1935:1935 -p 8000:8000/udp -p 10080:10080/udp \
   ossrs/srs-stack:5
 ```

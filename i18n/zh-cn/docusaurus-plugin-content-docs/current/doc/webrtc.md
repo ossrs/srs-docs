@@ -254,7 +254,8 @@ docker run --rm -it -p 8080:8080 -p 1985:1985 -p 8000:8000 \
   -e CANDIDATE="192.168.3.82" \
   -e SRS_RTC_SERVER_TCP_ENABLED=on \
   -e SRS_RTC_SERVER_PROTOCOL=tcp \
-  registry.cn-hangzhou.aliyuncs.com/ossrs/srs:v5.0.60
+  -e SRS_RTC_SERVER_TCP_LISTEN=8000 \
+  registry.cn-hangzhou.aliyuncs.com/ossrs/srs:v5
 ```
 
 或者使用 [FFmpeg(点击下载)](https://ffmpeg.org/download.html) 或 [OBS(点击下载)](https://obsproject.com/download) 推流：

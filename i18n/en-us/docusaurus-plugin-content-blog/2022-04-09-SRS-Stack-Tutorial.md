@@ -12,15 +12,20 @@ custom_edit_url: null
 
 Streaming video is very popular in a variety of industries, and there are many tutorials for building a 
 media server, using [SRS](https://github.com/ossrs/srs) or [NGINX-RTMP](https://github.com/arut/nginx-rtmp-module) 
-that host stream does not rely on other service providers. But if we want to build a online video streaming 
-service, it's  much more than only a media server:
+that host stream does not rely on other service providers.
+
+<!--truncate-->
+
+But if we want to build a online video streaming service, it's  much more than only a media server:
 
 1. [Authentication](./2023-08-29-SRS-Stack-Ensuring-Authentication-for-Live-Streaming-Publishing.md): Because the server is on the public internet with a public IPv4 address, how to do authentication? How to block all users except they have the correct token?
-1. Multiple Protocols: Rather than publishing RTMP using OBS, you might need [WebRTC or H5 to publish live streaming](https://blog.ossrs.io/how-to-live-streaming-on-youtube-via-rtmp-or-rtmps-using-a-web-browser-e05819ee2228), or [OBS WHIP Server](https://blog.ossrs.io/experience-ultra-low-latency-live-streaming-with-obs-whip-9cdcd7874daf) for it's easy to use. You might also use [SRT](https://www.srtalliance.org) with some broadcasting devices. How to convert RTMP/WebRTC/SRT to HLS?
-1. [Restreaming](./2023-09-09-SRS-Stack-Multi-Platform-Streaming.md) and [DVR](./2023-09-10-SRS-Stack-Record-Live-Streaming.md): To help you boost engagement and reach, you could connect other service providers to restream,  such as YouTube, Twitch and Facebook. Well, DVR allows you to continue engagement after live events have ended, generating revenue via VoD(on-demand video).
-1. [Transcoding](./2023-10-21-SRS-Stack-Live-Transcoding.md): Optimizes streaming for viewers with different internet speeds and devices, reduces bandwidth usage, and saves costs.
-1. [Virtual Live Events](./2023-09-11-SRS-Stack-Virtual-Live-Events.md): Create seamless and engaging live streaming experiences using pre-recorded content for various applications, such as e-commerce, education, and online speeches.
-1. [IP Camera Streaming](./2023-10-11-SRS-Stack-Stream-IP-Camera-Events.md): Effortlessly stream your RTSP IP camera to popular platforms like YouTube, Twitch, or Facebook.
+1. Multiple Protocols: Rather than publishing RTMP using OBS, you might need [WebRTC or H5 to publish live streaming](./2023-05-16-Stream-YouTube-Using-Web-Browser.md), or [OBS WHIP Server](./2023-12-12-SRS-Stack-OBS-WHIP-Service.md) for it's easy to use. You might also use SRT with some broadcasting devices. How to convert RTMP/WebRTC/SRT to HLS?
+1. [Restreaming](./2023-09-09-SRS-Stack-Multi-Platform-Streaming.md): Restream to multiple platforms using SRS Stack for wider audience reach & increased engagement. Simple & efficient solution for live streaming on YouTube, Twitch, & Facebook.
+1. [DVR or Recording](./2023-09-10-SRS-Stack-Record-Live-Streaming.md): Discover how to effortlessly record live streams using SRS Stack in this step-by-step guide. Learn to configure Glob Filters for selective recording and integrate S3 cloud storage for seamless server-side recording, making live streaming accessible for all.
+1. [Transcoding](./2023-10-21-SRS-Stack-Live-Transcoding.md): Explore the benefits of efficient live streaming transcoding using SRS Stack and FFmpeg for reducing bandwidth and saving costs. Learn how to optimize streaming experiences for viewers with varying internet speeds and devices, and harness the power of SRS Stack for smoother, cost-effective streaming.
+1. [Virtual Live Events](./2023-09-11-SRS-Stack-Virtual-Live-Events.md): Discover the benefits of virtual live events and learn how to create seamless and engaging live streaming experiences using pre-recorded content. This blog post will guide you through the process of converting recorded videos into live broadcasts for various applications, such as e-commerce, education, and online speeches.
+1. [IP Camera Streaming](./2023-10-11-SRS-Stack-Stream-IP-Camera-Events.md): Discover how to effortlessly stream your RTSP IP camera to popular platforms like YouTube, Twitch, or Facebook using SRS Stack. Learn how this powerful tool simplifies the process, allowing you to connect multiple IP cameras and stream live to various platforms for an enhanced live streaming experience.
+1. [AI Transcription](./2023-11-28-SRS-Stack-Live-Streams-Transcription.md): Discover the future of live streaming with AI-powered transcription and real-time subtitles using OpenAI’s Whisper. Learn how to create accessible, multilingual content for diverse audiences, revolutionizing the live streaming experience. Embrace inclusivity and reach a wider audience with AI-enhanced live streams.
 
 Literally it's not just a media server, and seems a bit complicated, right? Yep and No!
 
@@ -32,54 +37,82 @@ without a plugin that is converting WebRTC to HLS, to deliver low latency (about
 using SRT, and to secure the service by authentication. Furthermore, this solution is open source and very 
 easy to get it done, via even 1-Click.
 
-<!--truncate-->
-
 ## Prerequisites
 
 To complete this guide, you need:
 
 1. OBS installed, following instructions [here](https://obsproject.com/) to download and install OBS.
-1. An account of [DigitalOcean](https://cloud.digitalocean.com/login) or [AWS](https://console.aws.amazon.com) or any VPS service, to create a cloud server.
+1. A virtual private server (VPS) instance, such as [AWS Lightsail](https://lightsail.aws.amazon.com), [DigitalOcean Droplets](https://cloud.digitalocean.com/droplets), or another similar service.
+1. Optionally, you may choose to utilize SRS Stack on your local network or personal computer. Ensure that [Docker](https://www.docker.com/) is installed for this purpose.
 
 This guide will use placeholder `your_public_ipv4` and `your_domain_name` throughout for streaming URLs. 
 Please replace them with your own IP address or domain name.
 
-## Step 1: Create an SRS Droplet
+## Step 1.1: Create an SRS Stack using AWS Lightsail
 
-Highly recommend using Docker for a simple and efficient way to run SRS Stack on VPS using just one command:
+Sign up for an AWS account and sign in to [AWS Lightsail](https://lightsail.aws.amazon.com). Next, click the 
+`Create instance` button. Select the `Linux/Unix` platform and the `OS Only` blueprint. Finally, choose 
+`Ubuntu 20.04 LTS` as the instance image.
+
+![](/img/blog-2022-04-09-21.png)
+
+Next, click the `Add launch script` button and input the following script that will be executed to install 
+the SRS Stack once the instance has been created.
+
+![](/img/blog-2022-04-09-22.png)
+
+Please input the following script:
 
 ```bash
-docker run --rm -it --name srs-stack -v $HOME/data:/data \
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/ossrs/srs-stack/HEAD/scripts/lightsail.sh)"
+```
+
+> Note: You can also access the instance and run the script manually. Please search for instructions on how
+> to log in to a Lightsail instance.
+
+Next, choose the instance plan, select the `2vCPUs 1GB` plan or a higher one, and click on `Create instance`.
+
+Once the instance has been established, access the `Networking` tab and click `Attach static IP` to keep it 
+from changing. Within `IPv4 Firewall`, press the `Add rule` option, add an `All protocols` rule and click 
+the `Create` button:
+
+![](/img/blog-2022-04-09-23.png)
+
+Now, the SRS Stack is created! Open `http://your_public_ipv4/mgmt/` in the browser, click the `Submit` button
+to set-up the administrator password for the first time.
+
+## Step 1.2: Create an SRS Stack using Docker
+
+If you prefer not to utilize AWS Lightsail, have an alternative VPS, or even a virtual machine or personal 
+computer locally available, highly recommend using Docker for a simple and efficient way to run SRS Stack on 
+VPS using just one command:
+
+```bash
+docker run --restart always -d -it --name srs-stack -v $HOME/data:/data \
   -p 80:2022 -p 443:2443 -p 1935:1935 -p 8000:8000/udp -p 10080:10080/udp \
   ossrs/srs-stack:5
 ```
 
-After the SRS Stack is created, open `http://your_public_ipv4/mgmt/` in the browser, click the `Submit` button 
+After the SRS Stack is created, open `http://your_public_ipv4/mgmt/` in the browser, click the `Submit` button
 to set-up the administrator password for the first time.
 
-Or, you can use DO droplet to run SRS Stack just one-click. A droplet is a simple and scalable virtual machine
+## Step 1.3: Create an SRS Stack using DigitalOcean Droplets
+
+You can use DigitalOcean droplet to run SRS Stack just one-click. A droplet is a simple and scalable virtual machine
 of DigitalOcean. An SRS Droplet is a droplet with SRS Stack installed, to power your video streaming service. 
 
-You could create `an SRS Droplet` by [clicking here](https://cloud.digitalocean.com/droplets/new?appId=104916642&size=s-1vcpu-1gb&region=sgp1&image=ossrs-srs&type=applications), 
-set-up the droplet `Region` and `Authentication`, then click `Create Droplet` button at the bottom.
+You could create `an SRS Droplet` by [clicking here](https://marketplace.digitalocean.com/apps/srs), 
+then click the `Create SRS Droplet` button, set-up the droplet `Region` and `Size`, then click `Create Droplet` 
+button at the bottom.
 
-We have bellow services running in the SRS droplet:
+> Note: Recommend the size `2vCPUs 2GB` or slightly larger.
 
-* [SRS Server](https://github.com/ossrs/srs): SRS is a simple, high efficiency and realtime video server, supports RTMP, WebRTC, HLS, HTTP-FLV and SRT. We have both SRS 4.0 and 5.0 images installed. SRS is the media server engine, licensed under MIT.
-* [SRS Stack](https://github.com/ossrs/srs-stack): A lightweight open-source video cloud based on Nodejs, SRS, FFmpeg, WebRTC, etc. SRS-Stack acts as the framework of a video streaming service, it's also open source, licensed under MIT.
-* [FFmpeg](https://ffmpeg.org/): A complete, cross-platform solution to record, convert and stream audio and video. FFmpeg is used as restreaming or transcoding, and many other stream processing features.
-* Other infrastructure like [Docker](https://docker.io/), [Redis](https://redis.io/), [NGINX](https://nginx.org/), [Prometheus](https://prometheus.io/) and [Certbot](https://certbot.eff.org/), to run dependent services as docker container, allow checking and upgrading to stable versions.
-
-> SRS also set-up the firewall, please see [here](https://github.com/ossrs/srs-stack/blob/main/scripts/setup-droplet/scripts/02-ufw-srs.sh) 
-> for details. All ports are `BLOCKED` except 22 (SSH), 80 (HTTP), 443 (HTTPS), 1935 (RTMP), 8000/UDP (WebRTC), 
-> 10080/UDP (SRT), 9000/TCP+UDP (GB28181), 5060/TCP+UDP (SIP), 2022 (MGMT) and 56379 (REDIS).
-
-Now the video streaming service is ready, we could use FFmpeg, OBS or WebRTC to publish the stream, 
-and play the HLS stream.
+After the SRS Stack is created, open `http://your_public_ipv4/mgmt/` in the browser, click the `Submit` button
+to set-up the administrator password for the first time.
 
 ## Step 2: Publish Stream using OBS
 
-OBS is more simple to use, and SRS provides guide for OBS, please click `Scenarios > Streaming > OBS or vMix` 
+OBS is more simple to use, and SRS provides guide for OBS, please click `Scenarios > Streaming > RTMP: OBS or vMix` 
 or open URL `http://your_public_ipv4/mgmt/en/routers-scenario?tab=live` with `Server` and `StreamKey` for OBS, 
 please copy these config and paste to OBS:
 
@@ -121,7 +154,7 @@ button to request a free SSL cert from [Let's Encrypt](https://letsencrypt.org/)
 
 ![](/img/blog-2022-04-09-02.png)
 
-When the HTTPS is ready, please open the URL `https://your_domain_name/mgmt` to access `Scenarios > Streaming > WebRTC: Webpage` 
+When the HTTPS is ready, please open the URL `https://your_domain_name/mgmt` to access `Scenarios > Streaming > WebRTC: WHIP Browser` 
 and open the URL to publish using WebRTC: 
 
 ![](/img/blog-2022-04-09-03.png)
@@ -138,7 +171,7 @@ simple to use.
 
 ## Step 4: Low Latency Streaming by SRT (Optional)
 
-For RTMP/FLV, the streaming latency is about 3~5s, while 5~10s for HLS. Which protocol to use if we want to 
+For RTMP/FLV, the streaming latency is about `3~5s`, while `5~10s` for HLS. Which protocol to use if we want to 
 build a low latency live streaming service, say, less than 1s?
 
 WebRTC? No! It's too complicated, and few devices support WebRTC. [WHIP](https://datatracker.ietf.org/doc/draft-ietf-wish-whip/) 
@@ -194,9 +227,9 @@ To learn more about our cloud service, click [here](/docs/v6/doc/cloud).
 
 ## Conclusion
 
-In this tutorial, you build a video streaming service only by 1-Click, but with powerful features like authentication, 
-SRT and WebRTC etc. If you have further questions about SRS, [the wiki](/docs/v4/doc/introduction) is a good place to 
-start.
+In this tutorial, you build a video streaming service only by 1-Click, but with powerful features like 
+authentication, SRT and WebRTC etc. If you have further questions about SRS, 
+[the wiki](/docs/v6/doc/getting-started-stack) is a good place to start.
 
 ## Contact
 

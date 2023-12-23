@@ -53,8 +53,7 @@ If your question is similar, please watch the video directly:
 
 ## Getting Started
 
-Please purchase and set up [SRS Stack Server](https://cloud.digitalocean.com/droplets/new?appId=133468816&size=s-1vcpu-512mb-10gb&region=sgp1&image=ossrs-srs&type=applications) 
-first. 
+Please purchase and set up [SRS Stack Server](/blog/SRS-Stack-Tutorial) first. 
 
 After entering the SRS Stack Server, there will be corresponding video tutorials according to different 
 application scenarios, as shown in the following figure:
@@ -279,7 +278,7 @@ If you encounter an error while applying and the message says `Could not obtain 
 If use docker to start SRS Stack, you can add port mapping for 80 and 443:
 
 ```bash
-docker run --rm -it --name srs-stack -v $HOME/data:/data \
+docker run --restart always -d -it --name srs-stack -v $HOME/data:/data \
   -p 2022:2022 -p 2443:2443 -p 1935:1935 -p 8000:8000/udp -p 10080:10080/udp \
   -p 80:2022 -p 443:2443 \
   ossrs/srs-stack:5

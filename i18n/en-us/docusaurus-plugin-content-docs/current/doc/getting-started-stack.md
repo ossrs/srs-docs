@@ -32,7 +32,7 @@ If you encounter issues while using SRS Stack, please read the [FAQ](/faq-srs-st
 Strongly recommend running SRS Stack with docker:
 
 ```bash
-docker run --rm -it --name srs-stack -v $HOME/data:/data \
+docker run --restart always -d -it --name srs-stack -v $HOME/data:/data \
   -p 2022:2022 -p 2443:2443 -p 1935:1935 -p 8000:8000/udp -p 10080:10080/udp \
   ossrs/srs-stack:5
 ```
@@ -58,6 +58,11 @@ Then you can open [http://localhost:2022](http://localhost:2022) to use SRS Stac
 
 For Ubuntu 20+, you can download the [linux-srs_stack-en.tar.gz](https://github.com/ossrs/srs-stack/releases/latest/download/linux-srs_stack-en.tar.gz)
 and install it.
+
+## AWS Lightsail
+
+SRS Stack supports AWS Lightsail, which is a virtual private server (VPS) service offered by AWS. Please 
+follow [How to Establish a Video Streaming Service with a Single Click](/blog/SRS-Stack-Tutorial).
 
 ## DigitalOcean Droplet
 

@@ -29,7 +29,7 @@ SRS Stack作为开源的开箱即用的音视频方案，是完全基于场景�
 推荐使用Docker运行SRS Stack：
 
 ```bash
-docker run --rm -it --name srs-stack -v $HOME/data:/data \
+docker run --restart always -d -it --name srs-stack -v $HOME/data:/data \
   -p 2022:2022 -p 2443:2443 -p 1935:1935 -p 8000:8000/udp -p 10080:10080/udp \
   registry.cn-hangzhou.aliyuncs.com/ossrs/srs-stack:5
 ```
@@ -59,6 +59,10 @@ SRS Stack提供了宝塔插件，使用方法参考[宝塔插件](/blog/BT-aaPan
 
 对于 Ubuntu 20+，您可以下载 [linux-srs_stack-zh.tar.gz](https://github.com/ossrs/srs-stack/releases/latest/download/linux-srs_stack-zh.tar.gz)
 并安装它。
+
+## AWS Lightsail
+
+SRS Stack支持AWS Lightsail，这是AWS提供的一种虚拟专用服务器（VPS）服务。请参阅[如何一键建立视频流媒体服务](/blog/SRS-Stack-Tutorial)。
 
 ## TencentCloud LightHouse
 
