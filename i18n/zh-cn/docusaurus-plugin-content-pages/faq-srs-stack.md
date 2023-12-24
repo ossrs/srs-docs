@@ -23,6 +23,7 @@
 * [Unavailable After Installation](#unavailable): 安装后无法访问: 安装后提示错误，或者Redis没准备好。
 * [Difference Between SRS Restream and OBS Restream](#restream-vs-obs): SRS转推和OBS转推的区别: SRS的多平台转推，和OBS转推插件的区别。
 * [How SRS Re-streams to Custom Platforms](#restream-custom): SRS如何转推自定义平台: SRS的多平台转推，如何推到自定义的直播平台。
+* [Why and how to limit the bitrate of virtual live events](#virtual-live-bitrate): 为什么要限制虚拟直播的码率，如何解除限制。
 * [How to Replace FFmpeg](#use-custom-ffmpeg): 如何更换FFmpeg: 如何更换SRS Stack中的FFmpeg为自定义版本。
 * [aaPanel Installation of SRS is Very Slow](#install-speedup): 宝塔安装SRS非常慢: 海外用宝塔安装非常慢，访问阿里云镜像太慢。
 * [How to Install the Latest SRS Stack in aaPanel](#bt-install-manually): 宝塔如何安装最新的SRS Stack: 手动安装宝塔插件，安装最新的插件。
@@ -480,6 +481,15 @@ rtmp://ip/app/stream
 * 流密钥：`stream`
 
 > Note: 最后一个斜杠后面的就是流密钥。
+
+<a name="virtual-live-bitrate"></a><br/><br/><br/>
+
+## Why and how to limit the bitrate of virtual live events
+
+为什么以及如何限制虚拟直播活动的比特率？许多用户使用7x24小时的虚拟直播活动，并超过服务器流量限制。通常，AWS Lightsail和DigitalOcean 
+Droplets每月提供1TB的流量，允许进行7x24小时的3Mbps连续直播。因此，限制输入比特率以防止超过流量限制至关重要。
+
+默认情况下，SRS Stack将虚拟直播的输入比特率限制为5Mbps，您可以从`系统配置>限流>限流设置`更改限制以设置更高的限制。
 
 <a name="use-custom-ffmpeg"></a><br/><br/><br/>
 

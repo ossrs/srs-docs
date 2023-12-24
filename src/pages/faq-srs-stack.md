@@ -23,6 +23,7 @@ Quick Content
 * [Unavailable After Installation](#unavailable): Error prompt after installation, or Redis not ready.
 * [Difference Between SRS Restream and OBS Restream](#restream-vs-obs): The difference between SRS multi-platform re-streaming and OBS re-streaming plugin.
 * [How SRS Re-streams to Custom Platforms](#restream-custom): How SRS multi-platform re-streaming pushes to custom live platforms.
+* [Why and how to limit the bitrate of virtual live events](#virtual-live-bitrate): Why and how to limit the bitrate of virtual live events.
 * [How to Replace FFmpeg](#use-custom-ffmpeg): How to replace the FFmpeg in SRS Stack with a custom version.
 * [aaPanel Installation of SRS is Very Slow](#install-speedup): Overseas aaPanel installation is very slow, access to Alibaba Cloud image is too slow.
 * [How to Install the Latest SRS Stack in aaPanel](#bt-install-manually): Manually install aaPanel plugin, install the latest plugin.
@@ -558,6 +559,18 @@ Then, you can split it into:
 * Stream key: `stream`
 
 > Note: The part after the last slash is the stream key.
+
+<a name="virtual-live-bitrate"></a><br/><br/><br/>
+
+## Why and how to limit the bitrate of virtual live events
+
+Why and how to limit the bitrate of virtual live events? Many users use 7x24 virtual live events, and exceed 
+the server traffic limit. Typically, AWS Lightsail and DigitalOcean Droplets provide 1TB of monthly traffic,
+permitting a 3Mbps continuous live stream for 7x24 hours. Therefore, it's crucial to restrict the input bitrate 
+to prevent exceeding the traffic limit.
+
+By default, for virtual live events, SRS Stack limits the input bitrate to 5Mbps, you can change the limits 
+from `System > Limits > Set Limits` to set a higher limits.
 
 <a name="use-custom-ffmpeg"></a><br/><br/><br/>
 
