@@ -19,6 +19,9 @@ For more information, read [Build](./install.md)
 
 ## Configuring SRS
 
+An example [conf/http.hooks.callback.conf](https://github.com/ossrs/srs/blob/5.0release/trunk/conf/http.hooks.callback.conf)
+is available, demonstrating the configuration of common callback events for direct use.
+
 The config for HTTP hooks is:
 
 ```bash

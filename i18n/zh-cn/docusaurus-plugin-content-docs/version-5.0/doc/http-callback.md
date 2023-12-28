@@ -19,6 +19,9 @@ SRS总是开启HttpCallback。
 
 ## Config SRS
 
+这里有一个示例 [conf/http.hooks.callback.conf](https://github.com/ossrs/srs/blob/5.0release/trunk/conf/http.hooks.callback.conf)
+可用，演示了常见回调事件的配置，可直接使用。
+
 http hooks的配置如下：
 
 ```bash
