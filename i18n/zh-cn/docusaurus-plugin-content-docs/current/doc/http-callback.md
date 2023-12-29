@@ -7,7 +7,15 @@ hide_table_of_contents: false
 
 # HTTP Callback
 
-服务器端定制的实现方式，就是HTTP回调。譬如当客户端连接到SRS时，回调指定的http地址，这样可以实现验证功能。
+服务器端定制的实现方式，就是HTTP回调。譬如当客户端连接到SRS时，回调指定的http地址，这样可以实现验证功能。工作流如下：
+
+```text
++--------+     +--------+                    +-----------------------+
+| FFmpeg |-->--+  SRS   |--HTTP-Callback-->--+  Your Business Server |
++--------+     +--------+                    +-----------------------+
+```
+
+当FFmpeg/OBS向SRS发布或播放流时，SRS将调用您的业务服务器以通知该事件。
 
 ## Usage
 

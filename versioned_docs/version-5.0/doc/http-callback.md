@@ -7,7 +7,15 @@ hide_table_of_contents: false
 
 # HTTPCallback
 
-SRS supports HTTP callback to extends SRS.
+SRS supports HTTP callback to extends SRS. The workflow is:
+
+```text
++--------+     +--------+                    +-----------------------+
+| FFmpeg |-->--+  SRS   |--HTTP-Callback-->--+  Your Business Server |
++--------+     +--------+                    +-----------------------+
+```
+
+When FFmpeg/OBS publish or play a stream to SRS, SRS will call your business server to notify the event.
 
 ## Usage
 
