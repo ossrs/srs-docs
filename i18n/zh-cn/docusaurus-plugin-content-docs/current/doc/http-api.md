@@ -11,6 +11,16 @@ SRS提供HTTP接口，供外部程序管理服务器，并支持跨域（js可�
 
 通过HTTP API，可以使用[srs-console](http://ossrs.net/console/)连接到你的服务器。
 
+工作流如下：
+
+```text
++-------------------------+               +-------+
++ Chrome/Your Application +--HTTP-API-->--+  SRS  +
++-------------------------+               +-------+
+```
+
+您可以使用 Chrome 或您的应用程序，请求 SRS 的 HTTP API 以获取 SRS 的状态。
+
 ## Goals
 
 SRS的HTTP接口遵循最简单原则，主要包括：

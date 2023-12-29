@@ -11,6 +11,16 @@ SRS provides HTTP api, to external application to manage SRS, and support crossd
 
 Once HTTP API enabled, you can use [srs-console](http://ossrs.net/console/) to connect to your SRS server.
 
+The workflow is:
+
+```text
++-------------------------+               +-------+
++ Chrome/Your Application +--HTTP-API-->--+  SRS  +
++-------------------------+               +-------+
+```
+
+You can use Chrome or your application, to request the HTTP API of SRS to get the state of SRS.
+
 ## Goals
 
 The HTTP API of SRS follows the simple priciple:
