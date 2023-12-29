@@ -292,9 +292,9 @@ http_api {
 
 ## HTTP and HTTPS Proxy
 
-SRS可以和HTTP/HTTPS代理一起工作得很好，比如[Nginx](https://github.com/ossrs/srs/issues/2881#nginx-proxy),
-[HTTPX](https://github.com/ossrs/srs/issues/2881#httpx-proxy), [CaddyServer](https://github.com/ossrs/srs/issues/2881#caddy-proxy),
-等等。详细配置请参考 [#2881](https://github.com/ossrs/srs/issues/2881)。
+SRS可以和HTTP/HTTPS代理一起工作得很好，比如[Nginx](./http-server.md#nginx-proxy),
+[HTTPX](./http-server.md#httpx-proxy), [CaddyServer](./http-server.md#caddy-proxy),
+等等。
 
 ## Server ID
 

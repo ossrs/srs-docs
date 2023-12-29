@@ -9,6 +9,24 @@ hide_table_of_contents: false
 
 SRS supports DVR RTMP stream to FLV/MP4 file. Although the bellow using FLV as example, but MP4 is also available.
 
+When FFmpeg/OBS publish RTMP stream to SRS, SRS will write the stream to FLV/MP4 file. The workflow is:
+
+```text
++------------+            +-------+           +---------------+
++ FFmpeg/OBS +---RTMP-->--+  SRS  +---DVR-->--+ FLV/MP4 File  +
++------------+            +-------+           +---------------+
+```
+
+Many users want more features about DVR, please consider use [SRS Stack](./getting-started-stack.md) instead,
+for example:
+
+* SRS Stack supports S3 cloud storage, move the final MP4 file to S3 cloud storage.
+* SRS Stack supports glob filters, to only record specified streams, not all streams.
+* SRS Stack supports merge multiple publishing sessions to one MP4 file.
+
+In facts, DVR feature can be very complicated, SRS only support basic DVR feature, while SRS Stack will continue
+to improve the DVR features.
+
 ## Build
 
 DVR is always enabled for SRS3+.

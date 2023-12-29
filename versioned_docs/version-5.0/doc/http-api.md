@@ -271,9 +271,8 @@ http_api {
 
 ## HTTP and HTTPS Proxy
 
-SRS works very well with HTTP/HTTPS proxy, like [Nginx](https://github.com/ossrs/srs/issues/2881#nginx-proxy),
-[HTTPX](https://github.com/ossrs/srs/issues/2881#httpx-proxy), [CaddyServer](https://github.com/ossrs/srs/issues/2881#caddy-proxy),
-etc. Please read [#2881](https://github.com/ossrs/srs/issues/2881) for details.
+SRS works well with HTTP/HTTPS proxies such as [Nginx](./http-server.md#nginx-proxy), [HTTPX](./http-server.md#httpx-proxy), 
+[CaddyServer](./http-server.md#caddy-proxy), and so on.
 
 ## Server ID
 

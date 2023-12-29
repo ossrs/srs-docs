@@ -5,7 +5,7 @@ hide_title: false
 hide_table_of_contents: false
 ---
 
-# SRS Embeded HTTP Server
+# HTTP Server
 
 SRS Embeded a HTTP web server, supports api and simple HTTP file for HLS.
 
@@ -14,6 +14,8 @@ To deploy SRS HTTP server, read [Usage: HTTP](./sample-http.md)
 The SRS Embeded HTTP server is rewrite refer to go http module, so it's ok to use srs as http server. Read [#277](https://github.com/ossrs/srs/issues/277)
 
 > Remark: The SRS HTTP server is just a origin HTTP server, for HTTP edge server, please use NGINX, SQUID and ATS.
+
+SRS also works well with HTTP reverse proxy servers, like [NGINX](#nginx-proxy) and [Caddy](#caddy-proxy).
 
 ## Use Scenario
 
@@ -157,6 +159,147 @@ Only some MIME is supported:
 
 Supported HTTP method:
 * GET: Query API, or download file.
+
+## Paths
+
+HTTP/HTTPS API:
+
+* `/api/` SRS HTTP API
+* `/rtc/` SRS WebRTC API
+
+HTTP/HTTPS Stream:
+
+* `/{app}/{stream}` HTTP Stream mounted by publisher.
+
+The bellow is some reverse proxy to work with SRS.
+
+> Note: Generally, a proxy can be used to route API and Stream together based on the path.
+
+## Nginx Proxy
+
+The config for NGINX as file [nginx.conf](https://github.com/ossrs/srs/blob/develop/trunk/conf/nginx.proxy.conf):
+
+```
+worker_processes  1;
+events {
+    worker_connections  1024;
+}
+
+http {
+    include             /etc/nginx/mime.types;
+
+    server {
+        listen       80;
+        listen       443 ssl http2;
+        server_name  _;
+        ssl_certificate      /usr/local/srs/conf/server.crt;
+        ssl_certificate_key  /usr/local/srs/conf/server.key;
+
+        # For SRS homepage, console and players
+        #   http://r.ossrs.net/console/
+        #   http://r.ossrs.net/players/
+        location ~ ^/(console|players)/ {
+           proxy_pass http://127.0.0.1:8080/$request_uri;
+        }
+        # For SRS streaming, for example:
+        #   http://r.ossrs.net/live/livestream.flv
+        #   http://r.ossrs.net/live/livestream.m3u8
+        location ~ ^/.+/.*\.(flv|m3u8|ts|aac|mp3)$ {
+           proxy_pass http://127.0.0.1:8080$request_uri;
+        }
+        # For SRS backend API for console.
+        # For SRS WebRTC publish/play API.
+        location ~ ^/(api|rtc)/ {
+           proxy_pass http://127.0.0.1:1985$request_uri;
+        }
+    }
+}
+```
+
+## Caddy Proxy
+
+The config for [CaddyServer](https://caddyserver.com/docs/getting-started) with automatic HTTPS, use the config file `Caddyfile`.
+
+For HTTP server, note that to set the default port:
+
+```
+:80
+reverse_proxy /* 127.0.0.1:8080
+reverse_proxy /api/* 127.0.0.1:1985
+reverse_proxy /rtc/* 127.0.0.1:1985
+```
+
+For HTTPS server, please enable a domain name:
+
+```
+example.com {
+  reverse_proxy /* 127.0.0.1:8080
+  reverse_proxy /api/* 127.0.0.1:1985
+  reverse_proxy /rtc/* 127.0.0.1:1985
+}
+```
+
+Start the CaddyServer:
+
+```
+caddy start -config Caddyfile
+```
+
+## Nodejs KOA Proxy
+
+The nodejs koa proxy also works well for SRS, please use [koa-proxies](https://www.npmjs.com/package/koa-proxies) based by [node-http-proxy](https://github.com/nodejitsu/node-http-proxy), here is an example:
+
+```js
+const Koa = require('koa');
+const proxy = require('koa-proxies');
+const BodyParser = require('koa-bodyparser');
+const Router = require('koa-router');
+
+const app = new Koa();
+app.use(proxy('/api/', {target: 'http://127.0.0.1:1985/'}));
+app.use(proxy('/rtc/', {target: 'http://127.0.0.1:1985/'}));
+app.use(proxy('/*/*.(flv|m3u8|ts|aac|mp3)', {target: 'http://127.0.0.1:8080/'}));
+app.use(proxy('/console/', {target: 'http://127.0.0.1:8080/'}));
+app.use(proxy('/players/', {target: 'http://127.0.0.1:8080/'}));
+
+// Start body-parser after proxies, see https://github.com/vagusX/koa-proxies/issues/55
+app.use(BodyParser());
+
+// APIs that depends on body-parser
+const router = new Router();
+router.all('/', async (ctx) => {
+  ctx.body = 'Hello World';
+});
+app.use(router.routes());
+
+app.listen(3000, () => {
+  console.log(`Server start on http://localhost:3000`);
+});
+```
+
+Save it as `index.js`, then run:
+
+```
+npm init -y 
+npm install koa koa-proxies koa-proxies koa-bodyparser koa-router
+node .
+```
+
+## HTTPX Proxy
+
+Well [httpx-static](https://github.com/ossrs/go-oryx/tree/develop/httpx-static#usage) is a simple HTTP/HTTPS proxy written by Go:
+
+```
+go get github.com/ossrs/go-oryx/httpx-static
+cd $GOPATH/bin
+./httpx-static -http=80 -https=443 \
+  -skey /usr/local/srs/etc/server.key -scert /usr/local/srs/etc/server.crt \
+  -proxy=http://127.0.0.1:1985/api/v1/ \
+  -proxy=http://127.0.0.1:1985/rtc/v1/ \
+  -proxy=http://127.0.0.1:8080/
+```
+
+> Please make sure the path `/` is the last one.
 
 Winlin 2015.1
 

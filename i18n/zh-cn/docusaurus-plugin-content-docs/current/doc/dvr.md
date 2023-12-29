@@ -9,6 +9,22 @@ hide_table_of_contents: false
 
 SRS支持将RTMP流录制成FLV或MP4文件。下面的描述以FLV为例，但是对MP4也是一样的。
 
+当 FFmpeg/OBS 将 RTMP 流发布到 SRS 时，SRS 将把流写入 FLV/MP4 文件。工作流程是：
+
+```text
++------------+            +-------+           +---------------+
++ FFmpeg/OBS +---RTMP-->--+  SRS  +---DVR-->--+ FLV/MP4 File  +
++------------+            +-------+           +---------------+
+```
+
+许多用户希望 DVR 提供更多功能，请考虑使用 [SRS Stack](./getting-started-stack.md) 替代， 例如：
+
+* SRS Stack 支持 S3 云存储，将最终的 MP4 文件移动到 S3 云存储。
+* SRS Stack 支持全局过滤器，仅记录指定的流，而不是所有流。
+* SRS Stack 支持将多个发布会话合并到一个 MP4 文件中。
+
+实际上，DVR 功能可能非常复杂，SRS 只支持基本的 DVR 功能，而 SRS Stack 将继续改进 DVR 功能。
+
 ## Build
 
 DVR作为SRS3的核心功能，永远开启DVR。
