@@ -9,7 +9,33 @@ hide_table_of_contents: false
 
 服务器端定制的实现方式，就是HTTP回调。譬如当客户端连接到SRS时，回调指定的http地址，这样可以实现验证功能。
 
-关于Token认证，即基于http回调的认证，参考：[Token Authentication](./drm.md#token-authentication)
+## Usage
+
+首先，运行SRS，在配置中启用HTTP回调：
+
+```bash
+./objs/srs -c conf/http.hooks.callback.conf
+```
+
+启动演示HTTP回调服务器，这是您的业务服务器：
+
+```bash
+go run research/api-server/server.go
+```
+
+将流发布到SRS，参数为：
+
+```bash
+ffmpeg -re -i doc/source.flv -c copy -f flv rtmp://localhost/live/livestream?k=v
+```
+
+您的业务服务器将收到HTTP事件：
+
+```text
+Got action=on_publish, client_id=3y1tcaw2, ip=127.0.0.1, vhost=__defaultVhost__, stream=livestream, param=?k=v
+```
+
+请注意，`k=v`可用于身份验证，关于Token认证，即基于http回调的认证，参考：[Token Authentication](./drm.md#token-authentication)
 
 ## Compile
 

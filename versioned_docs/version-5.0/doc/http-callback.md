@@ -9,7 +9,34 @@ hide_table_of_contents: false
 
 SRS supports HTTP callback to extends SRS.
 
-For token authentication based on HTTP callbacks, read [Token Authentication](./drm.md#token-authentication)
+## Usage
+
+First, run SRS with HTTP callback enabled:
+
+```bash
+./objs/srs -c conf/http.hooks.callback.conf
+```
+
+Start the demo HTTP callback server, which is your business server:
+
+```bash
+go run research/api-server/server.go
+```
+
+Publish a stream to SRS, with the params:
+
+```bash
+ffmpeg -re -i doc/source.flv -c copy -f flv rtmp://localhost/live/livestream?k=v
+```
+
+Your business server will got the HTTP event:
+
+```text
+Got action=on_publish, client_id=3y1tcaw2, ip=127.0.0.1, vhost=__defaultVhost__, stream=livestream, param=?k=v
+```
+
+Note that the `k=v` can be used for authentication, for token authentication based on HTTP callbacks, 
+read [Token Authentication](./drm.md#token-authentication)
 
 ## Compile
 
