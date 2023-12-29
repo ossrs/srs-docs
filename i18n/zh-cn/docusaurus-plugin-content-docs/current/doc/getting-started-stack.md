@@ -146,6 +146,14 @@ SRS Stack支持对实时流进行转码，以降低比特率、节省带宽和�
 
 详细信息请参阅[直播转码](/blog/Live-Transcoding)。
 
+## HTTP API
+
+用户在网页上可以执行的所有操作，也可以通过HTTP API完成。您可以打开`系统配置 > OpenAPI`以获取Bearer令牌并尝试使用HTTP API。
+
+您可以点击网页上的按钮来请求HTTP API，也可以使用curl或js代码来请求HTTP API。请按照网页上的说明操作。
+
+请注意，网页可能使用JWT令牌，但您也可以使用Bearer令牌来请求HTTP API。
+
 ## HTTP Callback
 
 HTTP回调是指在Docker容器中运行的SRS Stack，向target URL发起HTTP请求。例如，以下过程说明了当OBS发送RTMP流时，

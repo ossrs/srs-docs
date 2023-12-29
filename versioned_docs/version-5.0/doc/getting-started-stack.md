@@ -156,6 +156,16 @@ live stream content to make it better.
 
 See [Efficient Live Streaming Transcoding for Reducing Bandwidth and Saving Costs](/blog/Live-Transcoding) for details.
 
+## HTTP API
+
+All the actions user can do in the web, can be also done by HTTP API. You can open the `System > OpenAPI` to
+get the Bearer token and try the HTTP API.
+
+You can click the button on the web to request a HTTP API, you can also use the curl or js code to request the
+HTTP API. Please follow the instructions on the web.
+
+Note that the web may use JWT token, but you can also use Bearer token to request the HTTP API.
+
 ## HTTP Callback
 
 HTTP Callback refers to the SRS Stack running within a Docker container, initiating an HTTP request to
