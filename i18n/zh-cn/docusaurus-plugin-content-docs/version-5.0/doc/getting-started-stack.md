@@ -84,7 +84,7 @@ SRS Stack提供了宝塔插件，使用方法参考[宝塔插件](/blog/BT-aaPan
 在比较SRS Stack和SRS时，两者都提供相似级别的媒体流功能。然而，SRS Stack为终端用户提供了更强大且功能丰富的体验，
 无需编写任何代码。用户可以直接使用SRS Stack满足您的媒体服务需求。
 
-| 比较        | SRS Stack | SRS    | 说明                                    |
+| 比较        | SRS | SRS Stack    | 说明                                    |
 |-----------|------|--------|---------------------------------------|
 | 许可证       | MIT | AGPL-3.0-or-later | SRS是MIT，而SRS Stack是AGPL-3.0-or-later。 |
 | 直播流       | 是    | 是      | 两者都支持RTMP，HLS和HTTP-FLV协议。             |

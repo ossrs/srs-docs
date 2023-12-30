@@ -85,7 +85,7 @@ However, SRS Stack provides a more powerful and feature-rich experience for end 
 eliminating the need to write any code. Users can directly utilize SRS Stack for your
 media services needs.
 
-| Comparison     | SRS Stack | SRS               | Notes                                                              |
+| Comparison     | SRS | SRS Stack               | Notes                                                              |
 |----------------|-----------|-------------------|--------------------------------------------------------------------|
 | License        | MIT       | AGPL-3.0-or-later | SRS is licenced under MIT, SRS Stack is AGPL-3.0-or-later.         |
 | Live Streaming | Yes       | Yes               | Both support RTMP, HLS, and HTTP-FLV protocols.                    |
