@@ -1,6 +1,6 @@
 ---
 title: SRS FAQ
-sidebar_label: 答疑
+sidebar_label: 答疑回看
 hide_title: false
 hide_table_of_contents: false
 ---
