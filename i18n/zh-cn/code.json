@@ -196,7 +196,7 @@
     "description": "The title of the tag list page"
   },
   "homepage.subTitle": {
-    "message": "SRS(Simple Realtime Server)是一个简单高效的实时视频服务器，支持RTMP、WebRTC、HLS、HTTP-FLV、SRT等多种实时流媒体协议。SRS Stack是一个一体化、开箱即用、开源的视频解决方案，用于在云或通过自建在线视频服务，包括直播和WebRTC等领域。"
+    "message": "SRS(Simple Realtime Server)是一个简单高效的实时视频服务器，支持RTMP、WebRTC、HLS、HTTP-FLV、SRT等多种实时流媒体协议。SRS Stack是一个一体化、开箱即用、开源的视频解决方案，可部署在云上或自建机房，以直播和WebRTC等能力赋能你的业务。"
   },
   "homepage.tutorial": {
     "message": "入门教程"
