@@ -97,6 +97,17 @@ const config = {
             label: 'Docs',
           },
           {
+            to: '/blog',
+            label: 'Blog',
+            position: 'left',
+          },
+          {
+            type: 'doc',
+            docId: 'tutorial/srs-server',
+            position: 'left',
+            label: 'Tutorial',
+          },
+          {
             type: 'dropdown',
             label: 'FAQ',
             position: 'left',
@@ -110,17 +121,6 @@ const config = {
                 label: 'SRS Stack',
               }
             ]
-          },
-          {
-            to: '/blog',
-            label: 'Blog',
-            position: 'left',
-          },
-          {
-            type: 'doc',
-            docId: 'tutorial/srs-server',
-            position: 'left',
-            label: 'Tutorial',
           },
           {
             to: '/contact#donation',

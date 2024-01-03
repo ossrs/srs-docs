@@ -17,6 +17,18 @@
   "item.label.Blog": {
     "message": "博客"
   },
+  "item.label.Donate": {
+    "message": "铁粉"
+  },
+  "item.label.Security": {
+    "message": "安全"
+  },
+  "item.label.FAQ": {
+    "message": "答疑"
+  },
+  "item.label.GitHub": {
+    "message": "源码"
+  },
   "item.label.About": {
     "message": "关于"
   },
