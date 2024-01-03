@@ -67,3 +67,13 @@ Link the docs in blog:
 ```
 
 For instance, refer to the `2022-04-09-SRS-Stack-Tutorial.md` document for more details.
+
+## How to link docs in tutorials?
+
+Link the docs in tutorials:
+
+```markdown
+[ReusePort](../doc/reuse-port.md)
+```
+
+See [srs-books](/docs/v6/tutorial/srs-books) for more details.
