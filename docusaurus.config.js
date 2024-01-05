@@ -123,9 +123,9 @@ const config = {
             ]
           },
           {
-            to: '/cloud#community-support-service',
+            to: '/cloud',
             position: 'left',
-            label: 'Donate',
+            label: 'Cloud',
           },
           {
             to: '/security-advisories',
