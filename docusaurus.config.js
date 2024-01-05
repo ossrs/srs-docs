@@ -123,7 +123,7 @@ const config = {
             ]
           },
           {
-            to: '/contact#donation',
+            to: '/cloud#community-support-service',
             position: 'left',
             label: 'Donate',
           },
