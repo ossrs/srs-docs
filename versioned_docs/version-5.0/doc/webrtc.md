@@ -498,17 +498,6 @@ Input:
 Output:
 * rtmp://192.168.3.6/live/merge
 
-## Cloud Service
-
-At SRS, our goal is to establish a non-profit, open-source community dedicated to creating an all-in-one, 
-out-of-the-box, open-source video solution for live streaming and WebRTC online services.
-
-Additionally, we offer a [cloud](/cloud) service for those who prefer to use cloud service instead of building from 
-scratch. Our cloud service features global network acceleration, enhanced congestion control algorithms, 
-client SDKs for all platforms, and some free quota.
-
-To learn more about our cloud service, click [here](/docs/v6/doc/cloud).
-
 Winlin 2020.02
 
 ![](https://ossrs.io/gif/v1/sls.gif?site=ossrs.io&path=/lts/doc/en/v5/webrtc)
