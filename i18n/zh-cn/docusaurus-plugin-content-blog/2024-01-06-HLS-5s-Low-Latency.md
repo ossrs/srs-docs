@@ -1,6 +1,6 @@
 ---
 slug: hls-5s-low-latency
-title: SRS Stack - Unlock Universal Ultra-Low Latency - Achieving 5-Second HLS Live Streams for All - No Special Equipment Needed
+title: SRS Stack - 如何实现5秒HLS低延迟
 authors: []
 tags: [hls, llhls, live-streaming, low-latency-streaming, low-latency-hls]
 custom_edit_url: null
