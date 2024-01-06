@@ -155,5 +155,5 @@ Prometheus是一个著名的开源监控系统，通过其导出器，SRS可以�
 
 如果想要支持SRS这个项目，请考虑加入SRS付费星球支持我们。
 
-![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.net&path=/lts/blog-en/2023-05-22-Unlock-the-Power-of-SRS-Real-World-Use-Cases)
+![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.net&path=/lts/blog-zh/2023-05-22-Unlock-the-Power-of-SRS-Real-World-Use-Cases)
 

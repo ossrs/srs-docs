@@ -11,6 +11,8 @@ custom_edit_url: null
 As we reach the end of 2023, it's time for an annual summary, which we can look back on and laugh at 
 our immaturity in the coming years.
 
+<!--truncate-->
+
 ## SRS Server
 
 SRS 5.0 will be officially released as a stable version in the next two weeks. After a year of feature 
@@ -99,4 +101,4 @@ audio and video open-source project globally, and commercialization would hinder
 
 In the open-source community, there is no winter in sight.
 
-![](https://ossrs.io/gif/v1/sls.gif?site=ossrs.io&path=/lts/blog-zh/2023-12-15-SRS-Ten-Years)
+![](https://ossrs.io/gif/v1/sls.gif?site=ossrs.io&path=/lts/blog-en/2023-12-15-SRS-Ten-Years)

@@ -10,6 +10,8 @@ custom_edit_url: null
 
 又到2023年底了，每年写个总结，几年后可以嘲笑自己当年的不成熟。
 
+<!--truncate-->
+
 ## SRS Server
 
 SRS 5.0将在这两周正式发布稳定版，经过一年的功能冻结，半年的稳定性提升，现在5.0已经可以在生产环境使用。
@@ -79,4 +81,4 @@ SRS是2013年开始做的开源项目，从2020年才正式开始做开源社区
 
 在开源社区，看不到冬天。
 
-![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.net&path=/lts/blog-en/2023-12-15-SRS-Ten-Years)
+![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.net&path=/lts/blog-zh/2023-12-15-SRS-Ten-Years)
