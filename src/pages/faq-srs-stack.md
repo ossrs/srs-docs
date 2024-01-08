@@ -231,7 +231,7 @@ are all automatically applied after running SRS Stack:
 * https://ossrs.io SRS's global documentation website.
 * https://ossrs.net SRS's official website in China.
 
-The operation is very simple, just follow these three steps, please see [here](/blog/2022/04/12/SRS-Stack-HTTPS):
+The operation is very simple, just follow these three steps, please see [here](/blog/SRS-Stack-HTTPS):
 
 1. Purchase a domain name and complete the filing. You must have your own legal domain name, otherwise, you cannot apply for a certificate.
 2. Resolve the domain name to the public IP of SRS Stack. You can add multiple domain names to resolve, for example, `ossrs.io` and `www.ossrs.io` are both resolved to the same SRS Stack server.

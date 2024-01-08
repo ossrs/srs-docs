@@ -208,7 +208,7 @@ SRS Stack支持申请免费HTTPS证书，而且可以申请多个域名的证书
 * https://ossrs.io SRS的海外文档网站。
 * https://ossrs.net SRS的国内文档网站。
 
-操作非常简单，只需要三步，具体请看[这里](/blog/2022/04/12/SRS-Stack-HTTPS)：
+操作非常简单，只需要三步，具体请看[这里](/blog/SRS-Stack-HTTPS)：
 
 1. 购买域名并备案，一定要有自己的合法域名，否则无法申请证书的哈。
 2. 将域名解析到SRS Stack的公网IP，可以通过域名访问到你的SRS Stack就可以，可以加多个域名解析，比如 `ossrs.io` `www.ossrs.io` 都是解析到同一个SRS Stack服务器的。
