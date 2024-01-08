@@ -4,55 +4,41 @@
 
 快速目录
 
-* [Video Guides](#video-guides)：视频教程。
 * [Getting Started](#getting-started)：如何起步: 买了SRS Stack怎么用，怎么开头，怎么入门，怎么起步，怎么开始折腾。
-* [How to Upgrade](#how-to-upgrade)：如何升级: 如何升级到最新版本或稳定版本，为何不支持界面点击升级。
-* [How to Set a Domain](#how-to-set-domain)：如何设置域名: 如何设置域名访问管理后台，为何打不开管理后台，为何IP访问不了管理后台。
-* [Supported Platforms](#support-platform)：支持哪些平台: 支持哪些平台，支持镜像，想直接用服务器或命令行安装，或宝塔安装
-* [How to Push Multiple Streams](#multiple-streams)：如何推多路流: 一路流不够，想推多路流，想改默认的流名称和流地址。
-* [How to Run Multiple Instances](#multiple-instances)：如何启动多个实例: 机器CPU很多，如何支持更多的平台转发，或者更多路流以及录制等。
-* [How to Set up Free HTTPS](#https)：如何设置免费HTTPS: 如何申请免费HTTPS证书，如何申请多个域名的证书。
-* [How to Use Server File for Virtual Live Events](#virtual-live-server-file): 如何用服务器的文件做虚拟直播: 如何用其他工具上传文件，并在虚拟直播中使用
-* [How to Modify the Push Authentication Key](#update-publish-secret)：如何修改推流鉴权的密钥: 更新推流鉴权的密钥，更换推流密钥
-* [How to Disable Push Authentication](#no-publish-auth)：如何禁用推流鉴权: 不想要推流鉴权，设备不支持特殊字符。
-* [How to Change the Recording Directory](#update-dvr-directory): 如何修改录制的目录: 如何修改录制的目录为其他磁盘目录。
-* [Recording Doesn't Stop When the Stream is Stopped](#dvr-continue-when-unpublish): 停止推流时录制没有停止: 为何不能在停止推流时停止录制，而是等待一定时间才停止。
-* [How to Quickly Generate a Recorded File](#dvr-fastly-generate): 如何快速生成录制文件: 停止推流后，如何快速生成录制文件。
-* [How to Record to S3 Cloud Storage](#dvr-s3-cloud-storage): 如何录制到S3云存储: 录制到AWS、Azure、DigitalOcean Space等S3兼容的存储上。
-* [How to Record a Specific Stream](#dvr-specific-streams): 如何录制特定的流: 如何按特定规则录制，如何录制指定的流
-* [Unavailable After Installation](#unavailable): 安装后无法访问: 安装后提示错误，或者Redis没准备好。
-* [Difference Between SRS Restream and OBS Restream](#restream-vs-obs): SRS转推和OBS转推的区别: SRS的多平台转推，和OBS转推插件的区别。
-* [How SRS Re-streams to Custom Platforms](#restream-custom): SRS如何转推自定义平台: SRS的多平台转推，如何推到自定义的直播平台。
-* [Why and how to limit the bitrate of virtual live events](#virtual-live-bitrate): 为什么要限制虚拟直播的码率，如何解除限制。
-* [How to Replace FFmpeg](#use-custom-ffmpeg): 如何更换FFmpeg: 如何更换SRS Stack中的FFmpeg为自定义版本。
-* [aaPanel Installation of SRS is Very Slow](#install-speedup): 宝塔安装SRS非常慢: 海外用宝塔安装非常慢，访问阿里云镜像太慢。
-* [How to Install the Latest SRS Stack in aaPanel](#bt-install-manually): 宝塔如何安装最新的SRS Stack: 手动安装宝塔插件，安装最新的插件。
-* [aaPanel CentOS7 Installation Failed](#bt-centos7-error): 宝塔CentOS7安装失败: CentOS7宝塔安装失败，找不到目录，或GLIBC版本问题。
-* [How to Implement the Requirements or Features](#rules)：提的需求或功能如何实现: 想要实现更多的功能，想要定制，想要优化改进。
-* [Unable to Achieve the Desired Effect](#can-not-replay)：无法实现预期效果: 遇到问题，达不到预期效果。
-* [The Difference Between SRS Stack and SRS](#diff-srs)：SRS Stack和SRS的差别: SRS Stack对比SRS的差异，为什么要有SRS Stack。
-* [The Difference with aaPanel](#diff-baota)：和宝塔的差别: 和虚拟机管理软件宝塔的差异。
-* [The Difference with Video Cloud](#diff-vcloud)：和视频云的差别: 和一般视频云服务的差异。
+* [How to Upgrade](#how-to-upgrade): 如何升级: 如何升级到最新版本或稳定版本，为何不支持界面点击升级。
+* [How to Set a Domain](#how-to-set-a-domain): 如何设置域名: 如何设置域名访问管理后台，为何打不开管理后台，为何IP访问不了管理后台。
+* [Supported Platforms](#supported-platforms): 支持哪些平台: 支持哪些平台，支持镜像，想直接用服务器或命令行安装，或宝塔安装
+* [How to Push Multiple Streams](#how-to-push-multiple-streams): 如何推多路流: 一路流不够，想推多路流，想改默认的流名称和流地址。
+* [How to Run Multiple Instances](#how-to-run-multiple-instances): 如何启动多个实例: 机器CPU很多，如何支持更多的平台转发，或者更多路流以及录制等。
+* [How to Set up Free HTTPS](#how-to-set-up-free-https): 如何设置免费HTTPS: 如何申请免费HTTPS证书，如何申请多个域名的证书。
+* [How to Use Server File for Virtual Live Events](#how-to-use-server-file-for-virtual-live-events): 如何用服务器的文件做虚拟直播: 如何用其他工具上传文件，并在虚拟直播中使用
+* [How to Modify the Push Authentication Key](#how-to-modify-the-push-authentication-key): 如何修改推流鉴权的密钥: 更新推流鉴权的密钥，更换推流密钥
+* [How to Disable Push Authentication](#how-to-disable-push-authentication): 如何禁用推流鉴权: 不想要推流鉴权，设备不支持特殊字符。
+* [How to Change the Recording Directory](#how-to-change-the-recording-directory): 如何修改录制的目录: 如何修改录制的目录为其他磁盘目录。
+* [Recording Does Not Stop When the Stream is Stopped](#recording-does-not-stop-when-the-stream-is-stopped): 停止推流时录制没有停止: 为何不能在停止推流时停止录制，而是等待一定时间才停止。
+* [How to Quickly Generate a Recorded File](#how-to-quickly-generate-a-recorded-file): 如何快速生成录制文件: 停止推流后，如何快速生成录制文件。
+* [How to Record to S3 Cloud Storage](#how-to-record-to-s3-cloud-storage): 如何录制到S3云存储: 录制到AWS、Azure、DigitalOcean Space等S3兼容的存储上。
+* [How to Record a Specific Stream](#how-to-record-a-specific-stream): 如何录制特定的流: 如何按特定规则录制，如何录制指定的流
+* [Unavailable After Installation](#unavailable-after-installation): 安装后无法访问: 安装后提示错误，或者Redis没准备好。
+* [Difference Between SRS Restream and OBS Restream](#difference-between-srs-restream-and-obs-restream): SRS转推和OBS转推的区别: SRS的多平台转推，和OBS转推插件的区别。
+* [How SRS Re-streams to Custom Platforms](#how-srs-restreams-to-custom-platforms): SRS如何转推自定义平台: SRS的多平台转推，如何推到自定义的直播平台。
+* [Why and how to limit the bitrate of virtual live events](#why-and-how-to-limit-the-bitrate-of-virtual-live-events): 为什么要限制虚拟直播的码率，如何解除限制。
+* [How to Replace FFmpeg](#how-to-replace-ffmpeg): 如何更换FFmpeg: 如何更换SRS Stack中的FFmpeg为自定义版本。
+* [Installation of SRS is Very Slow](#installation-of-srs-is-very-slow): 宝塔安装SRS非常慢: 海外用宝塔安装非常慢，访问阿里云镜像太慢。
+* [How to Install the Latest SRS Stack](#how-to-install-the-latest-srs-stack): 宝塔如何安装最新的SRS Stack: 手动安装宝塔插件，安装最新的插件。
+* [CentOS7 Installation Failed](#centos7-installation-failed): 宝塔CentOS7安装失败: CentOS7宝塔安装失败，找不到目录，或GLIBC版本问题。
+* [The Difference Between SRS Stack and SRS](#the-difference-between-srs-stack-and-srs): SRS Stack和SRS的差别: SRS Stack对比SRS的差异，为什么要有SRS Stack。
+* [Low Latency HLS](#low-latency-hls): HLS低延时: HLS低延时的原理和实现方式。
 * [OpenAPI](#openapi): 关于开放API，使用API获取相关信息。
-* [Features](#features): 功能列表: 关于支持的功能清单。
 * [HTTP Callback](#http-callback): 关于支持的HTTP回调。
 * [Changelog](#changelog): 版本规划: 关于版本和里程碑。
 
 你也可以在页面中搜索关键字。
 
-<a name='video-guides'></a><br/><br/><br/>
-
-## Video Guides
-
-下面是答疑的视频资料，详细讲解了某个话题，如果你的问题类似请直接看视频哈：
-
-* [FAQ：如何更低码率达到同等画质](https://www.bilibili.com/video/BV1qB4y197ov/) 在保证画质的前提下，如何降低码率？我们可以使用动态码率，还可以使用相对空闲的客户端CPU交换码率，还可以在业务上优化，特别多平台推流时需要避免上行码率过高。
-
-<a name='getting-started'></a><br/><br/><br/>
-
 ## Getting Started
 
-请先购买和设置[SRS Stack](https://www.bilibili.com/video/BV1844y1L7dL/)，包括如何设置防火墙，视频很短只有5分钟，但是不看会有非常多的问题，请不要跳过这个基本视频。
+请先购买和设置环境，参考[官网文档](/blog/SRS-Stack-Tutorial)或者[视频教程](https://www.bilibili.com/video/BV1844y1L7dL/)，
+包括如何设置防火墙，视频很短只有5分钟，但是不看会有非常多的问题，请不要跳过这个基本步骤。
 
 进入SRS Stack后，根据不同应用场景，会有对应的视频教程，如下图所示：
 
@@ -63,8 +49,6 @@
 ![](/img/page-2023-03-04-02.png)
 
 请不要乱试，一定要跟引导做，音视频乱试一定会出问题。
-
-<a name="how-to-upgrade"></a><br/><br/><br/>
 
 ## How to Upgrade
 
@@ -82,8 +66,6 @@ Docker启动时会指定版本，比如`registry.cn-hangzhou.aliyuncs.com/ossrs/
 比如`docker pull registry.cn-hangzhou.aliyuncs.com/ossrs/srs-stack:1`。
 
 如果使用宝塔，则删除应用后重装新版本即可，数据是保存在`/data`目录，不会丢失。
-
-<a name="how-to-set-domain"></a><br/><br/><br/>
 
 ## How to Set a Domain
 
@@ -114,21 +96,19 @@ A bt.yourdomain.com 121.13.75.20
 
 注意：如果是需要通过Let's Encrypt申请免费的HTTPS证书，IP地址必须是公网IP，而且不能通过修改hosts的方式。
 
-<a name="support-platform"></a><br/><br/><br/>
-
 ## Supported Platforms
 
 SRS Stack支持Docker镜像，安装脚本，腾讯云Lighthouse和CVM镜像，DigitalOcean镜像，其他平台可以用宝塔安装。
 
 推荐使用Docker直接安装，还可以装多个，注意要用Ubuntu 20+系统：
-* Docker镜像安装：[这里](https://ossrs.io/lts/zh-cn/docs/v6/doc/getting-started-stack#docker)
+* Docker镜像安装：[这里](/docs/v6/doc/getting-started-stack#docker)
 
 SRS Stack支持HELM安装，请参考[srs-helm](https://github.com/ossrs/srs-helm)的说明。
 
 如果你习惯用宝塔，可以用宝塔安装，可以和多个网站并存，注意要用Ubuntu 20+系统：
 * 宝塔：其他云平台可以用宝塔安装，要求是CentOS 7+或Ubuntu 20+的系统，使用参考[这里](https://mp.weixin.qq.com/s/nutc5eJ73aUa4Hc23DbCwQ)
 * aaPanel：海外的宝塔，如果你的机器是海外的，一定不要用宝塔而要用aaPanel，使用参考[这里](https://blog.ossrs.io/how-to-setup-a-video-streaming-service-by-aapanel-9748ae754c8c)
-* Script：直接用脚本也可以，参考[Script](https://ossrs.io/lts/zh-cn/docs/v6/doc/getting-started-stack#script)
+* Script：直接用脚本也可以，参考[Script](/docs/v6/doc/getting-started-stack#script)
 
 支持各种云平台，最方便的是镜像，也就是云服务器的镜像，如果想简单省事就请用镜像：
 * Lighthouse：腾讯云的轻量云服务器镜像，使用参考[这里](https://mp.weixin.qq.com/s/fWmdkw-2AoFD_pEmE_EIkA)
@@ -150,8 +130,6 @@ Lighthouse/CVM/DigitalOcean > 宝塔/aaPanel > Docker/Script
 
 可以根据自己的情况选择平台和安装方式。
 
-<a name='multiple-streams'></a><br/><br/><br/>
-
 ## How to Push Multiple Streams
 
 默认只有一个推流地址，要推多个流怎么办？如何更换流地址？
@@ -172,8 +150,6 @@ Lighthouse/CVM/DigitalOcean > 宝塔/aaPanel > Docker/Script
 ![](/img/page-2023-03-04-03.png)
 
 > Note: 当然了，播放也得改成对应的流名称。
-
-<a name='multiple-instances'></a><br/><br/><br/>
 
 ## How to Run Multiple Instances
 
@@ -225,17 +201,14 @@ docker run --rm -it -p 2023:2022 -p 1936:1935 \
 
 当然也不是意味着你就可以启动上万个SRS Stack，你应该关注你的CPU和内存，以及机器的带宽是否充足。
 
-<a name="https"></a><br/><br/><br/>
-
 ## How to Set up Free HTTPS
 
 SRS Stack支持申请免费HTTPS证书，而且可以申请多个域名的证书，还可以自动续期。比如，以下HTTPS网站的证书，都是跑了SRS Stack后一键自动申请的：
 
 * https://ossrs.io SRS的海外文档网站。
-* https://www.ossrs.io SRS的海外文档网站。
-* https://r.ossrs.net SRS的稳定版演示服务器。
+* https://ossrs.net SRS的国内文档网站。
 
-操作非常简单，只需要三步，具体请看[这里](https://ossrs.net/lts/blog/2022/04/12/SRS-Stack-HTTPS)：
+操作非常简单，只需要三步，具体请看[这里](/blog/2022/04/12/SRS-Stack-HTTPS)：
 
 1. 购买域名并备案，一定要有自己的合法域名，否则无法申请证书的哈。
 2. 将域名解析到SRS Stack的公网IP，可以通过域名访问到你的SRS Stack就可以，可以加多个域名解析，比如 `ossrs.io` `www.ossrs.io` 都是解析到同一个SRS Stack服务器的。
@@ -262,8 +235,6 @@ docker run --restart always -d -it --name srs-stack -v $HOME/data:/data \
 
 申请成功后，在浏览器敲https加你的域名，就可以访问你的网站了。
 
-<a name="virtual-live-server-file"></a><br/><br/><br/>
-
 ## How to Use Server File for Virtual Live Events
 
 如何用其他工具上传文件，并在虚拟直播中使用。
@@ -286,8 +257,6 @@ docker exec -it srs-stack ls -lh /data/my-upload/my-file.mp4
 
 如果提示文件存在，则可以在SRS Stack的Virtual Live Events使用这个文件，否则请检查启动Docker时路径是否映射对了。
 
-<a name="update-publish-secret"></a><br/><br/><br/>
-
 ## How to Modify the Push Authentication Key
 
 若你需要更新推流鉴权的密钥，或者更换推流密钥，可以按以下操作步骤：
@@ -304,8 +273,6 @@ docker exec -it srs-stack ls -lh /data/my-upload/my-file.mp4
 
 若需要禁用推流鉴权，请参考下面的说明。
 
-<a name="no-publish-auth"></a><br/><br/><br/>
-
 ## How to Disable Push Authentication
 
 在场景页面中，标准的推流格式，是带`?secret=xxx`鉴权的，比如`rtmp://ip/live/livestream?secret=xxx`
@@ -319,8 +286,6 @@ docker exec -it srs-stack ls -lh /data/my-upload/my-file.mp4
 > Note: 当然了，播放也得改成一样的流名称才行，也要有密钥，因为这里是把密钥放在流名称中了，播放当然也得改了。
 
 这样的方式，是有安全性，也能支持不支持特殊字符的设备，加上推流密钥本来就可以改，所以可以改成自己想要的方式。
-
-<a name="update-dvr-directory"></a><br/><br/><br/>
 
 ## How to Change the Recording Directory
 
@@ -343,9 +308,7 @@ rm -rf /data && ln -sf /your-host-dir /data
 特别注意：若希望使用S3等云存储，请不要用挂载方式，因为频繁的录制写入可能会造成云存储挂起而无法访问，应该使用拷贝文件的方法，
 具体请参考[如何录制到S3云存储](#dvr-s3-cloud-storage)。
 
-<a name="dvr-continue-when-unpublish"></a><br/><br/><br/>
-
-## Recording Doesn't Stop When the Stream is Stopped
+## Recording Does Not Stop When the Stream is Stopped
 
 为何不能在停止推流时停止录制，而是等待一定时间才停止。
 
@@ -354,8 +317,6 @@ rm -rf /data && ln -sf /your-host-dir /data
 但是有些主播，他推流时中间是有中断的，比如推流推了5分钟时间，中间中断等了可能30秒。那如果在停止推流就录制一个文件出来，就会有两个文件，所以这种情况下就是有问题的。
 
 因此在停止推流时若停止录制，中间可能会导致录制会有多个文件，满足不了真实的场景的需要。
-
-<a name="dvr-fastly-generate"></a><br/><br/><br/>
 
 ## How to Quickly Generate a Recorded File
 
@@ -369,8 +330,6 @@ rm -rf /data && ln -sf /your-host-dir /data
 
 > Note: 请求结束录制任务是异步接口，调用后不会立刻就会生成录制文件，因为处理直播的切片需要时间，需要等待一定时间。
 > 录制文件准确的生成时间，请调用API查询，或者以回调事件为准。
-
-<a name="dvr-s3-cloud-storage"></a><br/><br/><br/>
 
 ## How to Record to S3 Cloud Storage
 
@@ -402,8 +361,6 @@ ls -lh /data/srs-s3-bucket
 特别注意，必须要挂载到`/data`目录的子目录下，SRS Stack才能正常访问到，若只能挂载到其他目录，则建议使用Docker启动SRS Stack，
 并指定`-v /your-host-dir:/data/srs-s3-bucket`，这样SRS Stack就可以访问到了。
 
-<a name="dvr-specific-streams"></a><br/><br/><br/>
-
 ## How to Record a Specific Stream
 
 如何按特定规则录制，如何录制指定的流。
@@ -416,8 +373,6 @@ SRS Stack允许您配置Glob匹配规则，该过滤器仅录制符合定义规�
 
 即使在录制过程中，也可以修改Glob匹配规则，而无需重新启动录制。即使流已经在发布，您也可以设置过滤器。
 更新的过滤器将应用于流的新片段。
-
-<a name="unavailable"></a><br/><br/><br/>
 
 ## Unavailable After Installation
 
@@ -432,8 +387,6 @@ SRS Stack允许您配置Glob匹配规则，该过滤器仅录制符合定义规�
 ![](/img/page-2023-03-04-06.png)
 
 这是因为刚刚安装后，SRS Stack启动需要时间，等待3到5分钟后刷新页面，就可以了。
-
-<a name="restream-vs-obs"></a><br/><br/><br/>
 
 ## Difference Between SRS Restream and OBS Restream
 
@@ -461,8 +414,6 @@ OBS转推的优点是不用钱，直接就转推了。缺点是它的上行/上�
 
 SRS Stack其实也是会有带宽翻倍，但是它是下行带宽翻倍，因为它做了一次转换，本质上是其他平台从SRS Stack这里下载流。下行/下载带宽一般都是更有保障的。而且SRS Stack和平台之间，都是服务器之间的BGP带宽，比家里到平台质量更有保障。
 
-<a name="restream-custom"></a><br/><br/><br/>
-
 ## How SRS Restreams to Custom Platforms
 
 SRS的多平台转推，是可以推到自定义的直播平台，比如推到视频号的推流地址和流密钥，也可以填任何其他直播平台的。
@@ -482,16 +433,12 @@ rtmp://ip/app/stream
 
 > Note: 最后一个斜杠后面的就是流密钥。
 
-<a name="virtual-live-bitrate"></a><br/><br/><br/>
-
 ## Why and how to limit the bitrate of virtual live events
 
 为什么以及如何限制虚拟直播活动的比特率？许多用户使用7x24小时的虚拟直播活动，并超过服务器流量限制。通常，AWS Lightsail和DigitalOcean 
 Droplets每月提供1TB的流量，允许进行7x24小时的3Mbps连续直播。因此，限制输入比特率以防止超过流量限制至关重要。
 
 默认情况下，SRS Stack将虚拟直播的输入比特率限制为5Mbps，您可以从`系统配置>限流>限流设置`更改限制以设置更高的限制。
-
-<a name="use-custom-ffmpeg"></a><br/><br/><br/>
 
 ## How to Replace FFmpeg
 
@@ -505,9 +452,7 @@ Droplets每月提供1TB的流量，允许进行7x24小时的3Mbps连续直播。
 
 > Note: 非Docker版本不支持。
 
-<a name='install-speedup'></a><br/><br/><br/>
-
-## aaPanel Installation of SRS is Very Slow
+## Installation of SRS is Very Slow
 
 有朋友反馈：海外用宝塔安装非常慢，访问阿里云镜像太慢。
 
@@ -515,11 +460,9 @@ Droplets每月提供1TB的流量，允许进行7x24小时的3Mbps连续直播。
 
 宝塔海外版本叫[aaPanel](https://aapanel.com)，请使用aaPanel，安装软件很快，SRS Stack也会切换到海外的镜像下载。
 
-宝塔和aaPanel只是安装方法不同，具体用法是一样的，请参考[宝塔](https://ossrs.net/lts/zh-cn/blog/BT-aaPanel)或[aaPanel](https://blog.ossrs.io/how-to-setup-a-video-streaming-service-by-aapanel-9748ae754c8c)。
+宝塔和aaPanel只是安装方法不同，具体用法是一样的，请参考[宝塔](/blog/BT-aaPanel)或[aaPanel](https://blog.ossrs.io/how-to-setup-a-video-streaming-service-by-aapanel-9748ae754c8c)。
 
-<a name="bt-install-manually"></a><br/><br/><br/>
-
-## How to Install the Latest SRS Stack in aaPanel
+## How to Install the Latest SRS Stack
 
 有时候宝塔商店的版本比较老，可以手动安装宝塔插件，安装最新的插件。
 
@@ -527,95 +470,17 @@ SRS Stack最新的版本，可以看[Releases](https://github.com/ossrs/srs-stac
 
 下载插件后，可以在宝塔`软件商店 > 第三方应用 > 导入插件`，上传下载的`bt-srs_stack.zip`即可安装。
 
-<a name="bt-centos7-error"></a><br/><br/><br/>
+## CentOS7 Installation Failed
 
-## aaPanel CentOS7 Installation Failed
-
-> 注意：推荐使用Ubuntu20系统。 
-
-CentOS7宝塔安装失败，常见错误如下：
-
-* GLIBC版本问题：```version `GLIBC_2.27' not found```
-* 找不到目录：```ln: failed to access '/www/server/nvm/versions/node/v18.12.1/bin/node'```
-
-这都是因为CentOS7上的nodejs有问题，一般是安装pm2后安装的是nodejs18，而它依赖高版本的libc，所以无法使用。
-
-解决办法：
-
-* 升级到SRS Stack v4.6.3+，可以手动安装最新版本，参考[宝塔如何安装最新的SRS Stack](#bt-install-manually)
-* 打开pm2切换到nodejs 16，也可以绕过去这个问题。
-
-> Note: SRS Stack v4.6.3+，不再强制依赖pm2安装nodejs，只要系统存在nodejs就可以了。你可以选择nodejs管理器安装，或者pm2安装，或者自己安装也可以。
-
-最后，如果安装成功后还不可用，可以重启下系统试试。
-
-<a name="rules"></a><br/><br/><br/>
-
-## How to Implement the Requirements or Features
-
-SRS Stack的开发计划和里程碑在[这里](https://github.com/orgs/ossrs/projects/2/views/4)
-
-若你希望我们对你的业务提供特别的支持，请加入[SRS付费星球](/contact#donation)。
-
-<a name="can-not-replay"></a><br/><br/><br/>
-
-## Unable to Achieve the Desired Effect
-
-如果达不到预期效果，比如延迟高了，或者推拉流失败了，下面的办法可以解决所有问题：
-
-```
-一个字不要改的，跟着视频教程和应用场景的引导，鼠标操作复制粘贴，一定能疗效良好！
-一个字不要改的，跟着视频教程和应用场景的引导，鼠标操作复制粘贴，一定能疗效良好！
-一个字不要改的，跟着视频教程和应用场景的引导，鼠标操作复制粘贴，一定能疗效良好！
-```
-
-因为大家出现问题的原因只有一个：就是觉得音视频简单，乱改！
-
-* 觉得SRS Stack简单，自己买其他云服务器后部署，或者买轻量后自己安装程序：扑街！
-* 换播放器，换推流器，不按视频和场景指引的，换各种客户端：扑街！
-* 不看[视频教程](https://space.bilibili.com/430256302/channel/collectiondetail?sid=180263)，不看`应用场景`的文字指引，直接上手乱试：扑街！
-
-天堂有路你不走，地狱无门你闯的头破血流的要进地域，只能说是自己造孽自己受。
-
-如果按照[视频教程](https://space.bilibili.com/430256302/channel/collectiondetail?sid=180263)和`应用场景`的指引，还是有问题，把你的过程录下来，发群里，立刻帮你解决！
-
-最后再苦口婆心的劝大家从良：音视频水很深，一看就会一试就废，这是为什么我要做SRS Stack，你先用开箱即用的跑出效果来，然后想一点点折腾也可以，不要路都不会走就跑。
-
-<a name="diff-srs"></a><br/><br/><br/>
+CentOS7由于年久失修，有很多问题，推荐使用Ubuntu20系统。
 
 ## The Difference Between SRS Stack and SRS
 
-[SRS](https://github.com/ossrs/srs)是一个开源服务器，是一个流媒体服务器，一般会和FFmpeg以及WebRTC等客户端配合起来实现音视频的能力，请看[这个图](https://github.com/ossrs/srs#srssimple-realtime-server)你就明白了什么是SRS。
+SRS是SRS Stack的媒体引擎，详细差异请查看[与SRS比较](/zh-cn/docs/v6/doc/getting-started-stack#compare-to-srs)。
 
-SRS Stack是一个音视频的方案，它基于SRS、Nodejs、REACT等实现音视频的常用场景，请看[这个图](https://github.com/ossrs/srs-stack#architecture)你就明白了什么是SRS Stack。
+## Low Latency HLS
 
-SRS安装后，打开是一个流媒体服务器的演示页面，有播放器和控制台的链接；SRS Stack安装后，打开是需要登录的管理后台，提供了很多不同场景的引导。
-
-如果你是需要详细研究流媒体服务器，请根据SRS的文档操作，也请加SRS的社区，而不要在SRS Stack的群里问。SRS是一个开源的音视频服务器，面向的是开发能力非常强的C/C++程序员，你可以随意修改，定制能力很强。
-
-如果你是想要一个直接就能使用的音视频平台，开箱即用，可以线上使用的，就请用SRS Stack，请不要在SRS社区问。SRS Stack的含义，就是云上的SRS，它是个基于云的服务，面向的是用户，不需要了解音视频细节，跟着教程操作就可以。
-
-两个都是开源的项目，欢迎贡献。
-
-<a name="diff-baota"></a><br/><br/><br/>
-
-## The Difference with aaPanel
-
-宝塔是一个虚拟机的管理工具，SRS Stack是一个音视频的开箱即用的方案，宝塔也可以安装SRS Stack，请参考[支持哪些平台](#support-platform)。
-
-> Note: 海外的宝塔是叫aaPanel，也支持SRS Stack；如果你的机器在海外，请不要用宝塔，而要用aaPanel；大家使用的安装源不同，海外用宝塔可能安装非常慢甚至会失败。
-
-<a name="diff-vcloud"></a><br/><br/><br/>
-
-## The Difference with Video Cloud
-
-视频云是大规模服务的场景，比如云直播、比如TRTC、比如IM、比如云点播、比如CDN、比如腾讯会议或ZOOM，这些都是超大规模的系统。
-
-SRS Stack是把这些系统全部放在一台`Lighthouse/CVM/Droplet/宝塔`云服务器中，所以它主要是全面，但是并发和规模非常小，只适合小微场景，快速搭建应用实现业务，了解和学习新场景，可以跑起来后慢慢看怎么实现。
-
-当然，未来SRS Stack也会支持迁移到成熟的视频云服务，让大家可以快速满足业务要求，同时业务长大后也能得到规模化的支撑。
-
-<a name="openapi"></a><br/><br/><br/>
+如何降低HLS延迟，实现5秒延迟的HLS流，参考[如何实现5秒HLS低延迟](/blog/hls-5s-low-latency)。
 
 ## OpenAPI
 
@@ -625,27 +490,9 @@ SRS Stack是把这些系统全部放在一台`Lighthouse/CVM/Droplet/宝塔`云�
 
 凡是能在SRS Stack页面完成的操作，都可以通过OpenAPI完成。
 
-<a name='features'></a><br/><br/><br/>
-
-## Features
-
-SRS Stack（即SRS Stack）是nodejs实现的开源方案，代码在[srs-stack](https://github.com/ossrs/srs-stack)，欢迎一起来搞。
-
-SRS Stack面向鼠标编程，让每个人都能做音视频业务。不懂音视频的可以，懂音视频的也可以，种地的可以，撸网线的可以，剪电影的可以，背摄像机的也可以，跳舞的可以，唱歌的可以，卖二手货的也可以，开源项目交流也可以，多平台直播也可以，自建源站可以，会用电脑有微信就可以，守法公民都可以。
-
-SRS Stack的使用说明，请参考视频[SRS Stack：起步、购买和入门](https://www.bilibili.com/video/BV1844y1L7dL/)。
-
-目前SRS Stack支持的场景和功能，参考[Features](https://github.com/ossrs/srs-stack#features)。
-
-欢迎加群探讨SRS Stack的使用，这些SRS的周边服务都是开源的，可以自己定制后部署。
-
-<a name='http-callback'></a><br/><br/><br/>
-
 ## HTTP Callback
 
 See [HTTP Callback](/docs/v6/doc/getting-started-stack#http-callback)
-
-<a name='changelog'></a><br/><br/><br/>
 
 ## Changelog
 

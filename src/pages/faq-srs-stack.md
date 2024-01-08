@@ -4,57 +4,41 @@
 
 Quick Content
 
-* [Video Guides](#video-guides): Video tutorials.
 * [Getting Started](#getting-started): How to use, start, and get started with SRS Stack Server.
 * [How to Upgrade](#how-to-upgrade): How to upgrade to the latest or stable version, and why the interface click upgrade is not supported.
-* [How to Set a Domain](#how-to-set-domain): How to set up a domain to access the admin panel, why can't the admin panel be opened, and why can't the admin panel be accessed via IP.
-* [Supported Platforms](#support-platform): Supported platforms, supported images, want to use the server or command line installation directly, or aaPanel installation.
-* [How to Push Multiple Streams](#multiple-streams): Want to push multiple streams, want to change the default stream name and stream address.
-* [How to Run Multiple Instances](#multiple-instances): The machine has a lot of CPU, how can we support more platform forwarding, or more streams and recording, etc.
-* [How to Set up Free HTTPS](#https): How to apply for a free HTTPS certificate, how to apply for certificates for multiple domain names.
-* [How to Use Server File for Virtual Live Events](#virtual-live-server-file): How to upload file to server and use it in virtual live events.
-* [How to Modify the Push Authentication Key](#update-publish-secret): Update the push authentication key, replace the push key.
-* [How to Disable Push Authentication](#no-publish-auth): Don't want push authentication, the device does not support special characters.
-* [How to Change the Recording Directory](#update-dvr-directory): How to modify the recording directory to another disk directory.
-* [Recording Doesn't Stop When the Stream is Stopped](#dvr-continue-when-unpublish): Why the recording doesn't stop immediately when the stream is stopped, but instead waits for a certain period before stopping.
-* [How to Quickly Generate a Recorded File](#dvr-fastly-generate): After stopping the stream, how to rapidly create a recorded file.
-* [How to Record to S3 Cloud Storage](#dvr-s3-cloud-storage): Record to AWS, Azure, DigitalOcean Space, and other S3-compatible storage options.
-* [How to Record a Specific Stream](#dvr-specific-streams): How to record according to specific rules, how to record a particular stream.
-* [Unavailable After Installation](#unavailable): Error prompt after installation, or Redis not ready.
-* [Difference Between SRS Restream and OBS Restream](#restream-vs-obs): The difference between SRS multi-platform re-streaming and OBS re-streaming plugin.
-* [How SRS Re-streams to Custom Platforms](#restream-custom): How SRS multi-platform re-streaming pushes to custom live platforms.
-* [Why and how to limit the bitrate of virtual live events](#virtual-live-bitrate): Why and how to limit the bitrate of virtual live events.
-* [How to Replace FFmpeg](#use-custom-ffmpeg): How to replace the FFmpeg in SRS Stack with a custom version.
-* [aaPanel Installation of SRS is Very Slow](#install-speedup): Overseas aaPanel installation is very slow, access to Alibaba Cloud image is too slow.
-* [How to Install the Latest SRS Stack in aaPanel](#bt-install-manually): Manually install aaPanel plugin, install the latest plugin.
-* [aaPanel CentOS7 Installation Failed](#bt-centos7-error): CentOS7 aaPanel installation failed, cannot find the directory, or GLIBC version problem.
-* [How to Implement the Requirements or Features](#rules): Want to implement more features, want to customize, want to optimize and improve.
-* [Unable to Achieve the Desired Effect](#can-not-replay): Encounter problems, cannot achieve the desired effect.
-* [The Difference Between SRS Stack and SRS](#diff-srs): The difference between SRS Stack and SRS, why there is SRS Stack.
-* [The Difference with aaPanel](#diff-baota): Difference with virtual machine management software aaPanel.
-* [The Difference with Video Cloud](#diff-vcloud): Difference with general video cloud services.
+* [How to Set a Domain](#how-to-set-a-domain): How to set up a domain to access the admin panel, why can't the admin panel be opened, and why can't the admin panel be accessed via IP.
+* [Supported Platforms](#supported-platforms): Supported platforms, supported images, want to use the server or command line installation directly, or aaPanel installation.
+* [How to Push Multiple Streams](#how-to-push-multiple-streams): Want to push multiple streams, want to change the default stream name and stream address.
+* [How to Run Multiple Instances](#how-to-run-multiple-instances): The machine has a lot of CPU, how can we support more platform forwarding, or more streams and recording, etc.
+* [How to Set up Free HTTPS](#how-to-set-up-free-https): How to apply for a free HTTPS certificate, how to apply for certificates for multiple domain names.
+* [How to Use Server File for Virtual Live Events](#how-to-use-server-file-for-virtual-live-events): How to upload file to server and use it in virtual live events.
+* [How to Modify the Push Authentication Key](#how-to-modify-the-push-authentication-key): Update the push authentication key, replace the push key.
+* [How to Disable Push Authentication](#how-to-disable-push-authentication): Don't want push authentication, the device does not support special characters.
+* [How to Change the Recording Directory](#how-to-change-the-recording-directory): How to modify the recording directory to another disk directory.
+* [Recording Does Not Stop When the Stream is Stopped](#recording-does-not-stop-when-the-stream-is-stopped): Why the recording doesn't stop immediately when the stream is stopped, but instead waits for a certain period before stopping.
+* [How to Quickly Generate a Recorded File](#how-to-quickly-generate-a-recorded-file): After stopping the stream, how to rapidly create a recorded file.
+* [How to Record to S3 Cloud Storage](#how-to-record-to-s3-cloud-storage): Record to AWS, Azure, DigitalOcean Space, and other S3-compatible storage options.
+* [How to Record a Specific Stream](#how-to-record-a-specific-stream): How to record according to specific rules, how to record a particular stream.
+* [Unavailable After Installation](#unavailable-after-installation): Error prompt after installation, or Redis not ready.
+* [Difference Between SRS Restream and OBS Restream](#difference-between-srs-restream-and-obs-restream): The difference between SRS multi-platform re-streaming and OBS re-streaming plugin.
+* [How SRS Re-streams to Custom Platforms](#how-srs-restreams-to-custom-platforms): How SRS multi-platform re-streaming pushes to custom live platforms.
+* [Why and how to limit the bitrate of virtual live events](#why-and-how-to-limit-the-bitrate-of-virtual-live-events): Why and how to limit the bitrate of virtual live events.
+* [How to Replace FFmpeg](#how-to-replace-ffmpeg): How to replace the FFmpeg in SRS Stack with a custom version.
+* [Installation of SRS is Very Slow](#installation-of-srs-is-very-slow): Overseas aaPanel installation is very slow, access to Alibaba Cloud image is too slow.
+* [How to Install the Latest SRS Stack](#how-to-install-the-latest-srs-stack): Manually install aaPanel plugin, install the latest plugin.
+* [CentOS7 Installation Failed](#centos7-installation-failed): CentOS7 aaPanel installation failed, cannot find the directory, or GLIBC version problem.
+* [The Difference Between SRS Stack and SRS](#the-difference-between-srs-stack-and-srs): The difference between SRS Stack and SRS, why there is SRS Stack.
+* [Low Latency HLS](#low-latency-hls): How to use low latency HLS, how to use low latency HLS.
 * [OpenAPI](#openapi): About open API, using API to get related information.
-* [Features](#features): About the list of supported features.
 * [HTTP Callback](#http-callback): About HTTP callback.
 * [Changelog](#changelog): About versions and milestones.
 
 You can also search for keywords on the page.
 
-<a name='video-guides'></a><br/><br/><br/>
-
-## Video Guides
-
-The following are video materials for answering questions, which explain a certain topic in detail. 
-If your question is similar, please watch the video directly:
-
-* [Ultimate Unmanned Live Streaming Solution: Easy, Affordable & No PC Required! Perfect for Slow Media, Sleep Music, ASMR, Movie Streaming & More!](https://youtu.be/68PIGFDGihU)
-* [24/7 Live Stream: Easy Stream Your Camera to YouTube with DDNS & VPS - No PC or OBS Required!](https://youtu.be/nNOBFRshO6Q)
-
-<a name='getting-started'></a><br/><br/><br/>
-
 ## Getting Started
 
-Please purchase and set up [SRS Stack Server](/blog/SRS-Stack-Tutorial) first. 
+Please follow [How to Setup a Video Streaming Service by 1-Click](/blog/SRS-Stack-Tutorial) to purchase 
+and set up SRS Stack, please don't skip this step.
 
 After entering the SRS Stack Server, there will be corresponding video tutorials according to different 
 application scenarios, as shown in the following figure:
@@ -68,8 +52,6 @@ figure:
 
 Please do not try randomly, be sure to follow the guide, audio and video random testing will definitely 
 cause problems.
-
-<a name="how-to-upgrade"></a><br/><br/><br/>
 
 ## How to Upgrade
 
@@ -89,8 +71,6 @@ If you use `ossrs/srs-stack:1`, it is the latest version, and you need to update
 
 If you use aaPanel panel, just delete the application and reinstall the new version, the data is saved in the 
 `/data` directory and will not be lost.
-
-<a name="how-to-set-domain"></a><br/><br/><br/>
 
 ## How to Set a Domain
 
@@ -127,8 +107,6 @@ A bt.yourdomain.com 121.13.75.20
 Note: If you need to apply for a free HTTPS certificate through Let's Encrypt, the IP address must be a 
 public IP, and you cannot use the method of modifying the hosts file.
 
-<a name="support-platform"></a><br/><br/><br/>
-
 ## Supported Platforms
 
 SRS Stack supports Docker images, installation scripts, DigitalOcean images, and can be installed on other 
@@ -136,14 +114,14 @@ platforms using aaPanel.
 
 It is recommended to install directly using Docker, which also allows for multiple installations. Be sure 
 to use Ubuntu 20+ system:
-* Docker image installation: [here](https://ossrs.io/lts/zh-cn/docs/v6/doc/getting-started-stack#docker)
+* Docker image installation: [here](/docs/v6/doc/getting-started-stack#docker)
 
 SRS Stack also support HELM, see [srs-helm](https://github.com/ossrs/srs-helm) for detail.
 
 If you are used to aaPanel, you can install it with aaPanel, which can coexist with multiple websites. Be 
 sure to use Ubuntu 20+ system:
 * aaPanel: You can download the plugin for installation, and refer to [How to Setup a Video Streaming Service with aaPanel](https://blog.ossrs.io/how-to-setup-a-video-streaming-service-by-aapanel-9748ae754c8c) for usage.
-* Script: You can also use the script directly, refer to [Script](https://ossrs.io/lts/zh-cn/docs/v6/doc/getting-started-stack#script)
+* Script: You can also use the script directly, refer to [Script](/docs/v6/doc/getting-started-stack#script)
 
 It supports various cloud platforms, and the most convenient method is using images, which are cloud 
 server images. If you want to keep it simple and save time, please use images:
@@ -163,8 +141,6 @@ DigitalOcean > aaPanel > Docker/Script
 ```
 
 You can choose the platform and installation method according to your situation.
-
-<a name='multiple-streams'></a><br/><br/><br/>
 
 ## How to Push Multiple Streams
 
@@ -188,8 +164,6 @@ and playback name:
 ![](/img/page-2023-03-04-03.png)
 
 > Note: Of course, the playback must also be changed to the corresponding stream name.
-
-<a name='multiple-instances'></a><br/><br/><br/>
 
 ## How to Run Multiple Instances
 
@@ -248,19 +222,16 @@ Other protocol ports should also be changed accordingly, such as HLS:
 Of course, this doesn't mean you can start thousands of SRS Stacks. You should pay attention to your CPU 
 and memory, as well as whether your machine has enough bandwidth.
 
-<a name="https"></a><br/><br/><br/>
-
 ## How to Set up Free HTTPS
 
 SRS Stack supports applying for free HTTPS certificates, and you can apply for certificates for multiple
 domain names and automatically renew them. For example, the certificates for the following HTTPS websites 
 are all automatically applied after running SRS Stack:
 
-* https://ossrs.io SRS's overseas documentation website.
-* https://www.ossrs.io SRS's overseas documentation website.
-* https://r.ossrs.net SRS's stable version demo server.
+* https://ossrs.io SRS's global documentation website.
+* https://ossrs.net SRS's official website in China.
 
-The operation is very simple, just follow these three steps, please see [here](https://ossrs.net/lts/blog/2022/04/12/SRS-Stack-HTTPS):
+The operation is very simple, just follow these three steps, please see [here](/blog/2022/04/12/SRS-Stack-HTTPS):
 
 1. Purchase a domain name and complete the filing. You must have your own legal domain name, otherwise, you cannot apply for a certificate.
 2. Resolve the domain name to the public IP of SRS Stack. You can add multiple domain names to resolve, for example, `ossrs.io` and `www.ossrs.io` are both resolved to the same SRS Stack server.
@@ -287,8 +258,6 @@ docker run --restart always -d -it --name srs-stack -v $HOME/data:/data \
 
 After the application is successful, enter https plus your domain name in the browser, and you can 
 access your website.
-
-<a name="virtual-live-server-file"></a><br/><br/><br/>
 
 ## How to Use Server File for Virtual Live Events
 
@@ -317,8 +286,6 @@ docker exec -it srs-stack ls -lh /data/my-upload/my-file.mp4
 If it indicates that the file exists, you can use this file in SRS Stack's Virtual Live Events. If not, 
 please check whether the path was mapped correctly when starting Docker.
 
-<a name="update-publish-secret"></a><br/><br/><br/>
-
 ## How to Modify the Push Authentication Key
 
 If you need to update the push authentication key or change the push key, you can follow these steps:
@@ -334,8 +301,6 @@ As shown in the picture below:
 ![](/img/page-2023-03-04-04.png)
 
 If you need to disable push authentication, please refer to the instructions below.
-
-<a name="no-publish-auth"></a><br/><br/><br/>
 
 ## How to Disable Push Authentication
 
@@ -354,8 +319,6 @@ as: `rtmp://ip/live/xxx`.
 
 This way, there is security, and it can support devices that do not support special characters. In addition, 
 the push key can be changed, so you can change it to the way you want.
-
-<a name="update-dvr-directory"></a><br/><br/><br/>
 
 ## How to Change the Recording Directory
 
@@ -382,9 +345,7 @@ Important: If you want to use cloud storage like S3, do not use the mounting met
 writes may cause the cloud storage to hang and become inaccessible. Instead, use the file copying method. For 
 more information, please refer to [How to Record to S3 Cloud Storage](#dvr-s3-cloud-storage).
 
-<a name="dvr-continue-when-unpublish"></a><br/><br/><br/>
-
-## Recording Doesn't Stop When the Stream is Stopped
+## Recording Does Not Stop When the Stream is Stopped
 
 Why the recording doesn't stop immediately when the stream is stopped, but instead waits for a certain 
 period before stopping.
@@ -395,8 +356,6 @@ recording, it's okay to stop the recording as well. This will only generate one 
 Some broadcasters experience interruptions during live streaming. For instance, if there's a 30-second pause 
 in between a 5-minute stream, stopping the recording at the pause will create multiple files. This situation 
 poses a problem.
-
-<a name="dvr-fastly-generate"></a><br/><br/><br/>
 
 ## How to Quickly Generate a Recorded File
 
@@ -415,8 +374,6 @@ will stop the stream and request the end of the recording task.
 > Note: Requesting the end of the recording task is an asynchronous interface. The recorded file will not be 
 > generated immediately after the call, as processing live slices takes time. Wait for a certain period before 
 > the final recorded file is generated, based on the callback event.
-
-<a name="dvr-s3-cloud-storage"></a><br/><br/><br/>
 
 ## How to Record to S3 Cloud Storage
 
@@ -455,8 +412,6 @@ Please note that it is essential to mount the directory under the `/data` subdir
 access it properly. If you can only mount to other directories, it is recommended to use Docker to start 
 SRS Stack and specify `-v /your-host-dir:/data/srs-s3-bucket`, allowing SRS Stack to access the files.
 
-<a name="dvr-specific-streams"></a><br/><br/><br/>
-
 ## How to Record a Specific Stream
 
 How to record according to specific rules, how to record a particular stream?
@@ -470,8 +425,6 @@ as `/live/livestream` and `/live/show`, but not `/other/livestream`.
 It is possible to modify Glob Filters even after initiating the recording, without restart the recording 
 process. You can establish the filter even if the stream is already being published. The updated filters 
 will be applied to new segments of the stream.
-
-<a name="unavailable"></a><br/><br/><br/>
 
 ## Unavailable After Installation
 
@@ -489,8 +442,6 @@ Or Redis is not ready, such as:
 
 This is because it takes time for SRS Stack to start after installation. Refresh the page after waiting
 for 3 to 5 minutes.
-
-<a name="restream-vs-obs"></a><br/><br/><br/>
 
 ## Difference Between SRS Restream and OBS Restream
 
@@ -536,8 +487,6 @@ Downstream/download bandwidth is generally more guaranteed. Moreover, between SR
 they are all BGP bandwidth between servers, which is more guaranteed in quality than the home-to-platform 
 connection.
 
-<a name="restream-custom"></a><br/><br/><br/>
-
 ## How SRS Restreams to Custom Platforms
 
 SRS's multi-platform restreaming can push to custom live streaming platforms, such as pushing to the 
@@ -560,8 +509,6 @@ Then, you can split it into:
 
 > Note: The part after the last slash is the stream key.
 
-<a name="virtual-live-bitrate"></a><br/><br/><br/>
-
 ## Why and how to limit the bitrate of virtual live events
 
 Why and how to limit the bitrate of virtual live events? Many users use 7x24 virtual live events, and exceed 
@@ -571,8 +518,6 @@ to prevent exceeding the traffic limit.
 
 By default, for virtual live events, SRS Stack limits the input bitrate to 5Mbps, you can change the limits 
 from `System > Limits > Set Limits` to set a higher limits.
-
-<a name="use-custom-ffmpeg"></a><br/><br/><br/>
 
 ## How to Replace FFmpeg
 
@@ -587,9 +532,7 @@ You can use the command `which ffmpeg` to find the path of your FFmpeg.
 
 > Note: Non-Docker versions are not supported.
 
-<a name='install-speedup'></a><br/><br/><br/>
-
-## aaPanel Installation of SRS is Very Slow
+## Installation of SRS is Very Slow
 
 Some users have reported that overseas Baota installations are very slow, and accessing Alibaba 
 Cloud's mirror is too slow.
@@ -601,11 +544,9 @@ The overseas version of Baota is called [aaPanel](https://aapanel.com). Please u
 installs software quickly, and SRS Stack will also switch to overseas mirror downloads.
 
 Baota and aaPanel only have different installation methods, but the specific usage is the same. Please
-refer to [Baota](https://ossrs.net/lts/zh-cn/blog/BT-aaPanel) or [aaPanel](https://blog.ossrs.io/how-to-setup-a-video-streaming-service-by-aapanel-9748ae754c8c).
+refer to [Baota](/blog/BT-aaPanel) or [aaPanel](https://blog.ossrs.io/how-to-setup-a-video-streaming-service-by-aapanel-9748ae754c8c).
 
-<a name="bt-install-manually"></a><br/><br/><br/>
-
-## How to Install the Latest SRS Stack in aaPanel
+## How to Install the Latest SRS Stack
 
 Sometimes the version in the Baota store is older, and you can manually install the Baota plugin 
 to install the latest plugin.
@@ -616,115 +557,19 @@ and the `aapanel-srs_stack.zip` attachment in each version can be downloaded as 
 After downloading the plugin, you can go to Baota `Software Store > Third-Party Applications > Import Plugin` 
 and upload the downloaded `aapanel-srs_stack.zip` to install.
 
-<a name="bt-centos7-error"></a><br/><br/><br/>
+## CentOS7 Installation Failed
 
-## aaPanel CentOS7 Installation Failed
-
-> Note: Ubuntu 20 (Focal) is highly recommend, please don't use CentOS.
-
-Common errors for CentOS7 aaPanel installation failure are:
-
-* GLIBC version issue: ```version `GLIBC_2.27' not found```
-* Directory not found: ```ln: failed to access '/www/server/nvm/versions/node/v18.12.1/bin/node'```
-
-These are all due to problems with nodejs on CentOS7. Generally, after installing pm2, nodejs18 is
-installed, which depends on a higher version of libc, so it cannot be used.
-
-Solution:
-
-* Upgrade to SRS Stack v4.6.3+ and manually install the latest version. Refer to [How to Install the Latest SRS Stack on aaPanel](#bt-install-manually)
-* Open pm2 and switch to nodejs 16, which can also bypass this problem.
-
-> Note: SRS Stack v4.6.3+ no longer requires pm2 to install nodejs. As long as the system has nodejs, 
-> it can be used. You can choose to install it with the nodejs manager, or with pm2, or you can install it yourself.
-
-Finally, if it is still not available after successful installation, you can try restarting the system.
-
-<a name="rules"></a><br/><br/><br/>
-
-## How to Implement the Requirements or Features
-
-The plan and milestone can be found [here](https://github.com/orgs/ossrs/projects/2/views/4).
-
-If you like additional support from us. By becoming a sponsor or backer of SRS, we can provide you with the support you need:
-* Backer: $5 per month, online text chat support through Discord.
-* Sponsor: $100 per month, online text chat plus online meeting support.
-
-Please visit [OpenCollective](https://opencollective.com/srs-server) to become a backer or sponsor, and send me a direct message on Discord.
-
-We at SRS aim to establish a non-profit, open-source community that assists developers worldwide in creating your own high-quality streaming and RTC platforms to support your businesses.
-
-<a name="can-not-replay"></a><br/><br/><br/>
-
-## Unable to Achieve the Desired Effect
-
-If the expected effect is not achieved, such as high latency or failure to push and pull streams, the 
-following methods can solve all problems:
-
-```
-Don't change a word, follow the video tutorial and application scenario guidance, mouse operation 
-copy and paste, it will definitely work well!
-```
-
-Because the only reason everyone has problems is that they think audio and video are simple and make
-random changes!
-
-<a name="diff-srs"></a><br/><br/><br/>
+CentOS 7, due to being outdated, has many issues. It is recommended to use the Ubuntu 20 system.
 
 ## The Difference Between SRS Stack and SRS
 
-[SRS](https://github.com/ossrs/srs) is an open-source server, a streaming media server, which generally 
-works with FFmpeg and WebRTC clients to achieve audio and video capabilities. Please see [this diagram](https://github.com/ossrs/srs#srssimple-realtime-server) 
-to understand what SRS is.
+SRS is the media engine of SRS Stack, for detail difference please see 
+[Compare to SRS](/docs/v6/doc/getting-started-stack#compare-to-srs).
 
-SRS Stack is an audio and video solution that is based on SRS, Nodejs, REACT, etc. to implement common 
-audio and video scenarios. Please see [this diagram](https://github.com/ossrs/srs-stack#architecture) 
-to understand what SRS Stack is.
+## Low Latency HLS
 
-After SRS is installed, it opens a streaming media server demo page with links to the player and console; 
-after SRS Stack is installed, it opens a login management backend that provides guidance for many different
-scenarios.
-
-If you need to study the streaming media server in detail, please follow the SRS documentation and join 
-the SRS community, and do not ask in the SRS Stack group. SRS is an open-source audio and video server, 
-aimed at highly skilled C/C++ programmers, and you can modify it at will, with strong customization 
-capabilities.
-
-If you want an out-of-the-box audio and video platform that can be used online, please use SRS Stack and 
-do not ask in the SRS community. The meaning of SRS Stack is SRS in the cloud. It is a cloud-based service
-aimed at users who do not need to understand the details of audio and video and can operate according to 
-the tutorial.
-
-Both are open-source projects, and contributions are welcome.
-
-<a name="diff-baota"></a><br/><br/><br/>
-
-## The Difference with aaPanel
-
-aaPanel is a virtual machine management tool, and SRS Stack Server is an out-of-the-box audio and video
-solution. aaPanel can also install SRS Stack, please refer to [supported platforms](#support-platform).
-
-> Note: The overseas version of Baota is called aaPanel, which also supports SRS Stack; if your machine 
-> is overseas, please do not use Baota, but use aaPanel; everyone uses different installation sources,
-> and using Baota overseas may be very slow or even fail.
-
-<a name="diff-vcloud"></a><br/><br/><br/>
-
-## The Difference with Video Cloud
-
-Video Cloud is a large-scale service scenario, such as cloud live broadcasting, TRTC, IM, cloud on-demand,
-CDN, Tencent Meeting or ZOOM, which are all super-large-scale systems.
-
-SRS Stack Server puts all these systems in a single `Lighthouse/CVM/Droplet/aaPanel` cloud server, so it
-is mainly comprehensive, but the concurrency and scale are very small, only suitable for small and micro
-scenarios, quickly building applications to achieve business, understanding and learning new scenarios, 
-and can run and slowly see how to implement.
-
-Of course, in the future, SRS Stack Server will also support migration to mature video cloud services,
-allowing everyone to quickly meet business requirements while also getting scalable support as the 
-business grows.
-
-<a name="openapi"></a><br/><br/><br/>
+How to decrease HLS latency, how to achieve 5-second HLS low latency, see 
+[Unlock Universal Ultra-Low Latency: Achieving 5-Second HLS Live Streams for All, No Special Equipment Needed](/blog/hls-5s-low-latency)
 
 ## OpenAPI
 
@@ -735,34 +580,9 @@ Network panel for specific requests.
 
 All operations that can be completed on the SRS Stack page can be completed through OpenAPI.
 
-<a name='features'></a><br/><br/><br/>
-
-## Features
-
-SRS Stack (i.e., SRS Stack Server) is an open-source solution implemented in nodejs, with the code
-in [srs-stack](https://github.com/ossrs/srs-stack). Everyone is welcome to join.
-
-SRS Stack Server is aimed at mouse programming, allowing everyone to do audio and video business. 
-It is suitable for those who do not understand audio and video, those who understand audio and video,
-those who farm, those who pull network cables, those who cut movies, those who carry cameras, those 
-who dance, those who sing, those who sell second-hand goods, those who exchange open-source projects,
-those who live on multiple platforms, those who build their own source stations, those who can use 
-computers and have WeChat, and those who are law-abiding citizens.
-
-For instructions on using SRS Stack, please refer to the video [SRS Stack Server: Getting Started, Purchasing, and Introduction](https://www.bilibili.com/video/BV1844y1L7dL/).
-
-Currently, the scenarios and functions supported by SRS Stack, see [Features](https://github.com/ossrs/srs-stack#features).
-
-Welcome to join the group to discuss the use of SRS Stack. All these SRS peripheral services are 
-open-source and can be customized and deployed by yourself.
-
-<a name='http-callback'></a><br/><br/><br/>
-
 ## HTTP Callback
 
 See [HTTP Callback](/docs/v6/doc/getting-started-stack#http-callback)
-
-<a name='changelog'></a><br/><br/><br/>
 
 ## Changelog
 
