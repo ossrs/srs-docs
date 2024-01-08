@@ -476,7 +476,7 @@ CentOS7由于年久失修，有很多问题，推荐使用Ubuntu20系统。
 
 ## The Difference Between SRS Stack and SRS
 
-SRS是SRS Stack的媒体引擎，详细差异请查看[与SRS比较](/zh-cn/docs/v6/doc/getting-started-stack#compare-to-srs)。
+SRS是SRS Stack的媒体引擎，详细差异请查看[与SRS比较](/docs/v6/doc/getting-started-stack#compare-to-srs)。
 
 ## Low Latency HLS
 
