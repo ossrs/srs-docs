@@ -67,7 +67,7 @@ The Docker startup specifies the version, such as `ossrs/srs-stack:v1.0.293`, an
 the container and start with the new version, such as `ossrs/srs-stack:v1.0.299`.
 
 If you use `ossrs/srs-stack:1`, it is the latest version, and you need to update manually, such as 
-`docker pull ossrs/srs-stack:1`.
+`docker pull ossrs/srs-stack:1` then remove and restart the container.
 
 If you use aaPanel panel, just delete the application and reinstall the new version, the data is saved in the 
 `/data` directory and will not be lost.

@@ -63,7 +63,7 @@ Docker启动时会指定版本，比如`registry.cn-hangzhou.aliyuncs.com/ossrs/
 版本启动即可，比如`registry.cn-hangzhou.aliyuncs.com/ossrs/srs-stack:v1.0.299`。
 
 如果使用`registry.cn-hangzhou.aliyuncs.com/ossrs/srs-stack:1`则是用最新的版本，则需要手动更新，
-比如`docker pull registry.cn-hangzhou.aliyuncs.com/ossrs/srs-stack:1`。
+比如`docker pull registry.cn-hangzhou.aliyuncs.com/ossrs/srs-stack:1`，然后删除和重启容器。
 
 如果使用宝塔，则删除应用后重装新版本即可，数据是保存在`/data`目录，不会丢失。
 
