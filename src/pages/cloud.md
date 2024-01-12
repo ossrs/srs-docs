@@ -27,6 +27,16 @@ For any inquiries, join our [Discord](https://discord.gg/DCCH6HyhuT) community a
 <br/>
 <br/>
 
+## SRS Cloud Service
+
+We will be launching the cloud version of SRS and SRS Stack, as well as the customized enterprise version.
+Please stay tuned.
+
+<br/>
+<br/>
+<br/>
+<br/>
+
 ## Community Support Service
 
 Would you like additional assistance from us? By becoming a sponsor or backer of SRS, we can provide you with the
@@ -42,16 +52,6 @@ https://opencollective.com/srs-server
 SRS is a non-profit community made up of dedicated volunteers who strive to offer enhanced support to sponsors
 and backers. Although you can also turn to the community for assistance, please be aware that response times might
 not be as quick as desired.
-
-<br/>
-<br/>
-<br/>
-<br/>
-
-## SRS Cloud Service
-
-We will be launching the cloud version of SRS and SRS Stack, as well as the customized enterprise version. 
-Please stay tuned.
 
 <br/>
 <br/>

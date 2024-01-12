@@ -22,6 +22,15 @@ SRS云服务目前只支持海外区域，中国区域正在建设中了，请�
 <br/>
 <br/>
 
+## SRS Cloud Service
+
+我们将上线SRS和SRS Stack的Cloud版本，以及Enterprise定制版本，敬请期待。
+
+<br/>
+<br/>
+<br/>
+<br/>
+
 ## Community Support Service
 
 浦大喜奔，SRS终于有付费支持了，可以更好的服务深度开发者，以及在线上使用SRS的用户！
@@ -37,15 +46,6 @@ SRS付费星球，会给付费用户更多的时间和支持，会优先回答�
 > Note: 加入星球后，请在星球上提问。
 
 详细说明，请进入SRS公众号，点击菜单栏，选择`加群 > 付费支持`。
-
-<br/>
-<br/>
-<br/>
-<br/>
-
-## SRS Cloud Service
-
-我们将上线SRS和SRS Stack的Cloud版本，以及Enterprise定制版本，敬请期待。
 
 <br/>
 <br/>
