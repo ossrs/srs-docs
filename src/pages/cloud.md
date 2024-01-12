@@ -48,9 +48,10 @@ not be as quick as desired.
 <br/>
 <br/>
 
-## Others
+## SRS Cloud Service
 
-On the way...
+We will be launching the cloud version of SRS and SRS Stack, as well as the customized enterprise version. 
+Please stay tuned.
 
 <br/>
 <br/>
@@ -59,7 +60,11 @@ On the way...
 
 ## About
 
-On the way...
+At SRS, our goal is to establish a non-profit, open-source community dedicated to creating an all-in-one,
+out-of-the-box, open-source video solution for live streaming and WebRTC online services.
+
+We also offer cloud services for those who prefer to use cloud service instead of building from scratch.
+Please choose the cloud service that best suits your needs.
 
 <br/>
 <br/>
