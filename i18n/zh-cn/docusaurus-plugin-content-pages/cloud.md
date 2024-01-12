@@ -9,22 +9,13 @@
 <br/>
 <br/>
 
-## Cloud Services
+## SRS Cloud Service
 
-SRS云服务目前只支持海外区域，中国区域正在建设中了，请您耐心等候哦。
+SRS云服务目前只支持海外区域，不支持中国区域哦。
 
 如果你是出海业务，或者是做海外的业务，请切换到[英文版本](https://ossrs.io/lts/en-us/cloud)。
 
-再次强调哦，在中国区域还无法使用，请您耐心等候哦。
-
-<br/>
-<br/>
-<br/>
-<br/>
-
-## SRS Cloud Service
-
-我们将上线SRS和SRS Stack的Cloud版本，以及Enterprise定制版本，敬请期待。
+再次强调哦，在中国区域还无法使用哦。
 
 <br/>
 <br/>
