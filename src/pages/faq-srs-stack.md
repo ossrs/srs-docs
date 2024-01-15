@@ -63,11 +63,23 @@ also does not support interface upgrades and needs to be upgraded manually.
 If you use HELM, and get srs-stack `1.0.1` installed, then you can upgrade by `helm upgrade srs srs/srs-stack --version 1.0.2` 
 and `helm rollback srs` if want to rollback to `1.0.1`.
 
+```bash
+helm upgrade srs srs/srs-stack --version 1.0.2
+```
+
 The Docker startup specifies the version, such as `ossrs/srs-stack:v1.0.293`, and you only need to delete 
 the container and start with the new version, such as `ossrs/srs-stack:v1.0.299`.
 
-If you use `ossrs/srs-stack:1`, it is the latest version, and you need to update manually, such as 
-`docker pull ossrs/srs-stack:1` then remove and restart the container.
+If you use `ossrs/srs-stack:5`, it is the latest version, and you need to update manually, such as 
+`docker pull ossrs/srs-stack:5` then remove and restart the container.
+
+```bash
+docker rm srs-stack
+docker pull ossrs/srs-stack:5
+docker run --restart always -d -it --name srs-stack -v $HOME/data:/data \
+  -p 2022:2022 -p 2443:2443 -p 1935:1935 -p 8000:8000/udp -p 10080:10080/udp \
+  ossrs/srs-stack:5
+```
 
 If you use aaPanel panel, just delete the application and reinstall the new version, the data is saved in the 
 `/data` directory and will not be lost.
@@ -176,17 +188,17 @@ instances that don't affect each other and utilize the machine resources.
 For example, start two instances listening on ports 2022 and 2023, and use different ports for streaming media:
 
 ```bash
-docker run --rm -it -p 2022:2022 -p 1935:1935 \
-  -p 8000:8000/udp -p 10080:10080/udp --name srs-stack \
-  -v $HOME/data0:/data ossrs/srs-stack:5
+docker run --restart always -d -it --name srs-stack0 -it -v $HOME/data0:/data \
+  -p 2022:2022 -p 1935:1935 -p 8000:8000/udp -p 10080:10080/udp \
+  ossrs/srs-stack:5
 ```
 
 Then, open [http://localhost:2022](http://localhost:2022) to log in to the backend.
 
 ```bash
-docker run --rm -it -p 2023:2022 -p 1936:1935 \
-  -p 8001:8000/udp -p 10081:10080/udp --name srs-stack1 \
-  -v $HOME/data1:/data ossrs/srs-stack:5
+docker run --restart always -d -it --name srs-stack1 -it -v $HOME/data1:/data \
+  -p 2023:2022 -p 1936:1935 -p 8001:8000/udp -p 10081:10080/udp \
+  ossrs/srs-stack:5
 ```
 
 Then, open [http://localhost:2023](http://localhost:2023) to log in to the backend.
@@ -199,10 +211,10 @@ the docker, this doesn't cause any issues. You can still publish to each stack u
 However, you can setup the exposed ports:
 
 ```bash
-docker run --rm -it -p 2023:2022 -p 1936:1935 \
-  -p 8001:8000/udp -p 10081:10080/udp --name srs-stack1 \
+docker run --restart always -d -it --name srs-stack1 -it -v $HOME/data1:/data \
+  -p 2023:2022 -p 1936:1935 -p 8001:8000/udp -p 10081:10080/udp \
   -e HTTP_PORT=2023 -e RTMP_PORT=1936 -e RTC_PORT=8001 -e SRT_PORT=10081 \
-  -v $HOME/data1:/data ossrs/srs-stack:5
+  ossrs/srs-stack:5
 ```
 
 If you only need multi-platform streaming or virtual streaming without involving the push stream port, 
