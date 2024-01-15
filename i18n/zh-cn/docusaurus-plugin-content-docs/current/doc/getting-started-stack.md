@@ -83,20 +83,21 @@ SRS Stack支持AWS Lightsail，这是AWS提供的一种虚拟专用服务器（V
 在比较SRS Stack和SRS时，两者都提供相似级别的媒体流功能。然而，SRS Stack为终端用户提供了更强大且功能丰富的体验，
 无需编写任何代码。用户可以直接使用SRS Stack满足您的媒体服务需求。
 
-| 比较       | SRS | SRS Stack      | 说明                            |
-|----------|------|----------|-------------------------------|
-| 许可证      | MIT | AGPL-3.0-or-later      | SRS是MIT，而SRS Stack是AGPL-3.0-or-later。          |
-| 直播流      | 是    | 是        | 两者都支持RTMP，HLS和HTTP-FLV协议。     |
-| WebRTC   | 是    | 是        | 两者都支持WebRTC。                  |
-| Auto HTTPS  | Yes   | No      | SRS Stack自动申请和更新HTTPS证书.              |
-| 控制台      | 增强   | HTTP API | SRS Stack提供了更强大的控制台。          |
-| 身份验证     | 是    | HTTP回调   | SRS Stack具有内置身份验证，而SRS使用回调。   |
-| DVR      | 增强   | 基于文件     | SRS Stack支持将DVR存储到文件和云存储。     |
-| 转发       | 增强   | 基本       | SRS Stack可以通过各种协议转发到多个平台。     |
-| 虚拟直播     | 是    | 否        | SRS Stack提供了先进的虚拟直播功能。        |
-| WordPress | 是    | 否        | SRS Stack提供了WordPress插件和操作指南。 |
-| 转码        | 是 | 否 | SRS Stack提供了直播转码的能力。                  |
-| AI字幕      | Yes       | No     | 自动识别直播语音并转为字幕，叠加到视频                   |
+| 比较         | SRS Stack         | SRS      | 说明                                    |
+|------------|-------------------|----------|---------------------------------------|
+| 许可证        | AGPL-3.0-or-later | MIT      | SRS是MIT，而SRS Stack是AGPL-3.0-or-later。 |
+| 直播流        | Yes               | Yes      | 两者都支持RTMP，HLS和HTTP-FLV协议。             |
+| WebRTC     | Yes               | Yes      | 两者都支持WebRTC。                          |
+| Auto HTTPS | Yes               | No       | SRS Stack自动申请和更新HTTPS证书.              |
+| 控制台        | 增强                | HTTP API | SRS Stack提供了更强大的控制台。                  |
+| 身份验证       | Yes               | HTTP回调   | SRS Stack具有内置身份验证，而SRS使用回调。           |
+| DVR        | 增强                | 基于文件     | SRS Stack支持将DVR存储到文件和云存储。             |
+| 转发         | 增强                | 基本       | SRS Stack可以通过各种协议转发到多个平台。             |
+| 虚拟直播       | Yes               | No       | SRS Stack提供了先进的虚拟直播功能。                |
+| WordPress  | Yes               | No       | SRS Stack提供了WordPress插件和操作指南。         |
+| 转码         | Yes               | No       | SRS Stack提供了直播转码的能力。                  |
+| AI字幕       | Yes               | No       | 自动识别直播语音并转为字幕，叠加到视频                   |
+| 直播间        | Yes               | No       | 直播间的鉴权和业务功能                           |
 
 ### Streaming and Authentication
 
