@@ -163,9 +163,41 @@ All the actions user can do in the web, can be also done by HTTP API. You can op
 get the Bearer token and try the HTTP API.
 
 You can click the button on the web to request a HTTP API, you can also use the curl or js code to request the
-HTTP API. Please follow the instructions on the web.
+HTTP API. Please follow the instructions on the web, for example, use curl to request the HTTP API:
 
-Note that the web may use JWT token, but you can also use Bearer token to request the HTTP API.
+```bash
+curl http://localhost:2022/terraform/v1/mgmt/versions
+```
+
+Or with the Bearer token:
+
+```bash
+curl http://localhost:2022/terraform/v1/hooks/srs/secret/query \
+  -X POST -H 'Authorization: Bearer xxxxxx' \
+  -H 'Content-Type: application/json' --data '{}'
+```
+
+> Note: You can open the `System > OpenAPI` to get the Bearer token and try the HTTP API.
+
+> Note: The web may use JWT token, but you can also use Bearer token to request the HTTP API.
+
+SRS Stack also proxy the [SRS HTTP API](./http-api.md), which prefix with `/api/v1/` such as:
+
+```bash
+curl http://localhost:2022/api/v1/versions
+```
+
+Or with the Bearer token:
+
+```bash
+curl http://localhost:2022/api/v1/vhosts/ \
+  -X GET -H 'Authorization: Bearer xxxxxx' \
+  -H 'Content-Type: application/json'
+```
+
+> Note: You can open the `System > OpenAPI` to get the Bearer token and try the HTTP API.
+
+Please read the detail about the API from the [SRS HTTP API](./http-api.md).
 
 ## HTTP Callback
 

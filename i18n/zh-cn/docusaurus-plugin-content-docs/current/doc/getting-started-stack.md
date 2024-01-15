@@ -149,11 +149,45 @@ SRS Stack支持对实时流进行转码，以降低比特率、节省带宽和�
 
 ## HTTP API
 
-用户在网页上可以执行的所有操作，也可以通过HTTP API完成。您可以打开`系统配置 > OpenAPI`以获取Bearer令牌并尝试使用HTTP API。
+用户在网页上可以执行的所有操作，也可以通过HTTP API执行。你可以打开`系统配置 > OpenAPI`来
+获取Bearer鉴权并尝试HTTP API。
 
-您可以点击网页上的按钮来请求HTTP API，也可以使用curl或js代码来请求HTTP API。请按照网页上的说明操作。
+你可以点击网页上的按钮请求HTTP API，也可以使用curl或js代码请求
+HTTP API。请按照网页上的说明操作，例如，使用curl请求HTTP API：
 
-请注意，网页可能使用JWT令牌，但您也可以使用Bearer令牌来请求HTTP API。
+```bash
+curl http://localhost:2022/terraform/v1/mgmt/versions
+```
+
+或使用Bearer鉴权：
+
+```bash
+curl http://localhost:2022/terraform/v1/hooks/srs/secret/query \
+  -X POST -H 'Authorization: Bearer xxxxxx' \
+  -H 'Content-Type: application/json' --data '{}'
+```
+
+> Note: 你可以打开`系统配置 > OpenAPI`来获取Bearer鉴权并尝试HTTP API。
+
+> Note：网页可能使用JWT鉴权，但您也可以使用Bearer鉴权请求HTTP API。
+
+SRS Stack还代理了[SRS HTTP API](./http-api.md)，前缀为`/api/v1/`，例如：
+
+```bash
+curl http://localhost:2022/api/v1/versions
+```
+
+或使用Bearer鉴权：
+
+```bash
+curl http://localhost:2022/api/v1/vhosts/ \
+  -X GET -H 'Authorization: Bearer xxxxxx' \
+  -H 'Content-Type: application/json'
+```
+
+> Note: 你可以打开`系统配置 > OpenAPI`来获取Bearer鉴权并尝试HTTP API。
+
+请阅读[SRS HTTP API](./http-api.md)了解API的详细信息。
 
 ## HTTP Callback
 
