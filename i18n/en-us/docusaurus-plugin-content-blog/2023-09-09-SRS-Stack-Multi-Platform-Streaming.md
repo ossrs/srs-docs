@@ -14,7 +14,7 @@ In today's digital world, live streaming has become an essential tool for busine
 
 SRS Stack is a powerful and easy-to-use solution that allows you to live stream to multiple platforms with just a few clicks. It also enables you to stream to your own platform or even set up an intranet live stream within your company. Let's dive into the steps to set up live streaming on multiple platforms using SRS Stack.
 
-### Step 1: Create SRS Stack by one click
+### Step 1: Create SRS Stack by One Click
 
 Creating an SRS Stack is simple and can be done with just one click if you use Digital Ocean droplet.
 Please see [How to Setup a Video Streaming Service by 1-Click](./2022-04-09-SRS-Stack-Tutorial.md) for detail.

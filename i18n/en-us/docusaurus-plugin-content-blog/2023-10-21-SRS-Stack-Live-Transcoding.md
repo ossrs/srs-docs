@@ -32,7 +32,7 @@ varying internet speeds and devices.
 Stay tuned as we delve deeper into the world of live streaming transcoding, and learn how to harness the power 
 of SRS Stack to optimize your streaming experience and save costs.
 
-## Step 1: Create SRS Stack by one click
+## Step 1: Create SRS Stack by One Click
 
 Creating an SRS Stack is simple and can be done with just one click if you use Digital Ocean droplet.
 Please see [How to Setup a Video Streaming Service by 1-Click](./2022-04-09-SRS-Stack-Tutorial.md) for detail.

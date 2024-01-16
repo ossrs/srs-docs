@@ -23,7 +23,7 @@ WHIP support. Our easy-to-understand, step-by-step tutorial will empower you to 
 WHIP service, revolutionizing your online meeting and live streaming experience. Don't let technical 
 challenges hold you back any longer - dive into our guide and start streaming like a pro today!
 
-## Step 1: Create SRS Stack by one click
+## Step 1: Create SRS Stack by One Click
 
 Creating an SRS Stack is simple and can be done with just one click if you use Digital Ocean droplet.
 Please see [How to Setup a Video Streaming Service by 1-Click](./2022-04-09-SRS-Stack-Tutorial.md) for detail.

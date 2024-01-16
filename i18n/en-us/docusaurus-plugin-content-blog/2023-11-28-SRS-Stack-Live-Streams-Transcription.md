@@ -30,7 +30,7 @@ technologies with just one click.
 Join us as we step into the AI-powered future of live streaming, where accessibility and inclusivity 
 are key, making your content enjoyable and accessible to a much wider audience.
 
-## Step 1: Create SRS Stack by one click
+## Step 1: Create SRS Stack by One Click
 
 Creating an SRS Stack is simple and can be done with just one click if you use Digital Ocean droplet.
 Please see [How to Setup a Video Streaming Service by 1-Click](./2022-04-09-SRS-Stack-Tutorial.md) for detail.

@@ -25,7 +25,7 @@ custom_edit_url: null
 
 我们一起迈入以AI为动力的直播未来，其中无障碍和包容性至关重要，使您的内容更加愉快，且能触及更广泛的观众。
 
-### Step 1: Create SRS Stack by one click
+### Step 1: Create SRS Stack by One Click
 
 如果您使用腾讯云轻量服务器，只需点击一下即可创建SRS Stack。请参考 [SRS Stack - 起步、购买和入门](./2022-04-09-SRS-Stack-Tutorial.md) 这个博客。
 

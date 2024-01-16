@@ -44,7 +44,7 @@ WebRTC是理想的选择。每种技术都适用于不同的需求和内容类�
 
 让我们通过一些简单的设置步骤和点击来实现 5 秒的 HLS 延迟。
 
-## Step 1: Create SRS Stack by one click
+## Step 1: Create SRS Stack by One Click
 
 创建 SRS Stack 很简单，只需点击一下，如果您使用 Digital Ocean droplet，就可以完成。
 请参阅[如何通过 1-Click 设置视频流服务](./2022-04-09-SRS-Stack-Tutorial.md)了解详细信息。

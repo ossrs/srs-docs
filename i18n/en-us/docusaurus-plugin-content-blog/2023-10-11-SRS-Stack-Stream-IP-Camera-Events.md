@@ -27,7 +27,7 @@ IP Camera ---RTSP---> OBS or SRS Stack ---RTMP/RTMPS---> YouTube, Twitch, or Fac
 SRS Stack helps you connect multiple IP cameras and stream live to various platforms, making your live 
 streaming experience stronger.
 
-## Step 1: Create SRS Stack by one click
+## Step 1: Create SRS Stack by One Click
 
 Creating an SRS Stack is simple and can be done with just one click if you use Digital Ocean droplet.
 Please see [How to Setup a Video Streaming Service by 1-Click](./2022-04-09-SRS-Stack-Tutorial.md) for detail.
@@ -44,10 +44,20 @@ After creating the SRS Stack, you can access it through `http://your-server-ip/m
 
 ## Step 2: Pull RTSP Stream from IP Camera
 
-Once you've created your SRS Stack, open the dashboard and navigate to `Scenarios > VirtualLive > YouTube`. 
-Click on `Forward stream`, input the RTSP url, and then click `Submit`.
+Once you've created your SRS Stack, open the dashboard and navigate to `Scenarios > Camera > YouTube`. 
+Click on `Live Stream Source`, input the RTSP url, and then click `Submit`.
 
 ![](/img/blog-2023-10-11-01.png)
+
+## Step 2.1: (Optional) Enable Extra Silent Audio Track
+
+If your camera only provides a video stream, you should enable an additional silent audio track, 
+otherwise, publishing to live platforms like YouTube will fail. SRS Stack can automatically generate 
+a silent audio track for you. Please choose the `Silent Audio Stream` option.
+
+![](/img/blog-2023-10-11-14.png)
+
+SRS Stack will automatically generate a silent audio track, when forwarding the RTSP stream.
 
 ## Step 3: Stream IP Camera to YouTube
 
@@ -55,7 +65,7 @@ To stream your file to YouTube, copy the Stream URL and Stream key from your You
 
 ![](/img/blog-2023-10-11-02.png)
 
-Open the SRS Stack dashboard and click on `Scenarios > VirtualLive > YouTube`. And click `Start Virtual Live` in SRS Stack.
+Open the SRS Stack dashboard and click on `Scenarios > Camera > YouTube`. And click `Start Camera Live` in SRS Stack.
 
 ![](/img/blog-2023-10-11-03.png)
 
@@ -63,9 +73,9 @@ Your stream will now be published on YouTube.
 
 ![](/img/blog-2023-10-11-04.png)
 
-## Step 4: Check virtual live status
+## Step 4: Check Camera Live Status
 
-To monitor the status of your virtual live event, simply check the dashboard. You'll be able to see the status of all your virtual live events, ensuring that everything is running smoothly.
+To monitor the status of your camera live event, simply check the dashboard. You'll be able to see the status of all your camera live events, ensuring that everything is running smoothly.
 
 ![](/img/blog-2023-10-11-05.png)
 
@@ -76,7 +86,7 @@ Twitch [Dashboard](https://www.twitch.tv/dashboard/settings) under `Settings > S
 
 ![](/img/blog-2023-10-11-06.png)
 
-Open the SRS Stack dashboard and click on `Scenarios > VirtualLive > Twitch`. Click `Start Virtual Live` in SRS Stack.
+Open the SRS Stack dashboard and click on `Scenarios > Camera > Twitch`. Click `Start Camera Live` in SRS Stack.
 
 ![](/img/blog-2023-10-11-07.png)
 
@@ -94,7 +104,7 @@ then click `Go live`, and select `Streaming software`.
 
 ![](/img/blog-2023-10-11-10.png)
 
-Open the SRS Stack dashboard and click on `Scenarios > VirtualLive > Facebook`. Click `Start Virtual Live` in SRS Stack, and your stream will be published on Facebook.
+Open the SRS Stack dashboard and click on `Scenarios > Camera > Facebook`. Click `Start Camera Live` in SRS Stack, and your stream will be published on Facebook.
 
 ![](/img/blog-2023-10-11-11.png)
 

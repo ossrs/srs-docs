@@ -53,7 +53,7 @@ latency. Common mistakes in this process include:
 
 Let's begin achieving a 5-second HLS latency with a few simple setup steps and clicks.
 
-## Step 1: Create SRS Stack by one click
+## Step 1: Create SRS Stack by One Click
 
 Creating an SRS Stack is simple and can be done with just one click if you use Digital Ocean droplet.
 Please see [How to Setup a Video Streaming Service by 1-Click](./2022-04-09-SRS-Stack-Tutorial.md) for detail.

@@ -30,7 +30,7 @@ In today's fast-paced world, virtual live events are becoming increasingly popul
 they offer. Whether it's a concert, a soccer game, or an online course, you can now create a virtual live 
 event with your video files, making them more interactive and accessible to a wider audience. 
 
-## Step 1: Create SRS Stack by one click
+## Step 1: Create SRS Stack by One Click
 
 Creating an SRS Stack is simple and can be done with just one click if you use Digital Ocean droplet.
 Please see [How to Setup a Video Streaming Service by 1-Click](./2022-04-09-SRS-Stack-Tutorial.md) for detail.

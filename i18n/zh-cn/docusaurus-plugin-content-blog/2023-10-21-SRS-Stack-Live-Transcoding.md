@@ -24,7 +24,7 @@ custom_edit_url: null
 
 请继续关注我们对直播转码世界的深入探讨，并学习如何利用 SRS Stack 的力量优化您的直播体验并节省成本。
 
-## Step 1: Create SRS Stack by one click
+## Step 1: Create SRS Stack by One Click
 
 创建 SRS Stack 很简单，只需点击一下，如果您使用 Digital Ocean droplet，就可以完成。
 请参阅[如何通过 1-Click 设置视频流服务](./2022-04-09-SRS-Stack-Tutorial.md)了解详细信息。

@@ -17,7 +17,7 @@ custom_edit_url: null
 直播流越来越受欢迎，许多内容创作者希望录制他们的直播流以供日后使用或为观众提供视频点播（VoD）内容。虽然有多种方法可以录制直播流，
 例如使用OBS，但一些嵌入式设备可能不支持录制或可能难以控制。在这种情况下，服务器端录制可能是一个更有效的解决方案。
 
-### Step 1: Create SRS Stack by one click
+### Step 1: Create SRS Stack by One Click
 
 如果您使用腾讯云轻量服务器，只需点击一下即可创建SRS Stack。请参考 [SRS Stack - 起步、购买和入门](./2022-04-09-SRS-Stack-Tutorial.md) 这个博客。
 

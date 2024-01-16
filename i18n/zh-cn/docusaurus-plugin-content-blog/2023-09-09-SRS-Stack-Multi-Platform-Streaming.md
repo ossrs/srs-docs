@@ -14,7 +14,7 @@ custom_edit_url: null
 
 SRS Stack是一种功能强大且易于使用的解决方案，只需点击几下鼠标即可在多个平台上进行直播。它还允许您将内容流式传输到自己的平台，甚至在公司内部设置内部网直播。让我们深入了解如何使用SRS Stack在多个平台上设置直播。
 
-### Step 1: Create SRS Stack by one click
+### Step 1: Create SRS Stack by One Click
 
 如果您使用腾讯云轻量服务器，只需点击一下即可创建SRS Stack。请参考 [SRS Stack - 起步、购买和入门](./2022-04-09-SRS-Stack-Tutorial.md) 这个博客。
 

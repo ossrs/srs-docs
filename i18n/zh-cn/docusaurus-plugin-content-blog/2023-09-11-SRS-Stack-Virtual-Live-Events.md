@@ -23,7 +23,7 @@ SRS Stack使您只需点击一次即可创建虚拟直播，并将其广播到�
 
 在如今快节奏的世界中，由于所提供的便利性，虚拟直播正变得越来越受欢迎。无论是音乐会、足球比赛还是在线课程，您现在都可以使用视频文件创建虚拟直播，使其更具互动性并能触及更广泛的受众。
 
-### Step 1: Create SRS Stack by one click
+### Step 1: Create SRS Stack by One Click
 
 如果您使用腾讯云轻量服务器，只需点击一下即可创建SRS Stack。请参考 [SRS Stack - 起步、购买和入门](./2022-04-09-SRS-Stack-Tutorial.md) 这个博客。
 

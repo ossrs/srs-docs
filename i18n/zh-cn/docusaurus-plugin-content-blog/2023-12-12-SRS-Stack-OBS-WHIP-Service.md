@@ -19,7 +19,7 @@ custom_edit_url: null
 加入我们，打破在线流媒体的障碍，帮助您充分利用OBS的WHIP支持。我们易于理解的、分步教程将使您能够创建一个安全高效的WHIP服务，
 彻底改变您的在线会议和直播体验。不要再让技术挑战阻碍您前进 - 深入了解我们的指南，从今天开始像专业人士一样进行流媒体！
 
-### Step 1: Create SRS Stack by one click
+### Step 1: Create SRS Stack by One Click
 
 如果您使用腾讯云轻量服务器，只需点击一下即可创建SRS Stack。请参考 [SRS Stack - 起步、购买和入门](./2022-04-09-SRS-Stack-Tutorial.md) 这个博客。
 

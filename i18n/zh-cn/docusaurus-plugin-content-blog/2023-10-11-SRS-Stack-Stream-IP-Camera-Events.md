@@ -24,7 +24,7 @@ IP Camera ---RTSP---> OBS or SRS Stack ---RTMP/RTMPS---> 视频号、B站和快�
 
 SRS Stack 可帮助您连接多个 IP 摄像头并在各种平台上进行实时直播，使您的直播体验更加强大。
 
-### Step 1: Create SRS Stack by one click
+### Step 1: Create SRS Stack by One Click
 
 如果您使用腾讯云轻量服务器，只需点击一下即可创建SRS Stack。请参考 [SRS Stack - 起步、购买和入门](./2022-04-09-SRS-Stack-Tutorial.md) 这个博客。
 
@@ -43,6 +43,15 @@ docker run --rm -it -p 80:2022 -p 443:2443 -p 1935:1935 \
 创建SRS Stack后，打开后台，点击`应用场景 > 虚拟直播 > 视频号直播`，然后点击`拉流转推`，输入RTSP流地址，然后点击`确认`。
 
 ![](/img/blog-2023-10-11-21.png)
+
+转发RTSP流时，SRS Stack会自动为您生成一个静音音轨。
+
+## Step 2.1: (Optional) Enable Extra Silent Audio Track
+
+如果您的摄像头仅提供视频流，则必须启用额外的静音音轨，否则，发布到像视频号这样的直播平台将失败。
+SRS Stack可以为您自动生成静音音轨。请选择`静音音频流`选项。
+
+![](/img/blog-2023-10-11-29.png)
 
 ## Step 3: Stream IP Camera to WeChat
 
