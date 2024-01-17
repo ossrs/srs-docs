@@ -164,8 +164,7 @@ See [Efficient Live Streaming Transcoding for Reducing Bandwidth and Saving Cost
 
 ## HTTP API
 
-All the actions user can do in the web, can be also done by HTTP API. You can open the `System > OpenAPI` to 
-get the Bearer token and try the HTTP API. 
+You can open the `System > OpenAPI` to get the Bearer token and try the HTTP API.
 
 You can click the button on the web to request a HTTP API, you can also use the curl or js code to request the 
 HTTP API. Please follow the instructions on the web, for example, use curl to request the HTTP API:
@@ -185,6 +184,10 @@ curl http://localhost:2022/terraform/v1/hooks/srs/secret/query \
 > Note: You can open the `System > OpenAPI` to get the Bearer token and try the HTTP API.
 
 > Note: The web may use JWT token, but you can also use Bearer token to request the HTTP API.
+
+In addition to the sample APIs listed on this page, users can perform all web-based actions through the 
+HTTP API. To identify the requests and responses for each API, open Google Chrome, navigate to 
+`View > Developer > Developer Tools` click on the `Network` tab, and examine the relevant API interactions.
 
 SRS Stack also proxy the [SRS HTTP API](./http-api.md), which prefix with `/api/v1/` such as:
 

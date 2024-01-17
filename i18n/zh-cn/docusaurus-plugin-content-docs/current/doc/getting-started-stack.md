@@ -149,11 +149,10 @@ SRS Stack支持对实时流进行转码，以降低比特率、节省带宽和�
 
 ## HTTP API
 
-用户在网页上可以执行的所有操作，也可以通过HTTP API执行。你可以打开`系统配置 > OpenAPI`来
-获取Bearer鉴权并尝试HTTP API。
+你可以打开`系统配置 > OpenAPI`来获取Bearer鉴权并尝试HTTP API。
 
-你可以点击网页上的按钮请求HTTP API，也可以使用curl或js代码请求
-HTTP API。请按照网页上的说明操作，例如，使用curl请求HTTP API：
+你可以点击网页上的按钮请求HTTP API，也可以使用curl或js代码请求HTTP API。请按照网页上的说明操作，例如，
+使用curl请求HTTP API：
 
 ```bash
 curl http://localhost:2022/terraform/v1/mgmt/versions
@@ -170,6 +169,9 @@ curl http://localhost:2022/terraform/v1/hooks/srs/secret/query \
 > Note: 你可以打开`系统配置 > OpenAPI`来获取Bearer鉴权并尝试HTTP API。
 
 > Note：网页可能使用JWT鉴权，但您也可以使用Bearer鉴权请求HTTP API。
+
+除了页面列出的示例API之外，所有后台页面上的操作，你都可以通过HTTP API实现。要知道每个API的请求和响应，请打开谷歌Chrome，
+导航至`视图 > 开发人员 > 开发者工具`，点击`网络`选项卡，然后检查相关的API交互。
 
 SRS Stack还代理了[SRS HTTP API](./http-api.md)，前缀为`/api/v1/`，例如：
 

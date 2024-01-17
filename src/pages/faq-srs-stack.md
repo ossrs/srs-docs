@@ -585,12 +585,7 @@ How to decrease HLS latency, how to achieve 5-second HLS low latency, see
 
 ## OpenAPI
 
-Regarding the open API, using AP to dock with SRS Stack, you can follow the guide in `System Configuration > OpenAPI`.
-
-All operations of SRS Stack are done by calling the API, and these APIs can be seen in the Chrome 
-Network panel for specific requests.
-
-All operations that can be completed on the SRS Stack page can be completed through OpenAPI.
+See [HTTP API](/docs/v6/doc/getting-started-stack#http-api)
 
 ## HTTP Callback
 

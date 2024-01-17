@@ -496,11 +496,7 @@ SRS是SRS Stack的媒体引擎，详细差异请查看[与SRS比较](/docs/v6/do
 
 ## OpenAPI
 
-关于开放API，使用AP对接SRS Stack，可以在`系统配置 > OpenAPI`中，根据引导操作。
-
-所有SRS Stack的操作，都是调用API完成，这些API可以通过Chrome的Network面板看到具体请求。
-
-凡是能在SRS Stack页面完成的操作，都可以通过OpenAPI完成。
+See [HTTP API](/docs/v6/doc/getting-started-stack#http-api)
 
 ## HTTP Callback
 
