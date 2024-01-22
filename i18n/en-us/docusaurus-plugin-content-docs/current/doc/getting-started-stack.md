@@ -162,6 +162,22 @@ live stream content to make it better.
 
 See [Efficient Live Streaming Transcoding for Reducing Bandwidth and Saving Costs](/blog/Live-Transcoding) for details.
 
+## AI Products
+
+We are implementing various AI tools and products in the SRS Stack, and here is the latest status. We will continue 
+to update this document.
+
+1. AI Transcript: Implement voice-to-text by connecting to OpenAI's Whisper, and overlay the text captions onto the live broadcast, enabling automatic subtitles for streaming.
+   * Status: Completed and available in the SRS Stack. Refer to [Creating Accessible, Multilingual Subtitles for Diverse Audiences](/blog/live-streams-transcription).
+1. Document Assistant: Connect to the AI document API, and provide an AI assistant on the official website, so users can obtain correct answers without spending time reading the documentation.
+   * Status: In development, integrating with the service from https://glimelab.ai. This capability will initially be available on the official website.
+1. Streamer Assistant: Place an AI assistant in the live stream room to help answer questions and accomplish tasks during the broadcast.
+   * Status: In testing, integrating [AI Talk](https://github.com/ossrs/ai-talk) into the live streaming room, making improvements, and perfecting the integration. This allows embedding AI into OBS within the live stream.
+1. VoD Translation: Translate English videos into Chinese for English learning or create multilingual videos, frequently used in education and e-commerce.
+   * Status: Prototype development in progress, currently researching solutions and testing user experience and results.
+
+If you are interested in our AI products, feel free to join our [Discord](https://discord.gg/yZ4BnPmHAd) server to discuss with us.
+
 ## HTTP API
 
 You can open the `System > OpenAPI` to get the Bearer token and try the HTTP API.
