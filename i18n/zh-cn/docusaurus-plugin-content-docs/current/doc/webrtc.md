@@ -152,9 +152,17 @@ vhost rtc.vhost.srs.com {
 * `rtc.twcc`：是否开启TWCC的支持，即拥塞控制的反馈机制，默认on。
 * `rtc.dtls_role`：DTLS角色，active就是DTLS Client(主动发起)，passive是DTLS Server(被动接受)。
 
-## Config: Candidate
+## Config Candidate
 
 由于`candidate`特别、特别、特别的重要，大概有1/3的朋友的问题都是这个配置不对。只要`candidate`配置不对，一定会出问题，没有其他可能，是一定会出问题。
+
+修改`candidate`的最简单方法是在URL中指定`eip`。例如，如果您的服务器是`192.168.3.10`，请使用此URL：
+
+* [http://localhost:1985/rtc/v1/whip/?app=live&stream=livestream&eip=192.168.3.10](http://localhost:8080/players/whip.html?eip=192.168.3.10)
+
+此外，修改默认UDP端口`8000`的最简单、最直接方法（尤其是在负载均衡器或代理后面时）是使用`eip`。例如，如果您使用UDP`18000`作为端口，请考虑使用此URL：
+
+* [http://localhost:1985/rtc/v1/whip/?app=live&stream=livestream&eip=192.168.3.10:18000](http://localhost:8080/players/whip.html?eip=192.168.3.10:18000)
 
 其实，`candidate`就是服务器的`候选地址`，客户端可以连接的地址`ip:port`，在SDP交换中，就有个`candidate`的信息，比如服务器回的answer可能是这样：
 
@@ -308,6 +316,10 @@ curl "http://localhost:1985/rtc/v1/whip/?ice-ufrag=6pk11386&ice-pwd=l91z529147ri
 ```
 
 > Note: 您可以将 `http://localhost` 替换为 `https://yourdomain.com` 以测试 HTTPS API。
+
+> Note: 对于SRS Stack，您应该指定secret，所以请将`/rtc/v1/whip?ice-ufrag=`更改为`/rtc/v1/whip?secret=xxx&ice-ufrag=`之类的。
+
+> Note: 你也可以使用`eip=ip`或者`eip=ip:port`，强制SRS改写candidate的配置。详细请参考 [CANDIDATE](#config-candidate) 的说明。
 
 答案包含候选项，即 UDP 服务器 IP，例如 `127.0.0.1`：
 

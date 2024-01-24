@@ -167,6 +167,17 @@ For each vhost, the configuration is `rtc` section, for example:
 
 Please note that `candidate` is essential important, and most failure is caused by wrong `candidate`, so be careful.
 
+The easiest method to modify the `candidate` involves indicating the `eip` in the URL. For instance, if your server 
+is `192.168.3.10`, utilize this URL:
+
+* [http://localhost:1985/rtc/v1/whip/?app=live&stream=livestream&eip=192.168.3.10](http://localhost:8080/players/whip.html?eip=192.168.3.10)
+
+Moreover, the easiest and most direct method to modify the default UDP port `8000`, particularly when it is 
+behind a load balancer or proxy, involves utilizing the `eip`. For example, if you employ UDP `18000` as the port, 
+consider using this URL:
+
+* [http://localhost:1985/rtc/v1/whip/?app=live&stream=livestream&eip=192.168.3.10:18000](http://localhost:8080/players/whip.html?eip=192.168.3.10:18000)
+
 As it shows, `candidate` is server IP to connect to, SRS will response it in SDP answer as `candidate`, like this one:
 
 ```bash
@@ -323,6 +334,10 @@ curl "http://localhost:1985/rtc/v1/whip/?ice-ufrag=6pk11386&ice-pwd=l91z529147ri
 ```
 
 > Note: You can replace `http://localhost` with `https://yourdomain.com` to test HTTPS API.
+
+> Note: For SRS Stack, you should specify the secret, so please change the `/rtc/v1/whip?ice-ufrag=` to `/rtc/v1/whip?secret=xxx&ice-ufrag=` as such.
+
+> Note: You can also use `eip=ip` or `eip=ip:port` to force SRS to use it as the candidate. Please see [CANDIDATE](#config-candidate) for details.
 
 The answer contains the candidate, the UDP server IP, such as `127.0.0.1`:
 
