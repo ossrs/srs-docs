@@ -10,6 +10,8 @@ import hldHdImage from "../../static/img/SRS-SingleNode-4.0-hd.png";
 import hldSdImage from "../../static/img/SRS-SingleNode-4.0-sd.png";
 import useIsBrowser from "@docusaurus/core/lib/client/exports/useIsBrowser";
 
+window.glime.init(`odGnkiPMumIMJp`, { styles: { baseFontSize: 16, theme: "dark" | "light" | "auto", hideCollapsedButton: false } });
+
 function HomepageHeader() {
   const context = useDocusaurusContext();
 
