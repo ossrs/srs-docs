@@ -23,6 +23,7 @@ const config = {
   favicon: 'img/favicon.ico',
   organizationName: 'ossrs', // Usually your GitHub org/user name.
   projectName: 'srs-docs', // Usually your repo name.
+
   presets: [
     [
       'classic',
