@@ -23,13 +23,6 @@ const config = {
   favicon: 'img/favicon.ico',
   organizationName: 'ossrs', // Usually your GitHub org/user name.
   projectName: 'srs-docs', // Usually your repo name.
-  scripts: [
-    {
-      src: "https://cdn.glimelab.ai/widget/1.0.0/widget.js",
-      onload: "window.glime.init(`odGnkiPMumIMJp`)",
-      async: true,
-    }
-  ],
   presets: [
     [
       'classic',
