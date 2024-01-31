@@ -1,6 +1,6 @@
 ---
 slug: browser-voice-driven-gpt
-title: SRS Stack - Speak to the Future - Transform Your Browser into a Personal Voice-Driven GPT AI Assistant with SRS Stack
+title: SRS Stack - 基于浏览器的语音GPT的AI助手
 authors: []
 tags: [ai, gpt, voice, srs, srs-stack, streaming]
 custom_edit_url: null
