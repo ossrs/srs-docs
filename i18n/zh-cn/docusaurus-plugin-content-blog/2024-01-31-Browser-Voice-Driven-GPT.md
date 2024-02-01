@@ -1,6 +1,6 @@
 ---
 slug: browser-voice-driven-gpt
-title: SRS Stack - 基于浏览器的语音GPT的AI助手
+title: SRS Stack - 基于浏览器的语音驱动的GPT-AI助手
 authors: []
 tags: [ai, gpt, voice, srs, srs-stack, streaming]
 custom_edit_url: null
