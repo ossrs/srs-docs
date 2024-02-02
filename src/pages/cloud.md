@@ -15,7 +15,7 @@ Please choose the cloud service that best suits your needs.
 
 ## TRTC Cloud Service
 
-For low latency live streaming and RTC(Real-Time Communication) developers, we recommend the [TRTC cloud service](https://ossrs.io/trtc/real-time-communication/NA?utm_source=Community&utm_medium=ossrs&utm_campaign=OBS-WHIP-TRTC&_channel_track_key=sueyNMbu),
+For low latency live streaming and RTC(Real-Time Communication) developers, we recommend the [TRTC cloud service](https://ossrs.io/trtc/pricing?utm_source=community&utm_medium=ossrs&utm_campaign=OBS-WHIP-TRTC&_channel_track_key=yb4mTLui),
 designed to empower developers with cutting-edge features such as global network acceleration, advanced
 congestion control algorithms, and enhanced performance on weak networks. Experience seamless integration
 with client SDKs for all platforms and enjoy a generous monthly free quota of 10,000 minutes – EVERY month!
@@ -31,19 +31,20 @@ For any inquiries, join our [Discord](https://discord.gg/DCCH6HyhuT) community a
 
 ## Community Support Service
 
-Would you like additional assistance from us? By becoming a sponsor or backer of SRS, we can provide you with the
-support you need:
+You can get help from the AI assistant by mentioning `@Glime` in the [Discord](https://discord.gg/bQUPDRqy79) 
+server. The AI assistant offers excellent responses and functions impressively.
+
+To get additional help from us, like verifying AI-generated answers or obtaining expert assistance, consider
+becoming a backer or sponsor of SRS:
 
 * Backer: $5 per month, online text chat support through Discord.
 * Sponsor: $100 per month, online text chat plus online meeting support.
 
-https://opencollective.com/srs-server
+Please visit [OpenCollective](https://opencollective.com/srs-server) to become a backer or sponsor, and send 
+us a direct message on [Discord](https://discord.gg/bQUPDRqy79).
 
-> Note: Please contact us by [Discord](https://discord.gg/yZ4BnPmHAd) after becoming a sponsor or backer.
-
-SRS is a non-profit community made up of dedicated volunteers who strive to offer enhanced support to sponsors
-and backers. Although you can also turn to the community for assistance, please be aware that response times might
-not be as quick as desired.
+We at SRS aim to establish a non-profit, open-source community that assists developers worldwide in creating 
+your own high-quality streaming and RTC platforms to support your businesses.
 
 <br/>
 <br/>
