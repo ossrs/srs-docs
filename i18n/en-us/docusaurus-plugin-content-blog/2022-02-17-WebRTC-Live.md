@@ -38,7 +38,7 @@ Does 500ms live streaming is essential? And it’s better than 1~3s solution? I 
 
 As I know, the issues for WebRTC in live streaming:
 
-1. Slow startup for user to see the first decoded picture, maybe HTTP-FLV/HLS <100ms, while WebRTC >1s.
+1. Slow startup for user to see the first decoded picture, maybe HTTP-FLV/HLS `<100ms`, while WebRTC `>1s`.
 1. Not supported by CDN, while some CDN supports HTTP-FLV, but few support WebRTC, the cost is huge(you spend more money).
 1. WebRTC needs more servers to deliver, for DTLS/SRTP encryption, QoS algorithm, UDP low performance for linux kernel. To build a WebRTC/UDP CDN, you spend more 10x money to buy servers. Please read [this post](https://github.com/ossrs/srs/blob/develop/trunk/doc/PERFORMANCE.md#performance) for more.
 1. Mobile does not works well for WebRTC, especially mobile H5. While for mobile native, why not RTMP or HTTP-FLV, it’s much much simple.
