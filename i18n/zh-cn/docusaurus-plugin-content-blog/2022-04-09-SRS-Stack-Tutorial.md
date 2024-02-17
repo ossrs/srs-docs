@@ -39,10 +39,14 @@ custom_edit_url: null
 要完成这些操作，您需要：
 
 1. 安装 OBS，按照[此处](https://obsproject.com/)的说明下载并安装 OBS。
-2. 一个虚拟专用服务器（VPS）实例，例如 [AWS Lightsail](https://lightsail.aws.amazon.com)、[DigitalOcean Droplets](https://cloud.digitalocean.com/droplets) 或其他类似服务。
+2. 一个虚拟专用服务器（VPS）实例，例如 [TencentCloud LightHouse](https://www.bilibili.com/video/BV1844y1L7dL/)、[AWS Lightsail](https://lightsail.aws.amazon.com)、[DigitalOcean Droplets](https://cloud.digitalocean.com/droplets) 或其他类似服务。
 3. 可选地，您可以选择在本地网络或个人计算机上使用 SRS Stack。确保为此目的安装了 [Docker](https://www.docker.com/)。
 
 本指南将在整个流媒体 URL 中使用占位符 `your_public_ipv4` 和 `your_domain_name`。请用您自己的 IP 地址或域名替换它们。
+
+## Step 1.0: TencentCloud LightHouse
+
+使用方式请参考 [TencentCloud LightHouse](https://www.bilibili.com/video/BV1844y1L7dL/)
 
 ## Step 1.1: Create an SRS Stack using AWS Lightsail
 

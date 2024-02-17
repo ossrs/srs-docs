@@ -316,6 +316,13 @@
 
 如果不符合要求的Issue，一般会打标为Deleting，会在一两周后删除，并回复：
 
+```text
+!!! Before submitting a new bug/feature/discussion report, please ensure you have searched for any existing 
+bug/feature/discussion and utilized the `Ask AI` feature at https://ossrs.io or https://ossrs.net (for users 
+in China). Duplicate issues or questions that are overly simple or already addressed in the documentation 
+will be removed without any response.
+```
+
 ```
 这个问题在[Wiki](https://ossrs.net/lts/en-us/docs/v5/doc/getting-started)中有，请看文档。该Issue会被删除，请先阅读FAQ：#2716
 ```
