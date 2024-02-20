@@ -225,11 +225,11 @@ SRS的回调事件包括：
 
 | 事件 | 数据 | 说明 |
 | --- | ---- | ---- |
-| on_publish|{<br/> "action": "on_publish",<br/> "client_id": "9308h583",<br/> "ip": "192.168.1.10", <br/> "vhost": "video.test.com", <br/> "app": "live",<br/> "stream": "livestream"<br/> } | 当客户端发布流时，譬如flash/FMLE方式推流到服务器| 
-| on_unpublish|{<br/> "action": "on_unpublish",<br/> "client_id": "9308h583",<br/> "ip": "192.168.1.10", <br/> "vhost": "video.test.com", <br/> "app": "live",<br/> "stream": "livestream"<br/> } | 当客户端停止发布流时| 
-| on_play|{<br/> "action": "on_play",<br/> "client_id": "9308h583",<br/> "ip": "192.168.1.10", <br/> "vhost": "video.test.com", <br/> "app": "live",<br/> "stream": "livestream",<br/> "pageUrl": "http://a.com/i.html",<br/>"param":"?k=v"<br/> } | 当客户端开始播放流时| 
-| on_stop|{<br/> "action": "on_stop",<br/> "client_id": "9308h583",<br/> "ip": "192.168.1.10", <br/> "vhost": "video.test.com", <br/> "app": "live",<br/> "stream": "livestream"<br/> } | 当客户端停止播放时 |
-| on_dvr|{<br/> "action": "on_dvr",<br/> "client_id": "9308h583",<br/> "ip": "192.168.1.10", <br/> "vhost": "video.test.com", <br/> "app": "live",<br/> "stream": "livestream",<br/> "cwd": "/opt",<br/> "file": "./l.xxx.flv"<br/> } | 当DVR录制关闭一个flv文件时|
+| on_publish|`{"action": "on_publish","client_id": "9308h583","ip": "192.168.1.10", "vhost": "video.test.com", "app": "live","stream": "livestream"}` | 当客户端发布流时，譬如flash/FMLE方式推流到服务器| 
+| on_unpublish|`{"action": "on_unpublish","client_id": "9308h583","ip": "192.168.1.10", "vhost": "video.test.com", "app": "live","stream": "livestream"}` | 当客户端停止发布流时| 
+| on_play|`{"action": "on_play","client_id": "9308h583","ip": "192.168.1.10", "vhost": "video.test.com", "app": "live","stream": "livestream","pageUrl": "http://a.com/i.html",<br/>"param":"?k=v"}` | 当客户端开始播放流时| 
+| on_stop|`{"action": "on_stop","client_id": "9308h583","ip": "192.168.1.10", "vhost": "video.test.com", "app": "live","stream": "livestream"}` | 当客户端停止播放时 |
+| on_dvr|`{"action": "on_dvr","client_id": "9308h583","ip": "192.168.1.10", "vhost": "video.test.com", "app": "live","stream": "livestream","cwd": "/opt","file": "./l.xxx.flv"}` | 当DVR录制关闭一个flv文件时|
 
 其中，
 * 事件：发生该事件时，即回调指定的HTTP地址。

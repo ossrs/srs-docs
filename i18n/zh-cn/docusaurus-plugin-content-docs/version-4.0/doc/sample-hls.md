@@ -61,7 +61,7 @@ vhost __defaultVhost__ {
 
 > 备注：我们使用SRS内置的HTTP服务器分发HLS切片，也可以使用Nginx等Web服务器分发。
 
-> 备注：hls_path必须存在，srs只会自动创建${hls_path}下的app的目录。参考：HLS分发: HLS流程
+> 备注：hls_path必须存在，srs只会自动创建`${hls_path}`下的app的目录。参考：HLS分发: HLS流程
 
 
 ## 第四步，启动SRS。

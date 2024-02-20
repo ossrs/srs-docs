@@ -61,7 +61,7 @@ vhost __defaultVhost__ {
 }
 ```
 
-备注：hls_path必须存在，srs只会自动创建${hls_path}下的app的目录。参考：[HLS分发: HLS流程](./hls.md)
+备注：hls_path必须存在，srs只会自动创建$`{hls_path}`下的app的目录。参考：[HLS分发: HLS流程](./hls.md)
 
 ## 第四步，启动SRS
 

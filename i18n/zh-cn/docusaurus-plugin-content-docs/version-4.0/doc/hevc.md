@@ -16,7 +16,7 @@ hide_table_of_contents: false
 
 ## FLV视频头信息
 因为rtmp在2012年后，协议没有更新，对hevc编码格式的支持在rtmp协议官方文档中没有明确定义。<br/>
-国内cdn厂商通过修改<video_file_format_spec_v10_1>中CodecID的定义，将flv中的hevc codecid定义为12。<br/>
+国内cdn厂商通过修改`<video_file_format_spec_v10_1>`中CodecID的定义，将flv中的hevc codecid定义为12。<br/>
 
 | Field |Type |	Comment|
 | :---: | :---| :---|
