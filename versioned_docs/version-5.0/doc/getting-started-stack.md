@@ -163,13 +163,13 @@ We are implementing various AI tools and products in the SRS Stack, and here is 
 to update this document.
 
 1. AI Transcript: Implement voice-to-text by connecting to OpenAI's Whisper, and overlay the text captions onto the live broadcast, enabling automatic subtitles for streaming.
-    * Status: Completed and available in the SRS Stack. Refer to [Creating Accessible, Multilingual Subtitles for Diverse Audiences](/blog/live-streams-transcription).
+   * Status: Completed and available in the SRS Stack. Refer to [Creating Accessible, Multilingual Subtitles for Diverse Audiences](/blog/live-streams-transcription).
 1. Document Assistant: Connect to the AI document API, and provide an AI assistant on the official website, so users can obtain correct answers without spending time reading the documentation.
-    * Status: Beta version available in official website [https://ossrs.io](https://ossrs.io) and you can click the `Ask AI` button to use it.
+   * Status: Beta version available in official website [https://ossrs.io](https://ossrs.io) and you can click the `Ask AI` button to use it.
 1. Streamer AI Asssistant: Easily create a personal, voice-driven GPT AI assistant with SRS Stack for enhanced language learning, multi-language chats, and convenient assistance in any setting. Perfect for interactive streaming and daily tasks. It offers numerous possibilities for living room and streaming hosts with AI assistance.
-    * Status: Beta version available in the SRS Stack. Refer to [Speak to the Future - Transform Your Browser into a Personal Voice-Driven GPT AI Assistant with SRS Stack](/blog/browser-voice-driven-gpt).
+   * Status: Beta version available in the SRS Stack. Refer to [Speak to the Future - Transform Your Browser into a Personal Voice-Driven GPT AI Assistant with SRS Stack](/blog/browser-voice-driven-gpt).
 1. VoD Translation: Translate English videos into Chinese for English learning or create multilingual videos, frequently used in education and e-commerce.
-    * Status: Prototype development in progress, currently researching solutions and testing user experience and results.
+   * Beta version available in the SRS Stack. Refer to [Revolutionize Video Content with SRS Stack - Effortless Dubbing and Translating to Multiple Languages Using OpenAI](/blog/dubbing-translating).
 
 If you are interested in our AI products, feel free to join our [Discord](https://discord.gg/yZ4BnPmHAd) server to discuss with us.
 

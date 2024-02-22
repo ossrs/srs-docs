@@ -153,13 +153,13 @@ SRS Stack支持对实时流进行转码，以降低比特率、节省带宽和�
 我们正在SRS Stack中实现各种AI的工具和产品，这里是最新的状态，我们会持续更新这个文档。
 
 1. 直播AI字幕，对接的OpenAI的Whisper实现的语音转文字，然后将文字字幕叠加到直播中，实现直播的自动字幕。
-    * 状态：已经完成，可以在SRS Stack中使用。参考[AI自动字幕](/blog/live-streams-transcription)。
+   * 状态：已经完成，可以在SRS Stack中使用。参考[AI自动字幕](/blog/live-streams-transcription)。
 1. AI文档助手，对接的AI文档的API，会在官网上提供AI助手，可以不用花时间看文档，也可以知道正确的答案。
-    * 状态：Beta版本，可以在官网 [https://ossrs.net](https://ossrs.net) 点击`Ask AI`按钮使用。
+   * 状态：Beta版本，可以在官网 [https://ossrs.net](https://ossrs.net) 点击`Ask AI`按钮使用。
 1. 直播间AI助手，在直播间放一个AI当助手，可以让助手帮自己回答问题，或者完成直播中的一些任务。
-    * 状态: Beta版本，可在SRS Stack中使用。参考 [基于浏览器的语音GPT的AI助手](/blog/browser-voice-driven-gpt)。
+   * 状态: Beta版本，可在SRS Stack中使用。参考 [基于浏览器的语音GPT的AI助手](/blog/browser-voice-driven-gpt)。
 1. 点播视频翻译，可以将英文视频翻译成中文了学习英文，或者制作多语言的视频，在教育和电商中用的比较多。
-    * 状态：原型开发中，正在调研方案和测试体验和效果。
+   * 状态: Beta版本，可在SRS Stack中使用。参考 [视频多语言翻译和配音](/blog/dubbing-translating)。
 
 如果你对我们的AI产品感兴趣，可以关注我们的公众号后，在[公众号](/contact#discussion)菜单选择`AI产品`，可以加入微信群，和我们一起讨论。
 
