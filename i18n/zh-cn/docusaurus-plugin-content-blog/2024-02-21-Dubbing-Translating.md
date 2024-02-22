@@ -37,7 +37,7 @@ docker run --restart always -d -it --name srs-stack -v $HOME/data:/data \
 
 ## Step 2: Upload Video Source File
 
-首先，上传视频源文件，选择 `视频源 > 上传本地文件 > 上传文件` 上传文件：
+首先，上传视频源文件，选择 `视频翻译 > 视频源 > 上传本地文件 > 上传文件` 上传文件：
 
 ![](/img/blog-2024-02-21-21.png)
 

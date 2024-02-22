@@ -42,7 +42,7 @@ After creating the SRS Stack, you can access it through `http://your-server-ip/m
 
 ## Step 2: Upload Video Source File
 
-First, please upload the video source file, click the `Video Source > Upload local file > Upload File` to upload.
+First, please upload the video source file, click the `Dubbing > Video Source > Upload local file > Upload File` to upload.
 
 ![](/img/blog-2024-02-21-01.png)
 
