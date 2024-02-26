@@ -100,7 +100,7 @@ Additionally, we offer a [cloud](/cloud) service for those who prefer to use clo
 scratch. Our cloud service features global network acceleration, enhanced congestion control algorithms, 
 client SDKs for all platforms, and some free quota.
 
-To learn more about our cloud service, click [here](/docs/v6/doc/cloud).
+To learn more about our cloud service, click [here](/cloud).
 
 ## Conclusion
 
