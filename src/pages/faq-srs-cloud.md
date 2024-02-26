@@ -1,6 +1,6 @@
 # FAQ
 
-> Note: This is FAQ for SRS Stack, please see [SRS FAQ](/faq) for SRS FAQ.
+> Note: This is FAQ for SRS Stack, please see [SRS FAQ](./faq) for SRS FAQ.
 
 Migrated to [SRS Stack FAQ](./faq-srs-stack).
 

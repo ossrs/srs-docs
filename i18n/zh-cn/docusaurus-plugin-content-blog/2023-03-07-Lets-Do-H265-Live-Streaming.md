@@ -151,7 +151,7 @@ WebRTC对于AV1的支持更完善，Safari/Chrome/Firefox也都支持，具体�
 
 ## FFmpeg Patch
 
-FFmpeg 6支持了HEVC over RTMP，如果需要自己编译，参考[FFmpeg Tools](/docs/v6/doc/hevc#ffmpeg-tools#ffmpeg-tools).
+FFmpeg 6支持了HEVC over RTMP，如果需要自己编译，参考[FFmpeg Tools](../docs/v6/doc/hevc#ffmpeg-tools#ffmpeg-tools).
 
 SRS提供了打过Patch的FFmpeg、ffplay和ffprobe，可以直接用SRS Docker推流：
 
@@ -165,7 +165,7 @@ docker run --net=host --rm -it ossrs/srs:encoder ffmpeg -stream_loop -1 -re -i d
   -acodec copy -vcodec libx265 -f flv rtmp://127.0.0.1/live/livestream
 ```
 
-可以详细参考[FFmpeg Tools](/docs/v6/doc/hevc#ffmpeg-tools#ffmpeg-tools)
+可以详细参考[FFmpeg Tools](../docs/v6/doc/hevc#ffmpeg-tools#ffmpeg-tools)
 
 ## Known Issues
 

@@ -1,6 +1,6 @@
 # FAQ
 
-> Note: 这是关于SRS Stack的FAQ，如果是SRS的FAQ请参考[SRS FAQ](/faq)
+> Note: 这是关于SRS Stack的FAQ，如果是SRS的FAQ请参考[SRS FAQ](./faq)
 
 快速目录
 
@@ -37,7 +37,7 @@
 
 ## Getting Started
 
-请先购买和设置环境，参考[官网文档](/blog/SRS-Stack-Tutorial)或者[视频教程](https://www.bilibili.com/video/BV1844y1L7dL/)，
+请先购买和设置环境，参考[官网文档](./blog/SRS-Stack-Tutorial)或者[视频教程](https://www.bilibili.com/video/BV1844y1L7dL/)，
 包括如何设置防火墙，视频很短只有5分钟，但是不看会有非常多的问题，请不要跳过这个基本步骤。
 
 进入SRS Stack后，根据不同应用场景，会有对应的视频教程，如下图所示：
@@ -113,14 +113,14 @@ A bt.yourdomain.com 121.13.75.20
 SRS Stack支持Docker镜像，安装脚本，腾讯云Lighthouse和CVM镜像，DigitalOcean镜像，其他平台可以用宝塔安装。
 
 推荐使用Docker直接安装，还可以装多个，注意要用Ubuntu 20+系统：
-* Docker镜像安装：[这里](/docs/v6/doc/getting-started-stack#docker)
+* Docker镜像安装：[这里](../docs/v6/doc/getting-started-stack#docker)
 
 SRS Stack支持HELM安装，请参考[srs-helm](https://github.com/ossrs/srs-helm)的说明。
 
 如果你习惯用宝塔，可以用宝塔安装，可以和多个网站并存，注意要用Ubuntu 20+系统：
 * 宝塔：其他云平台可以用宝塔安装，要求是CentOS 7+或Ubuntu 20+的系统，使用参考[这里](https://mp.weixin.qq.com/s/nutc5eJ73aUa4Hc23DbCwQ)
 * aaPanel：海外的宝塔，如果你的机器是海外的，一定不要用宝塔而要用aaPanel，使用参考[这里](https://blog.ossrs.io/how-to-setup-a-video-streaming-service-by-aapanel-9748ae754c8c)
-* Script：直接用脚本也可以，参考[Script](/docs/v6/doc/getting-started-stack#script)
+* Script：直接用脚本也可以，参考[Script](../docs/v6/doc/getting-started-stack#script)
 
 支持各种云平台，最方便的是镜像，也就是云服务器的镜像，如果想简单省事就请用镜像：
 * Lighthouse：腾讯云的轻量云服务器镜像，使用参考[这里](https://mp.weixin.qq.com/s/fWmdkw-2AoFD_pEmE_EIkA)
@@ -220,7 +220,7 @@ SRS Stack支持申请免费HTTPS证书，而且可以申请多个域名的证书
 * https://ossrs.io SRS的海外文档网站。
 * https://ossrs.net SRS的国内文档网站。
 
-操作非常简单，只需要三步，具体请看[这里](/blog/SRS-Stack-HTTPS)：
+操作非常简单，只需要三步，具体请看[这里](./blog/SRS-Stack-HTTPS)：
 
 1. 购买域名并备案，一定要有自己的合法域名，否则无法申请证书的哈。
 2. 将域名解析到SRS Stack的公网IP，可以通过域名访问到你的SRS Stack就可以，可以加多个域名解析，比如 `ossrs.io` `www.ossrs.io` 都是解析到同一个SRS Stack服务器的。
@@ -472,7 +472,7 @@ Droplets每月提供1TB的流量，允许进行7x24小时的3Mbps连续直播。
 
 宝塔海外版本叫[aaPanel](https://aapanel.com)，请使用aaPanel，安装软件很快，SRS Stack也会切换到海外的镜像下载。
 
-宝塔和aaPanel只是安装方法不同，具体用法是一样的，请参考[宝塔](/blog/BT-aaPanel)或[aaPanel](https://blog.ossrs.io/how-to-setup-a-video-streaming-service-by-aapanel-9748ae754c8c)。
+宝塔和aaPanel只是安装方法不同，具体用法是一样的，请参考[宝塔](./blog/BT-aaPanel)或[aaPanel](https://blog.ossrs.io/how-to-setup-a-video-streaming-service-by-aapanel-9748ae754c8c)。
 
 ## How to Install the Latest SRS Stack
 
@@ -488,19 +488,19 @@ CentOS7由于年久失修，有很多问题，推荐使用Ubuntu20系统。
 
 ## The Difference Between SRS Stack and SRS
 
-SRS是SRS Stack的媒体引擎，详细差异请查看[与SRS比较](/docs/v6/doc/getting-started-stack#compare-to-srs)。
+SRS是SRS Stack的媒体引擎，详细差异请查看[与SRS比较](../docs/v6/doc/getting-started-stack#compare-to-srs)。
 
 ## Low Latency HLS
 
-如何降低HLS延迟，实现5秒延迟的HLS流，参考[如何实现5秒HLS低延迟](/blog/hls-5s-low-latency)。
+如何降低HLS延迟，实现5秒延迟的HLS流，参考[如何实现5秒HLS低延迟](./blog/hls-5s-low-latency)。
 
 ## OpenAPI
 
-See [HTTP API](/docs/v6/doc/getting-started-stack#http-api)
+See [HTTP API](../docs/v6/doc/getting-started-stack#http-api)
 
 ## HTTP Callback
 
-See [HTTP Callback](/docs/v6/doc/getting-started-stack#http-callback)
+See [HTTP Callback](../docs/v6/doc/getting-started-stack#http-callback)
 
 ## Changelog
 

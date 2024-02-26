@@ -106,7 +106,7 @@ Camera/Microphone --WebRTC---> SRS --DASH--> Viewers
 ```
 
 Because the only way is to use WebRTC to access the camera and microphone for H5, so you must use WebRTC to ingest live
-stream to media server such as SRS. Then SRS will covert WebRTC to RTMP, finally covert to MPEG-DASH, plese see [this post](/docs/v5/doc/getting-started#webrtc-for-live-streaming).
+stream to media server such as SRS. Then SRS will covert WebRTC to RTMP, finally covert to MPEG-DASH, plese see [this post](../docs/v5/doc/getting-started#webrtc-for-live-streaming).
 
 Note that SRS also support [WebRTC-HTTP ingestion protocol (WHIP)](https://datatracker.ietf.org/doc/draft-ietf-wish-whip/),
 for example, [srs-unity](https://github.com/ossrs/srs-unity) uses WHIP to publish Unity camera stream.
@@ -116,11 +116,11 @@ for example, [srs-unity](https://github.com/ossrs/srs-unity) uses WHIP to publis
 At SRS, our goal is to establish a non-profit, open-source community dedicated to creating an all-in-one, 
 out-of-the-box, open-source video solution for live streaming and WebRTC online services.
 
-Additionally, we offer a [cloud](/cloud) service for those who prefer to use cloud service instead of building from 
+Additionally, we offer a [Cloud](../cloud) service for those who prefer to use cloud service instead of building from 
 scratch. Our cloud service features global network acceleration, enhanced congestion control algorithms, 
 client SDKs for all platforms, and some free quota.
 
-To learn more about our cloud service, click [here](/cloud).
+To learn more about our cloud service, click [here](../cloud).
 
 ## Conclusion
 

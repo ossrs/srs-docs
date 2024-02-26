@@ -104,16 +104,16 @@ setup an SSL certificate for your SRS streaming server. After this setup your vi
 At SRS, our goal is to establish a non-profit, open-source community dedicated to creating an all-in-one, 
 out-of-the-box, open-source video solution for live streaming and WebRTC online services.
 
-Additionally, we offer a [cloud](/cloud) service for those who prefer to use cloud service instead of building from 
+Additionally, we offer a [Cloud](../cloud) service for those who prefer to use cloud service instead of building from 
 scratch. Our cloud service features global network acceleration, enhanced congestion control algorithms, 
 client SDKs for all platforms, and some free quota.
 
-To learn more about our cloud service, click [here](/cloud).
+To learn more about our cloud service, click [here](../cloud).
 
 ## Conclusion
 
 In this tutorial you’ve learned to set up the SRS WordPress plugin and embedded a stream on your post or page. If you
-have further questions about SRS, [the wiki](/docs/v4/doc/introduction) is a good place to start.
+have further questions about SRS, [the wiki](../docs/v4/doc/introduction) is a good place to start.
 
 ## Contact
 

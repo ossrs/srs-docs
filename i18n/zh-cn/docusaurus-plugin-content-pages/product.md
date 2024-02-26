@@ -61,11 +61,11 @@ SRS全面支持[Docker](https://github.com/ossrs/dev-docker)。
 2014.10，[SRS1.0](#release10)beta发布。从0到1.0，SRS花了1年时间，17个里程碑，
 [7](https://github.com/ossrs/srs/tree/1.0release)个开发版，223个修订版，43700行功能代码，15616行utest代码，1803次提交，161个bug和功能，
 解决了[117](https://github.com/ossrs/srs/tree/1.0release)个，可在[1](https://github.com/ossrs/srs/tree/1.0release)个平台运行(linux)，支持4种cpu(x86/x64/arm/mips)，[11](https://github.com/ossrs/srs/tree/1.0release)个核心功能(origin、
-[edge](/docs/v4/doc/edge)、 [vhost](/docs/v4/doc/rtmp-url-vhost)、 [transcode](/docs/v4/doc/ffmpeg)、 [ingest](/docs/v4/doc/ingest)、 [dvr](/docs/v4/doc/dvr)、
-[forward](/docs/v4/doc/ffmpeg)、 [http-api](/docs/v4/doc/http-api)、 [http-callback](/docs/v4/doc/http-callback)、 [reload](/docs/v4/doc/reload)、
-[tracable-log](/docs/v4/doc/log))，[35](https://github.com/ossrs/srs/tree/1.0release)个功能点，58篇wiki，SRS的QQ群有245位成员，活跃成员141人，
+[edge](../docs/v4/doc/edge)、 [vhost](../docs/v4/doc/rtmp-url-vhost)、 [transcode](../docs/v4/doc/ffmpeg)、 [ingest](../docs/v4/doc/ingest)、 [dvr](../docs/v4/doc/dvr)、
+[forward](../docs/v4/doc/ffmpeg)、 [http-api](../docs/v4/doc/http-api)、 [http-callback](../docs/v4/doc/http-callback)、 [reload](../docs/v4/doc/reload)、
+[tracable-log](../docs/v4/doc/log))，[35](https://github.com/ossrs/srs/tree/1.0release)个功能点，58篇wiki，SRS的QQ群有245位成员，活跃成员141人，
 2位主作者，12位贡献者，14位捐赠者，至少有蓝汛、VeryCloud、VeryCDN、
-清华电视台在[使用或基于SRS改自己的服务器](/docs/v4/doc/sample)，数百个各种行业的公司在使用SRS主要包含视频监控、移动端、在线教育、
+清华电视台在[使用或基于SRS改自己的服务器](../docs/v4/doc/sample)，数百个各种行业的公司在使用SRS主要包含视频监控、移动端、在线教育、
 秀场和KTV、互动视频、电视台、物联网、学生。
 
 2014.3，进入反馈期，树莓派，极路由，cubieboard等嵌入式设备上有人问是否能支持。我自己买了树莓派，在上面运行成功，

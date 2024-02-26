@@ -7,7 +7,7 @@ From the perspective of a writer, describe how to write a document for SRS.
 Link the blog in docs:
 
 ```markdown
-[SRS Stack aaPanel Plugin](/blog/BT-aaPanel)
+[SRS Stack aaPanel Plugin](../../../blog/BT-aaPanel)
 ```
 
 For instance, refer to the `getting-started-stack.md` document for more details.
@@ -27,7 +27,7 @@ For instance, refer to the `introduction.md` document for more details.
 Link the pages in docs:
 
 ```markdown
-[MIT Licensed](/license)
+[MIT Licensed](../../../license)
 ```
 
 For instance, refer to the `introduction.md` document for more details.
@@ -63,7 +63,7 @@ For instance, refer to the [README.md](https://github.com/ossrs/srs-stack/blob/m
 Link the docs in blog:
 
 ```markdown
-[Getting Started](/docs/v5/doc/getting-started-stack#docker)
+[Getting Started](../docs/v5/doc/getting-started-stack#docker)
 ```
 
 For instance, refer to the `2022-04-09-SRS-Stack-Tutorial.md` document for more details.
@@ -76,4 +76,10 @@ Link the docs in tutorials:
 [ReusePort](../doc/reuse-port.md)
 ```
 
-See [srs-books](/docs/v6/tutorial/srs-books) for more details.
+## How to link pages in blog?
+
+Link the pages in blog:
+
+```markdown
+[Cloud](../cloud)
+```

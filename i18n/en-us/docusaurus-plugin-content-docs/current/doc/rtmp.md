@@ -306,7 +306,7 @@ If want to support a large set of players, please see [Edge Cluster](./edge.md).
 
 If want to support a larget set of publishers or streams, please see [Origin Cluster](./origin-cluster.md).
 
-Note that there are lots of solutions for [load balancing](/blog/load-balancing-streaming-servers).
+Note that there are lots of solutions for [load balancing](../../../blog/load-balancing-streaming-servers).
 
 ## Low Latency RTMP
 

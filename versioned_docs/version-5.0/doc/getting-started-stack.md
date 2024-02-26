@@ -25,7 +25,7 @@ More diverse scenarios will be available in the future.
 
 ## FAQ
 
-If you encounter issues while using SRS Stack, please read the [FAQ](/faq-srs-stack) first.
+If you encounter issues while using SRS Stack, please read the [FAQ](../../../faq-srs-stack) first.
 
 ## Usage
 
@@ -68,11 +68,11 @@ and install it.
 ### DigitalOcean Droplet
 
 Easily set up an SRS Stack with just one click. For more information, check out 
-[How to Establish a Video Streaming Service with a Single Click](/blog/SRS-Stack-Tutorial).
+[How to Establish a Video Streaming Service with a Single Click](../../../blog/SRS-Stack-Tutorial).
 
 ### aaPanel
 
-SRS Stack offers a BaoTa plugin, for usage instructions refer to the [SRS Stack aaPanel Plugin](/blog/BT-aaPanel).
+SRS Stack offers a BaoTa plugin, for usage instructions refer to the [SRS Stack aaPanel Plugin](../../../blog/BT-aaPanel).
 
 ## Features
 
@@ -115,7 +115,7 @@ SRS Stack support DVR or Recording, to convert live stream to file, then save to
 We also support merge multiple republish session to one DVR file, and support set filters for recording specified
 streams.
 
-See [A Step-by-Step Guide to Server-Side Recording and AWS S3 Integration](/blog/Record-Live-Streaming) for details.
+See [A Step-by-Step Guide to Server-Side Recording and AWS S3 Integration](../../../blog/Record-Live-Streaming) for details.
 
 ### Automatic HTTPS
 
@@ -123,7 +123,7 @@ SRS Stack support automatic HTTPS, just by one click, you can enable HTTPS for y
 automatically request and update the HTTPS certificate from [Let's Encrypt](https://letsencrypt.org/). Automatic HTTPS
 allows WHIP or publish by webpage, and also support WebRTC, and access user's microphones.
 
-See [How to Secure SRS with Let's Encrypt by 1-Click](/blog/SRS-Stack-HTTPS) for details.
+See [How to Secure SRS with Let's Encrypt by 1-Click](../../../blog/SRS-Stack-HTTPS) for details.
 
 ### Virtual Live Events
 
@@ -131,8 +131,8 @@ You can use prerecorded videos to simulate live events. You can do 7x24 live str
 also pull stream to your live room, to make the live stream powerful. You can even pull your IP camera stream to your
 live room.
 
-See [Harness the Power of Pre-Recorded Content for Seamless and Engaging Live Streaming Experiences](/blog/Virtual-Live-Events) and
-[Easily Stream Your RTSP IP Camera to YouTube, Twitch, or Facebook](/blog/Stream-IP-Camera-Events).
+See [Harness the Power of Pre-Recorded Content for Seamless and Engaging Live Streaming Experiences](../../../blog/Virtual-Live-Events) and
+[Easily Stream Your RTSP IP Camera to YouTube, Twitch, or Facebook](../../../blog/Stream-IP-Camera-Events).
 
 ### Restream
 
@@ -140,7 +140,7 @@ With SRS Stack, you can restream to multiple platforms, like YouTube, Twitch, Fa
 automatically select a stream to forward, so you can publish multiple streams as fault-tolerant or backup
 stream, when a stream is down, SRS Stack will switch to another one.
 
-See [Effortlessly Restream Live Content Across Multiple Platforms with SRS Stack](/blog/Multi-Platform-Streaming) for details.
+See [Effortlessly Restream Live Content Across Multiple Platforms with SRS Stack](../../../blog/Multi-Platform-Streaming) for details.
 
 ### AI Transcription
 
@@ -148,14 +148,14 @@ SRS Stack supports AI transcription, which is powered by OpenAI, to convert live
 the video stream as a new live stream. With this feature, allows you to engage more audiences, especially for people
 with hearing disabilities or those who are non-native speakers.
 
-See [Creating Accessible, Multilingual Subtitles for Diverse Audiences](/blog/live-streams-transcription) for details.
+See [Creating Accessible, Multilingual Subtitles for Diverse Audiences](../../../blog/live-streams-transcription) for details.
 
 ### Transcode
 
 SRS Stack suppport transcoding live stream, to decrease the bitrate and save bandwidth and cost, or filter the
 live stream content to make it better.
 
-See [Efficient Live Streaming Transcoding for Reducing Bandwidth and Saving Costs](/blog/Live-Transcoding) for details.
+See [Efficient Live Streaming Transcoding for Reducing Bandwidth and Saving Costs](../../../blog/Live-Transcoding) for details.
 
 ## AI Products
 
@@ -163,13 +163,13 @@ We are implementing various AI tools and products in the SRS Stack, and here is 
 to update this document.
 
 1. AI Transcript: Implement voice-to-text by connecting to OpenAI's Whisper, and overlay the text captions onto the live broadcast, enabling automatic subtitles for streaming.
-   * Status: Completed and available in the SRS Stack. Refer to [Creating Accessible, Multilingual Subtitles for Diverse Audiences](/blog/live-streams-transcription).
+   * Status: Completed and available in the SRS Stack. Refer to [Creating Accessible, Multilingual Subtitles for Diverse Audiences](../../../blog/live-streams-transcription).
 1. Document Assistant: Connect to the AI document API, and provide an AI assistant on the official website, so users can obtain correct answers without spending time reading the documentation.
    * Status: Beta version available in official website [https://ossrs.io](https://ossrs.io) and you can click the `Ask AI` button to use it.
 1. Streamer AI Asssistant: Easily create a personal, voice-driven GPT AI assistant with SRS Stack for enhanced language learning, multi-language chats, and convenient assistance in any setting. Perfect for interactive streaming and daily tasks. It offers numerous possibilities for living room and streaming hosts with AI assistance.
-   * Status: Beta version available in the SRS Stack. Refer to [Speak to the Future - Transform Your Browser into a Personal Voice-Driven GPT AI Assistant with SRS Stack](/blog/browser-voice-driven-gpt).
+   * Status: Beta version available in the SRS Stack. Refer to [Speak to the Future - Transform Your Browser into a Personal Voice-Driven GPT AI Assistant with SRS Stack](../../../blog/browser-voice-driven-gpt).
 1. VoD Translation: Translate English videos into Chinese for English learning or create multilingual videos, frequently used in education and e-commerce.
-   * Beta version available in the SRS Stack. Refer to [Revolutionize Video Content with SRS Stack - Effortless Dubbing and Translating to Multiple Languages Using OpenAI](/blog/dubbing-translating).
+   * Beta version available in the SRS Stack. Refer to [Revolutionize Video Content with SRS Stack - Effortless Dubbing and Translating to Multiple Languages Using OpenAI](../../../blog/dubbing-translating).
 
 If you are interested in our AI products, feel free to join our [Discord](https://discord.gg/yZ4BnPmHAd) server to discuss with us.
 
@@ -244,7 +244,7 @@ All responses should use:
 * `Status: 200 OK` and `{"code": 0}` for success.
 * Otherwise, error or fail.
 
-See examples in [HTTP Callback](/docs/v6/doc/http-callback#go-example)
+See examples in [HTTP Callback](../docs/v6/doc/http-callback#go-example)
 
 ### HTTP Callback: Connectivity Check
 

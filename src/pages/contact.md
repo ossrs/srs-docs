@@ -40,7 +40,7 @@ Stack Overflow is a popular forum to ask code-level questions or if you're stuck
 
 ## Issue requests
 
-Never file an issue unless read [the FAQ](/faq).
+Never file an issue unless read [the FAQ](./faq).
 
 and read the following articles：
 * [usage](https://github.com/ossrs/srs#usage)

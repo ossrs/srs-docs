@@ -9,7 +9,7 @@ hide_table_of_contents: false
 
 > 注意：SRS5已经稳定，可在生产环境使用。
 
-SRS是一个开源的（[MIT协议](/license)）简单高效的实时视频服务器，支持RTMP、WebRTC、HLS、HTTP-FLV、SRT、MPEG-DASH和GB28181等协议。
+SRS是一个开源的（[MIT协议](../../../license)）简单高效的实时视频服务器，支持RTMP、WebRTC、HLS、HTTP-FLV、SRT、MPEG-DASH和GB28181等协议。
 SRS媒体服务器和[FFmpeg](https://ffmpeg.org)、[OBS](https://obsproject.com)、[VLC](https://www.videolan.org)、
 [WebRTC](https://webrtc.org)等客户端配合使用，提供[流的接收和分发](./getting-started.md)的能力，是一个典型的发布
 （推流）和订阅（播放）服务器模型。 SRS支持互联网广泛应用的音视频协议转换，比如可以将[RTMP](./rtmp.md)或[SRT](./srt.md)，
@@ -20,7 +20,7 @@ SRS提供了[HTTP API](./http-api.md)开放接口，可以查询系统的状态�
 对接到云原生的监控系统，具备强大的可观测性。SRS支持会话级别[可追踪日志](./log.md)，极大降低了系统维护成本。
 
 若你是新接触音视频和流媒体的朋友，或者新接触SRS的朋友，推荐阅读[快速起步](./getting-started.md)和[学习路径](/guide)。请花时间
-阅读后续的文档，阅读和熟悉文档是社区的基本要求。如果你遇到问题，请先在[FAQ](/faq)中快速查找，然后在[Issues](https://github.com/ossrs/srs/issues)
+阅读后续的文档，阅读和熟悉文档是社区的基本要求。如果你遇到问题，请先在[FAQ](../../../faq)中快速查找，然后在[Issues](https://github.com/ossrs/srs/issues)
 和[Discussions](https://github.com/ossrs/srs/discussions)中查找，几乎所有问题都可以在这里找到答案。
 
 SRS使用ANSI C++ (98)开发，只使用了基本的C++能力，可以在Linux、Windows、macOS等多个平台运行，推荐使用Ubuntu 20+系统开发和调试，
@@ -104,7 +104,7 @@ SRS致力于构建一个非盈利性的开源项目和社区，我们对赞助SR
 
 音视频开发者，几乎必然碰到问题，估计大家比较习惯云厂商的贴身服务，来到开源社区就非常不习惯。
 
-其实遇到问题不要慌张，大部分问题都是已经有的，可以在 [FAQ](/faq) 中找到答案，或者在文档 [Docs](./getting-started.md) 中找到答案。
+其实遇到问题不要慌张，大部分问题都是已经有的，可以在 [FAQ](../../../faq) 中找到答案，或者在文档 [Docs](./getting-started.md) 中找到答案。
 
 也可以在 [支持](/contact) 中加微信群，和其他开发者交流，不过请遵守社区规范，否则也得不到支持的。
 

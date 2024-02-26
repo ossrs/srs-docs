@@ -2,7 +2,7 @@
 
 关于Q&A，请按下面的流程：
 
-* 在[Wiki](/docs/v4/doc/introduction)中有的内容，请花时间看文档，不要提Issue。
+* 在[Wiki](../docs/v4/doc/introduction)中有的内容，请花时间看文档，不要提Issue。
 * 重复的Issue会被删除，请先在[Issues](https://github.com/ossrs/srs/issues)中搜索你的问题，确认没有后再提Issue。
 * 我如何才能够？How do I? -- [Stack Overflow](https://stackoverflow.com/questions/tagged/simple-realtime-server)
 * 我碰到一个错误，为何？I got this error, why? -- [Stack Overflow](https://stackoverflow.com/questions/tagged/simple-realtime-server)
@@ -14,7 +14,7 @@
 下面是常见的问题，如果没有找到你的问题，请先在本[Issue](https://github.com/ossrs/srs/issues)中搜索，如果你确认是个Bug并且没有提交过，
 请按照要求提交Issue。
 
-> Note: 这是关于SRS的FAQ，如果是SRS Stack的FAQ请参考[SRS Stack FAQ](/faq-srs-stack)
+> Note: 这是关于SRS的FAQ，如果是SRS Stack的FAQ请参考[SRS Stack FAQ](./faq-srs-stack)
 
 <a name='cdn'></a> <a name='vod'></a>
 
@@ -22,11 +22,11 @@
 * 关于RTMP/HTTP-FLV/WebRTC等直播？
   > 1. SRS只支持流协议，比如直播或WebRTC，详细请参考WiKi中关于集群的部分。
 * 关于HLS/DASH等切片直播，或者点播/录制/VoD/DVR？
-  > 1. SRS可以录制为点播文件。参考 [DVR](/docs/v4/doc/dvr)
-  > 1. SRS可以生成HLS或DASH。参考 [HLS](/docs/v4/doc/delivery-hls)
+  > 1. SRS可以录制为点播文件。参考 [DVR](../docs/v4/doc/dvr)
+  > 1. SRS可以生成HLS或DASH。参考 [HLS](../docs/v4/doc/delivery-hls)
 * 关于HLS/DASH/VoD/DVR的分发集群？
-  > 1. 这些都是HTTP文件，HTTP文件分发集群建议使用NGINX，参考 [HLS Cluster](/docs/v4/doc/sample-hls-cluster)
-  > 1. 可以用NGINX结合SRS Edge分发HTTP-FLV，实现所有HTTP协议的分发，参考 [Nginx For HLS](/docs/v4/doc/nginx-for-hls#work-with-srs-edge-server)
+  > 1. 这些都是HTTP文件，HTTP文件分发集群建议使用NGINX，参考 [HLS Cluster](../docs/v4/doc/sample-hls-cluster)
+  > 1. 可以用NGINX结合SRS Edge分发HTTP-FLV，实现所有HTTP协议的分发，参考 [Nginx For HLS](../docs/v4/doc/nginx-for-hls#work-with-srs-edge-server)
 * SRS源站集群，多流热备，流切换，推流容灾，提问关于直播流的容灾和切换，参考[链接](https://stackoverflow.com/a/70629002/17679565)
 * 如何构建一个服务器网络，解决就近服务，和扩展服务器容量，SRS的Edge集群，参考[链接](https://stackoverflow.com/a/71030396/17679565)
 * 如何做多流备份，多个流取可用的一个，流的灾备和切换，参考[链接](https://stackoverflow.com/a/77363633/17679565)
@@ -74,7 +74,7 @@
 * `Edge HLS/DVR/RTC`: 关于边缘(Edge)支持HLS/DVR/RTC等
   > 1. 边缘(Edge)是直播的集群，只支持直播流协议比如RTMP和FLV，只有源站才能支持HLS/DVR/RTC，参考 [#1066](https://github.com/ossrs/srs/issues/1066)
   > 1. 目前并没有在Edge禁用HLS/DVR/RTC等能力，但未来会禁用，所以请不要这么用，也用不起来。
-  > 1. HLS的集群，请参考文档[HLS Edge Cluster](/docs/v5/doc/nginx-for-hls)
+  > 1. HLS的集群，请参考文档[HLS Edge Cluster](../docs/v5/doc/nginx-for-hls)
   > 1. 正在开发WebRTC和SRT的集群能力，参考[#3138](ttps://github.com/ossrs/srs/issues/3138)。
 
 <a name='ffmpeg'></a>
@@ -147,9 +147,9 @@
 
 ### [HTTPS & HTTP2/3](#https-h2-3)
 * `HTTPS`: 关于HTTPS服务、API、Callback、Streaming、WebRTC等
-  > 1. [HTTPS API](/docs/v4/doc/http-api#https-api)提供传输层安全的API，WebRTC推流要求是HTTPS页面自然也只能访问HTTPS API。
-  > 1. [HTTPS Callback](/docs/v4/doc/http-callback#https-callback)回调HTTPS服务，如果你的服务器是HTTPS协议，一般业务系统为了安全性都是HTTPS协议。
-  > 1. [HTTPS Live Streaming](/docs/v4/doc/delivery-http-flv#https-flv-live-stream)提供传输层安全的Stream流，主要是HTTPS的网页只能访问HTTPS的资源。
+  > 1. [HTTPS API](../docs/v4/doc/http-api#https-api)提供传输层安全的API，WebRTC推流要求是HTTPS页面自然也只能访问HTTPS API。
+  > 1. [HTTPS Callback](../docs/v4/doc/http-callback#https-callback)回调HTTPS服务，如果你的服务器是HTTPS协议，一般业务系统为了安全性都是HTTPS协议。
+  > 1. [HTTPS Live Streaming](../docs/v4/doc/delivery-http-flv#https-flv-live-stream)提供传输层安全的Stream流，主要是HTTPS的网页只能访问HTTPS的资源。
   > 1. 单域名自动从`letsencrypt`自动申请SSL证书，方便中小企业部署SRS，也避免HTTPS代理因为流媒体业务代理的开销太大了，参考 [#2864](https://github.com/ossrs/srs/issues/2864)
   > 1. 使用Nginx或Caddy等反向代理，HTTP/HTTPS Proxy，提供统一的HTTP/HTTPS服务，参考 [#2881](https://github.com/ossrs/srs/issues/2881)
 * `HTTP2`: 关于HTTP2-FLV或HTTP2 HLS等。
@@ -163,11 +163,11 @@
 * `Latency`: 关于如何降低延迟，如何做低延迟直播，WebRTC延迟多少。
   > 1. 直播延迟一般1到3秒，WebRTC延迟在100ms左右，为何自己搭出来的延迟很大？
   > 1. 最常见的延迟大的原因，是用VLC播放器，这个播放器的延迟就是几十秒，请换成SRS的H5播放器。
-  > 1. 延迟是和每个环节都相关，不仅仅是SRS降低延迟就可以，还有推流工具(FFmpeg/OBS)和播放器都相关，具体请参考 [Realtime](/docs/v4/doc/sample-realtime) 一步步操作，别上来就自己弄些骚操作操作，先按文档搭出来低延迟的环境。
+  > 1. 延迟是和每个环节都相关，不仅仅是SRS降低延迟就可以，还有推流工具(FFmpeg/OBS)和播放器都相关，具体请参考 [Realtime](../docs/v4/doc/sample-realtime) 一步步操作，别上来就自己弄些骚操作操作，先按文档搭出来低延迟的环境。
   > 1. 如果一步步操作还是发现延迟高，怎么排查呢？可以参考 [#2742](https://github.com/ossrs/srs/issues/2742)
 * `HLS Latency`: 关于HLS协议的延迟。
   > 1. HLS的延迟太大，切换内容后观看到需要挺久，如何降低HLS延迟，参考[链接](https://video.stackexchange.com/a/36923/42693)
-  > 1. 如何配置HLS降低延迟，参考[HLS Latency](/docs/v6/doc/hls#hls-low-latency)
+  > 1. 如何配置HLS降低延迟，参考[HLS Latency](../docs/v6/doc/hls#hls-low-latency)
 * `Benchmark`: 关于延迟的测量和测试。
   > 1. 如何测量和优化直播的延迟，各个环节和协议的延迟，如何改善和度量延迟，参考[链接](https://stackoverflow.com/a/70402476/17679565)
 
@@ -178,7 +178,7 @@
   > 1. 性能是一个综合话题，是项目的质量、支持的容量和并发、如何优化性能等比较笼统的叫法，甚至也包含内存问题，比如内存泄漏（导致性能降低）、越界和野指针问题。
   > 1. 如果是需要了解SRS的并发，必须分为直播和WebRTC单独的并发，直播可以用[srs-bench](https://github.com/ossrs/srs-bench)，WebRTC可以用[feature/rtc](https://github.com/ossrs/srs-bench/tree/feature/rtc)分支压测，获取特定码率和延迟以及业务特点下，你的硬件和软件环境所能支持的并发数。
   > 1. SRS也提供了官方的并发数据，具体可以参考 [Performance](https://github.com/ossrs/srs/blob/4.0release/trunk/doc/PERFORMANCE.md#performance) ，还给出了如何测量这些并发，以及什么条件下的数据，还有具体的优化代码。
-  > 1. 如果是需要查性能问题，或者内存泄漏，或者野指针问题，必须使用系统的相关工具，比如perf、valgrind或者gperftools等工具，具体请参考 [SRS性能(CPU)、内存优化工具用法](https://www.jianshu.com/p/6d4a89359352) 或者 [Perf](/docs/v4/doc/perf) 。
+  > 1. 如果是需要查性能问题，或者内存泄漏，或者野指针问题，必须使用系统的相关工具，比如perf、valgrind或者gperftools等工具，具体请参考 [SRS性能(CPU)、内存优化工具用法](https://www.jianshu.com/p/6d4a89359352) 或者 [Perf](../docs/v4/doc/perf) 。
   > 1. 特别强调，valgrid从SRS 3.0(含)开始已经支持，ST的patch已经打上了。
 
 <a name='player'></a>
@@ -301,7 +301,7 @@
 ### WebRTC Demo Failed
 
 **Question** 加入RTC房间或通话失败
-> 根据5.0文档中的[SFU: One to One](/docs/v5/doc/webrtc#sfu-one-to-one)说明，我已经完成了以下配置：
+> 根据5.0文档中的[SFU: One to One](../docs/v5/doc/webrtc#sfu-one-to-one)说明，我已经完成了以下配置：
 > 1. 将CANDIDATE设置为内网地址192.168.100.140
 > 1. 使用Docker启动了RTC服务、信令服务和HTTPS服务
 > 1. 成功访问了http://192.168.100.140/demos/并能够正常打开
@@ -309,7 +309,7 @@
 > 然而，我在点击开始通话或加入房间后，摄像头会亮一下但没有任何反应。已经使用了自签发的OpenSSL key和crt证书，遇到了一个TLS证书握手错误的提示。
 
 **Answer**
-  > 1. 首先明确严格按照文档[SFU: One to One](/docs/v5/doc/webrtc#sfu-one-to-one)进行操作
+  > 1. 首先明确严格按照文档[SFU: One to One](../docs/v5/doc/webrtc#sfu-one-to-one)进行操作
   > 2. 排查证书问题、https连接问题、浏览器权限问题等
 
 ## Deleting

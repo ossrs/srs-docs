@@ -302,7 +302,7 @@ kickoff_for_idle 0;
 
 如果需要支持很多推流，或者很多路流，参考[Origin Cluster](./origin-cluster.md).
 
-关于流媒体的负载均衡，还有很多其他方案，可以参考[load balancing](/blog/load-balancing-streaming-servers).
+关于流媒体的负载均衡，还有很多其他方案，可以参考[load balancing](../../../blog/load-balancing-streaming-servers).
 
 ## Low Latency RTMP
 

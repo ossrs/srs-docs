@@ -210,8 +210,8 @@ We're also considering to integrate a CMS to SRS Stack, to allow users to publis
 or VoD files like a vlog, etc.
 
 SRS Stack is a single node video streaming service, but SRS is a media server that supports clusters, like
-[Origin Cluster](/docs/v4/doc/origin-cluster), [RTMP Edge Cluster](/docs/v4/doc/sample-rtmp-cluster) and 
-even [HLS Edge Cluster](/docs/v4/doc/sample-hls-cluster). The HLS Edge Cluster is based on NGINX, and SRS 
+[Origin Cluster](../docs/v4/doc/origin-cluster), [RTMP Edge Cluster](../docs/v4/doc/sample-rtmp-cluster) and 
+even [HLS Edge Cluster](../docs/v4/doc/sample-hls-cluster). The HLS Edge Cluster is based on NGINX, and SRS 
 could work well with NGINX, we will publish more tutorials about this topic if you wanna.
 
 ## Cloud Service
@@ -219,17 +219,17 @@ could work well with NGINX, we will publish more tutorials about this topic if y
 At SRS, our goal is to establish a non-profit, open-source community dedicated to creating an all-in-one, 
 out-of-the-box, open-source video solution for live streaming and WebRTC online services.
 
-Additionally, we offer a [cloud](/cloud) service for those who prefer to use cloud service instead of building from 
+Additionally, we offer a [Cloud](../cloud) service for those who prefer to use cloud service instead of building from 
 scratch. Our cloud service features global network acceleration, enhanced congestion control algorithms, 
 client SDKs for all platforms, and some free quota.
 
-To learn more about our cloud service, click [here](/cloud).
+To learn more about our cloud service, click [here](../cloud).
 
 ## Conclusion
 
 In this tutorial, you build a video streaming service only by 1-Click, but with powerful features like 
 authentication, SRT and WebRTC etc. If you have further questions about SRS, 
-[the wiki](/docs/v6/doc/getting-started-stack) is a good place to start.
+[the wiki](../docs/v6/doc/getting-started-stack) is a good place to start.
 
 ## Contact
 

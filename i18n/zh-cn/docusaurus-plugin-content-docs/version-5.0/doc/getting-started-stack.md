@@ -22,7 +22,7 @@ SRS Stack作为开源的开箱即用的音视频方案，是完全基于场景�
 
 ## FAQ
 
-若使用SRS Stack时遇到问题，请先阅读[FAQ](/faq-srs-stack)。
+若使用SRS Stack时遇到问题，请先阅读[FAQ](../../../faq-srs-stack)。
 
 ## Usage
 
@@ -59,7 +59,7 @@ helm install srs srs/srs-stack --set persistence.path=$HOME/data \
 
 ### BT
 
-SRS Stack提供了宝塔插件，使用方法参考[宝塔插件](/blog/BT-aaPanel)。
+SRS Stack提供了宝塔插件，使用方法参考[宝塔插件](../../../blog/BT-aaPanel)。
 
 ### Script
 
@@ -68,7 +68,7 @@ SRS Stack提供了宝塔插件，使用方法参考[宝塔插件](/blog/BT-aaPan
 
 ### TencentCloud LightHouse
 
-在国内做流媒体或RTC业务，可以在腾讯云轻量服务器上购买SRS Stack，参考[SRS Stack：起步、购买和入门](/blog/SRS-Stack-Tutorial)。
+在国内做流媒体或RTC业务，可以在腾讯云轻量服务器上购买SRS Stack，参考[SRS Stack：起步、购买和入门](../../../blog/SRS-Stack-Tutorial)。
 
 ### DigitalOcean Droplet
 
@@ -112,54 +112,54 @@ SRS Stack还代理并保护SRS的所有HTTP API，因此只有经过身份验证
 SRS Stack 支持 DVR 或录制功能，将实时流转换为文件，然后保存到本地磁盘或云存储中。
 我们还支持将多个重新发布会话合并到一个 DVR 文件中，并支持设置过滤器来录制指定的流。
 
-详细信息请参阅[服务器端录制和 AWS S3 集成的指南](/blog/Record-Live-Streaming)。
+详细信息请参阅[服务器端录制和 AWS S3 集成的指南](../../../blog/Record-Live-Streaming)。
 
 ### Automatic HTTPS
 
 SRS Stack 支持自动 HTTPS，只需点击一下，您就可以为您的 SRS Stack 启用 HTTPS。SRS Stack 将自动从 [Let's Encrypt](https://letsencrypt.org/) 
 请求和更新 HTTPS 证书。自动 HTTPS 允许 WHIP 或通过网页发布，同时支持 WebRTC，并访问用户的麦克风。
 
-详细信息请参阅[如何通过一键开启HTTPS](/blog/SRS-Stack-HTTPS)。
+详细信息请参阅[如何通过一键开启HTTPS](../../../blog/SRS-Stack-HTTPS)。
 
 ### Virtual Live Events
 
 您可以使用预先录制的视频来模拟现场活动。您只需1个视频文件就可以进行7x24小时的直播。您还可以将流拉到您的直播间，使直播更强大。
 您甚至可以将您的IP摄像头流拉到您的直播间。
 
-请参阅[虚拟直播](/blog/Virtual-Live-Events)和[摄像头直播](/blog/Stream-IP-Camera-Events)。
+请参阅[虚拟直播](../../../blog/Virtual-Live-Events)和[摄像头直播](../../../blog/Stream-IP-Camera-Events)。
 
 ### Restream
 
 使用SRS Stack，您可以将流媒体重新发送到多个平台。SRS Stack会自动选择一个流进行转发，因此您可以发布多个流作为容错或备份流，
 当某个流中断时，SRS Stack会切换到另一个流。
 
-请参阅[多平台转播](/blog/Multi-Platform-Streaming)以获取详细信息。
+请参阅[多平台转播](../../../blog/Multi-Platform-Streaming)以获取详细信息。
 
 ### AI Transcription
 
 SRS Stack支持由OpenAI提供支持的AI转录功能，将实时语音转换为文本并叠加到视频流中作为新的实时流。借助此功能，您可以吸引更多观众，
 特别是对于有听力障碍的人或非母语者。
 
-请参阅[AI自动字幕](/blog/live-streams-transcription)以获取详细信息。
+请参阅[AI自动字幕](../../../blog/live-streams-transcription)以获取详细信息。
 
 ### Transcode
 
 SRS Stack支持对实时流进行转码，以降低比特率、节省带宽和成本，或过滤实时流内容以使其更优。
 
-详细信息请参阅[直播转码](/blog/Live-Transcoding)。
+详细信息请参阅[直播转码](../../../blog/Live-Transcoding)。
 
 ## AI Products
 
 我们正在SRS Stack中实现各种AI的工具和产品，这里是最新的状态，我们会持续更新这个文档。
 
 1. 直播AI字幕，对接的OpenAI的Whisper实现的语音转文字，然后将文字字幕叠加到直播中，实现直播的自动字幕。
-   * 状态：已经完成，可以在SRS Stack中使用。参考[AI自动字幕](/blog/live-streams-transcription)。
+   * 状态：已经完成，可以在SRS Stack中使用。参考[AI自动字幕](../../../blog/live-streams-transcription)。
 1. AI文档助手，对接的AI文档的API，会在官网上提供AI助手，可以不用花时间看文档，也可以知道正确的答案。
    * 状态：Beta版本，可以在官网 [https://ossrs.net](https://ossrs.net) 点击`Ask AI`按钮使用。
 1. 直播间AI助手，在直播间放一个AI当助手，可以让助手帮自己回答问题，或者完成直播中的一些任务。
-   * 状态: Beta版本，可在SRS Stack中使用。参考 [基于浏览器的语音GPT的AI助手](/blog/browser-voice-driven-gpt)。
+   * 状态: Beta版本，可在SRS Stack中使用。参考 [基于浏览器的语音GPT的AI助手](../../../blog/browser-voice-driven-gpt)。
 1. 点播视频翻译，可以将英文视频翻译成中文了学习英文，或者制作多语言的视频，在教育和电商中用的比较多。
-   * 状态: Beta版本，可在SRS Stack中使用。参考 [视频多语言翻译和配音](/blog/dubbing-translating)。
+   * 状态: Beta版本，可在SRS Stack中使用。参考 [视频多语言翻译和配音](../../../blog/dubbing-translating)。
 
 如果你对我们的AI产品感兴趣，可以关注我们的公众号后，在[公众号](/contact#discussion)菜单选择`AI产品`，可以加入微信群，和我们一起讨论。
 
@@ -232,7 +232,7 @@ SRS Stack会给你的服务器发起一个请求，你可以通过target URL来�
 * 成功：`Status: 200 OK` and `"code": 0`
 * 其他代表失败或错误。
 
-关于如何实现回调的处理，请参考[HTTP Callback](/docs/v6/doc/http-callback#go-example)
+关于如何实现回调的处理，请参考[HTTP Callback](../docs/v6/doc/http-callback#go-example)
 
 ### HTTP Callback: Connectivity Check
 

@@ -1,6 +1,6 @@
 # FAQ
 
-> Note: This is FAQ for SRS Stack, please see [SRS FAQ](/faq) for SRS FAQ.
+> Note: This is FAQ for SRS Stack, please see [SRS FAQ](./faq) for SRS FAQ.
 
 Quick Content
 
@@ -37,7 +37,7 @@ You can also search for keywords on the page.
 
 ## Getting Started
 
-Please follow [How to Setup a Video Streaming Service by 1-Click](/blog/SRS-Stack-Tutorial) to purchase 
+Please follow [How to Setup a Video Streaming Service by 1-Click](./blog/SRS-Stack-Tutorial) to purchase 
 and set up SRS Stack, please don't skip this step.
 
 After entering the SRS Stack Server, there will be corresponding video tutorials according to different 
@@ -126,14 +126,14 @@ platforms using aaPanel.
 
 It is recommended to install directly using Docker, which also allows for multiple installations. Be sure 
 to use Ubuntu 20+ system:
-* Docker image installation: [here](/docs/v6/doc/getting-started-stack#docker)
+* Docker image installation: [here](../docs/v6/doc/getting-started-stack#docker)
 
 SRS Stack also support HELM, see [srs-helm](https://github.com/ossrs/srs-helm) for detail.
 
 If you are used to aaPanel, you can install it with aaPanel, which can coexist with multiple websites. Be 
 sure to use Ubuntu 20+ system:
 * aaPanel: You can download the plugin for installation, and refer to [How to Setup a Video Streaming Service with aaPanel](https://blog.ossrs.io/how-to-setup-a-video-streaming-service-by-aapanel-9748ae754c8c) for usage.
-* Script: You can also use the script directly, refer to [Script](/docs/v6/doc/getting-started-stack#script)
+* Script: You can also use the script directly, refer to [Script](../docs/v6/doc/getting-started-stack#script)
 
 It supports various cloud platforms, and the most convenient method is using images, which are cloud 
 server images. If you want to keep it simple and save time, please use images:
@@ -243,7 +243,7 @@ are all automatically applied after running SRS Stack:
 * https://ossrs.io SRS's global documentation website.
 * https://ossrs.net SRS's official website in China.
 
-The operation is very simple, just follow these three steps, please see [here](/blog/SRS-Stack-HTTPS):
+The operation is very simple, just follow these three steps, please see [here](./blog/SRS-Stack-HTTPS):
 
 1. Purchase a domain name and complete the filing. You must have your own legal domain name, otherwise, you cannot apply for a certificate.
 2. Resolve the domain name to the public IP of SRS Stack. You can add multiple domain names to resolve, for example, `ossrs.io` and `www.ossrs.io` are both resolved to the same SRS Stack server.
@@ -556,7 +556,7 @@ The overseas version of Baota is called [aaPanel](https://aapanel.com). Please u
 installs software quickly, and SRS Stack will also switch to overseas mirror downloads.
 
 Baota and aaPanel only have different installation methods, but the specific usage is the same. Please
-refer to [Baota](/blog/BT-aaPanel) or [aaPanel](https://blog.ossrs.io/how-to-setup-a-video-streaming-service-by-aapanel-9748ae754c8c).
+refer to [Baota](./blog/BT-aaPanel) or [aaPanel](https://blog.ossrs.io/how-to-setup-a-video-streaming-service-by-aapanel-9748ae754c8c).
 
 ## How to Install the Latest SRS Stack
 
@@ -576,20 +576,20 @@ CentOS 7, due to being outdated, has many issues. It is recommended to use the U
 ## The Difference Between SRS Stack and SRS
 
 SRS is the media engine of SRS Stack, for detail difference please see 
-[Compare to SRS](/docs/v6/doc/getting-started-stack#compare-to-srs).
+[Compare to SRS](../docs/v6/doc/getting-started-stack#compare-to-srs).
 
 ## Low Latency HLS
 
 How to decrease HLS latency, how to achieve 5-second HLS low latency, see 
-[Unlock Universal Ultra-Low Latency: Achieving 5-Second HLS Live Streams for All, No Special Equipment Needed](/blog/hls-5s-low-latency)
+[Unlock Universal Ultra-Low Latency: Achieving 5-Second HLS Live Streams for All, No Special Equipment Needed](./blog/hls-5s-low-latency)
 
 ## OpenAPI
 
-See [HTTP API](/docs/v6/doc/getting-started-stack#http-api)
+See [HTTP API](../docs/v6/doc/getting-started-stack#http-api)
 
 ## HTTP Callback
 
-See [HTTP Callback](/docs/v6/doc/getting-started-stack#http-callback)
+See [HTTP Callback](../docs/v6/doc/getting-started-stack#http-callback)
 
 ## Changelog
 

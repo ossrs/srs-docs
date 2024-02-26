@@ -144,7 +144,7 @@ Note that MSE doesn't support AV1.
 ## FFmpeg Patch
 
 FFmpeg 6 has supported HEVC over RTMP, if you want to build from code, please see
-[FFmpeg Tools](/docs/v6/doc/hevc#ffmpeg-tools#ffmpeg-tools).
+[FFmpeg Tools](../docs/v6/doc/hevc#ffmpeg-tools#ffmpeg-tools).
 
 SRS dev-docker already patched FFmpeg, ffplay and ffprobe, so user can use it:
 
@@ -158,7 +158,7 @@ docker run --net=host --rm -it ossrs/srs:encoder ffmpeg -stream_loop -1 -re -i d
   -acodec copy -vcodec libx265 -f flv rtmp://127.0.0.1/live/livestream
 ```
 
-Please see [FFmpeg Tools](/docs/v6/doc/hevc#ffmpeg-tools#ffmpeg-tools) for detail.
+Please see [FFmpeg Tools](../docs/v6/doc/hevc#ffmpeg-tools#ffmpeg-tools) for detail.
 
 ## Known Issues
 
@@ -176,11 +176,11 @@ On some use scenario, HEVC is available now, please evaluate it by yourself.
 At SRS, our goal is to establish a non-profit, open-source community dedicated to creating an all-in-one, 
 out-of-the-box, open-source video solution for live streaming and WebRTC online services.
 
-Additionally, we offer a [cloud](/cloud) service for those who prefer to use cloud service instead of building from 
+Additionally, we offer a [Cloud](../cloud) service for those who prefer to use cloud service instead of building from 
 scratch. Our cloud service features global network acceleration, enhanced congestion control algorithms, 
 client SDKs for all platforms, and some free quota.
 
-To learn more about our cloud service, click [here](/cloud).
+To learn more about our cloud service, click [here](../cloud).
 
 ## Thanks
 

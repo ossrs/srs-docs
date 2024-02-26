@@ -49,9 +49,9 @@ docker run --rm -it -p 1935:1935 -p 1985:1985 -p 8080:8080 \
     ossrs/srs:5 ./objs/srs -c conf/rtmp2rtc.conf
 ```
 
-> Note: Please set the CANDIDATE to your own IP. About CANDIDATE, please read [CANDIDATE](/docs/v5/doc/webrtc#config-candidate)
+> Note: Please set the CANDIDATE to your own IP. About CANDIDATE, please read [CANDIDATE](../docs/v5/doc/webrtc#config-candidate)
 
-For configuration details, refer to [this post](/docs/v5/doc/getting-started#webrtc-for-live-streaming).
+For configuration details, refer to [this post](../docs/v5/doc/getting-started#webrtc-for-live-streaming).
 
 ## Step 2: Run OBS
 
@@ -85,11 +85,11 @@ demo, click [here](https://tencent-rtc.github.io/obs-trtc/).
 At SRS, our goal is to establish a non-profit, open-source community dedicated to creating an all-in-one, 
 out-of-the-box, open-source video solution for live streaming and WebRTC online services.
 
-Additionally, we offer a [cloud](/cloud) service for those who prefer to use cloud service instead of building from 
+Additionally, we offer a [Cloud](../cloud) service for those who prefer to use cloud service instead of building from 
 scratch. Our cloud service features global network acceleration, enhanced congestion control algorithms, 
 client SDKs for all platforms, and some free quota.
 
-To learn more about our cloud service, click [here](/cloud).
+To learn more about our cloud service, click [here](../cloud).
 
 ## Conclusion
 
