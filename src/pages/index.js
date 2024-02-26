@@ -82,7 +82,7 @@ export default function Home() {
       <main>
         <HomepageFeatures/>
       </main>
-      <img src='https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/index'/>
+      <img width={0} src='https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/index'/>
     </Layout>
   );
 }
