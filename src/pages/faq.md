@@ -310,6 +310,15 @@ topic. If your question is similar, please watch the video directly:
 
 ## Deleting
 
+First of all:
+
+```text
+Please click the `ASK AI` button on either https://ossrs.io or https://ossrs.net for the Chinese language.
+I think the AI can address this query since relevant articles or discussions may already be available.
+
+This issue will be eliminated, see #2716
+```
+
 Refer this FAQ by:
 
 ```text
