@@ -7,7 +7,11 @@
     </scripts>
     <node-interpreter value="project" />
     <package-manager value="npm" />
-    <envs />
+    <envs>
+      <env name="REGION" value="'zh-cn'" />
+      <env name="BASE_URL" value="'/lts/zh-cn/'" />
+      <env name="SRS_OS_LOCALE" value="zh-cn" />
+    </envs>
     <method v="2" />
   </configuration>
 </component>

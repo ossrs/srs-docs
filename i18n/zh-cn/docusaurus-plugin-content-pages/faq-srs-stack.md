@@ -22,7 +22,8 @@
 * [Unavailable After Installation](#unavailable-after-installation): 安装后无法访问: 安装后提示错误，或者Redis没准备好。
 * [Difference Between SRS Restream and OBS Restream](#difference-between-srs-restream-and-obs-restream): SRS转推和OBS转推的区别: SRS的多平台转推，和OBS转推插件的区别。
 * [How SRS Re-streams to Custom Platforms](#how-srs-restreams-to-custom-platforms): SRS如何转推自定义平台: SRS的多平台转推，如何推到自定义的直播平台。
-* [Why and how to limit the bitrate of virtual live events](#why-and-how-to-limit-the-bitrate-of-virtual-live-events): 为什么要限制虚拟直播的码率，如何解除限制。
+* [Why and How to Limit the Bitrate of Virtual Live Events](#why-and-how-to-limit-the-bitrate-of-virtual-live-events): 为什么要限制虚拟直播的码率，如何解除限制。
+* [How to Setup the Font Style for AI Transcript](#how-to-setup-the-font-style-for-ai-transcript): 如何设置AI自动字幕的字体样式。
 * [How to Replace FFmpeg](#how-to-replace-ffmpeg): 如何更换FFmpeg: 如何更换SRS Stack中的FFmpeg为自定义版本。
 * [Installation of SRS is Very Slow](#installation-of-srs-is-very-slow): 宝塔安装SRS非常慢: 海外用宝塔安装非常慢，访问阿里云镜像太慢。
 * [How to Install the Latest SRS Stack](#how-to-install-the-latest-srs-stack): 宝塔如何安装最新的SRS Stack: 手动安装宝塔插件，安装最新的插件。
@@ -445,12 +446,103 @@ rtmp://ip/app/stream
 
 > Note: 最后一个斜杠后面的就是流密钥。
 
-## Why and how to limit the bitrate of virtual live events
+## Why and How to Limit the Bitrate of Virtual Live Events
 
 为什么以及如何限制虚拟直播活动的比特率？许多用户使用7x24小时的虚拟直播活动，并超过服务器流量限制。通常，AWS Lightsail和DigitalOcean 
 Droplets每月提供1TB的流量，允许进行7x24小时的3Mbps连续直播。因此，限制输入比特率以防止超过流量限制至关重要。
 
 默认情况下，SRS Stack将虚拟直播的输入比特率限制为5Mbps，您可以从`系统配置>限流>限流设置`更改限制以设置更高的限制。
+
+## How to Setup the Font Style for AI Transcript
+
+如何设置AI自动字幕的字体样式？SRS Stack支持设置字体样式，格式为FFmpeg的force_style，
+详细请参考[链接](https://ffmpeg.org/ffmpeg-filters.html#subtitles-1)。
+
+例如，设置字幕为底部中央位置，设置距离底部20px：
+
+```text
+Alignment=2,MarginV=20
+```
+
+例如，设置字体颜色为红色，字体大小为20px：
+
+```text
+Fontsize=12,PrimaryColour=&HFFFFFF
+```
+
+例如，类似YouTube风格的样式：
+
+```text
+Fontname=Roboto,Fontsize=12,PrimaryColour=&HFFFFFF,BorderStyle=4,BackColour=&H40000000,Outline=1,OutlineColour=&HFF000000,Alignment=2,MarginV=20
+```
+
+例如，类似Netflix风格的样式：
+
+```text
+Fontname=Roboto,Fontsize=12,PrimaryColour=&HFFFFFF,BorderStyle=0,BackColour=&H80000000,Outline=0,Shadow=0.75
+```
+
+> Note: Netflix使用的字体是`Consolas`，SRS Stack暂时不支持，这里使用`Roboto`代替。
+
+例如，类似复古黄色字体风格：
+
+```text
+Fontname=Roboto,Fontsize=12,PrimaryColour=&H03fcff,Italic=1,Spacing=0.3
+```
+
+你可以使用FFmpeg测试这些参数的效果，命令行如下：
+
+```bash
+cat > avatar.srt <<EOF
+1
+00:02:31,199 --> 00:02:37,399
+[Music] Strong pray on the weak. [Music] Nobody does not think. 
+[Music] You have got one hour. [Music] You know this would happen?
+
+2
+00:02:37,759 --> 00:02:39,759
+Everything changed [Music]
+
+3
+00:02:39,800 --> 00:02:43,800
+Jake it's crazy here the porridge is rolling and there's no stopping him
+
+4
+00:02:44,520 --> 00:02:49,440
+We're going up against gunships his bows and arrows. I guess we better stop him
+EOF
+
+FORCE_STYLE="Fontname=Roboto,Fontsize=12,PrimaryColour=&HFFFFFF,BorderStyle=4,BackColour=&H40000000,Outline=1,OutlineColour=&HFF000000,Alignment=2,MarginV=20" &&
+ffmpeg -i ~/git/srs/trunk/doc/source.flv \
+    -ss 150 -t 20 -vf "subtitles=./avatar.srt:force_style='${FORCE_STYLE}'" \
+    -c:v libx264 -c:a copy -y output.mp4
+```
+
+下面是常见的参数说明，详细请参考[链接](https://ffmpeg.org/ffmpeg-filters.html#subtitles-1)：
+
+* `Fontname`：用于指定字幕的字体名称。字体名称应该是系统中已安装的字体。例如，如果你想要使用 [Noto Sans SC](https://fonts.google.com/noto/specimen/Noto+Sans+SC) 字体，可以设置 `Fontname=Noto Sans SC`。
+* `Fontsize`：定义字幕文字的大小。这个值通常是一个整数，表示字体的点数（pt）。例如，如果你想要字体大小为 24pt，可以设置 `Fontsize=24`。
+* `PrimaryColour`：主要字体颜色，使用 &H 开头的 BGR (蓝绿红) 十六进制格式。格式通常为 &HBGR，其中 BGR 代表蓝色、绿色、红色的十六进制值。例如，要将字体颜色设置为红色，使用 `PrimaryColour=&H0000FF`（红色在 BGR 中表示为 FF0000，但此处需要颠倒为 0000FF）。
+* `BackColour`：背景颜色，也使用 &H 开头的 BGR (蓝绿红) 十六进制格式。例如，要设置背景颜色为黑色，可以使用 `BackColour=&H000000`（黑色在 BGR 中为 000000，不需要颠倒）。
+* `Bold`：用于设置字体是否加粗。通常，0 表示不加粗，而 1 或其他正数表示加粗。例如，要加粗字体，可以设置 `Bold=1`。
+* `Italic`：用于设置字体是否倾斜。0 表示不倾斜，1 表示倾斜。例如，要设置字体为斜体，可以使用 `Italic=1`。
+* `Underline`：用于设置字体是否有下划线。0 表示没有下划线，1 表示有下划线。例如，要给字体加下划线，可以设置 `Underline=1`。
+* `StrikeOut`：用于设置字体是否有删除线。0 表示没有删除线，1 表示有删除线。例如，要给字体加删除线，可以设置 `StrikeOut=1`。
+* `BorderStyle`：字幕边框的样式。通常，1 表示普通边框，3 表示不透明背景框。例如，要设置普通边框，可以使用 `BorderStyle=1`。
+* `Outline`：字体边缘的轮廓宽度。这个值通常是一个整数。例如，要设置轮廓宽度为 2，可以使用 `Outline=2`。
+* `OutlineColour`：设置字幕描边的颜色，使用同样的 BGR 十六进制格式。例如, `OutlineColour=&HFFFFFF` 为白色描边。
+* `Shadow`：字体阴影的深度。这个值也是一个整数，表示阴影的大小。例如，要设置阴影深度为 1，可以使用 `Shadow=1`。
+* `Spacing` 文字的间距。这个值可以是任意浮点数，用来调整字幕文字之间的空间。如果你希望增加字幕中字母或字符之间的空间，可以设置一个正值，如 `Spacing=2`。如果你想要字符更紧凑一些，可以设置一个负值，如 `Spacing=-1`。当 `Spacing=0.3` 时，表示在默认间距的基础上增加了0.3的额外间距。
+* `Alignment`：字幕的对齐方式。这个值根据 ASS 字幕格式来决定，值为1到9，这些数字对应的位置是基于一个 3x3 的网格，其中 1, 2, 3 位于底部，4, 5, 6 位于中部，7, 8, 9 位于顶部。例如，如果你想让文字出现在屏幕的正中央，你应该使用 `Alignment=5`。例如，要设置文字居中对齐在底部，可以使用 `Alignment=2`。
+* `MarginL`（左边距）: 此参数指定字幕文本左侧边缘与视频帧左侧边缘之间的距离。它用于确保文本与视频左侧有一定的空间，防止文本紧贴到视频边缘。这个距离通常以像素为单位，设置较大的值会使字幕文本更靠近视频的中心。例如，`MarginL=20`意味着字幕将从视频左侧边缘向内偏移20像素开始显示。
+* `MarginR`（右边距）: 此参数定义字幕文本右侧边缘与视频帧右侧边缘之间的距离。类似于MarginL，它帮助保持文本与视频右侧的一定空间，避免文本紧贴到视频边缘。例如，`MarginR=20`将确保字幕文本的右侧边缘与视频右侧边缘至少有20像素的间距。
+* `MarginV`（垂直边距）: 这个参数用于同时控制字幕文本顶部和底部与视频帧顶部和底部边缘的距离。这有助于调整字幕在垂直方向上的位置，确保字幕文本在屏幕上垂直居中或根据需要调整到合适的高度。例如，`MarginV=10`意味着字幕的顶部和底部都将与视频帧的顶部和底部边缘保持至少10像素的距离。
+
+> Note: 关于`FFmpeg force_style`，你可以问ChatGPT，它可以提供更加方便的答案。
+
+> Note: 颜色还可以 `ABGR` (Alpha, Blue, Green, Red) 格式表示，指定透明度(Alpha)，它的范围是从 00 到 FF（十六进制），其中 00 表示完全透明，FF 表示完全不透明。例如，`&H80FF0000`表示半透明的纯蓝色，其中80是透明度（半透明），FF是蓝色成分的最大值，而绿色和红色成分都是00。
+
+> Note: 如果要使用其他`Fontname`，请从谷歌字体下载，并将字体文件挂载到SRS Docker的`/usr/local/share/fonts/`中。
 
 ## How to Replace FFmpeg
 

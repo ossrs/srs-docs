@@ -22,7 +22,8 @@ Quick Content
 * [Unavailable After Installation](#unavailable-after-installation): Error prompt after installation, or Redis not ready.
 * [Difference Between SRS Restream and OBS Restream](#difference-between-srs-restream-and-obs-restream): The difference between SRS multi-platform re-streaming and OBS re-streaming plugin.
 * [How SRS Re-streams to Custom Platforms](#how-srs-restreams-to-custom-platforms): How SRS multi-platform re-streaming pushes to custom live platforms.
-* [Why and how to limit the bitrate of virtual live events](#why-and-how-to-limit-the-bitrate-of-virtual-live-events): Why and how to limit the bitrate of virtual live events.
+* [Why and How to Limit the Bitrate of Virtual Live Events](#why-and-how-to-limit-the-bitrate-of-virtual-live-events): Why and how to limit the bitrate of virtual live events.
+* [How to Setup the Font Style for AI Transcript](#how-to-setup-the-font-style-for-ai-transcript): How to set up the font style for AI transcript.
 * [How to Replace FFmpeg](#how-to-replace-ffmpeg): How to replace the FFmpeg in SRS Stack with a custom version.
 * [Installation of SRS is Very Slow](#installation-of-srs-is-very-slow): Overseas aaPanel installation is very slow, access to Alibaba Cloud image is too slow.
 * [How to Install the Latest SRS Stack](#how-to-install-the-latest-srs-stack): Manually install aaPanel plugin, install the latest plugin.
@@ -521,7 +522,7 @@ Then, you can split it into:
 
 > Note: The part after the last slash is the stream key.
 
-## Why and how to limit the bitrate of virtual live events
+## Why and How to Limit the Bitrate of Virtual Live Events
 
 Why and how to limit the bitrate of virtual live events? Many users use 7x24 virtual live events, and exceed 
 the server traffic limit. Typically, AWS Lightsail and DigitalOcean Droplets provide 1TB of monthly traffic,
@@ -530,6 +531,97 @@ to prevent exceeding the traffic limit.
 
 By default, for virtual live events, SRS Stack limits the input bitrate to 5Mbps, you can change the limits 
 from `System > Limits > Set Limits` to set a higher limits.
+
+## How to Setup the Font Style for AI Transcript
+
+How to set up the font style for AI transcript. The SRS Stack supports setting font styles, using the FFmpeg's 
+force_style format. For more details, please refer to the [link](https://ffmpeg.org/ffmpeg-filters.html#subtitles-1) provided.
+
+For example, set the subtitle to the bottom center position, with a distance of 20px from the bottom:
+
+```text
+Alignment=2,MarginV=20
+```
+
+For example, set the font color to red and the font size to 20px:
+
+```text
+Fontsize=20,PrimaryColour=&H000000FF
+```
+
+For example, a YouTube-style style:
+
+```text
+Fontname=Roboto,Fontsize=12,PrimaryColour=&HFFFFFF,BorderStyle=4,BackColour=&H40000000,Outline=1,OutlineColour=&HFF000000,Alignment=2,MarginV=20
+```
+
+For example, a Netflix-style style:
+
+```text
+Fontname=Roboto,Fontsize=12,PrimaryColour=&HFFFFFF,BorderStyle=0,BackColour=&H80000000,Outline=0,Shadow=0.75
+```
+
+> Note: Netflix uses the `Consolas` font, which is temporarily unsupported by SRS Stack, so `Roboto` is used instead.
+
+For example, a Aesthetic (Vintage Yellow Subtitle) style:
+
+```text
+Fontname=Roboto,Fontsize=12,PrimaryColour=&H03fcff,Italic=1,Spacing=0.3
+```
+
+You can test the effects of these parameters using FFmpeg, with the following command line:
+
+```bash
+cat > avatar.srt <<EOF
+1
+00:02:31,199 --> 00:02:37,399
+[Music] Strong pray on the weak. [Music] Nobody does not think. 
+[Music] You have got one hour. [Music] You know this would happen?
+
+2
+00:02:37,759 --> 00:02:39,759
+Everything changed [Music]
+
+3
+00:02:39,800 --> 00:02:43,800
+Jake it's crazy here the porridge is rolling and there's no stopping him
+
+4
+00:02:44,520 --> 00:02:49,440
+We're going up against gunships his bows and arrows. I guess we better stop him
+EOF
+
+FORCE_STYLE="Fontname=Roboto,Fontsize=12,PrimaryColour=&HFFFFFF,BorderStyle=4,BackColour=&H40000000,Outline=1,OutlineColour=&HFF000000,Alignment=2,MarginV=20" &&
+ffmpeg -i ~/git/srs/trunk/doc/source.flv \
+    -ss 150 -t 20 -vf "subtitles=./avatar.srt:force_style='${FORCE_STYLE}'" \
+    -c:v libx264 -c:a copy -y output.mp4
+```
+
+Here are the descriptions of frequently used parameters, for more details, please refer to the 
+[link](https://ffmpeg.org/ffmpeg-filters.html#subtitles-1):
+
+* `Fontname`: Specifies the font name for subtitles. The font name should be one that is installed on the system. For instance, to use the [Roboto](https://fonts.google.com/specimen/Roboto) font, set `Fontname=Roboto`.
+* `Fontsize`: Defines the size of the subtitle text. Usually, this value is an integer representing the font's point size (pt). To set the font size to 24pt, set `Fontsize=24`.
+* `PrimaryColour`: Main font color, using a &H-prefaced BGR (blue-green-red) hexadecimal format. The format is typically &HBGR, where BGR represents the hexadecimal values for blue, green, and red. To set the font color to red, use `PrimaryColour=&H0000FF` (red is represented as FF0000 in BGR, but reversed here to 0000FF).
+* `BackColour`: Background color, also using a &H-prefaced BGR (blue-green-red) hexadecimal format. To set the background color to black, use `BackColour=&H000000` (black is represented as 000000 in BGR, no need to reverse).
+* `Bold`: Sets whether the font is bold or not. Typically, 0 means not bold, while 1 or other positive numbers mean bold. To bold the font, set `Bold=1`.
+* `Italic`: Sets whether the font is italic or not. 0 means not italic, 1 means italic. To set the font to italic, use `Italic=1`.
+* `Underline`: Sets whether the font has an underline or not. 0 means no underline, 1 means underline. To underline the font, set `Underline=1`.
+* `StrikeOut`: Sets whether the font has a strikethrough or not. 0 means no strikethrough, 1 means strikethrough. To strikethrough the font, set `StrikeOut=1`.
+* `BorderStyle`: The style of the subtitle border. Typically, 1 means a regular border. To set a regular border, use `BorderStyle=1`.
+* `Outline`: The width of the font's outline edges. This value is usually an integer. To set the outline width to 2, use `Outline=2`.
+* `Shadow`: The depth of the font's shadow. This value is also an integer, representing the size of the shadow. To set the shadow depth to 1, use `Shadow=1`.
+* `Spacing` refers to the space between characters. This value can be any floating-point number and is used to adjust the space between the text in subtitles. If you wish to increase the space between letters or characters, you can set a positive value, such as `Spacing=2`. To make characters more compact, set a negative value, like Spacing=-1. When `Spacing=0.3`, it means that an additional space of 0.3 is added based on the default spacing.
+* `Alignment`: The alignment of the subtitles. This value is determined based on the ASS subtitle format, with values ranging from 1 to 9. These numbers correspond to positions on a 3x3 grid, where 1, 2, 3 are at the bottom, 4, 5, 6 are in the middle, and 7, 8, 9 are at the top. If you want the text to appear in the center of the screen, use `Alignment=5`. To align text to the center at the bottom, use `Alignment=2`.
+* `MarginL` (Left margin): This parameter specifies the distance between the left edge of the subtitle text and the left edge of the video frame. It ensures there is some space between the text and the video's left side, preventing the text from being too close to the edge. This distance is usually in pixels, with larger values moving the subtitle text closer to the center of the video. For example, `MarginL=20` means the subtitles will display 20 pixels inward from the left edge of the video.
+* `MarginR` (Right margin): This parameter defines the distance between the right edge of the subtitle text and the right edge of the video frame. Similar to MarginL, it helps maintain some space between the text and the video's right side, preventing the text from being too close to the edge. For example, `MarginR=20` ensures there is at least a 20-pixel gap between the right edge of the subtitle text and the right edge of the video frame.
+* `MarginV` (Vertical margin): This parameter controls the distance between the top and bottom of the subtitle text and the top and bottom edges of the video frame. This helps adjust the position of the subtitles vertically, ensuring that the subtitle text is centered vertically on the screen or adjusted to an appropriate height as needed. For example, `MarginV=10` means there will be a minimum 10-pixel distance between the top and bottom of the subtitles and the top and bottom edges of the video frame.
+
+> Note: Regarding `FFmpeg force_style`, you can inquire with ChatGPT for a more convenient answer.
+
+> Note: Colors can also be represented in `ABGR` (Alpha, Blue, Green, Red) format, specifying transparency (Alpha) ranging from 00 to FF (hexadecimal), where 00 means completely transparent and FF means completely opaque. For example, `&H80FF0000` represents a semi-transparent pure blue color, where 80 refers to the transparency level (semi-transparent), FF is the maximum value for the blue component, and green and red components are both 00.
+
+> Note: If want to use other `Fontname`, please download from Google Font and mount font file to `/usr/local/share/fonts/` in the SRS Docker.
 
 ## How to Replace FFmpeg
 
