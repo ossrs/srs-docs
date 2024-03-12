@@ -74,9 +74,15 @@ Easily set up an SRS Stack with just one click. For more information, check out
 
 SRS Stack offers a BaoTa plugin, for usage instructions refer to the [SRS Stack aaPanel Plugin](../../../blog/BT-aaPanel).
 
+## Changelog
+
+For the update log of the SRS Stack, please refer to [CHANGELOG](https://github.com/ossrs/srs-stack/blob/main/DEVELOPER.md#changelog).
+
+For specific features supported by a particular version, you can view the CHANGELOG in the version release, see [Releases](https://github.com/ossrs/srs-stack/releases).
+
 ## Features
 
-About the features of SRS Stack and comparison with SRS.
+About the features of SRS Stack and comparison with SRS，for more details please read [Features](https://github.com/ossrs/srs-stack?tab=readme-ov-file#features).
 
 ### Compare to SRS
 

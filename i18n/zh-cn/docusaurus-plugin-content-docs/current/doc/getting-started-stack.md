@@ -74,9 +74,15 @@ SRS Stack支持AWS Lightsail，这是AWS提供的一种虚拟专用服务器（V
 
 在国内做流媒体或RTC业务，可以在腾讯云轻量服务器上购买SRS Stack，参考[SRS Stack：起步、购买和入门](../../../blog/SRS-Stack-Tutorial)。
 
+## Changelog
+
+关于SRS Stack的更新日志，参考[CHANGELOG](https://github.com/ossrs/srs-stack/blob/main/DEVELOPER.md#changelog)
+
+某个具体版本支持的具体功能，可以在版本发布中查看CHANGELOG，参考[Releases](https://github.com/ossrs/srs-stack/releases)
+
 ## Features
 
-关于SRS Stack的功能以及与SRS的比较。
+关于SRS Stack的功能以及与SRS的比较，详细的功能清单参考[Features](https://github.com/ossrs/srs-stack?tab=readme-ov-file#features)。
 
 ### Compare to SRS
 

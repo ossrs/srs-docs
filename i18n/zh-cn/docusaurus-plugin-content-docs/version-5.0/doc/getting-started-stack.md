@@ -75,9 +75,15 @@ SRS Stack提供了宝塔插件，使用方法参考[宝塔插件](../../../blog/
 若你需要做出海业务，在海外做直播或者RTC，可以很方便的一键创建SRS Stack，参考 
 [DigitalOcean Droplet](https://mp.weixin.qq.com/s/_GcJm15BGv1qbmHixPQAGQ) 使用说明。
 
+## Changelog
+
+关于SRS Stack的更新日志，参考[CHANGELOG](https://github.com/ossrs/srs-stack/blob/main/DEVELOPER.md#changelog)
+
+某个具体版本支持的具体功能，可以在版本发布中查看CHANGELOG，参考[Releases](https://github.com/ossrs/srs-stack/releases)
+
 ## Features
 
-关于SRS Stack的功能以及与SRS的比较。
+关于SRS Stack的功能以及与SRS的比较，详细的功能清单参考[Features](https://github.com/ossrs/srs-stack?tab=readme-ov-file#features)。
 
 ### Compare to SRS
 
