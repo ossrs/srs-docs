@@ -24,6 +24,7 @@ Quick Content
 * [How SRS Re-streams to Custom Platforms](#how-srs-restreams-to-custom-platforms): How SRS multi-platform re-streaming pushes to custom live platforms.
 * [Why and How to Limit the Bitrate of Virtual Live Events](#why-and-how-to-limit-the-bitrate-of-virtual-live-events): Why and how to limit the bitrate of virtual live events.
 * [How to Setup the Font Style for AI Transcript](#how-to-setup-the-font-style-for-ai-transcript): How to set up the font style for AI transcript.
+* [How to Setup the Video Codec Parameters for AI Transcript](#how-to-setup-the-video-codec-parameters-for-ai-transcript): How to set up the video codec parameters for AI transcript.
 * [How to Replace FFmpeg](#how-to-replace-ffmpeg): How to replace the FFmpeg in SRS Stack with a custom version.
 * [Installation of SRS is Very Slow](#installation-of-srs-is-very-slow): Overseas aaPanel installation is very slow, access to Alibaba Cloud image is too slow.
 * [How to Install the Latest SRS Stack](#how-to-install-the-latest-srs-stack): Manually install aaPanel plugin, install the latest plugin.
@@ -622,6 +623,37 @@ Here are the descriptions of frequently used parameters, for more details, pleas
 > Note: Colors can also be represented in `ABGR` (Alpha, Blue, Green, Red) format, specifying transparency (Alpha) ranging from 00 to FF (hexadecimal), where 00 means completely transparent and FF means completely opaque. For example, `&H80FF0000` represents a semi-transparent pure blue color, where 80 refers to the transparency level (semi-transparent), FF is the maximum value for the blue component, and green and red components are both 00.
 
 > Note: If want to use other `Fontname`, please download from Google Font and mount font file to `/usr/local/share/fonts/` in the SRS Docker.
+
+## How to Setup the Video Codec Parameters for AI Transcript
+
+For overlaying the subtitle in video stream, the FFmpeg parameters should be:
+
+```bash
+ffmpeg \
+    -i input.ts -vf '{subtitles}' \
+    -c:v libx264 \ # Video codec and its parameters
+    -c:a aac \ # Audio codec and its parameters
+    -copyts -y output.ts
+```
+
+You are able to set the video codec and its parameters on the web UI, by default it is likely:
+
+```bash
+-c:v libx264 -profile:v main -preset:v medium -tune zerolatency -bf 0
+```
+
+So the final FFmpeg command line is:
+
+```bash
+ffmpeg \
+    -i transcript/2-org-4f06f7a5-7f83-4845-9b4b-716ffec1bead.ts \
+    -vf subtitles=transcript/2-audio-a982892f-1d56-4b4a-a663-f3b7f1a5b548.srt:force_style='Alignment=2,MarginV=20' \
+    -c:v libx264 -profile:v main -preset:v medium -tune zerolatency -bf 0 \
+    -c:a aac -copyts \
+    -y transcript/2-overlay-2ba4154c-03ed-4853-bdda-d8396fcb1f47.ts
+```
+
+Note that `-bf 0` is strongly recommended to disable B-frames, which is not supported by WebRTC.
 
 ## How to Replace FFmpeg
 

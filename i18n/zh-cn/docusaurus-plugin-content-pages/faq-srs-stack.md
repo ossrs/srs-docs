@@ -24,6 +24,7 @@
 * [How SRS Re-streams to Custom Platforms](#how-srs-restreams-to-custom-platforms): SRS如何转推自定义平台: SRS的多平台转推，如何推到自定义的直播平台。
 * [Why and How to Limit the Bitrate of Virtual Live Events](#why-and-how-to-limit-the-bitrate-of-virtual-live-events): 为什么要限制虚拟直播的码率，如何解除限制。
 * [How to Setup the Font Style for AI Transcript](#how-to-setup-the-font-style-for-ai-transcript): 如何设置AI自动字幕的字体样式。
+* [How to Setup the Video Codec Parameters for AI Transcript](#how-to-setup-the-video-codec-parameters-for-ai-transcript): 如何设置AI自动字幕的视频转码参数。
 * [How to Replace FFmpeg](#how-to-replace-ffmpeg): 如何更换FFmpeg: 如何更换SRS Stack中的FFmpeg为自定义版本。
 * [Installation of SRS is Very Slow](#installation-of-srs-is-very-slow): 宝塔安装SRS非常慢: 海外用宝塔安装非常慢，访问阿里云镜像太慢。
 * [How to Install the Latest SRS Stack](#how-to-install-the-latest-srs-stack): 宝塔如何安装最新的SRS Stack: 手动安装宝塔插件，安装最新的插件。
@@ -543,6 +544,37 @@ ffmpeg -i ~/git/srs/trunk/doc/source.flv \
 > Note: 颜色还可以 `ABGR` (Alpha, Blue, Green, Red) 格式表示，指定透明度(Alpha)，它的范围是从 00 到 FF（十六进制），其中 00 表示完全透明，FF 表示完全不透明。例如，`&H80FF0000`表示半透明的纯蓝色，其中80是透明度（半透明），FF是蓝色成分的最大值，而绿色和红色成分都是00。
 
 > Note: 如果要使用其他`Fontname`，请从谷歌字体下载，并将字体文件挂载到SRS Docker的`/usr/local/share/fonts/`中。
+
+## How to Setup the Video Codec Parameters for AI Transcript
+
+要在视频流中叠加字幕，FFmpeg参数应该是：
+
+```bash
+ffmpeg \
+    -i input.ts -vf '{subtitles}' \
+    -c:v libx264 \ # Video codec and its parameters
+    -c:a aac \ # Audio codec and its parameters
+    -copyts -y output.ts
+```
+
+您可以在Web用户界面上设置视频编解码器及其参数，默认情况下可能是：
+
+```bash
+-c:v libx264 -profile:v main -preset:v medium -tune zerolatency -bf 0
+```
+
+所以最终的FFmpeg命令行是：
+
+```bash
+ffmpeg \
+    -i transcript/2-org-4f06f7a5-7f83-4845-9b4b-716ffec1bead.ts \
+    -vf subtitles=transcript/2-audio-a982892f-1d56-4b4a-a663-f3b7f1a5b548.srt:force_style='Alignment=2,MarginV=20' \
+    -c:v libx264 -profile:v main -preset:v medium -tune zerolatency -bf 0 \
+    -c:a aac -copyts \
+    -y transcript/2-overlay-2ba4154c-03ed-4853-bdda-d8396fcb1f47.ts
+```
+
+请注意，强烈建议使用`-bf 0`来禁用B帧，因为WebRTC不支持B帧。
 
 ## How to Replace FFmpeg
 
