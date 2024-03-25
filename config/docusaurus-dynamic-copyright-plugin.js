@@ -17,7 +17,7 @@ module.exports = function (context, options) {
           </style>
           <div class="footer footer--${options.footerStyle} docusaurus-dynamic-copyright">
             <div class="container text--center">
-              ${options.copyright}
+              ${context.i18n.currentLocale === 'en-us' ? options.copyright : options.copyright2}
             </div>
           </div>`,
         ],
