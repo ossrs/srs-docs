@@ -10,7 +10,7 @@ HTTP API: DOM - XSS on JSONP callback
 * Advisory: [GHSA-gv9r-qcjc-5hj7](https://github.com/ossrs/srs/security/advisories/GHSA-gv9r-qcjc-5hj7)
 * [CVE-2024-29882](http://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2024-29882)
 * Not vulnerable: 5.0.210+, 6.0.121+
-* Vulnerable: <5.0.210, <6.0.121
+* Vulnerable: 5.0.0-5.0.210, 6.0.0-6.0.121
 * The patch: [c75c9840d](https://github.com/ossrs/srs/commit/c75c9840d533a1a2c7aaf18f7bd7990ef0cbecfa) (v5.0.210), [244ce7bc0](https://github.com/ossrs/srs/commit/244ce7bc013a0b805274a65132a2980680ba6b9d) (v6.0.48)
 
 ## CVE-2023-34105
