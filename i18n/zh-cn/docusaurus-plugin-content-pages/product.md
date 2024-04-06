@@ -118,7 +118,7 @@ SRS是全球TOP1的开源视频服务器，支持直播和WebRTC，可应用于�
 - [x] WebRTC over TCP，支持TCP传输WebRTC，支持TCP端口复用。[#2852](https://github.com/ossrs/srs/issues/2852)
 - [x] 支持HTTP API、HTTP Stream、HTTP Server、WebRTC TCP端口复用。 [#2881](https://github.com/ossrs/srs/issues/2881).
 
-预计5.0会在2022年底完成主要功能开发，预计2023年底发布。
+SRS 5.0是在2023.12发布的，请参考[5.0-r0](https://github.com/ossrs/srs/releases/tag/v5.0-r0).
 
 ## Release4.0
 
@@ -138,7 +138,7 @@ LVS的包研，阿里的叔度、致凡、华大、文景、士豪和还剑。�
 - [x] [experimental]支持SRT推流，广电广泛支持的新协议。参考：[#1147](https://github.com/ossrs/srs/issues/1147).
 - [x] [feature]支持GB28181推流，摄像头通过国标协议推流。参考：[#1500](https://github.com/ossrs/srs/issues/1500).
 
-预计4.0会在2021年底发布。
+SRS 4.0是在2022.06发布的，请参考[4.0-r0](https://github.com/ossrs/srs/releases/tag/v4.0-r0).
 
 ## Release3.0
 
