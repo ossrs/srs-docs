@@ -163,7 +163,7 @@ The value of open-source will grow, and community support will increase.
 ## About SRS Stack
 
 SRS Stack is a lightweight, open-source video cloud solution based on Go, Reactjs, SRS, FFmpeg, WebRTC,
-and more. For more details, please refer to [SRS Stack](./getting-started-stack.md).
+and more. For more details, please refer to [SRS Stack](./getting-started-oryx.md).
 
 ![](https://ossrs.io/gif/v1/sls.gif?site=ossrs.io&path=/lts/doc/en/v5/introduction)
 

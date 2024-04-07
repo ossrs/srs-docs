@@ -10,7 +10,7 @@ Link the blog in docs:
 [SRS Stack aaPanel Plugin](../../../blog/BT-aaPanel)
 ```
 
-For instance, refer to the `getting-started-stack.md` document for more details.
+For instance, refer to the `getting-started-oryx.md` document for more details.
 
 ## How to link document in the sample docs?
 
@@ -63,7 +63,7 @@ For instance, refer to the [README.md](https://github.com/ossrs/srs-stack/blob/m
 Link the docs in blog:
 
 ```markdown
-[Getting Started](../docs/v5/doc/getting-started-stack#docker)
+[Getting Started](../docs/v5/doc/getting-started-oryx#docker)
 ```
 
 For instance, refer to the `2022-04-09-SRS-Stack-Tutorial.md` document for more details.

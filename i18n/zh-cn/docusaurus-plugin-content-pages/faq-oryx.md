@@ -115,14 +115,14 @@ A bt.yourdomain.com 121.13.75.20
 SRS Stack支持Docker镜像，安装脚本，腾讯云Lighthouse和CVM镜像，DigitalOcean镜像，其他平台可以用宝塔安装。
 
 推荐使用Docker直接安装，还可以装多个，注意要用Ubuntu 20+系统：
-* Docker镜像安装：[这里](../docs/v6/doc/getting-started-stack#docker)
+* Docker镜像安装：[这里](../docs/v6/doc/getting-started-oryx#docker)
 
 SRS Stack支持HELM安装，请参考[srs-helm](https://github.com/ossrs/srs-helm)的说明。
 
 如果你习惯用宝塔，可以用宝塔安装，可以和多个网站并存，注意要用Ubuntu 20+系统：
 * 宝塔：其他云平台可以用宝塔安装，要求是CentOS 7+或Ubuntu 20+的系统，使用参考[这里](https://mp.weixin.qq.com/s/nutc5eJ73aUa4Hc23DbCwQ)
 * aaPanel：海外的宝塔，如果你的机器是海外的，一定不要用宝塔而要用aaPanel，使用参考[这里](https://blog.ossrs.io/how-to-setup-a-video-streaming-service-by-aapanel-9748ae754c8c)
-* Script：直接用脚本也可以，参考[Script](../docs/v6/doc/getting-started-stack#script)
+* Script：直接用脚本也可以，参考[Script](../docs/v6/doc/getting-started-oryx#script)
 
 支持各种云平台，最方便的是镜像，也就是云服务器的镜像，如果想简单省事就请用镜像：
 * Lighthouse：腾讯云的轻量云服务器镜像，使用参考[这里](https://mp.weixin.qq.com/s/fWmdkw-2AoFD_pEmE_EIkA)
@@ -612,7 +612,7 @@ CentOS7由于年久失修，有很多问题，推荐使用Ubuntu20系统。
 
 ## The Difference Between SRS Stack and SRS
 
-SRS是SRS Stack的媒体引擎，详细差异请查看[与SRS比较](../docs/v6/doc/getting-started-stack#compare-to-srs)。
+SRS是SRS Stack的媒体引擎，详细差异请查看[与SRS比较](../docs/v6/doc/getting-started-oryx#compare-to-srs)。
 
 ## Low Latency HLS
 
@@ -620,11 +620,11 @@ SRS是SRS Stack的媒体引擎，详细差异请查看[与SRS比较](../docs/v6/
 
 ## OpenAPI
 
-See [HTTP API](../docs/v6/doc/getting-started-stack#http-api)
+See [HTTP API](../docs/v6/doc/getting-started-oryx#http-api)
 
 ## HTTP Callback
 
-See [HTTP Callback](../docs/v6/doc/getting-started-stack#http-callback)
+See [HTTP Callback](../docs/v6/doc/getting-started-oryx#http-callback)
 
 ## Changelog
 

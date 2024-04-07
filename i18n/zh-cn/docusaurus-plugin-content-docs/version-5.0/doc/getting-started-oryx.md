@@ -370,6 +370,6 @@ Response:
 * The `artifact_url` is the URL path to access the artifact mp4.
 * Ignore any response error.
 
-![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.net&path=/lts/doc/zh/v5/getting-started-stack)
+![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.net&path=/lts/doc/zh/v5/getting-started-oryx)
 
 

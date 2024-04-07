@@ -229,7 +229,7 @@ To learn more about our cloud service, click [here](../cloud).
 
 In this tutorial, you build a video streaming service only by 1-Click, but with powerful features like 
 authentication, SRT and WebRTC etc. If you have further questions about SRS, 
-[the wiki](../docs/v6/doc/getting-started-stack) is a good place to start.
+[the wiki](../docs/v6/doc/getting-started-oryx) is a good place to start.
 
 ## Contact
 

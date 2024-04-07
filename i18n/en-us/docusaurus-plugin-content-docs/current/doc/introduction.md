@@ -21,7 +21,7 @@ SRS is primarily used in the Live streaming and WebRTC fields. In the live strea
 protocols such as RTMP, HLS, SRT, MPEG-DASH, and HTTP-FLV. In the WebRTC field, SRS supports protocols like WebRTC, 
 WHIP, and WHEP. SRS facilitates protocol conversion for both Live streaming and WebRTC. As a media server, SRS 
 typically works alongside other open-source projects such as FFmpeg, OBS, and WebRTC. SRS Stack as an out-of-the-box 
-media solution, incorporating numerous open-source projects and tools, please refer to the [introduction](./getting-started-stack.md#introduction) 
+media solution, incorporating numerous open-source projects and tools, please refer to the [introduction](./getting-started-oryx.md#introduction) 
 of SRS Stack.
 
 SRS provides an [HTTP API](./http-api.md) open interface to query system and stream status. It also supports 
@@ -170,7 +170,7 @@ The value of open-source will grow, and community support will increase.
 ## About SRS Stack
 
 SRS Stack is a lightweight, open-source video cloud solution based on Go, Reactjs, SRS, FFmpeg, WebRTC,
-and more. For more details, please refer to [SRS Stack](./getting-started-stack.md).
+and more. For more details, please refer to [SRS Stack](./getting-started-oryx.md).
 
 ![](https://ossrs.io/gif/v1/sls.gif?site=ossrs.io&path=/lts/doc/en/v6/introduction)
 

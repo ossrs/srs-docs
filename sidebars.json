@@ -22,7 +22,7 @@
       "items": [
         "doc/getting-started",
         "doc/getting-started-build",
-        "doc/getting-started-stack",
+        "doc/getting-started-oryx",
         "doc/getting-started-k8s",
         "doc/cloud"
       ]

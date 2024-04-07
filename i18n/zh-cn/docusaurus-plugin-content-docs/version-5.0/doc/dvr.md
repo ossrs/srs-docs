@@ -17,7 +17,7 @@ SRS支持将RTMP流录制成FLV或MP4文件。下面的描述以FLV为例，但�
 +------------+            +-------+           +---------------+
 ```
 
-许多用户希望 DVR 提供更多功能，请考虑使用 [SRS Stack](./getting-started-stack.md#dvr) 替代， 例如：
+许多用户希望 DVR 提供更多功能，请考虑使用 [SRS Stack](./getting-started-oryx.md#dvr) 替代， 例如：
 
 * SRS Stack 支持 S3 云存储，将最终的 MP4 文件移动到 S3 云存储。
 * SRS Stack 支持全局过滤器，仅记录指定的流，而不是所有流。

@@ -135,7 +135,7 @@ SRS还会在工具链上不断完善，开发者可能不用SRS，但可能用�
 ## About SRS Stack
 
 SRS Stack是一个基于Go、Reactjs、SRS、FFmpeg、WebRTC等的轻量级、开源的视频云解决方案。
-详细请参考[SRS Stack](./getting-started-stack.md)。
+详细请参考[SRS Stack](./getting-started-oryx.md)。
 
 ![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.net&path=/lts/doc/zh/v5/introduction)
 

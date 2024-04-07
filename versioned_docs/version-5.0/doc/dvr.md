@@ -17,7 +17,7 @@ When FFmpeg/OBS publish RTMP stream to SRS, SRS will write the stream to FLV/MP4
 +------------+            +-------+           +---------------+
 ```
 
-Many users want more features about DVR, please consider use [SRS Stack](./getting-started-stack.md#dvr) instead,
+Many users want more features about DVR, please consider use [SRS Stack](./getting-started-oryx.md#dvr) instead,
 for example:
 
 * SRS Stack supports S3 cloud storage, move the final MP4 file to S3 cloud storage.

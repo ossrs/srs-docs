@@ -190,7 +190,7 @@ HLS边缘集群基于NGINX，SRS可以与NGINX很好地协同工作，如果您�
 ## Conclusion
 
 在本教程中，您只需1-Click就可以搭建一个视频流媒体服务，但功能强大，如身份验证、SRT和WebRTC等。如果您对SRS有进一步的问题，
-[官网文档](../docs/v6/doc/getting-started-stack)是一个很好的起点。
+[官网文档](../docs/v6/doc/getting-started-oryx)是一个很好的起点。
 
 ![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.net&path=/lts/blog-zh/22-04-09-SRS-Stack-Tutorial)
 
