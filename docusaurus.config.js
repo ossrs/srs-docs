@@ -116,7 +116,7 @@ const config = {
                 label: 'SRS Server',
               },
               {
-                to: '/faq-srs-stack',
+                to: '/faq-oryx',
                 label: 'SRS Stack',
               }
             ]
@@ -146,7 +146,7 @@ const config = {
                 label: 'FAQ: SRS Server',
               },
               {
-                to: '/faq-srs-stack',
+                to: '/faq-oryx',
                 label: 'FAQ: SRS Stack',
               },
               {

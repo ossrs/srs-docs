@@ -22,7 +22,7 @@ SRS Stack作为开源的开箱即用的音视频方案，是完全基于场景�
 
 ## FAQ
 
-若使用SRS Stack时遇到问题，请先阅读[FAQ](../../../faq-srs-stack)。
+若使用SRS Stack时遇到问题，请先阅读[FAQ](../../../faq-oryx)。
 
 ## Usage
 

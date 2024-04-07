@@ -64,16 +64,16 @@ SRS Stack将在几分钟后（例如5分钟）自动停止录制任务。
 
 ## How to Record Specific Streams?
 
-参考 [如何录制特定的流](../faq-srs-stack#how-to-record-a-specific-stream)
+参考 [如何录制特定的流](../faq-oryx#how-to-record-a-specific-stream)
 
 ## How to Record to S3 Cloud Storage?
 
-参考 [如何录制到S3云存储](../faq-srs-stack#how-to-record-to-s3-cloud-storage)
+参考 [如何录制到S3云存储](../faq-oryx#how-to-record-to-s3-cloud-storage)
 
 ## How to Merge to One Mp4 File?
 
-参考 [为何不能在停止推流时停止录制](../faq-srs-stack#recording-doesnt-stop-when-the-stream-is-stopped)
-和 [如何快速生成录制文件](../faq-srs-stack#how-to-quickly-generate-a-recorded-file)
+参考 [为何不能在停止推流时停止录制](../faq-oryx#recording-doesnt-stop-when-the-stream-is-stopped)
+和 [如何快速生成录制文件](../faq-oryx#how-to-quickly-generate-a-recorded-file)
 
 ## Conclusion
 

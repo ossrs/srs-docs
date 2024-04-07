@@ -630,4 +630,4 @@ See [HTTP Callback](../docs/v6/doc/getting-started-stack#http-callback)
 
 Migrated to [CHANGELOG.md](https://github.com/ossrs/srs-stack/blob/main/DEVELOPER.md#changelog).
 
-![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.net&path=/lts/pages/faq-srs-stack-zh)
+![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.net&path=/lts/pages/faq-oryx-zh)

@@ -25,7 +25,7 @@ More diverse scenarios will be available in the future.
 
 ## FAQ
 
-If you encounter issues while using SRS Stack, please read the [FAQ](../../../faq-srs-stack) first.
+If you encounter issues while using SRS Stack, please read the [FAQ](../../../faq-oryx) first.
 
 ## Usage
 

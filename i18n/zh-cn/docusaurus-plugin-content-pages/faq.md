@@ -14,7 +14,7 @@
 下面是常见的问题，如果没有找到你的问题，请先在本[Issue](https://github.com/ossrs/srs/issues)中搜索，如果你确认是个Bug并且没有提交过，
 请按照要求提交Issue。
 
-> Note: 这是关于SRS的FAQ，如果是SRS Stack的FAQ请参考[SRS Stack FAQ](./faq-srs-stack)
+> Note: 这是关于SRS的FAQ，如果是SRS Stack的FAQ请参考[SRS Stack FAQ](./faq-oryx)
 
 <a name='cdn'></a> <a name='vod'></a>
 
