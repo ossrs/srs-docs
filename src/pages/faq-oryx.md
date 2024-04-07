@@ -62,11 +62,11 @@ How to upgrade to the latest version or stable version, and why not support clic
 Since Oryx supports multiple platforms, including Docker, and Docker cannot upgrade itself, Oryx 
 also does not support interface upgrades and needs to be upgraded manually.
 
-If you use HELM, and get srs-stack `1.0.1` installed, then you can upgrade by `helm upgrade srs srs/srs-stack --version 1.0.2` 
+If you use HELM, and get srs-stack `1.0.1` installed, then you can upgrade by `helm upgrade srs srs/oryx --version 1.0.6` 
 and `helm rollback srs` if want to rollback to `1.0.1`.
 
 ```bash
-helm upgrade srs srs/srs-stack --version 1.0.2
+helm upgrade srs srs/oryx --version 1.0.6
 ```
 
 The Docker startup specifies the version, such as `ossrs/oryx:v1.0.293`, and you only need to delete 

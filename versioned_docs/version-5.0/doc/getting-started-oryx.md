@@ -53,7 +53,7 @@ Strongly recommend running Oryx with HELM:
 
 ```bash
 helm repo add srs http://helm.ossrs.io/stable
-helm install srs srs/srs-stack --set persistence.path=$HOME/data \
+helm install srs srs/oryx --set persistence.path=$HOME/data \
   --set service.http=2022 --set service.https=2443 --set service.rtmp=1935 \
   --set service.rtc=8000 --set service.srt=10080
 ```

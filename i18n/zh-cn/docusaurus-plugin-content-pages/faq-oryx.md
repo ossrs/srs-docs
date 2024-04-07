@@ -58,11 +58,11 @@
 
 由于Oryx支持多个平台，包括docker等，而docker是不能自己升级自己的，所以Oryx也不支持界面升级，需要手动升级。
 
-如果您使用HELM，并安装了srs-stack `1.0.1`，那么您可以通过`helm upgrade srs srs/srs-stack --version 1.0.2`进行升级，
+如果您使用HELM，并安装了srs-stack `1.0.1`，那么您可以通过`helm upgrade srs srs/oryx --version 1.0.6`进行升级，
 如果想回滚到`1.0.1`，可以使用`helm rollback srs`。
 
 ```bash
-helm upgrade srs srs/srs-stack --version 1.0.2
+helm upgrade srs srs/oryx --version 1.0.6
 ```
 
 Docker启动时会指定版本，比如`registry.cn-hangzhou.aliyuncs.com/ossrs/oryx:v1.0.293`，只需要删除容器后指定新
