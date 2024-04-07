@@ -69,18 +69,18 @@ and `helm rollback srs` if want to rollback to `1.0.1`.
 helm upgrade srs srs/srs-stack --version 1.0.2
 ```
 
-The Docker startup specifies the version, such as `ossrs/srs-stack:v1.0.293`, and you only need to delete 
-the container and start with the new version, such as `ossrs/srs-stack:v1.0.299`.
+The Docker startup specifies the version, such as `ossrs/oryx:v1.0.293`, and you only need to delete 
+the container and start with the new version, such as `ossrs/oryx:v1.0.299`.
 
-If you use `ossrs/srs-stack:5`, it is the latest version, and you need to update manually, such as 
-`docker pull ossrs/srs-stack:5` then remove and restart the container.
+If you use `ossrs/oryx:5`, it is the latest version, and you need to update manually, such as 
+`docker pull ossrs/oryx:5` then remove and restart the container.
 
 ```bash
 docker rm srs-stack
-docker pull ossrs/srs-stack:5
+docker pull ossrs/oryx:5
 docker run --restart always -d -it --name srs-stack -v $HOME/data:/data \
   -p 2022:2022 -p 2443:2443 -p 1935:1935 -p 8000:8000/udp -p 10080:10080/udp \
-  ossrs/srs-stack:5
+  ossrs/oryx:5
 ```
 
 If you use aaPanel panel, just delete the application and reinstall the new version, the data is saved in the 
@@ -192,7 +192,7 @@ For example, start two instances listening on ports 2022 and 2023, and use diffe
 ```bash
 docker run --restart always -d -it --name srs-stack0 -it -v $HOME/data0:/data \
   -p 2022:2022 -p 1935:1935 -p 8000:8000/udp -p 10080:10080/udp \
-  ossrs/srs-stack:5
+  ossrs/oryx:5
 ```
 
 Then, open [http://localhost:2022](http://localhost:2022) to log in to the backend.
@@ -200,7 +200,7 @@ Then, open [http://localhost:2022](http://localhost:2022) to log in to the backe
 ```bash
 docker run --restart always -d -it --name srs-stack1 -it -v $HOME/data1:/data \
   -p 2023:2022 -p 1936:1935 -p 8001:8000/udp -p 10081:10080/udp \
-  ossrs/srs-stack:5
+  ossrs/oryx:5
 ```
 
 Then, open [http://localhost:2023](http://localhost:2023) to log in to the backend.
@@ -216,7 +216,7 @@ However, you can setup the exposed ports:
 docker run --restart always -d -it --name srs-stack1 -it -v $HOME/data1:/data \
   -p 2023:2022 -p 1936:1935 -p 8001:8000/udp -p 10081:10080/udp \
   -e HTTP_PORT=2023 -e RTMP_PORT=1936 -e RTC_PORT=8001 -e SRT_PORT=10081 \
-  ossrs/srs-stack:5
+  ossrs/oryx:5
 ```
 
 If you only need multi-platform streaming or virtual streaming without involving the push stream port, 
@@ -267,7 +267,7 @@ If use docker to start Oryx, you can add port mapping for 80 and 443:
 docker run --restart always -d -it --name srs-stack -v $HOME/data:/data \
   -p 2022:2022 -p 2443:2443 -p 1935:1935 -p 8000:8000/udp -p 10080:10080/udp \
   -p 80:2022 -p 443:2443 \
-  ossrs/srs-stack:5
+  ossrs/oryx:5
 ```
 
 After the application is successful, enter https plus your domain name in the browser, and you can 
@@ -687,7 +687,7 @@ refer to [Baota](./blog/BT-aaPanel) or [aaPanel](https://blog.ossrs.io/how-to-se
 Sometimes the version in the Baota store is older, and you can manually install the Baota plugin 
 to install the latest plugin.
 
-The latest version of Oryx can be found in [Releases](https://github.com/ossrs/srs-stack/releases),
+The latest version of Oryx can be found in [Releases](https://github.com/ossrs/oryx/releases),
 and the `aapanel-srs_stack.zip` attachment in each version can be downloaded as a plugin.
 
 After downloading the plugin, you can go to Baota `Software Store > Third-Party Applications > Import Plugin` 
@@ -717,6 +717,6 @@ See [HTTP Callback](../docs/v6/doc/getting-started-oryx#http-callback)
 
 ## Changelog
 
-Migrated to [CHANGELOG.md](https://github.com/ossrs/srs-stack/blob/main/DEVELOPER.md#changelog).
+Migrated to [CHANGELOG.md](https://github.com/ossrs/oryx/blob/main/DEVELOPER.md#changelog).
 
 ![](https://ossrs.io/gif/v1/sls.gif?site=ossrs.io&path=/lts/pages/faq-oryx-en)

@@ -35,7 +35,7 @@ You can also use Docker to create an Oryx with a single command line:
 ```bash
 docker run --restart always -d -it --name srs-stack -v $HOME/data:/data \
   -p 80:2022 -p 443:2443 -p 1935:1935 -p 8000:8000/udp -p 10080:10080/udp \
-  ossrs/srs-stack:5
+  ossrs/oryx:5
 ```
 
 After creating the Oryx, you can access it through `http://your-server-ip/mgmt` via a browser.

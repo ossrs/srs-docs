@@ -63,7 +63,7 @@ You can also use Docker to create an Oryx with a single command line:
 ```bash
 docker run --restart always -d -it --name srs-stack -v $HOME/data:/data \
   -p 80:2022 -p 443:2443 -p 1935:1935 -p 8000:8000/udp -p 10080:10080/udp \
-  ossrs/srs-stack:5
+  ossrs/oryx:5
 ```
 
 After creating the Oryx, you can access it through `http://your-server-ip/mgmt` via a browser.
@@ -115,7 +115,7 @@ settings. If you need to use your own HLS player, please configure it similarly:
 * Set `maxBufferLength` to `5` to set the maximum buffer length in seconds.
 * Set `maxLiveSyncPlaybackRate` to `2` to catch up if the latency is large.
 
-For detailed information, please refer to [this commit](https://github.com/ossrs/srs-stack/commit/a6b709f516da3c7f36f5c3c599142296148187ee#diff-06095ca53f7d88e4f592f1a432030f541adf2060cb2dfc6c4efd86cd9f074820R40).
+For detailed information, please refer to [this commit](https://github.com/ossrs/oryx/commit/a6b709f516da3c7f36f5c3c599142296148187ee#diff-06095ca53f7d88e4f592f1a432030f541adf2060cb2dfc6c4efd86cd9f074820R40).
 
 ## Cloud Service
 

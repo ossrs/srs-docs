@@ -15,7 +15,7 @@ Pelase read [aaPanel](/blog/BT-aaPanel).
 
 ## DigitalOcean Droplet
 
-Please read [DigitalOcean Droplet](https://github.com/ossrs/srs-stack/wiki/Droplet): Create SRS Droplet.
+Please read [DigitalOcean Droplet](https://github.com/ossrs/oryx/wiki/Droplet): Create SRS Droplet.
 
 ## TencentCloud CVM
 

@@ -54,7 +54,7 @@ WebRTC是理想的选择。每种技术都适用于不同的需求和内容类�
 ```bash
 docker run --restart always -d -it --name srs-stack -v $HOME/data:/data \
   -p 80:2022 -p 443:2443 -p 1935:1935 -p 8000:8000/udp -p 10080:10080/udp \
-  registry.cn-hangzhou.aliyuncs.com/ossrs/srs-stack:5
+  registry.cn-hangzhou.aliyuncs.com/ossrs/oryx:5
 ```
 
 创建 Oryx 后，您可以通过 `http://your-server-ip/mgmt` 访问它。
@@ -102,7 +102,7 @@ Oryx已使用hls.js为低延迟模式配置了HLS播放器。我们已经应用�
 * 将`maxBufferLength`设置为`5`，以秒为单位设置最大缓冲长度。
 * 将`maxLiveSyncPlaybackRate`设置为`2`，以便在延迟较大时追赶。
 
-有关详细信息，请参阅[此提交](https://github.com/ossrs/srs-stack/commit/a6b709f516da3c7f36f5c3c599142296148187ee#diff-06095ca53f7d88e4f592f1a432030f541adf2060cb2dfc6c4efd86cd9f074820R40)。
+有关详细信息，请参阅[此提交](https://github.com/ossrs/oryx/commit/a6b709f516da3c7f36f5c3c599142296148187ee#diff-06095ca53f7d88e4f592f1a432030f541adf2060cb2dfc6c4efd86cd9f074820R40)。
 
 ## Conclusion
 

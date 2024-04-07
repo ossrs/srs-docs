@@ -23,7 +23,7 @@ Oryx是一种功能强大且易于使用的解决方案，只需点击几下鼠�
 ```bash
 docker run --rm -it -p 80:2022 -p 443:2443 -p 1935:1935 \
   -p 8080:8080 -p 8000:8000/udp -p 10080:10080/udp --name srs-stack \
-  -v $HOME/data:/data registry.cn-hangzhou.aliyuncs.com/ossrs/srs-stack:5
+  -v $HOME/data:/data registry.cn-hangzhou.aliyuncs.com/ossrs/oryx:5
 ```
 
 创建Oryx后，您可以通过 `http://your-server-ip/mgmt` 访问它。

@@ -65,18 +65,18 @@
 helm upgrade srs srs/srs-stack --version 1.0.2
 ```
 
-Docker启动时会指定版本，比如`registry.cn-hangzhou.aliyuncs.com/ossrs/srs-stack:v1.0.293`，只需要删除容器后指定新
-版本启动即可，比如`registry.cn-hangzhou.aliyuncs.com/ossrs/srs-stack:v1.0.299`。
+Docker启动时会指定版本，比如`registry.cn-hangzhou.aliyuncs.com/ossrs/oryx:v1.0.293`，只需要删除容器后指定新
+版本启动即可，比如`registry.cn-hangzhou.aliyuncs.com/ossrs/oryx:v1.0.299`。
 
-如果使用`registry.cn-hangzhou.aliyuncs.com/ossrs/srs-stack:5`则是用最新的版本，则需要手动更新，
-比如`docker pull registry.cn-hangzhou.aliyuncs.com/ossrs/srs-stack:5`，然后删除和重启容器。
+如果使用`registry.cn-hangzhou.aliyuncs.com/ossrs/oryx:5`则是用最新的版本，则需要手动更新，
+比如`docker pull registry.cn-hangzhou.aliyuncs.com/ossrs/oryx:5`，然后删除和重启容器。
 
 ```bash
 docker rm srs-stack
-docker pull registry.cn-hangzhou.aliyuncs.com/ossrs/srs-stack:5
+docker pull registry.cn-hangzhou.aliyuncs.com/ossrs/oryx:5
 docker run --restart always -d -it --name srs-stack -v $HOME/data:/data \
   -p 2022:2022 -p 2443:2443 -p 1935:1935 -p 8000:8000/udp -p 10080:10080/udp \
-  registry.cn-hangzhou.aliyuncs.com/ossrs/srs-stack:5
+  registry.cn-hangzhou.aliyuncs.com/ossrs/oryx:5
 ```
 
 如果使用宝塔，则删除应用后重装新版本即可，数据是保存在`/data`目录，不会丢失。
@@ -176,7 +176,7 @@ Lighthouse/CVM/DigitalOcean > 宝塔/aaPanel > Docker/Script
 ```bash
 docker run --restart always -d -it --name srs-stack0 -it -v $HOME/data0:/data \
   -p 2022:2022 -p 1935:1935 -p 8000:8000/udp -p 10080:10080/udp \
-  registry.cn-hangzhou.aliyuncs.com/ossrs/srs-stack:5
+  registry.cn-hangzhou.aliyuncs.com/ossrs/oryx:5
 ```
 
 然后打开 [http://localhost:2022](http://localhost:2022) 即可登录。
@@ -184,7 +184,7 @@ docker run --restart always -d -it --name srs-stack0 -it -v $HOME/data0:/data \
 ```bash
 docker run --restart always -d -it --name srs-stack1 -it -v $HOME/data1:/data \
   -p 2023:2022 -p 1936:1935 -p 8001:8000/udp -p 10081:10080/udp \
-  registry.cn-hangzhou.aliyuncs.com/ossrs/srs-stack:5
+  registry.cn-hangzhou.aliyuncs.com/ossrs/oryx:5
 ```
 
 然后打开 [http://localhost:2023](http://localhost:2023) 即可登录后台。
@@ -198,7 +198,7 @@ docker run --restart always -d -it --name srs-stack1 -it -v $HOME/data1:/data \
 docker run --restart always -d -it --name srs-stack1 -it -v $HOME/data1:/data \
   -p 2023:2022 -p 1936:1935 -p 8001:8000/udp -p 10081:10080/udp \
   -e HTTP_PORT=2023 -e RTMP_PORT=1936 -e RTC_PORT=8001 -e SRT_PORT=10081 \
-  registry.cn-hangzhou.aliyuncs.com/ossrs/srs-stack:5
+  registry.cn-hangzhou.aliyuncs.com/ossrs/oryx:5
 ```
 
 如果只是用多平台转播，或者虚拟直播，不涉及推流端口，则直接使用即可。
@@ -244,7 +244,7 @@ Oryx支持申请免费HTTPS证书，而且可以申请多个域名的证书，�
 docker run --restart always -d -it --name srs-stack -v $HOME/data:/data \
   -p 2022:2022 -p 2443:2443 -p 1935:1935 -p 8000:8000/udp -p 10080:10080/udp \
   -p 80:2022 -p 443:2443 \
-  registry.cn-hangzhou.aliyuncs.com/ossrs/srs-stack:5
+  registry.cn-hangzhou.aliyuncs.com/ossrs/oryx:5
 ```
 
 申请成功后，在浏览器敲https加你的域名，就可以访问你的网站了。
@@ -602,7 +602,7 @@ ffmpeg \
 
 有时候宝塔商店的版本比较老，可以手动安装宝塔插件，安装最新的插件。
 
-Oryx最新的版本，可以看[Releases](https://github.com/ossrs/srs-stack/releases)，每个版本的附件中`bt-srs_stack.zip`就是可以下载的插件。
+Oryx最新的版本，可以看[Releases](https://github.com/ossrs/oryx/releases)，每个版本的附件中`bt-srs_stack.zip`就是可以下载的插件。
 
 下载插件后，可以在宝塔`软件商店 > 第三方应用 > 导入插件`，上传下载的`bt-srs_stack.zip`即可安装。
 
@@ -628,6 +628,6 @@ See [HTTP Callback](../docs/v6/doc/getting-started-oryx#http-callback)
 
 ## Changelog
 
-Migrated to [CHANGELOG.md](https://github.com/ossrs/srs-stack/blob/main/DEVELOPER.md#changelog).
+Migrated to [CHANGELOG.md](https://github.com/ossrs/oryx/blob/main/DEVELOPER.md#changelog).
 
 ![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.net&path=/lts/pages/faq-oryx-zh)

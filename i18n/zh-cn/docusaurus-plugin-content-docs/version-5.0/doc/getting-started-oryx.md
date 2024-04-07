@@ -37,12 +37,12 @@ Oryx作为开源的开箱即用的音视频方案，是完全基于场景构建�
 ```bash
 docker run --restart always -d -it --name srs-stack -v $HOME/data:/data \
   -p 2022:2022 -p 2443:2443 -p 1935:1935 -p 8000:8000/udp -p 10080:10080/udp \
-  registry.cn-hangzhou.aliyuncs.com/ossrs/srs-stack:5
+  registry.cn-hangzhou.aliyuncs.com/ossrs/oryx:5
 ```
 
 请打开页面[http://localhost:2022](http://localhost:2022)开始使用Oryx。
 
-关于使用说明，请参考 [Oryx Docker](https://github.com/ossrs/srs-stack#usage)。
+关于使用说明，请参考 [Oryx Docker](https://github.com/ossrs/oryx#usage)。
 
 ### HELM
 
@@ -63,7 +63,7 @@ Oryx提供了宝塔插件，使用方法参考[宝塔插件](../../../blog/BT-aa
 
 ### Script
 
-对于 Ubuntu 20+，您可以下载 [linux-srs_stack-zh.tar.gz](https://github.com/ossrs/srs-stack/releases/latest/download/linux-srs_stack-zh.tar.gz) 
+对于 Ubuntu 20+，您可以下载 [linux-srs_stack-zh.tar.gz](https://github.com/ossrs/oryx/releases/latest/download/linux-srs_stack-zh.tar.gz) 
 并安装它。
 
 ### TencentCloud LightHouse
@@ -77,13 +77,13 @@ Oryx提供了宝塔插件，使用方法参考[宝塔插件](../../../blog/BT-aa
 
 ## Changelog
 
-关于Oryx的更新日志，参考[CHANGELOG](https://github.com/ossrs/srs-stack/blob/main/DEVELOPER.md#changelog)
+关于Oryx的更新日志，参考[CHANGELOG](https://github.com/ossrs/oryx/blob/main/DEVELOPER.md#changelog)
 
-某个具体版本支持的具体功能，可以在版本发布中查看CHANGELOG，参考[Releases](https://github.com/ossrs/srs-stack/releases)
+某个具体版本支持的具体功能，可以在版本发布中查看CHANGELOG，参考[Releases](https://github.com/ossrs/oryx/releases)
 
 ## Features
 
-关于Oryx的功能以及与SRS的比较，详细的功能清单参考[Features](https://github.com/ossrs/srs-stack?tab=readme-ov-file#features)。
+关于Oryx的功能以及与SRS的比较，详细的功能清单参考[Features](https://github.com/ossrs/oryx?tab=readme-ov-file#features)。
 
 ### Compare to SRS
 

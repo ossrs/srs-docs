@@ -24,7 +24,7 @@ service, for example, to enable live streaming feature for your WordPress websit
 To complete this guide, you should have:
 
 1. A linux server, with aaPanel installed. Please use a CentOS 7+ or Ubuntu 20+ and install aaPanel on it by using [command here](https://www.aapanel.com/install.html).
-2. **NGINX** based framework, if you also need to install websites. [Oryx](https://github.com/ossrs/srs-stack) requires **NGINX** to proxy to our backend services.
+2. **NGINX** based framework, if you also need to install websites. [Oryx](https://github.com/ossrs/oryx) requires **NGINX** to proxy to our backend services.
 3. A DNS domain name, if you want to use HTTPS.
 
 ## Step 1: Install aaPanel
@@ -62,7 +62,7 @@ there, as shown in the following picture:
 ![](/img/blog-2022-04-29-en-002.png)
 
 If not found in App Store, you could also download the latest version of the plugin in the srs-stack repository on
-Github: [aapanel-srs_stack.zip](https://github.com/ossrs/srs-stack/releases/latest/download/aapanel-srs_stack.zip). Then
+Github: [aapanel-srs_stack.zip](https://github.com/ossrs/oryx/releases/latest/download/aapanel-srs_stack.zip). Then
 you could upload the zip file and install the plugin, as demonstrated below:
 
 ![](/img/blog-2022-04-29-en-003.png)

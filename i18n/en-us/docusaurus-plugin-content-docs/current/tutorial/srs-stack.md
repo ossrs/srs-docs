@@ -7,7 +7,7 @@ hide_table_of_contents: false
 
 # Oryx
 
-Oryx is an open source, media streaming service solution, which is easy to use and can be used in multiple media 
+Oryx(SRS Stack) is an open source, media streaming service solution, which is easy to use and can be used in multiple media 
 scenarios. It combines the SRS, FFmpeg, WebRTC and other projects, and provides a one-stop solution for small and 
 medium-sized enterprises to easily obtain digital capabilities. 
 

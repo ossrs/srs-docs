@@ -17,7 +17,7 @@ This article describes the edge cluster for HLS or DASH slices, which is based o
 
 ## Oryx
 
-The NGINX edge cluster can work together with the Oryx to achieve HLS distribution. For more details, please refer to [Oryx HLS CDN](https://github.com/ossrs/srs-stack/tree/main/scripts/nginx-hls-cdn).
+The NGINX edge cluster can work together with the Oryx to achieve HLS distribution. For more details, please refer to [Oryx HLS CDN](https://github.com/ossrs/oryx/tree/main/scripts/nginx-hls-cdn).
 
 ## NGINX Edge Cluster
 

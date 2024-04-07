@@ -29,7 +29,7 @@ custom_edit_url: null
 实际上，这不仅仅是一个媒体服务器，而且似乎有点复杂，对吗？是的，也不是！
 
 * 是的！构建一个视频流媒体服务确实很困难，不容易。它需要视频流媒体工程技术，还需要像Nodejs或Go这样的后端服务技术，以及构建管理和主页的前端技能。
-* 不！与其从头开始构建所有内容，我们可以基于一些开源解决方案（如[Oryx](https://github.com/ossrs/srs-stack)）和轻量级云服务（如[DigitalOcean](https://digitalocean.com)或[AWS](https://console.aws.amazon.com)）来构建一个视频流媒体服务，这样构建您的视频流媒体服务就非常简单了。
+* 不！与其从头开始构建所有内容，我们可以基于一些开源解决方案（如[Oryx](https://github.com/ossrs/oryx)）和轻量级云服务（如[DigitalOcean](https://digitalocean.com)或[AWS](https://console.aws.amazon.com)）来构建一个视频流媒体服务，这样构建您的视频流媒体服务就非常简单了。
 
 在本教程中，您将学习如何设置一个视频流媒体服务，支持通过浏览器发布而无需插件，即将WebRTC转换为HLS，使用SRT提供低延迟（约300ms）
 的视频流，并通过认证确保服务安全。此外，这个解决方案是开源的，非常容易完成，甚至可以通过1-Click来完成。
@@ -62,7 +62,7 @@ custom_edit_url: null
 请输入以下脚本：
 
 ```bash
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/ossrs/srs-stack/HEAD/scripts/lightsail.sh)"
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/ossrs/oryx/HEAD/scripts/lightsail.sh)"
 ```
 
 > Note: 您还可以访问实例并手动运行脚本。请在网络查找有关如何登录到Lightsail实例的教程。
@@ -84,7 +84,7 @@ custom_edit_url: null
 ```bash
 docker run --restart always -d -it --name srs-stack -v $HOME/data:/data \
   -p 80:2022 -p 443:2443 -p 1935:1935 -p 8000:8000/udp -p 10080:10080/udp \
-  registry.cn-hangzhou.aliyuncs.com/ossrs/srs-stack:5
+  registry.cn-hangzhou.aliyuncs.com/ossrs/oryx:5
 ```
 
 现在，Oryx已经创建！在浏览器中打开 `http://your_public_ipv4/mgmt/` ，点击 `设置管理员密码` 按钮以首次设置管理员密码。

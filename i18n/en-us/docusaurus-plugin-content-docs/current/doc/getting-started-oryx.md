@@ -40,12 +40,12 @@ Strongly recommend running Oryx with docker:
 ```bash
 docker run --restart always -d -it --name srs-stack -v $HOME/data:/data \
   -p 2022:2022 -p 2443:2443 -p 1935:1935 -p 8000:8000/udp -p 10080:10080/udp \
-  ossrs/srs-stack:5
+  ossrs/oryx:5
 ```
 
 Then you can open [http://localhost:2022](http://localhost:2022) to use Oryx.
 
-For more details, please refer to [Oryx Docker](https://github.com/ossrs/srs-stack#usage).
+For more details, please refer to [Oryx Docker](https://github.com/ossrs/oryx#usage).
 
 ### HELM
 
@@ -62,7 +62,7 @@ Then you can open [http://localhost:2022](http://localhost:2022) to use Oryx.
 
 ### Script
 
-For Ubuntu 20+, you can download the [linux-srs_stack-en.tar.gz](https://github.com/ossrs/srs-stack/releases/latest/download/linux-srs_stack-en.tar.gz)
+For Ubuntu 20+, you can download the [linux-srs_stack-en.tar.gz](https://github.com/ossrs/oryx/releases/latest/download/linux-srs_stack-en.tar.gz)
 and install it.
 
 ### AWS Lightsail
@@ -81,13 +81,13 @@ Oryx offers a BaoTa plugin, for usage instructions refer to the [Oryx aaPanel Pl
 
 ## Changelog
 
-For the update log of the Oryx, please refer to [CHANGELOG](https://github.com/ossrs/srs-stack/blob/main/DEVELOPER.md#changelog).
+For the update log of the Oryx, please refer to [CHANGELOG](https://github.com/ossrs/oryx/blob/main/DEVELOPER.md#changelog).
 
-For specific features supported by a particular version, you can view the CHANGELOG in the version release, see [Releases](https://github.com/ossrs/srs-stack/releases).
+For specific features supported by a particular version, you can view the CHANGELOG in the version release, see [Releases](https://github.com/ossrs/oryx/releases).
 
 ## Features
 
-About the features of Oryx and comparison with SRS，for more details please read [Features](https://github.com/ossrs/srs-stack?tab=readme-ov-file#features).
+About the features of Oryx and comparison with SRS，for more details please read [Features](https://github.com/ossrs/oryx?tab=readme-ov-file#features).
 
 ### Compare to SRS
 

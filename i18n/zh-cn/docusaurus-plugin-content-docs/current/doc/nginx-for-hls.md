@@ -17,7 +17,7 @@ hide_table_of_contents: false
 
 ## Oryx
 
-NGINX边缘集群，可以和Oryx一起工作，可以实现HLS的分发，详细请参考[Oryx HLS CDN](https://github.com/ossrs/srs-stack/tree/main/scripts/nginx-hls-cdn)。
+NGINX边缘集群，可以和Oryx一起工作，可以实现HLS的分发，详细请参考[Oryx HLS CDN](https://github.com/ossrs/oryx/tree/main/scripts/nginx-hls-cdn)。
 
 ## NGINX Edge Cluster
 

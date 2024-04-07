@@ -120,7 +120,7 @@ SRS不做客户端，因为无论是FFmpeg，还是OBS，还是VLC，还是WebRT
 
 除了SRS服务器，我们还在做Oryx，还有WordPress插件等等，主要的目标还是根据不同行业，做出更简单的应用方式，包括：
 
-* [srs-stack](https://github.com/ossrs/srs-stack) Oryx或Oryx，是一个开箱即用的单机的视频云，里面有FFmpeg和SRS等，主要是方便不会命令行的用户，直接通过腾讯云镜像或者宝塔，鼠标操作，就可以把音视频的应用搭起来。
+* [srs-stack](https://github.com/ossrs/oryx) Oryx或SRS Stack，是一个开箱即用的单机的视频云，里面有FFmpeg和SRS等，主要是方便不会命令行的用户，直接通过腾讯云镜像或者宝塔，鼠标操作，就可以把音视频的应用搭起来。
 * [WordPress-Plugin-SrsPlayer](https://github.com/ossrs/WordPress-Plugin-SrsPlayer) 出版领域，比如个人博客、网站传媒等，方便用户可以使用音视频的能力。
 * [srs-unity](https://github.com/ossrs/srs-unity) 游戏领域，对接Unity的WebRTC SDK，使用音视频的能力。
 

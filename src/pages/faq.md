@@ -67,7 +67,7 @@ Issue according to the requirements.
 * `Dynamic DVR`: How to do dynamic recording, regular expression matching for streams that need to be recorded, etc.
   > 1. You can use `on_publish` to callback the business system and implement complex rules.
   > 1. For specific recording files, use `on_hls` to copy the slices to the recording directory or cloud storage.
-  > 1. You can refer to the DVR implementation in [srs-stack](https://github.com/ossrs/srs-stack/blob/main/platform/srs-hooks.go).
+  > 1. You can refer to the DVR implementation in [srs-stack](https://github.com/ossrs/oryx/blob/main/platform/srs-hooks.go).
   > 1. SRS will not support dynamic DVR, but some solutions are provided. You can also refer to [#1577](https://github.com/ossrs/srs/issues/1577).
 * Why does recording WebRTC as MP4 fail in SRS? Refer to this [link](https://stackoverflow.com/a/75861599/17679565) for more information.
 

@@ -30,7 +30,7 @@ But if we want to build a online video streaming service, it's  much more than o
 Literally it's not just a media server, and seems a bit complicated, right? Yep and No!
 
 * Yep! Building a video streaming service is something really difficult, not easy. It requires video streaming engineering, also backend service technology like Nodejs or Go, and frontend skills to build a mgmt and homepage.
-* No! Rather than build all from scratch, we could build a video streaming service based on some open source solution such as [Oryx](https://github.com/ossrs/srs-stack), and lightweight cloud service such as [DigitalOcean](https://digitalocean.com) or [AWS](https://console.aws.amazon.com), it's really simple to build your video streaming service.
+* No! Rather than build all from scratch, we could build a video streaming service based on some open source solution such as [Oryx](https://github.com/ossrs/oryx), and lightweight cloud service such as [DigitalOcean](https://digitalocean.com) or [AWS](https://console.aws.amazon.com), it's really simple to build your video streaming service.
 
 In this tutorial, you will learn how to set-up a video streaming service, supports publishing by browser 
 without a plugin that is converting WebRTC to HLS, to deliver low latency (about 300ms) video streaming 
@@ -64,7 +64,7 @@ the Oryx once the instance has been created.
 Please input the following script:
 
 ```bash
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/ossrs/srs-stack/HEAD/scripts/lightsail.sh)"
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/ossrs/oryx/HEAD/scripts/lightsail.sh)"
 ```
 
 > Note: You can also access the instance and run the script manually. Please search for instructions on how
@@ -90,7 +90,7 @@ VPS using just one command:
 ```bash
 docker run --restart always -d -it --name srs-stack -v $HOME/data:/data \
   -p 80:2022 -p 443:2443 -p 1935:1935 -p 8000:8000/udp -p 10080:10080/udp \
-  ossrs/srs-stack:5
+  ossrs/oryx:5
 ```
 
 After the Oryx is created, open `http://your_public_ipv4/mgmt/` in the browser, click the `Submit` button

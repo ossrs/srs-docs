@@ -56,7 +56,7 @@ Link the img:
 ![](https://ossrs.io/lts/en-us/img/SRS-SingleNode-4.0-hd.png)
 ```
 
-For instance, refer to the [README.md](https://github.com/ossrs/srs-stack/blob/main/README.md) for more details.
+For instance, refer to the [README.md](https://github.com/ossrs/oryx/blob/main/README.md) for more details.
 
 ## How to link docs in blog?
 
