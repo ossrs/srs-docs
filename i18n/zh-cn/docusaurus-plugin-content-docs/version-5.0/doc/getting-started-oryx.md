@@ -7,7 +7,7 @@ hide_table_of_contents: false
 
 # Oryx
 
-Oryx是一个基于Go、Reactjs、SRS、FFmpeg、WebRTC等的轻量级、开源的视频云解决方案。
+Oryx(SRS Stack)是一个基于Go、Reactjs、SRS、FFmpeg、WebRTC等的轻量级、开源的视频云解决方案。
 
 ## Introduction
 

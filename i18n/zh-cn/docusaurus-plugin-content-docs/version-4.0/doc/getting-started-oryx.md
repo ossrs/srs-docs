@@ -7,7 +7,7 @@ hide_table_of_contents: false
 
 # Oryx
 
-Oryx是基于SRS的一个开源视频平台。
+Oryx(SRS Stack)是基于SRS的一个开源视频平台。
 
 ## TencentCloud LightHouse
 

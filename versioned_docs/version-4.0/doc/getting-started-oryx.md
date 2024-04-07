@@ -7,7 +7,7 @@ hide_table_of_contents: false
 
 # Oryx
 
-Oryx is a lightweight open-source video cloud based on Go, SRS, FFmpeg, WebRTC, etc.
+Oryx(SRS Stack) is a lightweight open-source video cloud based on Go, SRS, FFmpeg, WebRTC, etc.
 
 ## aaPanel
 

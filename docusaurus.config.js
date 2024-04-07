@@ -113,7 +113,7 @@ const config = {
             items: [
               {
                 to: '/faq',
-                label: 'SRS Server',
+                label: 'SRS',
               },
               {
                 to: '/faq-oryx',
@@ -143,7 +143,7 @@ const config = {
               },
               {
                 to: '/faq',
-                label: 'FAQ: SRS Server',
+                label: 'FAQ: SRS',
               },
               {
                 to: '/faq-oryx',
