@@ -39,7 +39,7 @@
 
 ## Getting Started
 
-请先购买和设置环境，参考[官网文档](./blog/SRS-Stack-Tutorial)或者[视频教程](https://www.bilibili.com/video/BV1844y1L7dL/)，
+请先购买和设置环境，参考[官网文档](./blog/Oryx-Tutorial)或者[视频教程](https://www.bilibili.com/video/BV1844y1L7dL/)，
 包括如何设置防火墙，视频很短只有5分钟，但是不看会有非常多的问题，请不要跳过这个基本步骤。
 
 进入Oryx后，根据不同应用场景，会有对应的视频教程，如下图所示：
@@ -222,7 +222,7 @@ Oryx支持申请免费HTTPS证书，而且可以申请多个域名的证书，�
 * https://ossrs.io SRS的海外文档网站。
 * https://ossrs.net SRS的国内文档网站。
 
-操作非常简单，只需要三步，具体请看[这里](./blog/SRS-Stack-HTTPS)：
+操作非常简单，只需要三步，具体请看[这里](./blog/Oryx-HTTPS)：
 
 1. 购买域名并备案，一定要有自己的合法域名，否则无法申请证书的哈。
 2. 将域名解析到Oryx的公网IP，可以通过域名访问到你的Oryx就可以，可以加多个域名解析，比如 `ossrs.io` `www.ossrs.io` 都是解析到同一个Oryx服务器的。

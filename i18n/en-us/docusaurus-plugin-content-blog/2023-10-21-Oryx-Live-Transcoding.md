@@ -35,7 +35,7 @@ of Oryx to optimize your streaming experience and save costs.
 ## Step 1: Create Oryx by One Click
 
 Creating an Oryx is simple and can be done with just one click if you use Digital Ocean droplet.
-Please see [How to Setup a Video Streaming Service by 1-Click](./2022-04-09-SRS-Stack-Tutorial.md) for detail.
+Please see [How to Setup a Video Streaming Service by 1-Click](./2022-04-09-Oryx-Tutorial.md) for detail.
 
 You can also use Docker to create an Oryx with a single command line:
 
@@ -54,7 +54,7 @@ You can use OBS or FFmpeg to publish a live stream to Oryx. You can also set up 
 ![](/img/blog-2023-10-21-01.png)
 
 Once the stream is published, you can preview it using an H5 player or VLC.
-Please see [How to Setup a Video Streaming Service by 1-Click](./2022-04-09-SRS-Stack-Tutorial.md) for detail.
+Please see [How to Setup a Video Streaming Service by 1-Click](./2022-04-09-Oryx-Tutorial.md) for detail.
 
 ## Step 3: Transcode the Live Stream to Lower Bitrate
 
@@ -69,7 +69,7 @@ use transcoding to convert the 8Mbps stream into a 2Mbps live stream.
 ![](/img/blog-2023-10-21-02.png)
 
 After transcoding the stream, you can preview the 2Mbps version or forward it to another live streaming platform.
-See [Easily Stream Your RTSP IP Camera to YouTube, Twitch, or Facebook](./2023-10-11-SRS-Stack-Stream-IP-Camera-Events.md) 
+See [Easily Stream Your RTSP IP Camera to YouTube, Twitch, or Facebook](./2023-10-11-Oryx-Stream-IP-Camera-Events.md) 
 for more information. You can also pull the RTMP stream from Oryx and forward it elsewhere.
 
 ## Check Transcoding Status
@@ -79,7 +79,7 @@ You can check the transcoding status in the Oryx dashboard.
 ![](/img/blog-2023-10-21-03.png)
 
 You can click the preview link to check the transcoded stream, or forward it to another live streaming platform.
-See [Easily Stream Your RTSP IP Camera to YouTube, Twitch, or Facebook](./2023-10-11-SRS-Stack-Stream-IP-Camera-Events.md)
+See [Easily Stream Your RTSP IP Camera to YouTube, Twitch, or Facebook](./2023-10-11-Oryx-Stream-IP-Camera-Events.md)
 for more information.
 
 ## Cloud Service

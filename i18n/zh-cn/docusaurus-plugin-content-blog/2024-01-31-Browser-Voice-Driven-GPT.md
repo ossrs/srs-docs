@@ -21,7 +21,7 @@ custom_edit_url: null
 ## Step 1: Create Oryx by One Click
 
 创建 Oryx 很简单，只需点击一下，如果您使用 Digital Ocean droplet，就可以完成。
-请参阅[如何通过 1-Click 设置视频流服务](./2022-04-09-SRS-Stack-Tutorial.md)了解详细信息。
+请参阅[如何通过 1-Click 设置视频流服务](./2022-04-09-Oryx-Tutorial.md)了解详细信息。
 
 您还可以使用 Docker 通过单个命令行创建 Oryx：
 
@@ -45,7 +45,7 @@ HTTPS 保护您的语音驱动助手的方法：
 
 3. **验证结果**：启用 HTTPS 后，您现在可以通过 "https://your_domain_name" 安全地访问您的 Oryx 站点。此安全策略提高了与 GPT AI助手互动的安全性。
 
-有关更多详细信息，请参阅[设置 Oryx 的 HTTPS](./2022-04-12-SRS-Stack-HTTPS.md)。按照这些步骤操作，您将确保您的语音驱动
+有关更多详细信息，请参阅[设置 Oryx 的 HTTPS](./2022-04-12-Oryx-HTTPS.md)。按照这些步骤操作，您将确保您的语音驱动
 GPT AI助手不仅创新且有用，而且安全且符合浏览器安全标准。
 
 ## Step 3: Setup OpenAI Secret Key in Live Room

@@ -26,7 +26,7 @@ Oryx 可帮助您连接多个 IP 摄像头并在各种平台上进行实时直�
 
 ### Step 1: Create Oryx by One Click
 
-如果您使用腾讯云轻量服务器，只需点击一下即可创建Oryx。请参考 [Oryx - 起步、购买和入门](./2022-04-09-SRS-Stack-Tutorial.md) 这个博客。
+如果您使用腾讯云轻量服务器，只需点击一下即可创建Oryx。请参考 [Oryx - 起步、购买和入门](./2022-04-09-Oryx-Tutorial.md) 这个博客。
 
 您还可以使用Docker通过单个命令行创建Oryx：
 

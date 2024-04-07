@@ -24,7 +24,7 @@ may be difficult to control. In such cases, server-side recording can be a more 
 ### Step 1: Create Oryx by One Click
 
 Creating an Oryx is simple and can be done with just one click if you use Digital Ocean droplet.
-Please see [How to Setup a Video Streaming Service by 1-Click](./2022-04-09-SRS-Stack-Tutorial.md) for detail.
+Please see [How to Setup a Video Streaming Service by 1-Click](./2022-04-09-Oryx-Tutorial.md) for detail.
 
 You can also use Docker to create an Oryx with a single command line:
 
@@ -43,7 +43,7 @@ You can use OBS or FFmpeg to publish a live stream to Oryx. You can also set up 
 ![](/img/blog-2022-04-09-01.png)
 
 Once the stream is published, you can preview it using an H5 player or VLC.
-Please see [How to Setup a Video Streaming Service by 1-Click](./2022-04-09-SRS-Stack-Tutorial.md) for detail.
+Please see [How to Setup a Video Streaming Service by 1-Click](./2022-04-09-Oryx-Tutorial.md) for detail.
 
 ## Step 3: Record the Live Stream by Oryx
 

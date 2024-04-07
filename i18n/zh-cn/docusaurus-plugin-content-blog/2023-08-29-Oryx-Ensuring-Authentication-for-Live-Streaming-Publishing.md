@@ -32,7 +32,7 @@ Oryx是一个强大的工具，帮助用户建立自己的直播服务，并增�
 
 要设置Oryx以实现安全发布，请按照以下步骤操作：
 
-1. 一键创建Oryx。有关详细说明，请访问[Oryx：起步、购买和入门](./2022-04-09-SRS-Stack-Tutorial.md)
+1. 一键创建Oryx。有关详细说明，请访问[Oryx：起步、购买和入门](./2022-04-09-Oryx-Tutorial.md)
 
 1. 创建后，Oryx将自动生成一个Publish Secret，例如`5181a08ee6eab86597e913e1f9e4c294`。您可以从`System / Authentication / Update Stream Secret`设置它。
 

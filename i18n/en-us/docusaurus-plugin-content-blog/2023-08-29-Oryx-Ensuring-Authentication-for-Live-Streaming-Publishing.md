@@ -40,7 +40,7 @@ authorized users can publish streams, preventing unauthorized access and protect
 
 To set up the Oryx for secure publishing, follow these steps:
 
-1. Create an Oryx with just one click. For detailed instructions, visit [How to Setup a Video Streaming Service by 1-Click](./2022-04-09-SRS-Stack-Tutorial.md)
+1. Create an Oryx with just one click. For detailed instructions, visit [How to Setup a Video Streaming Service by 1-Click](./2022-04-09-Oryx-Tutorial.md)
 
 1. Upon creation, the Oryx will automatically generate a publish secret, such as `5181a08ee6eab86597e913e1f9e4c294`. You can set it from `System / Authentication / Update Stream Secret`.
 

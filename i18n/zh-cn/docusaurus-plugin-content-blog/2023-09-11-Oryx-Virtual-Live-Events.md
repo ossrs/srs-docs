@@ -25,7 +25,7 @@ Oryx使您只需点击一次即可创建虚拟直播，并将其广播到多个�
 
 ### Step 1: Create Oryx by One Click
 
-如果您使用腾讯云轻量服务器，只需点击一下即可创建Oryx。请参考 [Oryx - 起步、购买和入门](./2022-04-09-SRS-Stack-Tutorial.md) 这个博客。
+如果您使用腾讯云轻量服务器，只需点击一下即可创建Oryx。请参考 [Oryx - 起步、购买和入门](./2022-04-09-Oryx-Tutorial.md) 这个博客。
 
 您还可以使用Docker通过单个命令行创建Oryx：
 

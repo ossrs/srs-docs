@@ -23,7 +23,7 @@ custom_edit_url: null
 ## Step 1: Create Oryx by One Click
 
 创建 Oryx 很简单，只需点击一下，如果您使用 Digital Ocean droplet，就可以完成。
-请参阅[如何通过 1-Click 设置视频流服务](./2022-04-09-SRS-Stack-Tutorial.md)了解详细信息。
+请参阅[如何通过 1-Click 设置视频流服务](./2022-04-09-Oryx-Tutorial.md)了解详细信息。
 
 您还可以使用 Docker 通过单个命令行创建 Oryx：
 

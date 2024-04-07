@@ -28,7 +28,7 @@ video content with Oryx!
 ## Step 1: Create Oryx by One Click
 
 Creating an Oryx is simple and can be done with just one click if you use Digital Ocean droplet.
-Please see [How to Setup a Video Streaming Service by 1-Click](./2022-04-09-SRS-Stack-Tutorial.md) for detail.
+Please see [How to Setup a Video Streaming Service by 1-Click](./2022-04-09-Oryx-Tutorial.md) for detail.
 
 You can also use Docker to create an Oryx with a single command line:
 

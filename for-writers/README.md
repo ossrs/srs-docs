@@ -66,7 +66,7 @@ Link the docs in blog:
 [Getting Started](../docs/v5/doc/getting-started-oryx#docker)
 ```
 
-For instance, refer to the `2022-04-09-SRS-Stack-Tutorial.md` document for more details.
+For instance, refer to the `2022-04-09-Oryx-Tutorial.md` document for more details.
 
 ## How to link docs in tutorials?
 

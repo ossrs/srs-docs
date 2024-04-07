@@ -1,5 +1,5 @@
 ---
-slug: SRS-Stack-HTTPS
+slug: Oryx-HTTPS
 title: Oryx - 如何设置HTTPS
 authors: []
 tags: [turotial, srs, https]
@@ -97,6 +97,6 @@ No renewals were attempted.
 
 这个文章中，我们设置了DNS A记录，申请了HTTPS证书，如果有问题请关注公众号 [加微信群](/contact) 。
 
-![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.net&path=/lts/blog-zh/22-04-12-SRS-Stack-HTTPS)
+![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.net&path=/lts/blog-zh/22-04-12-Oryx-HTTPS)
 
 

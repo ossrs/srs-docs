@@ -33,7 +33,7 @@ are key, making your content enjoyable and accessible to a much wider audience.
 ## Step 1: Create Oryx by One Click
 
 Creating an Oryx is simple and can be done with just one click if you use Digital Ocean droplet.
-Please see [How to Setup a Video Streaming Service by 1-Click](./2022-04-09-SRS-Stack-Tutorial.md) for detail.
+Please see [How to Setup a Video Streaming Service by 1-Click](./2022-04-09-Oryx-Tutorial.md) for detail.
 
 You can also use Docker to create an Oryx with a single command line:
 
@@ -52,7 +52,7 @@ You can use OBS or FFmpeg to publish a live stream to Oryx. You can also set up 
 ![](/img/blog-2023-11-28-01.png)
 
 Once the stream is published, you can preview it using an H5 player or VLC.
-Please see [How to Setup a Video Streaming Service by 1-Click](./2022-04-09-SRS-Stack-Tutorial.md) for detail.
+Please see [How to Setup a Video Streaming Service by 1-Click](./2022-04-09-Oryx-Tutorial.md) for detail.
 
 ## Step 3: Setup OpenAI Secret Key for Whisper ASR
 
@@ -104,4 +104,4 @@ a future where AI enhances digital inclusivity, enriching how we share and consu
 
 Welcome for more discussion at [discord](https://discord.gg/bQUPDRqy79).
 
-![](https://ossrs.io/gif/v1/sls.gif?site=ossrs.io&path=/lts/blog-en/23-11-28-SRS-Stack-Live-Streams-Transcription)
+![](https://ossrs.io/gif/v1/sls.gif?site=ossrs.io&path=/lts/blog-en/23-11-28-Oryx-Live-Streams-Transcription)

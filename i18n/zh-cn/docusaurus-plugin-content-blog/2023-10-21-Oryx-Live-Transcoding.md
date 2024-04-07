@@ -27,7 +27,7 @@ custom_edit_url: null
 ## Step 1: Create Oryx by One Click
 
 创建 Oryx 很简单，只需点击一下，如果您使用 Digital Ocean droplet，就可以完成。
-请参阅[如何通过 1-Click 设置视频流服务](./2022-04-09-SRS-Stack-Tutorial.md)了解详细信息。
+请参阅[如何通过 1-Click 设置视频流服务](./2022-04-09-Oryx-Tutorial.md)了解详细信息。
 
 您还可以使用 Docker 通过单个命令行创建 Oryx：
 
@@ -46,7 +46,7 @@ docker run --restart always -d -it --name srs-stack -v $HOME/data:/data \
 ![](/img/blog-2023-10-21-04.png)
 
 发布流后，您可以使用 H5 播放器或 VLC 预览它。
-请参阅[如何通过 1-Click 设置视频流服务](./2022-04-09-SRS-Stack-Tutorial.md)了解详细信息。
+请参阅[如何通过 1-Click 设置视频流服务](./2022-04-09-Oryx-Tutorial.md)了解详细信息。
 
 ## Step 3: Transcode the Live Stream to Lower Bitrate
 
@@ -59,7 +59,7 @@ docker run --restart always -d -it --name srs-stack -v $HOME/data:/data \
 ![](/img/blog-2023-10-21-05.png)
 
 转码流后，您可以预览 2Mbps 版本或将其转发到另一个直播平台。
-请参阅[如何做RTSP监控摄像头直播](./2023-10-11-SRS-Stack-Stream-IP-Camera-Events.md)
+请参阅[如何做RTSP监控摄像头直播](./2023-10-11-Oryx-Stream-IP-Camera-Events.md)
 了解更多信息。您还可以从 Oryx 拉取 RTMP 流并将其转发到其他地方。
 
 ## Check Transcoding Status
@@ -69,7 +69,7 @@ docker run --restart always -d -it --name srs-stack -v $HOME/data:/data \
 ![](/img/blog-2023-10-21-06.png)
 
 您可以点击预览链接检查转码流，或将其转发到另一个直播平台。
-请参阅[如何做RTSP监控摄像头直播](./2023-10-11-SRS-Stack-Stream-IP-Camera-Events.md)
+请参阅[如何做RTSP监控摄像头直播](./2023-10-11-Oryx-Stream-IP-Camera-Events.md)
 了解更多信息。
 
 ## Conclusion

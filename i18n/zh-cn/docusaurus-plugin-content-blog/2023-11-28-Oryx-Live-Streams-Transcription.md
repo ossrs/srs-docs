@@ -27,7 +27,7 @@ custom_edit_url: null
 
 ### Step 1: Create Oryx by One Click
 
-如果您使用腾讯云轻量服务器，只需点击一下即可创建Oryx。请参考 [Oryx - 起步、购买和入门](./2022-04-09-SRS-Stack-Tutorial.md) 这个博客。
+如果您使用腾讯云轻量服务器，只需点击一下即可创建Oryx。请参考 [Oryx - 起步、购买和入门](./2022-04-09-Oryx-Tutorial.md) 这个博客。
 
 您还可以使用Docker通过单个命令行创建Oryx：
 
@@ -46,7 +46,7 @@ docker run --rm -it -p 80:2022 -p 443:2443 -p 1935:1935 \
 ![](/img/blog-2023-11-28-02.png)
 
 发布流后，您可以使用 H5 播放器或 VLC 预览它。
-请参阅[如何通过 1-Click 设置视频流服务](./2022-04-09-SRS-Stack-Tutorial.md)了解详细信息。
+请参阅[如何通过 1-Click 设置视频流服务](./2022-04-09-Oryx-Tutorial.md)了解详细信息。
 
 ## Step 3: Setup OpenAI Secret Key for Whisper ASR
 
@@ -79,4 +79,4 @@ Oryx将OpenAI的Whisper和FFmpeg整合在一起，彻底改变了直播方式，
 这种从手动转录到自动化转录的转变既节约成本又扩大了全球可及性，克服了语言和听力障碍。我们正在进入一个AI增强数字包容性
 的未来，丰富了我们在线分享和消费内容的方式。
 
-![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.net&path=/lts/blog-zh/23-11-28-SRS-Stack-Live-Streams-Transcription)
+![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.net&path=/lts/blog-zh/23-11-28-Oryx-Live-Streams-Transcription)

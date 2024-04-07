@@ -1,5 +1,5 @@
 ---
-slug: SRS-Stack-Tutorial
+slug: Oryx-Tutorial
 title: Oryx - How to Setup a Video Streaming Service by 1-Click
 authors: []
 tags: [turotial, srs, webrtc, streaming]
@@ -18,14 +18,14 @@ that host stream does not rely on other service providers.
 
 But if we want to build a online video streaming service, it's  much more than only a media server:
 
-1. [Authentication](./2023-08-29-SRS-Stack-Ensuring-Authentication-for-Live-Streaming-Publishing.md): Because the server is on the public internet with a public IPv4 address, how to do authentication? How to block all users except they have the correct token?
-1. Multiple Protocols: Rather than publishing RTMP using OBS, you might need [WebRTC or H5 to publish live streaming](./2023-05-16-Stream-YouTube-Using-Web-Browser.md), or [OBS WHIP Server](./2023-12-12-SRS-Stack-OBS-WHIP-Service.md) for it's easy to use. You might also use SRT with some broadcasting devices. How to convert RTMP/WebRTC/SRT to HLS?
-1. [Restreaming](./2023-09-09-SRS-Stack-Multi-Platform-Streaming.md): Restream to multiple platforms using Oryx for wider audience reach & increased engagement. Simple & efficient solution for live streaming on YouTube, Twitch, & Facebook.
-1. [DVR or Recording](./2023-09-10-SRS-Stack-Record-Live-Streaming.md): Discover how to effortlessly record live streams using Oryx in this step-by-step guide. Learn to configure Glob Filters for selective recording and integrate S3 cloud storage for seamless server-side recording, making live streaming accessible for all.
-1. [Transcoding](./2023-10-21-SRS-Stack-Live-Transcoding.md): Explore the benefits of efficient live streaming transcoding using Oryx and FFmpeg for reducing bandwidth and saving costs. Learn how to optimize streaming experiences for viewers with varying internet speeds and devices, and harness the power of Oryx for smoother, cost-effective streaming.
-1. [Virtual Live Events](./2023-09-11-SRS-Stack-Virtual-Live-Events.md): Discover the benefits of virtual live events and learn how to create seamless and engaging live streaming experiences using pre-recorded content. This blog post will guide you through the process of converting recorded videos into live broadcasts for various applications, such as e-commerce, education, and online speeches.
-1. [IP Camera Streaming](./2023-10-11-SRS-Stack-Stream-IP-Camera-Events.md): Discover how to effortlessly stream your RTSP IP camera to popular platforms like YouTube, Twitch, or Facebook using Oryx. Learn how this powerful tool simplifies the process, allowing you to connect multiple IP cameras and stream live to various platforms for an enhanced live streaming experience.
-1. [AI Transcription](./2023-11-28-SRS-Stack-Live-Streams-Transcription.md): Discover the future of live streaming with AI-powered transcription and real-time subtitles using OpenAI’s Whisper. Learn how to create accessible, multilingual content for diverse audiences, revolutionizing the live streaming experience. Embrace inclusivity and reach a wider audience with AI-enhanced live streams.
+1. [Authentication](./2023-08-29-Oryx-Ensuring-Authentication-for-Live-Streaming-Publishing.md): Because the server is on the public internet with a public IPv4 address, how to do authentication? How to block all users except they have the correct token?
+1. Multiple Protocols: Rather than publishing RTMP using OBS, you might need [WebRTC or H5 to publish live streaming](./2023-05-16-Stream-YouTube-Using-Web-Browser.md), or [OBS WHIP Server](./2023-12-12-Oryx-OBS-WHIP-Service.md) for it's easy to use. You might also use SRT with some broadcasting devices. How to convert RTMP/WebRTC/SRT to HLS?
+1. [Restreaming](./2023-09-09-Oryx-Multi-Platform-Streaming.md): Restream to multiple platforms using Oryx for wider audience reach & increased engagement. Simple & efficient solution for live streaming on YouTube, Twitch, & Facebook.
+1. [DVR or Recording](./2023-09-10-Oryx-Record-Live-Streaming.md): Discover how to effortlessly record live streams using Oryx in this step-by-step guide. Learn to configure Glob Filters for selective recording and integrate S3 cloud storage for seamless server-side recording, making live streaming accessible for all.
+1. [Transcoding](./2023-10-21-Oryx-Live-Transcoding.md): Explore the benefits of efficient live streaming transcoding using Oryx and FFmpeg for reducing bandwidth and saving costs. Learn how to optimize streaming experiences for viewers with varying internet speeds and devices, and harness the power of Oryx for smoother, cost-effective streaming.
+1. [Virtual Live Events](./2023-09-11-Oryx-Virtual-Live-Events.md): Discover the benefits of virtual live events and learn how to create seamless and engaging live streaming experiences using pre-recorded content. This blog post will guide you through the process of converting recorded videos into live broadcasts for various applications, such as e-commerce, education, and online speeches.
+1. [IP Camera Streaming](./2023-10-11-Oryx-Stream-IP-Camera-Events.md): Discover how to effortlessly stream your RTSP IP camera to popular platforms like YouTube, Twitch, or Facebook using Oryx. Learn how this powerful tool simplifies the process, allowing you to connect multiple IP cameras and stream live to various platforms for an enhanced live streaming experience.
+1. [AI Transcription](./2023-11-28-Oryx-Live-Streams-Transcription.md): Discover the future of live streaming with AI-powered transcription and real-time subtitles using OpenAI’s Whisper. Learn how to create accessible, multilingual content for diverse audiences, revolutionizing the live streaming experience. Embrace inclusivity and reach a wider audience with AI-enhanced live streams.
 
 Literally it's not just a media server, and seems a bit complicated, right? Yep and No!
 
@@ -235,6 +235,6 @@ authentication, SRT and WebRTC etc. If you have further questions about SRS,
 
 If you'd like to discuss with SRS, you are welcome to [discord](https://discord.gg/yZ4BnPmHAd).
 
-![](https://ossrs.io/gif/v1/sls.gif?site=ossrs.io&path=/lts/blog-en/22-04-09-SRS-Stack-Tutorial)
+![](https://ossrs.io/gif/v1/sls.gif?site=ossrs.io&path=/lts/blog-en/22-04-09-Oryx-Tutorial)
 
 

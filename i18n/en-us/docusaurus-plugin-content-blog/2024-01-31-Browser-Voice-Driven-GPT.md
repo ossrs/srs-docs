@@ -26,7 +26,7 @@ works well through conversation.
 ## Step 1: Create Oryx by One Click
 
 Creating an Oryx is simple and can be done with just one click if you use Digital Ocean droplet.
-Please see [How to Setup a Video Streaming Service by 1-Click](./2022-04-09-SRS-Stack-Tutorial.md) for detail.
+Please see [How to Setup a Video Streaming Service by 1-Click](./2022-04-09-Oryx-Tutorial.md) for detail.
 
 You can also use Docker to create an Oryx with a single command line:
 
@@ -51,7 +51,7 @@ straightforward and hassle-free. Here's how to secure your voice-driven AI assis
 
 3. **Verification**: With HTTPS enabled, you can now access your Oryx site securely by using `https://your_domain_name`. This secure connection ensures the security of your interactions with the GPT AI assistant.
 
-For more details, please see [Setup HTTPS for Oryx](./2022-04-12-SRS-Stack-HTTPS.md). By following these 
+For more details, please see [Setup HTTPS for Oryx](./2022-04-12-Oryx-HTTPS.md). By following these 
 steps, you'll ensure that your voice-driven GPT AI assistant is not only innovative and useful but also secure 
 and compliant with browser security standards.
 

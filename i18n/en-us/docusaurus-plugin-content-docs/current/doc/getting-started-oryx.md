@@ -68,12 +68,12 @@ and install it.
 ### AWS Lightsail
 
 Oryx supports AWS Lightsail, which is a virtual private server (VPS) service offered by AWS. Please 
-follow [How to Establish a Video Streaming Service with a Single Click](../../../blog/SRS-Stack-Tutorial).
+follow [How to Establish a Video Streaming Service with a Single Click](../../../blog/Oryx-Tutorial).
 
 ### DigitalOcean Droplet
 
 Easily set up an Oryx with just one click. For more information, check out
-[How to Establish a Video Streaming Service with a Single Click](../../../blog/SRS-Stack-Tutorial).
+[How to Establish a Video Streaming Service with a Single Click](../../../blog/Oryx-Tutorial).
 
 ### aaPanel
 
@@ -134,7 +134,7 @@ Oryx support automatic HTTPS, just by one click, you can enable HTTPS for your O
 automatically request and update the HTTPS certificate from [Let's Encrypt](https://letsencrypt.org/). Automatic HTTPS
 allows WHIP or publish by webpage, and also support WebRTC, and access user's microphones.
 
-See [How to Secure SRS with Let's Encrypt by 1-Click](../../../blog/SRS-Stack-HTTPS) for details.
+See [How to Secure SRS with Let's Encrypt by 1-Click](../../../blog/Oryx-HTTPS) for details.
 
 ### Virtual Live Events
 

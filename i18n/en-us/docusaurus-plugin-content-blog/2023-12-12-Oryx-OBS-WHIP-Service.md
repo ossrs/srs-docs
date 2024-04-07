@@ -26,7 +26,7 @@ challenges hold you back any longer - dive into our guide and start streaming li
 ## Step 1: Create Oryx by One Click
 
 Creating an Oryx is simple and can be done with just one click if you use Digital Ocean droplet.
-Please see [How to Setup a Video Streaming Service by 1-Click](./2022-04-09-SRS-Stack-Tutorial.md) for detail.
+Please see [How to Setup a Video Streaming Service by 1-Click](./2022-04-09-Oryx-Tutorial.md) for detail.
 
 You can also use Docker to create an Oryx with a single command line:
 
@@ -94,4 +94,4 @@ sub-second streaming and seamless OBS-RTC room connections.
 
 Welcome for more discussion at [discord](https://discord.gg/bQUPDRqy79).
 
-![](https://ossrs.io/gif/v1/sls.gif?site=ossrs.io&path=/lts/blog-en/2023-12-12-SRS-Stack-OBS-WHIP-Service)
+![](https://ossrs.io/gif/v1/sls.gif?site=ossrs.io&path=/lts/blog-en/2023-12-12-Oryx-OBS-WHIP-Service)

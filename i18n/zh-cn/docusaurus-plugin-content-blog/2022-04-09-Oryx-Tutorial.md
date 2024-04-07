@@ -1,5 +1,5 @@
 ---
-slug: SRS-Stack-Tutorial
+slug: Oryx-Tutorial
 title: Oryx - 起步、购买和入门
 authors: []
 tags: [turotial, srs, webrtc, streaming]
@@ -17,14 +17,14 @@ custom_edit_url: null
 
 但是，如果我们想要构建一个在线视频流媒体服务，那么它不仅仅是一个媒体服务器：
 
-1. [Authentication](./2023-08-29-SRS-Stack-Ensuring-Authentication-for-Live-Streaming-Publishing.md)：因为服务器位于具有公共IPv4地址的公共互联网上，如何进行身份验证？如何阻止所有用户，除非他们拥有正确的令牌？
-1. 多种协议：与其使用OBS发布RTMP，您可能需要[使用WebRTC或H5发布直播流](./2023-05-16-Stream-YouTube-Using-Web-Browser.md)，或者[OBS WHIP服务器](./2023-12-12-SRS-Stack-OBS-WHIP-Service.md)，因为它易于使用。您还可以使用SRT与一些广播设备。如何将RTMP/WebRTC/SRT转换为HLS？
-1. [Restreaming](./2023-09-09-SRS-Stack-Multi-Platform-Streaming.md)：使用Oryx将流重新发送到多个平台，以扩大受众范围并增加参与度。在YouTube、Twitch和Facebook上进行直播的简单且高效的解决方案。
-1. [DVR or Recording](./2023-09-10-SRS-Stack-Record-Live-Streaming.md)：在本逐步指南中，了解如何使用Oryx轻松录制直播流。学习配置Glob过滤器以进行选择性录制，并集成S3云存储以实现无缝的服务器端录制，使直播流对所有人都可访问。
-1. [Transcoding](./2023-10-21-SRS-Stack-Live-Transcoding.md)：探讨使用Oryx和FFmpeg进行高效直播流转码的好处，以减少带宽并节省成本。了解如何为具有不同互联网速度和设备的观众优化流媒体体验，并利用Oryx实现更顺畅、更经济的流媒体传输。
-1. [Virtual Live Events](./2023-09-11-SRS-Stack-Virtual-Live-Events.md)：了解虚拟直播活动的好处，并学习如何使用预先录制的内容创建无缝且引人入胜的直播流体验。本博客文章将指导您将录制的视频转换为适用于各种应用的直播广播，例如电子商务、教育和在线演讲。
-1. [IP Camera Streaming](./2023-10-11-SRS-Stack-Stream-IP-Camera-Events.md)：了解如何使用Oryx轻松将您的RTSP IP摄像头流式传输到YouTube、Twitch或Facebook等流行平台。了解这个强大的工具如何简化流程，使您能够连接多个IP摄像头并将直播流传输到各种平台，以提供更好的直播流体验。
-1. [AI Transcription](./2023-11-28-SRS-Stack-Live-Streams-Transcription.md)：借助OpenAI的Whisper实现AI驱动的转录和实时字幕，探索直播流的未来。学习如何为多元化受众创建无障碍、多语言内容，彻底改变直播流体验。拥抱包容性，并通过AI增强的直播流吸引更广泛的受众。
+1. [Authentication](./2023-08-29-Oryx-Ensuring-Authentication-for-Live-Streaming-Publishing.md)：因为服务器位于具有公共IPv4地址的公共互联网上，如何进行身份验证？如何阻止所有用户，除非他们拥有正确的令牌？
+1. 多种协议：与其使用OBS发布RTMP，您可能需要[使用WebRTC或H5发布直播流](./2023-05-16-Stream-YouTube-Using-Web-Browser.md)，或者[OBS WHIP服务器](./2023-12-12-Oryx-OBS-WHIP-Service.md)，因为它易于使用。您还可以使用SRT与一些广播设备。如何将RTMP/WebRTC/SRT转换为HLS？
+1. [Restreaming](./2023-09-09-Oryx-Multi-Platform-Streaming.md)：使用Oryx将流重新发送到多个平台，以扩大受众范围并增加参与度。在YouTube、Twitch和Facebook上进行直播的简单且高效的解决方案。
+1. [DVR or Recording](./2023-09-10-Oryx-Record-Live-Streaming.md)：在本逐步指南中，了解如何使用Oryx轻松录制直播流。学习配置Glob过滤器以进行选择性录制，并集成S3云存储以实现无缝的服务器端录制，使直播流对所有人都可访问。
+1. [Transcoding](./2023-10-21-Oryx-Live-Transcoding.md)：探讨使用Oryx和FFmpeg进行高效直播流转码的好处，以减少带宽并节省成本。了解如何为具有不同互联网速度和设备的观众优化流媒体体验，并利用Oryx实现更顺畅、更经济的流媒体传输。
+1. [Virtual Live Events](./2023-09-11-Oryx-Virtual-Live-Events.md)：了解虚拟直播活动的好处，并学习如何使用预先录制的内容创建无缝且引人入胜的直播流体验。本博客文章将指导您将录制的视频转换为适用于各种应用的直播广播，例如电子商务、教育和在线演讲。
+1. [IP Camera Streaming](./2023-10-11-Oryx-Stream-IP-Camera-Events.md)：了解如何使用Oryx轻松将您的RTSP IP摄像头流式传输到YouTube、Twitch或Facebook等流行平台。了解这个强大的工具如何简化流程，使您能够连接多个IP摄像头并将直播流传输到各种平台，以提供更好的直播流体验。
+1. [AI Transcription](./2023-11-28-Oryx-Live-Streams-Transcription.md)：借助OpenAI的Whisper实现AI驱动的转录和实时字幕，探索直播流的未来。学习如何为多元化受众创建无障碍、多语言内容，彻底改变直播流体验。拥抱包容性，并通过AI增强的直播流吸引更广泛的受众。
 
 实际上，这不仅仅是一个媒体服务器，而且似乎有点复杂，对吗？是的，也不是！
 
@@ -192,6 +192,6 @@ HLS边缘集群基于NGINX，SRS可以与NGINX很好地协同工作，如果您�
 在本教程中，您只需1-Click就可以搭建一个视频流媒体服务，但功能强大，如身份验证、SRT和WebRTC等。如果您对SRS有进一步的问题，
 [官网文档](../docs/v6/doc/getting-started-oryx)是一个很好的起点。
 
-![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.net&path=/lts/blog-zh/22-04-09-SRS-Stack-Tutorial)
+![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.net&path=/lts/blog-zh/22-04-09-Oryx-Tutorial)
 
 

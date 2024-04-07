@@ -25,7 +25,7 @@ In this tutorial, I will demonstrate how to effortlessly utilize OBS WHIP with S
 three simple steps.
 
 The Oryx also supports OBS WHIP, enabling you to establish a WHIP service with just one click. 
-Refer to [Effortlessly Create a Public Internet WHIP Service for OBS](./2023-12-12-SRS-Stack-OBS-WHIP-Service.md).
+Refer to [Effortlessly Create a Public Internet WHIP Service for OBS](./2023-12-12-Oryx-OBS-WHIP-Service.md).
 
 You can also watch the video on YouTube: [Ultra Low Latency Streaming with OBS WHIP](https://youtu.be/SqrazCPWcV0)
 

@@ -68,7 +68,7 @@ Oryx提供了宝塔插件，使用方法参考[宝塔插件](../../../blog/BT-aa
 
 ### TencentCloud LightHouse
 
-在国内做流媒体或RTC业务，可以在腾讯云轻量服务器上购买Oryx，参考[Oryx：起步、购买和入门](../../../blog/SRS-Stack-Tutorial)。
+在国内做流媒体或RTC业务，可以在腾讯云轻量服务器上购买Oryx，参考[Oryx：起步、购买和入门](../../../blog/Oryx-Tutorial)。
 
 ### DigitalOcean Droplet
 
@@ -125,7 +125,7 @@ Oryx 支持 DVR 或录制功能，将实时流转换为文件，然后保存到�
 Oryx 支持自动 HTTPS，只需点击一下，您就可以为您的 Oryx 启用 HTTPS。Oryx 将自动从 [Let's Encrypt](https://letsencrypt.org/) 
 请求和更新 HTTPS 证书。自动 HTTPS 允许 WHIP 或通过网页发布，同时支持 WebRTC，并访问用户的麦克风。
 
-详细信息请参阅[如何通过一键开启HTTPS](../../../blog/SRS-Stack-HTTPS)。
+详细信息请参阅[如何通过一键开启HTTPS](../../../blog/Oryx-HTTPS)。
 
 ### Virtual Live Events
 

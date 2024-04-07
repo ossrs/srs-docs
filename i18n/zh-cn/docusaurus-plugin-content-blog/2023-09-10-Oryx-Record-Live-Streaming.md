@@ -19,7 +19,7 @@ custom_edit_url: null
 
 ### Step 1: Create Oryx by One Click
 
-如果您使用腾讯云轻量服务器，只需点击一下即可创建Oryx。请参考 [Oryx - 起步、购买和入门](./2022-04-09-SRS-Stack-Tutorial.md) 这个博客。
+如果您使用腾讯云轻量服务器，只需点击一下即可创建Oryx。请参考 [Oryx - 起步、购买和入门](./2022-04-09-Oryx-Tutorial.md) 这个博客。
 
 您还可以使用Docker通过单个命令行创建Oryx：
 
@@ -38,7 +38,7 @@ docker run --rm -it -p 80:2022 -p 443:2443 -p 1935:1935 \
 ![](/img/blog-2023-09-09-13.png)
 
 推流到Oryx后，你可以用网页预览它，也可以用VLC播放。
-请参考 [Oryx - 起步、购买和入门](./2022-04-09-SRS-Stack-Tutorial.md) 这个博客。
+请参考 [Oryx - 起步、购买和入门](./2022-04-09-Oryx-Tutorial.md) 这个博客。
 
 ## Step 3: Record the Live Stream by Oryx
 

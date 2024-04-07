@@ -1,5 +1,5 @@
 ---
-slug: SRS-Stack-HTTPS
+slug: Oryx-HTTPS
 title: Oryx - How to Secure SRS with Let's Encrypt by 1-Click
 authors: []
 tags: [turotial, srs, https]
@@ -127,6 +127,6 @@ the certificate, and set-up automatic renewal.
 
 If you have further questions, please contact us by [discord](https://discord.gg/yZ4BnPmHAd).
 
-![](https://ossrs.io/gif/v1/sls.gif?site=ossrs.io&path=/lts/blog-en/22-04-12-SRS-Stack-HTTPS)
+![](https://ossrs.io/gif/v1/sls.gif?site=ossrs.io&path=/lts/blog-en/22-04-12-Oryx-HTTPS)
 
 
