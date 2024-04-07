@@ -335,7 +335,7 @@ curl "http://localhost:1985/rtc/v1/whip/?ice-ufrag=6pk11386&ice-pwd=l91z529147ri
 
 > Note: You can replace `http://localhost` with `https://yourdomain.com` to test HTTPS API.
 
-> Note: For SRS Stack, you should specify the secret, so please change the `/rtc/v1/whip?ice-ufrag=` to `/rtc/v1/whip?secret=xxx&ice-ufrag=` as such.
+> Note: For Oryx, you should specify the secret, so please change the `/rtc/v1/whip?ice-ufrag=` to `/rtc/v1/whip?secret=xxx&ice-ufrag=` as such.
 
 > Note: You can also use `eip=ip` or `eip=ip:port` to force SRS to use it as the candidate. Please see [CANDIDATE](#config-candidate) for details.
 

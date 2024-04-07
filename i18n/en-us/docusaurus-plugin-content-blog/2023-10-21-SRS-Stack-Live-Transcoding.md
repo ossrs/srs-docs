@@ -1,6 +1,6 @@
 ---
 slug: Live-Transcoding
-title: SRS Stack - Efficient Live Streaming Transcoding for Reducing Bandwidth and Saving Costs
+title: Oryx - Efficient Live Streaming Transcoding for Reducing Bandwidth and Saving Costs
 authors: []
 tags: [live streaming, transcode, srs, ffmpeg]
 custom_edit_url: null
@@ -14,13 +14,13 @@ In today's digital world, live streaming has become an essential tool for busine
 individuals alike. With the increasing number of viewers tuning in to watch live streams, it's crucial to optimize 
 the streaming experience and cost for everyone, regardless of their internet speed or device capabilities. One 
 effective way to achieve this is through live streaming transcoding, a process that can help reduce bandwidth 
-and save costs without compromising on video quality. In this blog, we'll explore the benefits of using SRS Stack 
+and save costs without compromising on video quality. In this blog, we'll explore the benefits of using Oryx 
 for efficient live streaming transcoding and how it can lead to significant cost savings.
 
 <!--truncate-->
 
-Live streaming transcoding involves converting a live stream from SRS Stack using FFmpeg into various bitrates and 
-resolutions, before pushing it back to SRS Stack. This process allows for a reduction in bandwidth while maintaining 
+Live streaming transcoding involves converting a live stream from Oryx using FFmpeg into various bitrates and 
+resolutions, before pushing it back to Oryx. This process allows for a reduction in bandwidth while maintaining 
 the same quality, simply by lowering the bitrate of the stream. As a result, the overall viewing bandwidth is
 decreased, leading to cost savings for both the streamer and the viewer.
 
@@ -30,14 +30,14 @@ This not only benefits the content provider but also ensures a smoother streamin
 varying internet speeds and devices.
 
 Stay tuned as we delve deeper into the world of live streaming transcoding, and learn how to harness the power 
-of SRS Stack to optimize your streaming experience and save costs.
+of Oryx to optimize your streaming experience and save costs.
 
-## Step 1: Create SRS Stack by One Click
+## Step 1: Create Oryx by One Click
 
-Creating an SRS Stack is simple and can be done with just one click if you use Digital Ocean droplet.
+Creating an Oryx is simple and can be done with just one click if you use Digital Ocean droplet.
 Please see [How to Setup a Video Streaming Service by 1-Click](./2022-04-09-SRS-Stack-Tutorial.md) for detail.
 
-You can also use Docker to create an SRS Stack with a single command line:
+You can also use Docker to create an Oryx with a single command line:
 
 ```bash
 docker run --restart always -d -it --name srs-stack -v $HOME/data:/data \
@@ -45,11 +45,11 @@ docker run --restart always -d -it --name srs-stack -v $HOME/data:/data \
   ossrs/srs-stack:5
 ```
 
-After creating the SRS Stack, you can access it through `http://your-server-ip/mgmt` via a browser.
+After creating the Oryx, you can access it through `http://your-server-ip/mgmt` via a browser.
 
-## Step 2: Publish a Live Stream to SRS Stack
+## Step 2: Publish a Live Stream to Oryx
 
-You can use OBS or FFmpeg to publish a live stream to SRS Stack. You can also set up HTTPS and publish via WebRTC.
+You can use OBS or FFmpeg to publish a live stream to Oryx. You can also set up HTTPS and publish via WebRTC.
 
 ![](/img/blog-2023-10-21-01.png)
 
@@ -58,7 +58,7 @@ Please see [How to Setup a Video Streaming Service by 1-Click](./2022-04-09-SRS-
 
 ## Step 3: Transcode the Live Stream to Lower Bitrate
 
-Suppose you've sent an 8Mbps stream to SRS Stack using OBS, and you can't adjust the bitrate in OBS. This could 
+Suppose you've sent an 8Mbps stream to Oryx using OBS, and you can't adjust the bitrate in OBS. This could 
 be because the stream is published by a vendor you can't control, or you need to record the original high-resolution 
 stream, or some devices like 4K/8K TVs require the high-resolution stream.
 
@@ -70,11 +70,11 @@ use transcoding to convert the 8Mbps stream into a 2Mbps live stream.
 
 After transcoding the stream, you can preview the 2Mbps version or forward it to another live streaming platform.
 See [Easily Stream Your RTSP IP Camera to YouTube, Twitch, or Facebook](./2023-10-11-SRS-Stack-Stream-IP-Camera-Events.md) 
-for more information. You can also pull the RTMP stream from SRS Stack and forward it elsewhere.
+for more information. You can also pull the RTMP stream from Oryx and forward it elsewhere.
 
 ## Check Transcoding Status
 
-You can check the transcoding status in the SRS Stack dashboard.
+You can check the transcoding status in the Oryx dashboard.
 
 ![](/img/blog-2023-10-21-03.png)
 
@@ -95,10 +95,10 @@ To learn more about our cloud service, click [here](../cloud).
 
 ## Conclusion
 
-In summary, we discussed the benefits of live streaming transcoding using SRS Stack and FFmpeg. Transcoding optimizes 
+In summary, we discussed the benefits of live streaming transcoding using Oryx and FFmpeg. Transcoding optimizes 
 streaming for viewers with different internet speeds and devices, reduces bandwidth usage, and saves costs. We 
-covered setting up SRS Stack and FFmpeg, creating a configuration file, and pushing transcoded streams back to 
-SRS Stack. Monitoring and adjusting settings is crucial for optimal viewer experience, and transcoding can also 
+covered setting up Oryx and FFmpeg, creating a configuration file, and pushing transcoded streams back to 
+Oryx. Monitoring and adjusting settings is crucial for optimal viewer experience, and transcoding can also 
 convert high-resolution streams to lower resolutions for mobile devices.
 
 ## Contact

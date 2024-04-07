@@ -1,23 +1,23 @@
 ---
-title: SRS Stack
-sidebar_label: SRS Stack
+title: Oryx
+sidebar_label: Oryx
 hide_title: false
 hide_table_of_contents: false
 ---
 
-# SRS Stack
+# Oryx
 
-SRS Stack is a video cloud solution that is lightweight, open-source, and based on Go,
+Oryx is a video cloud solution that is lightweight, open-source, and based on Go,
 Reactjs, SRS, FFmpeg, WebRTC, etc.
 
 ## Introduction
 
-SRS Stack, an open-source out-of-the-box audio and video solution, is built entirely based on various scenarios. 
+Oryx, an open-source out-of-the-box audio and video solution, is built entirely based on various scenarios. 
 Common examples include push-pull streaming scenarios that support different protocols and can be embedded into 
 websites like WordPress. 
 
 In recording scenarios, it supports merging multiple streams, setting filters, and recording specific streams only. 
-For forwarding and virtual live streaming, files and other streams can be sent to different platforms or to SRS Stack 
+For forwarding and virtual live streaming, files and other streams can be sent to different platforms or to Oryx 
 itself. With AI automatic subtitles, OpenAI's capabilities can be utilized to automatically recognize and embed 
 subtitles into the video stream. One-click automatic HTTPS makes it easy to enable HTTPS capabilities. 
 
@@ -25,7 +25,7 @@ More diverse scenarios will be available in the future.
 
 ## FAQ
 
-If you encounter issues while using SRS Stack, please read the [FAQ](../../../faq-oryx) first.
+If you encounter issues while using Oryx, please read the [FAQ](../../../faq-oryx) first.
 
 ## Usage
 
@@ -35,7 +35,7 @@ Please select your platform.
 
 ### Docker
 
-Strongly recommend running SRS Stack with docker:
+Strongly recommend running Oryx with docker:
 
 ```bash
 docker run --restart always -d -it --name srs-stack -v $HOME/data:/data \
@@ -43,13 +43,13 @@ docker run --restart always -d -it --name srs-stack -v $HOME/data:/data \
   ossrs/srs-stack:5
 ```
 
-Then you can open [http://localhost:2022](http://localhost:2022) to use SRS Stack.
+Then you can open [http://localhost:2022](http://localhost:2022) to use Oryx.
 
-For more details, please refer to [SRS Stack Docker](https://github.com/ossrs/srs-stack#usage).
+For more details, please refer to [Oryx Docker](https://github.com/ossrs/srs-stack#usage).
 
 ### HELM
 
-Strongly recommend running SRS Stack with HELM:
+Strongly recommend running Oryx with HELM:
 
 ```bash
 helm repo add srs http://helm.ossrs.io/stable
@@ -58,7 +58,7 @@ helm install srs srs/srs-stack --set persistence.path=$HOME/data \
   --set service.rtc=8000 --set service.srt=10080
 ```
 
-Then you can open [http://localhost:2022](http://localhost:2022) to use SRS Stack.
+Then you can open [http://localhost:2022](http://localhost:2022) to use Oryx.
 
 ### Script
 
@@ -67,62 +67,62 @@ and install it.
 
 ### AWS Lightsail
 
-SRS Stack supports AWS Lightsail, which is a virtual private server (VPS) service offered by AWS. Please 
+Oryx supports AWS Lightsail, which is a virtual private server (VPS) service offered by AWS. Please 
 follow [How to Establish a Video Streaming Service with a Single Click](../../../blog/SRS-Stack-Tutorial).
 
 ### DigitalOcean Droplet
 
-Easily set up an SRS Stack with just one click. For more information, check out
+Easily set up an Oryx with just one click. For more information, check out
 [How to Establish a Video Streaming Service with a Single Click](../../../blog/SRS-Stack-Tutorial).
 
 ### aaPanel
 
-SRS Stack offers a BaoTa plugin, for usage instructions refer to the [SRS Stack aaPanel Plugin](../../../blog/BT-aaPanel).
+Oryx offers a BaoTa plugin, for usage instructions refer to the [Oryx aaPanel Plugin](../../../blog/BT-aaPanel).
 
 ## Changelog
 
-For the update log of the SRS Stack, please refer to [CHANGELOG](https://github.com/ossrs/srs-stack/blob/main/DEVELOPER.md#changelog).
+For the update log of the Oryx, please refer to [CHANGELOG](https://github.com/ossrs/srs-stack/blob/main/DEVELOPER.md#changelog).
 
 For specific features supported by a particular version, you can view the CHANGELOG in the version release, see [Releases](https://github.com/ossrs/srs-stack/releases).
 
 ## Features
 
-About the features of SRS Stack and comparison with SRS，for more details please read [Features](https://github.com/ossrs/srs-stack?tab=readme-ov-file#features).
+About the features of Oryx and comparison with SRS，for more details please read [Features](https://github.com/ossrs/srs-stack?tab=readme-ov-file#features).
 
 ### Compare to SRS
 
-Comparing SRS Stack and SRS, both offer media streaming capabilities at a similar level.
-However, SRS Stack provides a more powerful and feature-rich experience for end users,
-eliminating the need to write any code. Users can directly utilize SRS Stack for your
+Comparing Oryx and SRS, both offer media streaming capabilities at a similar level.
+However, Oryx provides a more powerful and feature-rich experience for end users,
+eliminating the need to write any code. Users can directly utilize Oryx for your
 media services needs.
 
-| Comparison     | SRS Stack         | SRS           | Notes                                                              |
+| Comparison     | Oryx         | SRS           | Notes                                                              |
 |----------------|-------------------|---------------|--------------------------------------------------------------------|
-| License        | AGPL-3.0-or-later | MIT           | SRS is licenced under MIT, SRS Stack is AGPL-3.0-or-later.         |
+| License        | AGPL-3.0-or-later | MIT           | SRS is licenced under MIT, Oryx is AGPL-3.0-or-later.         |
 | Live Streaming | Yes               | Yes           | Both support RTMP, HLS, and HTTP-FLV protocols.                    |
 | WebRTC         | Yes               | Yes           | WebRTC is supported by both.                                       |
-| Auto HTTPS     | Yes               | No            | SRS Stack supports automatic request and update HTTPS certs.       |
-| Console        | Enhanced          | HTTP API      | SRS Stack offers a more powerful console.                          |
-| Authentication | Yes               | HTTP Callback | SRS Stack has built-in authentication, while SRS uses callbacks.   |
-| DVR            | Enhanced          | File-based    | SRS Stack supports DVR to file and cloud storage.                  |
-| Forwarding     | Enhanced          | Basic         | SRS Stack can forward to multiple platforms via various protocols. |
-| Virtual Live   | Yes               | No            | SRS Stack provides advanced virtual live streaming capabilities.   |
-| WordPress      | Yes               | No            | SRS Stack offers a WordPress plugin and step-by-step guidelines.   |
-| Transcoding    | Yes               | No            | SRS Stack supports live stream transcoding.                        |
+| Auto HTTPS     | Yes               | No            | Oryx supports automatic request and update HTTPS certs.       |
+| Console        | Enhanced          | HTTP API      | Oryx offers a more powerful console.                          |
+| Authentication | Yes               | HTTP Callback | Oryx has built-in authentication, while SRS uses callbacks.   |
+| DVR            | Enhanced          | File-based    | Oryx supports DVR to file and cloud storage.                  |
+| Forwarding     | Enhanced          | Basic         | Oryx can forward to multiple platforms via various protocols. |
+| Virtual Live   | Yes               | No            | Oryx provides advanced virtual live streaming capabilities.   |
+| WordPress      | Yes               | No            | Oryx offers a WordPress plugin and step-by-step guidelines.   |
+| Transcoding    | Yes               | No            | Oryx supports live stream transcoding.                        |
 | Transcription  | Yes               | No            | Convert live speech to subtitle and overlay to video stream.       |
 | Live Room      | Yes               | No            | Support live room feature.                                         |
 
 ### Streaming and Authentication
 
-SRS Stack support enhanced streaming with authentication, based on SRS callback. SRS Stack generate and save 
+Oryx support enhanced streaming with authentication, based on SRS callback. Oryx generate and save 
 the stream token to Redis, and verify the stream token when user publish stream via RTMP, SRT, or WHIP/WebRTC.
 
-SRS Stack also proxies and secures all the HTTP API of SRS, so only authenticated user can access the HTTP API 
+Oryx also proxies and secures all the HTTP API of SRS, so only authenticated user can access the HTTP API 
 and the console.
 
 ### DVR
 
-SRS Stack support DVR or Recording, to convert live stream to file, then save to local disk or cloud storage. 
+Oryx support DVR or Recording, to convert live stream to file, then save to local disk or cloud storage. 
 We also support merge multiple republish session to one DVR file, and support set filters for recording specified 
 streams.
 
@@ -130,7 +130,7 @@ See [A Step-by-Step Guide to Server-Side Recording and AWS S3 Integration](../..
 
 ### Automatic HTTPS
 
-SRS Stack support automatic HTTPS, just by one click, you can enable HTTPS for your SRS Stack. SRS Stack will 
+Oryx support automatic HTTPS, just by one click, you can enable HTTPS for your Oryx. Oryx will 
 automatically request and update the HTTPS certificate from [Let's Encrypt](https://letsencrypt.org/). Automatic HTTPS
 allows WHIP or publish by webpage, and also support WebRTC, and access user's microphones.
 
@@ -147,15 +147,15 @@ See [Harness the Power of Pre-Recorded Content for Seamless and Engaging Live St
 
 ### Restream
 
-With SRS Stack, you can restream to multiple platforms, like YouTube, Twitch, Facebook, etc. SRS Stack will 
+With Oryx, you can restream to multiple platforms, like YouTube, Twitch, Facebook, etc. Oryx will 
 automatically select a stream to forward, so you can publish multiple streams as fault-tolerant or backup 
-stream, when a stream is down, SRS Stack will switch to another one.
+stream, when a stream is down, Oryx will switch to another one.
 
-See [Effortlessly Restream Live Content Across Multiple Platforms with SRS Stack](../../../blog/Multi-Platform-Streaming) for details.
+See [Effortlessly Restream Live Content Across Multiple Platforms with Oryx](../../../blog/Multi-Platform-Streaming) for details.
 
 ### AI Transcription
 
-SRS Stack supports AI transcription, which is powered by OpenAI, to convert live speech to text and overlay to 
+Oryx supports AI transcription, which is powered by OpenAI, to convert live speech to text and overlay to 
 the video stream as a new live stream. With this feature, allows you to engage more audiences, especially for people 
 with hearing disabilities or those who are non-native speakers.
 
@@ -163,24 +163,24 @@ See [Creating Accessible, Multilingual Subtitles for Diverse Audiences](../../..
 
 ### Transcode
 
-SRS Stack suppport transcoding live stream, to decrease the bitrate and save bandwidth and cost, or filter the 
+Oryx suppport transcoding live stream, to decrease the bitrate and save bandwidth and cost, or filter the 
 live stream content to make it better.
 
 See [Efficient Live Streaming Transcoding for Reducing Bandwidth and Saving Costs](../../../blog/Live-Transcoding) for details.
 
 ## AI Products
 
-We are implementing various AI tools and products in the SRS Stack, and here is the latest status. We will continue 
+We are implementing various AI tools and products in the Oryx, and here is the latest status. We will continue 
 to update this document.
 
 1. AI Transcript: Implement voice-to-text by connecting to OpenAI's Whisper, and overlay the text captions onto the live broadcast, enabling automatic subtitles for streaming.
-   * Status: Completed and available in the SRS Stack. Refer to [Creating Accessible, Multilingual Subtitles for Diverse Audiences](../../../blog/live-streams-transcription).
+   * Status: Completed and available in the Oryx. Refer to [Creating Accessible, Multilingual Subtitles for Diverse Audiences](../../../blog/live-streams-transcription).
 1. Document Assistant: Connect to the AI document API, and provide an AI assistant on the official website, so users can obtain correct answers without spending time reading the documentation.
    * Status: Beta version available in official website [https://ossrs.io](https://ossrs.io) and you can click the `Ask AI` button to use it.
-1. Streamer AI Asssistant: Easily create a personal, voice-driven GPT AI assistant with SRS Stack for enhanced language learning, multi-language chats, and convenient assistance in any setting. Perfect for interactive streaming and daily tasks. It offers numerous possibilities for living room and streaming hosts with AI assistance.
-   * Status: Beta version available in the SRS Stack. Refer to [Speak to the Future - Transform Your Browser into a Personal Voice-Driven GPT AI Assistant with SRS Stack](../../../blog/browser-voice-driven-gpt).
+1. Streamer AI Asssistant: Easily create a personal, voice-driven GPT AI assistant with Oryx for enhanced language learning, multi-language chats, and convenient assistance in any setting. Perfect for interactive streaming and daily tasks. It offers numerous possibilities for living room and streaming hosts with AI assistance.
+   * Status: Beta version available in the Oryx. Refer to [Speak to the Future - Transform Your Browser into a Personal Voice-Driven GPT AI Assistant with Oryx](../../../blog/browser-voice-driven-gpt).
 1. VoD Translation: Translate English videos into Chinese for English learning or create multilingual videos, frequently used in education and e-commerce.
-   * Beta version available in the SRS Stack. Refer to [Revolutionize Video Content with SRS Stack - Effortless Dubbing and Translating to Multiple Languages Using OpenAI](../../../blog/dubbing-translating).
+   * Beta version available in the Oryx. Refer to [Revolutionize Video Content with Oryx - Effortless Dubbing and Translating to Multiple Languages Using OpenAI](../../../blog/dubbing-translating).
 
 If you are interested in our AI products, feel free to join our [Discord](https://discord.gg/yZ4BnPmHAd) server to discuss with us.
 
@@ -211,7 +211,7 @@ In addition to the sample APIs listed on this page, users can perform all web-ba
 HTTP API. To identify the requests and responses for each API, open Google Chrome, navigate to 
 `View > Developer > Developer Tools` click on the `Network` tab, and examine the relevant API interactions.
 
-SRS Stack also proxy the [SRS HTTP API](./http-api.md), which prefix with `/api/v1/` such as:
+Oryx also proxy the [SRS HTTP API](./http-api.md), which prefix with `/api/v1/` such as:
 
 ```bash
 curl http://localhost:2022/api/v1/versions
@@ -231,15 +231,15 @@ Please read the detail about the API from the [SRS HTTP API](./http-api.md).
 
 ## HTTP Callback
 
-HTTP Callback refers to the SRS Stack running within a Docker container, initiating an HTTP request to
-a target URL. For instance, the following process illustrates that when OBS publishs an RTMP stream to SRS Stack,
-the SRS Stack informs your server about the event by sending an HTTP request to the target URL.
+HTTP Callback refers to the Oryx running within a Docker container, initiating an HTTP request to
+a target URL. For instance, the following process illustrates that when OBS publishs an RTMP stream to Oryx,
+the Oryx informs your server about the event by sending an HTTP request to the target URL.
 
 ```bash
                    +-----------------------+
                    +                       +
 +-------+          +     +-----------+     +                 +--------------+
-+  OBS  +--RTMP->--+-----+ SRS Stack +-----+----HTTP--->-----+  Your Server +
++  OBS  +--RTMP->--+-----+ Oryx +-----+----HTTP--->-----+  Your Server +
 +-------+          +     +-----------+     +  (Target URL)   +--------------+
                    +                       +
                    +       Docker          +
@@ -261,9 +261,9 @@ See examples in [HTTP Callback](../docs/v6/doc/http-callback#go-example)
 
 Occasionally, you might need to verify if the network is accessible and determine the appropriate target URL to
 use. By using the curl command inside the Docker container, you can simulate this request and confirm if the
-target URL can be accessed by curl or the SRS Stack.
+target URL can be accessed by curl or the Oryx.
 
-First, install curl in SRS Stack:
+First, install curl in Oryx:
 
 ```bash
 docker exec -it srs-stack apt-get update -y
@@ -283,7 +283,7 @@ You can use any target URL to test, such as:
 * URL via HTTP: `http://your-domain.com/check`
 * URL via HTTPS: `https://your-domain.com/check`
 
-Keep in mind that you should test the connection to the target URL within the SRS Stack Docker, and avoid
+Keep in mind that you should test the connection to the target URL within the Oryx Docker, and avoid
 running the curl command from a different server.
 
 ### HTTP Callback: on_publish

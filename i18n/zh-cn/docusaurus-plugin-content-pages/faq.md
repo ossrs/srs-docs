@@ -14,7 +14,7 @@
 下面是常见的问题，如果没有找到你的问题，请先在本[Issue](https://github.com/ossrs/srs/issues)中搜索，如果你确认是个Bug并且没有提交过，
 请按照要求提交Issue。
 
-> Note: 这是关于SRS的FAQ，如果是SRS Stack的FAQ请参考[SRS Stack FAQ](./faq-oryx)
+> Note: 这是关于SRS的FAQ，如果是Oryx的FAQ请参考[Oryx FAQ](./faq-oryx)
 
 <a name='cdn'></a> <a name='vod'></a>
 
@@ -350,7 +350,7 @@ will be removed without any response.
 ```
 
 ```
-SRS Stack的问题，请提交到[srs-stack](https://github.com/ossrs/srs-stack)，该Issue会被删除，请先阅读FAQ：#2716
+Oryx的问题，请提交到[srs-stack](https://github.com/ossrs/srs-stack)，该Issue会被删除，请先阅读FAQ：#2716
 ```
 
 ![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.net&path=/lts/pages/faq-zh)

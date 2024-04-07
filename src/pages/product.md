@@ -15,7 +15,7 @@ For detail features of SRS, please see [FEATURES](https://github.com/ossrs/srs/b
 
 Let's briefly introduce the history of SRS in reverse order.
 
-In January 2023, Star exceeded 20K and launched the Paid Star Planet. SRS Stack supported Virtual Live Broadcasting, 
+In January 2023, Star exceeded 20K and launched the Paid Star Planet. Oryx supported Virtual Live Broadcasting, 
 confirmed the development codename for version 6.0 as Hang, and introduced new TOC rules.
 
 In November 2022, the SRS TOC and developer community were established, with the number of active developers reaching 47. 

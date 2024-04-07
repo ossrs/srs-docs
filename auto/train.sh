@@ -50,7 +50,7 @@ for dir in ${DIRS[*]}; do
 done
 
 echo ""
-echo "Train SRS Stack files:"
+echo "Train Oryx files:"
 for dir in ${DIRS[*]}; do
     cd $dir
     files=$(ls *.md |grep -iv zh |grep -i stack)
@@ -58,7 +58,7 @@ for dir in ${DIRS[*]}; do
         if [[ $(grep -q "File: $file" $TARGET/srs-server.md && echo ignore) == ignore ]]; then
             continue
         fi
-        echo $file; echo "SRS Stack File: $file" >> $TARGET/srs-stack.md; cat $file >> $TARGET/srs-stack.md
+        echo $file; echo "Oryx File: $file" >> $TARGET/srs-stack.md; cat $file >> $TARGET/srs-stack.md
     done
 done
 

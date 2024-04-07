@@ -1,13 +1,13 @@
 ---
-title: SRS Stack
-sidebar_label: SRS Stack
+title: Oryx
+sidebar_label: Oryx
 hide_title: false
 hide_table_of_contents: false
 ---
 
-# SRS Stack
+# Oryx
 
-SRS Stack is a lightweight open-source video cloud based on Go, SRS, FFmpeg, WebRTC, etc.
+Oryx is a lightweight open-source video cloud based on Go, SRS, FFmpeg, WebRTC, etc.
 
 ## aaPanel
 

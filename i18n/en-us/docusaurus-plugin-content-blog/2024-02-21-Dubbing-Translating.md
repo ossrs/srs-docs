@@ -1,36 +1,36 @@
 ---
 slug: dubbing-translating
-title: SRS Stack - Revolutionize Video Content with SRS Stack - Effortless Dubbing and Translating to Multiple Languages Using OpenAI
+title: Oryx - Revolutionize Video Content with Oryx - Effortless Dubbing and Translating to Multiple Languages Using OpenAI
 authors: []
 tags: [dubbing, translating, ai, gpt, voice, srs, srs-stack, multilingual]
 custom_edit_url: null
 ---
 
-# Revolutionize Video Content with SRS Stack: Effortless Dubbing and Translating to Multiple Languages Using OpenAI
+# Revolutionize Video Content with Oryx: Effortless Dubbing and Translating to Multiple Languages Using OpenAI
 
 ## Introduction
 
 In today's globalized world, content creation is no longer limited by geographical boundaries. As a result, 
 engaging a diverse, international audience has become increasingly important for video creators. Whether 
 you're a YouTuber, filmmaker, or e-learning content provider, being able to make your content accessible in 
-multiple languages can greatly enhance its impact. That's where SRS Stack comes in – with its advanced 
+multiple languages can greatly enhance its impact. That's where Oryx comes in – with its advanced 
 multilingual dubbing and translation services powered by OpenAI, breaking language barriers is now simpler 
 and more cost-effective than ever.
 
 <!--truncate-->
 
-In this blog, we will discuss how SRS Stack supports dubbing and translating video files from one language to 
+In this blog, we will discuss how Oryx supports dubbing and translating video files from one language to 
 another, such as converting a video with English speech to Chinese subtitles and speech. We will explore how 
 this technology can help you appeal to a broader audience and unlock the full potential of your content, all 
 while being incredibly easy to use and wallet-friendly. So, buckle up as we dive into the world of multilingual 
-video content with SRS Stack!
+video content with Oryx!
 
-## Step 1: Create SRS Stack by One Click
+## Step 1: Create Oryx by One Click
 
-Creating an SRS Stack is simple and can be done with just one click if you use Digital Ocean droplet.
+Creating an Oryx is simple and can be done with just one click if you use Digital Ocean droplet.
 Please see [How to Setup a Video Streaming Service by 1-Click](./2022-04-09-SRS-Stack-Tutorial.md) for detail.
 
-You can also use Docker to create an SRS Stack with a single command line:
+You can also use Docker to create an Oryx with a single command line:
 
 ```bash
 docker run --restart always -d -it --name srs-stack -v $HOME/data:/data \
@@ -38,7 +38,7 @@ docker run --restart always -d -it --name srs-stack -v $HOME/data:/data \
   ossrs/srs-stack:5
 ```
 
-After creating the SRS Stack, you can access it through `http://your-server-ip/mgmt` via a browser.
+After creating the Oryx, you can access it through `http://your-server-ip/mgmt` via a browser.
 
 ## Step 2: Upload Video Source File
 
@@ -51,7 +51,7 @@ First, please upload the video source file, click the `Dubbing > Video Source > 
 ## Step 3: Setup OpenAI Secret Key for Dubbing
 
 To use AI services, you must obtain a secret key from OpenAI. Please open the [API keys](https://platform.openai.com/api-keys)
-page in your browser and click the `Create new secret key` button. Once the key is created, copy it and set it in SRS Stack.
+page in your browser and click the `Create new secret key` button. Once the key is created, copy it and set it in Oryx.
 
 Next, configure the OpenAI secret key in `Dubbing Settings > ASR Settings`. Afterward, click on the
 `Test OpenAI Service` button, and if no errors are detected during testing, click on `Update` button.
@@ -95,9 +95,9 @@ To learn more about our cloud service, click [here](../cloud).
 
 ## Conclusion
 
-In conclusion, SRS Stack's support for dubbing and translating video files to multiple languages, including the 
+In conclusion, Oryx's support for dubbing and translating video files to multiple languages, including the 
 conversion of English speech to Chinese subtitles and speech, is a game-changing solution for content creators 
-looking to engage a wider audience. By leveraging the advanced capabilities of OpenAI services, SRS Stack ensures
+looking to engage a wider audience. By leveraging the advanced capabilities of OpenAI services, Oryx ensures
 an efficient, cost-effective, and user-friendly approach to video localization. This remarkable technology not only
 breaks language barriers but also fosters cultural exchange and global communication, propelling your content into 
 new horizons and opening doors to endless possibilities.

@@ -17,7 +17,7 @@ Here are some common questions. If you can't find your question, please search i
 first. If you are sure it is a bug and it has not been submitted before, please submit an 
 Issue according to the requirements.
 
-> Note: This is FAQ about SRS, please see [SRS Stack FAQ](./faq-oryx) for SRS Stack.
+> Note: This is FAQ about SRS, please see [Oryx FAQ](./faq-oryx) for Oryx.
 
 <a name='cdn'></a> <a name='vod'></a>
 

@@ -196,7 +196,7 @@
     "description": "The title of the tag list page"
   },
   "homepage.subTitle": {
-    "message": "SRS is a simple, high efficiency and realtime video server, supports RTMP, WebRTC, HLS, HTTP-FLV, SRT, MPEG-DASH and GB28181. SRS Stack is an all-in-one, out-of-the-box, and open-source video solution for creating online video services, including live streaming and WebRTC, on the cloud or through self-hosting."
+    "message": "SRS is a simple, high efficiency and realtime video server, supports RTMP, WebRTC, HLS, HTTP-FLV, SRT, MPEG-DASH and GB28181. Oryx is an all-in-one, out-of-the-box, and open-source video solution for creating online video services, including live streaming and WebRTC, on the cloud or through self-hosting."
   },
   "homepage.tutorial": {
     "message": "Take the Tutorial"

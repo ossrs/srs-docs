@@ -1,10 +1,10 @@
 # FAQ
 
-> Note: This is FAQ for SRS Stack, please see [SRS FAQ](./faq) for SRS FAQ.
+> Note: This is FAQ for Oryx, please see [SRS FAQ](./faq) for SRS FAQ.
 
 Quick Content
 
-* [Getting Started](#getting-started): How to use, start, and get started with SRS Stack Server.
+* [Getting Started](#getting-started): How to use, start, and get started with Oryx Server.
 * [How to Upgrade](#how-to-upgrade): How to upgrade to the latest or stable version, and why the interface click upgrade is not supported.
 * [How to Set a Domain](#how-to-set-a-domain): How to set up a domain to access the admin panel, why can't the admin panel be opened, and why can't the admin panel be accessed via IP.
 * [Supported Platforms](#supported-platforms): Supported platforms, supported images, want to use the server or command line installation directly, or aaPanel installation.
@@ -25,11 +25,11 @@ Quick Content
 * [Why and How to Limit the Bitrate of Virtual Live Events](#why-and-how-to-limit-the-bitrate-of-virtual-live-events): Why and how to limit the bitrate of virtual live events.
 * [How to Setup the Font Style for AI Transcript](#how-to-setup-the-font-style-for-ai-transcript): How to set up the font style for AI transcript.
 * [How to Setup the Video Codec Parameters for AI Transcript](#how-to-setup-the-video-codec-parameters-for-ai-transcript): How to set up the video codec parameters for AI transcript.
-* [How to Replace FFmpeg](#how-to-replace-ffmpeg): How to replace the FFmpeg in SRS Stack with a custom version.
+* [How to Replace FFmpeg](#how-to-replace-ffmpeg): How to replace the FFmpeg in Oryx with a custom version.
 * [Installation of SRS is Very Slow](#installation-of-srs-is-very-slow): Overseas aaPanel installation is very slow, access to Alibaba Cloud image is too slow.
-* [How to Install the Latest SRS Stack](#how-to-install-the-latest-srs-stack): Manually install aaPanel plugin, install the latest plugin.
+* [How to Install the Latest Oryx](#how-to-install-the-latest-srs-stack): Manually install aaPanel plugin, install the latest plugin.
 * [CentOS7 Installation Failed](#centos7-installation-failed): CentOS7 aaPanel installation failed, cannot find the directory, or GLIBC version problem.
-* [The Difference Between SRS Stack and SRS](#the-difference-between-srs-stack-and-srs): The difference between SRS Stack and SRS, why there is SRS Stack.
+* [The Difference Between Oryx and SRS](#the-difference-between-srs-stack-and-srs): The difference between Oryx and SRS, why there is Oryx.
 * [Low Latency HLS](#low-latency-hls): How to use low latency HLS, how to use low latency HLS.
 * [OpenAPI](#openapi): About open API, using API to get related information.
 * [HTTP Callback](#http-callback): About HTTP callback.
@@ -40,9 +40,9 @@ You can also search for keywords on the page.
 ## Getting Started
 
 Please follow [How to Setup a Video Streaming Service by 1-Click](./blog/SRS-Stack-Tutorial) to purchase 
-and set up SRS Stack, please don't skip this step.
+and set up Oryx, please don't skip this step.
 
-After entering the SRS Stack Server, there will be corresponding video tutorials according to different 
+After entering the Oryx Server, there will be corresponding video tutorials according to different 
 application scenarios, as shown in the following figure:
 
 ![](/img/page-2023-03-04-01.png)
@@ -59,7 +59,7 @@ cause problems.
 
 How to upgrade to the latest version or stable version, and why not support click upgrade on the interface?
 
-Since SRS Stack supports multiple platforms, including Docker, and Docker cannot upgrade itself, SRS Stack 
+Since Oryx supports multiple platforms, including Docker, and Docker cannot upgrade itself, Oryx 
 also does not support interface upgrades and needs to be upgraded manually.
 
 If you use HELM, and get srs-stack `1.0.1` installed, then you can upgrade by `helm upgrade srs srs/srs-stack --version 1.0.2` 
@@ -94,26 +94,26 @@ admin panel be accessed via IP.
 Please replace the following domain names and IPs with your own domain names and IPs, which can be either 
 private or public IPs, as long as your browser can access them.
 
-When installing SRS Stack with aaPanel, you need to enter the domain name of the management backend, such 
+When installing Oryx with aaPanel, you need to enter the domain name of the management backend, such 
 as `bt.yourdomain.com`, and it will automatically create the management backend website.
 
 > Note: When installing with aaPanel, if you want to use IP access, you can set it to `bt.yourdomain.com`, 
 > and then set the `srs.stack.local` website as the default website in aaPanel.
 
-If you install it in other ways, it's the same. You just need to resolve your domain name to the SRS Stack 
+If you install it in other ways, it's the same. You just need to resolve your domain name to the Oryx 
 IP.
 
 There are several ways to set up domain name resolution:
 
-1. DNS domain name resolution: In the backend of your domain name provider, set an A record pointing to the SRS Stack IP.
+1. DNS domain name resolution: In the backend of your domain name provider, set an A record pointing to the Oryx IP.
 ```text
 A bt.yourdomain.com 121.13.75.20
 ```
-2. Modify the local `/etc/hosts` file in Linux/Unix to resolve the domain name to the SRS Stack IP.
+2. Modify the local `/etc/hosts` file in Linux/Unix to resolve the domain name to the Oryx IP.
 ```text
 121.13.75.20 bt.yourdomain.com
 ```
-3. Modify the local `C:\Windows\System32\drivers\etc` file in Windows to resolve the domain name to the SRS Stack IP.
+3. Modify the local `C:\Windows\System32\drivers\etc` file in Windows to resolve the domain name to the Oryx IP.
 ```text
 121.13.75.20 bt.yourdomain.com
 ```
@@ -123,14 +123,14 @@ public IP, and you cannot use the method of modifying the hosts file.
 
 ## Supported Platforms
 
-SRS Stack supports Docker images, installation scripts, DigitalOcean images, and can be installed on other 
+Oryx supports Docker images, installation scripts, DigitalOcean images, and can be installed on other 
 platforms using aaPanel.
 
 It is recommended to install directly using Docker, which also allows for multiple installations. Be sure 
 to use Ubuntu 20+ system:
 * Docker image installation: [here](../docs/v6/doc/getting-started-oryx#docker)
 
-SRS Stack also support HELM, see [srs-helm](https://github.com/ossrs/srs-helm) for detail.
+Oryx also support HELM, see [srs-helm](https://github.com/ossrs/srs-helm) for detail.
 
 If you are used to aaPanel, you can install it with aaPanel, which can coexist with multiple websites. Be 
 sure to use Ubuntu 20+ system:
@@ -184,7 +184,7 @@ and playback name:
 The machine has a lot of CPU, how can we support more platform forwarding, or more streams and recording, 
 etc.
 
-You can choose to use Docker to start SRS Stack, which makes it very easy to run many isolated SRS Stack
+You can choose to use Docker to start Oryx, which makes it very easy to run many isolated Oryx
 instances that don't affect each other and utilize the machine resources.
 
 For example, start two instances listening on ports 2022 and 2023, and use different ports for streaming media:
@@ -206,9 +206,9 @@ docker run --restart always -d -it --name srs-stack1 -it -v $HOME/data1:/data \
 Then, open [http://localhost:2023](http://localhost:2023) to log in to the backend.
 
 > Note: Be careful not to use duplicate ports and make sure the mounted data directories are unique. Keep 
-> the two SRS Stacks completely separate.
+> the two Oryxs completely separate.
 
-Although the SRS Stack web UI doesn't display the RTMP port because it uses the same port 1935 within 
+Although the Oryx web UI doesn't display the RTMP port because it uses the same port 1935 within 
 the docker, this doesn't cause any issues. You can still publish to each stack using different RTMP ports.
 However, you can setup the exposed ports:
 
@@ -222,8 +222,8 @@ docker run --restart always -d -it --name srs-stack1 -it -v $HOME/data1:/data \
 If you only need multi-platform streaming or virtual streaming without involving the push stream port, 
 you can use it directly.
 
-If you need to push streams to two SRS Stack instances, you need to specify the ports, such as pushing 
-streams to these two SRS Stacks:
+If you need to push streams to two Oryx instances, you need to specify the ports, such as pushing 
+streams to these two Oryxs:
 
 * `rtmp://ip:1935/live/livestream`
 * `rtmp://ip:1936/live/livestream`
@@ -233,14 +233,14 @@ Other protocol ports should also be changed accordingly, such as HLS:
 * `http://ip:2022/live/livestream.m3u8`
 * `http://ip:2023/live/livestream.m3u8`
 
-Of course, this doesn't mean you can start thousands of SRS Stacks. You should pay attention to your CPU 
+Of course, this doesn't mean you can start thousands of Oryxs. You should pay attention to your CPU 
 and memory, as well as whether your machine has enough bandwidth.
 
 ## How to Set up Free HTTPS
 
-SRS Stack supports applying for free HTTPS certificates, and you can apply for certificates for multiple
+Oryx supports applying for free HTTPS certificates, and you can apply for certificates for multiple
 domain names and automatically renew them. For example, the certificates for the following HTTPS websites 
-are all automatically applied after running SRS Stack:
+are all automatically applied after running Oryx:
 
 * https://ossrs.io SRS's global documentation website.
 * https://ossrs.net SRS's official website in China.
@@ -248,20 +248,20 @@ are all automatically applied after running SRS Stack:
 The operation is very simple, just follow these three steps, please see [here](./blog/SRS-Stack-HTTPS):
 
 1. Purchase a domain name and complete the filing. You must have your own legal domain name, otherwise, you cannot apply for a certificate.
-2. Resolve the domain name to the public IP of SRS Stack. You can add multiple domain names to resolve, for example, `ossrs.io` and `www.ossrs.io` are both resolved to the same SRS Stack server.
-3. In SRS Stack's `System Settings > HTTPS > Automatic HTTPS Certificate`, fill in your domain name, separate multiple domain names with semicolons, and click Apply.
+2. Resolve the domain name to the public IP of Oryx. You can add multiple domain names to resolve, for example, `ossrs.io` and `www.ossrs.io` are both resolved to the same Oryx server.
+3. In Oryx's `System Settings > HTTPS > Automatic HTTPS Certificate`, fill in your domain name, separate multiple domain names with semicolons, and click Apply.
 
 > Note: Just apply for the domain name, do not upload it again. Once applied, you don't need to upload it again.
 
-> Note: If you're using aaPanel to install SRS Stack, you can choose to apply through aaPanel or apply within SRS Stack.
+> Note: If you're using aaPanel to install Oryx, you can choose to apply through aaPanel or apply within Oryx.
 
 If you encounter an error while applying and the message says `Could not obtain certificates: error: one or more domains had a problem`, the possible reasons are:
 
-* The domain is not pointing to the SRS Stack's IP. You must use DNS to point the domain to the SRS Stack's IP, instead of setting it in the hosts file.
-* The IP of the SRS Stack must be publicly accessible, meaning it should be an IP that anyone on the internet can access, not just within a private network.
+* The domain is not pointing to the Oryx's IP. You must use DNS to point the domain to the Oryx's IP, instead of setting it in the hosts file.
+* The IP of the Oryx must be publicly accessible, meaning it should be an IP that anyone on the internet can access, not just within a private network.
 * The port must be 80, not 2022, because Let's Encrypt will verify your domain in reverse and access it through port 80.
 
-If use docker to start SRS Stack, you can add port mapping for 80 and 443:
+If use docker to start Oryx, you can add port mapping for 80 and 443:
 
 ```bash
 docker run --restart always -d -it --name srs-stack -v $HOME/data:/data \
@@ -281,23 +281,23 @@ You can use other tools like FTP or SCP to upload large files to the server, and
 files in Virtual Live Events. However, it's required that the uploaded files be located in the `/data` 
 directory.
 
-SRS Stack runs inside a container, so the `/data` path mentioned refers to a directory within the container. 
+Oryx runs inside a container, so the `/data` path mentioned refers to a directory within the container. 
 You can map a directory from your host machine to the `/data` directory inside the container. For example, 
 by using `docker run -v /your-host-dir:/data/my-upload`, you can access the `/data/my-upload` directory 
 inside the container. 
 
 Then, when you upload a file to your host directory, such as `my-file.mp4`, the file in the host is 
-`/your-host-dir/my-file.mp4`, you can access it within SRS Stack by specifying 
+`/your-host-dir/my-file.mp4`, you can access it within Oryx by specifying 
 `/data/my-upload/my-file.mp4`.
 
-After uploading files, you can also enter the SRS Stack container to check if the files are present. 
+After uploading files, you can also enter the Oryx container to check if the files are present. 
 For example, you can execute the command:
 
 ```bash
 docker exec -it srs-stack ls -lh /data/my-upload/my-file.mp4
 ```
 
-If it indicates that the file exists, you can use this file in SRS Stack's Virtual Live Events. If not, 
+If it indicates that the file exists, you can use this file in Oryx's Virtual Live Events. If not, 
 please check whether the path was mapped correctly when starting Docker.
 
 ## How to Modify the Push Authentication Key
@@ -339,20 +339,20 @@ the push key can be changed, so you can change it to the way you want.
 Open `Record / Record Directory` to see the default recording directory. If you want to use a different directory, 
 follow these steps:
 
-If you are using Docker to start the SRS Stack, you can mount the directory to another path, like this:
+If you are using Docker to start the Oryx, you can mount the directory to another path, like this:
 
 ```bash
 docker run -v /your-host-dir:/data/record
 ```
 
-If you installed the SRS Stack using another method, you can create a symbolic link from the default data 
+If you installed the Oryx using another method, you can create a symbolic link from the default data 
 directory to another directory, like this:
 
 ```bash
 rm -rf /data && ln -sf /your-host-dir /data
 ```
 
-> Note: Please do not directly create a symbolic link for `/data/record`, as the SRS Stack runs in Docker and 
+> Note: Please do not directly create a symbolic link for `/data/record`, as the Oryx runs in Docker and 
 > cannot see your linked directory.
 
 Important: If you want to use cloud storage like S3, do not use the mounting method, as frequent recording 
@@ -375,7 +375,7 @@ poses a problem.
 
 As mentioned earlier in [Recording Doesn't Stop When the Stream is Stopped](#dvr-continue-when-unpublish), to 
 achieve recording as a single file, especially when merging into one file after interrupting the stream, the 
-SRS Stack does not immediately generate a recorded file when the stream is stopped. Instead, it waits for a 
+Oryx does not immediately generate a recorded file when the stream is stopped. Instead, it waits for a 
 certain period before generating the file due to a timeout.
 
 So, how can we quickly generate a recorded file after stopping the stream? You can click a button on the 
@@ -402,9 +402,9 @@ the files in the S3 storage:
 ls -lh /data/srs-s3-bucket
 ```
 
-> Note: It is essential to restart the SRS Stack after mounting the storage to access the mounted directory.
+> Note: It is essential to restart the Oryx after mounting the storage to access the mounted directory.
 
-Next, in the SRS Stack recording settings, choose `Setup Recording Rules > Post Processing > Copy Record File`, and 
+Next, in the Oryx recording settings, choose `Setup Recording Rules > Post Processing > Copy Record File`, and 
 enter the folder `/data/srs-s3-bucket`. This way, after the recording file is generated, it will be copied to 
 the S3 storage, and the file path in the S3 storage generally should be:
 
@@ -422,15 +422,15 @@ The Record directory contains many temporary files, and accessing this directory
 streams can cause significant stress on the cloud storage, potentially leading to suspension. It is recommended 
 to use the `/data/srs-s3-bucket` directory or more specific subdirectories, such as `/data/srs-s3-bucket/yours`.
 
-Please note that it is essential to mount the directory under the `/data` subdirectory for SRS Stack to 
+Please note that it is essential to mount the directory under the `/data` subdirectory for Oryx to 
 access it properly. If you can only mount to other directories, it is recommended to use Docker to start 
-SRS Stack and specify `-v /your-host-dir:/data/srs-s3-bucket`, allowing SRS Stack to access the files.
+Oryx and specify `-v /your-host-dir:/data/srs-s3-bucket`, allowing Oryx to access the files.
 
 ## How to Record a Specific Stream
 
 How to record according to specific rules, how to record a particular stream?
 
-The SRS Stack allows you to configure a Glob Filter, which records only the streams that adhere to the defined 
+The Oryx allows you to configure a Glob Filter, which records only the streams that adhere to the defined 
 rule. To set the Glob Filter, navigate to `Record > Setup Record Rules > Extra Glob Filters`.
 
 For instance, if the filter is configured as `/live/*`, it will record only streams within the live app, such 
@@ -454,7 +454,7 @@ Or Redis is not ready, such as:
 
 ![](/img/page-2023-03-04-06.png)
 
-This is because it takes time for SRS Stack to start after installation. Refresh the page after waiting
+This is because it takes time for Oryx to start after installation. Refresh the page after waiting
 for 3 to 5 minutes.
 
 ## Difference Between SRS Restream and OBS Restream
@@ -463,7 +463,7 @@ SRS's multi-platform restreaming can push the stream to multiple platforms, and 
 is as follows:
 
 ```
-OBS/FFmpeg --RTMP--> SRS Stack --RTMP--> Video number, Bilibili, Kuaishou, and other live streaming platforms
+OBS/FFmpeg --RTMP--> Oryx --RTMP--> Video number, Bilibili, Kuaishou, and other live streaming platforms
 ```
 
 In fact, OBS also has a restreaming plugin, and its working diagram is as follows:
@@ -472,8 +472,8 @@ In fact, OBS also has a restreaming plugin, and its working diagram is as follow
 OBS --RTMP--> Video number, Bilibili, Kuaishou, and other live streaming platforms
 ```
 
-It seems that OBS's link is shorter and simpler, and it doesn't need to go through SRS Stack or pay 
-money. So why does SRS Stack still need to do restreaming, and what are the drawbacks of OBS's solution?
+It seems that OBS's link is shorter and simpler, and it doesn't need to go through Oryx or pay 
+money. So why does Oryx still need to do restreaming, and what are the drawbacks of OBS's solution?
 
 The advantage of OBS restreaming is that it doesn't cost money and can be restreamed directly. The 
 disadvantage is that its uplink/upload bandwidth is doubled. For example, a 2Mbps stream, if restreamed
@@ -495,9 +495,9 @@ temporarily free, there will be a day when it will be charged because a dedicate
 resource and cannot be free forever. It's like someone giving you gold bars for free, how long can it
 be free?
 
-SRS Stack also has doubled bandwidth, but it is the downstream bandwidth that is doubled because it has
-done a conversion, and essentially other platforms are downloading the stream from SRS Stack. 
-Downstream/download bandwidth is generally more guaranteed. Moreover, between SRS Stack and the platform,
+Oryx also has doubled bandwidth, but it is the downstream bandwidth that is doubled because it has
+done a conversion, and essentially other platforms are downloading the stream from Oryx. 
+Downstream/download bandwidth is generally more guaranteed. Moreover, between Oryx and the platform,
 they are all BGP bandwidth between servers, which is more guaranteed in quality than the home-to-platform 
 connection.
 
@@ -506,9 +506,9 @@ connection.
 SRS's multi-platform restreaming can push to custom live streaming platforms, such as pushing to the 
 video number's push stream address and stream key, and can also fill in any other live streaming platform.
 
-> Note: The reason why SRS Stack is divided into video numbers and platforms like Bilibili is to provide 
+> Note: The reason why Oryx is divided into video numbers and platforms like Bilibili is to provide 
 > better guidance. The RTMP address format of these platforms is similar, so you can fill in any platform,
-> and SRS Stack will not verify the specific platform.
+> and Oryx will not verify the specific platform.
 
 If the RTMP address of the live streaming platform is a single address, such as:
 
@@ -530,12 +530,12 @@ the server traffic limit. Typically, AWS Lightsail and DigitalOcean Droplets pro
 permitting a 3Mbps continuous live stream for 7x24 hours. Therefore, it's crucial to restrict the input bitrate 
 to prevent exceeding the traffic limit.
 
-By default, for virtual live events, SRS Stack limits the input bitrate to 5Mbps, you can change the limits 
+By default, for virtual live events, Oryx limits the input bitrate to 5Mbps, you can change the limits 
 from `System > Limits > Set Limits` to set a higher limits.
 
 ## How to Setup the Font Style for AI Transcript
 
-How to set up the font style for AI transcript. The SRS Stack supports setting font styles, using the FFmpeg's 
+How to set up the font style for AI transcript. The Oryx supports setting font styles, using the FFmpeg's 
 force_style format. For more details, please refer to the [link](https://ffmpeg.org/ffmpeg-filters.html#subtitles-1) provided.
 
 For example, set the subtitle to the bottom center position, with a distance of 20px from the bottom:
@@ -562,7 +562,7 @@ For example, a Netflix-style style:
 Fontname=Roboto,Fontsize=12,PrimaryColour=&HFFFFFF,BorderStyle=0,BackColour=&H80000000,Outline=0,Shadow=0.75
 ```
 
-> Note: Netflix uses the `Consolas` font, which is temporarily unsupported by SRS Stack, so `Roboto` is used instead.
+> Note: Netflix uses the `Consolas` font, which is temporarily unsupported by Oryx, so `Roboto` is used instead.
 
 For example, a Aesthetic (Vintage Yellow Subtitle) style:
 
@@ -657,7 +657,7 @@ Note that `-bf 0` is strongly recommended to disable B-frames, which is not supp
 
 ## How to Replace FFmpeg
 
-If you are using the Docker version, you can replace the FFmpeg in SRS Stack with a custom version by 
+If you are using the Docker version, you can replace the FFmpeg in Oryx with a custom version by 
 specifying the command at startup:
 
 ```bash
@@ -677,17 +677,17 @@ This is because Baota cannot be used overseas. Installing other tools with Baota
 very slow because downloading data across countries back to China is naturally very slow.
 
 The overseas version of Baota is called [aaPanel](https://aapanel.com). Please use aaPanel, which 
-installs software quickly, and SRS Stack will also switch to overseas mirror downloads.
+installs software quickly, and Oryx will also switch to overseas mirror downloads.
 
 Baota and aaPanel only have different installation methods, but the specific usage is the same. Please
 refer to [Baota](./blog/BT-aaPanel) or [aaPanel](https://blog.ossrs.io/how-to-setup-a-video-streaming-service-by-aapanel-9748ae754c8c).
 
-## How to Install the Latest SRS Stack
+## How to Install the Latest Oryx
 
 Sometimes the version in the Baota store is older, and you can manually install the Baota plugin 
 to install the latest plugin.
 
-The latest version of SRS Stack can be found in [Releases](https://github.com/ossrs/srs-stack/releases),
+The latest version of Oryx can be found in [Releases](https://github.com/ossrs/srs-stack/releases),
 and the `aapanel-srs_stack.zip` attachment in each version can be downloaded as a plugin.
 
 After downloading the plugin, you can go to Baota `Software Store > Third-Party Applications > Import Plugin` 
@@ -697,9 +697,9 @@ and upload the downloaded `aapanel-srs_stack.zip` to install.
 
 CentOS 7, due to being outdated, has many issues. It is recommended to use the Ubuntu 20 system.
 
-## The Difference Between SRS Stack and SRS
+## The Difference Between Oryx and SRS
 
-SRS is the media engine of SRS Stack, for detail difference please see 
+SRS is the media engine of Oryx, for detail difference please see 
 [Compare to SRS](../docs/v6/doc/getting-started-oryx#compare-to-srs).
 
 ## Low Latency HLS

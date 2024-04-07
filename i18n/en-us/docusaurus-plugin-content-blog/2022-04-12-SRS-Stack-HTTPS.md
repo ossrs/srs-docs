@@ -1,6 +1,6 @@
 ---
 slug: SRS-Stack-HTTPS
-title: SRS Stack - How to Secure SRS with Let's Encrypt by 1-Click
+title: Oryx - How to Secure SRS with Let's Encrypt by 1-Click
 authors: []
 tags: [turotial, srs, https]
 custom_edit_url: null
@@ -27,7 +27,7 @@ In this tutorial, you will learn how to configure the HTTPS for SRS droplets, an
 
 To complete this guide, you will need:
 
-1. An SRS Droplet with SRS Stack installed, please follow this [set-up a video streaming service](https://blog.ossrs.io/how-to-setup-a-video-streaming-service-by-1-click-e9fe6f314ac6) tutorial.
+1. An SRS Droplet with Oryx installed, please follow this [set-up a video streaming service](https://blog.ossrs.io/how-to-setup-a-video-streaming-service-by-1-click-e9fe6f314ac6) tutorial.
 1. A fully registered domain name, you could purchase a domain name on [Namecheap](https://namecheap.com/) or [GoDaddy](https://godaddy.com/). For the demonstration purpose, however, we will use a placeholder `your_domain_name` throughout this tutorial.
 
 This guide will also use placeholders `your_public_ipv4` and `your_domain_name` throughout. Please replace them with
@@ -57,7 +57,7 @@ PING ossrs.io (your_public_ipv4): 56 data bytes
 64 bytes from your_public_ipv4: icmp_seq=2 ttl=64 time=12.433 ms
 ```
 
-If you visit `http://your_domain_name/mgmt`, you should see the SRS Stack console now.
+If you visit `http://your_domain_name/mgmt`, you should see the Oryx console now.
 
 ![](/img/blog-2022-04-12-01.png)
 
@@ -86,7 +86,7 @@ Let's finish this tutorial by covering the certificate renewal process.
 
 ## Step 3 - About Certificate Auto-Renewal
 
-Let's Encrypt's certificates are only valid for about 3 months. SRS Stack will start a timer to verify if it is due to
+Let's Encrypt's certificates are only valid for about 3 months. Oryx will start a timer to verify if it is due to
 renew your certificates on a daily basis, and reload Nginx to apply the changes if neccessary.
 
 You can check the renew log by:

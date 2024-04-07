@@ -1,6 +1,6 @@
 ---
 slug: SRS-Stack-Tutorial
-title: SRS Stack - How to Setup a Video Streaming Service by 1-Click
+title: Oryx - How to Setup a Video Streaming Service by 1-Click
 authors: []
 tags: [turotial, srs, webrtc, streaming]
 custom_edit_url: null
@@ -20,17 +20,17 @@ But if we want to build a online video streaming service, it's  much more than o
 
 1. [Authentication](./2023-08-29-SRS-Stack-Ensuring-Authentication-for-Live-Streaming-Publishing.md): Because the server is on the public internet with a public IPv4 address, how to do authentication? How to block all users except they have the correct token?
 1. Multiple Protocols: Rather than publishing RTMP using OBS, you might need [WebRTC or H5 to publish live streaming](./2023-05-16-Stream-YouTube-Using-Web-Browser.md), or [OBS WHIP Server](./2023-12-12-SRS-Stack-OBS-WHIP-Service.md) for it's easy to use. You might also use SRT with some broadcasting devices. How to convert RTMP/WebRTC/SRT to HLS?
-1. [Restreaming](./2023-09-09-SRS-Stack-Multi-Platform-Streaming.md): Restream to multiple platforms using SRS Stack for wider audience reach & increased engagement. Simple & efficient solution for live streaming on YouTube, Twitch, & Facebook.
-1. [DVR or Recording](./2023-09-10-SRS-Stack-Record-Live-Streaming.md): Discover how to effortlessly record live streams using SRS Stack in this step-by-step guide. Learn to configure Glob Filters for selective recording and integrate S3 cloud storage for seamless server-side recording, making live streaming accessible for all.
-1. [Transcoding](./2023-10-21-SRS-Stack-Live-Transcoding.md): Explore the benefits of efficient live streaming transcoding using SRS Stack and FFmpeg for reducing bandwidth and saving costs. Learn how to optimize streaming experiences for viewers with varying internet speeds and devices, and harness the power of SRS Stack for smoother, cost-effective streaming.
+1. [Restreaming](./2023-09-09-SRS-Stack-Multi-Platform-Streaming.md): Restream to multiple platforms using Oryx for wider audience reach & increased engagement. Simple & efficient solution for live streaming on YouTube, Twitch, & Facebook.
+1. [DVR or Recording](./2023-09-10-SRS-Stack-Record-Live-Streaming.md): Discover how to effortlessly record live streams using Oryx in this step-by-step guide. Learn to configure Glob Filters for selective recording and integrate S3 cloud storage for seamless server-side recording, making live streaming accessible for all.
+1. [Transcoding](./2023-10-21-SRS-Stack-Live-Transcoding.md): Explore the benefits of efficient live streaming transcoding using Oryx and FFmpeg for reducing bandwidth and saving costs. Learn how to optimize streaming experiences for viewers with varying internet speeds and devices, and harness the power of Oryx for smoother, cost-effective streaming.
 1. [Virtual Live Events](./2023-09-11-SRS-Stack-Virtual-Live-Events.md): Discover the benefits of virtual live events and learn how to create seamless and engaging live streaming experiences using pre-recorded content. This blog post will guide you through the process of converting recorded videos into live broadcasts for various applications, such as e-commerce, education, and online speeches.
-1. [IP Camera Streaming](./2023-10-11-SRS-Stack-Stream-IP-Camera-Events.md): Discover how to effortlessly stream your RTSP IP camera to popular platforms like YouTube, Twitch, or Facebook using SRS Stack. Learn how this powerful tool simplifies the process, allowing you to connect multiple IP cameras and stream live to various platforms for an enhanced live streaming experience.
+1. [IP Camera Streaming](./2023-10-11-SRS-Stack-Stream-IP-Camera-Events.md): Discover how to effortlessly stream your RTSP IP camera to popular platforms like YouTube, Twitch, or Facebook using Oryx. Learn how this powerful tool simplifies the process, allowing you to connect multiple IP cameras and stream live to various platforms for an enhanced live streaming experience.
 1. [AI Transcription](./2023-11-28-SRS-Stack-Live-Streams-Transcription.md): Discover the future of live streaming with AI-powered transcription and real-time subtitles using OpenAI’s Whisper. Learn how to create accessible, multilingual content for diverse audiences, revolutionizing the live streaming experience. Embrace inclusivity and reach a wider audience with AI-enhanced live streams.
 
 Literally it's not just a media server, and seems a bit complicated, right? Yep and No!
 
 * Yep! Building a video streaming service is something really difficult, not easy. It requires video streaming engineering, also backend service technology like Nodejs or Go, and frontend skills to build a mgmt and homepage.
-* No! Rather than build all from scratch, we could build a video streaming service based on some open source solution such as [SRS Stack](https://github.com/ossrs/srs-stack), and lightweight cloud service such as [DigitalOcean](https://digitalocean.com) or [AWS](https://console.aws.amazon.com), it's really simple to build your video streaming service.
+* No! Rather than build all from scratch, we could build a video streaming service based on some open source solution such as [Oryx](https://github.com/ossrs/srs-stack), and lightweight cloud service such as [DigitalOcean](https://digitalocean.com) or [AWS](https://console.aws.amazon.com), it's really simple to build your video streaming service.
 
 In this tutorial, you will learn how to set-up a video streaming service, supports publishing by browser 
 without a plugin that is converting WebRTC to HLS, to deliver low latency (about 300ms) video streaming 
@@ -43,12 +43,12 @@ To complete this guide, you need:
 
 1. OBS installed, following instructions [here](https://obsproject.com/) to download and install OBS.
 1. A virtual private server (VPS) instance, such as [AWS Lightsail](https://lightsail.aws.amazon.com), [DigitalOcean Droplets](https://cloud.digitalocean.com/droplets), or another similar service.
-1. Optionally, you may choose to utilize SRS Stack on your local network or personal computer. Ensure that [Docker](https://www.docker.com/) is installed for this purpose.
+1. Optionally, you may choose to utilize Oryx on your local network or personal computer. Ensure that [Docker](https://www.docker.com/) is installed for this purpose.
 
 This guide will use placeholder `your_public_ipv4` and `your_domain_name` throughout for streaming URLs. 
 Please replace them with your own IP address or domain name.
 
-## Step 1.1: Create an SRS Stack using AWS Lightsail
+## Step 1.1: Create an Oryx using AWS Lightsail
 
 Sign up for an AWS account and sign in to [AWS Lightsail](https://lightsail.aws.amazon.com). Next, click the 
 `Create instance` button. Select the `Linux/Unix` platform and the `OS Only` blueprint. Finally, choose 
@@ -57,7 +57,7 @@ Sign up for an AWS account and sign in to [AWS Lightsail](https://lightsail.aws.
 ![](/img/blog-2022-04-09-21.png)
 
 Next, click the `Add launch script` button and input the following script that will be executed to install 
-the SRS Stack once the instance has been created.
+the Oryx once the instance has been created.
 
 ![](/img/blog-2022-04-09-22.png)
 
@@ -78,13 +78,13 @@ the `Create` button:
 
 ![](/img/blog-2022-04-09-23.png)
 
-Now, the SRS Stack is created! Open `http://your_public_ipv4/mgmt/` in the browser, click the `Submit` button
+Now, the Oryx is created! Open `http://your_public_ipv4/mgmt/` in the browser, click the `Submit` button
 to set-up the administrator password for the first time.
 
-## Step 1.2: Create an SRS Stack using Docker
+## Step 1.2: Create an Oryx using Docker
 
 If you prefer not to utilize AWS Lightsail, have an alternative VPS, or even a virtual machine or personal 
-computer locally available, highly recommend using Docker for a simple and efficient way to run SRS Stack on 
+computer locally available, highly recommend using Docker for a simple and efficient way to run Oryx on 
 VPS using just one command:
 
 ```bash
@@ -93,13 +93,13 @@ docker run --restart always -d -it --name srs-stack -v $HOME/data:/data \
   ossrs/srs-stack:5
 ```
 
-After the SRS Stack is created, open `http://your_public_ipv4/mgmt/` in the browser, click the `Submit` button
+After the Oryx is created, open `http://your_public_ipv4/mgmt/` in the browser, click the `Submit` button
 to set-up the administrator password for the first time.
 
-## Step 1.3: Create an SRS Stack using DigitalOcean Droplets
+## Step 1.3: Create an Oryx using DigitalOcean Droplets
 
-You can use DigitalOcean droplet to run SRS Stack just one-click. A droplet is a simple and scalable virtual machine
-of DigitalOcean. An SRS Droplet is a droplet with SRS Stack installed, to power your video streaming service. 
+You can use DigitalOcean droplet to run Oryx just one-click. A droplet is a simple and scalable virtual machine
+of DigitalOcean. An SRS Droplet is a droplet with Oryx installed, to power your video streaming service. 
 
 You could create `an SRS Droplet` by [clicking here](https://marketplace.digitalocean.com/apps/srs), 
 then click the `Create SRS Droplet` button, set-up the droplet `Region` and `Size`, then click `Create Droplet` 
@@ -107,7 +107,7 @@ button at the bottom.
 
 > Note: Recommend the size `2vCPUs 2GB` or slightly larger.
 
-After the SRS Stack is created, open `http://your_public_ipv4/mgmt/` in the browser, click the `Submit` button
+After the Oryx is created, open `http://your_public_ipv4/mgmt/` in the browser, click the `Submit` button
 to set-up the administrator password for the first time.
 
 ## Step 2: Publish Stream using OBS
@@ -179,7 +179,7 @@ is a possible choice for live streaming using WebRTC, but it's not a RFC right n
 time to apply WebRTC to the live streaming industry, especially if we get other choices, [SRT](https://www.srtalliance.org/) 
 and [RIST](https://www.rist.tv/) etc.
 
-> Note: Whatever, SRS Stack allows you to use WebRTC for live streaming, to publish by WebRTC and play by 
+> Note: Whatever, Oryx allows you to use WebRTC for live streaming, to publish by WebRTC and play by 
 > RTMP/HLS/WebRTC.
 
 It's also very easy to use SRT, by clicking `Scenarios > Streaming > SRT: OBS or vMix`, the guide is use 
@@ -195,21 +195,21 @@ a lower solution, by `vMix+ffplay`:
 SRT is supported by a lot of devices of the broadcasting industry, and softwares like OBS/vMix also support 
 SRT, so it's actually the most stable and easy way to get low latency live streaming.
 
-Note that H5 does not support SRT, so you can't use Chrome to play a SRT stream, however, SRS Stack will 
+Note that H5 does not support SRT, so you can't use Chrome to play a SRT stream, however, Oryx will 
 convert SRT to HTTP-FLV/HLS to ensure compability with general live streaming.
 
 ## Other Topics
 
-SRS Stack also supports restreaming to other platforms, by forking multiple FFmpeg processes, each process 
+Oryx also supports restreaming to other platforms, by forking multiple FFmpeg processes, each process 
 for a stream. It's a long story, so let's discuss it in a new tutorial.
 
 Well DVR is another story, DVR means we convert live streaming to VoD files, so we must save the VoD files 
 to a cloud storage. So we're developing to support more cloud storage now.
 
-We're also considering to integrate a CMS to SRS Stack, to allow users to publish the live streaming rooms, 
+We're also considering to integrate a CMS to Oryx, to allow users to publish the live streaming rooms, 
 or VoD files like a vlog, etc.
 
-SRS Stack is a single node video streaming service, but SRS is a media server that supports clusters, like
+Oryx is a single node video streaming service, but SRS is a media server that supports clusters, like
 [Origin Cluster](../docs/v4/doc/origin-cluster), [RTMP Edge Cluster](../docs/v4/doc/sample-rtmp-cluster) and 
 even [HLS Edge Cluster](../docs/v4/doc/sample-hls-cluster). The HLS Edge Cluster is based on NGINX, and SRS 
 could work well with NGINX, we will publish more tutorials about this topic if you wanna.

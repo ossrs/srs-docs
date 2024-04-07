@@ -117,7 +117,7 @@ const config = {
               },
               {
                 to: '/faq-oryx',
-                label: 'SRS Stack',
+                label: 'Oryx',
               }
             ]
           },
@@ -147,7 +147,7 @@ const config = {
               },
               {
                 to: '/faq-oryx',
-                label: 'FAQ: SRS Stack',
+                label: 'FAQ: Oryx',
               },
               {
                 to: '/contact',

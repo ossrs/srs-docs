@@ -17,14 +17,14 @@ When FFmpeg/OBS publish RTMP stream to SRS, SRS will write the stream to FLV/MP4
 +------------+            +-------+           +---------------+
 ```
 
-Many users want more features about DVR, please consider use [SRS Stack](./getting-started-oryx.md#dvr) instead,
+Many users want more features about DVR, please consider use [Oryx](./getting-started-oryx.md#dvr) instead,
 for example:
 
-* SRS Stack supports S3 cloud storage, move the final MP4 file to S3 cloud storage.
-* SRS Stack supports glob filters, to only record specified streams, not all streams.
-* SRS Stack supports merge multiple publishing sessions to one MP4 file.
+* Oryx supports S3 cloud storage, move the final MP4 file to S3 cloud storage.
+* Oryx supports glob filters, to only record specified streams, not all streams.
+* Oryx supports merge multiple publishing sessions to one MP4 file.
 
-In facts, DVR feature can be very complicated, SRS only support basic DVR feature, while SRS Stack will continue
+In facts, DVR feature can be very complicated, SRS only support basic DVR feature, while Oryx will continue
 to improve the DVR features.
 
 ## Build

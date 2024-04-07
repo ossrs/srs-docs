@@ -317,7 +317,7 @@ curl "http://localhost:1985/rtc/v1/whip/?ice-ufrag=6pk11386&ice-pwd=l91z529147ri
 
 > Note: 您可以将 `http://localhost` 替换为 `https://yourdomain.com` 以测试 HTTPS API。
 
-> Note: 对于SRS Stack，您应该指定secret，所以请将`/rtc/v1/whip?ice-ufrag=`更改为`/rtc/v1/whip?secret=xxx&ice-ufrag=`之类的。
+> Note: 对于Oryx，您应该指定secret，所以请将`/rtc/v1/whip?ice-ufrag=`更改为`/rtc/v1/whip?secret=xxx&ice-ufrag=`之类的。
 
 > Note: 你也可以使用`eip=ip`或者`eip=ip:port`，强制SRS改写candidate的配置。详细请参考 [CANDIDATE](#config-candidate) 的说明。
 

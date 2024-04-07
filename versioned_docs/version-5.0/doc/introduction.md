@@ -123,10 +123,10 @@ For SRS, generally, once it reaches the beta version, it can be used online.
 SRS doesn't develop client-side applications because there are already mature and large open-source communities like
 FFmpeg, OBS, VLC, and WebRTC. SRS collaborates with these communities and uses their products.
 
-In addition to the SRS server, they also work on SRS Stack and WordPress plugins, with the main goal of creating
+In addition to the SRS server, they also work on Oryx and WordPress plugins, with the main goal of creating
 simpler application methods for different industries, including:
 
-* [srs-stack](https://github.com/ossrs/srs-stack): SRS Stack is an out-of-the-box, single-machine video cloud solution that includes FFmpeg and SRS. It's designed for users who aren't familiar with command lines and allows them to set up audio and video applications through Tencent Cloud images or BaoTa with mouse operations.
+* [srs-stack](https://github.com/ossrs/srs-stack): Oryx is an out-of-the-box, single-machine video cloud solution that includes FFmpeg and SRS. It's designed for users who aren't familiar with command lines and allows them to set up audio and video applications through Tencent Cloud images or BaoTa with mouse operations.
 * [WordPress-Plugin-SrsPlayer](https://github.com/ossrs/WordPress-Plugin-SrsPlayer): This plugin is for the publishing industry, such as personal blogs and media websites, making it easy for users to utilize audio and video capabilities.
 * [srs-unity](https://github.com/ossrs/srs-unity): This project is for the gaming industry, integrating Unity's WebRTC SDK to use audio and video capabilities.
 
@@ -160,10 +160,10 @@ For advanced developers, we suggest becoming a `Backer/Sponsor`. See [Support](/
 SRS has no commercial plans. We are currently working hard to build a global, active developer community.
 The value of open-source will grow, and community support will increase.
 
-## About SRS Stack
+## About Oryx
 
-SRS Stack is a lightweight, open-source video cloud solution based on Go, Reactjs, SRS, FFmpeg, WebRTC,
-and more. For more details, please refer to [SRS Stack](./getting-started-oryx.md).
+Oryx is a lightweight, open-source video cloud solution based on Go, Reactjs, SRS, FFmpeg, WebRTC,
+and more. For more details, please refer to [Oryx](./getting-started-oryx.md).
 
 ![](https://ossrs.io/gif/v1/sls.gif?site=ossrs.io&path=/lts/doc/en/v5/introduction)
 

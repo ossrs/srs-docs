@@ -1,6 +1,6 @@
 ---
 slug: SRS-Stack-HTTPS
-title: SRS Stack - 如何设置HTTPS
+title: Oryx - 如何设置HTTPS
 authors: []
 tags: [turotial, srs, https]
 custom_edit_url: null
@@ -10,11 +10,11 @@ custom_edit_url: null
 
 ## Introduction
 
-Let's Encrypt可以提供免费证书，SRS Stack可以一键申请。
+Let's Encrypt可以提供免费证书，Oryx可以一键申请。
 
-HTTPS在WebRTC中是必要的，若需要在HTTPS的网站中播放直播流，SRS Stack也必须是HTTPS的流。
+HTTPS在WebRTC中是必要的，若需要在HTTPS的网站中播放直播流，Oryx也必须是HTTPS的流。
 
-这个文章介绍了如何开启SRS Stack的HTTPS功能，并自动续期。
+这个文章介绍了如何开启Oryx的HTTPS功能，并自动续期。
 
 <!--truncate-->
 
@@ -22,7 +22,7 @@ HTTPS在WebRTC中是必要的，若需要在HTTPS的网站中播放直播流，S
 
 操作的前提条件是：
 
-1. 你得有一个SRS Stack，参考[SRS Stack](https://www.bilibili.com/video/BV1844y1L7dL/)
+1. 你得有一个Oryx，参考[Oryx](https://www.bilibili.com/video/BV1844y1L7dL/)
 1. 必须有个自己的域名，不能随便填别人的域名，可以上[DNS Pod](http://dnspod.com/)上买个域名，并备案。
 
 文章中，我们会用`your_public_ipv4`和`your_domain_name`，代表你的域名和SRS服务器的公网IP，请替换成你自己的。
@@ -73,7 +73,7 @@ PING ossrs.io (your_public_ipv4): 56 data bytes
 
 ## Step 3 - About Certificate Auto-Renewal
 
-Let's Encrypt证书是3个月过期，SRS Stack会自动续期，不需要人工干预。
+Let's Encrypt证书是3个月过期，Oryx会自动续期，不需要人工干预。
 
 你可以查看续期的日志：
 

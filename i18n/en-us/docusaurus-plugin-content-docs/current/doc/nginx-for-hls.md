@@ -15,9 +15,9 @@ Edge Cluster is designed to solve the problem of many people watching, and it ca
 
 This article describes the edge cluster for HLS or DASH slices, which is based on NGINX implementation, so it is also called NGINX Edge Cluster.
 
-## SRS Stack
+## Oryx
 
-The NGINX edge cluster can work together with the SRS Stack to achieve HLS distribution. For more details, please refer to [SRS Stack HLS CDN](https://github.com/ossrs/srs-stack/tree/main/scripts/nginx-hls-cdn).
+The NGINX edge cluster can work together with the Oryx to achieve HLS distribution. For more details, please refer to [Oryx HLS CDN](https://github.com/ossrs/srs-stack/tree/main/scripts/nginx-hls-cdn).
 
 ## NGINX Edge Cluster
 

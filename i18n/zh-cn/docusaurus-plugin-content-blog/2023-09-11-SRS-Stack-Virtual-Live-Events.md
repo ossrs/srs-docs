@@ -1,6 +1,6 @@
 ---
 slug: Virtual-Live-Events
-title: SRS Stack - 虚拟直播和无人直播间
+title: Oryx - 虚拟直播和无人直播间
 authors: []
 tags: [live streaming, virual live events, srs]
 custom_edit_url: null
@@ -18,16 +18,16 @@ custom_edit_url: null
 
 <!--truncate-->
 
-SRS Stack使您只需点击一次即可创建虚拟直播，并将其广播到多个平台，如视频号直播、B站和快手等各种直播平台。在这篇博客文章中，
-我们将指导您如何使用SRS Stack创建虚拟直播。
+Oryx使您只需点击一次即可创建虚拟直播，并将其广播到多个平台，如视频号直播、B站和快手等各种直播平台。在这篇博客文章中，
+我们将指导您如何使用Oryx创建虚拟直播。
 
 在如今快节奏的世界中，由于所提供的便利性，虚拟直播正变得越来越受欢迎。无论是音乐会、足球比赛还是在线课程，您现在都可以使用视频文件创建虚拟直播，使其更具互动性并能触及更广泛的受众。
 
-### Step 1: Create SRS Stack by One Click
+### Step 1: Create Oryx by One Click
 
-如果您使用腾讯云轻量服务器，只需点击一下即可创建SRS Stack。请参考 [SRS Stack - 起步、购买和入门](./2022-04-09-SRS-Stack-Tutorial.md) 这个博客。
+如果您使用腾讯云轻量服务器，只需点击一下即可创建Oryx。请参考 [Oryx - 起步、购买和入门](./2022-04-09-SRS-Stack-Tutorial.md) 这个博客。
 
-您还可以使用Docker通过单个命令行创建SRS Stack：
+您还可以使用Docker通过单个命令行创建Oryx：
 
 ```bash
 docker run --rm -it -p 80:2022 -p 443:2443 -p 1935:1935 \
@@ -35,11 +35,11 @@ docker run --rm -it -p 80:2022 -p 443:2443 -p 1935:1935 \
   -v $HOME/data:/data registry.cn-hangzhou.aliyuncs.com/ossrs/srs-stack:5
 ```
 
-创建SRS Stack后，您可以通过 `http://your-server-ip/mgmt` 访问它。
+创建Oryx后，您可以通过 `http://your-server-ip/mgmt` 访问它。
 
 ## Step 2: Upload your video file
 
-创建SRS Stack后，打开后台，点击`应用场景 > 虚拟直播 > 视频号直播`，然后点击`Choose File`，选择您的视频文件，然后点击`上传文件`。
+创建Oryx后，打开后台，点击`应用场景 > 虚拟直播 > 视频号直播`，然后点击`Choose File`，选择您的视频文件，然后点击`上传文件`。
 
 ![](/img/blog-2023-09-11-21.png)
 
@@ -50,7 +50,7 @@ docker run --rm -it -p 80:2022 -p 443:2443 -p 1935:1935 \
 
 ![](/img/blog-2023-09-11-22.png)
 
-请打开SRS Stack仪表板，然后单击`应用场景 > 虚拟直播 > 视频号直播`，然后在SRS Stack中单击`开始直播`。
+请打开Oryx仪表板，然后单击`应用场景 > 虚拟直播 > 视频号直播`，然后在Oryx中单击`开始直播`。
 
 ![](/img/blog-2023-09-11-23.png)
 
@@ -65,7 +65,7 @@ docker run --rm -it -p 80:2022 -p 443:2443 -p 1935:1935 \
 
 ![](/img/blog-2023-09-11-25.png)
 
-请打开SRS Stack仪表板，然后单击`应用场景 > 虚拟直播 > B站直播`，然后在SRS Stack中单击`开始直播`。
+请打开Oryx仪表板，然后单击`应用场景 > 虚拟直播 > B站直播`，然后在Oryx中单击`开始直播`。
 
 ![](/img/blog-2023-09-11-26.png)
 
@@ -75,9 +75,9 @@ docker run --rm -it -p 80:2022 -p 443:2443 -p 1935:1935 \
 
 ### Step 5: Stream file to Custom
 
-你也可以将流转给任意平台，甚至可以转给SRS Stack自己，在`应用场景 > 私人直播间`中复制服务器地址和密钥。
+你也可以将流转给任意平台，甚至可以转给Oryx自己，在`应用场景 > 私人直播间`中复制服务器地址和密钥。
 
-请打开SRS Stack仪表板，然后单击`应用场景 > 虚拟直播 > 自定义平台`，然后在SRS Stack中单击`开始直播`。
+请打开Oryx仪表板，然后单击`应用场景 > 虚拟直播 > 自定义平台`，然后在Oryx中单击`开始直播`。
 
 ![](/img/blog-2023-09-11-28.png)
 
@@ -94,7 +94,7 @@ docker run --rm -it -p 80:2022 -p 443:2443 -p 1935:1935 \
 ## Conclusion
 
 总之，虚拟直播活动为在各种平台上播放预先录制的内容提供了便捷高效的方式，使其更加精致且触及更广泛的受众。通过减轻对于新手
-直播者的焦虑并实现7x24直播，虚拟直播活动为各行各业带来了诸多可能性。SRS Stack 简化了创建和播放这些活动的过程，
+直播者的焦虑并实现7x24直播，虚拟直播活动为各行各业带来了诸多可能性。Oryx 简化了创建和播放这些活动的过程，
 满足了当今快节奏世界对这种互动体验的日益增长的需求。
 
 ![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.net&path=/lts/blog-zh/2023-09-11-Virtual-Live-Events)

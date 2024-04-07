@@ -7,7 +7,7 @@ From the perspective of a writer, describe how to write a document for SRS.
 Link the blog in docs:
 
 ```markdown
-[SRS Stack aaPanel Plugin](../../../blog/BT-aaPanel)
+[Oryx aaPanel Plugin](../../../blog/BT-aaPanel)
 ```
 
 For instance, refer to the `getting-started-oryx.md` document for more details.

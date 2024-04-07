@@ -118,9 +118,9 @@ SRS没有商业化的计划，我们目前正在努力建设全球的活跃的�
 
 SRS不做客户端，因为无论是FFmpeg，还是OBS，还是VLC，还是WebRTC，都是非常成熟和庞大的开源社区，我们和这些社区合作，使用这些社区的产品。
 
-除了SRS服务器，我们还在做SRS Stack，还有WordPress插件等等，主要的目标还是根据不同行业，做出更简单的应用方式，包括：
+除了SRS服务器，我们还在做Oryx，还有WordPress插件等等，主要的目标还是根据不同行业，做出更简单的应用方式，包括：
 
-* [srs-stack](https://github.com/ossrs/srs-stack) SRS Stack或SRS Stack，是一个开箱即用的单机的视频云，里面有FFmpeg和SRS等，主要是方便不会命令行的用户，直接通过腾讯云镜像或者宝塔，鼠标操作，就可以把音视频的应用搭起来。
+* [srs-stack](https://github.com/ossrs/srs-stack) Oryx或Oryx，是一个开箱即用的单机的视频云，里面有FFmpeg和SRS等，主要是方便不会命令行的用户，直接通过腾讯云镜像或者宝塔，鼠标操作，就可以把音视频的应用搭起来。
 * [WordPress-Plugin-SrsPlayer](https://github.com/ossrs/WordPress-Plugin-SrsPlayer) 出版领域，比如个人博客、网站传媒等，方便用户可以使用音视频的能力。
 * [srs-unity](https://github.com/ossrs/srs-unity) 游戏领域，对接Unity的WebRTC SDK，使用音视频的能力。
 
@@ -132,10 +132,10 @@ SRS还会在工具链上不断完善，开发者可能不用SRS，但可能用�
 
 通过不断完善音视频的工具链、解决方案、场景化的能力，让各行各业都可以应用音视频的能力。
 
-## About SRS Stack
+## About Oryx
 
-SRS Stack是一个基于Go、Reactjs、SRS、FFmpeg、WebRTC等的轻量级、开源的视频云解决方案。
-详细请参考[SRS Stack](./getting-started-oryx.md)。
+Oryx是一个基于Go、Reactjs、SRS、FFmpeg、WebRTC等的轻量级、开源的视频云解决方案。
+详细请参考[Oryx](./getting-started-oryx.md)。
 
 ![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.net&path=/lts/doc/zh/v5/introduction)
 

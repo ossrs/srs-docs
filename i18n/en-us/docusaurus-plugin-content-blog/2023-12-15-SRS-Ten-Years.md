@@ -32,12 +32,12 @@ website's Changelog.
 
 Looking back, it seems not much has been done in two years.
 
-## SRS Stack
+## Oryx
 
-SRS Stack is an integrated video cloud that includes multiple audio and video projects, centered around 
+Oryx is an integrated video cloud that includes multiple audio and video projects, centered around 
 audio and video application scenarios, and offers out-of-the-box solutions.
 
-This year, SRS Stack was revamped, with major changes as follows:
+This year, Oryx was revamped, with major changes as follows:
 
 * Transitioned from microservices architecture to monolithic application, reducing image size by 90%, increasing development speed by 10 times, and making microservices architecture the most misleading.
 * Changed from MIT to AGPL license, allowing personal use but not cloud services.
@@ -45,7 +45,7 @@ This year, SRS Stack was revamped, with major changes as follows:
 * Tests cover all installation methods, features, and APIs.
 * Supports new scenarios such as virtual live streaming, AI-generated subtitles, transcoding, callbacks, HLS clusters, and stream pulling and pushing.
 
-If SRS is simple and easy to use, SRS Stack truly simplifies building audio and video businesses.
+If SRS is simple and easy to use, Oryx truly simplifies building audio and video businesses.
 
 ## Community
 

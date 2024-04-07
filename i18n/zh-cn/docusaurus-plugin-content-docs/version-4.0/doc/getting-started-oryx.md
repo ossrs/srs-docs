@@ -1,13 +1,13 @@
 ---
-title: SRS Stack
-sidebar_label: SRS Stack
+title: Oryx
+sidebar_label: Oryx
 hide_title: false
 hide_table_of_contents: false
 ---
 
-# SRS Stack
+# Oryx
 
-SRS Stack是基于SRS的一个开源视频平台。
+Oryx是基于SRS的一个开源视频平台。
 
 ## TencentCloud LightHouse
 

@@ -1,25 +1,25 @@
 ---
 slug: Multi-Platform-Streaming
-title: SRS Stack - Maximize Audience Engagement - Effortlessly Restream Live Content Across Multiple Platforms with SRS Stack
+title: Oryx - Maximize Audience Engagement - Effortlessly Restream Live Content Across Multiple Platforms with Oryx
 authors: []
 tags: [live streaming, multi-platform streaming, restreaming]
 custom_edit_url: null
 ---
 
-# Maximize Audience Engagement: Effortlessly Restream Live Content Across Multiple Platforms with SRS Stack
+# Maximize Audience Engagement: Effortlessly Restream Live Content Across Multiple Platforms with Oryx
 
-In today's digital world, live streaming has become an essential tool for businesses, content creators, and individuals to engage with their audiences. With the increasing popularity of various live streaming platforms like YouTube, Twitch, and Facebook, it has become crucial to stream your content on multiple platforms simultaneously to reach a wider audience. This blog will guide you through the process of live streaming to multiple platforms using SRS Stack.
+In today's digital world, live streaming has become an essential tool for businesses, content creators, and individuals to engage with their audiences. With the increasing popularity of various live streaming platforms like YouTube, Twitch, and Facebook, it has become crucial to stream your content on multiple platforms simultaneously to reach a wider audience. This blog will guide you through the process of live streaming to multiple platforms using Oryx.
 
 <!--truncate-->
 
-SRS Stack is a powerful and easy-to-use solution that allows you to live stream to multiple platforms with just a few clicks. It also enables you to stream to your own platform or even set up an intranet live stream within your company. Let's dive into the steps to set up live streaming on multiple platforms using SRS Stack.
+Oryx is a powerful and easy-to-use solution that allows you to live stream to multiple platforms with just a few clicks. It also enables you to stream to your own platform or even set up an intranet live stream within your company. Let's dive into the steps to set up live streaming on multiple platforms using Oryx.
 
-### Step 1: Create SRS Stack by One Click
+### Step 1: Create Oryx by One Click
 
-Creating an SRS Stack is simple and can be done with just one click if you use Digital Ocean droplet.
+Creating an Oryx is simple and can be done with just one click if you use Digital Ocean droplet.
 Please see [How to Setup a Video Streaming Service by 1-Click](./2022-04-09-SRS-Stack-Tutorial.md) for detail.
 
-You can also use Docker to create an SRS Stack with a single command line:
+You can also use Docker to create an Oryx with a single command line:
 
 ```bash
 docker run --rm -it -p 80:2022 -p 443:2443 -p 1935:1935 \
@@ -27,11 +27,11 @@ docker run --rm -it -p 80:2022 -p 443:2443 -p 1935:1935 \
   -v $HOME/data:/data ossrs/srs-stack:5
 ```
 
-After creating the SRS Stack, you can access it through `http://your-server-ip/mgmt` via a browser.
+After creating the Oryx, you can access it through `http://your-server-ip/mgmt` via a browser.
 
-### Step 2: Publish a live stream to SRS Stack
+### Step 2: Publish a live stream to Oryx
 
-You can use OBS or FFmpeg to publish a live stream to SRS Stack. You can also set up HTTPS and publish via WebRTC.
+You can use OBS or FFmpeg to publish a live stream to Oryx. You can also set up HTTPS and publish via WebRTC.
 
 ![](/img/blog-2022-04-09-01.png)
 
@@ -44,7 +44,7 @@ To forward your stream to YouTube, copy the Stream URL and Stream key from your 
 
 ![](/img/blog-2023-09-09-01.png)
 
-Open the SRS Stack dashboard and click on `Scenarios > Forward > YouTube`. And click `Start Forward` in SRS Stack.
+Open the Oryx dashboard and click on `Scenarios > Forward > YouTube`. And click `Start Forward` in Oryx.
 
 ![](/img/blog-2023-09-09-02.png) 
 
@@ -58,7 +58,7 @@ To forward your stream to Twitch, copy the Stream key from your Twitch [Dashboar
 
 ![](/img/blog-2023-09-09-04.png)
 
-Open the SRS Stack dashboard and click on `Scenarios > Forward > Twitch`. Click `Start Forward` in SRS Stack.
+Open the Oryx dashboard and click on `Scenarios > Forward > Twitch`. Click `Start Forward` in Oryx.
 
 ![](/img/blog-2023-09-09-05.png)
 
@@ -75,7 +75,7 @@ then click `Go live`, and select `Streaming software`.
 
 ![](/img/blog-2023-09-09-08.png)
 
-Open the SRS Stack dashboard and click on `Scenarios > Forward > Facebook`. Click `Start Forward` in SRS Stack, and your stream will be published on Facebook.
+Open the Oryx dashboard and click on `Scenarios > Forward > Facebook`. Click `Start Forward` in Oryx, and your stream will be published on Facebook.
 
 ![](/img/blog-2023-09-09-09.png)
 
@@ -85,7 +85,7 @@ Open the SRS Stack dashboard and click on `Scenarios > Forward > Facebook`. Clic
 
 ### Step 6: Check Multiple Streaming Status
 
-After publishing your stream on all platforms, you can check the multiple streaming status in the SRS Stack dashboard.
+After publishing your stream on all platforms, you can check the multiple streaming status in the Oryx dashboard.
 
 ![](/img/blog-2023-09-09-12.png)
 
@@ -103,7 +103,7 @@ To learn more about our cloud service, click [here](../cloud).
 ### Conclusion
 
 Live streaming to multiple platforms is an effective way to reach a broader audience and increase engagement. 
-SRS Stack makes this process simple and efficient, allowing you to focus on creating quality content while it takes 
+Oryx makes this process simple and efficient, allowing you to focus on creating quality content while it takes 
 care of the technical aspects. By following the steps outlined in this blog, you can easily set up live streaming 
 on multiple platforms like YouTube, Twitch, and Facebook, and take your content to the next level.
 

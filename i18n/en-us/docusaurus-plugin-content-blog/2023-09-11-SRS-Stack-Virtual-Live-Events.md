@@ -1,6 +1,6 @@
 ---
 slug: Virtual-Live-Events
-title: SRS Stack - Virtual Live Events - Harness the Power of Pre-Recorded Content for Seamless and Engaging Live Streaming Experiences
+title: Oryx - Virtual Live Events - Harness the Power of Pre-Recorded Content for Seamless and Engaging Live Streaming Experiences
 authors: []
 tags: [live streaming, virual live events, srs]
 custom_edit_url: null
@@ -22,20 +22,20 @@ reaches a wider audience, and offers more possibilities for live broadcasts.
 
 <!--truncate-->
 
-SRS Stack enables you to create virtual live events with just one click, broadcasting them to multiple platforms
+Oryx enables you to create virtual live events with just one click, broadcasting them to multiple platforms
 like YouTube, Twitch, and Facebook. In this blog post, we'll walk you through the steps to create a virtual live
-event using SRS Stack.
+event using Oryx.
 
 In today's fast-paced world, virtual live events are becoming increasingly popular due to the convenience 
 they offer. Whether it's a concert, a soccer game, or an online course, you can now create a virtual live 
 event with your video files, making them more interactive and accessible to a wider audience. 
 
-## Step 1: Create SRS Stack by One Click
+## Step 1: Create Oryx by One Click
 
-Creating an SRS Stack is simple and can be done with just one click if you use Digital Ocean droplet.
+Creating an Oryx is simple and can be done with just one click if you use Digital Ocean droplet.
 Please see [How to Setup a Video Streaming Service by 1-Click](./2022-04-09-SRS-Stack-Tutorial.md) for detail.
 
-You can also use Docker to create an SRS Stack with a single command line:
+You can also use Docker to create an Oryx with a single command line:
 
 ```bash
 docker run --rm -it -p 80:2022 -p 443:2443 -p 1935:1935 \
@@ -43,11 +43,11 @@ docker run --rm -it -p 80:2022 -p 443:2443 -p 1935:1935 \
   -v $HOME/data:/data ossrs/srs-stack:5
 ```
 
-After creating the SRS Stack, you can access it through `http://your-server-ip/mgmt` via a browser.
+After creating the Oryx, you can access it through `http://your-server-ip/mgmt` via a browser.
 
 ## Step 2: Upload your video file
 
-Once you've created your SRS Stack, open the dashboard and navigate to `Scenarios > VirtualLive > YouTube`. 
+Once you've created your Oryx, open the dashboard and navigate to `Scenarios > VirtualLive > YouTube`. 
 Click on `Choose File`, select your video file, and then click `Upload File`.
 
 ![](/img/blog-2023-09-11-01.png)
@@ -58,7 +58,7 @@ To stream your file to YouTube, copy the Stream URL and Stream key from your You
 
 ![](/img/blog-2023-09-11-02.png)
 
-Open the SRS Stack dashboard and click on `Scenarios > VirtualLive > YouTube`. And click `Start Virtual Live` in SRS Stack.
+Open the Oryx dashboard and click on `Scenarios > VirtualLive > YouTube`. And click `Start Virtual Live` in Oryx.
 
 ![](/img/blog-2023-09-11-03.png)
 
@@ -79,7 +79,7 @@ Twitch [Dashboard](https://www.twitch.tv/dashboard/settings) under `Settings > S
 
 ![](/img/blog-2023-09-11-06.png)
 
-Open the SRS Stack dashboard and click on `Scenarios > VirtualLive > Twitch`. Click `Start Virtual Live` in SRS Stack.
+Open the Oryx dashboard and click on `Scenarios > VirtualLive > Twitch`. Click `Start Virtual Live` in Oryx.
 
 ![](/img/blog-2023-09-11-07.png)
 
@@ -97,7 +97,7 @@ then click `Go live`, and select `Streaming software`.
 
 ![](/img/blog-2023-09-11-10.png)
 
-Open the SRS Stack dashboard and click on `Scenarios > VirtualLive > Facebook`. Click `Start Virtual Live` in SRS Stack, and your stream will be published on Facebook.
+Open the Oryx dashboard and click on `Scenarios > VirtualLive > Facebook`. Click `Start Virtual Live` in Oryx, and your stream will be published on Facebook.
 
 ![](/img/blog-2023-09-11-11.png)
 
@@ -129,7 +129,7 @@ To learn more about our cloud service, click [here](../cloud).
 In conclusion, virtual live events provide a convenient and efficient way to broadcast pre-recorded content on 
 various platforms, making it more polished and accessible to a wider audience. By reducing anxiety for 
 inexperienced streamers and enabling 24/7 streaming, virtual live events offer numerous possibilities for 
-various industries. SRS Stack simplifies the process of creating and broadcasting these events, catering 
+various industries. Oryx simplifies the process of creating and broadcasting these events, catering 
 to the increasing demand for such interactive experiences in today's fast-paced world.
 
 ## Contact
