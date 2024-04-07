@@ -7,6 +7,6 @@ hide_table_of_contents: false
 
 # Oryx
 
-![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/tutorial/en/v4/srs-stack)
+![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.io&path=/lts/tutorial/en/v4/oryx)
 
 

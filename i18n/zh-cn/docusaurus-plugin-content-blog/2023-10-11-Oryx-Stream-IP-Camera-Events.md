@@ -32,7 +32,7 @@ Oryx 可帮助您连接多个 IP 摄像头并在各种平台上进行实时直�
 
 ```bash
 docker run --rm -it -p 80:2022 -p 443:2443 -p 1935:1935 \
-  -p 8080:8080 -p 8000:8000/udp -p 10080:10080/udp --name srs-stack \
+  -p 8080:8080 -p 8000:8000/udp -p 10080:10080/udp --name oryx \
   -v $HOME/data:/data registry.cn-hangzhou.aliyuncs.com/ossrs/oryx:5
 ```
 

@@ -33,7 +33,7 @@ custom_edit_url: null
 
 ```bash
 docker run --rm -it -p 80:2022 -p 443:2443 -p 1935:1935 \
-  -p 8080:8080 -p 8000:8000/udp -p 10080:10080/udp --name srs-stack \
+  -p 8080:8080 -p 8000:8000/udp -p 10080:10080/udp --name oryx \
   -v $HOME/data:/data registry.cn-hangzhou.aliyuncs.com/ossrs/oryx:5
 ```
 

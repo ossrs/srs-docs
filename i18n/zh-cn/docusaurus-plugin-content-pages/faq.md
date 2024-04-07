@@ -64,7 +64,7 @@
 * `Dynamic DVR`: 关于动态录制，正则表达式匹配需要录制的流等。
   > 1. 可以用`on_publish`，回调业务系统，由业务系统实现负责的规则。
   > 1. 具体录制文件用`on_hls`，将切片拷贝到录制目录，或者云存储。
-  > 1. 可以参考[srs-stack](https://github.com/ossrs/oryx/blob/main/platform/srs-hooks.go)中DVR的实现。
+  > 1. 可以参考[oryx](https://github.com/ossrs/oryx/blob/main/platform/srs-hooks.go)中DVR的实现。
   > 1. SRS不会支持动态DVR，但给出了一些方案，也可以参考 [#1577](https://github.com/ossrs/srs/issues/1577)
 * SRS录制WebRTC为MP4为何会失败，参考[链接](https://stackoverflow.com/a/75861599/17679565)
 
@@ -350,7 +350,7 @@ will be removed without any response.
 ```
 
 ```
-Oryx的问题，请提交到[srs-stack](https://github.com/ossrs/oryx)，该Issue会被删除，请先阅读FAQ：#2716
+Oryx的问题，请提交到[oryx](https://github.com/ossrs/oryx)，该Issue会被删除，请先阅读FAQ：#2716
 ```
 
 ![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.net&path=/lts/pages/faq-zh)

@@ -79,7 +79,7 @@ Part 5, other features for H.265.
 * [x] Black box test support HEVC.
 * [x] Patch FFmpeg in SRS dev-docker.
 * [x] Support HEVC for [WordPress plugin SrsPlayer](https://github.com/ossrs/WordPress-Plugin-SrsPlayer).
-* [ ] Not supported: Update [srs-stack](https://github.com/ossrs/oryx) for HEVC.
+* [ ] Not supported: Update [oryx](https://github.com/ossrs/oryx) for HEVC.
 * [ ] Not supported: Edge server supports publish HEVC stream to origin.
 * [ ] Not supported: Edge server supprots play HEVC stream from origin.
 * [ ] Not supported: HTTP Callback takes HEVC metadata.

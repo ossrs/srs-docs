@@ -27,9 +27,9 @@
 * [How to Setup the Video Codec Parameters for AI Transcript](#how-to-setup-the-video-codec-parameters-for-ai-transcript): 如何设置AI自动字幕的视频转码参数。
 * [How to Replace FFmpeg](#how-to-replace-ffmpeg): 如何更换FFmpeg: 如何更换Oryx中的FFmpeg为自定义版本。
 * [Installation of SRS is Very Slow](#installation-of-srs-is-very-slow): 宝塔安装SRS非常慢: 海外用宝塔安装非常慢，访问阿里云镜像太慢。
-* [How to Install the Latest Oryx](#how-to-install-the-latest-srs-stack): 宝塔如何安装最新的Oryx: 手动安装宝塔插件，安装最新的插件。
+* [How to Install the Latest Oryx](#how-to-install-the-latest-oryx): 宝塔如何安装最新的Oryx: 手动安装宝塔插件，安装最新的插件。
 * [CentOS7 Installation Failed](#centos7-installation-failed): 宝塔CentOS7安装失败: CentOS7宝塔安装失败，找不到目录，或GLIBC版本问题。
-* [The Difference Between Oryx and SRS](#the-difference-between-srs-stack-and-srs): Oryx和SRS的差别: Oryx对比SRS的差异，为什么要有Oryx。
+* [The Difference Between Oryx and SRS](#the-difference-between-oryx-and-srs): Oryx和SRS的差别: Oryx对比SRS的差异，为什么要有Oryx。
 * [Low Latency HLS](#low-latency-hls): HLS低延时: HLS低延时的原理和实现方式。
 * [OpenAPI](#openapi): 关于开放API，使用API获取相关信息。
 * [HTTP Callback](#http-callback): 关于支持的HTTP回调。
@@ -58,7 +58,7 @@
 
 由于Oryx支持多个平台，包括docker等，而docker是不能自己升级自己的，所以Oryx也不支持界面升级，需要手动升级。
 
-如果您使用HELM，并安装了srs-stack `1.0.1`，那么您可以通过`helm upgrade srs srs/oryx --version 1.0.6`进行升级，
+如果您使用HELM，并安装了oryx `1.0.1`，那么您可以通过`helm upgrade srs srs/oryx --version 1.0.6`进行升级，
 如果想回滚到`1.0.1`，可以使用`helm rollback srs`。
 
 ```bash
@@ -72,9 +72,9 @@ Docker启动时会指定版本，比如`registry.cn-hangzhou.aliyuncs.com/ossrs/
 比如`docker pull registry.cn-hangzhou.aliyuncs.com/ossrs/oryx:5`，然后删除和重启容器。
 
 ```bash
-docker rm srs-stack
+docker rm oryx
 docker pull registry.cn-hangzhou.aliyuncs.com/ossrs/oryx:5
-docker run --restart always -d -it --name srs-stack -v $HOME/data:/data \
+docker run --restart always -d -it --name oryx -v $HOME/data:/data \
   -p 2022:2022 -p 2443:2443 -p 1935:1935 -p 8000:8000/udp -p 10080:10080/udp \
   registry.cn-hangzhou.aliyuncs.com/ossrs/oryx:5
 ```
@@ -174,7 +174,7 @@ Lighthouse/CVM/DigitalOcean > 宝塔/aaPanel > Docker/Script
 比如启动两个实例，侦听在2022和2023端口，流媒体依次用不同的端口：
 
 ```bash
-docker run --restart always -d -it --name srs-stack0 -it -v $HOME/data0:/data \
+docker run --restart always -d -it --name oryx0 -it -v $HOME/data0:/data \
   -p 2022:2022 -p 1935:1935 -p 8000:8000/udp -p 10080:10080/udp \
   registry.cn-hangzhou.aliyuncs.com/ossrs/oryx:5
 ```
@@ -182,7 +182,7 @@ docker run --restart always -d -it --name srs-stack0 -it -v $HOME/data0:/data \
 然后打开 [http://localhost:2022](http://localhost:2022) 即可登录。
 
 ```bash
-docker run --restart always -d -it --name srs-stack1 -it -v $HOME/data1:/data \
+docker run --restart always -d -it --name oryx1 -it -v $HOME/data1:/data \
   -p 2023:2022 -p 1936:1935 -p 8001:8000/udp -p 10081:10080/udp \
   registry.cn-hangzhou.aliyuncs.com/ossrs/oryx:5
 ```
@@ -195,7 +195,7 @@ docker run --restart always -d -it --name srs-stack1 -it -v $HOME/data1:/data \
 你还是可以往两个不同的端口推流到这两个不同的实例。当然，你可以明确指定端口：
 
 ```bash
-docker run --restart always -d -it --name srs-stack1 -it -v $HOME/data1:/data \
+docker run --restart always -d -it --name oryx1 -it -v $HOME/data1:/data \
   -p 2023:2022 -p 1936:1935 -p 8001:8000/udp -p 10081:10080/udp \
   -e HTTP_PORT=2023 -e RTMP_PORT=1936 -e RTC_PORT=8001 -e SRT_PORT=10081 \
   registry.cn-hangzhou.aliyuncs.com/ossrs/oryx:5
@@ -241,7 +241,7 @@ Oryx支持申请免费HTTPS证书，而且可以申请多个域名的证书，�
 若使用docker直接启动，可以添加80和443端口的映射：
 
 ```bash
-docker run --restart always -d -it --name srs-stack -v $HOME/data:/data \
+docker run --restart always -d -it --name oryx -v $HOME/data:/data \
   -p 2022:2022 -p 2443:2443 -p 1935:1935 -p 8000:8000/udp -p 10080:10080/udp \
   -p 80:2022 -p 443:2443 \
   registry.cn-hangzhou.aliyuncs.com/ossrs/oryx:5
@@ -266,7 +266,7 @@ Oryx是在容器中运行的，所以它这个`/data`说的是容器中的路径
 你也可以在上传文件后，进入Oryx容器，查看文件是否存在，比如执行命令：
 
 ```bash
-docker exec -it srs-stack ls -lh /data/my-upload/my-file.mp4
+docker exec -it oryx ls -lh /data/my-upload/my-file.mp4
 ```
 
 如果提示文件存在，则可以在Oryx的Virtual Live Events使用这个文件，否则请检查启动Docker时路径是否映射对了。

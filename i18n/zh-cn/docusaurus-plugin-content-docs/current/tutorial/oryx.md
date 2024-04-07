@@ -5,13 +5,26 @@ hide_title: false
 hide_table_of_contents: false
 ---
 
-# Oryx合集
+# Oryx
 
 Oryx(SRS Stack)，面向鼠标编程，没有服务器和命令行经验，也可以构建自己的在线视频服务。入门的最佳推荐。
 
 Oryx是一个开源的音视频服务方案，多个音视频场景中开箱即用，组合使用了SRS、FFmpeg、WebRTC等项目，无门槛赋能小微企业，让小微企业轻松具备数字化能力。
 
 Oryx：让音视频的力量，赋能所有小微企业。
+
+## 24/7 Live Stream: Easy Stream Your Camera to YouTube with DDNS & VPS - No PC or OBS Required!
+
+https://youtu.be/JMz68_wuVvM
+
+在本逐步教程中，探索如何使用DDNS和VPS轻松地将您的摄像头24/7实时流式传输到YouTube。告别使用PC或OBS的需求，享受更稳定、
+无缝的直播体验。
+
+## Ultimate Unmanned Live Streaming Solution: Easy, Affordable & No PC Required! Perfect for Slow Media, Sleep Music, ASMR, Movie Streaming & More!
+
+https://youtu.be/CjXkRmNRtHA
+
+无人直播终极方案，简单、便宜、不占用电脑，自媒体慢直播、无人直播带货、睡眠音乐直播、ASMR直播、电影直播等必备方案
 
 ## Oryx：起步、购买和入门
 * 地址: https://www.bilibili.com/video/BV1844y1L7dL
@@ -61,6 +74,6 @@ Oryx：让音视频的力量，赋能所有小微企业。
 * 地址: https://www.bilibili.com/video/BV1c341177e7
 * 说明: Oryx面向鼠标编程，让每个人都能做音视频业务。不懂音视频的可以，懂音视频的也可以，种地的可以，撸网线的可以，剪电影的可以，背摄像机的也可以，跳舞的可以，唱歌的可以，会用电脑有微信就可以，守法公民都可以。
 
-![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.net&path=/lts/tutorial/zh/v4/srs-stack)
+![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.net&path=/lts/tutorial/zh/v6/oryx)
 
 

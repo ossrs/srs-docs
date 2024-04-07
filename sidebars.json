@@ -1,7 +1,7 @@
 {
   "tutorialSidebar": [
     "tutorial/srs-server",
-    "tutorial/srs-stack",
+    "tutorial/oryx",
     "tutorial/srs-faq",
     "tutorial/srs-books",
     "tutorial/srs-other"

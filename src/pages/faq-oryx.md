@@ -27,9 +27,9 @@ Quick Content
 * [How to Setup the Video Codec Parameters for AI Transcript](#how-to-setup-the-video-codec-parameters-for-ai-transcript): How to set up the video codec parameters for AI transcript.
 * [How to Replace FFmpeg](#how-to-replace-ffmpeg): How to replace the FFmpeg in Oryx with a custom version.
 * [Installation of SRS is Very Slow](#installation-of-srs-is-very-slow): Overseas aaPanel installation is very slow, access to Alibaba Cloud image is too slow.
-* [How to Install the Latest Oryx](#how-to-install-the-latest-srs-stack): Manually install aaPanel plugin, install the latest plugin.
+* [How to Install the Latest Oryx](#how-to-install-the-latest-oryx): Manually install aaPanel plugin, install the latest plugin.
 * [CentOS7 Installation Failed](#centos7-installation-failed): CentOS7 aaPanel installation failed, cannot find the directory, or GLIBC version problem.
-* [The Difference Between Oryx and SRS](#the-difference-between-srs-stack-and-srs): The difference between Oryx and SRS, why there is Oryx.
+* [The Difference Between Oryx and SRS](#the-difference-between-oryx-and-srs): The difference between Oryx and SRS, why there is Oryx.
 * [Low Latency HLS](#low-latency-hls): How to use low latency HLS, how to use low latency HLS.
 * [OpenAPI](#openapi): About open API, using API to get related information.
 * [HTTP Callback](#http-callback): About HTTP callback.
@@ -62,7 +62,7 @@ How to upgrade to the latest version or stable version, and why not support clic
 Since Oryx supports multiple platforms, including Docker, and Docker cannot upgrade itself, Oryx 
 also does not support interface upgrades and needs to be upgraded manually.
 
-If you use HELM, and get srs-stack `1.0.1` installed, then you can upgrade by `helm upgrade srs srs/oryx --version 1.0.6` 
+If you use HELM, and get oryx `1.0.1` installed, then you can upgrade by `helm upgrade srs srs/oryx --version 1.0.6` 
 and `helm rollback srs` if want to rollback to `1.0.1`.
 
 ```bash
@@ -76,9 +76,9 @@ If you use `ossrs/oryx:5`, it is the latest version, and you need to update manu
 `docker pull ossrs/oryx:5` then remove and restart the container.
 
 ```bash
-docker rm srs-stack
+docker rm oryx
 docker pull ossrs/oryx:5
-docker run --restart always -d -it --name srs-stack -v $HOME/data:/data \
+docker run --restart always -d -it --name oryx -v $HOME/data:/data \
   -p 2022:2022 -p 2443:2443 -p 1935:1935 -p 8000:8000/udp -p 10080:10080/udp \
   ossrs/oryx:5
 ```
@@ -190,7 +190,7 @@ instances that don't affect each other and utilize the machine resources.
 For example, start two instances listening on ports 2022 and 2023, and use different ports for streaming media:
 
 ```bash
-docker run --restart always -d -it --name srs-stack0 -it -v $HOME/data0:/data \
+docker run --restart always -d -it --name oryx0 -it -v $HOME/data0:/data \
   -p 2022:2022 -p 1935:1935 -p 8000:8000/udp -p 10080:10080/udp \
   ossrs/oryx:5
 ```
@@ -198,7 +198,7 @@ docker run --restart always -d -it --name srs-stack0 -it -v $HOME/data0:/data \
 Then, open [http://localhost:2022](http://localhost:2022) to log in to the backend.
 
 ```bash
-docker run --restart always -d -it --name srs-stack1 -it -v $HOME/data1:/data \
+docker run --restart always -d -it --name oryx1 -it -v $HOME/data1:/data \
   -p 2023:2022 -p 1936:1935 -p 8001:8000/udp -p 10081:10080/udp \
   ossrs/oryx:5
 ```
@@ -213,7 +213,7 @@ the docker, this doesn't cause any issues. You can still publish to each stack u
 However, you can setup the exposed ports:
 
 ```bash
-docker run --restart always -d -it --name srs-stack1 -it -v $HOME/data1:/data \
+docker run --restart always -d -it --name oryx1 -it -v $HOME/data1:/data \
   -p 2023:2022 -p 1936:1935 -p 8001:8000/udp -p 10081:10080/udp \
   -e HTTP_PORT=2023 -e RTMP_PORT=1936 -e RTC_PORT=8001 -e SRT_PORT=10081 \
   ossrs/oryx:5
@@ -264,7 +264,7 @@ If you encounter an error while applying and the message says `Could not obtain 
 If use docker to start Oryx, you can add port mapping for 80 and 443:
 
 ```bash
-docker run --restart always -d -it --name srs-stack -v $HOME/data:/data \
+docker run --restart always -d -it --name oryx -v $HOME/data:/data \
   -p 2022:2022 -p 2443:2443 -p 1935:1935 -p 8000:8000/udp -p 10080:10080/udp \
   -p 80:2022 -p 443:2443 \
   ossrs/oryx:5
@@ -294,7 +294,7 @@ After uploading files, you can also enter the Oryx container to check if the fil
 For example, you can execute the command:
 
 ```bash
-docker exec -it srs-stack ls -lh /data/my-upload/my-file.mp4
+docker exec -it oryx ls -lh /data/my-upload/my-file.mp4
 ```
 
 If it indicates that the file exists, you can use this file in Oryx's Virtual Live Events. If not, 

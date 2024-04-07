@@ -38,7 +38,7 @@ Please select your platform.
 Strongly recommend running Oryx with docker:
 
 ```bash
-docker run --restart always -d -it --name srs-stack -v $HOME/data:/data \
+docker run --restart always -d -it --name oryx -v $HOME/data:/data \
   -p 2022:2022 -p 2443:2443 -p 1935:1935 -p 8000:8000/udp -p 10080:10080/udp \
   ossrs/oryx:5
 ```
@@ -261,14 +261,14 @@ target URL can be accessed by curl or the Oryx.
 First, install curl in Oryx:
 
 ```bash
-docker exec -it srs-stack apt-get update -y
-docker exec -it srs-stack apt-get install -y curl
+docker exec -it oryx apt-get update -y
+docker exec -it oryx apt-get install -y curl
 ```
 
 Then, simulate an HTTP request to your server:
 
 ```bash
-docker exec -it srs-stack curl http://your-target-URL
+docker exec -it oryx curl http://your-target-URL
 ```
 
 You can use any target URL to test, such as:

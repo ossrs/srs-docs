@@ -2,7 +2,7 @@
 slug: browser-voice-driven-gpt
 title: Oryx - 基于浏览器的语音驱动的GPT-AI助手
 authors: []
-tags: [ai, gpt, voice, srs, srs-stack, streaming]
+tags: [ai, gpt, voice, srs, oryx, streaming]
 custom_edit_url: null
 ---
 
@@ -26,7 +26,7 @@ custom_edit_url: null
 您还可以使用 Docker 通过单个命令行创建 Oryx：
 
 ```bash
-docker run --restart always -d -it --name srs-stack -v $HOME/data:/data \
+docker run --restart always -d -it --name oryx -v $HOME/data:/data \
   -p 80:2022 -p 443:2443 -p 1935:1935 -p 8000:8000/udp -p 10080:10080/udp \
   registry.cn-hangzhou.aliyuncs.com/ossrs/oryx:5
 ```

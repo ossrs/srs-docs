@@ -35,7 +35,7 @@ Oryx作为开源的开箱即用的音视频方案，是完全基于场景构建�
 推荐使用Docker运行Oryx：
 
 ```bash
-docker run --restart always -d -it --name srs-stack -v $HOME/data:/data \
+docker run --restart always -d -it --name oryx -v $HOME/data:/data \
   -p 2022:2022 -p 2443:2443 -p 1935:1935 -p 8000:8000/udp -p 10080:10080/udp \
   registry.cn-hangzhou.aliyuncs.com/ossrs/oryx:5
 ```
@@ -247,14 +247,14 @@ target URL是否可以通过curl或Oryx访问。
 首先，在Oryx的容器中安装curl：
 
 ```bash
-docker exec -it srs-stack apt-get update -y
-docker exec -it srs-stack apt-get install -y curl
+docker exec -it oryx apt-get update -y
+docker exec -it oryx apt-get install -y curl
 ```
 
 然后，用curl模拟Oryx发起一个HTTP请求：
 
 ```bash
-docker exec -it srs-stack curl http://your-target-URL
+docker exec -it oryx curl http://your-target-URL
 ```
 
 你可以使用任何合法的target URL来测试，包括：
