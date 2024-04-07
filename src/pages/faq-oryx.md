@@ -43,14 +43,9 @@ Please follow [How to Setup a Video Streaming Service by 1-Click](./blog/Oryx-Tu
 and set up Oryx, please don't skip this step.
 
 After entering the Oryx Server, there will be corresponding video tutorials according to different 
-application scenarios, as shown in the following figure:
+application scenarios.
 
-![](/img/page-2023-03-04-01.png)
-
-Each scenario also has a complete introduction and detailed operation steps, as shown in the following 
-figure:
-
-![](/img/page-2023-03-04-02.png)
+Each scenario also has a complete introduction and detailed operation steps.
 
 Please do not try randomly, be sure to follow the guide, audio and video random testing will definitely 
 cause problems.
