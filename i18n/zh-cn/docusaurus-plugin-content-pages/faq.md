@@ -350,7 +350,7 @@ will be removed without any response.
 ```
 
 ```
-Oryx的问题，请提交到[oryx](https://github.com/ossrs/oryx)，该Issue会被删除，请先阅读FAQ：#2716
+Oryx的问题，请提交到[Oryx](https://github.com/ossrs/oryx)，该Issue会被删除，请先阅读FAQ：#2716
 ```
 
 ![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.net&path=/lts/pages/faq-zh)
