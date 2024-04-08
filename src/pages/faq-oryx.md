@@ -190,7 +190,7 @@ docker run --restart always -d -it --name oryx0 -it -v $HOME/data0:/data \
   ossrs/oryx:5
 ```
 
-Then, open [http://localhost:2022](http://localhost:2022) to log in to the backend.
+Then, open [http://localhost](http://localhost) to log in to the backend.
 
 ```bash
 docker run --restart always -d -it --name oryx1 -it -v $HOME/data1:/data \

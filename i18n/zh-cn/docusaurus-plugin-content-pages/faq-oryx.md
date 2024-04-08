@@ -179,7 +179,7 @@ docker run --restart always -d -it --name oryx0 -it -v $HOME/data0:/data \
   registry.cn-hangzhou.aliyuncs.com/ossrs/oryx:5
 ```
 
-然后打开 [http://localhost:2022](http://localhost:2022) 即可登录。
+然后打开 [http://localhost](http://localhost) 即可登录。
 
 ```bash
 docker run --restart always -d -it --name oryx1 -it -v $HOME/data1:/data \

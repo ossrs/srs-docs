@@ -40,7 +40,7 @@ docker run --restart always -d -it --name oryx -v $HOME/data:/data \
   registry.cn-hangzhou.aliyuncs.com/ossrs/oryx:5
 ```
 
-请打开页面[http://localhost:2022](http://localhost:2022)开始使用Oryx。
+请打开页面[http://localhost](http://localhost)开始使用Oryx。
 
 关于使用说明，请参考 [Oryx Docker](https://github.com/ossrs/oryx#usage)。
 
@@ -51,11 +51,11 @@ docker run --restart always -d -it --name oryx -v $HOME/data:/data \
 ```bash
 helm repo add srs http://helm.ossrs.io/stable
 helm install srs srs/oryx --set persistence.path=$HOME/data \
-  --set service.http=2022 --set service.https=2443 --set service.rtmp=1935 \
+  --set service.http=80 --set service.https=443 --set service.rtmp=1935 \
   --set service.rtc=8000 --set service.srt=10080
 ```
 
-请打开页面[http://localhost:2022](http://localhost:2022)开始使用Oryx。
+请打开页面[http://localhost](http://localhost)开始使用Oryx。
 
 ### BT
 
@@ -176,13 +176,13 @@ Oryx支持对实时流进行转码，以降低比特率、节省带宽和成本�
 使用curl请求HTTP API：
 
 ```bash
-curl http://localhost:2022/terraform/v1/mgmt/versions
+curl http://localhost/terraform/v1/mgmt/versions
 ```
 
 或使用Bearer鉴权：
 
 ```bash
-curl http://localhost:2022/terraform/v1/hooks/srs/secret/query \
+curl http://localhost/terraform/v1/hooks/srs/secret/query \
   -X POST -H 'Authorization: Bearer xxxxxx' \
   -H 'Content-Type: application/json' --data '{}'
 ```
@@ -197,13 +197,13 @@ curl http://localhost:2022/terraform/v1/hooks/srs/secret/query \
 Oryx还代理了[SRS HTTP API](./http-api.md)，前缀为`/api/v1/`，例如：
 
 ```bash
-curl http://localhost:2022/api/v1/versions
+curl http://localhost/api/v1/versions
 ```
 
 或使用Bearer鉴权：
 
 ```bash
-curl http://localhost:2022/api/v1/vhosts/ \
+curl http://localhost/api/v1/vhosts/ \
   -X GET -H 'Authorization: Bearer xxxxxx' \
   -H 'Content-Type: application/json'
 ```
@@ -354,7 +354,7 @@ Request:
   "uuid": "824b96f9-8d51-4046-ba1e-a9aec7d57c95",
   "artifact_code": 0,
   "artifact_path": "/data/record/824b96f9-8d51-4046-ba1e-a9aec7d57c95/index.mp4",
-  "artifact_url": "http://localhost:2022/terraform/v1/hooks/record/hls/824b96f9-8d51-4046-ba1e-a9aec7d57c95/index.mp4"
+  "artifact_url": "http://localhost/terraform/v1/hooks/record/hls/824b96f9-8d51-4046-ba1e-a9aec7d57c95/index.mp4"
 }
 
 Response:

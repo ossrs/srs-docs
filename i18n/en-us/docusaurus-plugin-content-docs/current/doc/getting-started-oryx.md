@@ -43,7 +43,7 @@ docker run --restart always -d -it --name oryx -v $HOME/data:/data \
   ossrs/oryx:5
 ```
 
-Then you can open [http://localhost:2022](http://localhost:2022) to use Oryx.
+Then you can open [http://localhost](http://localhost) to use Oryx.
 
 For more details, please refer to [Oryx Docker](https://github.com/ossrs/oryx#usage).
 
@@ -54,11 +54,11 @@ Strongly recommend running Oryx with HELM:
 ```bash
 helm repo add srs http://helm.ossrs.io/stable
 helm install srs srs/oryx --set persistence.path=$HOME/data \
-  --set service.http=2022 --set service.https=2443 --set service.rtmp=1935 \
+  --set service.http=80 --set service.https=443 --set service.rtmp=1935 \
   --set service.rtc=8000 --set service.srt=10080
 ```
 
-Then you can open [http://localhost:2022](http://localhost:2022) to use Oryx.
+Then you can open [http://localhost](http://localhost) to use Oryx.
 
 ### Script
 
@@ -96,7 +96,7 @@ However, Oryx provides a more powerful and feature-rich experience for end users
 eliminating the need to write any code. Users can directly utilize Oryx for your
 media services needs.
 
-| Comparison     | Oryx         | SRS           | Notes                                                              |
+| Comparison     | Oryx              | SRS           | Notes                                                              |
 |----------------|-------------------|---------------|--------------------------------------------------------------------|
 | License        | AGPL-3.0-or-later | MIT           | SRS is licenced under MIT, Oryx is AGPL-3.0-or-later.         |
 | Live Streaming | Yes               | Yes           | Both support RTMP, HLS, and HTTP-FLV protocols.                    |
@@ -192,13 +192,13 @@ You can click the button on the web to request a HTTP API, you can also use the 
 HTTP API. Please follow the instructions on the web, for example, use curl to request the HTTP API:
 
 ```bash
-curl http://localhost:2022/terraform/v1/mgmt/versions
+curl http://localhost/terraform/v1/mgmt/versions
 ```
 
 Or with the Bearer token:
 
 ```bash
-curl http://localhost:2022/terraform/v1/hooks/srs/secret/query \
+curl http://localhost/terraform/v1/hooks/srs/secret/query \
   -X POST -H 'Authorization: Bearer xxxxxx' \
   -H 'Content-Type: application/json' --data '{}'
 ```
@@ -214,13 +214,13 @@ HTTP API. To identify the requests and responses for each API, open Google Chrom
 Oryx also proxy the [SRS HTTP API](./http-api.md), which prefix with `/api/v1/` such as:
 
 ```bash
-curl http://localhost:2022/api/v1/versions
+curl http://localhost/api/v1/versions
 ```
 
 Or with the Bearer token:
 
 ```bash
-curl http://localhost:2022/api/v1/vhosts/ \
+curl http://localhost/api/v1/vhosts/ \
   -X GET -H 'Authorization: Bearer xxxxxx' \
   -H 'Content-Type: application/json'
 ```
@@ -374,7 +374,7 @@ Request:
   "uuid": "824b96f9-8d51-4046-ba1e-a9aec7d57c95",
   "artifact_code": 0,
   "artifact_path": "/data/record/824b96f9-8d51-4046-ba1e-a9aec7d57c95/index.mp4",
-  "artifact_url": "http://localhost:2022/terraform/v1/hooks/record/hls/824b96f9-8d51-4046-ba1e-a9aec7d57c95/index.mp4"
+  "artifact_url": "http://localhost/terraform/v1/hooks/record/hls/824b96f9-8d51-4046-ba1e-a9aec7d57c95/index.mp4"
 }
 
 Response:

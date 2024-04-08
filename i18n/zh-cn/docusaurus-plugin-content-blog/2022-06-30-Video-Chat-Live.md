@@ -88,7 +88,7 @@ SaaS做直播的好处是不用了解直播的细节，直接就能把直播做�
 * FLV流：`http://your-server-ip/live/livestream.flv`
 * HLS流：`http://your-server-ip/live/livestream.m3u8`
 
-> Note: 若自己部署SRS，则HTTP端口默认是8080，需要在地址中加上，比如 `http://your-server-ip:8080/live/livestream.flv`
+> Note: 若自己部署SRS，则HTTP端口默认是8080，需要在地址中加上，比如 `http://your-server-ip/live/livestream.flv`
 
 用开源方案搭建直播，比较容易能看到整个直播的链路，如下图所示：
 
