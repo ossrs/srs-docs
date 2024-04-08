@@ -74,7 +74,7 @@ If you use `ossrs/oryx:5`, it is the latest version, and you need to update manu
 docker rm oryx
 docker pull ossrs/oryx:5
 docker run --restart always -d -it --name oryx -v $HOME/data:/data \
-  -p 2022:2022 -p 2443:2443 -p 1935:1935 -p 8000:8000/udp -p 10080:10080/udp \
+  -p 80:2022 -p 443:2443 -p 1935:1935 -p 8000:8000/udp -p 10080:10080/udp \
   ossrs/oryx:5
 ```
 
@@ -186,7 +186,7 @@ For example, start two instances listening on ports 2022 and 2023, and use diffe
 
 ```bash
 docker run --restart always -d -it --name oryx0 -it -v $HOME/data0:/data \
-  -p 2022:2022 -p 1935:1935 -p 8000:8000/udp -p 10080:10080/udp \
+  -p 80:2022 -p 1935:1935 -p 8000:8000/udp -p 10080:10080/udp \
   ossrs/oryx:5
 ```
 
@@ -260,7 +260,7 @@ If use docker to start Oryx, you can add port mapping for 80 and 443:
 
 ```bash
 docker run --restart always -d -it --name oryx -v $HOME/data:/data \
-  -p 2022:2022 -p 2443:2443 -p 1935:1935 -p 8000:8000/udp -p 10080:10080/udp \
+  -p 80:2022 -p 443:2443 -p 1935:1935 -p 8000:8000/udp -p 10080:10080/udp \
   -p 80:2022 -p 443:2443 \
   ossrs/oryx:5
 ```
@@ -683,10 +683,10 @@ Sometimes the version in the Baota store is older, and you can manually install 
 to install the latest plugin.
 
 The latest version of Oryx can be found in [Releases](https://github.com/ossrs/oryx/releases),
-and the `aapanel-srs_stack.zip` attachment in each version can be downloaded as a plugin.
+and the `aapanel-oryx.zip` attachment in each version can be downloaded as a plugin.
 
 After downloading the plugin, you can go to Baota `Software Store > Third-Party Applications > Import Plugin` 
-and upload the downloaded `aapanel-srs_stack.zip` to install.
+and upload the downloaded `aapanel-oryx.zip` to install.
 
 ## CentOS7 Installation Failed
 

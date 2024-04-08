@@ -39,7 +39,7 @@ Strongly recommend running Oryx with docker:
 
 ```bash
 docker run --restart always -d -it --name oryx -v $HOME/data:/data \
-  -p 2022:2022 -p 2443:2443 -p 1935:1935 -p 8000:8000/udp -p 10080:10080/udp \
+  -p 80:2022 -p 443:2443 -p 1935:1935 -p 8000:8000/udp -p 10080:10080/udp \
   ossrs/oryx:5
 ```
 
@@ -62,7 +62,7 @@ Then you can open [http://localhost:2022](http://localhost:2022) to use Oryx.
 
 ### Script
 
-For Ubuntu 20+, you can download the [linux-srs_stack-en.tar.gz](https://github.com/ossrs/oryx/releases/latest/download/linux-srs_stack-en.tar.gz) 
+For Ubuntu 20+, you can download the [linux-oryx-en.tar.gz](https://github.com/ossrs/oryx/releases/latest/download/linux-oryx-en.tar.gz) 
 and install it.
 
 ### DigitalOcean Droplet

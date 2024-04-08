@@ -75,7 +75,7 @@ Docker启动时会指定版本，比如`registry.cn-hangzhou.aliyuncs.com/ossrs/
 docker rm oryx
 docker pull registry.cn-hangzhou.aliyuncs.com/ossrs/oryx:5
 docker run --restart always -d -it --name oryx -v $HOME/data:/data \
-  -p 2022:2022 -p 2443:2443 -p 1935:1935 -p 8000:8000/udp -p 10080:10080/udp \
+  -p 80:2022 -p 443:2443 -p 1935:1935 -p 8000:8000/udp -p 10080:10080/udp \
   registry.cn-hangzhou.aliyuncs.com/ossrs/oryx:5
 ```
 
@@ -175,7 +175,7 @@ Lighthouse/CVM/DigitalOcean > 宝塔/aaPanel > Docker/Script
 
 ```bash
 docker run --restart always -d -it --name oryx0 -it -v $HOME/data0:/data \
-  -p 2022:2022 -p 1935:1935 -p 8000:8000/udp -p 10080:10080/udp \
+  -p 80:2022 -p 1935:1935 -p 8000:8000/udp -p 10080:10080/udp \
   registry.cn-hangzhou.aliyuncs.com/ossrs/oryx:5
 ```
 
@@ -242,7 +242,7 @@ Oryx支持申请免费HTTPS证书，而且可以申请多个域名的证书，�
 
 ```bash
 docker run --restart always -d -it --name oryx -v $HOME/data:/data \
-  -p 2022:2022 -p 2443:2443 -p 1935:1935 -p 8000:8000/udp -p 10080:10080/udp \
+  -p 80:2022 -p 443:2443 -p 1935:1935 -p 8000:8000/udp -p 10080:10080/udp \
   -p 80:2022 -p 443:2443 \
   registry.cn-hangzhou.aliyuncs.com/ossrs/oryx:5
 ```
@@ -602,9 +602,9 @@ ffmpeg \
 
 有时候宝塔商店的版本比较老，可以手动安装宝塔插件，安装最新的插件。
 
-Oryx最新的版本，可以看[Releases](https://github.com/ossrs/oryx/releases)，每个版本的附件中`bt-srs_stack.zip`就是可以下载的插件。
+Oryx最新的版本，可以看[Releases](https://github.com/ossrs/oryx/releases)，每个版本的附件中`bt-oryx.zip`就是可以下载的插件。
 
-下载插件后，可以在宝塔`软件商店 > 第三方应用 > 导入插件`，上传下载的`bt-srs_stack.zip`即可安装。
+下载插件后，可以在宝塔`软件商店 > 第三方应用 > 导入插件`，上传下载的`bt-oryx.zip`即可安装。
 
 ## CentOS7 Installation Failed
 

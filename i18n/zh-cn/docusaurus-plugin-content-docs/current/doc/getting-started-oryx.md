@@ -36,7 +36,7 @@ Oryx作为开源的开箱即用的音视频方案，是完全基于场景构建�
 
 ```bash
 docker run --restart always -d -it --name oryx -v $HOME/data:/data \
-  -p 2022:2022 -p 2443:2443 -p 1935:1935 -p 8000:8000/udp -p 10080:10080/udp \
+  -p 80:2022 -p 443:2443 -p 1935:1935 -p 8000:8000/udp -p 10080:10080/udp \
   registry.cn-hangzhou.aliyuncs.com/ossrs/oryx:5
 ```
 
@@ -63,7 +63,7 @@ Oryx提供了宝塔插件，使用方法参考[宝塔插件](../../../blog/BT-aa
 
 ### Script
 
-对于 Ubuntu 20+，您可以下载 [linux-srs_stack-zh.tar.gz](https://github.com/ossrs/oryx/releases/latest/download/linux-srs_stack-zh.tar.gz)
+对于 Ubuntu 20+，您可以下载 [linux-oryx-zh.tar.gz](https://github.com/ossrs/oryx/releases/latest/download/linux-oryx-zh.tar.gz)
 并安装它。
 
 ### AWS Lightsail
