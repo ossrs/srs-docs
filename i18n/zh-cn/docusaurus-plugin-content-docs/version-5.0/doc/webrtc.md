@@ -233,8 +233,8 @@ docker run --rm --env CANDIDATE=$CANDIDATE \
 * 使用RTMP推流或播放: `rtmp://localhost/live/livestream`
 * 使用HTTP-FLV播放流: [http://localhost:8080/live/livestream.flv](http://localhost:8080/players/srs_player.html)
 * 使用HLS播放流: [http://localhost:8080/live/livestream.m3u8](http://localhost:8080/players/srs_player.html?stream=livestream.m3u8)
-* 使用WHIP推流: [http://localhost:1985/rtc/v1/whip/?app=live&stream=livestream](http://localhost:8080/players/whip.html)
-* 使用WHEP播放流: [http://localhost:1985/rtc/v1/whep/?app=live&stream=livestream](http://localhost:8080/players/whep.html)
+* WebRTC推流: [http://localhost:1985/rtc/v1/whip/?app=live&stream=livestream](http://localhost:8080/players/whip.html)
+* WebRTC播放: [http://localhost:1985/rtc/v1/whep/?app=live&stream=livestream](http://localhost:8080/players/whep.html)
 
 > Remark: 由于Flash已经被禁用，RTMP流无法在Chrome播放，请使用VLC播放。
 
@@ -283,8 +283,8 @@ ffmpeg -re -i ./doc/source.flv -c copy -f flv rtmp://localhost/live/livestream
 
 SRS支持WHIP和WHEP协议。安装好SRS后，可以直接点击下面的地址测试：
 
-* 使用WHIP推流: [http://localhost:1985/rtc/v1/whip/?app=live&stream=livestream](http://localhost:8080/players/whip.html)
-* 使用WHEP播放: [http://localhost:1985/rtc/v1/whep/?app=live&stream=livestream](http://localhost:8080/players/whep.html)
+* WebRTC推流: [http://localhost:1985/rtc/v1/whip/?app=live&stream=livestream](http://localhost:8080/players/whip.html)
+* WebRTC播放: [http://localhost:1985/rtc/v1/whep/?app=live&stream=livestream](http://localhost:8080/players/whep.html)
 
 关于协议的具体实现细节，请参考[WHIP](./http-api.md#webrtc-publish)和[WHEP](./http-api.md#webrtc-play)。下面是交互图：
 
@@ -412,8 +412,8 @@ docker run --rm --env CANDIDATE=$CANDIDATE \
 
 演示，WebRTC推流和播放，链接：
 
-* WebRTC推流：[webrtc://localhost/live/show](http://localhost:8080/players/rtc_publisher.html?stream=show&autostart=true)
-* WebRTC播放：[webrtc://localhost/live/show](http://localhost:8080/players/rtc_player.html?stream=show&autostart=true)
+* WebRTC推流: [http://localhost:1985/rtc/v1/whip/?app=live&stream=livestream](http://localhost:8080/players/whip.html)
+* WebRTC播放: [http://localhost:1985/rtc/v1/whep/?app=live&stream=livestream](http://localhost:8080/players/whep.html)
 
 > Remark: 推流时，必须是HTTPS页面，当然本机localhost没这个限制。
 
@@ -442,8 +442,8 @@ docker run --rm --env CANDIDATE=$CANDIDATE \
 
 演示，WebRTC推流和播放，链接：
 
-* WebRTC推流：[webrtc://localhost/live/show](http://localhost:8080/players/rtc_publisher.html?stream=show&autostart=true)
-* WebRTC播放：[webrtc://localhost/live/show](http://localhost:8080/players/rtc_player.html?stream=show&autostart=true)
+* WebRTC推流: [http://localhost:1985/rtc/v1/whip/?app=live&stream=livestream](http://localhost:8080/players/whip.html)
+* WebRTC播放: [http://localhost:1985/rtc/v1/whep/?app=live&stream=livestream](http://localhost:8080/players/whep.html)
 * HTTP-FLV播放：[http://localhost:8080/live/show.flv](http://localhost:8080/players/srs_player.html?autostart=true&stream=show.flv)
 * RTMP流（可用VLC播放）：rtmp://localhost/live/show
 

@@ -412,8 +412,8 @@ docker run --rm --env CANDIDATE=$CANDIDATE \
 
 Play the stream in browser:
 
-* Publish by WebRTC：[webrtc://localhost/live/show](http://localhost:8080/players/rtc_publisher.html?stream=show&autostart=true)
-* Play by WebRTC：[webrtc://localhost/live/show](http://localhost:8080/players/rtc_player.html?stream=show&autostart=true)
+* Publish stream over WHIP: [http://localhost:1985/rtc/v1/whip/?app=live&stream=livestream](http://localhost:8080/players/whip.html)
+* Play stream over WHEP: [http://localhost:1985/rtc/v1/whep/?app=live&stream=livestream](http://localhost:8080/players/whep.html)
 
 > Remark: Note that if not localhost, the WebRTC publisher should be HTTPS page.
 
@@ -433,8 +433,8 @@ docker run --rm --env CANDIDATE=$CANDIDATE \
 
 The streams:
 
-* Publish by WebRTC：[webrtc://localhost/live/show](http://localhost:8080/players/rtc_publisher.html?stream=show&autostart=true)
-* Play by WebRTC：[webrtc://localhost/live/show](http://localhost:8080/players/rtc_player.html?stream=show&autostart=true)
+* Publish stream over WHIP: [http://localhost:1985/rtc/v1/whip/?app=live&stream=livestream](http://localhost:8080/players/whip.html)
+* Play stream over WHEP: [http://localhost:1985/rtc/v1/whep/?app=live&stream=livestream](http://localhost:8080/players/whep.html)
 * HTTP-FLV：[http://localhost:8080/live/show.flv](http://localhost:8080/players/srs_player.html?autostart=true&stream=show.flv)
 * RTMP by VLC：rtmp://localhost/live/show
 
