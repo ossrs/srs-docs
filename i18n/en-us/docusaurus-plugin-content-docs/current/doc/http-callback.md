@@ -267,6 +267,8 @@ heartbeat {
 By enable the `summaries`, you can get the SRS server states, such as `self.pid` and `self.srs_uptime`, so you
 can use this to determine whether SRS restarted.
 
+> Note: About fileds of `summaries`, see [HTTP API: summaries](./http-api.md#summaries) for details.
+
 ## Go Example
 
 Write Go code to handle SRS callback, for example, handling `on_publish`:

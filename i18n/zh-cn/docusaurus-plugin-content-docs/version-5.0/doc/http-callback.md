@@ -264,6 +264,8 @@ heartbeat {
 
 通过启用`summaries`，您可以获取SRS服务器状态，例如`self.pid`和`self.srs_uptime`，因此您可以使用它来判断SRS是否重新启动。
 
+> Note: 关于`summaries`的字段，请参阅 [HTTP API: summaries](./http-api.md#summaries) 了解详细信息。
+
 ## Go Example
 
 使用Go处理SRS的回调，以`on_publish`为例：
