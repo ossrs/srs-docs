@@ -7,19 +7,28 @@ for additional online and in-person learning materials.
 
 ## Donation
 
-Would you like additional assistance from us? By becoming a sponsor or backer of SRS, we can provide you with the 
-support you need:
+We are an open-source community, with both code and documentation available for free. However, it is 
+essential to spend time understanding the documentation and learning how to use this project. Most issues 
+can be resolved through the documentation, and in cases where you still encounter problems, you can seek 
+assistance from other community members. Friends in the community might offer help, but they are not 
+obligated to do so, as it's a universal rule of open-source communities.
+
+I have a full-time job and support the community during my spare time, focusing primarily on code and 
+documentation development. As a result, I have limited time available for community support and prioritize
+assistance to project contributors. If you wish for me to dedicate time specifically to assist you, you 
+may consider becoming a backer or sponsor of the project.
+
+It should be noted that the code and documentation for SRS and Oryx are open and public, with no private 
+branches or products. You can fully utilize the open-source code and documentation to complete your 
+project. If you encounter any issues, you can seek help from any developer within the community. If yo
+u wish to receive my personal support and want me to dedicate time specifically to assist you, then you 
+would need to become a contributor.
 
 * Backer: $5 per month, online text chat support through Discord.
 * Sponsor: $100 per month, online text chat plus online meeting support.
 
-https://opencollective.com/srs-server
-
-> Note: Please contact us by [Discord](https://discord.gg/yZ4BnPmHAd) after becoming a sponsor or backer.
-
-SRS is a non-profit community made up of dedicated volunteers who strive to offer enhanced support to sponsors 
-and backers. Although you can also turn to the community for assistance, please be aware that response times might
-not be as quick as desired.
+Please visit [OpenCollective](https://opencollective.com/srs-server) to become a backer or sponsor, 
+and send me a direct message on [Discord](https://discord.gg/yZ4BnPmHAd).
 
 ## Discussion
 
