@@ -90,11 +90,11 @@ Oryx提供了宝塔插件，使用方法参考[宝塔插件](../../../blog/BT-aa
 在比较Oryx和SRS时，两者都提供相似级别的媒体流功能。然而，Oryx为终端用户提供了更强大且功能丰富的体验，
 无需编写任何代码。用户可以直接使用Oryx满足您的媒体服务需求。
 
-| 比较         | Oryx         | SRS      | 说明                                    |
-|------------|-------------------|----------|---------------------------------------|
+| 比较         | Oryx              | SRS      | 说明                               |
+|------------|-------------------|----------|----------------------------------|
 | 许可证        | AGPL-3.0-or-later | MIT      | SRS是MIT，而Oryx是AGPL-3.0-or-later。 |
-| 直播流        | Yes               | Yes      | 两者都支持RTMP，HLS和HTTP-FLV协议。             |
-| WebRTC     | Yes               | Yes      | 两者都支持WebRTC。                          |
+| 直播流        | Yes               | Yes      | 两者都支持RTMP，HLS和HTTP-FLV协议。        |
+| WebRTC     | Yes               | Yes      | 两者都支持WebRTC。                     |
 | Auto HTTPS | Yes               | No       | Oryx自动申请和更新HTTPS证书.              |
 | 控制台        | 增强                | HTTP API | Oryx提供了更强大的控制台。                  |
 | 身份验证       | Yes               | HTTP回调   | Oryx具有内置身份验证，而SRS使用回调。           |
@@ -103,8 +103,9 @@ Oryx提供了宝塔插件，使用方法参考[宝塔插件](../../../blog/BT-aa
 | 虚拟直播       | Yes               | No       | Oryx提供了先进的虚拟直播功能。                |
 | WordPress  | Yes               | No       | Oryx提供了WordPress插件和操作指南。         |
 | 转码         | Yes               | No       | Oryx提供了直播转码的能力。                  |
-| AI字幕       | Yes               | No       | 自动识别直播语音并转为字幕，叠加到视频                   |
-| 直播间        | Yes               | No       | 直播间的鉴权和业务功能                           |
+| AI字幕       | Yes               | No       | 自动识别直播语音并转为字幕，叠加到视频              |
+| 直播间        | Yes               | No       | 直播间的鉴权和业务功能                      |
+| 视频翻译       | Yes               | No       | 支持点播视频多语言翻译                      |
 
 ### Streaming and Authentication
 

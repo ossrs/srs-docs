@@ -91,11 +91,11 @@ However, Oryx provides a more powerful and feature-rich experience for end users
 eliminating the need to write any code. Users can directly utilize Oryx for your
 media services needs.
 
-| Comparison     | Oryx              | SRS           | Notes                                                              |
-|----------------|-------------------|---------------|--------------------------------------------------------------------|
+| Comparison     | Oryx              | SRS           | Notes                                                         |
+|----------------|-------------------|---------------|---------------------------------------------------------------|
 | License        | AGPL-3.0-or-later | MIT           | SRS is licenced under MIT, Oryx is AGPL-3.0-or-later.         |
-| Live Streaming | Yes               | Yes           | Both support RTMP, HLS, and HTTP-FLV protocols.                    |
-| WebRTC         | Yes               | Yes           | WebRTC is supported by both.                                       |
+| Live Streaming | Yes               | Yes           | Both support RTMP, HLS, and HTTP-FLV protocols.               |
+| WebRTC         | Yes               | Yes           | WebRTC is supported by both.                                  |
 | Auto HTTPS     | Yes               | No            | Oryx supports automatic request and update HTTPS certs.       |
 | Console        | Enhanced          | HTTP API      | Oryx offers a more powerful console.                          |
 | Authentication | Yes               | HTTP Callback | Oryx has built-in authentication, while SRS uses callbacks.   |
@@ -104,8 +104,9 @@ media services needs.
 | Virtual Live   | Yes               | No            | Oryx provides advanced virtual live streaming capabilities.   |
 | WordPress      | Yes               | No            | Oryx offers a WordPress plugin and step-by-step guidelines.   |
 | Transcoding    | Yes               | No            | Oryx supports live stream transcoding.                        |
-| Transcription  | Yes               | No            | Convert live speech to subtitle and overlay to video stream.       |
-| Live Room      | Yes               | No            | Support live room feature.                                         |
+| Transcription  | Yes               | No            | Convert live speech to subtitle and overlay to video stream.  |
+| Live Room      | Yes               | No            | Support live room feature.                                    |
+| Dubbing        | Yes               | No            | Support dubbing VoD videos.                                   |
 
 ### Streaming and Authentication
 

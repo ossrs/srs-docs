@@ -104,6 +104,7 @@ Oryx支持AWS Lightsail，这是AWS提供的一种虚拟专用服务器（VPS）
 | 转码         | Yes               | No       | Oryx提供了直播转码的能力。                  |
 | AI字幕       | Yes               | No       | 自动识别直播语音并转为字幕，叠加到视频                   |
 | 直播间        | Yes               | No       | 直播间的鉴权和业务功能                           |
+| 视频翻译       | Yes               | No       | 支持点播视频多语言翻译                      |
 
 ### Streaming and Authentication
 
