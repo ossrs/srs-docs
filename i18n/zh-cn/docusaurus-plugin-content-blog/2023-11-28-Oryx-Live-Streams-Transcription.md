@@ -73,6 +73,13 @@ docker run --rm -it -p 80:2022 -p 443:2443 -p 1935:1935 \
 
 您还可以使用HTTP API获取每个HLS片段的ASR结果，并执行诸如翻译或与您的AI系统集成等操作。
 
+## HLS with WebVTT
+
+您可以为 HLS 启用 Web Video Text Tracks (WebVTT)。首先，在 `AI字幕 > 服务设置 > WebVTT字幕` 中启用 WebVTT，
+勾选 `是否开启WebVTT字幕` 复选框。
+
+然后，打开 `直播流管理操作` 标签页，您将获得一个带有 WebVTT 字幕的 HLS 流。
+
 ## Conclusion
 
 Oryx将OpenAI的Whisper和FFmpeg整合在一起，彻底改变了直播方式，使观众体验更佳，通过提供包容性的AI驱动字幕。

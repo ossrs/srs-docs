@@ -82,6 +82,13 @@ Open the HLS stream link in the browser to view the live stream with subtitles.
 You can also use the HTTP API to obtain ASR results for each HLS segment and perform actions like translation 
 or integration with your AI systems.
 
+## HLS with WebVTT
+
+You can enable Web Video Text Tracks (WebVTT) for HLS. First, enable WebVTT in `Transcript > Service Settings > WebVTT Subtitle`,
+click the checkbox `Enable WebVTT Subtitle`.
+
+Then, open the `Stream Operations` tab, you will get a HLS stream with WebVTT subtitles.
+
 ## Cloud Service
 
 At SRS, our goal is to establish a non-profit, open-source community dedicated to creating an all-in-one,

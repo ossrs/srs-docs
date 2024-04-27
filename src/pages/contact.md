@@ -26,6 +26,7 @@ would need to become a contributor.
 
 * Backer: $5 per month, online text chat support through Discord.
 * Sponsor: $100 per month, online text chat plus online meeting support.
+* For customized features and consulting services, please contact us through [Discord](https://discord.gg/yZ4BnPmHAd).
 
 Please visit [OpenCollective](https://opencollective.com/srs-server) to become a backer or sponsor, 
 and send me a direct message on [Discord](https://discord.gg/yZ4BnPmHAd).
