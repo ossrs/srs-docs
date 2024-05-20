@@ -68,6 +68,8 @@ To recognize text in video streams, you can use the following instructions:
 Recognize the text in the image. Output the identified text directly.
 ```
 
+Please remember to restart the OCR after updating the AI settings.
+
 ## Step 5: View OCR Results by Callback
 
 Once the OCR process is complete, you can view the results by setting up a callback URL in Oryx.

@@ -182,6 +182,8 @@ to update this document.
    * Status: Beta version available in the Oryx. Refer to [Speak to the Future - Transform Your Browser into a Personal Voice-Driven GPT AI Assistant with Oryx](../../../blog/browser-voice-driven-gpt).
 1. VoD Translation: Translate English videos into Chinese for English learning or create multilingual videos, frequently used in education and e-commerce.
    * Beta version available in the Oryx. Refer to [Revolutionize Video Content with Oryx - Effortless Dubbing and Translating to Multiple Languages Using OpenAI](../../../blog/dubbing-translating).
+1. Stream OCR: Extract text from images in live streams, enabling real-time text recognition and translation for a variety of applications.
+    * Beta version available in the Oryx. Refer to [Oryx - Leveraging OpenAI for OCR and Object Recognition in Video Streams](../../../blog/ocr-video-streams).
 
 If you are interested in our AI products, feel free to join our [Discord](https://discord.gg/yZ4BnPmHAd) server to discuss with us.
 

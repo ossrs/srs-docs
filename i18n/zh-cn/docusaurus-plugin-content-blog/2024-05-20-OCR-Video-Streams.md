@@ -64,6 +64,8 @@ docker run --restart always -d -it --name oryx -v $HOME/data:/data \
 Recognize the text in the image. Output the identified text directly.
 ```
 
+请记得在更新AI设置后重新启动OCR。
+
 ## Step 5: View OCR Results by Callback
 
 一旦OCR过程完成，你可以通过在Oryx中设置回调URL来查看结果。
