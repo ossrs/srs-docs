@@ -1,6 +1,6 @@
 ---
 slug: dubbing-translating
-title: Oryx - 视频多语言翻译和配音
+title: Oryx - 基于AI的视频多语言翻译和配音
 authors: []
 tags: [dubbing, translating, ai, gpt, voice, srs, oryx, multilingual]
 custom_edit_url: null
