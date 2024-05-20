@@ -390,6 +390,35 @@ Response:
 * The `artifact_url` is the URL path to access the artifact mp4.
 * Ignore any response error.
 
+### HTTP Callback: on_ocr
+
+For HTTP callback `on_ocr` event:
+
+```json
+Request:
+{
+  "request_id": "d13a0e60-e2fe-42cd-a8d8-f04c7e71b5f5",
+  "action": "on_ocr",
+  "opaque": "mytoken",
+  "vhost": "__defaultVhost__",
+  "app": "live",
+  "stream": "livestream",
+  "uuid": "824b96f9-8d51-4046-ba1e-a9aec7d57c95",
+  "prompt": "What is in the image?",
+  "result": "The image shows a scene featuring a character from a film, likely set in a military or high-tech environment."
+}
+
+Response:
+{
+  "code": 0
+}
+```
+
+* The `uuid` is the UUID of OCR task.
+* The `prompt` the AI model used for OCR.
+* The `result` is the OCR result.
+* Ignore any response error.
+
 ![](https://ossrs.io/gif/v1/sls.gif?site=ossrs.io&path=/lts/doc/en/v6/getting-started-oryx)
 
 
