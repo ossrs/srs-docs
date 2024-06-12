@@ -122,11 +122,6 @@ const config = {
             ]
           },
           {
-            to: '/cloud',
-            position: 'left',
-            label: 'Cloud',
-          },
-          {
             to: '/security-advisories',
             label: 'Security',
             position: 'left',
