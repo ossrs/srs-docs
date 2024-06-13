@@ -318,8 +318,7 @@
 
 ```text
 !!! Before submitting a new bug/feature/discussion report, please ensure you have searched for any existing 
-bug/feature/discussion and utilized the `Ask AI` feature at https://ossrs.io or https://ossrs.net (for users 
-in China). Duplicate issues or questions that are overly simple or already addressed in the documentation 
+bug/feature/discussion. Duplicate issues or questions that are overly simple or already addressed in the documentation 
 will be removed without any response.
 ```
 
