@@ -15,6 +15,8 @@ custom_edit_url: null
 每个流在SRS服务器上有个Source对象，用于管理流的生命周期。为了逻辑和代码简单，SRS一直没有释放Source对象；在流特别多的情况下，
 比如不断更换推流的地址，会导致内存不断增长和泄露。
 
+<!--truncate-->
+
 之前绕过这个问题的办法，就是半夜三更重启服务。SRS支持[Gracefully Quit](https://github.com/ossrs/srs/issues/1579#issuecomment-587414898)，
 会在没有连接时重启服务，但是这个方法并没有彻底解决这个问题。
 

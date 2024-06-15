@@ -17,6 +17,8 @@ Each stream on the SRS server has a Source object that manages the stream's life
 simple, SRS did not release the Source object; with a large number of streams, such as constantly changing streaming 
 addresses, this led to continuous memory growth and leaks.
 
+<!--truncate-->
+
 Previously, the workaround was to restart the service late at night. SRS supports [Gracefully Quit](https://github.com/ossrs/srs/issues/1579#issuecomment-587414898), 
 which restarts the service when there are no connections, but this did not completely solve the problem.
 
