@@ -1,6 +1,6 @@
 ---
 slug: unlock-the-power-of-hevc-via-rtmp
-title: SRS Server - Unlock the Power of HEVC via RTMP - Boost Your Live Streaming with OBS and FFmpeg
+title: SRS - Unlock the Power of HEVC via RTMP - Boost Your Live Streaming with OBS and FFmpeg
 authors: []
 tags: [hevc, rtmp, obs, ffmpeg, live]
 custom_edit_url: null

@@ -1,6 +1,6 @@
 ---
 slug: Experience-Ultra-Low-Latency-Live-Streaming-with-OBS-WHIP
-title: SRS Server - Experience Ultra-Low Latency Live Streaming with OBS WHIP!
+title: SRS - Experience Ultra-Low Latency Live Streaming with OBS WHIP!
 authors: []
 tags: [srs, obs, whip]
 custom_edit_url: null

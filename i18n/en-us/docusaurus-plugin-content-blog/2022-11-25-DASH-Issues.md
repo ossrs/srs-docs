@@ -1,6 +1,6 @@
 ---
 slug: why-dash-is-bad-solution-for-live-streaming
-title: SRS Server - Why DASH Is Bad Solution for Live Streaming
+title: SRS - Why DASH Is Bad Solution for Live Streaming
 authors: []
 tags: [video, dash, live, streaming]
 custom_edit_url: null

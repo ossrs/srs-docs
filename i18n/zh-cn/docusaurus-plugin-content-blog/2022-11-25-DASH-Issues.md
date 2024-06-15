@@ -1,6 +1,6 @@
 ---
 slug: why-dash-is-bad-solution-for-live-streaming
-title: SRS Server - 为何DASH是个很烂的直播协议
+title: SRS - 为何DASH是个很烂的直播协议
 authors: []
 tags: [video, dash, live, streaming]
 custom_edit_url: null

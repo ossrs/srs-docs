@@ -1,6 +1,6 @@
 ---
 slug: push-hevc-via-rtmp-by-obs
-title: SRS Server - How to Push HEVC via RTMP by OBS
+title: SRS - How to Push HEVC via RTMP by OBS
 authors: []
 tags: [hevc, rtmp, obs, live]
 custom_edit_url: null

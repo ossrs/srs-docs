@@ -1,6 +1,6 @@
 ---
 slug: unlock-the-power-of-hevc-via-rtmp
-title: SRS Server - 用FFmpeg推送RTMP HEVC流
+title: SRS - 用FFmpeg推送RTMP HEVC流
 authors: []
 tags: [hevc, rtmp, obs, ffmpeg, live]
 custom_edit_url: null

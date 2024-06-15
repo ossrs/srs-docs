@@ -1,6 +1,6 @@
 ---
 slug: video-chat-live
-title: SRS Server - 如何实现直播间连麦
+title: SRS - 如何实现直播间连麦
 authors: []
 tags: [tutorial, video, chat, streaming]
 custom_edit_url: null

@@ -1,6 +1,6 @@
 ---
 slug: secure-your-http-api
-title: SRS Server - How to Secure Your HTTP API
+title: SRS - How to Secure Your HTTP API
 authors: []
 tags: [api, security, http]
 custom_edit_url: null

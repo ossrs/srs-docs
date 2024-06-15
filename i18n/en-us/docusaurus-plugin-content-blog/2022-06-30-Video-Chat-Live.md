@@ -1,6 +1,6 @@
 ---
 slug: video-chat-live
-title: SRS Server - Video Chat for Live Streaming
+title: SRS - Video Chat for Live Streaming
 authors: []
 tags: [tutorial, video, chat, streaming]
 custom_edit_url: null

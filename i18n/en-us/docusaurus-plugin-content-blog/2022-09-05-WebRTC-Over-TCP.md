@@ -1,6 +1,6 @@
 ---
 slug: webrtc-over-tcp
-title: SRS Server - Support WebRTC over TCP
+title: SRS - Support WebRTC over TCP
 authors: []
 tags: [tutorial, video, webrtc, tcp]
 custom_edit_url: null

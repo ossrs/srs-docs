@@ -1,6 +1,6 @@
 ---
 slug: state-threads-for-internet-applications
-title: SRS Server - State Threads for Internet Applications
+title: SRS - State Threads for Internet Applications
 authors: []
 tags: [coroutine, network, server, performance, architecture]
 custom_edit_url: null

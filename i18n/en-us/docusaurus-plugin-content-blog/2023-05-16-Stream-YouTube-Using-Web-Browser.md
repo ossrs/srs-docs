@@ -1,6 +1,6 @@
 ---
 slug: how-to-stream-youtube-using-a-web-browser
-title: SRS Server - How to Stream YouTube Using a Web Browser
+title: SRS - How to Stream YouTube Using a Web Browser
 authors: []
 tags: [youtube, rtmp, rtmps, webrtc, srs, ffmpeg]
 custom_edit_url: null
