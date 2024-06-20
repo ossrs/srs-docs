@@ -58,6 +58,10 @@ the WHIP URL into the `Server` field.
 
 ![](/img/blog-2023-12-12-02.png)
 
+> Note: If the latency is large, setup the OBS Output by: For OBS encoder, select the x264 encoder and in the 
+> advanced settings, set the GOP (Keyframe interval) to 1 s. Choose Preset as fast, Profile as baseline, and 
+> Tune as zerolatency.
+
 Now you can click the `Start Streaming` button to publish the WHIP stream to the Oryx.
 
 ## Step 4: Use WHEP to View the Stream

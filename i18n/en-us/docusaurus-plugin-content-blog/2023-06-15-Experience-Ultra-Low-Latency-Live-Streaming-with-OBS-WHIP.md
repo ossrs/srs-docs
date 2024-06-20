@@ -63,6 +63,7 @@ Open OBS and click `Settings` to configure the following:
 1. Set the **Server** to `http://localhost:1985/rtc/v1/whip/?app=live&stream=livestream`.
 1. Click **OK** to save the settings.
 1. Click **Start Streaming** to start streaming.
+1. If the latency is large, setup the OBS Output by: For OBS encoder, select the x264 encoder and in the advanced settings, set the GOP (Keyframe interval) to 1 s. Choose Preset as fast, Profile as baseline, and Tune as zerolatency.
 
 ![](/img/blog-2023-06-15-011.png)
 
