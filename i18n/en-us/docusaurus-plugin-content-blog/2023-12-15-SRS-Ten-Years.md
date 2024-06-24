@@ -40,7 +40,6 @@ audio and video application scenarios, and offers out-of-the-box solutions.
 This year, Oryx was revamped, with major changes as follows:
 
 * Transitioned from microservices architecture to monolithic application, reducing image size by 90%, increasing development speed by 10 times, and making microservices architecture the most misleading.
-* Changed from MIT to AGPL license, allowing personal use but not cloud services.
 * Supports Docker and script installations, DigitalOcean and Lighthouse images, BT and aaPanel plugin installations, and HELM installations.
 * Tests cover all installation methods, features, and APIs.
 * Supports new scenarios such as virtual live streaming, AI-generated subtitles, transcoding, callbacks, HLS clusters, and stream pulling and pushing.

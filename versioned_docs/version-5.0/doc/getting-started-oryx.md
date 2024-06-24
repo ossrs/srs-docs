@@ -93,7 +93,7 @@ media services needs.
 
 | Comparison     | Oryx              | SRS           | Notes                                                         |
 |----------------|-------------------|---------------|---------------------------------------------------------------|
-| License        | AGPL-3.0-or-later | MIT           | SRS is licenced under MIT, Oryx is AGPL-3.0-or-later.         |
+| License        | MIT | MIT           | SRS is licenced under MIT, Oryx is MIT.         |
 | Live Streaming | Yes               | Yes           | Both support RTMP, HLS, and HTTP-FLV protocols.               |
 | WebRTC         | Yes               | Yes           | WebRTC is supported by both.                                  |
 | Auto HTTPS     | Yes               | No            | Oryx supports automatic request and update HTTPS certs.       |

@@ -91,7 +91,7 @@ Oryx支持AWS Lightsail，这是AWS提供的一种虚拟专用服务器（VPS）
 
 | 比较         | Oryx         | SRS      | 说明                                    |
 |------------|-------------------|----------|---------------------------------------|
-| 许可证        | AGPL-3.0-or-later | MIT      | SRS是MIT，而Oryx是AGPL-3.0-or-later。 |
+| 许可证        | MIT | MIT      | SRS是MIT，而Oryx是MIT。 |
 | 直播流        | Yes               | Yes      | 两者都支持RTMP，HLS和HTTP-FLV协议。             |
 | WebRTC     | Yes               | Yes      | 两者都支持WebRTC。                          |
 | Auto HTTPS | Yes               | No       | Oryx自动申请和更新HTTPS证书.              |
