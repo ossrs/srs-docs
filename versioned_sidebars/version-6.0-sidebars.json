@@ -1,0 +1,147 @@
+{
+  "tutorialSidebar": [
+    "tutorial/srs-server",
+    "tutorial/oryx",
+    "tutorial/srs-faq",
+    "tutorial/srs-books",
+    "tutorial/srs-other"
+  ],
+  "toolsSidebar": [
+    "tools/utility",
+    "tools/specs"
+  ],
+  "docsSidebar": [
+    "doc/introduction",
+    {
+      "type": "category",
+      "label": "Getting Started",
+      "link": {
+        "type": "generated-index"
+      },
+      "collapsed": true,
+      "items": [
+        "doc/getting-started",
+        "doc/getting-started-build",
+        "doc/getting-started-oryx",
+        "doc/getting-started-k8s"
+      ]
+    },
+    {
+      "type": "category",
+      "label": "Main Protocols",
+      "link": {
+        "type": "generated-index"
+      },
+      "collapsed": true,
+      "items": [
+        "doc/rtmp",
+        "doc/hls",
+        "doc/webrtc",
+        "doc/flv",
+        "doc/srt",
+        "doc/gb28181"
+      ]
+    },
+    {
+      "type": "category",
+      "label": "Main Features",
+      "link": {
+        "type": "generated-index"
+      },
+      "collapsed": true,
+      "items": [
+        "doc/http-server",
+        "doc/hevc",
+        "doc/dvr",
+        "doc/streamer",
+        "doc/ingest",
+        "doc/forward",
+        "doc/security",
+        "doc/snapshot"
+      ]
+    },
+    {
+      "type": "category",
+      "label": "OpenAPI",
+      "link": {
+        "type": "generated-index"
+      },
+      "collapsed": true,
+      "items": [
+        "doc/http-api",
+        "doc/http-callback",
+        "doc/exporter"
+      ]
+    },
+    {
+      "type": "category",
+      "label": "Clusters",
+      "link": {
+        "type": "generated-index"
+      },
+      "collapsed": true,
+      "items": [
+        "doc/origin-cluster",
+        "doc/edge",
+        "doc/nginx-for-hls",
+        "doc/reuse-port"
+      ]
+    },
+    {
+      "type": "category",
+      "label": "DevOps",
+      "link": {
+        "type": "generated-index"
+      },
+      "collapsed": true,
+      "items": [
+        "doc/log",
+        "doc/log-rotate",
+        "doc/service",
+        "doc/windows",
+        "doc/reload",
+        "doc/resource"
+      ]
+    },
+    {
+      "type": "category",
+      "label": "Advanced Guides",
+      "link": {
+        "type": "generated-index"
+      },
+      "collapsed": true,
+      "items": [
+        "doc/low-latency",
+        "doc/arm",
+        "doc/drm",
+        "doc/k8s",
+        "doc/performance",
+        "doc/rtmp-url-vhost"
+      ]
+    },
+    {
+      "type": "category",
+      "label": "Others",
+      "link": {
+        "type": "generated-index"
+      },
+      "collapsed": true,
+      "items": [
+        "doc/ide",
+        "doc/git",
+        "doc/sample-dash",
+        "doc/ffmpeg",
+        "doc/nginx-exec",
+        "doc/client-sdk",
+        "doc/raspberrypi",
+        "doc/time-jitter",
+        "doc/rtmp-pk-http",
+        "doc/rtmp-handshake",
+        "doc/rtmp-atc",
+        "doc/flv-vod-stream",
+        "doc/delivery-hds",
+        "doc/srs-lib-rtmp"
+      ]
+    }
+  ]
+}
