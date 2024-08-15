@@ -45,7 +45,11 @@ const config = {
           //lastVersion: versions[0],
           versions: {
             current: {
-              label: `6.0 (Unstable) 🚧`,
+              label: `7.0 (Unstable) 🚧`,
+              path: 'v7',
+            },
+            '6.0': {
+              label: '6.0 (Alpha) 🚀',
               path: 'v6',
             },
             '5.0': {
