@@ -283,7 +283,7 @@ query check=added
 ==1481822== To see them, rerun with: --leak-check=full --show-leak-kinds=all
 ```
 
-> Note: 推荐使用浏览器访问`/api/v1/valgrind`，因为浏览器是长链接，而curl是短链接，本身会产生一些内存对象，可能会有些干扰。
+> Note: 为了避免HTTP请求本身对valgrind的干扰，SRS使用单独的coroutine定时检查，因此访问API后，可能需要等待几秒才会触发检测。
 
 ## Syscall
 

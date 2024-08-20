@@ -282,7 +282,7 @@ query check=added
 ==1481822== To see them, rerun with: --leak-check=full --show-leak-kinds=all
 ```
 
-> Note: It is recommended to use a browser to access `/api/v1/valgrind` because the browser uses long connections, whereas curl uses short connections, which can generate some memory objects and might cause some interference.
+> Note: To avoid interference from the HTTP request itself on Valgrind, SRS uses a separate coroutine to perform periodic checks. Therefore, after accessing the API, you may need to wait a few seconds for the detection to be triggered.
 
 ## Syscall
 
