@@ -250,13 +250,40 @@ killall -2 srs
 
 ## VALGRIND
 
-VALGRIND是大名鼎鼎的C分析工具，SRS3之后支持了。SRS3之前，因为使用了ST，需要给ST打PATCH才能用。
+VALGRIND是大名鼎鼎的内存分析工具，SRS3之后支持了。SRS3之前，因为使用了ST，需要给ST打PATCH才能用。
 
 ```
 valgrind --leak-check=full ./objs/srs -c conf/console.conf
 ```
 
 > Remark: SRS3之前的版本，可以手动给ST打PATCH支持VALGRIND，参考[state-threads](https://github.com/ossrs/state-threads#usage)，详细的信息可以参考[ST#2](https://github.com/ossrs/state-threads/issues/2)。
+
+使用valgrind检测SRS内存泄露时，尽管在ST中支持了valgrind的hook，还是有大量的误报信息。比较合理的是让valgrind报告增量的内存泄露，
+这样可以避开全局和静态变量，也可以不用退出程序就可以实现检测。操作步骤如下：
+
+1. 编译SRS支持valgrind：`./configure --valgrind=on && make`
+1. 启动SRS，开启内存泄露的检测：`valgrind --leak-check=full ./objs/srs -c conf/console.conf`
+1. 触发内存检测，使用curl访问API，形成校准的数据，依然有大量误报，但可以忽略这些数据：`curl http://127.0.0.1:1985/api/v1/valgrind?check=added`
+1. 压测，或者针对怀疑泄露的功能测试，比如RTMP推流：`ffmpeg -re -i doc/source.flv -c copy -f flv rtmp://127.0.0.1/live/livestream`
+1. 停止推流，等待SRS清理Source内存，大概等待30秒左右。
+1. 增量内存泄露检测，此时报告的泄露情况就非常准确了：`curl http://127.0.0.1:1985/api/v1/valgrind?check=added`
+
+```text
+HTTP #0 11.176.19.95:42162 GET http://9.134.74.169:1985/api/v1/valgrind?check=added, content-length=-1
+query check=added
+==1481822== LEAK SUMMARY:
+==1481822==    definitely lost: 0 (+0) bytes in 0 (+0) blocks
+==1481822==    indirectly lost: 0 (+0) bytes in 0 (+0) blocks
+==1481822==      possibly lost: 3,406,847 (+0) bytes in 138 (+0) blocks
+==1481822==    still reachable: 18,591,709 (+0) bytes in 819 (+0) blocks
+==1481822==                       of which reachable via heuristic:
+==1481822==                         multipleinheritance: 536 (+0) bytes in 4 (+0) blocks
+==1481822==         suppressed: 0 (+0) bytes in 0 (+0) blocks
+==1481822== Reachable blocks (those to which a pointer was found) are not shown.
+==1481822== To see them, rerun with: --leak-check=full --show-leak-kinds=all
+```
+
+> Note: 推荐使用浏览器访问`/api/v1/valgrind`，因为浏览器是长链接，而curl是短链接，本身会产生一些内存对象，可能会有些干扰。
 
 ## Syscall
 

@@ -255,6 +255,35 @@ valgrind --leak-check=full ./objs/srs -c conf/console.conf
 
 > Remark: For ST to support valgrind, see [state-threads](https://github.com/ossrs/state-threads#usage) and [ST#2](https://github.com/ossrs/state-threads/issues/2).
 
+To use Valgrind to detect memory leaks in SRS, even though Valgrind hooks are supported in ST, there are 
+still many false positives. A more reasonable approach is to have Valgrind report incremental memory leaks. 
+This way, global and static variables can be avoided, and detection can be achieved without exiting the 
+program. Follow these steps:
+
+1. Compile SRS with Valgrind support: `./configure --valgrind=on && make`
+1. Start SRS with memory leak detection enabled: `valgrind --leak-check=full ./objs/srs -c conf/console.conf`
+1. Trigger memory detection by using curl to access the API and generate calibration data. There will still be many false positives, but these can be ignored: `curl http://127.0.0.1:1985/api/v1/valgrind?check=added`
+1. Perform load testing or test the suspected leaking functionality, such as RTMP streaming: `ffmpeg -re -i doc/source.flv -c copy -f flv rtmp://127.0.0.1/live/livestream`
+1. Stop streaming and wait for SRS to clean up the Source memory, approximately 30 seconds.
+1. Perform incremental memory leak detection. The reported leaks will be very accurate at this point: `curl http://127.0.0.1:1985/api/v1/valgrind?check=added`
+
+```text
+HTTP #0 11.176.19.95:42162 GET http://9.134.74.169:1985/api/v1/valgrind?check=added, content-length=-1
+query check=added
+==1481822== LEAK SUMMARY:
+==1481822==    definitely lost: 0 (+0) bytes in 0 (+0) blocks
+==1481822==    indirectly lost: 0 (+0) bytes in 0 (+0) blocks
+==1481822==      possibly lost: 3,406,847 (+0) bytes in 138 (+0) blocks
+==1481822==    still reachable: 18,591,709 (+0) bytes in 819 (+0) blocks
+==1481822==                       of which reachable via heuristic:
+==1481822==                         multipleinheritance: 536 (+0) bytes in 4 (+0) blocks
+==1481822==         suppressed: 0 (+0) bytes in 0 (+0) blocks
+==1481822== Reachable blocks (those to which a pointer was found) are not shown.
+==1481822== To see them, rerun with: --leak-check=full --show-leak-kinds=all
+```
+
+> Note: It is recommended to use a browser to access `/api/v1/valgrind` because the browser uses long connections, whereas curl uses short connections, which can generate some memory objects and might cause some interference.
+
 ## Syscall
 
 Please use [strace -c -p PID](https://man7.org/linux/man-pages/man1/strace.1.html) for syscal performance issue.
