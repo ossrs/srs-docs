@@ -253,7 +253,7 @@ killall -2 srs
 VALGRIND是大名鼎鼎的内存分析工具，SRS3之后支持了。SRS3之前，因为使用了ST，需要给ST打PATCH才能用。
 
 ```
-valgrind --leak-check=full ./objs/srs -c conf/console.conf
+valgrind --leak-check=full --show-leak-kinds=all ./objs/srs -c conf/console.conf
 ```
 
 > Remark: SRS3之前的版本，可以手动给ST打PATCH支持VALGRIND，参考[state-threads](https://github.com/ossrs/state-threads#usage)，详细的信息可以参考[ST#2](https://github.com/ossrs/state-threads/issues/2)。
@@ -262,8 +262,9 @@ valgrind --leak-check=full ./objs/srs -c conf/console.conf
 这样可以避开全局和静态变量，也可以不用退出程序就可以实现检测。操作步骤如下：
 
 1. 编译SRS支持valgrind：`./configure --valgrind=on && make`
-1. 启动SRS，开启内存泄露的检测：`valgrind --leak-check=full ./objs/srs -c conf/console.conf`
+1. 启动SRS，开启内存泄露的检测：`valgrind --leak-check=full --show-leak-kinds=all ./objs/srs -c conf/console.conf`
 1. 触发内存检测，使用curl访问API，形成校准的数据，依然有大量误报，但可以忽略这些数据：`curl http://127.0.0.1:1985/api/v1/valgrind?check=added`
+1. 多尝试几次内存检测，直到没有新增的泄露，包括possibly和reachable。
 1. 压测，或者针对怀疑泄露的功能测试，比如RTMP推流：`ffmpeg -re -i doc/source.flv -c copy -f flv rtmp://127.0.0.1/live/livestream`
 1. 停止推流，等待SRS清理Source内存，大概等待30秒左右。
 1. 增量内存泄露检测，此时报告的泄露情况就非常准确了：`curl http://127.0.0.1:1985/api/v1/valgrind?check=added`
@@ -280,7 +281,6 @@ query check=added
 ==1481822==                         multipleinheritance: 536 (+0) bytes in 4 (+0) blocks
 ==1481822==         suppressed: 0 (+0) bytes in 0 (+0) blocks
 ==1481822== Reachable blocks (those to which a pointer was found) are not shown.
-==1481822== To see them, rerun with: --leak-check=full --show-leak-kinds=all
 ```
 
 > Note: 为了避免HTTP请求本身对valgrind的干扰，SRS使用单独的coroutine定时检查，因此访问API后，可能需要等待几秒才会触发检测。

@@ -250,7 +250,7 @@ killall -2 srs
 SRS3+ also supports valgrind.
 
 ```
-valgrind --leak-check=full ./objs/srs -c conf/console.conf
+valgrind --leak-check=full --show-leak-kinds=all ./objs/srs -c conf/console.conf
 ```
 
 > Remark: For ST to support valgrind, see [state-threads](https://github.com/ossrs/state-threads#usage) and [ST#2](https://github.com/ossrs/state-threads/issues/2).
@@ -261,8 +261,9 @@ This way, global and static variables can be avoided, and detection can be achie
 program. Follow these steps:
 
 1. Compile SRS with Valgrind support: `./configure --valgrind=on && make`
-1. Start SRS with memory leak detection enabled: `valgrind --leak-check=full ./objs/srs -c conf/console.conf`
+1. Start SRS with memory leak detection enabled: `valgrind --leak-check=full --show-leak-kinds=all ./objs/srs -c conf/console.conf`
 1. Trigger memory detection by using curl to access the API and generate calibration data. There will still be many false positives, but these can be ignored: `curl http://127.0.0.1:1985/api/v1/valgrind?check=added`
+1. Retry memory detection, util the valgrind leak summary is stable, no any new lost blocks.
 1. Perform load testing or test the suspected leaking functionality, such as RTMP streaming: `ffmpeg -re -i doc/source.flv -c copy -f flv rtmp://127.0.0.1/live/livestream`
 1. Stop streaming and wait for SRS to clean up the Source memory, approximately 30 seconds.
 1. Perform incremental memory leak detection. The reported leaks will be very accurate at this point: `curl http://127.0.0.1:1985/api/v1/valgrind?check=added`
@@ -279,7 +280,6 @@ query check=added
 ==1481822==                         multipleinheritance: 536 (+0) bytes in 4 (+0) blocks
 ==1481822==         suppressed: 0 (+0) bytes in 0 (+0) blocks
 ==1481822== Reachable blocks (those to which a pointer was found) are not shown.
-==1481822== To see them, rerun with: --leak-check=full --show-leak-kinds=all
 ```
 
 > Note: To avoid interference from the HTTP request itself on Valgrind, SRS uses a separate coroutine to perform periodic checks. Therefore, after accessing the API, you may need to wait a few seconds for the detection to be triggered.
