@@ -285,6 +285,33 @@ query check=added
 
 > Note: 为了避免HTTP请求本身对valgrind的干扰，SRS使用单独的coroutine定时检查，因此访问API后，可能需要等待几秒才会触发检测。
 
+有时候，你会收到很多`still reachable`的报告，这是因为静态或全局变量，比如这个例子：
+
+```text
+==3430715== 1,040 (+1,040) bytes in 1 (+1) blocks are still reachable in new loss record 797 of 836
+==3430715==    at 0x4C3F963: calloc (vg_replace_malloc.c:1595)
+==3430715==    by 0x7D8DB0: SrsConfig::get_hls_vcodec(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) (srs_app_config.cpp:7156)
+==3430715==    by 0x781283: SrsHlsMuxer::segment_open() (srs_app_hls.cpp:418)
+
+# It's caused by static variable:
+string SrsConfig::get_hls_vcodec(string vhost) {
+    SRS_STATIC string DEFAULT = "h264";
+    SrsConfDirective* conf = get_hls(vhost);
+    if (!conf) {
+        return DEFAULT;
+```
+
+你可以调整下测试步骤，在触发内存检测前，先推流来初始化这些静态和全局变量，然后再次推流和内存增量泄露的检测：
+
+1. 启动SRS后先推流，初始化静态和全局变量，然后停止推流: `ffmpeg -re -i doc/source.flv -c copy -f flv rtmp://127.0.0.1/live/livestream`
+1. 触发内存检测，使用curl访问API，形成校准的数据，依然有大量误报，但可以忽略这些数据：`curl http://127.0.0.1:1985/api/v1/valgrind?check=added`
+1. 多尝试几次内存检测，直到没有新增的泄露，包括possibly和reachable。
+1. 压测，或者针对怀疑泄露的功能测试，比如RTMP推流：`ffmpeg -re -i doc/source.flv -c copy -f flv rtmp://127.0.0.1/live/livestream`
+1. 停止推流，等待SRS清理Source内存，大概等待30秒左右。
+1. 增量内存泄露检测，此时报告的泄露情况就非常准确了：`curl http://127.0.0.1:1985/api/v1/valgrind?check=added`
+
+由于变量已经初始化了，所以`still reachable`的干扰报告就不会有了。
+
 ## Syscall
 
 系统调用的性能排查，参考[strace -c -p PID](https://man7.org/linux/man-pages/man1/strace.1.html)

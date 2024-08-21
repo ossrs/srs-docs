@@ -284,6 +284,33 @@ query check=added
 
 > Note: To avoid interference from the HTTP request itself on Valgrind, SRS uses a separate coroutine to perform periodic checks. Therefore, after accessing the API, you may need to wait a few seconds for the detection to be triggered.
 
+Sometimes, you will receive the `still reachable` report for static or global variables, like this example:
+
+```text
+==3430715== 1,040 (+1,040) bytes in 1 (+1) blocks are still reachable in new loss record 797 of 836
+==3430715==    at 0x4C3F963: calloc (vg_replace_malloc.c:1595)
+==3430715==    by 0x7D8DB0: SrsConfig::get_hls_vcodec(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) (srs_app_config.cpp:7156)
+==3430715==    by 0x781283: SrsHlsMuxer::segment_open() (srs_app_hls.cpp:418)
+
+# It's caused by static variable:
+string SrsConfig::get_hls_vcodec(string vhost) {
+    SRS_STATIC string DEFAULT = "h264";
+    SrsConfDirective* conf = get_hls(vhost);
+    if (!conf) {
+        return DEFAULT;
+```
+
+You can easily work around this by publishing the stream, stopping it, and then triggering the memory leak detection:
+
+1. Publish stream to initialize the static and global variables: `ffmpeg -re -i doc/source.flv -c copy -f flv rtmp://127.0.0.1/live/livestream`
+1. Trigger memory detection by using curl to access the API and generate calibration data. There will still be many false positives, but these can be ignored: `curl http://127.0.0.1:1985/api/v1/valgrind?check=added`
+1. Retry memory detection, util the valgrind leak summary is stable, no any new lost blocks.
+1. Perform load testing or test the suspected leaking functionality, such as RTMP streaming: `ffmpeg -re -i doc/source.flv -c copy -f flv rtmp://127.0.0.1/live/livestream`
+1. Stop streaming and wait for SRS to clean up the Source memory, approximately 30 seconds.
+1. Perform incremental memory leak detection. The reported leaks will be very accurate at this point: `curl http://127.0.0.1:1985/api/v1/valgrind?check=added`
+
+With the variables initialized, the `still reachable` report will be gone.
+
 ## Syscall
 
 Please use [strace -c -p PID](https://man7.org/linux/man-pages/man1/strace.1.html) for syscal performance issue.
