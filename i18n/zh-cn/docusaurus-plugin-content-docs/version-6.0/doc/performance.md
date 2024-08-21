@@ -116,7 +116,9 @@ perf report --call-graph --stdio
 
 > Remark: 由于ST的堆栈是不正常的，perf开启`-g`后记录的堆栈都是错乱的，所以perf只能看SRS的热点，不能看堆栈信息；如果需要看堆栈，请使用`GPERF: GCP`，参考下面的章节。
 
-## ASAN(Google Address Sanitizer)
+## ASAN
+
+[Asan](https://github.com/google/sanitizers/wiki/AddressSanitizer) 就是 Google Address Sanitizer.
 
 SRS5+内置和默认支持[ASAN](https://github.com/google/sanitizers/wiki/AddressSanitizer)，检测内存泄露、野指针和越界等问题。
 

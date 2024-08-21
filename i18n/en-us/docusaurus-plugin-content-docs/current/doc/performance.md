@@ -113,7 +113,11 @@ perf report --call-graph --stdio
 
 > Remark: The stack(`-g`) does not work for SRS(ST), because ST modifies the SP.
 
-## ASAN(Google Address Sanitizer)
+## ASAN
+
+[Asan](https://github.com/google/sanitizers/wiki/AddressSanitizer) is Google Address Sanitizer.
+
+### ASAN: Usage
 
 SRS5+ supports [ASAN](https://github.com/google/sanitizers/wiki/AddressSanitizer) by default.
 
@@ -127,6 +131,30 @@ If you want to disable it, please check bellow configure options:
 ```
 
 Highly recommend to enable ASAN because it works great.
+
+### ASAN: CentOS
+
+For CentOS, you can install ASAN by:
+
+```bash
+yum install -y libasan
+```
+
+If you encounter the following error:
+
+```bash
+./objs/srs -c conf/console.conf
+==4181651==ASan runtime does not come first in initial library list; you should either link runtime 
+to your application or manually preload it with LD_PRELOAD.
+```
+
+You should preload the ASAN library:
+
+```bash
+LD_PRELOAD=$(find /usr -name libasan.so.5 2>/dev/null) ./objs/srs -c conf/console.conf
+```
+
+> Note: Generally, the libasan.so file should be located at `/usr/lib64/libasan.so.5`
 
 ## GPROF
 

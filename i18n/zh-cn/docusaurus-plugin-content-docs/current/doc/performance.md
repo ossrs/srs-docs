@@ -116,7 +116,11 @@ perf report --call-graph --stdio
 
 > Remark: 由于ST的堆栈是不正常的，perf开启`-g`后记录的堆栈都是错乱的，所以perf只能看SRS的热点，不能看堆栈信息；如果需要看堆栈，请使用`GPERF: GCP`，参考下面的章节。
 
-## ASAN(Google Address Sanitizer)
+## ASAN
+
+[Asan](https://github.com/google/sanitizers/wiki/AddressSanitizer) 就是 Google Address Sanitizer.
+
+### ASAN: Usage
 
 SRS5+内置和默认支持[ASAN](https://github.com/google/sanitizers/wiki/AddressSanitizer)，检测内存泄露、野指针和越界等问题。
 
@@ -130,6 +134,30 @@ SRS5+内置和默认支持[ASAN](https://github.com/google/sanitizers/wiki/Addre
 ```
 
 ASAN检查内存问题很准确，推荐开启。
+
+### ASAN: CentOS
+
+对于CentOS平台，你可以通过以下命令安装ASAN：
+
+```bash
+yum install -y libasan
+```
+
+如果你遇到下面的错误：
+
+```bash
+./objs/srs -c conf/console.conf
+==4181651==ASan runtime does not come first in initial library list; you should either link runtime 
+to your application or manually preload it with LD_PRELOAD.
+```
+
+你应该preload ASAN库：
+
+```bash
+LD_PRELOAD=$(find /usr -name libasan.so.5 2>/dev/null) ./objs/srs -c conf/console.conf
+```
+
+> Note: 一般而言，libasan.so 的路径是 `/usr/lib64/libasan.so.5`
 
 ## GPROF
 

@@ -113,7 +113,7 @@ perf report --call-graph --stdio
 
 > Remark: The stack(`-g`) does not work for SRS(ST), because ST modifies the SP.
 
-## ASAN(Google Address Sanitizer)
+## ASAN
 
 SRS5+ supports [ASAN](https://github.com/google/sanitizers/wiki/AddressSanitizer) by default.
 
