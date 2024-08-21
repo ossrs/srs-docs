@@ -247,6 +247,10 @@ killall -2 srs
 
 ## VALGRIND
 
+Valgrind is a powerful tool for memory leak and other issue.
+
+### Valgrind: Memcheck
+
 SRS3+ also supports valgrind.
 
 ```
@@ -256,6 +260,8 @@ valgrind --leak-check=full --show-leak-kinds=all ./objs/srs -c conf/console.conf
 > Remark: For ST to support valgrind, see [state-threads](https://github.com/ossrs/state-threads#usage) and [ST#2](https://github.com/ossrs/state-threads/issues/2).
 
 > Remark: For HTTP valgrind API, you should upgrade your SRS to required version, see [#4149](https://github.com/ossrs/srs/pull/4149).
+
+### Valgrind: Incremental Memory Leak Detection
 
 To use Valgrind to detect memory leaks in SRS, even though Valgrind hooks are supported in ST, there are 
 still many false positives. A more reasonable approach is to have Valgrind report incremental memory leaks. 
@@ -285,6 +291,8 @@ query check=added
 ```
 
 > Note: To avoid interference from the HTTP request itself on Valgrind, SRS uses a separate coroutine to perform periodic checks. Therefore, after accessing the API, you may need to wait a few seconds for the detection to be triggered.
+
+### Valgrind: Still Reachable
 
 Sometimes, you will receive the `still reachable` report for static or global variables, like this example:
 
