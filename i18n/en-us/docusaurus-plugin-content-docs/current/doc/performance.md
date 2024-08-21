@@ -259,7 +259,7 @@ valgrind --leak-check=full --show-leak-kinds=all ./objs/srs -c conf/console.conf
 
 > Remark: For ST to support valgrind, see [state-threads](https://github.com/ossrs/state-threads#usage) and [ST#2](https://github.com/ossrs/state-threads/issues/2).
 
-> Remark: For HTTP valgrind API, you should upgrade your SRS to required version, see [#4149](https://github.com/ossrs/srs/pull/4149).
+> Remark: For HTTP valgrind API, you should upgrade your SRS to required version, see [#4150](https://github.com/ossrs/srs/pull/4150).
 
 ### Valgrind: Incremental Memory Leak Detection
 

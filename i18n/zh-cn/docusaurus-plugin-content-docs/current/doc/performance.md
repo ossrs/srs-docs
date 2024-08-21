@@ -262,7 +262,7 @@ valgrind --leak-check=full --show-leak-kinds=all ./objs/srs -c conf/console.conf
 
 > Remark: SRS3之前的版本，可以手动给ST打PATCH支持VALGRIND，参考[state-threads](https://github.com/ossrs/state-threads#usage)，详细的信息可以参考[ST#2](https://github.com/ossrs/state-threads/issues/2)。
 
-> Remark: SRS需要升级到对应版本，才能支持HTTP valgrind API，具体参考 [#4149](https://github.com/ossrs/srs/pull/4149)。
+> Remark: SRS需要升级到对应版本，才能支持HTTP valgrind API，具体参考 [#4150](https://github.com/ossrs/srs/pull/4150)。
 
 ### Valgrind: Incremental Memory Leak Detection
 
