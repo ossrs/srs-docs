@@ -255,6 +255,8 @@ valgrind --leak-check=full --show-leak-kinds=all ./objs/srs -c conf/console.conf
 
 > Remark: For ST to support valgrind, see [state-threads](https://github.com/ossrs/state-threads#usage) and [ST#2](https://github.com/ossrs/state-threads/issues/2).
 
+> Remark: For HTTP valgrind API, you should upgrade your SRS to required version, see [#4149](https://github.com/ossrs/srs/pull/4149).
+
 To use Valgrind to detect memory leaks in SRS, even though Valgrind hooks are supported in ST, there are 
 still many false positives. A more reasonable approach is to have Valgrind report incremental memory leaks. 
 This way, global and static variables can be avoided, and detection can be achieved without exiting the 
