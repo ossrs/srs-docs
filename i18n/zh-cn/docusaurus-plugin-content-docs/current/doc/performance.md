@@ -142,13 +142,7 @@ ASAN_OPTIONS=halt_on_error=1:detect_leaks=1 ./objs/srs -c conf/console.conf
 
 ASAN检查内存问题很准确，推荐开启。
 
-### ASAN: CentOS
-
-对于CentOS平台，你可以通过以下命令安装ASAN：
-
-```bash
-yum install -y libasan
-```
+### ASAN: Preload
 
 如果你遇到下面的错误：
 

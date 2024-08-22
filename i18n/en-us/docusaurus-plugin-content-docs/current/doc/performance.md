@@ -141,13 +141,7 @@ ASAN_OPTIONS=halt_on_error=1:detect_leaks=1 ./objs/srs -c conf/console.conf
 
 Highly recommend to enable ASAN because it works great.
 
-### ASAN: CentOS
-
-For CentOS, you can install ASAN by:
-
-```bash
-yum install -y libasan
-```
+### ASAN: Preload
 
 If you encounter the following error:
 
