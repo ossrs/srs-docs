@@ -133,6 +133,13 @@ SRS5+内置和默认支持[ASAN](https://github.com/google/sanitizers/wiki/Addre
   --sanitizer-log=on|off    Whether hijack the log for libasan(asan). Default: off
 ```
 
+开启内存泄露检测，参考[halt_on_error](https://github.com/google/sanitizers/wiki/AddressSanitizerFlags)
+和 [detect_leaks](https://github.com/google/sanitizers/wiki/SanitizerCommonFlags) 的详细说明:
+
+```bash
+ASAN_OPTIONS=halt_on_error=1:detect_leaks=1 ./objs/srs -c conf/console.conf
+```
+
 ASAN检查内存问题很准确，推荐开启。
 
 ### ASAN: CentOS
@@ -146,7 +153,6 @@ yum install -y libasan
 如果你遇到下面的错误：
 
 ```bash
-./objs/srs -c conf/console.conf
 ==4181651==ASan runtime does not come first in initial library list; you should either link runtime 
 to your application or manually preload it with LD_PRELOAD.
 ```
@@ -158,6 +164,28 @@ LD_PRELOAD=$(find /usr -name libasan.so.5 2>/dev/null) ./objs/srs -c conf/consol
 ```
 
 > Note: 一般而言，libasan.so 的路径是 `/usr/lib64/libasan.so.5`
+
+### ASAN: Options
+
+默认情况下，SRS使用以下ASAN选项：
+
+```text
+extern "C" const char *__asan_default_options() {
+    return "halt_on_error=0:detect_leaks=0:alloc_dealloc_mismatch=0";
+}
+```
+
+* `halt_on_error=0`: 出现错误时不会退出，只是打印消息，注意fatal错误还是会退出，参考 [halt_on_error](https://github.com/google/sanitizers/wiki/AddressSanitizerFlags).
+* `detect_leaks=0`: 禁用内存泄露的检测，由于daemon父进程会退出，全局变量会被认为是内存泄露，导致daemon启动失败，参考 [detect_leaks](https://github.com/google/sanitizers/wiki/SanitizerCommonFlags).
+* `alloc_dealloc_mismatch=0`: GDB调试程序时，可能会出现这个错误。
+
+尽管这样，你可以覆盖这些选项，比如开启内存泄露检测等：
+
+```bash
+ASAN_OPTIONS=halt_on_error=1:detect_leaks=1:alloc_dealloc_mismatch=1 ./objs/srs -c conf/console.conf
+```
+
+请注意，`ASAN_OPTIONS` 会在 `main()` 函数之前加载，因此可以在 shell 中设置，但不能在 `main()` 函数中设置。
 
 ## GPROF
 

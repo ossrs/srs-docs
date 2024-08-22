@@ -130,6 +130,15 @@ If you want to disable it, please check bellow configure options:
   --sanitizer-log=on|off    Whether hijack the log for libasan(asan). Default: off
 ```
 
+Enable leaks detection, see [halt_on_error](https://github.com/google/sanitizers/wiki/AddressSanitizerFlags) 
+and [detect_leaks](https://github.com/google/sanitizers/wiki/SanitizerCommonFlags):
+
+```bash
+ASAN_OPTIONS=halt_on_error=1:detect_leaks=1 ./objs/srs -c conf/console.conf
+```
+
+> Note: SRS disable memory leak detection by default, because it will cause daemon to exit with error.
+
 Highly recommend to enable ASAN because it works great.
 
 ### ASAN: CentOS
@@ -143,7 +152,6 @@ yum install -y libasan
 If you encounter the following error:
 
 ```bash
-./objs/srs -c conf/console.conf
 ==4181651==ASan runtime does not come first in initial library list; you should either link runtime 
 to your application or manually preload it with LD_PRELOAD.
 ```
@@ -155,6 +163,29 @@ LD_PRELOAD=$(find /usr -name libasan.so.5 2>/dev/null) ./objs/srs -c conf/consol
 ```
 
 > Note: Generally, the libasan.so file should be located at `/usr/lib64/libasan.so.5`
+
+### ASAN: Options
+
+By default, SRS use the following ASAN options:
+
+```text
+extern "C" const char *__asan_default_options() {
+    return "halt_on_error=0:detect_leaks=0:alloc_dealloc_mismatch=0";
+}
+```
+
+* `halt_on_error=0`: Disable halt on errors by halt_on_error, only print messages, note that it still quit for fatal errors, see [halt_on_error](https://github.com/google/sanitizers/wiki/AddressSanitizerFlags).
+* `detect_leaks=0`: Disable the memory leaking detect for daemon by detect_leaks, see [detect_leaks](https://github.com/google/sanitizers/wiki/SanitizerCommonFlags).
+* `alloc_dealloc_mismatch=0`: Also disable alloc_dealloc_mismatch for gdb.
+
+You can override the options by `ASAN_OPTIONS`:
+
+```bash
+ASAN_OPTIONS=halt_on_error=1:detect_leaks=1:alloc_dealloc_mismatch=1 ./objs/srs -c conf/console.conf
+```
+
+Note that the `ASAN_OPTIONS` will be loaded before the `main()` function, so you can set it in the shell, 
+but can not set in the `main()` function.
 
 ## GPROF
 
