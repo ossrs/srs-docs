@@ -7,6 +7,8 @@ hide_table_of_contents: false
 
 # OriginCluster
 
+SRS Origin Cluster is a cluster of origin servers, which is designed for large amount of streams.
+
 ## Design
 
 About the design of Origin Cluster, please read the [Issue#464](https://github.com/ossrs/srs/issues/464#issuecomment-306082751).

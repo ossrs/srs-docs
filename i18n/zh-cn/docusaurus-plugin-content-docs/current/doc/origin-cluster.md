@@ -7,6 +7,8 @@ hide_table_of_contents: false
 
 # OriginCluster
 
+SRS源站集群是一组源站服务器，用于大量流的场景。
+
 ## Design
 
 关于源站集群的设计参考[Issue#464](https://github.com/ossrs/srs/issues/464#issuecomment-306082751)。
