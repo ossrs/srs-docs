@@ -263,8 +263,6 @@ If you are using aaPanel, you can add a new site, and then write the following c
     }
 ```
 
-Translation to English:
-
 > Note: Generally, when adding a new site in aaPanel, it listens to port 80, and the domain server_name is the domain name you fill in yourself. Other configurations are the same as the aaPanel settings. Alternatively, you can also add the above cache and location configurations to the site settings in aaPanel.
 
 ![](https://ossrs.io/gif/v1/sls.gif?site=ossrs.io&path=/lts/doc/en/v5/nginx-for-hls)
