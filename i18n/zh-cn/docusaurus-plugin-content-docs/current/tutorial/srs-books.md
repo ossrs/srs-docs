@@ -55,4 +55,4 @@ hide_table_of_contents: false
 * [零声学院(视频)：SRS流媒体服务器实战](https://www.bilibili.com/video/BV1XZ4y1P7um)
 * [音视频开发为什么要学SRS流媒体服务器](https://zhuanlan.zhihu.com/p/190182314)
 
-![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.net&path=/lts/tutorial/zh/v6/srs-books)
+![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.net&path=/lts/tutorial/zh/v7/srs-books)

@@ -528,6 +528,6 @@ To clean up the username and password, you can access the HTTP API with the user
 
 Winlin 2015.8
 
-![](https://ossrs.io/gif/v1/sls.gif?site=ossrs.io&path=/lts/doc/en/v6/http-api)
+![](https://ossrs.io/gif/v1/sls.gif?site=ossrs.io&path=/lts/doc/en/v7/http-api)
 
 

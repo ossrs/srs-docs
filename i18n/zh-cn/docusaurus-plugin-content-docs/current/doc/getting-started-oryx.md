@@ -238,7 +238,7 @@ Oryx会给你的服务器发起一个请求，你可以通过target URL来配置
 * 成功：`Status: 200 OK` and `"code": 0`
 * 其他代表失败或错误。
 
-关于如何实现回调的处理，请参考[HTTP Callback](../docs/v6/doc/http-callback#go-example)
+关于如何实现回调的处理，请参考[HTTP Callback](../docs/v7/doc/http-callback#go-example)
 
 ### HTTP Callback: Connectivity Check
 
@@ -399,6 +399,6 @@ Response:
 * The `result` is the OCR result.
 * Ignore any response error.
 
-![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.net&path=/lts/doc/zh/v6/getting-started-oryx)
+![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.net&path=/lts/doc/zh/v7/getting-started-oryx)
 
 

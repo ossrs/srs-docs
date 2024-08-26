@@ -226,6 +226,6 @@ GB28181是国内安防摄像头基本都会支持的协议，属于国家标准�
 
 2015.1
 
-![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.net&path=/lts/doc/zh/v6/streamer)
+![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.net&path=/lts/doc/zh/v7/streamer)
 
 

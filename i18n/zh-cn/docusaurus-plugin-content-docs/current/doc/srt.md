@@ -394,5 +394,5 @@ SRS如何实现SRT？基于协程的SRT架构，我们需要将其适配到ST，
 
 > 是的，支持。您可以使用OBS/FFmpeg将SRT流推送到SRS，SRS将SRT流转换为RTMP协议。然后，您可以将RTMP转换为HLS、FLV、WebRTC，并将RTMP流转发到Nginx。
 
-![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.net&path=/lts/doc/zh/v6/srt)
+![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.net&path=/lts/doc/zh/v7/srt)
 

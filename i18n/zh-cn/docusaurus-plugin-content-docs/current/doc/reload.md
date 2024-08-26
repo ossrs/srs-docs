@@ -43,6 +43,6 @@ Reload的方法为：`killall -1 srs`
 
 Winlin 2014.2
 
-![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.net&path=/lts/doc/zh/v6/reload)
+![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.net&path=/lts/doc/zh/v7/reload)
 
 

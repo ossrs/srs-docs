@@ -9,4 +9,4 @@ hide_table_of_contents: false
 
 Migrated to [Cloud](/cloud)
 
-![](https://ossrs.io/gif/v1/sls.gif?site=ossrs.io&path=/lts/doc/en/v6/cloud)
+![](https://ossrs.io/gif/v1/sls.gif?site=ossrs.io&path=/lts/doc/en/v7/cloud)

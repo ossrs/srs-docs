@@ -516,6 +516,6 @@ Output:
 
 Winlin 2020.02
 
-![](https://ossrs.io/gif/v1/sls.gif?site=ossrs.io&path=/lts/doc/en/v6/webrtc)
+![](https://ossrs.io/gif/v1/sls.gif?site=ossrs.io&path=/lts/doc/en/v7/webrtc)
 
 

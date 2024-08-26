@@ -6,63 +6,119 @@ hide_table_of_contents: false
 ---
 
 # OriginCluster
+The SRS origin cluster is a group of origin servers intended for handling a large number of streams.
 
-SRS Origin Cluster is a cluster of origin servers, which is designed for large amount of streams.
+The new origin cluster is designed as a collection of proxy servers. For more information, see 
+[Discussion #3634](https://github.com/ossrs/srs/discussions/3634). If you prefer to use the old 
+origin cluster, please switch to a version before SRS 6.0.
 
 ## Design
 
-About the design of Origin Cluster, please read the [Issue#464](https://github.com/ossrs/srs/issues/464#issuecomment-306082751).
-SRS Origin Cluster is designed for large amount of streams.
+The proxy works with SRS origin servers, and the stream flow operates as follows:
 
-![](/img/doc-advanced-guides-origin-cluster-001.png)
+```text
+Client ----> Proxy Server ---> Origin Servers
+Client ---> LB --> Proxy Servers --> Origin Servers
 
-> Remark: Origin cluster only supports RTMP, use Edge to transmux RTMP to FLV.
+OBS/FFmpeg --RTMP--> K8s(Service) --Proxy--> SRS(pod A)
 
-## Config
+Browsers --FLV/HLS/SRT--> K8s(Service) --Proxy--> SRS(pod A)
 
-The config for origin cluster:
-
-```
-vhost __defaultVhost__ {
-    # The config for cluster.
-    cluster {
-        # The cluster mode, local or remote.
-        #       local: It's an origin server, serve streams itself.
-        #       remote: It's an edge server, fetch or push stream to origin server.
-        # default: local
-        mode            local;
-
-        # For origin(mode local) cluster, turn on the cluster.
-        # @remark Origin cluster only supports RTMP, use Edge to transmux RTMP to FLV.
-        # default: off
-        # TODO: FIXME: Support reload.
-        origin_cluster      on;
-
-        # For origin (mode local) cluster, the co-worker's HTTP APIs.
-        # This origin will connect to co-workers and communicate with them.
-        # please read: https://ossrs.io/lts/en-us/docs/v4/doc/origin-cluster
-        # TODO: FIXME: Support reload.
-        coworkers           127.0.0.1:9091 127.0.0.1:9092;
-    }
-}
+Browsers --+---HTTP-API--> K8s(Service) --Proxy--> SRS(pod A)
+           +---WebRTC----> K8s(Service) --Proxy--> SRS(pod A)
 ```
 
-* mode: The mode of cluster, it should be local for origin cluster.
-* origin_cluster: Whether enable origin cluster.
-* coworkers: The HTTP APIs of other origin servers in the cluster. 
+> Note: This proxy server can be deployed in Kubernetes (K8s) and can route traffic to the SRS origin 
+> servers. The proxy server functions as a load balancer to distribute the load among the origin servers. 
+> You can also use the proxy server without Kubernetes.
 
-> Remark: Say, a client, a player or edge server, starts to play a stream from a origin server. The origin server would query the coworkers and redirect client by RTMP302 when it doesn't serve the stream. If no origin is found, it responses error. The HTTP API response message includes fields for whether owns the stream, and stream information. 
+This is the detailed deployment process that works with the Kubernetes (K8s) system:
 
-> Remark: Note in particular that server response error when the requested stream hasn't been publish to origin server. For independent origin server, server responses success and waits for stream to be published. While when origin in origin cluster, as the stream might not be published to it, it should responses error and shouldn't wait for the stream.
+```text
+                         +-----------------------+
+                     +---+ SRS Proxy(Deployment) +------+---------------------+
++-----------------+  |   +-----------+-----------+      +                     +
+| LB(K8s Service) +--+               +(Redis/MESH)      + SRS Origin Servers  +
++-----------------+  |   +-----------+-----------+      +    (Deployment)     +
+                     +---+ SRS Proxy(Deployment) +------+---------------------+
+                         +-----------------------+
+```
 
-## Usage
+> Note: There are multiple proxy servers, so they need Redis or MESH to synchronize their state. MESH means 
+> the proxy servers connect to each other to sync the state and should be deployed as a StatefulSet in 
+> Kubernetes (K8s). The Redis solution is preferable because the proxy server can be deployed as a Deployment 
+> in K8s, and you can also use a Redis cluster for high availability.
 
-To use origin cluster, please read [#464](https://github.com/ossrs/srs/issues/464#issuecomment-366169487).
+> Note: There are multiple origin servers, which are deployed as Deployments in Kubernetes (K8s), as there is 
+> no need to sync the state between origin servers. These origin servers are completely independent, making 
+> the system very robust. Please note that this is different from the previous origin cluster before SRS 6.0,
+> which used MESH to connect to each other, and it was not a good architecture.
 
-We also recommend to use a edge server please read [here](https://github.com/ossrs/srs/issues/464#issuecomment-366169962). The edge server can transmux RTMP to HTTP-FLV, supports fault-tolerance.
+If you want to build an origin cluster with a single proxy server and multiple origin servers:
 
-2018.02
+```text
+                                       +--------------------+
+                               +-------+ SRS Origin Server  +
+                               +       +--------------------+
+                               +
++-----------------------+      +       +--------------------+
++ SRS Proxy(Deployment) +------+-------+ SRS Origin Server  +
++-----------------------+      +       +--------------------+
+                               +
+                               +       +--------------------+
+                               +-------+ SRS Origin Server  +
+                                       +--------------------+
+```
 
-![](https://ossrs.io/gif/v1/sls.gif?site=ossrs.io&path=/lts/doc/en/v6/origin-cluster)
+> Note: A single proxy server architecture is also useful if you only want to support many streams with a 
+> small number of viewers. The proxy server is very high performance and supports multiple processes.
 
+> Note: If you want to use multiple proxy servers, you can simply deploy more and connect them to the same 
+> Redis server. These proxy servers will work together to support a large number of streams. This architecture 
+> is scalable.
+
+With this architecture, you can support a large number of streams and then use edge servers to support
+multiple viewers.
+
+```text
++------------------+                                               +--------------------+
++ SRS Edge Server  +--+                                    +-------+ SRS Origin Server  +
++------------------+  +                                    +       +--------------------+
+                      +                                    +
++------------------+  +     +-----------------------+      +       +--------------------+
++ SRS Edge Server  +--+-----+ SRS Proxy(Deployment) +------+-------+ SRS Origin Server  +
++------------------+  +     +-----------------------+      +       +--------------------+
+                      +                                    +
++------------------+  +                                    +       +--------------------+
++ SRS Edge Server  +--+                                    +-------+ SRS Origin Server  +
++------------------+                                               +--------------------+
+```
+
+> Note: With this architecture, you can build a very large media system that supports a large number of 
+> streams and viewers. It is a complex system to maintain, so only use it if necessary.
+
+In fact, a proxy server also works with SRS edge servers, but it is not a typical architecture.
+
+## Protocols
+
+Because the proxy server is a new server, not all protocols are supported yet. The supported protocols are:
+
+- [ ] RTMP: Proxy RTMP protocol to the SRS origin server.
+- [ ] HTTP-FLV: Proxy HTTP-FLV protocol to the SRS origin server.
+- [ ] HLS: Proxy HLS protocol to the SRS origin server.
+- [ ] SRT: Proxy SRT protocol to the SRS origin server.
+- [ ] WebRTC: Proxy WebRTC protocol to the SRS origin server.
+- [ ] MPEG-DASH: Proxy MPEG-DASH protocol to the SRS origin server.
+
+There are also some key features not supported yet:
+
+- [ ] Redis: Connect to the Redis server to sync the state.
+- [ ] MESH: Connect to other proxy servers to sync the state.
+- [ ] HTTP-API: Provide an HTTP API that collects all the metrics of the origin servers.
+- [ ] Exporter: Provide a Prometheus exporter that exports the metrics of the proxy server.
+
+For a media cluster, the media server is only one part of the whole system. The control and management panel 
+are also very important to maintain this complex system.
+
+![](https://ossrs.io/gif/v1/sls.gif?site=ossrs.io&path=/lts/doc/en/v7/origin-cluster)
 

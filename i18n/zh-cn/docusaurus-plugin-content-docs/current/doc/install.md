@@ -63,6 +63,6 @@ Docker启动SRS，参考[srs-docker](https://github.com/ossrs/dev-docker#usage)
 
 Winlin 2014.11
 
-![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.net&path=/lts/doc/zh/v6/install)
+![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.net&path=/lts/doc/zh/v7/install)
 
 

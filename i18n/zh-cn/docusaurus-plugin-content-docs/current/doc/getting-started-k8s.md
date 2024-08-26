@@ -16,6 +16,6 @@ hide_table_of_contents: false
 和Docker方式相比，HELM和K8s主要是中大规模的部署。如果你的业务规模并不大，那么推荐直接使用Docker或者Oryx方式。
 一般而言，如果你的流没有超过一千路，请不要使用HELM或K8s的方式。
 
-![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.net&path=/lts/doc/zh/v6/getting-started-k8s)
+![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.net&path=/lts/doc/zh/v7/getting-started-k8s)
 
 

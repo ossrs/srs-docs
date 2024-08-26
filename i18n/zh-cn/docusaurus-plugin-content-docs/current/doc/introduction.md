@@ -142,6 +142,6 @@ SRS没有商业化的计划，我们目前正在努力建设全球的活跃的�
 Oryx是一个基于Go、Reactjs、SRS、FFmpeg、WebRTC等的轻量级、开源的视频云解决方案。
 详细请参考[Oryx](./getting-started-oryx.md)。
 
-![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.net&path=/lts/doc/zh/v6/introduction)
+![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.net&path=/lts/doc/zh/v7/introduction)
 
 

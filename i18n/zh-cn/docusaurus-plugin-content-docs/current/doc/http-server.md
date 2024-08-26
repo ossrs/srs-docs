@@ -346,6 +346,6 @@ cd $GOPATH/bin
 
 Winlin 2015.1
 
-![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.net&path=/lts/doc/zh/v6/http-server)
+![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.net&path=/lts/doc/zh/v7/http-server)
 
 

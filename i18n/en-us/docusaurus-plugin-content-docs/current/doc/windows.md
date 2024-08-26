@@ -84,6 +84,6 @@ Windows docker also works for SRS, however, `srs.exe` is more popular for window
 
 Winlin 2022.11
 
-![](https://ossrs.io/gif/v1/sls.gif?site=ossrs.io&path=/lts/doc/en/v6/windows)
+![](https://ossrs.io/gif/v1/sls.gif?site=ossrs.io&path=/lts/doc/en/v7/windows)
 
 

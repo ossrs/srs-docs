@@ -74,6 +74,6 @@ https://youtu.be/CjXkRmNRtHA
 * 地址: https://www.bilibili.com/video/BV1c341177e7
 * 说明: Oryx面向鼠标编程，让每个人都能做音视频业务。不懂音视频的可以，懂音视频的也可以，种地的可以，撸网线的可以，剪电影的可以，背摄像机的也可以，跳舞的可以，唱歌的可以，会用电脑有微信就可以，守法公民都可以。
 
-![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.net&path=/lts/tutorial/zh/v6/oryx)
+![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.net&path=/lts/tutorial/zh/v7/oryx)
 
 

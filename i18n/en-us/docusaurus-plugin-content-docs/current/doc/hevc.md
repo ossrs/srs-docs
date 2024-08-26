@@ -328,6 +328,6 @@ We will merge some of these commits to SRS 6.0, but not all commits.
 3. Almost all browsers supports MSE, except iOS. HEVC over MSE requires hardware decoder.
 4. Apart from mpegts.js, other H5 players such as hls.js/dash.js doesn't support HEVC.
 
-![](https://ossrs.io/gif/v1/sls.gif?site=ossrs.io&path=/lts/doc/en/v6/hevc)
+![](https://ossrs.io/gif/v1/sls.gif?site=ossrs.io&path=/lts/doc/en/v7/hevc)
 
 

@@ -104,6 +104,6 @@ Publish another stream to origin, system will select a random Origin Server:
 
 > Note: It works only for HLS, please use [OriginCluster](./sample-origin-cluster.md) for RTMP or HTTP-FLV.
 
-![](https://ossrs.io/gif/v1/sls.gif?site=ossrs.io&path=/lts/doc/en/v6/reuse-port)
+![](https://ossrs.io/gif/v1/sls.gif?site=ossrs.io&path=/lts/doc/en/v7/reuse-port)
 
 

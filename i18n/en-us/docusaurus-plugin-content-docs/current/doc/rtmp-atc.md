@@ -88,6 +88,6 @@ vhost atc.srs.com {
 
 Winlin 2014.11
 
-![](https://ossrs.io/gif/v1/sls.gif?site=ossrs.io&path=/lts/doc/en/v6/rtmp-atc)
+![](https://ossrs.io/gif/v1/sls.gif?site=ossrs.io&path=/lts/doc/en/v7/rtmp-atc)
 
 
