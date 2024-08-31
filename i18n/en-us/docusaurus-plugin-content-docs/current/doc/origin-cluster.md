@@ -101,7 +101,8 @@ In fact, a proxy server also works with SRS edge servers, but it is not a typica
 
 ## Protocols
 
-Because the proxy server is a new server, not all protocols are supported yet. The supported protocols are:
+Because the proxy server is a new server, not all protocols are supported yet. The supported 
+protocols are:
 
 - [x] RTMP: Proxy RTMP protocol to the SRS origin server.
 - [ ] HTTP-FLV: Proxy HTTP-FLV protocol to the SRS origin server.
@@ -120,6 +121,33 @@ There are also some key features not supported yet:
 For a media cluster, the media server is only one part of the whole system. The control and management panel 
 are also very important to maintain this complex system.
 
+## Config
+
+The proxy server is configured by environment variables. The supported environment variables are:
+
+* `PROXY_HTTP_API`: The HTTP API port, proxy to SRS origin server. Default: `11985`
+* `PROXY_HTTP_SERVER`: The HTTP streaming server, proxy to SRS origin server. Default: `18080`
+* `PROXY_RTMP_SERVER`: The RTMP server, proxy to SRS origin server. Default: `11935`
+* `PROXY_SYSTEM_API`: The system API port, allow origin server register services to proxy servers. Default: `12025`
+* `PROXY_LOAD_BALANCER_TYPE`: The load balancer type, `memory` or `redis`. Default: `redis`
+
+For the Redis load balancer, you need to set the following environment variables:
+
+* `PROXY_REDIS_HOST`: The Redis host. Default: `127.0.0.1`
+* `PROXY_REDIS_PORT`: The Redis port. Default: `6379`
+* `PROXY_REDIS_PASSWORD`: The Redis password. Default to empty, no password.
+* `PROXY_REDIS_DB`: The Redis DB. Default: `0`
+
+For debugging, the proxy server will proxy to a default origin server, you can set the following 
+environment variables:
+
+* `PROXY_DEFAULT_BACKEND_ENABLED`: Whether to enable the default backend origin server. Default: `off`
+* `PROXY_DEFAULT_BACKEND_IP`: The default backend IP. Default: `127.0.0.1`
+* `PROXY_DEFAULT_BACKEND_RTMP`: The default backend RTMP port. Default: `1935`
+
+> Note: The default backend origin server, is designed for any RTMP server like nginx-rtmp, it does not 
+> require the origin server to register to the proxy server.
+
 ## Usage: RTMP Origin Cluster
 
 To use the RTMP origin cluster, you need to deploy the proxy server and the origin server. 
@@ -130,7 +158,8 @@ env PROXY_RTMP_SERVER=1935 PROXY_HTTP_SERVER=8080 PROXY_HTTP_API=1985 \
     PROXY_SYSTEM_API=12025 PROXY_LOAD_BALANCER_TYPE=memory ./srs-proxy
 ```
 
-> Note: Here we use the memory load balancer, you can switch to `redis` if you want to run more than one proxy server.
+> Note: Here we use the memory load balancer, you can switch to `redis` if you want to run more
+> than one proxy server.
 
 Then, deploy three origin servers, which connects to the proxy server via port `12025`:
 
@@ -139,6 +168,9 @@ Then, deploy three origin servers, which connects to the proxy server via port `
 ./objs/srs -c conf/origin2-for-proxy.conf
 ./objs/srs -c conf/origin3-for-proxy.conf
 ```
+
+> Note: The origin servers are independent, so it's recommended to deploy them as Deployments 
+> in Kubernetes (K8s).
 
 Now, you're able to publish RTMP stream to the proxy server:
 
