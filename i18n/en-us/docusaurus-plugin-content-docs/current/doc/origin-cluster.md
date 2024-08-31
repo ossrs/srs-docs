@@ -105,7 +105,7 @@ Because the proxy server is a new server, not all protocols are supported yet. T
 protocols are:
 
 - [x] RTMP: Proxy RTMP protocol to the SRS origin server.
-- [ ] HTTP-FLV: Proxy HTTP-FLV protocol to the SRS origin server.
+- [x] HTTP-FLV: Proxy HTTP-FLV protocol to the SRS origin server.
 - [ ] HLS: Proxy HLS protocol to the SRS origin server.
 - [ ] SRT: Proxy SRT protocol to the SRS origin server.
 - [ ] WebRTC: Proxy WebRTC protocol to the SRS origin server.
@@ -113,6 +113,7 @@ protocols are:
 
 There are also some key features not supported yet:
 
+- [x] Single node proxy server, use memory to store state.
 - [x] Redis: Connect to the Redis server to sync the state.
 - [ ] MESH: Connect to other proxy servers to sync the state.
 - [ ] HTTP-API: Provide an HTTP API that collects all the metrics of the origin servers.
@@ -184,7 +185,13 @@ And play the RTMP stream from the proxy server:
 ffplay rtmp://localhost/live/livestream
 ```
 
-You can also use VLC or other players to play the RTMP stream.
+Or play HTTP-FLV stream from the proxy server:
+
+```bash
+ffplay http://localhost:8080/live/livestream.flv
+```
+
+You can also use VLC or other players to play the stream in proxy server.
 
 ![](https://ossrs.io/gif/v1/sls.gif?site=ossrs.io&path=/lts/doc/en/v7/origin-cluster)
 
