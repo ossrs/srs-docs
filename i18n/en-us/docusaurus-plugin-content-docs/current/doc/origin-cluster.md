@@ -103,7 +103,7 @@ In fact, a proxy server also works with SRS edge servers, but it is not a typica
 
 Because the proxy server is a new server, not all protocols are supported yet. The supported protocols are:
 
-- [ ] RTMP: Proxy RTMP protocol to the SRS origin server.
+- [x] RTMP: Proxy RTMP protocol to the SRS origin server.
 - [ ] HTTP-FLV: Proxy HTTP-FLV protocol to the SRS origin server.
 - [ ] HLS: Proxy HLS protocol to the SRS origin server.
 - [ ] SRT: Proxy SRT protocol to the SRS origin server.
@@ -112,13 +112,47 @@ Because the proxy server is a new server, not all protocols are supported yet. T
 
 There are also some key features not supported yet:
 
-- [ ] Redis: Connect to the Redis server to sync the state.
+- [x] Redis: Connect to the Redis server to sync the state.
 - [ ] MESH: Connect to other proxy servers to sync the state.
 - [ ] HTTP-API: Provide an HTTP API that collects all the metrics of the origin servers.
 - [ ] Exporter: Provide a Prometheus exporter that exports the metrics of the proxy server.
 
 For a media cluster, the media server is only one part of the whole system. The control and management panel 
 are also very important to maintain this complex system.
+
+## Usage: RTMP Origin Cluster
+
+To use the RTMP origin cluster, you need to deploy the proxy server and the origin server. 
+First, start the proxy server:
+
+```bash
+env PROXY_RTMP_SERVER=1935 PROXY_HTTP_SERVER=8080 PROXY_HTTP_API=1985 \
+    PROXY_SYSTEM_API=12025 PROXY_LOAD_BALANCER_TYPE=memory ./srs-proxy
+```
+
+> Note: Here we use the memory load balancer, you can switch to `redis` if you want to run more than one proxy server.
+
+Then, deploy three origin servers, which connects to the proxy server via port `12025`:
+
+```bash
+./objs/srs -c conf/origin1-for-proxy.conf
+./objs/srs -c conf/origin2-for-proxy.conf
+./objs/srs -c conf/origin3-for-proxy.conf
+```
+
+Now, you're able to publish RTMP stream to the proxy server:
+
+```bash
+ffmpeg -re -i doc/source.flv -c copy -f flv rtmp://localhost/live/livestream
+```
+
+And play the RTMP stream from the proxy server:
+
+```bash
+ffplay rtmp://localhost/live/livestream
+```
+
+You can also use VLC or other players to play the RTMP stream.
 
 ![](https://ossrs.io/gif/v1/sls.gif?site=ossrs.io&path=/lts/doc/en/v7/origin-cluster)
 
