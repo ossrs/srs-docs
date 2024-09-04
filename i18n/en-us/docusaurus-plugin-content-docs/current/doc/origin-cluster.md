@@ -105,9 +105,9 @@ Because the proxy server is a new server, not all protocols are supported yet. T
 protocols are:
 
 - [x] RTMP: Proxy RTMP protocol to the SRS origin server.
-- [x] HTTP-FLV: Proxy HTTP-FLV protocol to the SRS origin server.
+- [x] HTTP-FLV: Proxy HTTP-FLV or HTTP-TS protocol to the SRS origin server.
 - [x] HLS: Proxy HLS protocol to the SRS origin server.
-- [ ] WebRTC: Proxy WebRTC protocol to the SRS origin server.
+- [X] WebRTC: Proxy WebRTC(WHIP/WHEP) protocol to the SRS origin server.
 - [ ] SRT: Proxy SRT protocol to the SRS origin server.
 - [ ] MPEG-DASH: Proxy MPEG-DASH protocol to the SRS origin server.
 
