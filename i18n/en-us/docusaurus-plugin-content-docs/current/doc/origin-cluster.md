@@ -107,8 +107,8 @@ protocols are:
 - [x] RTMP: Proxy RTMP protocol to the SRS origin server.
 - [x] HTTP-FLV: Proxy HTTP-FLV protocol to the SRS origin server.
 - [x] HLS: Proxy HLS protocol to the SRS origin server.
-- [ ] SRT: Proxy SRT protocol to the SRS origin server.
 - [ ] WebRTC: Proxy WebRTC protocol to the SRS origin server.
+- [ ] SRT: Proxy SRT protocol to the SRS origin server.
 - [ ] MPEG-DASH: Proxy MPEG-DASH protocol to the SRS origin server.
 
 There are also some key features not supported yet:
@@ -124,11 +124,16 @@ are also very important to maintain this complex system.
 
 ## Config
 
-The proxy server is configured by environment variables. The supported environment variables are:
+The proxy server is configured by environment variables. The supported environment variables for proxy 
+backend server are:
 
 * `PROXY_HTTP_API`: The HTTP API port, proxy to SRS origin server. Default: `11985`
 * `PROXY_HTTP_SERVER`: The HTTP streaming server, proxy to SRS origin server. Default: `18080`
 * `PROXY_RTMP_SERVER`: The RTMP server, proxy to SRS origin server. Default: `11935`
+* `PROXY_WEBRTC_SERVER`: The WebRTC server, proxy to SRS origin server, via UDP protocol. Default: `18000`
+
+The following environment variables are about the proxy server itself:
+
 * `PROXY_SYSTEM_API`: The system API port, allow origin server register services to proxy servers. Default: `12025`
 * `PROXY_LOAD_BALANCER_TYPE`: The load balancer type, `memory` or `redis`. Default: `redis`
 
@@ -145,6 +150,9 @@ environment variables:
 * `PROXY_DEFAULT_BACKEND_ENABLED`: Whether to enable the default backend origin server. Default: `off`
 * `PROXY_DEFAULT_BACKEND_IP`: The default backend IP. Default: `127.0.0.1`
 * `PROXY_DEFAULT_BACKEND_RTMP`: The default backend RTMP port. Default: `1935`
+* `PROXY_DEFAULT_BACKEND_HTTP`: The default backend HTTP port. Default: `8080`
+* `PROXY_DEFAULT_BACKEND_RTC`: The default backend WebRTC port via UDP. Default: `8000
+* `PROXY_DEFAULT_BACKEND_API`: The default backend API port. Default: `1985`
 
 > Note: The default backend origin server, is designed for any RTMP server like nginx-rtmp, it does not 
 > require the origin server to register to the proxy server.
