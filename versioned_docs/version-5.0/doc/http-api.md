@@ -25,7 +25,7 @@ You can use Chrome or your application, to request the HTTP API of SRS to get th
 
 The HTTP API of SRS follows the simple priciple:
 
-* Only provides API in json format, both request and json are json.
+* Only provides API in json format, both request and response are json.
 * Please use [srs-console](https://github.com/ossrs/srs-console) to access API.
 * When error, response in HTTP status or code in json.
 
