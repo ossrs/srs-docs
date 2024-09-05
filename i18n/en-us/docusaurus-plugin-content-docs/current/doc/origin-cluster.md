@@ -407,10 +407,10 @@ curl -X POST http://127.0.0.1:12025/api/v1/srs/register \
 
 The listen endpoint format is `port`, or `protocol://ip:port`, or `protocol://:port`, for example:
 
-* `1935`: Listen on port 1935 and any IP for RTMP protocol.
-* `tcp://:1935`: Listen on port 1935 and any IP for RTMP protocol.
-* `tcp://0.0.0.0:1935`: Listen on port 1935 and any IP for RTMP protocol.
-* `tcp://192.168.3.10:1935`: Listen on port 1935 and specified IP for RTMP protocol.
+* `1935`: Listen on port 1935 and any IP for TCP protocol.
+* `tcp://:1935`: Listen on port 1935 and any IP for TCP protocol.
+* `tcp://0.0.0.0:1935`: Listen on port 1935 and any IP for TCP protocol.
+* `tcp://192.168.3.10:1935`: Listen on port 1935 and specified IP for TCP protocol.
 
 You can also use SRS 5.0+ as backend server, which supports `heartbeat` feature to register itself 
 to proxy server.
