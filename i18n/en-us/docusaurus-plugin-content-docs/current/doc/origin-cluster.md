@@ -9,9 +9,9 @@ hide_table_of_contents: false
 
 The SRS origin cluster is a group of origin servers intended for handling a large number of streams.
 
-The new origin cluster is designed as a collection of proxy servers. For more information, see
-[Discussion #3634](https://github.com/ossrs/srs/discussions/3634). If you prefer to use the old
-origin cluster, please switch to a version before SRS 6.0.
+The new origin cluster is designed as a collection of proxy servers that load balance and proxy to a 
+set of origin servers. For more information, see [Discussion #3634](https://github.com/ossrs/srs/discussions/3634). 
+If you prefer to use the old origin cluster, please switch to a version before SRS 6.0.
 
 ## Introduction
 
@@ -135,7 +135,7 @@ Then, deploy three origin servers, which connects to the proxy server via port `
 > Note: The origin servers are independent, so it's recommended to deploy them as Deployments
 > in Kubernetes (K8s).
 
-Now, you're able to publish WebRTC stream via [WHIP player](http://localhost:8080/players/whip.html) to the proxy server.
+Now, you're able to publish WebRTC stream via [WHIP publisher](http://localhost:8080/players/whip.html) to the proxy server.
 
 And play the WebRTC stream via [WHEP player](http://localhost:8080/players/whep.html) from proxy server.
 
