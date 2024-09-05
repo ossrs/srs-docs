@@ -91,6 +91,6 @@ RTMP流地址为：`rtmp://192.168.1.170/live/livestream`
 
 Winlin 2014.4
 
-![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.net&path=/lts/doc/zh/v6/sample-ingest)
+![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.net&path=/lts/doc/zh/v7/sample-ingest)
 
 

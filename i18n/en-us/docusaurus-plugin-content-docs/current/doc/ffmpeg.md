@@ -363,6 +363,6 @@ FFMPEG links:
 
 Winlin 2015.6
 
-![](https://ossrs.io/gif/v1/sls.gif?site=ossrs.io&path=/lts/doc/en/v6/ffmpeg)
+![](https://ossrs.io/gif/v1/sls.gif?site=ossrs.io&path=/lts/doc/en/v7/ffmpeg)
 
 

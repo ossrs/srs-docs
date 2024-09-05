@@ -318,4 +318,4 @@ SRS支持校准RTMP的时间戳，参考[Jitter](./time-jitter.md).
 
 SRS使用writev实现高性能RTMP分发，参考[benchmark](./performance.md##performance-banchmark)
 
-![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.net&path=/lts/doc/zh/v6/rtmp)
+![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.net&path=/lts/doc/zh/v7/rtmp)

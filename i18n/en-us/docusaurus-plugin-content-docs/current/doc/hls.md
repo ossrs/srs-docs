@@ -495,5 +495,5 @@ https://developer.apple.com/library/ios/technotes/tn2288/_index.html
 
 SRS3 supports slice encryption, for specific usage, refer to [#1093](https://github.com/ossrs/srs/issues/1093#issuecomment-415971022).
 
-![](https://ossrs.io/gif/v1/sls.gif?site=ossrs.io&path=/lts/doc/en/v6/hls)
+![](https://ossrs.io/gif/v1/sls.gif?site=ossrs.io&path=/lts/doc/en/v7/hls)
 

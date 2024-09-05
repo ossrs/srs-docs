@@ -502,5 +502,5 @@ https://developer.apple.com/library/ios/technotes/tn2288/_index.html
 
 SRS3支持切片加密，具体使用方法参考[#1093](https://github.com/ossrs/srs/issues/1093#issuecomment-415971022)。
 
-![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.net&path=/lts/doc/zh/v6/hls)
+![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.net&path=/lts/doc/zh/v7/hls)
 

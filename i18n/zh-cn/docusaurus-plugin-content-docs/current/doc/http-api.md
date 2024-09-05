@@ -558,6 +558,6 @@ env SRS_HTTP_API_ENABLED=on SRS_HTTP_SERVER_ENABLED=on \
 
 Winlin 2015.8
 
-![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.net&path=/lts/doc/zh/v6/http-api)
+![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.net&path=/lts/doc/zh/v7/http-api)
 
 

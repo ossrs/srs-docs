@@ -54,6 +54,6 @@ The config items are similar to HLS, read [HLS config](./hls.md#hls-config)
 
 Winlin 2015.3
 
-![](https://ossrs.io/gif/v1/sls.gif?site=ossrs.io&path=/lts/doc/en/v6/delivery-hds)
+![](https://ossrs.io/gif/v1/sls.gif?site=ossrs.io&path=/lts/doc/en/v7/delivery-hds)
 
 

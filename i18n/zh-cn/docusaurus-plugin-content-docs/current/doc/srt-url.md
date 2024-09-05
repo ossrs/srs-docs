@@ -9,6 +9,6 @@ hide_table_of_contents: false
 
 迁移到了[SRT](./srt.md).
 
-![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.net&path=/lts/doc/zh/v6/srt-url)
+![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.net&path=/lts/doc/zh/v7/srt-url)
 
 

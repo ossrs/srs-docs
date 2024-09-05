@@ -387,5 +387,5 @@ How does SRS implement SRT? Based on coroutine-based SRT architecture, we need t
 
 > Yes, it is supported. You can use OBS/FFmpeg to push SRT streams to SRS, and SRS will convert the SRT stream into the RTMP protocol. Then, you can convert RTMP to HLS, FLV, WebRTC, and also forward the RTMP stream to Nginx.
 
-![](https://ossrs.io/gif/v1/sls.gif?site=ossrs.net&path=/lts/doc/en/v6/srt)
+![](https://ossrs.io/gif/v1/sls.gif?site=ossrs.net&path=/lts/doc/en/v7/srt)
 

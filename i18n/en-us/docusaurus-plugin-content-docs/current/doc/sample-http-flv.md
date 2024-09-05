@@ -9,6 +9,6 @@ hide_table_of_contents: false
 
 Migrated to [HTTP-FLV](./flv.md).
 
-![](https://ossrs.io/gif/v1/sls.gif?site=ossrs.io&path=/lts/doc/en/v6/sample-http-flv)
+![](https://ossrs.io/gif/v1/sls.gif?site=ossrs.io&path=/lts/doc/en/v7/sample-http-flv)
 
 
