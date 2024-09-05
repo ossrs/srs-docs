@@ -290,7 +290,7 @@ For HTTP callback `on_publish` event:
 Request:
 {
   "request_id": "3ab26a09-59b0-42f7-98e3-a281c7d0712b",
-  "action": "on_unpublish",
+  "action": "on_publish",
   "opaque": "mytoken",
   "vhost": "__defaultVhost__",
   "app": "live",
