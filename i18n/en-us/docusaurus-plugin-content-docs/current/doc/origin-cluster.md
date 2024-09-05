@@ -389,7 +389,7 @@ curl -X POST http://127.0.0.1:12025/api/v1/srs/register \
           "http": ["8082"],
           "api": ["19853"],
           "srt": ["10082"],
-          "rtc": ["8001"]
+          "rtc": ["udp://0.0.0.0:8001"]
         }'
 #{"code":0,"pid":"53783"}
 ```
@@ -404,6 +404,13 @@ curl -X POST http://127.0.0.1:12025/api/v1/srs/register \
 * `srt`: Optional, the SRT listen endpoints of backend server. Proxy server will connect backend server via this port for SRT protocol.
 * `rtc`: Optional, the WebRTC listen endpoints of backend server. Proxy server will connect backend server via this port for WebRTC protocol.
 * `device_id`: Optional, the device id of backend server. Used as a label for the backend server.
+
+The listen endpoint format is `port`, or `protocol://ip:port`, or `protocol://:port`, for example:
+
+* `1935`: Listen on port 1935 and any IP for RTMP protocol.
+* `tcp://:1935`: Listen on port 1935 and any IP for RTMP protocol.
+* `tcp://0.0.0.0:1935`: Listen on port 1935 and any IP for RTMP protocol.
+* `tcp://192.168.3.10:1935`: Listen on port 1935 and specified IP for RTMP protocol.
 
 You can also use SRS 5.0+ as backend server, which supports `heartbeat` feature to register itself 
 to proxy server.

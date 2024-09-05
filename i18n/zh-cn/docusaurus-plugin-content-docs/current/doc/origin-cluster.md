@@ -355,7 +355,7 @@ curl -X POST http://127.0.0.1:12025/api/v1/srs/register \
           "http": ["8082"],
           "api": ["19853"],
           "srt": ["10082"],
-          "rtc": ["8001"]
+          "rtc": ["udp://0.0.0.0:8001"]
         }'
 #{"code":0,"pid":"53783"}
 ```
@@ -370,6 +370,13 @@ curl -X POST http://127.0.0.1:12025/api/v1/srs/register \
 * `srt`: 可选，后端服务器的 SRT 监听端点。proxy server将通过此端口连接后端服务器以使用 SRT 协议。
 * `rtc`: 可选，后端服务器的 WebRTC 监听端点。proxy server将通过此端口连接后端服务器以使用 WebRTC 协议。
 * `device_id`: 可选，后端服务器的设备 ID。用作后端服务器的标签。
+
+监听端点的格式可以是 `port`，或者 `protocol://ip:port`，或者 `protocol://:port`，例如：
+
+* `1935`: 监听 RTMP 协议的 1935 端口，适用于任何 IP。
+* `tcp://:1935`: 监听 RTMP 协议的 1935 端口，适用于任何 IP。
+* `tcp://0.0.0.0:1935`: 监听 RTMP 协议的 1935 端口，适用于任何 IP。
+* `tcp://192.168.3.10:1935`: 监听 RTMP 协议的 1935 端口，适用于指定的 IP。
 
 您还可以使用 SRS 5.0+ 作为后端服务器，它支持 `heartbeat` 功能，可以自动注册到proxy server。
 
