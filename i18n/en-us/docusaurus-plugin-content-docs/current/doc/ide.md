@@ -9,6 +9,10 @@ hide_table_of_contents: false
 
 SRS supports JetBrains [CLion](http://www.jetbrains.com/clion/)
 
+## VSCode
+
+See [VSCode: Usage](https://github.com/ossrs/srs/blob/develop/.vscode/README.md) for example.
+
 ## JetBrains
 
 The clion of JetBrains, please open `trunk/ide/srs_clion/CMakeLists.txt`
