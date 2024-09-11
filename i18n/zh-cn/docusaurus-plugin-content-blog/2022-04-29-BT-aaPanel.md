@@ -51,6 +51,9 @@ wget -O install.sh https://download.bt.cn/install/install-ubuntu_6.0.sh && sudo 
 
 ![](/img/blog-2022-04-29-zh-001.png)
 
+宝塔商店的插件一般不是最新的，如果希望安装最新的插件，可以下载 [bt-oryx.zip](https://github.com/ossrs/oryx/releases/latest/download/bt-oryx.zip) ，
+然后在`软件商店 > 第三方应用 > 导入插件` 选择导入这个插件即可。
+
 评分完了就点安装按钮，如下图所示：
 
 ![](/img/blog-2022-04-29-zh-002.png)
