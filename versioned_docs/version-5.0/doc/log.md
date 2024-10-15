@@ -29,26 +29,45 @@ srs_log_tank        file;
 
 ## LogLevel
 
-The level is specified by `srs_log_level` and control which level of log to print:
-* verbose: Lots of log, which hurts performance. SRS default to disable it when compile.
-* info：Detail log, which huts performance. SRS default to disable it when compile.
-* trace: Important log, less and SRS enable it as default level.
+The level is specified by `srs_log_level_v2` and control which level of log to print:
+
+* trace: Lots of log, which hurts performance. SRS default to disable it when compile.
+* debug：Detail log, which huts performance. SRS default to disable it when compile.
+* info: Important log, less and SRS enable it as default level.
 * warn: Warning log, without debug log.
 * error: Error level.
 
 The level in config file:
 
 ```bash
-# the log level, for all log tanks.
-# can be: verbose, info, trace, warn, error
-# defualt: trace
-srs_log_level       trace;
+# The log level for logging to console or file. It can be:
+#       verbose, info, trace, warn, error
+# If configure --log-level_v2=off, use SRS 4.0 level specs which is v1, the level text is:
+#       Verb, Info, Trace, Warn, Error
+# If configure --log-level_v2=on, use SRS 5.0 level specs which is v2, the level text is:
+#       TRACE, DEBUG, INFO, WARN, ERROR
+# Note: Do not support reloading, for SRS5+
+# Overwrite by env SRS_LOG_LEVEL or SRS_SRS_LOG_LEVEL
+# default: trace
+srs_log_level trace;
+
+# The log level v2, rewrite the config srs_log_level if not empty, it can be:
+#       trace, debug, info, warn, error
+# If configure --log-level_v2=off, use SRS 4.0 level specs which is v1, the level text is:
+#       Verb, Info, Trace, Warn, Error
+# If configure --log-level_v2=on, use SRS 5.0 level specs which is v2, the level text is:
+#       TRACE, DEBUG, INFO, WARN, ERROR
+# Overwrite by env SRS_LOG_LEVEL_V2 or SRS_SRS_LOG_LEVEL_V2
+srs_log_level_v2 info;
 ```
 
+> Note: For SRS 5.0+, the `--log-level_v2` is default to `on`, which means we use the new log level by default.
+
 Notes:
+
 * Enable all high level, for example, enable trace/warn/error when set level to trace.
-* The verbose and info level is disabled when compile. Modify the `srs_kernel_log.hpp` when need to enable this.
-* Recomment to use trace level.
+* The trace and debug level is disabled when compile. Modify the `srs_kernel_log.hpp` when need to enable this.
+* Recomment to use `info` level.
 
 ## Log of tools
 
@@ -329,7 +348,7 @@ The 107 is a client which trigger the edge to fetch stream from origin. Find 110
 
 The 110 is a flash player client.
 
-### System info.
+### System info
 
 The system info and port listen at:
 
