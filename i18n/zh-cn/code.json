@@ -204,6 +204,9 @@
   "homepage.getStarted": {
     "message": "快速开始"
   },
+  "homepage.askAI": {
+    "message": "AI助手"
+  },
   "homepage.cloudService": {
     "message": "云服务"
   },
