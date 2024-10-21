@@ -16,7 +16,7 @@ HTTP-FLV是一种直播流协议，有时候也简称FLV，是在HTTP连接上�
 要好很多；同样HTTP-FLV的延迟比HLS要低很多，基本上可以做到3的5秒左右延迟，而HLS的延迟一般是8到10秒以上。
 
 从协议实现上看，RTMP和HTTP-FLV几乎一样，RTMP是基于TCP协议，而HTTP-FLV基于HTTP也是TCP协议，因此两者的特点也非常类似。一般推流和
-流的生产使用RTMP，主要是因为流的生产设备都支持RTMP；而流的播放和消费端采用HTTP-FLV或这HLS，因为播放设备支持HTTP更完善。
+流的生产使用RTMP，主要是因为流的生产设备都支持RTMP；而流的播放和消费端采用HTTP-FLV或者HLS，因为播放设备支持HTTP更完善。
 
 HTTP-FLV的兼容性很好，除了iOS原生浏览器不支持，其他平台和浏览器都支持了，参考[MSE](https://caniuse.com/?search=mse)。
 若需要支持iOS浏览器，你可以考虑使用HLS或者使用WASM；注意一般iOS的Native应用，可以选择使用ijkplayer播放器。
