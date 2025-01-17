@@ -22,9 +22,6 @@ function HomepageHeader() {
         <div className={styles.buttons}>
           <Link className="button button--secondary button--lg" to="/docs/v6/doc/getting-started">
             {translate({id: 'homepage.getStarted'})}
-          </Link> &nbsp;
-          <Link className="button button--secondary button--lg" to="https://chatgpt.com/g/g-FxEZ7G0XX-srs-expert" target='_blank'>
-            {translate({id: 'homepage.askAI'})}
           </Link>
         </div>
       </div>
