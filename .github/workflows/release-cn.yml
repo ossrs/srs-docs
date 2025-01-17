@@ -83,11 +83,11 @@ jobs:
           echo "SRS_MAJOR=${{ needs.envs.outputs.SRS_MAJOR }}" >> $GITHUB_ENV
       - name: Checkout repository
         uses: actions/checkout@v2
-      - uses: actions/download-artifact@v2
+      - uses: actions/download-artifact@v4
         with:
           name: zh-cn
           path: build
-      - uses: actions/download-artifact@v2
+      - uses: actions/download-artifact@v4
         with:
           name: en-us
           path: build
@@ -117,11 +117,11 @@ jobs:
           echo "SRS_MAJOR=${{ needs.envs.outputs.SRS_MAJOR }}" >> $GITHUB_ENV
       - name: Checkout repository
         uses: actions/checkout@v2
-      - uses: actions/download-artifact@v2
+      - uses: actions/download-artifact@v4
         with:
           name: zh-cn
           path: build
-      - uses: actions/download-artifact@v2
+      - uses: actions/download-artifact@v4
         with:
           name: en-us
           path: build
