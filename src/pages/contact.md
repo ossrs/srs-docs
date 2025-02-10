@@ -18,15 +18,11 @@ documentation development. As a result, I have limited time available for commun
 assistance to project contributors. If you wish for me to dedicate time specifically to assist you, you 
 may consider becoming a backer or sponsor of the project.
 
-It should be noted that the code and documentation for SRS and Oryx are open and public, with no private 
-branches or products. You can fully utilize the open-source code and documentation to complete your 
-project. If you encounter any issues, you can seek help from any developer within the community. If yo
-u wish to receive my personal support and want me to dedicate time specifically to assist you, then you 
-would need to become a contributor.
+Our documentation and code are open and free, so you don't need to sponsor the community to access these resources. We are a truly open-source community. For financial sponsors, we also offer additional support, including:
 
-* Backer: $5 per month, online text chat support through Discord.
-* Sponsor: $100 per month, online text chat plus online meeting support.
-* For customized features and consulting services, please contact us through [Discord](https://discord.gg/yZ4BnPmHAd).
+* Backer: $5 per month. Online text chat support through Discord. No custom development included.
+* Sponsor: $100 per month. Online text chat and online meeting support. No custom development included.
+* Custom Development: Must be a Backer or Sponsor first. Fees based on duration, evaluated separately. Please contact us on Discord.
 
 Please visit [OpenCollective](https://opencollective.com/srs-server) to become a backer or sponsor, 
 and send me a direct message on [Discord](https://discord.gg/yZ4BnPmHAd).
