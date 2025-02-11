@@ -1,6 +1,6 @@
 ---
 slug: unlock-the-power-of-hevc-via-rtmp
-title: SRS Server - 用FFmpeg推送RTMP HEVC流
+title: SRS - 用FFmpeg推送RTMP HEVC流
 authors: []
 tags: [hevc, rtmp, obs, ffmpeg, live]
 custom_edit_url: null
@@ -45,7 +45,7 @@ docker run --rm -it -p 1935:1935 -p 8080:8080 \
 
 ## Step 2: Publish by FFmpeg 6
 
-如果您按照此[帖子](/docs/v6/doc/hevc#ffmpeg-tools)中的说明使用源代码编译了FFmpeg 6，
+如果您按照此[帖子](../docs/v6/doc/hevc#ffmpeg-tools)中的说明使用源代码编译了FFmpeg 6，
 现在您可以使用FFmpeg发布RTMP HEVC流：
 
 ```bash

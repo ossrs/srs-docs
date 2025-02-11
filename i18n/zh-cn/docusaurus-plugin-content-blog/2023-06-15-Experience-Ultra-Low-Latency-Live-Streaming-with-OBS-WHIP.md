@@ -1,6 +1,6 @@
 ---
 slug: Experience-Ultra-Low-Latency-Live-Streaming-with-OBS-WHIP
-title: SRS Server - 体验OBS WHIP超低延迟直播！
+title: SRS - 体验OBS WHIP超低延迟直播！
 authors: []
 tags: [srs, obs, whip]
 custom_edit_url: null
@@ -21,8 +21,8 @@ OBS现在支持WHIP功能，最近已经合并了这个补丁。这使得OBS WHI
 
 在这个视频中，我将演示如何轻松地将OBS WHIP与SRS结合使用，只需三个简单的步骤。
 
-SRS Stack还支持OBS WHIP，使您只需点击一下即可建立WHIP服务。
-请参考[为OBS快速构建公网WHIP服务](./2023-12-12-SRS-Stack-OBS-WHIP-Service.md)。
+Oryx还支持OBS WHIP，使您只需点击一下即可建立WHIP服务。
+请参考[为OBS快速构建公网WHIP服务](./2023-12-12-Oryx-OBS-WHIP-Service.md)。
 
 You can also watch the video on YouTube: [Ultra Low Latency Streaming with OBS WHIP](https://youtu.be/SqrazCPWcV0)
 
@@ -46,9 +46,9 @@ docker run --rm -it -p 1935:1935 -p 1985:1985 -p 8080:8080 \
     ossrs/srs:5 ./objs/srs -c conf/rtmp2rtc.conf
 ```
 
-> Note: 请将 CANDIDATE 设置为你的 IP 地址。关于如何设置CANDIDATE, 请参考[CANDIDATE](/docs/v5/doc/webrtc#config-candidate)
+> Note: 请将 CANDIDATE 设置为你的 IP 地址。关于如何设置CANDIDATE, 请参考[CANDIDATE](../docs/v5/doc/webrtc#config-candidate)
 
-有关配置详细信息，请参考[这里](/docs/v5/doc/getting-started#webrtc-for-live-streaming)。
+有关配置详细信息，请参考[这里](../docs/v5/doc/getting-started#webrtc-for-live-streaming)。
 
 ## Step 2: Run OBS
 

@@ -209,5 +209,5 @@ SRS支持将rtmp流中的视频丢弃，将音频流转封装为aac格式，在S
 1. 通用：Flash可以播RTMP，也可以播HTTP FLV。自己做的APP，也都能支持。主流播放器也都支持http flv的播放。
 1. 简单：FLV是最简单的流媒体封装，HTTP是最广泛的协议，这两个到一起维护性很高，比RTMP简单多了。
 
-![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.net&path=/lts/doc/zh/v6/flv)
+![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.net&path=/lts/doc/zh/v7/flv)
 

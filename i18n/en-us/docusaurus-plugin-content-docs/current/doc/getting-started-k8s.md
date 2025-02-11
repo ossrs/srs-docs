@@ -14,9 +14,9 @@ Actually, HELM is based on K8s and deploys K8s pods, which can be managed with k
 more convenient way to manage and install applications, so SRS will mainly support HELM in the future.
 
 Compared to Docker, HELM and K8s are mainly for medium to large scale deployments. If your business is not that 
-big, we recommend using Docker or SRS Stack directly. Generally, if you have less than a thousand streams, please 
+big, we recommend using Docker or Oryx directly. Generally, if you have less than a thousand streams, please 
 do not use HELM or K8s.
 
-![](https://ossrs.io/gif/v1/sls.gif?site=ossrs.io&path=/lts/doc/en/v6/getting-started-k8s)
+![](https://ossrs.io/gif/v1/sls.gif?site=ossrs.io&path=/lts/doc/en/v7/getting-started-k8s)
 
 

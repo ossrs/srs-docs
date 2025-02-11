@@ -1,57 +1,57 @@
 ---
 slug: browser-voice-driven-gpt
-title: SRS Stack - 基于浏览器的语音驱动的GPT-AI助手
+title: Oryx - 基于浏览器的语音驱动的GPT-AI助手
 authors: []
-tags: [ai, gpt, voice, srs, srs-stack, streaming]
+tags: [ai, gpt, voice, srs, oryx, streaming]
 custom_edit_url: null
 ---
 
-# Speak to the Future: Transform Your Browser into a Personal Voice-Driven GPT AI Assistant with SRS Stack
+# Speak to the Future: Transform Your Browser into a Personal Voice-Driven GPT AI Assistant with Oryx
 
 想象一下仅通过语音在浏览器中与GPT AI互动，与朋友分享这种功能，或从任何地方访问它。设想一个使学习英语口语变得愉快而简单的助手，
 或者通过实时翻译所有内容，让您和说不同语言的朋友进行无缝对话的助手。探索如何将这些激动人心的可能性变为现实！
 
 <!--truncate-->
 
-向您介绍一种突破性的互动工具：一个可以快捷构建的、基于浏览器的语音驱动的GPT AI助手。你可以使用简单易用的SRS Stack快捷构建，
+向您介绍一种突破性的互动工具：一个可以快捷构建的、基于浏览器的语音驱动的GPT AI助手。你可以使用简单易用的Oryx快捷构建，
 仅需点击一下即可轻松启用HTTPS，可以在任何配备浏览器的设备上使用，包括PC和手机。它的便利性使您可以在任何时候、任何地方、使用语音
 轻松的与您的私人GPT AI助手进行交流。无论是用于提高您的英语口语、充当实时翻译工具，还是作为智能伴侣，这款语音驱动的GPT AI助手都可以
 通过简单的对话实现。
 
-## Step 1: Create SRS Stack by One Click
+## Step 1: Create Oryx by One Click
 
-创建 SRS Stack 很简单，只需点击一下，如果您使用 Digital Ocean droplet，就可以完成。
-请参阅[如何通过 1-Click 设置视频流服务](./2022-04-09-SRS-Stack-Tutorial.md)了解详细信息。
+创建 Oryx 很简单，只需点击一下，如果您使用 Digital Ocean droplet，就可以完成。
+请参阅[如何通过 1-Click 设置视频流服务](./2022-04-09-Oryx-Tutorial.md)了解详细信息。
 
-您还可以使用 Docker 通过单个命令行创建 SRS Stack：
+您还可以使用 Docker 通过单个命令行创建 Oryx：
 
 ```bash
-docker run --restart always -d -it --name srs-stack -v $HOME/data:/data \
+docker run --restart always -d -it --name oryx -v $HOME/data:/data \
   -p 80:2022 -p 443:2443 -p 1935:1935 -p 8000:8000/udp -p 10080:10080/udp \
-  registry.cn-hangzhou.aliyuncs.com/ossrs/srs-stack:5
+  registry.cn-hangzhou.aliyuncs.com/ossrs/oryx:5
 ```
 
-创建 SRS Stack 后，您可以通过 `http://your-server-ip/mgmt` 访问它。
+创建 Oryx 后，您可以通过 `http://your-server-ip/mgmt` 访问它。
 
 ## Step 2: Setup HTTPS for Voice-Driven GPT
 
 在将语音功能集成到基于浏览器的 GPT AI助手中时，安全性至关重要。浏览器要求在访问麦克风以捕获语音输入时使用 HTTPS，
-作为其安全策略的一部分。这听起来可能很复杂，但使用 SRS Stack，让您的网站启用 HTTPS 变得简单而轻松。以下是如何使用 
+作为其安全策略的一部分。这听起来可能很复杂，但使用 Oryx，让您的网站启用 HTTPS 变得简单而轻松。以下是如何使用 
 HTTPS 保护您的语音驱动助手的方法：
 
-1. **DNS 配置**：首先为您的域名添加 DNS A 记录。此步骤将您的域名指向您的 SRS Stack 服务器。要验证 DNS 设置是否正确，请尝试通过 http 使用您的域名访问您的 SRS Stack，如 `http://your_domain_name`。如果设置正确，这应该可以正常工作。
+1. **DNS 配置**：首先为您的域名添加 DNS A 记录。此步骤将您的域名指向您的 Oryx 服务器。要验证 DNS 设置是否正确，请尝试通过 http 使用您的域名访问您的 Oryx，如 `http://your_domain_name`。如果设置正确，这应该可以正常工作。
 
-2. **启用 HTTPS**：导航到 SRS Stack 仪表板中的 `系统配置 > HTTPS > 自动HTTPS证书` 部分。在这里，您只需输入您的域名并点击 `提交` 按钮。此过程启动为您的域名自动生成和安装 Let's Encrypt SSL 证书，使 HTTPS 设置如同点击一下鼠标按钮一样简单。
+2. **启用 HTTPS**：导航到 Oryx 仪表板中的 `系统配置 > HTTPS > 自动HTTPS证书` 部分。在这里，您只需输入您的域名并点击 `提交` 按钮。此过程启动为您的域名自动生成和安装 Let's Encrypt SSL 证书，使 HTTPS 设置如同点击一下鼠标按钮一样简单。
 
-3. **验证结果**：启用 HTTPS 后，您现在可以通过 "https://your_domain_name" 安全地访问您的 SRS Stack 站点。此安全策略提高了与 GPT AI助手互动的安全性。
+3. **验证结果**：启用 HTTPS 后，您现在可以通过 "https://your_domain_name" 安全地访问您的 Oryx 站点。此安全策略提高了与 GPT AI助手互动的安全性。
 
-有关更多详细信息，请参阅[设置 SRS Stack 的 HTTPS](./2022-04-12-SRS-Stack-HTTPS.md)。按照这些步骤操作，您将确保您的语音驱动
+有关更多详细信息，请参阅[设置 Oryx 的 HTTPS](./2022-04-12-Oryx-HTTPS.md)。按照这些步骤操作，您将确保您的语音驱动
 GPT AI助手不仅创新且有用，而且安全且符合浏览器安全标准。
 
 ## Step 3: Setup OpenAI Secret Key in Live Room
 
 要使用AI的各种服务，您必须从 OpenAI 获取一个密钥。请在您的浏览器中打开 [API 密钥](https://platform.openai.com/api-keys)
-页面，然后点击 `创建新的密钥` 按钮。密钥创建后，复制它并在 SRS Stack 中设置。
+页面，然后点击 `创建新的密钥` 按钮。密钥创建后，复制它并在 Oryx 中设置。
 
 接下来，如下图所示，导航至`应用场景 > 直播间 > 创建直播间`，然后按下`创建`按钮以创建一个与GPT AI助手交谈的直播间。或者，
 选择链接加入现有的直播间。
@@ -139,7 +139,7 @@ Remember, never answer questions but only translate.
 
 ## Conclusion
 
-总结一下，使用SRS Stack创建个人的、基于浏览器的、语音驱动的GPT AI助手的过程非常简单。从设置HTTPS进行安全通信，到集成OpenAI GPT，
+总结一下，使用Oryx创建个人的、基于浏览器的、语音驱动的GPT AI助手的过程非常简单。从设置HTTPS进行安全通信，到集成OpenAI GPT，
 每个步骤都设计非常容易使用。无论是为了提高语言能力、实现多语言对话，还是简单地享受便利的语音驱动的GPT AI助手，它为直播间和主播提供了
 许多可能性。将来，还将支持将实时观众聊天连接到AI助手。您可以在真实场景中发现更多有益的GPT AI助手用例。
 

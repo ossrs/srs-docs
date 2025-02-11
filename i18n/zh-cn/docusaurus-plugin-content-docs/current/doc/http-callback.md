@@ -220,6 +220,52 @@ Body:
 
 > Note: 也可以用wireshark或tcpdump抓包验证。
 
+## Heartbeat
+
+SRS将向HTTP回调服务器发送心跳信号。这允许你监控SRS服务器的健康状况。启用此功能方法：
+
+```bash
+# heartbeat to api server
+# @remark, the ip report to server, is retrieve from system stat,
+#       which need the config item stats.network.
+heartbeat {
+    # whether heartbeat is enabled.
+    # Overwrite by env SRS_HEARTBEAT_ENABLED
+    # default: off
+    enabled off;
+    # the interval seconds for heartbeat,
+    # recommend 0.3,0.6,0.9,1.2,1.5,1.8,2.1,2.4,2.7,3,...,6,9,12,....
+    # Overwrite by env SRS_HEARTBEAT_INTERVAL
+    # default: 9.9
+    interval 9.3;
+    # when startup, srs will heartbeat to this api.
+    # @remark: must be a restful http api url, where SRS will POST with following data:
+    #   {
+    #       "device_id": "my-srs-device",
+    #       "ip": "192.168.1.100"
+    #   }
+    # Overwrite by env SRS_HEARTBEAT_URL
+    # default: http://127.0.0.1:8085/api/v1/servers
+    url http://127.0.0.1:8085/api/v1/servers;
+    # the id of device.
+    # Overwrite by env SRS_HEARTBEAT_DEVICE_ID
+    device_id       "my-srs-device";
+    # whether report with summaries
+    # if on, put /api/v1/summaries to the request data:
+    #   {
+    #       "summaries": summaries object.
+    #   }
+    # @remark: optional config.
+    # Overwrite by env SRS_HEARTBEAT_SUMMARIES
+    # default: off
+    summaries off;
+}
+```
+
+通过启用`summaries`，您可以获取SRS服务器状态，例如`self.pid`和`self.srs_uptime`，因此您可以使用它来判断SRS是否重新启动。
+
+> Note: 关于`summaries`的字段，请参阅 [HTTP API: summaries](./http-api.md#summaries) 了解详细信息。
+
 ## Go Example
 
 使用Go处理SRS的回调，以`on_publish`为例：
@@ -368,6 +414,6 @@ HttpCallback也可以用来截图，参考[snapshot](./snapshot.md#httpcallback)
 
 Winlin 2015.1
 
-![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.net&path=/lts/doc/zh/v6/http-callback)
+![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.net&path=/lts/doc/zh/v7/http-callback)
 
 

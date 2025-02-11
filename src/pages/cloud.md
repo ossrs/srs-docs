@@ -10,12 +10,12 @@ Please choose the cloud service that best suits your needs.
 
 ## TRTC Cloud Service
 
-For low latency live streaming and RTC(Real-Time Communication) developers, we recommend the [TRTC cloud service](https://ossrs.io/trtc/pricing?utm_source=community&utm_medium=ossrs&utm_campaign=OBS-WHIP-TRTC&_channel_track_key=yb4mTLui),
+For low latency live streaming and RTC(Real-Time Communication) developers, we recommend the [TRTC cloud service](https://trtc.io/pricing?_channel_track_key=Yd99P51u),
 designed to empower developers with cutting-edge features such as global network acceleration, advanced
 congestion control algorithms, and enhanced performance on weak networks. Experience seamless integration
 with client SDKs for all platforms and enjoy a generous monthly free quota of 10,000 minutes – EVERY month!
 
-Don't miss out on captivating online demos – just click [here](https://ossrs.io/trtc/demo?utm_source=community&utm_medium=ossrs&utm_campaign=OBS-WHIP-TRTC&_channel_track_key=lfJKyOlF)!
+Don't miss out on captivating online demos – just click [here](https://trtc.io/demo?_channel_track_key=MH4jbLMx)!
 
 For any inquiries, join our [Discord](https://discord.gg/DCCH6HyhuT) community and connect with us directly.
 

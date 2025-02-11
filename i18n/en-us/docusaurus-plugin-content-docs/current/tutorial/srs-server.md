@@ -13,7 +13,7 @@ hide_table_of_contents: false
 
 Simple Realtime Server (SRS) is a real-time video server that supports various protocols, such as RTMP, WebRTC, HLS, 
 HTTP-FLV, SRT, and MPEG-DASH. It acts as a media gateway, converting between RTMP, SRT, and WebRTC. SRS has several 
-use cases, including as an origin cluster, for virtual live-streaming with SRS Stack, with the SRS Player WordPress 
+use cases, including as an origin cluster, for virtual live-streaming with Oryx, with the SRS Player WordPress 
 plugin, for Unity developers, in the broadcast industry, for AI video and audio processing, and for cutting 
 live-streaming expenses. SRS is compatible with various open-source technologies and has a global community on 
 Discord.
@@ -25,5 +25,5 @@ Discord.
 Discover the power of OBS WHIP for low-latency live streaming, its benefits for content creators and broadcasters, 
 and how to set it up with SRS in just three simple steps.
 
-![](https://ossrs.io/gif/v1/sls.gif?site=ossrs.io&path=/lts/tutorial/en/v6/srs-server)
+![](https://ossrs.io/gif/v1/sls.gif?site=ossrs.io&path=/lts/tutorial/en/v7/srs-server)
 

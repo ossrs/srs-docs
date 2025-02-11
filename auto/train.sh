@@ -1,68 +1,29 @@
+#!/bin/bash
 
-TARGET=~/Downloads/train
-echo "Train target: $TARGET"
+DEST_DIR=~/Downloads/train && mkdir -p $DEST_DIR && echo "Create dest dir $DEST_DIR"
+if [[ $? -ne 0 ]]; then echo "Failed to create dir $DEST_DIR"; exit 1; fi
 
-rm -f $TARGET/*.md
+SRC_DIR=$(pwd)/for-writers && (cd $SRC_DIR) && echo "Use source dir $SRC_DIR"
+if [[ $? -ne 0 ]]; then echo "Failed to use dir $SRC_DIR"; exit 1; fi
 
-echo ""
-echo "Train one file:"
-DIRS=(~/git/srs-docs/for-writers/doc-en-6.0/doc \
-    ~/git/srs-docs/for-writers/blog-en \
-    ~/git/srs-docs/for-writers/pages\
-)
-for dir in ${DIRS[*]}; do
-    cd $dir
-    files=$(ls *.md |grep -iv zh)
-    for file in $files; do
-        echo $file; echo "SRS Server File: $file" >> $TARGET/srs-one.md; cat $file >> $TARGET/srs-one.md
-    done
-done
+echo '' > $DEST_DIR/page.md && echo "Remove $DEST_DIR/page.md" &&
+cat $SRC_DIR/pages/contact-*en.md >> $DEST_DIR/page.md && echo "Copy contact to $DEST_DIR" &&
+cat $SRC_DIR/pages/faq-*en.md >> $DEST_DIR/page.md && echo "Copy faq to $DEST_DIR" &&
+cat $SRC_DIR/pages/how-to-*en.md >> $DEST_DIR/page.md && echo "Copy how-to to $DEST_DIR" &&
+cat $SRC_DIR/pages/product-*en.md >> $DEST_DIR/page.md && echo "Copy product to $DEST_DIR" &&
+cat $SRC_DIR/pages/license-*en.md >> $DEST_DIR/page.md && echo "Copy license to $DEST_DIR" &&
+cat $SRC_DIR/pages/security-*en.md >> $DEST_DIR/page.md && echo "Copy security to $DEST_DIR" &&
+echo "Copy all pages to $DEST_DIR/page.md ok"
+if [[ $? -ne 0 ]]; then echo "Failed to copy all pages to $DEST_DIR/page.md"; exit 1; fi
 
-echo ""
-echo "Train SRS server files:"
-cd ~/git/srs-docs/for-writers/doc-en-6.0/doc
-FILES=(drm.md dvr.md edge.md exporter.md ffmpeg.md flv.md forward.md gb28181.md \
-    getting-started-build.md getting-started-k8s.md getting-started.md hevc.md hls.md \
-    http-api.md http-callback.md http-server.md ingest.md introduction.md k8s.md \
-    learning-path.md log-rotate.md log.md low-latency.md nginx-exec.md nginx-for-hls.md \
-    origin-cluster.md reload.md rtmp.md security.md service.md snapshot.md srt.md \
-    streamer.md webrtc.md windows.md \
-)
-for file in ${FILES[*]}; do
-    echo $file; echo "SRS Server File: $file" >> $TARGET/srs-server.md; cat $file >> $TARGET/srs-server.md
-done
+echo '' > $DEST_DIR/blog.md && echo "Remove $DEST_DIR/blog.md" &&
+cat $SRC_DIR/blog-en/*.md >> $DEST_DIR/blog.md && echo "Copy all blogs to $DEST_DIR/blog.md ok"
+if [[ $? -ne 0 ]]; then echo "Failed to copy all blogs to $DEST_DIR/blog.md"; exit 1; fi
+
+echo '' > $DEST_DIR/doc.md && echo "Remove $DEST_DIR/doc.md" &&
+cat $SRC_DIR/doc-en-7.0/doc/*.md >> $DEST_DIR/doc.md && echo "Copy all docs to $DEST_DIR/doc.md ok"
+if [[ $? -ne 0 ]]; then echo "Failed to copy all docs to $DEST_DIR/doc.md"; exit 1; fi
 
 echo ""
-echo "Train SRS extra files:"
-DIRS=(~/git/srs-docs/for-writers/doc-en-6.0/doc \
-    ~/git/srs-docs/for-writers/blog-en \
-    ~/git/srs-docs/for-writers/pages\
-)
-for dir in ${DIRS[*]}; do
-    cd $dir
-    files=$(ls *.md |grep -iv zh |grep -iv stack)
-    for file in $files; do
-        if [[ $(grep -q "File: $file" $TARGET/srs-server.md && echo ignore) == ignore ]]; then
-            continue
-        fi
-        echo $file; echo "SRS Server File: $file" >> $TARGET/srs-extra.md; cat $file >> $TARGET/srs-extra.md
-    done
-done
-
+echo "Done"
 echo ""
-echo "Train SRS Stack files:"
-for dir in ${DIRS[*]}; do
-    cd $dir
-    files=$(ls *.md |grep -iv zh |grep -i stack)
-    for file in $files; do
-        if [[ $(grep -q "File: $file" $TARGET/srs-server.md && echo ignore) == ignore ]]; then
-            continue
-        fi
-        echo $file; echo "SRS Stack File: $file" >> $TARGET/srs-stack.md; cat $file >> $TARGET/srs-stack.md
-    done
-done
-
-echo ""
-echo "Train files:"
-echo "ls -lh $TARGET/*.md"
-cd $TARGET && ls -lh *.md

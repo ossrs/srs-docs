@@ -217,6 +217,6 @@ Read ![Edge-latency](/img/doc-main-concepts-low-latency-002.png)
 
 Winlin 2015.8
 
-![](https://ossrs.io/gif/v1/sls.gif?site=ossrs.io&path=/lts/doc/en/v6/low-latency)
+![](https://ossrs.io/gif/v1/sls.gif?site=ossrs.io&path=/lts/doc/en/v7/low-latency)
 
 

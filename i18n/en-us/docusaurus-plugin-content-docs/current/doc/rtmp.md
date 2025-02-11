@@ -306,7 +306,7 @@ If want to support a large set of players, please see [Edge Cluster](./edge.md).
 
 If want to support a larget set of publishers or streams, please see [Origin Cluster](./origin-cluster.md).
 
-Note that there are lots of solutions for [load balancing](/blog/load-balancing-streaming-servers).
+Note that there are lots of solutions for [load balancing](../../../blog/load-balancing-streaming-servers).
 
 ## Low Latency RTMP
 
@@ -323,4 +323,4 @@ If wants SRS to keep the original timestamp, you can enable [ATC](./rtmp-atc.md)
 SRS use writev for high performance RTMP delivery, please follow [benchmark](./performance.md##performance-banchmark)
 to test it.
 
-![](https://ossrs.io/gif/v1/sls.gif?site=ossrs.io&path=/lts/doc/en/v6/rtmp)
+![](https://ossrs.io/gif/v1/sls.gif?site=ossrs.io&path=/lts/doc/en/v7/rtmp)

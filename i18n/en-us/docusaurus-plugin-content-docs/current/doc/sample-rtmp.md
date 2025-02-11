@@ -9,4 +9,4 @@ hide_table_of_contents: false
 
 Migrated to [RTMP](./rtmp.md).
 
-![](https://ossrs.io/gif/v1/sls.gif?site=ossrs.io&path=/lts/doc/en/v6/sample-rtmp)
+![](https://ossrs.io/gif/v1/sls.gif?site=ossrs.io&path=/lts/doc/en/v7/sample-rtmp)

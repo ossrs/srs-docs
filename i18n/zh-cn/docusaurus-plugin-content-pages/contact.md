@@ -37,7 +37,7 @@ SRS 相关的[现有问题](https://stackoverflow.com/questions/tagged/simple-re
 
 ## Issues
 
-提新 issue 请先阅读[FAQ](/faq).
+提新 issue 请先阅读[FAQ](./faq).
 
 以及相应的文档：
 * [入门必看](https://github.com/ossrs/srs#usage)

@@ -46,6 +46,6 @@ Or use SRS scripts: `/etc/init.d/srs reload`
 
 Winlin 2014.11
 
-![](https://ossrs.io/gif/v1/sls.gif?site=ossrs.io&path=/lts/doc/en/v6/reload)
+![](https://ossrs.io/gif/v1/sls.gif?site=ossrs.io&path=/lts/doc/en/v7/reload)
 
 

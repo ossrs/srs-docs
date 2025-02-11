@@ -1,7 +1,7 @@
 {
   "tutorialSidebar": [
     "tutorial/srs-server",
-    "tutorial/srs-stack",
+    "tutorial/oryx",
     "tutorial/srs-faq",
     "tutorial/srs-other"
   ],
@@ -21,7 +21,7 @@
       "items": [
         "doc/getting-started",
         "doc/getting-started-build",
-        "doc/getting-started-stack",
+        "doc/getting-started-oryx",
         "doc/getting-started-k8s"
       ]
     },

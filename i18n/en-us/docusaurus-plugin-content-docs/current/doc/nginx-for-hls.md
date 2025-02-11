@@ -15,9 +15,9 @@ Edge Cluster is designed to solve the problem of many people watching, and it ca
 
 This article describes the edge cluster for HLS or DASH slices, which is based on NGINX implementation, so it is also called NGINX Edge Cluster.
 
-## SRS Stack
+## Oryx
 
-The NGINX edge cluster can work together with the SRS Stack to achieve HLS distribution. For more details, please refer to [SRS Stack HLS CDN](https://github.com/ossrs/srs-stack/tree/main/scripts/nginx-hls-cdn).
+The NGINX edge cluster can work together with the Oryx to achieve HLS distribution. For more details, please refer to [Oryx HLS CDN](https://github.com/ossrs/oryx/tree/main/scripts/nginx-hls-cdn).
 
 ## NGINX Edge Cluster
 
@@ -263,10 +263,8 @@ If you are using aaPanel, you can add a new site, and then write the following c
     }
 ```
 
-Translation to English:
-
 > Note: Generally, when adding a new site in aaPanel, it listens to port 80, and the domain server_name is the domain name you fill in yourself. Other configurations are the same as the aaPanel settings. Alternatively, you can also add the above cache and location configurations to the site settings in aaPanel.
 
-![](https://ossrs.io/gif/v1/sls.gif?site=ossrs.io&path=/lts/doc/en/v6/nginx-for-hls)
+![](https://ossrs.io/gif/v1/sls.gif?site=ossrs.io&path=/lts/doc/en/v7/nginx-for-hls)
 
 

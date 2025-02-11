@@ -225,11 +225,11 @@ SRS can call HTTP callbacks for events:
 
 | Event | Data | Description |
 | --- | ---- | ---- |
-| on_publish|{<br/> "action": "on_publish",<br/> "client_id": "9308h583",<br/> "ip": "192.168.1.10", <br/> "vhost": "video.test.com", <br/> "app": "live",<br/> "stream": "livestream"<br/> } | When a client publishes a stream, for example, using flash or FMLE to publish a stream to the server.| 
-| on_unpublish|{<br/> "action": "on_unpublish",<br/> "client_id": "9308h583",<br/> "ip": "192.168.1.10", <br/> "vhost": "video.test.com", <br/> "app": "live",<br/> "stream": "livestream"<br/> } | When a client stops publishing a stream.| 
-| on_play|{<br/> "action": "on_play",<br/> "client_id": "9308h583",<br/> "ip": "192.168.1.10", <br/> "vhost": "video.test.com", <br/> "app": "live",<br/> "stream": "livestream",<br/> "pageUrl": "http://a.com/i.html",<br/>"param":"?k=v"<br/> } | When a client starts playing a stream.| 
-| on_stop|{<br/> "action": "on_stop",<br/> "client_id": "9308h583",<br/> "ip": "192.168.1.10", <br/> "vhost": "video.test.com", <br/> "app": "live",<br/> "stream": "livestream"<br/> } | When a client stops playback.| 
-| on_dvr|{<br/> "action": "on_dvr",<br/> "client_id": "9308h583",<br/> "ip": "192.168.1.10", <br/> "vhost": "video.test.com", <br/> "app": "live",<br/> "stream": "livestream",<br/> "cwd": "/opt",<br/> "file": "./l.xxx.flv"<br/> } | When reap a DVR file.|
+| on_publish|`{ "action": "on_publish", "client_id": "9308h583", "ip": "192.168.1.10",  "vhost": "video.test.com",  "app": "live", "stream": "livestream" }` | When a client publishes a stream, for example, using flash or FMLE to publish a stream to the server.| 
+| on_unpublish|`{ "action": "on_unpublish", "client_id": "9308h583", "ip": "192.168.1.10",  "vhost": "video.test.com",  "app": "live", "stream": "livestream" }` | When a client stops publishing a stream.| 
+| on_play|`{ "action": "on_play", "client_id": "9308h583", "ip": "192.168.1.10",  "vhost": "video.test.com",  "app": "live", "stream": "livestream", "pageUrl": "http://a.com/i.html","param":"?k=v" }` | When a client starts playing a stream.| 
+| on_stop|`{ "action": "on_stop", "client_id": "9308h583", "ip": "192.168.1.10",  "vhost": "video.test.com",  "app": "live", "stream": "livestream" }` | When a client stops playback.| 
+| on_dvr|`{ "action": "on_dvr", "client_id": "9308h583", "ip": "192.168.1.10",  "vhost": "video.test.com",  "app": "live", "stream": "livestream", "cwd": "/opt", "file": "./l.xxx.flv" }` | When reap a DVR file.|
 
 Notes:
 * Event: When this event occurs, call back to the specified HTTP URL.

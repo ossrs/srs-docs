@@ -1,12 +1,12 @@
 ---
 slug: browser-voice-driven-gpt
-title: SRS Stack - Speak to the Future - Transform Your Browser into a Personal Voice-Driven GPT AI Assistant with SRS Stack
+title: Oryx - Speak to the Future - Transform Your Browser into a Personal Voice-Driven GPT AI Assistant with Oryx
 authors: []
-tags: [ai, gpt, voice, srs, srs-stack, streaming]
+tags: [ai, gpt, voice, srs, oryx, streaming]
 custom_edit_url: null
 ---
 
-# Speak to the Future: Transform Your Browser into a Personal Voice-Driven GPT AI Assistant with SRS Stack
+# Speak to the Future: Transform Your Browser into a Personal Voice-Driven GPT AI Assistant with Oryx
 
 Imagine engaging with GPT in your browser through voice alone, sharing this capability with friends, or accessing
 it from any location. Picture an AI assistant that makes learning spoken English enjoyable and straightforward, or 
@@ -16,49 +16,49 @@ instantly. Discover how to turn these exciting possibilities into reality!
 <!--truncate-->
 
 Introducing a cutting-edge to technology: our easy to build, browser-based, voice-driven GPT AI assistant,
-a transformative tool in interaction. Built with the user-friendly SRS Stack, which effortlessly enables
+a transformative tool in interaction. Built with the user-friendly Oryx, which effortlessly enables
 HTTPS with a single click, this AI assistant is accessible on any device equipped with a browser, including PCs and 
 mobile phones. Its convenience allows you to communicate with your private GPT AI assistant effortlessly, anytime 
 and anywhere, making it the perfect solution for hands-free use and quick input. Ideal for improving your spoken 
 English, acting as a real-time translator, or simply serving as a smart companion, this voice-driven AI assistant 
 works well through conversation.
 
-## Step 1: Create SRS Stack by One Click
+## Step 1: Create Oryx by One Click
 
-Creating an SRS Stack is simple and can be done with just one click if you use Digital Ocean droplet.
-Please see [How to Setup a Video Streaming Service by 1-Click](./2022-04-09-SRS-Stack-Tutorial.md) for detail.
+Creating an Oryx is simple and can be done with just one click if you use Digital Ocean droplet.
+Please see [How to Setup a Video Streaming Service by 1-Click](./2022-04-09-Oryx-Tutorial.md) for detail.
 
-You can also use Docker to create an SRS Stack with a single command line:
+You can also use Docker to create an Oryx with a single command line:
 
 ```bash
-docker run --restart always -d -it --name srs-stack -v $HOME/data:/data \
+docker run --restart always -d -it --name oryx -v $HOME/data:/data \
   -p 80:2022 -p 443:2443 -p 1935:1935 -p 8000:8000/udp -p 10080:10080/udp \
-  ossrs/srs-stack:5
+  ossrs/oryx:5
 ```
 
-After creating the SRS Stack, you can access it through `http://your-server-ip/mgmt` via a browser.
+After creating the Oryx, you can access it through `http://your-server-ip/mgmt` via a browser.
 
 ## Step 2: Setup HTTPS for Voice-Driven GPT
 
 When integrating voice functionality into your browser-based GPT AI assistant, security becomes paramount.
 Browsers require the use of HTTPS when accessing the microphone to capture voice inputs as part of their 
-security strategies. This might sound complex, but with SRS Stack, enabling HTTPS on your site is 
+security strategies. This might sound complex, but with Oryx, enabling HTTPS on your site is 
 straightforward and hassle-free. Here's how to secure your voice-driven AI assistant with HTTPS:
 
-1. **DNS Configuration**: Begin by adding a DNS A record for your domain. This step directs your domain name to your SRS Stack server. To verify that the DNS setup is correct, try accessing your SRS Stack with your domain name via http, like `http://your_domain_name`. If the setup is correct, this should work without any issues.
+1. **DNS Configuration**: Begin by adding a DNS A record for your domain. This step directs your domain name to your Oryx server. To verify that the DNS setup is correct, try accessing your Oryx with your domain name via http, like `http://your_domain_name`. If the setup is correct, this should work without any issues.
 
-2. **Enable HTTPS**: Navigate to the `System > HTTPS > Let's Encrypt` section in your SRS Stack dashboard. Here, you'll simply input your domain name and hit the `Submit` button. This process initiates the automatic generation and installation of a Let's Encrypt SSL certificate for your domain, making the setup of HTTPS as easy as a single click.
+2. **Enable HTTPS**: Navigate to the `System > HTTPS > Let's Encrypt` section in your Oryx dashboard. Here, you'll simply input your domain name and hit the `Submit` button. This process initiates the automatic generation and installation of a Let's Encrypt SSL certificate for your domain, making the setup of HTTPS as easy as a single click.
 
-3. **Verification**: With HTTPS enabled, you can now access your SRS Stack site securely by using `https://your_domain_name`. This secure connection ensures the security of your interactions with the GPT AI assistant.
+3. **Verification**: With HTTPS enabled, you can now access your Oryx site securely by using `https://your_domain_name`. This secure connection ensures the security of your interactions with the GPT AI assistant.
 
-For more details, please see [Setup HTTPS for SRS Stack](./2022-04-12-SRS-Stack-HTTPS.md). By following these 
+For more details, please see [Setup HTTPS for Oryx](./2022-04-12-Oryx-HTTPS.md). By following these 
 steps, you'll ensure that your voice-driven GPT AI assistant is not only innovative and useful but also secure 
 and compliant with browser security standards.
 
 ## Step 3: Setup OpenAI Secret Key in Live Room
 
 To use AI services, you must obtain a secret key from OpenAI. Please open the [API keys](https://platform.openai.com/api-keys)
-page in your browser and click the `Create new secret key` button. Once the key is created, copy it and set it in SRS Stack.
+page in your browser and click the `Create new secret key` button. Once the key is created, copy it and set it in Oryx.
 
 Next, as illustrated in the image below, navigate to `Scenarios > LiveRoom > Create Live Room` and press the 
 `Create` button to create a live room for conversing with the GPT AI assistant. Alternatively, select the link to 
@@ -156,11 +156,11 @@ Remember, never answer questions but only translate.
 At SRS, our goal is to establish a non-profit, open-source community dedicated to creating an all-in-one,
 out-of-the-box, open-source video solution for live streaming and WebRTC online services.
 
-Additionally, we offer a [cloud](/cloud) service for those who prefer to use cloud service instead of building from
+Additionally, we offer a [Cloud](../cloud) service for those who prefer to use cloud service instead of building from
 scratch. Our cloud service features global network acceleration, enhanced congestion control algorithms,
 client SDKs for all platforms, and some free quota.
 
-To learn more about our cloud service, click [here](/docs/v6/doc/cloud).
+To learn more about our cloud service, click [here](../cloud).
 
 ## Conclusion
 

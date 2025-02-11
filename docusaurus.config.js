@@ -1,8 +1,7 @@
 // @ts-check
 // Note: type annotations allow type checking and IDEs autocompletion
 
-const lightCodeTheme = require('prism-react-renderer/themes/github');
-const darkCodeTheme = require('prism-react-renderer/themes/dracula');
+import {themes as prismThemes} from 'prism-react-renderer';
 const versions = require('./versions.json');
 const versionsArchived = require('./versionsArchived.json');
 
@@ -46,7 +45,11 @@ const config = {
           //lastVersion: versions[0],
           versions: {
             current: {
-              label: `6.0 (Unstable) 🚧`,
+              label: `7.0 (Unstable) 🚧`,
+              path: 'v7',
+            },
+            '6.0': {
+              label: '6.0 (Alpha) 🚀',
               path: 'v6',
             },
             '5.0': {
@@ -114,18 +117,13 @@ const config = {
             items: [
               {
                 to: '/faq',
-                label: 'SRS Server',
+                label: 'SRS',
               },
               {
-                to: '/faq-srs-stack',
-                label: 'SRS Stack',
+                to: '/faq-oryx',
+                label: 'Oryx',
               }
             ]
-          },
-          {
-            to: '/cloud',
-            position: 'left',
-            label: 'Cloud',
           },
           {
             to: '/security-advisories',
@@ -144,11 +142,11 @@ const config = {
               },
               {
                 to: '/faq',
-                label: 'FAQ: SRS Server',
+                label: 'FAQ: SRS',
               },
               {
-                to: '/faq-srs-stack',
-                label: 'FAQ: SRS Stack',
+                to: '/faq-oryx',
+                label: 'FAQ: Oryx',
               },
               {
                 to: '/contact',
@@ -253,8 +251,8 @@ const config = {
         copyright: `<p></p>`,
       },
       prism: {
-        theme: lightCodeTheme,
-        darkTheme: darkCodeTheme,
+        theme: prismThemes.github,
+        darkTheme: prismThemes.dracula,
       },
       defaultVersion: '5.0'
     }),

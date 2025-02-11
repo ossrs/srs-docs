@@ -25,7 +25,7 @@ You can use Chrome or your application, to request the HTTP API of SRS to get th
 
 The HTTP API of SRS follows the simple priciple:
 
-* Only provides API in json format, both request and json are json.
+* Only provides API in json format, both request and response are json.
 * Please use [srs-console](https://github.com/ossrs/srs-console) to access API.
 * When error, response in HTTP status or code in json.
 
@@ -528,6 +528,6 @@ To clean up the username and password, you can access the HTTP API with the user
 
 Winlin 2015.8
 
-![](https://ossrs.io/gif/v1/sls.gif?site=ossrs.io&path=/lts/doc/en/v6/http-api)
+![](https://ossrs.io/gif/v1/sls.gif?site=ossrs.io&path=/lts/doc/en/v7/http-api)
 
 

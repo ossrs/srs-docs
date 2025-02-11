@@ -15,9 +15,9 @@ hide_table_of_contents: false
 
 本文描述的就是HLS或DASH等切片的边缘集群，基于NGINX实现，所以也叫NGINX Edge Cluster。
 
-## SRS Stack
+## Oryx
 
-NGINX边缘集群，可以和SRS Stack一起工作，可以实现HLS的分发，详细请参考[SRS Stack HLS CDN](https://github.com/ossrs/srs-stack/tree/main/scripts/nginx-hls-cdn)。
+NGINX边缘集群，可以和Oryx一起工作，可以实现HLS的分发，详细请参考[Oryx HLS CDN](https://github.com/ossrs/oryx/tree/main/scripts/nginx-hls-cdn)。
 
 ## NGINX Edge Cluster
 
@@ -265,6 +265,6 @@ add_header X-Cache-Status $upstream_cache_status;
 
 > 注意：一般宝塔新增站点侦听的是80端口，域名server_name是自己填的域名，其他配置同宝塔配置。或者在宝塔的这个站点配置中，加入上面的cache和location的配置也可以。
 
-![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.net&path=/lts/doc/zh/v6/nginx-for-hls)
+![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.net&path=/lts/doc/zh/v7/nginx-for-hls)
 
 

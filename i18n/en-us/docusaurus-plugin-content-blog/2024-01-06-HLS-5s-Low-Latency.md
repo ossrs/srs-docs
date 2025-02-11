@@ -1,6 +1,6 @@
 ---
 slug: hls-5s-low-latency
-title: SRS Stack - Unlock Universal Ultra-Low Latency - Achieving 5-Second HLS Live Streams for All - No Special Equipment Needed
+title: Oryx - Unlock Universal Ultra-Low Latency - Achieving 5-Second HLS Live Streams for All - No Special Equipment Needed
 authors: []
 tags: [hls, llhls, live-streaming, low-latency-streaming, low-latency-hls]
 custom_edit_url: null
@@ -21,7 +21,7 @@ real-time interactions.
 Enter the realm of low-latency HLS streaming, a game-changer for live broadcasts. In this blog, we'll explore how 
 you can drastically reduce HLS stream latency to as low as 5 seconds. The best part? This can be achieved using 
 common, highly compatible technologies, without the need for specialized equipment. We'll delve into the use of 
-the SRS Stack, a powerful yet straightforward tool that simplifies the process, making ultra-low latency HLS 
+the Oryx, a powerful yet straightforward tool that simplifies the process, making ultra-low latency HLS 
 streaming accessible with just a click.
 
 If you need even lower latencies and can compromise on compatibility, there are options. For latencies between 
@@ -41,32 +41,32 @@ protocol, but the most standard HLS protocol.
 However, we need to change some settings at critical points, such as:
 
 * For OBS encoder, select the x264 encoder and in the advanced settings, set the `GOP (Keyframe interval)` to `1 s`. Choose `Preset` as `fast`, `Profile` as `baseline`, and `Tune` as `zerolatency`. These settings allow OBS to generate shorter segments while maintaining compatibility.
-* For SRS Stack, enable the HLS low latency mode. This will generate HLS segments as short as possible, around 2 seconds each. The minimum delay for HLS is about two segments, allowing for an approximate 5-second delay.
+* For Oryx, enable the HLS low latency mode. This will generate HLS segments as short as possible, around 2 seconds each. The minimum delay for HLS is about two segments, allowing for an approximate 5-second delay.
 * For HLS player, such as hls.js, set it to start playing from the last segment and configure the maximum buffer time. When the accumulated delay reaches a certain threshold, enable accelerated playback to maintain a stable low latency.
 
 The entire workflow, from streaming to the server to the player, needs optimization to achieve a 5-second low 
 latency. Common mistakes in this process include:
 
 * Inability to set the encoder, like OBS, with a large GOP, such as 10 seconds, or having an excessively large encoder buffer, leading to significant overall delay.
-* The SRS Stack is not set to low latency mode. In normal mode, the generated segment durations are longer, or some servers may not produce segments of accurate duration, preferring larger segments instead.
+* The Oryx is not set to low latency mode. In normal mode, the generated segment durations are longer, or some servers may not produce segments of accurate duration, preferring larger segments instead.
 * Using an incorrect player, such as VLC, which has significant delay regardless of the protocol used. Not all players are suitable; we have tested that both hls.js and mpegts.js players have low latency. In the future, we will test and ensure compatibility with more players.
 
 Let's begin achieving a 5-second HLS latency with a few simple setup steps and clicks.
 
-## Step 1: Create SRS Stack by One Click
+## Step 1: Create Oryx by One Click
 
-Creating an SRS Stack is simple and can be done with just one click if you use Digital Ocean droplet.
-Please see [How to Setup a Video Streaming Service by 1-Click](./2022-04-09-SRS-Stack-Tutorial.md) for detail.
+Creating an Oryx is simple and can be done with just one click if you use Digital Ocean droplet.
+Please see [How to Setup a Video Streaming Service by 1-Click](./2022-04-09-Oryx-Tutorial.md) for detail.
 
-You can also use Docker to create an SRS Stack with a single command line:
+You can also use Docker to create an Oryx with a single command line:
 
 ```bash
-docker run --restart always -d -it --name srs-stack -v $HOME/data:/data \
+docker run --restart always -d -it --name oryx -v $HOME/data:/data \
   -p 80:2022 -p 443:2443 -p 1935:1935 -p 8000:8000/udp -p 10080:10080/udp \
-  ossrs/srs-stack:5
+  ossrs/oryx:5
 ```
 
-After creating the SRS Stack, you can access it through `http://your-server-ip/mgmt` via a browser.
+After creating the Oryx, you can access it through `http://your-server-ip/mgmt` via a browser.
 
 ## Step 2: Setup OBS for HLS Low Latency
 
@@ -84,29 +84,29 @@ Click the `Settings` button, then go to the `Output` tab and apply the following
 * Set the `Profile` to `baseline`. This setting is helpful for reducing the delay.
 * Set the `Tune` to `zerolatency`. This setting is helpful for reducing the delay.
 
-Next, open the `Stream` tab and follow the instructions provided by the SRS Stack to set the server and 
+Next, open the `Stream` tab and follow the instructions provided by the Oryx to set the server and 
 stream key for publishing the stream.
 
-## Step 3: Setup SRS Stack in HLS Low Latency Mode
+## Step 3: Setup Oryx in HLS Low Latency Mode
 
-Open the SRS Stack and navigate to `System > HLS Low Latency`. Enable the HLS low latency mode and 
+Open the Oryx and navigate to `System > HLS Low Latency`. Enable the HLS low latency mode and 
 click the `Submit` button.
 
 ![](/img/blog-2024-01-06-02.png)
 
-After that, you can obtain the publish server and stream key for OBS to stream to the SRS Stack.
+After that, you can obtain the publish server and stream key for OBS to stream to the Oryx.
 
 ![](/img/blog-2024-01-06-03.png)
 
-Please configure OBS and begin publishing the RTMP stream to the SRS Stack.
+Please configure OBS and begin publishing the RTMP stream to the Oryx.
 
 ## Step 4: Setup the HLS Player
 
-Open the SRS Stack `Simple Player` in the browser, and you can see the HLS stream with a 5-second delay.
+Open the Oryx `Simple Player` in the browser, and you can see the HLS stream with a 5-second delay.
 
 ![](/img/blog-2024-01-06-04.png)
 
-The SRS Stack has configured the HLS player using hls.js for low latency mode. We have applied the following 
+The Oryx has configured the HLS player using hls.js for low latency mode. We have applied the following 
 settings. If you need to use your own HLS player, please configure it similarly:
 
 * Enable `enableWorker` by setting it to `true`. This improves performance and helps avoid lag or frame drops.
@@ -115,22 +115,22 @@ settings. If you need to use your own HLS player, please configure it similarly:
 * Set `maxBufferLength` to `5` to set the maximum buffer length in seconds.
 * Set `maxLiveSyncPlaybackRate` to `2` to catch up if the latency is large.
 
-For detailed information, please refer to [this commit](https://github.com/ossrs/srs-stack/commit/a6b709f516da3c7f36f5c3c599142296148187ee#diff-06095ca53f7d88e4f592f1a432030f541adf2060cb2dfc6c4efd86cd9f074820R40).
+For detailed information, please refer to [this commit](https://github.com/ossrs/oryx/commit/a6b709f516da3c7f36f5c3c599142296148187ee#diff-06095ca53f7d88e4f592f1a432030f541adf2060cb2dfc6c4efd86cd9f074820R40).
 
 ## Cloud Service
 
 At SRS, our goal is to establish a non-profit, open-source community dedicated to creating an all-in-one,
 out-of-the-box, open-source video solution for live streaming and WebRTC online services.
 
-Additionally, we offer a [cloud](/cloud) service for those who prefer to use cloud service instead of building from
+Additionally, we offer a [Cloud](../cloud) service for those who prefer to use cloud service instead of building from
 scratch. Our cloud service features global network acceleration, enhanced congestion control algorithms,
 client SDKs for all platforms, and some free quota.
 
-To learn more about our cloud service, click [here](/docs/v6/doc/cloud).
+To learn more about our cloud service, click [here](../cloud).
 
 ## Conclusion
 
-Harnessing the SRS Stack, OBS, and hls.js, we've made 5-second latency HLS streaming a reality, breaking barriers in live 
+Harnessing the Oryx, OBS, and hls.js, we've made 5-second latency HLS streaming a reality, breaking barriers in live 
 broadcast low latency and compatibility. This advancement marks a new era for interactive and engaging 
 live events, available to all without specialized equipment, setting a new experience in the streaming world.
 

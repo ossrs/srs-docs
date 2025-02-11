@@ -61,7 +61,7 @@ vhost __defaultVhost__ {
 }
 ```
 
-备注：hls_path必须存在，srs只会自动创建${hls_path}下的app的目录。参考：[HLS分发: HLS流程](./hls.md)
+备注：hls_path必须存在，srs只会自动创建`${hls_path}`下的app的目录。参考：[HLS分发: HLS流程](./hls.md)
 
 ## 第四步，启动SRS
 
@@ -142,6 +142,6 @@ HLS流地址为： `http://192.168.1.170:8080/live/livestream.m3u8`
 
 Winlin 2014.4
 
-![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.net&path=/lts/doc/zh/v6/sample-http)
+![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.net&path=/lts/doc/zh/v7/sample-http)
 
 

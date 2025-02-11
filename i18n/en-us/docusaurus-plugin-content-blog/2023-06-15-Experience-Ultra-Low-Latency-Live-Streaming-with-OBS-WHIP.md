@@ -1,6 +1,6 @@
 ---
 slug: Experience-Ultra-Low-Latency-Live-Streaming-with-OBS-WHIP
-title: SRS Server - Experience Ultra-Low Latency Live Streaming with OBS WHIP!
+title: SRS - Experience Ultra-Low Latency Live Streaming with OBS WHIP!
 authors: []
 tags: [srs, obs, whip]
 custom_edit_url: null
@@ -24,8 +24,8 @@ internet, OBS WHIP maintains a consistently low and stable latency.
 In this tutorial, I will demonstrate how to effortlessly utilize OBS WHIP with SRS in just 
 three simple steps.
 
-The SRS Stack also supports OBS WHIP, enabling you to establish a WHIP service with just one click. 
-Refer to [Effortlessly Create a Public Internet WHIP Service for OBS](./2023-12-12-SRS-Stack-OBS-WHIP-Service.md).
+The Oryx also supports OBS WHIP, enabling you to establish a WHIP service with just one click. 
+Refer to [Effortlessly Create a Public Internet WHIP Service for OBS](./2023-12-12-Oryx-OBS-WHIP-Service.md).
 
 You can also watch the video on YouTube: [Ultra Low Latency Streaming with OBS WHIP](https://youtu.be/SqrazCPWcV0)
 
@@ -49,9 +49,9 @@ docker run --rm -it -p 1935:1935 -p 1985:1985 -p 8080:8080 \
     ossrs/srs:5 ./objs/srs -c conf/rtmp2rtc.conf
 ```
 
-> Note: Please set the CANDIDATE to your own IP. About CANDIDATE, please read [CANDIDATE](/docs/v5/doc/webrtc#config-candidate)
+> Note: Please set the CANDIDATE to your own IP. About CANDIDATE, please read [CANDIDATE](../docs/v5/doc/webrtc#config-candidate)
 
-For configuration details, refer to [this post](/docs/v5/doc/getting-started#webrtc-for-live-streaming).
+For configuration details, refer to [this post](../docs/v5/doc/getting-started#webrtc-for-live-streaming).
 
 ## Step 2: Run OBS
 
@@ -63,6 +63,7 @@ Open OBS and click `Settings` to configure the following:
 1. Set the **Server** to `http://localhost:1985/rtc/v1/whip/?app=live&stream=livestream`.
 1. Click **OK** to save the settings.
 1. Click **Start Streaming** to start streaming.
+1. If the latency is large, setup the OBS Output by: For OBS encoder, select the x264 encoder and in the advanced settings, set the GOP (Keyframe interval) to 1 s. Choose Preset as fast, Profile as baseline, and Tune as zerolatency.
 
 ![](/img/blog-2023-06-15-011.png)
 
@@ -85,11 +86,11 @@ demo, click [here](https://tencent-rtc.github.io/obs-trtc/).
 At SRS, our goal is to establish a non-profit, open-source community dedicated to creating an all-in-one, 
 out-of-the-box, open-source video solution for live streaming and WebRTC online services.
 
-Additionally, we offer a [cloud](/cloud) service for those who prefer to use cloud service instead of building from 
+Additionally, we offer a [Cloud](../cloud) service for those who prefer to use cloud service instead of building from 
 scratch. Our cloud service features global network acceleration, enhanced congestion control algorithms, 
 client SDKs for all platforms, and some free quota.
 
-To learn more about our cloud service, click [here](/docs/v6/doc/cloud).
+To learn more about our cloud service, click [here](../cloud).
 
 ## Conclusion
 

@@ -202,7 +202,7 @@ srt_server {
 This section describes how to reduce the latency of SRT, which is relevant to each link. The summary is as follows:
 
 * Pay attention to the client's Ping and CPU, which are easily overlooked but can affect latency.
-* Please use SRS Stack as the server, as it has been adjusted and will not cause additional latency.
+* Please use Oryx as the server, as it has been adjusted and will not cause additional latency.
 * An increase in RTT will affect latency. Generally, with an RTT of below 60ms, it can be stable at the expected latency.
 * With an RTT of 100ms, latency is approximately 300ms, and with an RTT of 150ms, latency increases to around 430ms.
 * Packet loss will affect quality. With a packet loss rate of over 10%, there will be screen flickering and dropped frames, but it does not affect latency significantly, particularly for audio.
@@ -387,5 +387,5 @@ How does SRS implement SRT? Based on coroutine-based SRT architecture, we need t
 
 > Yes, it is supported. You can use OBS/FFmpeg to push SRT streams to SRS, and SRS will convert the SRT stream into the RTMP protocol. Then, you can convert RTMP to HLS, FLV, WebRTC, and also forward the RTMP stream to Nginx.
 
-![](https://ossrs.io/gif/v1/sls.gif?site=ossrs.net&path=/lts/doc/en/v6/srt)
+![](https://ossrs.io/gif/v1/sls.gif?site=ossrs.net&path=/lts/doc/en/v7/srt)
 

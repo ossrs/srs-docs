@@ -1,6 +1,6 @@
 ---
 slug: lets-do-h265-live-streaming
-title: SRS Server - H.265 Live Streaming Saving 50% Cost
+title: SRS - H.265 Live Streaming Saving 50% Cost
 authors: []
 tags: [architecture, hevc, h265, codec, live]
 custom_edit_url: null
@@ -79,7 +79,7 @@ Part 5, other features for H.265.
 * [x] Black box test support HEVC.
 * [x] Patch FFmpeg in SRS dev-docker.
 * [x] Support HEVC for [WordPress plugin SrsPlayer](https://github.com/ossrs/WordPress-Plugin-SrsPlayer).
-* [ ] Not supported: Update [srs-stack](https://github.com/ossrs/srs-stack) for HEVC.
+* [ ] Not supported: Update [Oryx](https://github.com/ossrs/oryx) for HEVC.
 * [ ] Not supported: Edge server supports publish HEVC stream to origin.
 * [ ] Not supported: Edge server supprots play HEVC stream from origin.
 * [ ] Not supported: HTTP Callback takes HEVC metadata.
@@ -144,7 +144,7 @@ Note that MSE doesn't support AV1.
 ## FFmpeg Patch
 
 FFmpeg 6 has supported HEVC over RTMP, if you want to build from code, please see
-[FFmpeg Tools](/docs/v6/doc/hevc#ffmpeg-tools#ffmpeg-tools).
+[FFmpeg Tools](../docs/v6/doc/hevc#ffmpeg-tools#ffmpeg-tools).
 
 SRS dev-docker already patched FFmpeg, ffplay and ffprobe, so user can use it:
 
@@ -158,7 +158,7 @@ docker run --net=host --rm -it ossrs/srs:encoder ffmpeg -stream_loop -1 -re -i d
   -acodec copy -vcodec libx265 -f flv rtmp://127.0.0.1/live/livestream
 ```
 
-Please see [FFmpeg Tools](/docs/v6/doc/hevc#ffmpeg-tools#ffmpeg-tools) for detail.
+Please see [FFmpeg Tools](../docs/v6/doc/hevc#ffmpeg-tools#ffmpeg-tools) for detail.
 
 ## Known Issues
 
@@ -176,11 +176,11 @@ On some use scenario, HEVC is available now, please evaluate it by yourself.
 At SRS, our goal is to establish a non-profit, open-source community dedicated to creating an all-in-one, 
 out-of-the-box, open-source video solution for live streaming and WebRTC online services.
 
-Additionally, we offer a [cloud](/cloud) service for those who prefer to use cloud service instead of building from 
+Additionally, we offer a [Cloud](../cloud) service for those who prefer to use cloud service instead of building from 
 scratch. Our cloud service features global network acceleration, enhanced congestion control algorithms, 
 client SDKs for all platforms, and some free quota.
 
-To learn more about our cloud service, click [here](/docs/v6/doc/cloud).
+To learn more about our cloud service, click [here](../cloud).
 
 ## Thanks
 

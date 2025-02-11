@@ -3,7 +3,7 @@
 About milestones of SRS.
 
 * Release 6.0, 2023~Now, Code: Hang
-* Release 5.0, 2022~Now, Code: Bee
+* Release 5.0, 2022~2023, Code: Bee
 * Release 4.0, 2020~2021, Code: Leo
 * Release 3.0, 2018~2019, Code: OuXuli
 * Release 2.0, 2015~2017, Code: ZhouGuowen
@@ -15,7 +15,7 @@ For detail features of SRS, please see [FEATURES](https://github.com/ossrs/srs/b
 
 Let's briefly introduce the history of SRS in reverse order.
 
-In January 2023, Star exceeded 20K and launched the Paid Star Planet. SRS Stack supported Virtual Live Broadcasting, 
+In January 2023, Star exceeded 20K and launched the Paid Star Planet. Oryx supported Virtual Live Broadcasting, 
 confirmed the development codename for version 6.0 as Hang, and introduced new TOC rules.
 
 In November 2022, the SRS TOC and developer community were established, with the number of active developers reaching 47. 
@@ -125,7 +125,7 @@ their contributions to community promotion and development.
 - [x] WebRTC over TCP, supporting TCP transmission of WebRTC, and TCP port reuse. [#2852](https://github.com/ossrs/srs/issues/2852)
 - [x] Support for HTTP API, HTTP Stream, HTTP Server, and WebRTC TCP port reuse. [#2881](https://github.com/ossrs/srs/issues/2881)
 
-It is expected that the main features of 5.0 will be completed by the end of 2022, with a planned release by the end of 2023.
+SRS 5.0 was released at 2023.12, see [5.0-r0](https://github.com/ossrs/srs/releases/tag/v5.0-r0). 
 
 ## Release 4.0
 
@@ -148,7 +148,7 @@ Wen Jing, Shi Hao, and Huan Jian from Alibaba. Thanks to my classmates who have 
 - [x] [experimental] Support SRT push, widely supported new protocol in broadcasting. Refer to: [#1147](https://github.com/ossrs/srs/issues/1147).
 - [x] [feature] Support GB28181 push, camera push through national standard protocol. Refer to: [#1500](https://github.com/ossrs/srs/issues/1500).
 
-Version 4.0 is expected to be released by the end of 2021.
+SRS 4.0 was released at 2022.06, see [4.0-r0](https://github.com/ossrs/srs/releases/tag/v4.0-r0).
 
 ## Release 3.0
 
@@ -171,7 +171,7 @@ carry our initial dreams and go further.
 - [x] Add UTest, covering core critical logic code. Refer to: [#1042](https://github.com/ossrs/srs/issues/1042).
 - [x] [experimental] Support MPEG-DASH, possible future standard. Refer to: [#299](https://github.com/ossrs/srs/issues/299).
 
-[SRS Release 3.0](https://github.com/ossrs/srs/tree/3.0release) is expected to be released by the end of 2019.
+SRS 3.0 was released at 2020.06, see [3.0-r0](https://github.com/ossrs/srs/releases/tag/v3.0-r0).
 
 ## Release 2.0
 

@@ -184,6 +184,6 @@ ffplay 'srt://127.0.0.1:10080?streamid=#!::r=live/livestream,m=request'
 
 > Note: 详细请参考[RTMP URL](./rtmp-url-vhost.md)。
 
-![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.net&path=/lts/doc/zh/v6/getting-started)
+![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.net&path=/lts/doc/zh/v7/getting-started)
 
 

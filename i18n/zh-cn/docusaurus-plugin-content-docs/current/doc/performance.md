@@ -116,7 +116,11 @@ perf report --call-graph --stdio
 
 > Remark: 由于ST的堆栈是不正常的，perf开启`-g`后记录的堆栈都是错乱的，所以perf只能看SRS的热点，不能看堆栈信息；如果需要看堆栈，请使用`GPERF: GCP`，参考下面的章节。
 
-## ASAN(Google Address Sanitizer)
+## ASAN
+
+[Asan](https://github.com/google/sanitizers/wiki/AddressSanitizer) 就是 Google Address Sanitizer.
+
+### ASAN: Usage
 
 SRS5+内置和默认支持[ASAN](https://github.com/google/sanitizers/wiki/AddressSanitizer)，检测内存泄露、野指针和越界等问题。
 
@@ -129,7 +133,53 @@ SRS5+内置和默认支持[ASAN](https://github.com/google/sanitizers/wiki/Addre
   --sanitizer-log=on|off    Whether hijack the log for libasan(asan). Default: off
 ```
 
+开启内存泄露检测，参考[halt_on_error](https://github.com/google/sanitizers/wiki/AddressSanitizerFlags)
+和 [detect_leaks](https://github.com/google/sanitizers/wiki/SanitizerCommonFlags) 的详细说明:
+
+```bash
+ASAN_OPTIONS=halt_on_error=1:detect_leaks=1 ./objs/srs -c conf/console.conf
+```
+
 ASAN检查内存问题很准确，推荐开启。
+
+### ASAN: Preload
+
+如果你遇到下面的错误：
+
+```bash
+==4181651==ASan runtime does not come first in initial library list; you should either link runtime 
+to your application or manually preload it with LD_PRELOAD.
+```
+
+你应该preload ASAN库：
+
+```bash
+LD_PRELOAD=$(find /usr -name libasan.so.5 2>/dev/null) ./objs/srs -c conf/console.conf
+```
+
+> Note: 一般而言，libasan.so 的路径是 `/usr/lib64/libasan.so.5`
+
+### ASAN: Options
+
+默认情况下，SRS使用以下ASAN选项：
+
+```text
+extern "C" const char *__asan_default_options() {
+    return "halt_on_error=0:detect_leaks=0:alloc_dealloc_mismatch=0";
+}
+```
+
+* `halt_on_error=0`: 出现错误时不会退出，只是打印消息，注意fatal错误还是会退出，参考 [halt_on_error](https://github.com/google/sanitizers/wiki/AddressSanitizerFlags).
+* `detect_leaks=0`: 禁用内存泄露的检测，由于daemon父进程会退出，全局变量会被认为是内存泄露，导致daemon启动失败，参考 [detect_leaks](https://github.com/google/sanitizers/wiki/SanitizerCommonFlags).
+* `alloc_dealloc_mismatch=0`: GDB调试程序时，可能会出现这个错误。
+
+尽管这样，你可以覆盖这些选项，比如开启内存泄露检测等：
+
+```bash
+ASAN_OPTIONS=halt_on_error=1:detect_leaks=1:alloc_dealloc_mismatch=1 ./objs/srs -c conf/console.conf
+```
+
+请注意，`ASAN_OPTIONS` 会在 `main()` 函数之前加载，因此可以在 shell 中设置，但不能在 `main()` 函数中设置。
 
 ## GPROF
 
@@ -250,13 +300,77 @@ killall -2 srs
 
 ## VALGRIND
 
-VALGRIND是大名鼎鼎的C分析工具，SRS3之后支持了。SRS3之前，因为使用了ST，需要给ST打PATCH才能用。
+VALGRIND是大名鼎鼎的内存分析工具，SRS3之后支持了。
+
+### Valgrind: Memcheck
+
+SRS3之前，因为使用了ST，需要给ST打PATCH才能用。
 
 ```
-valgrind --leak-check=full ./objs/srs -c conf/console.conf
+valgrind --leak-check=full --show-leak-kinds=all ./objs/srs -c conf/console.conf
 ```
 
 > Remark: SRS3之前的版本，可以手动给ST打PATCH支持VALGRIND，参考[state-threads](https://github.com/ossrs/state-threads#usage)，详细的信息可以参考[ST#2](https://github.com/ossrs/state-threads/issues/2)。
+
+> Remark: SRS需要升级到对应版本，才能支持HTTP valgrind API，具体参考 [#4150](https://github.com/ossrs/srs/pull/4150)。
+
+### Valgrind: Incremental Memory Leak Detection
+
+使用valgrind检测SRS内存泄露时，尽管在ST中支持了valgrind的hook，还是有大量的误报信息。比较合理的是让valgrind报告增量的内存泄露，
+这样可以避开全局和静态变量，也可以不用退出程序就可以实现检测。操作步骤如下：
+
+1. 编译SRS支持valgrind：`./configure --valgrind=on && make`
+1. 启动SRS，开启内存泄露的检测：`valgrind --leak-check=full --show-leak-kinds=all ./objs/srs -c conf/console.conf`
+1. 触发内存检测，使用curl访问API，形成校准的数据，依然有大量误报，但可以忽略这些数据：`curl http://127.0.0.1:1985/api/v1/valgrind?check=added`
+1. 多尝试几次内存检测，直到没有新增的泄露，包括possibly和reachable。
+1. 压测，或者针对怀疑泄露的功能测试，比如RTMP推流：`ffmpeg -re -i doc/source.flv -c copy -f flv rtmp://127.0.0.1/live/livestream`
+1. 停止推流，等待SRS清理Source内存，大概等待30秒左右。
+1. 增量内存泄露检测，此时报告的泄露情况就非常准确了：`curl http://127.0.0.1:1985/api/v1/valgrind?check=added`
+
+```text
+HTTP #0 11.176.19.95:42162 GET http://9.134.74.169:1985/api/v1/valgrind?check=added, content-length=-1
+query check=added
+==1481822== LEAK SUMMARY:
+==1481822==    definitely lost: 0 (+0) bytes in 0 (+0) blocks
+==1481822==    indirectly lost: 0 (+0) bytes in 0 (+0) blocks
+==1481822==      possibly lost: 3,406,847 (+0) bytes in 138 (+0) blocks
+==1481822==    still reachable: 18,591,709 (+0) bytes in 819 (+0) blocks
+==1481822==                       of which reachable via heuristic:
+==1481822==                         multipleinheritance: 536 (+0) bytes in 4 (+0) blocks
+==1481822==         suppressed: 0 (+0) bytes in 0 (+0) blocks
+==1481822== Reachable blocks (those to which a pointer was found) are not shown.
+```
+
+> Note: 为了避免HTTP请求本身对valgrind的干扰，SRS使用单独的coroutine定时检查，因此访问API后，可能需要等待几秒才会触发检测。
+
+### Valgrind: Still Reachable
+
+有时候，你会收到很多`still reachable`的报告，这是因为静态或全局变量，比如这个例子：
+
+```text
+==3430715== 1,040 (+1,040) bytes in 1 (+1) blocks are still reachable in new loss record 797 of 836
+==3430715==    at 0x4C3F963: calloc (vg_replace_malloc.c:1595)
+==3430715==    by 0x7D8DB0: SrsConfig::get_hls_vcodec(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) (srs_app_config.cpp:7156)
+==3430715==    by 0x781283: SrsHlsMuxer::segment_open() (srs_app_hls.cpp:418)
+
+# It's caused by static variable:
+string SrsConfig::get_hls_vcodec(string vhost) {
+    SRS_STATIC string DEFAULT = "h264";
+    SrsConfDirective* conf = get_hls(vhost);
+    if (!conf) {
+        return DEFAULT;
+```
+
+你可以调整下测试步骤，在触发内存检测前，先推流来初始化这些静态和全局变量，然后再次推流和内存增量泄露的检测：
+
+1. 启动SRS后先推流，初始化静态和全局变量，然后停止推流: `ffmpeg -re -i doc/source.flv -c copy -f flv rtmp://127.0.0.1/live/livestream`
+1. 触发内存检测，使用curl访问API，形成校准的数据，依然有大量误报，但可以忽略这些数据：`curl http://127.0.0.1:1985/api/v1/valgrind?check=added`
+1. 多尝试几次内存检测，直到没有新增的泄露，包括possibly和reachable。
+1. 压测，或者针对怀疑泄露的功能测试，比如RTMP推流：`ffmpeg -re -i doc/source.flv -c copy -f flv rtmp://127.0.0.1/live/livestream`
+1. 停止推流，等待SRS清理Source内存，大概等待30秒左右。
+1. 增量内存泄露检测，此时报告的泄露情况就非常准确了：`curl http://127.0.0.1:1985/api/v1/valgrind?check=added`
+
+由于变量已经初始化了，所以`still reachable`的干扰报告就不会有了。
 
 ## Syscall
 
@@ -740,6 +854,6 @@ SRS2.0.30支持7.5k客户端，参考：https://github.com/ossrs/srs/issues/217
 
 Winlin 2014.2
 
-![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.net&path=/lts/doc/zh/v6/performance)
+![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.net&path=/lts/doc/zh/v7/performance)
 
 

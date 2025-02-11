@@ -153,6 +153,6 @@ You could run more NGINX from another server, use the same config.
 
 Winlin 2014.11
 
-![](https://ossrs.io/gif/v1/sls.gif?site=ossrs.io&path=/lts/doc/en/v6/sample-hls-cluster)
+![](https://ossrs.io/gif/v1/sls.gif?site=ossrs.io&path=/lts/doc/en/v7/sample-hls-cluster)
 
 

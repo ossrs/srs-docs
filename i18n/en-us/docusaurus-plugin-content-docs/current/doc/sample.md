@@ -264,6 +264,6 @@ SRS最适合做这个事情，依赖很少，提供[arm编译脚本](./sample-ar
 
 Winlin 2014.2
 
-![](https://ossrs.io/gif/v1/sls.gif?site=ossrs.io&path=/lts/doc/en/v6/sample)
+![](https://ossrs.io/gif/v1/sls.gif?site=ossrs.io&path=/lts/doc/en/v7/sample)
 
 

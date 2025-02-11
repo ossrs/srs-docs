@@ -221,6 +221,54 @@ Body:
 
 > Note: You can use wireshark or tcpdump to verify it.
 
+## Heartbeat
+
+SRS will send heartbeat to the HTTP callback server. This allows you to monitor the health of SRS server. 
+Enable this feature by:
+
+```bash
+# heartbeat to api server
+# @remark, the ip report to server, is retrieve from system stat,
+#       which need the config item stats.network.
+heartbeat {
+    # whether heartbeat is enabled.
+    # Overwrite by env SRS_HEARTBEAT_ENABLED
+    # default: off
+    enabled off;
+    # the interval seconds for heartbeat,
+    # recommend 0.3,0.6,0.9,1.2,1.5,1.8,2.1,2.4,2.7,3,...,6,9,12,....
+    # Overwrite by env SRS_HEARTBEAT_INTERVAL
+    # default: 9.9
+    interval 9.3;
+    # when startup, srs will heartbeat to this api.
+    # @remark: must be a restful http api url, where SRS will POST with following data:
+    #   {
+    #       "device_id": "my-srs-device",
+    #       "ip": "192.168.1.100"
+    #   }
+    # Overwrite by env SRS_HEARTBEAT_URL
+    # default: http://127.0.0.1:8085/api/v1/servers
+    url http://127.0.0.1:8085/api/v1/servers;
+    # the id of device.
+    # Overwrite by env SRS_HEARTBEAT_DEVICE_ID
+    device_id       "my-srs-device";
+    # whether report with summaries
+    # if on, put /api/v1/summaries to the request data:
+    #   {
+    #       "summaries": summaries object.
+    #   }
+    # @remark: optional config.
+    # Overwrite by env SRS_HEARTBEAT_SUMMARIES
+    # default: off
+    summaries off;
+}
+```
+
+By enable the `summaries`, you can get the SRS server states, such as `self.pid` and `self.srs_uptime`, so you 
+can use this to determine whether SRS restarted.
+
+> Note: About fileds of `summaries`, see [HTTP API: summaries](./http-api.md#summaries) for details.
+
 ## Go Example
 
 Write Go code to handle SRS callback, for example, handling `on_publish`:

@@ -12,7 +12,7 @@
 
 > Note: 这个看似很容易，但是一定要自己用SRS搭建出来才算，而不是直接打开线上的演示网页。
 
-具体怎么做呢？请参考[Wiki: Getting Started](/docs/v5/doc/getting-started)。推荐用SRS Stack快速跑通，你也可以用宝塔快速部署，请看视频教程：[SRS Stack：起步、购买和入门](https://www.bilibili.com/video/BV1844y1L7dL/)
+具体怎么做呢？请参考[Wiki: Getting Started](../docs/v5/doc/getting-started)。推荐用Oryx快速跑通，你也可以用宝塔快速部署，请看视频教程：[Oryx：起步、购买和入门](https://www.bilibili.com/video/BV1844y1L7dL/)
 
 接触一个新的东西，首先就要有直观的体验和感觉，这个门槛虽然看起来很简单，但是它涉及到了音视频的几乎全链路的东西：
 
@@ -31,11 +31,11 @@
 
 典型的音视频业务场景，包括但不限于：
 
-* 全平台直播，小荷才露尖尖角。只需要上图的Encoders(FFmpeg/OBS)[推送RTMP到SRS](/docs/v4/doc/sample-rtmp)；一台SRS Origin(不需要Cluster)，[转封装成HTTP-FLV流](/docs/v4/doc/sample-http-flv)、[转封装成HLS](/docs/v4/doc/sample-hls)；Players根据平台的播放器可以选HTTP-FLV或HLS流播放。
-* WebRTC通话业务，[一对一通话](https://mp.weixin.qq.com/s/xWe6f9WRhtwnpJQ8SO0Eeg)，[多人通话](https://mp.weixin.qq.com/s/CM2h99A1e_masL5sjkp4Zw)，会议室等。[WebRTC](/docs/v4/doc/webrtc)是SRS4引入的关键和核心的能力，从1到3秒延迟，到100到300毫秒延迟，绝对不是数字的变化，而是本质的变化。
-* 监控和广电上云，各行业风起云涌。除了使用FFmpeg主动[拉取流到SRS](/docs/v4/doc/ingest)，还可以广电行业[SRT协议](/docs/v4/doc/sample-srt)推流，或监控行业[GB28181协议](https://github.com/ossrs/srs/issues/1500#issue-528623588)推流，SRS转换成互联网的协议观看。
+* 全平台直播，小荷才露尖尖角。只需要上图的Encoders(FFmpeg/OBS)[推送RTMP到SRS](../docs/v4/doc/sample-rtmp)；一台SRS Origin(不需要Cluster)，[转封装成HTTP-FLV流](../docs/v4/doc/sample-http-flv)、[转封装成HLS](../docs/v4/doc/sample-hls)；Players根据平台的播放器可以选HTTP-FLV或HLS流播放。
+* WebRTC通话业务，[一对一通话](https://mp.weixin.qq.com/s/xWe6f9WRhtwnpJQ8SO0Eeg)，[多人通话](https://mp.weixin.qq.com/s/CM2h99A1e_masL5sjkp4Zw)，会议室等。[WebRTC](../docs/v4/doc/webrtc)是SRS4引入的关键和核心的能力，从1到3秒延迟，到100到300毫秒延迟，绝对不是数字的变化，而是本质的变化。
+* 监控和广电上云，各行业风起云涌。除了使用FFmpeg主动[拉取流到SRS](../docs/v4/doc/ingest)，还可以广电行业[SRT协议](../docs/v4/doc/sample-srt)推流，或监控行业[GB28181协议](https://github.com/ossrs/srs/issues/1500#issue-528623588)推流，SRS转换成互联网的协议观看。
 * 直播低延迟和互动，聚变近在咫尺。[RTMP转WebRTC播放](https://github.com/ossrs/srs/issues/307#issue-76908382)降低播放延迟，还能做[直播连麦](https://mp.weixin.qq.com/s/7xexl07rrWBdh8xennXK3w)，或者使用WebRTC推流，未来还会支持WebTransport直播等等。
-* 大规模业务，带你装逼带你飞。如果业务快速上涨，可以通过[Edge Cluster](/docs/v4/doc/sample-rtmp-cluster)支持海量Players，或者[Origin Cluster](/docs/v4/doc/sample-origin-cluster)支持海量Encoders，当然可以直接平滑迁移到视频云。未来还会支持RTC的级联和集群。
+* 大规模业务，带你装逼带你飞。如果业务快速上涨，可以通过[Edge Cluster](../docs/v4/doc/sample-rtmp-cluster)支持海量Players，或者[Origin Cluster](../docs/v4/doc/sample-origin-cluster)支持海量Encoders，当然可以直接平滑迁移到视频云。未来还会支持RTC的级联和集群。
 
 每个场景都可以自己搭建出来典型的应用。
 
@@ -45,10 +45,10 @@
 
 第三个门槛：了解每个纵向的技术点，应用场景，代码和问题排查，大约`3～6月`左右。
 
-* [视频专栏](/docs/v4/tutorial/srs-server)，包括环境搭建，代码分析，还有专业老师的讲解。
-* [部署方案](/docs/v4/category/main-protocols)，如何部署实现不同的具体功能，这些功能可以组合起来使用。
-* [集群和扩展](/docs/v4/category/clusters)，当业务量上升，如何扩展单机到集群，如何服务不同区域的用户。
-* [集成和定制](/docs/v4/category/openapi)，如何和现有系统对接，如何验证用户，安全和防盗链机制等。
+* [视频专栏](../docs/v4/tutorial/srs-server)，包括环境搭建，代码分析，还有专业老师的讲解。
+* [部署方案](../docs/v4/category/main-protocols)，如何部署实现不同的具体功能，这些功能可以组合起来使用。
+* [集群和扩展](../docs/v4/category/clusters)，当业务量上升，如何扩展单机到集群，如何服务不同区域的用户。
+* [集成和定制](../docs/v4/category/openapi)，如何和现有系统对接，如何验证用户，安全和防盗链机制等。
 
 如果能踏踏实实的了解完SRS，音视频真不难。
 

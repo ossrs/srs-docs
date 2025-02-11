@@ -14,6 +14,6 @@ hide_table_of_contents: false
 * [WebRTC WHEP Player](https://ossrs.net/players/whep.html)
 * [HTTP-REST](https://ossrs.net/http-rest/)
 
-![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.net&path=/lts/tools/zh/v6/utility)
+![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.net&path=/lts/tools/zh/v7/utility)
 
 

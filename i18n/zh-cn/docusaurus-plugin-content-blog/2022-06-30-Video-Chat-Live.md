@@ -1,6 +1,6 @@
 ---
 slug: video-chat-live
-title: SRS Server - 如何实现直播间连麦
+title: SRS - 如何实现直播间连麦
 authors: []
 tags: [tutorial, video, chat, streaming]
 custom_edit_url: null
@@ -30,7 +30,7 @@ custom_edit_url: null
 
 前提条件，需要具备的知识点，或依赖的工具：
 
-* 一台云主机，带公网IP。推荐[SRS Stack](./SRS-Stack-Tutorial)，带有音视频服务器SRS Stack，腾讯云Lighthouse或CVM有SRS Stack镜像，其他云主机可以用宝塔安装。
+* 一台云主机，带公网IP。推荐[Oryx](./Oryx-Tutorial)，带有音视频服务器Oryx，腾讯云Lighthouse或CVM有Oryx镜像，其他云主机可以用宝塔安装。
 * 有一定的软件开发基础，虽然设计了比较简单的入门场景，还是有部分场景需要移动端开发能力，以及Linux服务器的操作能力。
 * [可选] 注册的域名，申请合法的HTTPS证书必须得域名，用于WebRTC推流；无域名只能使用自签名证书，操作麻烦些，也是可行的。
 
@@ -70,17 +70,17 @@ SaaS做直播的好处是不用了解直播的细节，直接就能把直播做�
 直播开源方案，推流工具还是用[OBS](https://obsproject.com/)，使用方法也是一样的。但是我们需要自己部署服务器，也需要选择直播观看的客户端：
 
 * 推流工具：OBS，vMix，芯象，腾讯会议等。
-* 直播平台：SRS Stack，SRS，NginxRTMP等。
+* 直播平台：Oryx，SRS，NginxRTMP等。
 * 观看工具：Chrome浏览器，VLC等。
 
-推荐使用SRS Stack，因为后面也可以用于连麦。最方便的部署SRS的方式使用[SRS Stack](./SRS-Stack-Tutorial)，可以用腾讯云镜像一键部署，其他云或自己虚拟机可以用宝塔部署，具体请参考[视频教程](https://www.bilibili.com/video/BV1844y1L7dL/)。
+推荐使用Oryx，因为后面也可以用于连麦。最方便的部署SRS的方式使用[Oryx](./Oryx-Tutorial)，可以用腾讯云镜像一键部署，其他云或自己虚拟机可以用宝塔部署，具体请参考[视频教程](https://www.bilibili.com/video/BV1844y1L7dL/)。
 
 部署好SRS后，可以使用OBS推流到SRS，地址一般比较简单，例如：
 
 * Server: `rtmp://your-server-ip/live/`
 * Stream Key: `livestream`
 
-> Note：若使用SRS Stack，则`Stream Key`中可能有鉴权字符，例如`livestream?secret=******`，可以从SRS Stack的后台`私人直播间`拷贝就可以。
+> Note：若使用Oryx，则`Stream Key`中可能有鉴权字符，例如`livestream?secret=******`，可以从Oryx的后台`私人直播间`拷贝就可以。
 
 开源方案的播放器需要自己选择，比较简单的是[VLC](https://www.videolan.org/)，选择`File > Open Network`，然后输入地址：
 
@@ -88,7 +88,7 @@ SaaS做直播的好处是不用了解直播的细节，直接就能把直播做�
 * FLV流：`http://your-server-ip/live/livestream.flv`
 * HLS流：`http://your-server-ip/live/livestream.m3u8`
 
-> Note: 若自己部署SRS，则HTTP端口默认是8080，需要在地址中加上，比如 `http://your-server-ip:8080/live/livestream.flv`
+> Note: 若自己部署SRS，则HTTP端口默认是8080，需要在地址中加上，比如 `http://your-server-ip/live/livestream.flv`
 
 用开源方案搭建直播，比较容易能看到整个直播的链路，如下图所示：
 
@@ -110,7 +110,7 @@ OBS(主播) ---RTMP---> SRS ----RTMP/FLV/HLS---> VLC
 
 > Note: 针对不同的业务要求，我们可以选择不同的直播流，一般FLV的延迟比较低兼容性不如HLS，HLS延迟比较大但平台的兼容性很好。还可以使用WebRTC观看直播流，这个就不在这里介绍，有兴趣可以自己摸索。
 
-使用SRS搭建直播，虽然能看到直播的全链路过程，但有个明显的问题，就是这里只有一台SRS服务器，能支持的观看人数是有限的，除了少数场景的流很少，一般都需要支持成百上千甚至上万人观看。可以用多台SRS组成集群，可以支持更多人观看，我们不展开讲这个实现，可以参考[SRS集群](/docs/v4/doc/introduction#cluster-guides)。
+使用SRS搭建直播，虽然能看到直播的全链路过程，但有个明显的问题，就是这里只有一台SRS服务器，能支持的观看人数是有限的，除了少数场景的流很少，一般都需要支持成百上千甚至上万人观看。可以用多台SRS组成集群，可以支持更多人观看，我们不展开讲这个实现，可以参考[SRS集群](../docs/v4/doc/introduction#cluster-guides)。
 
 > Note: SRS集群和直播云服务还是有区别的，SRS集群只是扩展了SRS的并发能力，一般在企业或学校内网可以用，但在互联网上的直播云服务除了并发，还需要支持就近调度、计量计费、运维监控、安全防护等，详细可以参考CDN的原理。
 
@@ -136,11 +136,11 @@ OBS(主播) ---RTMP---> SRS ----RTMP/FLV/HLS---> VLC
 
 同样，最简单的通话方案是SaaS，可以选择腾讯会议或Zoom两个通话的SaaS，它们都有自己的客户端和账号体系，只需要下载就可以使用了。
 
-若使用开源搭建，推荐SRS服务器。最方便的部署SRS的方式使用[SRS Stack](./SRS-Stack-Tutorial)，可以用腾讯云镜像一键部署，其他云或自己虚拟机可以用宝塔部署，具体请参考[视频教程](https://www.bilibili.com/video/BV1844y1L7dL/)。
+若使用开源搭建，推荐SRS服务器。最方便的部署SRS的方式使用[Oryx](./Oryx-Tutorial)，可以用腾讯云镜像一键部署，其他云或自己虚拟机可以用宝塔部署，具体请参考[视频教程](https://www.bilibili.com/video/BV1844y1L7dL/)。
 
-由于WebRTC推流，必须使用HTTPS，而HTTPS必须要域名和证书，可以参考[如何设置HTTPS](./SRS-Stack-HTTPS)。当然如果使用自签名证书也可以，需要手动允许自签名证书。
+由于WebRTC推流，必须使用HTTPS，而HTTPS必须要域名和证书，可以参考[如何设置HTTPS](./Oryx-HTTPS)。当然如果使用自签名证书也可以，需要手动允许自签名证书。
 
-安装好SRS Stack后，我们打开后台`私人直播间`，选择`WebRTC推流`，点击更换流名称按钮，获取推流和播放链接，每个主播一个流地址比如：
+安装好Oryx后，我们打开后台`私人直播间`，选择`WebRTC推流`，点击更换流名称按钮，获取推流和播放链接，每个主播一个流地址比如：
 
 * 主播A：`webrtc://lh.ossrs.net:443/live/acagdd?secret=xxx`
 * 主播B：`webrtc://lh.ossrs.net:443/live/ccdkkc?secret=xxx`

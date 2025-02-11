@@ -302,7 +302,7 @@ kickoff_for_idle 0;
 
 如果需要支持很多推流，或者很多路流，参考[Origin Cluster](./origin-cluster.md).
 
-关于流媒体的负载均衡，还有很多其他方案，可以参考[load balancing](/blog/load-balancing-streaming-servers).
+关于流媒体的负载均衡，还有很多其他方案，可以参考[load balancing](../../../blog/load-balancing-streaming-servers).
 
 ## Low Latency RTMP
 
@@ -318,4 +318,4 @@ SRS支持校准RTMP的时间戳，参考[Jitter](./time-jitter.md).
 
 SRS使用writev实现高性能RTMP分发，参考[benchmark](./performance.md##performance-banchmark)
 
-![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.net&path=/lts/doc/zh/v6/rtmp)
+![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.net&path=/lts/doc/zh/v7/rtmp)

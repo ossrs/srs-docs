@@ -1,6 +1,6 @@
 ---
 slug: why-dash-is-bad-solution-for-live-streaming
-title: SRS Server - 为何DASH是个很烂的直播协议
+title: SRS - 为何DASH是个很烂的直播协议
 authors: []
 tags: [video, dash, live, streaming]
 custom_edit_url: null
@@ -99,7 +99,7 @@ Camera/Microphone --WebRTC---> SRS --DASH--> Viewers
 ```
 
 由于浏览器推流，只能使用WebRTC，因此需要一个流媒体服务器，将WebRTC转换成DASH。SRS就可以实现，详细请参考
-[这里](/docs/v5/doc/getting-started#webrtc-for-live-streaming).
+[这里](../docs/v5/doc/getting-started#webrtc-for-live-streaming).
 
 注意SRS也支持[WebRTC-HTTP ingestion protocol (WHIP)](https://datatracker.ietf.org/doc/draft-ietf-wish-whip/)，例如
 [srs-unity](https://github.com/ossrs/srs-unity)就是使用WHIP实现Unity环境的推流。

@@ -113,7 +113,11 @@ perf report --call-graph --stdio
 
 > Remark: The stack(`-g`) does not work for SRS(ST), because ST modifies the SP.
 
-## ASAN(Google Address Sanitizer)
+## ASAN
+
+[Asan](https://github.com/google/sanitizers/wiki/AddressSanitizer) is Google Address Sanitizer.
+
+### ASAN: Usage
 
 SRS5+ supports [ASAN](https://github.com/google/sanitizers/wiki/AddressSanitizer) by default.
 
@@ -126,7 +130,56 @@ If you want to disable it, please check bellow configure options:
   --sanitizer-log=on|off    Whether hijack the log for libasan(asan). Default: off
 ```
 
+Enable leaks detection, see [halt_on_error](https://github.com/google/sanitizers/wiki/AddressSanitizerFlags) 
+and [detect_leaks](https://github.com/google/sanitizers/wiki/SanitizerCommonFlags):
+
+```bash
+ASAN_OPTIONS=halt_on_error=1:detect_leaks=1 ./objs/srs -c conf/console.conf
+```
+
+> Note: SRS disable memory leak detection by default, because it will cause daemon to exit with error.
+
 Highly recommend to enable ASAN because it works great.
+
+### ASAN: Preload
+
+If you encounter the following error:
+
+```bash
+==4181651==ASan runtime does not come first in initial library list; you should either link runtime 
+to your application or manually preload it with LD_PRELOAD.
+```
+
+You should preload the ASAN library:
+
+```bash
+LD_PRELOAD=$(find /usr -name libasan.so.5 2>/dev/null) ./objs/srs -c conf/console.conf
+```
+
+> Note: Generally, the libasan.so file should be located at `/usr/lib64/libasan.so.5`
+
+### ASAN: Options
+
+By default, SRS use the following ASAN options:
+
+```text
+extern "C" const char *__asan_default_options() {
+    return "halt_on_error=0:detect_leaks=0:alloc_dealloc_mismatch=0";
+}
+```
+
+* `halt_on_error=0`: Disable halt on errors by halt_on_error, only print messages, note that it still quit for fatal errors, see [halt_on_error](https://github.com/google/sanitizers/wiki/AddressSanitizerFlags).
+* `detect_leaks=0`: Disable the memory leaking detect for daemon by detect_leaks, see [detect_leaks](https://github.com/google/sanitizers/wiki/SanitizerCommonFlags).
+* `alloc_dealloc_mismatch=0`: Also disable alloc_dealloc_mismatch for gdb.
+
+You can override the options by `ASAN_OPTIONS`:
+
+```bash
+ASAN_OPTIONS=halt_on_error=1:detect_leaks=1:alloc_dealloc_mismatch=1 ./objs/srs -c conf/console.conf
+```
+
+Note that the `ASAN_OPTIONS` will be loaded before the `main()` function, so you can set it in the shell, 
+but can not set in the `main()` function.
 
 ## GPROF
 
@@ -247,13 +300,79 @@ killall -2 srs
 
 ## VALGRIND
 
+Valgrind is a powerful tool for memory leak and other issue.
+
+### Valgrind: Memcheck
+
 SRS3+ also supports valgrind.
 
 ```
-valgrind --leak-check=full ./objs/srs -c conf/console.conf
+valgrind --leak-check=full --show-leak-kinds=all ./objs/srs -c conf/console.conf
 ```
 
 > Remark: For ST to support valgrind, see [state-threads](https://github.com/ossrs/state-threads#usage) and [ST#2](https://github.com/ossrs/state-threads/issues/2).
+
+> Remark: For HTTP valgrind API, you should upgrade your SRS to required version, see [#4150](https://github.com/ossrs/srs/pull/4150).
+
+### Valgrind: Incremental Memory Leak Detection
+
+To use Valgrind to detect memory leaks in SRS, even though Valgrind hooks are supported in ST, there are 
+still many false positives. A more reasonable approach is to have Valgrind report incremental memory leaks. 
+This way, global and static variables can be avoided, and detection can be achieved without exiting the 
+program. Follow these steps:
+
+1. Compile SRS with Valgrind support: `./configure --valgrind=on && make`
+1. Start SRS with memory leak detection enabled: `valgrind --leak-check=full --show-leak-kinds=all ./objs/srs -c conf/console.conf`
+1. Trigger memory detection by using curl to access the API and generate calibration data. There will still be many false positives, but these can be ignored: `curl http://127.0.0.1:1985/api/v1/valgrind?check=added`
+1. Retry memory detection, util the valgrind leak summary is stable, no any new lost blocks.
+1. Perform load testing or test the suspected leaking functionality, such as RTMP streaming: `ffmpeg -re -i doc/source.flv -c copy -f flv rtmp://127.0.0.1/live/livestream`
+1. Stop streaming and wait for SRS to clean up the Source memory, approximately 30 seconds.
+1. Perform incremental memory leak detection. The reported leaks will be very accurate at this point: `curl http://127.0.0.1:1985/api/v1/valgrind?check=added`
+
+```text
+HTTP #0 11.176.19.95:42162 GET http://9.134.74.169:1985/api/v1/valgrind?check=added, content-length=-1
+query check=added
+==1481822== LEAK SUMMARY:
+==1481822==    definitely lost: 0 (+0) bytes in 0 (+0) blocks
+==1481822==    indirectly lost: 0 (+0) bytes in 0 (+0) blocks
+==1481822==      possibly lost: 3,406,847 (+0) bytes in 138 (+0) blocks
+==1481822==    still reachable: 18,591,709 (+0) bytes in 819 (+0) blocks
+==1481822==                       of which reachable via heuristic:
+==1481822==                         multipleinheritance: 536 (+0) bytes in 4 (+0) blocks
+==1481822==         suppressed: 0 (+0) bytes in 0 (+0) blocks
+==1481822== Reachable blocks (those to which a pointer was found) are not shown.
+```
+
+> Note: To avoid interference from the HTTP request itself on Valgrind, SRS uses a separate coroutine to perform periodic checks. Therefore, after accessing the API, you may need to wait a few seconds for the detection to be triggered.
+
+### Valgrind: Still Reachable
+
+Sometimes, you will receive the `still reachable` report for static or global variables, like this example:
+
+```text
+==3430715== 1,040 (+1,040) bytes in 1 (+1) blocks are still reachable in new loss record 797 of 836
+==3430715==    at 0x4C3F963: calloc (vg_replace_malloc.c:1595)
+==3430715==    by 0x7D8DB0: SrsConfig::get_hls_vcodec(std::__cxx11::basic_string<char, std::char_traits<char>, std::allocator<char> >) (srs_app_config.cpp:7156)
+==3430715==    by 0x781283: SrsHlsMuxer::segment_open() (srs_app_hls.cpp:418)
+
+# It's caused by static variable:
+string SrsConfig::get_hls_vcodec(string vhost) {
+    SRS_STATIC string DEFAULT = "h264";
+    SrsConfDirective* conf = get_hls(vhost);
+    if (!conf) {
+        return DEFAULT;
+```
+
+You can easily work around this by publishing the stream, stopping it, and then triggering the memory leak detection:
+
+1. Publish stream to initialize the static and global variables: `ffmpeg -re -i doc/source.flv -c copy -f flv rtmp://127.0.0.1/live/livestream`
+1. Trigger memory detection by using curl to access the API and generate calibration data. There will still be many false positives, but these can be ignored: `curl http://127.0.0.1:1985/api/v1/valgrind?check=added`
+1. Retry memory detection, util the valgrind leak summary is stable, no any new lost blocks.
+1. Perform load testing or test the suspected leaking functionality, such as RTMP streaming: `ffmpeg -re -i doc/source.flv -c copy -f flv rtmp://127.0.0.1/live/livestream`
+1. Stop streaming and wait for SRS to clean up the Source memory, approximately 30 seconds.
+1. Perform incremental memory leak detection. The reported leaks will be very accurate at this point: `curl http://127.0.0.1:1985/api/v1/valgrind?check=added`
+
+With the variables initialized, the `still reachable` report will be gone.
 
 ## Syscall
 
@@ -705,6 +824,6 @@ SRS2.0.30 refined to support 7.5k clients, read https://github.com/ossrs/srs/iss
 
 Winlin 2014.11
 
-![](https://ossrs.io/gif/v1/sls.gif?site=ossrs.io&path=/lts/doc/en/v6/performance)
+![](https://ossrs.io/gif/v1/sls.gif?site=ossrs.io&path=/lts/doc/en/v7/performance)
 
 

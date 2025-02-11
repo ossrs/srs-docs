@@ -9,7 +9,7 @@ hide_table_of_contents: false
 
 > Note: SRS5 is now stable and available for use in your product environment.
 
-SRS is a open-source ([MIT Licensed](/license)), simple, high-efficiency, real-time video server supporting RTMP,
+SRS is a open-source ([MIT Licensed](../../../license)), simple, high-efficiency, real-time video server supporting RTMP,
 WebRTC, HLS, HTTP-FLV, SRT, MPEG-DASH, and GB28181. SRS media server works with clients like [FFmpeg](https://ffmpeg.org),
 [OBS](https://obsproject.com), [VLC](https://www.videolan.org), and [WebRTC](https://webrtc.org) to provide
 the ability to [receive and distribute streams](./getting-started.md) in a typical publish (push) and
@@ -26,7 +26,7 @@ observability. SRS supports session-level [traceable logs](./log.md), greatly re
 If you are new to audio, video, and streaming media or new to SRS, we recommend reading [Getting Started](./getting-started.md)
 and [Learning Path](/guide). Please take the time to read the following documentation, as reading and
 familiarizing yourself with the documentation is a basic requirement of the community. If you encounter any
-problems, please first search in the [FAQ](/faq), then in [Issues](https://github.com/ossrs/srs/issues) and
+problems, please first search in the [FAQ](../../../faq), then in [Issues](https://github.com/ossrs/srs/issues) and
 [Discussions](https://github.com/ossrs/srs/discussions) to find answers to almost all questions.
 
 SRS is developed using ANSI C++ (98) and only uses basic C++ capabilities. It can run on multiple platforms
@@ -55,7 +55,7 @@ You can search for 'Deprecated' or 'Removed' on the page. We will also explain i
 particular feature.
 
 If you want to know about the features we are currently working on, you can join our [Discord](/contact#discussion)
-and [Blog](/blog). Once new features are completed, we will post articles on Discord and Blog, so stay tuned.
+and [Blog](../../../blog). Once new features are completed, we will post articles on Discord and Blog, so stay tuned.
 
 ## Who's using SRS?
 
@@ -123,10 +123,10 @@ For SRS, generally, once it reaches the beta version, it can be used online.
 SRS doesn't develop client-side applications because there are already mature and large open-source communities like
 FFmpeg, OBS, VLC, and WebRTC. SRS collaborates with these communities and uses their products.
 
-In addition to the SRS server, they also work on SRS Stack and WordPress plugins, with the main goal of creating
+In addition to the SRS server, they also work on Oryx and WordPress plugins, with the main goal of creating
 simpler application methods for different industries, including:
 
-* [srs-stack](https://github.com/ossrs/srs-stack): SRS Stack is an out-of-the-box, single-machine video cloud solution that includes FFmpeg and SRS. It's designed for users who aren't familiar with command lines and allows them to set up audio and video applications through Tencent Cloud images or BaoTa with mouse operations.
+* [Oryx](https://github.com/ossrs/oryx): Oryx(SRS Stack) is an out-of-the-box, single-machine video cloud solution that includes FFmpeg and SRS. It's designed for users who aren't familiar with command lines and allows them to set up audio and video applications through Tencent Cloud images or BaoTa with mouse operations.
 * [WordPress-Plugin-SrsPlayer](https://github.com/ossrs/WordPress-Plugin-SrsPlayer): This plugin is for the publishing industry, such as personal blogs and media websites, making it easy for users to utilize audio and video capabilities.
 * [srs-unity](https://github.com/ossrs/srs-unity): This project is for the gaming industry, integrating Unity's WebRTC SDK to use audio and video capabilities.
 
@@ -147,7 +147,7 @@ support for friends who sponsor SRS. Please see [Sponsor](/contact#donation).
 Audio and video developers often face challenges, and they might be used to the close support from cloud
 service providers. When joining an open-source community, it might feel unfamiliar.
 
-Don't panic when encountering issues. Most problems have solutions that can be found in the [FAQ](/faq)
+Don't panic when encountering issues. Most problems have solutions that can be found in the [FAQ](../../../faq)
 or the documentation [Docs](./getting-started.md).
 
 You can also join the Discord channel through [Support](/contact#discussion) to communicate with other developers.
@@ -160,10 +160,10 @@ For advanced developers, we suggest becoming a `Backer/Sponsor`. See [Support](/
 SRS has no commercial plans. We are currently working hard to build a global, active developer community.
 The value of open-source will grow, and community support will increase.
 
-## About SRS Stack
+## About Oryx
 
-SRS Stack is a lightweight, open-source video cloud solution based on Go, Reactjs, SRS, FFmpeg, WebRTC,
-and more. For more details, please refer to [SRS Stack](./getting-started-stack.md).
+Oryx is a lightweight, open-source video cloud solution based on Go, Reactjs, SRS, FFmpeg, WebRTC,
+and more. For more details, please refer to [Oryx](./getting-started-oryx.md).
 
 ![](https://ossrs.io/gif/v1/sls.gif?site=ossrs.io&path=/lts/doc/en/v5/introduction)
 

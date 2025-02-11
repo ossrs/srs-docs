@@ -9,6 +9,10 @@ hide_table_of_contents: false
 
 关于SRS的IDE（集成开发环境）。
 
+## VSCode
+
+See [VSCode: Usage](https://github.com/ossrs/srs/blob/develop/.vscode/README.md) for example.
+
 ## CLion
 
 SRS只支持JetBrains的[CLion](http://www.jetbrains.com/clion/)，它是基于cmake编译的。
@@ -94,6 +98,6 @@ yum install perl-core cmake gcc gcc-c++ gdb -y
 
 Winlin 2015.3
 
-![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.net&path=/lts/doc/zh/v6/ide)
+![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.net&path=/lts/doc/zh/v7/ide)
 
 

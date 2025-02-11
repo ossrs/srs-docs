@@ -15,7 +15,7 @@
 
 简单介绍下SRS的历史吧，我们倒着说。
 
-2023年1月，Star超过20K，开通[付费星球](https://mp.weixin.qq.com/s/2PpGbXt8FK9qH8BfVIDZnw)，SRS Stack支持[虚拟直播](https://mp.weixin.qq.com/s/I0Kmxtc24txpngO-PiR_tQ)，
+2023年1月，Star超过20K，开通[付费星球](https://mp.weixin.qq.com/s/2PpGbXt8FK9qH8BfVIDZnw)，Oryx支持[虚拟直播](https://mp.weixin.qq.com/s/I0Kmxtc24txpngO-PiR_tQ)，
 确定6.0开发代号为[Hang](#release60)，推出新的[TOC规则](https://github.com/ossrs/srs/pull/3393)。
 
 2022年11月，组建了SRS的TOC和开发者社区，活跃开发者人数达到47人。SRS 5.0功能完成，新增功能包括[Forward增强](https://github.com/ossrs/srs/pull/2799)，
@@ -61,11 +61,11 @@ SRS全面支持[Docker](https://github.com/ossrs/dev-docker)。
 2014.10，[SRS1.0](#release10)beta发布。从0到1.0，SRS花了1年时间，17个里程碑，
 [7](https://github.com/ossrs/srs/tree/1.0release)个开发版，223个修订版，43700行功能代码，15616行utest代码，1803次提交，161个bug和功能，
 解决了[117](https://github.com/ossrs/srs/tree/1.0release)个，可在[1](https://github.com/ossrs/srs/tree/1.0release)个平台运行(linux)，支持4种cpu(x86/x64/arm/mips)，[11](https://github.com/ossrs/srs/tree/1.0release)个核心功能(origin、
-[edge](/docs/v4/doc/edge)、 [vhost](/docs/v4/doc/rtmp-url-vhost)、 [transcode](/docs/v4/doc/ffmpeg)、 [ingest](/docs/v4/doc/ingest)、 [dvr](/docs/v4/doc/dvr)、
-[forward](/docs/v4/doc/ffmpeg)、 [http-api](/docs/v4/doc/http-api)、 [http-callback](/docs/v4/doc/http-callback)、 [reload](/docs/v4/doc/reload)、
-[tracable-log](/docs/v4/doc/log))，[35](https://github.com/ossrs/srs/tree/1.0release)个功能点，58篇wiki，SRS的QQ群有245位成员，活跃成员141人，
+[edge](../docs/v4/doc/edge)、 [vhost](../docs/v4/doc/rtmp-url-vhost)、 [transcode](../docs/v4/doc/ffmpeg)、 [ingest](../docs/v4/doc/ingest)、 [dvr](../docs/v4/doc/dvr)、
+[forward](../docs/v4/doc/ffmpeg)、 [http-api](../docs/v4/doc/http-api)、 [http-callback](../docs/v4/doc/http-callback)、 [reload](../docs/v4/doc/reload)、
+[tracable-log](../docs/v4/doc/log))，[35](https://github.com/ossrs/srs/tree/1.0release)个功能点，58篇wiki，SRS的QQ群有245位成员，活跃成员141人，
 2位主作者，12位贡献者，14位捐赠者，至少有蓝汛、VeryCloud、VeryCDN、
-清华电视台在[使用或基于SRS改自己的服务器](/docs/v4/doc/sample)，数百个各种行业的公司在使用SRS主要包含视频监控、移动端、在线教育、
+清华电视台在[使用或基于SRS改自己的服务器](../docs/v4/doc/sample)，数百个各种行业的公司在使用SRS主要包含视频监控、移动端、在线教育、
 秀场和KTV、互动视频、电视台、物联网、学生。
 
 2014.3，进入反馈期，树莓派，极路由，cubieboard等嵌入式设备上有人问是否能支持。我自己买了树莓派，在上面运行成功，
@@ -118,7 +118,7 @@ SRS是全球TOP1的开源视频服务器，支持直播和WebRTC，可应用于�
 - [x] WebRTC over TCP，支持TCP传输WebRTC，支持TCP端口复用。[#2852](https://github.com/ossrs/srs/issues/2852)
 - [x] 支持HTTP API、HTTP Stream、HTTP Server、WebRTC TCP端口复用。 [#2881](https://github.com/ossrs/srs/issues/2881).
 
-预计5.0会在2022年底完成主要功能开发，预计2023年底发布。
+SRS 5.0是在2023.12发布的，请参考[5.0-r0](https://github.com/ossrs/srs/releases/tag/v5.0-r0).
 
 ## Release4.0
 
@@ -138,7 +138,7 @@ LVS的包研，阿里的叔度、致凡、华大、文景、士豪和还剑。�
 - [x] [experimental]支持SRT推流，广电广泛支持的新协议。参考：[#1147](https://github.com/ossrs/srs/issues/1147).
 - [x] [feature]支持GB28181推流，摄像头通过国标协议推流。参考：[#1500](https://github.com/ossrs/srs/issues/1500).
 
-预计4.0会在2021年底发布。
+SRS 4.0是在2022.06发布的，请参考[4.0-r0](https://github.com/ossrs/srs/releases/tag/v4.0-r0).
 
 ## Release3.0
 

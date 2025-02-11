@@ -7,10 +7,10 @@ From the perspective of a writer, describe how to write a document for SRS.
 Link the blog in docs:
 
 ```markdown
-[SRS Stack aaPanel Plugin](/blog/BT-aaPanel)
+[Oryx aaPanel Plugin](../../../blog/BT-aaPanel)
 ```
 
-For instance, refer to the `getting-started-stack.md` document for more details.
+For instance, refer to the `getting-started-oryx.md` document for more details.
 
 ## How to link document in the sample docs?
 
@@ -27,7 +27,7 @@ For instance, refer to the `introduction.md` document for more details.
 Link the pages in docs:
 
 ```markdown
-[MIT Licensed](/license)
+[MIT Licensed](../../../license)
 ```
 
 For instance, refer to the `introduction.md` document for more details.
@@ -56,17 +56,17 @@ Link the img:
 ![](https://ossrs.io/lts/en-us/img/SRS-SingleNode-4.0-hd.png)
 ```
 
-For instance, refer to the [README.md](https://github.com/ossrs/srs-stack/blob/main/README.md) for more details.
+For instance, refer to the [README.md](https://github.com/ossrs/oryx/blob/main/README.md) for more details.
 
 ## How to link docs in blog?
 
 Link the docs in blog:
 
 ```markdown
-[Getting Started](/docs/v5/doc/getting-started-stack#docker)
+[Getting Started](../docs/v5/doc/getting-started-oryx#docker)
 ```
 
-For instance, refer to the `2022-04-09-SRS-Stack-Tutorial.md` document for more details.
+For instance, refer to the `2022-04-09-Oryx-Tutorial.md` document for more details.
 
 ## How to link docs in tutorials?
 
@@ -76,4 +76,10 @@ Link the docs in tutorials:
 [ReusePort](../doc/reuse-port.md)
 ```
 
-See [srs-books](/docs/v6/tutorial/srs-books) for more details.
+## How to link pages in blog?
+
+Link the pages in blog:
+
+```markdown
+[Cloud](../cloud)
+```

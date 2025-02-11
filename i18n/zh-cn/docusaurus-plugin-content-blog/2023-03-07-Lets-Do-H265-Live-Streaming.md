@@ -1,6 +1,6 @@
 ---
 slug: lets-do-h265-live-streaming
-title: SRS Server - H.265直播省一半带宽费用
+title: SRS - H.265直播省一半带宽费用
 authors: []
 tags: [architecture, hevc, h265, codec, live]
 custom_edit_url: null
@@ -85,8 +85,8 @@ H.265的收益就不用说了，可以用更少的带宽，传输同样的质量
 * [x] 原生支持：解析HEVC元数据，通过HTTP API提供。
 * [x] 原生支持：黑盒测试支持HEVC。
 * [x] 原生支持：SRS镜像支持补丁的FFmpeg。可以不用自己编译FFmpeg，使用SRS镜像提供的FFmpeg即可。
-* [x] 原生支持：[WordPress plugin SrsPlayer](https://github.com/ossrs/WordPress-Plugin-SrsPlayer)插件支持HEVC。由于SRS Stack使用的是4.0稳定版本，还需要几年才能切换到6.0。
-* [ ] 不支持：Update [srs-stack](https://github.com/ossrs/srs-stack) for HEVC.
+* [x] 原生支持：[WordPress plugin SrsPlayer](https://github.com/ossrs/WordPress-Plugin-SrsPlayer)插件支持HEVC。由于Oryx使用的是4.0稳定版本，还需要几年才能切换到6.0。
+* [ ] 不支持：Update [Oryx](https://github.com/ossrs/oryx) for HEVC.
 * [ ] 不支持：Edge server supports publish HEVC stream to origin.
 * [ ] 不支持：Edge server supprots play HEVC stream from origin.
 * [ ] 不支持：HTTP Callback takes HEVC metadata.
@@ -151,7 +151,7 @@ WebRTC对于AV1的支持更完善，Safari/Chrome/Firefox也都支持，具体�
 
 ## FFmpeg Patch
 
-FFmpeg 6支持了HEVC over RTMP，如果需要自己编译，参考[FFmpeg Tools](/docs/v6/doc/hevc#ffmpeg-tools#ffmpeg-tools).
+FFmpeg 6支持了HEVC over RTMP，如果需要自己编译，参考[FFmpeg Tools](../docs/v6/doc/hevc#ffmpeg-tools#ffmpeg-tools).
 
 SRS提供了打过Patch的FFmpeg、ffplay和ffprobe，可以直接用SRS Docker推流：
 
@@ -165,7 +165,7 @@ docker run --net=host --rm -it ossrs/srs:encoder ffmpeg -stream_loop -1 -re -i d
   -acodec copy -vcodec libx265 -f flv rtmp://127.0.0.1/live/livestream
 ```
 
-可以详细参考[FFmpeg Tools](/docs/v6/doc/hevc#ffmpeg-tools#ffmpeg-tools)
+可以详细参考[FFmpeg Tools](../docs/v6/doc/hevc#ffmpeg-tools#ffmpeg-tools)
 
 ## Known Issues
 

@@ -146,6 +146,6 @@ HLS流地址为： `http://192.168.1.170:8080/live/livestream_ff.m3u8`
 
 Winlin 2014.3
 
-![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.net&path=/lts/doc/zh/v6/sample-transcode-to-hls)
+![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.net&path=/lts/doc/zh/v7/sample-transcode-to-hls)
 
 

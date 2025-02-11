@@ -1695,7 +1695,7 @@ EOF
 | 对比项 | 无状态源站集群 | 有状态源站集群 |
 | --- |       -----    |    ----      |
 | 部署 | 容易，源站只需要创建一个StatefulSet和Service | 复杂，需要几个源站就需要创建几个应用 |
-| 规模 | <30节点，需要将节点写入源站和边缘配置 | <10节点，需要将节点写入源站和边缘配置 |
+| 规模 | `<30`节点，需要将节点写入源站和边缘配置 | `<10`节点，需要将节点写入源站和边缘配置 |
 | 更新 | 简单，直接修改镜像更新Pod | 复杂，需要再创建源站同等数量的应用，几个源站就几个应用 |
 | 灰度 | 不支持，更新时断流有重推 | 支持灰度，可手动灰度指定的机器，<br/>更新时断流有重推 |
 
@@ -2107,6 +2107,6 @@ kubectl exec `kubectl get po|grep srs-deploy|awk '{print $1}'` -- tail -f objs/s
 
 Winlin 2020.02
 
-![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.net&path=/lts/doc/zh/v6/k8s)
+![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.net&path=/lts/doc/zh/v7/k8s)
 
 

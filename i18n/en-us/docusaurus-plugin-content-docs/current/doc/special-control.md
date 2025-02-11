@@ -171,6 +171,6 @@ vhost __defaultVhost__ {
 
 Winlin 2015.8
 
-![](https://ossrs.io/gif/v1/sls.gif?site=ossrs.io&path=/lts/doc/en/v6/special-control)
+![](https://ossrs.io/gif/v1/sls.gif?site=ossrs.io&path=/lts/doc/en/v7/special-control)
 
 

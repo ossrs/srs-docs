@@ -1,12 +1,16 @@
 <component name="ProjectRunConfigurationManager">
-  <configuration default="false" name="start-cn" type="js.build_tools.npm">
+  <configuration default="false" name="start-cn" type="js.build_tools.npm" nameIsGenerated="true">
     <package-json value="$PROJECT_DIR$/package.json" />
-    <command value="start" />
-    <arguments value="--locale zh-cn" />
+    <command value="run" />
+    <scripts>
+      <script value="start-cn" />
+    </scripts>
     <node-interpreter value="project" />
+    <package-manager value="npm" />
     <envs>
-      <env name="REGION" value="zh-cn" />
-      <env name="BASE_URL" value="/lts/zh-cn/" />
+      <env name="REGION" value="'zh-cn'" />
+      <env name="BASE_URL" value="'/lts/zh-cn/'" />
+      <env name="SRS_OS_LOCALE" value="zh-cn" />
     </envs>
     <method v="2" />
   </configuration>

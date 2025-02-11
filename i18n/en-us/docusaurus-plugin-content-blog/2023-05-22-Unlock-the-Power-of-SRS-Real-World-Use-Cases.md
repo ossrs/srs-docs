@@ -1,6 +1,6 @@
 ---
 slug: unlock-the-power-of-srs-real-world-use-cases
-title: SRS Server - Unlock the Power of SRS, Real-World Use Cases.
+title: SRS - Unlock the Power of SRS, Real-World Use Cases.
 authors: []
 tags: [srs, use-case]
 custom_edit_url: null
@@ -62,11 +62,11 @@ In short, this is a key feature of SRS.
 
 Are you a video blogger with lots of high-quality videos? Have you thought about setting up a live room to grow your business?
 
-With SRS Stack, you can easily turn your video files into live streams and engage your audience without having to live-stream yourself.
+With Oryx, you can easily turn your video files into live streams and engage your audience without having to live-stream yourself.
 
-SRS Stack lets you create virtual live-streaming 24/7 in just three steps: upload your videos, set up a live room (like a YouTube live room), and copy-paste the stream key to start live streaming.
+Oryx lets you create virtual live-streaming 24/7 in just three steps: upload your videos, set up a live room (like a YouTube live room), and copy-paste the stream key to start live streaming.
 
-It's easy, doesn't require any media streaming expertise, and SRS Stack can even restream your live streams to other platforms for free since it's open source.
+It's easy, doesn't require any media streaming expertise, and Oryx can even restream your live streams to other platforms for free since it's open source.
 
 ## Video Blogger, empower video bloggers with live streaming.
 
@@ -76,7 +76,7 @@ If you own a WordPress site, you may have considered adding live streaming, whic
 
 But now, with the SRS Player WordPress plugin, you can incorporate live streaming using HTTP-FLV, HLS, and WebRTC, as well as video-on-demand streaming via HTTP-MP4.
 
-Simply embed the live-streaming player with a WordPress shortcode, which you can find in the SRS Stack console.
+Simply embed the live-streaming player with a WordPress shortcode, which you can find in the Oryx console.
 
 This powerful plugin makes live streaming accessible to everyone, even in WooCommerce, a widely-used e-commerce plugin for WordPress, showcasing the impact of open source technology.
 
@@ -136,7 +136,7 @@ HEVC or AV1 is essential for 8K live-streaming and is becoming popular in the VR
 
 Do you want to broadcast your live streams on multiple platforms like YouTube, Facebook, Twitch, and TikTok?
 
-The SRS Stack simplifies this task and doesn't use up your bandwidth since it takes care of the restreaming for you.
+The Oryx simplifies this task and doesn't use up your bandwidth since it takes care of the restreaming for you.
 
 ## SRS Prometheus Exporter, make SRS an operatable online product.
 
@@ -144,7 +144,7 @@ The SRS Stack simplifies this task and doesn't use up your bandwidth since it ta
 
 Prometheus, a well-known open-source monitoring system, is natively supported by SRS through its exporter, letting you keep an eye on the SRS server.
 
-Visualize metrics with Grafana, and look forward to Prometheus and Grafana being integrated into the SRS Stack in the future.
+Visualize metrics with Grafana, and look forward to Prometheus and Grafana being integrated into the Oryx in the future.
 
 To back the project, think about donating via OpenCollective.
 
@@ -153,11 +153,11 @@ To back the project, think about donating via OpenCollective.
 At SRS, our goal is to establish a non-profit, open-source community dedicated to creating an all-in-one, 
 out-of-the-box, open-source video solution for live streaming and WebRTC online services.
 
-Additionally, we offer a [cloud](/cloud) service for those who prefer to use cloud service instead of building from 
+Additionally, we offer a [Cloud](../cloud) service for those who prefer to use cloud service instead of building from 
 scratch. Our cloud service features global network acceleration, enhanced congestion control algorithms, 
 client SDKs for all platforms, and some free quota.
 
-To learn more about our cloud service, click [here](/docs/v6/doc/cloud).
+To learn more about our cloud service, click [here](../cloud).
 
 ## Support, contributions and donations are welcome.
 

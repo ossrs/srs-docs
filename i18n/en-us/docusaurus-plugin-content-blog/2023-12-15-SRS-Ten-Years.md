@@ -32,20 +32,19 @@ website's Changelog.
 
 Looking back, it seems not much has been done in two years.
 
-## SRS Stack
+## Oryx
 
-SRS Stack is an integrated video cloud that includes multiple audio and video projects, centered around 
+Oryx is an integrated video cloud that includes multiple audio and video projects, centered around 
 audio and video application scenarios, and offers out-of-the-box solutions.
 
-This year, SRS Stack was revamped, with major changes as follows:
+This year, Oryx was revamped, with major changes as follows:
 
 * Transitioned from microservices architecture to monolithic application, reducing image size by 90%, increasing development speed by 10 times, and making microservices architecture the most misleading.
-* Changed from MIT to AGPL license, allowing personal use but not cloud services.
 * Supports Docker and script installations, DigitalOcean and Lighthouse images, BT and aaPanel plugin installations, and HELM installations.
 * Tests cover all installation methods, features, and APIs.
 * Supports new scenarios such as virtual live streaming, AI-generated subtitles, transcoding, callbacks, HLS clusters, and stream pulling and pushing.
 
-If SRS is simple and easy to use, SRS Stack truly simplifies building audio and video businesses.
+If SRS is simple and easy to use, Oryx truly simplifies building audio and video businesses.
 
 ## Community
 
@@ -77,11 +76,11 @@ to improve.
 At SRS, our goal is to establish a non-profit, open-source community dedicated to creating an all-in-one,
 out-of-the-box, open-source video solution for live streaming and WebRTC online services.
 
-Additionally, we offer a [cloud](/cloud) service for those who prefer to use cloud service instead of building from
+Additionally, we offer a [Cloud](../cloud) service for those who prefer to use cloud service instead of building from
 scratch. Our cloud service features global network acceleration, enhanced congestion control algorithms,
 client SDKs for all platforms, and some free quota.
 
-To learn more about our cloud service, click [here](/docs/v6/doc/cloud).
+To learn more about our cloud service, click [here](../cloud).
 
 ## Conclusion
 

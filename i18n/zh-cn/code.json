@@ -196,13 +196,16 @@
     "description": "The title of the tag list page"
   },
   "homepage.subTitle": {
-    "message": "SRS(Simple Realtime Server)是一个简单高效的实时视频服务器，支持RTMP、WebRTC、HLS、HTTP-FLV、SRT等多种实时流媒体协议。SRS Stack是一个一体化、开箱即用、开源的视频解决方案，可部署在云上或自建机房，以直播和WebRTC等能力赋能你的业务。"
+    "message": "SRS(Simple Realtime Server)是一个简单高效的实时视频服务器，支持RTMP、WebRTC、HLS、HTTP-FLV、SRT等多种实时流媒体协议。Oryx是一个一体化、开箱即用、开源的视频解决方案，可部署在云上或自建机房，以直播和WebRTC等能力赋能你的业务。"
   },
   "homepage.tutorial": {
     "message": "入门教程"
   },
   "homepage.getStarted": {
     "message": "快速开始"
+  },
+  "homepage.askAI": {
+    "message": "AI助手"
   },
   "homepage.cloudService": {
     "message": "云服务"
@@ -211,7 +214,7 @@
     "message": "简单"
   },
   "homepage.easyToUse": {
-    "message": "基于协程技术，无异步回调难以维护的问题，SRS支持云原生标准（Docker镜像、K8s部署、可观测性日志和监控指标等），提供SRS Stack无门槛应用"
+    "message": "基于协程技术，无异步回调难以维护的问题，SRS支持云原生标准（Docker镜像、K8s部署、可观测性日志和监控指标等），提供Oryx无门槛应用"
   },
   "homepage.focusOnName": {
     "message": "实时"

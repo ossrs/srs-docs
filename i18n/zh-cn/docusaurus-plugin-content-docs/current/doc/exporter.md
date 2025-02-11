@@ -179,5 +179,5 @@ curl -s -H "Content-Type: application/json" \
 
 欢迎一起来完善SRS仪表盘。
 
-![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.net&path=/lts/doc/zh/v6/exporter)
+![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.net&path=/lts/doc/zh/v7/exporter)
 
