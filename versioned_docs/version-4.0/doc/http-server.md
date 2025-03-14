@@ -23,7 +23,7 @@ like the camera of mobile phone.
 SRS should provides HTTP api, which is actually a embeded HTTP server.
 
 Actually, RTMP is more complex than HTTP, so HTTP server on st is absolutely ok.
-The HTTP Server in SRS1.0 is expirement, I will enhance it future.
+The HTTP Server in SRS1.0 is an experiment, and I will enhance it in the future.
 
 ## Config
 
