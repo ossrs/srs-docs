@@ -196,7 +196,7 @@ RTMP回源连接。
 
 ## Transform Vhost
 
-一般CDN都支持上行和下行边缘加速，上行和下行的域名是分开的，譬如上行使用`up.srs.com`，下行使用`down.srs.com`，这样可以使用不同的设备组，避免下行影响下行之类。
+一般CDN都支持上行和下行边缘加速，上行和下行的域名是分开的，譬如上行使用`up.srs.com`，下行使用`down.srs.com`，这样可以使用不同的设备组，避免下行影响上行之类。
 
 用户在推流到`up.srs.com`时，边缘使用edge模式，回源时也是用的`up.srs.com`，到源站还是`up.srs.com`，所以播放`down.srs.com`这个vhost的流时就播放不了用户推的那个流。因此需要edge在回源时transform vhost，也就是转换vhost。
 
