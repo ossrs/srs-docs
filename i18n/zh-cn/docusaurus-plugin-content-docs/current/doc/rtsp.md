@@ -90,17 +90,26 @@ cd srs/trunk/3rdparty/srs-bench
 go test ./blackbox -mod=vendor -v -count=1 -run=TestFast_RtmpPublish_RtspPlay_Basic
 ```
 
+## Port
+
+开放端口目前只需要一个，比如`8554`，TCP传输模式会复用交互时的Socket链接。
+
+对于UDP，情况有些复杂，客户端会开放2个端口分别用于接收RTP和RTCP，常规做法，服务端也绑定2个端口用于发送RTP和RTCP，而这会导致需要开放的端口数量剧增，这将挑战防火墙的底线。实际上，我们可以复用RTC的`8000`端口，用作发送端口，并接收RTCP请求。目前暂未实现，而是选择随机端口发送RTP包。
+
 ## RTP
 
 如果是UDP传输，RTP打包方式跟RTC完全相同，直接发送即可。
 
 而TCP传输，每个RTP包前面有额外的4个字节，第1个字节是固定的`0x24`，后跟1个字节通道标识符，后跟2个字节的RTP包长度，参考`RFC2326`中的第10.12小节`Embedded (Interleaved) Binary Data`。
 
-## Port
+## SDP
 
-开放端口目前只需要一个，比如`8554`，TCP传输模式会复用交互时的Socket链接。
+目前，SDP中，缺少了`fmtp`属性，是由于RTC模块没有保存SPS/PPS信息，但是不影响播放，因为每个关键帧前面都会发送SPS/PPS。理想中的SDP应包含如下信息：
 
-对于UDP，情况有些复杂，客户端会开放2个端口分别用于接收RTP和RTCP，常规做法，服务端也绑定2个端口用于发送RTP和RTCP，而这会导致需要开放的端口数量剧增，这将挑战防火墙的底线。实际上，我们可以复用RTC的`8000`端口，用作发送端口，并接收RTCP请求。目前暂未实现，而是选择随机端口发送RTP包。
+```bash
+a=fmtp:96 packetization-mode=1; profile-level-id=640032; sprop-parameter-sets=Z2QAMqxyiQHgCJ+XAWoCAgKAAAADAIAAAB5HjBhRMA==,aOk7yw==
+a=rtpmap:96 H264/90000
+```
 
 ## Codec
 
