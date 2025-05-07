@@ -18,7 +18,7 @@ SRS最早在2.0版本就已经支持RTSP协议，但只有推流（ANNOUNCE → 
 首先，编译和启动SRS，请确认版本为`7.0.xxxx`：
 
 ```bash
-cd srs/trunk && ./configure && make -j16
+cd srs/trunk && ./configure && make
 ./objs/srs -c conf/rtsp.conf
 ```
 > 编译时必须开启`--rtc=on`（默认开启）。
@@ -64,36 +64,29 @@ vhost __defaultVhost__ {
 }
 ```
 
-由于RTC不支持B帧，所以`keep_bframe`默认为`off`，但如果不考虑RTC播放，可以将其设置为`on`，RTSP协议是支持B帧的。
+RTC不支持B帧，但RTSP支持；如果需要使用RTSP播放B帧，开启`keep_bframe`即可，但此时RTC无法正常播放，可能会有花屏；如果需要同时使用RTC和RTSP播放流，推流时不应该开启B帧。
 
 ## Test
 
-### 单元测试
+### Unit Test
 
 ```bash
 ./configure --utest=on & make utest -j16
 ./objs/srs_utest
 ```
 
-### 回归测试
-
-需要先启动SRS
-```bash
-./objs/srs -c conf/rtsp.conf
-```
-
-然后执行
+### Regression Test
 
 ```bash
 cd srs/trunk/3rdparty/srs-bench
 go test ./srs -mod=vendor -v -count=1 -run=TestRtmpPublish_RtspPlay
 ```
+> 注意：回归测试需要先启动SRS
 
-### 黑盒测试
-
-黑盒测试无需启动SRS
+### BlackBox Test
 
 ```bash
+cd srs/trunk/3rdparty/srs-bench
 go test ./blackbox -mod=vendor -v -count=1 -run=TestFast_RtmpPublish_RtspPlay_Basic
 ```
 
@@ -103,13 +96,13 @@ go test ./blackbox -mod=vendor -v -count=1 -run=TestFast_RtmpPublish_RtspPlay_Ba
 
 而TCP传输，每个RTP包前面有额外的4个字节，第1个字节是固定的`0x24`，后跟1个字节通道标识符，后跟2个字节的RTP包长度，参考`RFC2326`中的第10.12小节`Embedded (Interleaved) Binary Data`。
 
-## 开放端口
+## Port
 
 开放端口目前只需要一个，比如`8554`，TCP传输模式会复用交互时的Socket链接。
 
 对于UDP，情况有些复杂，客户端会开放2个端口分别用于接收RTP和RTCP，常规做法，服务端也绑定2个端口用于发送RTP和RTCP，而这会导致需要开放的端口数量剧增，这将挑战防火墙的底线。实际上，我们可以复用RTC的`8000`端口，用作发送端口，并接收RTCP请求。目前暂未实现，而是选择随机端口发送RTP包。
 
-## 编码格式
+## Codec
 
 对于音频编码格式，因为是基于RTC的Consumer模块，所以拿到的RTP包已经是转码后的`OPUS`格式。如需保持原有格式，需要额外的开发。
 
@@ -117,7 +110,7 @@ go test ./blackbox -mod=vendor -v -count=1 -run=TestFast_RtmpPublish_RtspPlay_Ba
 
 目前，播放RTSP流时会等待一段时间才出画面，是因为RTC模块没有实现缓存GOP功能，需要等待下一个关键帧的出现。
 
-## 源码
+## Source
 
 RTSP协议解析部分，拷贝了原来3.0的代码，删除了SDP和RTP以及推流相关的一些代码，只保留关键的`SrsRtspRequest`和`SrsRtspResponse`用于处理请求和相应，并且只处理`OPTIONS`、`DESCRIBE`、`SETUP`、`PLAY`、`TEARDOWN`这5个方法。对于RTSP播放，这足够了。
 
@@ -128,6 +121,6 @@ RTSP协议解析部分，拷贝了原来3.0的代码，删除了SDP和RTP以及�
 目前的版本，只是实现了一个基本功能，其他比如音频编码、鉴权、重定向等，根据实际需要再做计划，或许就在不久的将来。
 
 
-## 参考文档
+## Refer
 
 - [rfc2326-1998-rtsp.pdf](https://ossrs.net/lts/zh-cn/assets/files/rfc2326-1998-rtsp-12b5cccfcac4f911bfab96c8f57b0bf9.pdf)
