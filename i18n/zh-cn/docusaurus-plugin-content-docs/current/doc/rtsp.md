@@ -94,7 +94,7 @@ go test ./blackbox -mod=vendor -v -count=1 -run=TestFast_RtmpPublish_RtspPlay_Ba
 
 开放端口目前只需要一个，比如`8554`，TCP传输模式会复用交互时的Socket链接。
 
-对于UDP，情况有些复杂，客户端会开放2个端口分别用于接收RTP和RTCP，常规做法，服务端也绑定2个端口用于发送RTP和RTCP，而这会导致需要开放的端口数量剧增，这将挑战防火墙的底线。实际上，我们可以复用RTC的`8000`端口，用作发送端口，并接收RTCP请求。目前暂未实现，而是选择随机端口发送RTP包。
+对于UDP，情况有些复杂，客户端会开放2个端口分别用于接收RTP和RTCP，常规做法，服务端也绑定2个端口用于发送RTP和RTCP，而这会导致需要开放的端口数量剧增，这将挑战防火墙的底线。实际上，我们可以复用RTC的`8000`端口，用作发送端口，并接收RTCP请求。目前暂未实现，所以系统会随机端口发送RTP包。
 
 ## RTP
 
@@ -104,7 +104,7 @@ go test ./blackbox -mod=vendor -v -count=1 -run=TestFast_RtmpPublish_RtspPlay_Ba
 
 ## SDP
 
-目前，SDP中，缺少了`fmtp`属性，是由于RTC模块没有保存SPS/PPS信息，但是不影响播放，因为每个关键帧前面都会发送SPS/PPS。理想中的SDP应包含如下信息：
+目前，SDP中，缺少了`fmtp`属性，是由于RTC模块没有保存SPS/PPS信息，但是不影响播放，因为每个关键帧前面都会发送SPS/PPS。如果实现了GOP缓存功能，这个问题会迎刃而解。理想中的SDP应包含如下信息：
 
 ```bash
 a=fmtp:96 packetization-mode=1; profile-level-id=640032; sprop-parameter-sets=Z2QAMqxyiQHgCJ+XAWoCAgKAAAADAIAAAB5HjBhRMA==,aOk7yw==
