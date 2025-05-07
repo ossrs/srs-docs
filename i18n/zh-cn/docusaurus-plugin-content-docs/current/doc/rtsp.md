@@ -71,7 +71,7 @@ RTC不支持B帧，但RTSP支持；如果需要使用RTSP播放B帧，开启`kee
 ### Unit Test
 
 ```bash
-./configure --utest=on & make utest -j16
+./configure --utest=on & make utest
 ./objs/srs_utest
 ```
 
@@ -104,7 +104,7 @@ go test ./blackbox -mod=vendor -v -count=1 -run=TestFast_RtmpPublish_RtspPlay_Ba
 
 ## Codec
 
-对于音频编码格式，因为是基于RTC的Consumer模块，所以拿到的RTP包已经是转码后的`OPUS`格式。如需保持原有格式，需要额外的开发。
+对于音频编码格式，因为是复用了RTC的Consumer模块，所以拿到的RTP包已经是转码后的`OPUS`格式。如需保持原有格式，需要额外的开发。
 
 ## GOP
 
