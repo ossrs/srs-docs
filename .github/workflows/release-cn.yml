@@ -198,7 +198,7 @@ jobs:
               docker rmi -f $image
               echo "Remove image $image, r0=$?"
             done
-      - uses: geekyeggo/delete-artifact@v1
+      - uses: geekyeggo/delete-artifact@v5
         with:
           name: |
             en-us
