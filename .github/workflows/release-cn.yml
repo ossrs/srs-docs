@@ -8,7 +8,7 @@ on:
 jobs:
   envs:
     name: envs
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
     steps:
       # Git checkout
       - name: Checkout repository
@@ -37,7 +37,7 @@ jobs:
 
   docker0:
     name: docker0
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
     needs:
       - envs
     steps:
@@ -54,7 +54,7 @@ jobs:
 
   docker1:
     name: docker1
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
     needs:
       - envs
     steps:
@@ -71,7 +71,7 @@ jobs:
 
   docker:
     name: docker
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
     needs:
       - envs
       - docker0
@@ -105,7 +105,7 @@ jobs:
 
   aliyun:
     name: aliyun-hub
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
     needs:
       - envs
       - docker0
@@ -141,7 +141,7 @@ jobs:
 
   deploy:
     name: deploy
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
     needs:
       - envs
       - aliyun
