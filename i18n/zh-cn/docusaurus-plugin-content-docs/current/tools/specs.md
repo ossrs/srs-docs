@@ -14,7 +14,7 @@ hide_table_of_contents: false
 1. [hls-m3u8-draft-pantos-http-live-streaming-12.txt](/files/hls-m3u8-draft-pantos-http-live-streaming-12.txt), [hls-m3u8-draft-pantos-http-live-streaming-12.pdf](/files/hls-m3u8-draft-pantos-http-live-streaming-12.pdf), m3u8标准。
 1. [hls-mpeg-ts-iso13818-1.pdf](/files/hls-mpeg-ts-iso13818-1.pdf), ts标准。
 1. [hls-mpeg-ts-VB_WhitePaper_TransportStreamVSProgramStream_rd2.pdf](/files/hls-mpeg-ts-VB_WhitePaper_TransportStreamVSProgramStream_rd2.pdf), ts的介绍。
-1. [rtmp.part1.Chunk-Stream.pdf](/files/rtmp.part1.Chunk-Stream.pdf), [rtmp.part2.Message-Formats.pdf](/files/rtmp.part2.Message-Formats.pdf), [rtmp.part3.Commands-Messages.pdf](/files/rtmp.part3.Commands-Messages.pdf), [rtmp_specification_1.0.pdf](/files/rtmp_specification_1.0.pdf), adobe rtmp标准。
+1. [rtmp.part1.Chunk-Stream.pdf](/files/rtmp.part1.Chunk-Stream.pdf), [rtmp.part2.Message-Formats.pdf](/files/rtmp.part2.Message-Formats.pdf), [rtmp.part3.Commands-Messages.pdf](/files/rtmp.part3.Commands-Messages.pdf), [rtmp_specification_1.0.pdf](/files/rtmp_specification_1.0.pdf), [rtmp_specification_1.0(2012)](https://veovera.org/docs/legacy/rtmp-v1-0-spec.pdf), adobe rtmp标准。
 1. [flv_v10_1.pdf](/files/flv_v10_1.pdf), adobe flv。
 1. [video_file_format_spec_v10_1.pdf](/files/video_file_format_spec_v10_1.pdf) flv/f4v.
 
