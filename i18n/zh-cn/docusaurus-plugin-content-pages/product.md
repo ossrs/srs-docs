@@ -2,7 +2,7 @@
 
 关于SRS的来源，定位，愿景和计划。
 
-* [Release6.0](#release60), 2025~至今，开发代号：Kai。
+* [Release7.0](#release70), 2025~至今，开发代号：Kai。
 * [Release6.0](#release60), 2023~2025，开发代号：Hang。
 * [Release5.0](#release50), 2022~2023，开发代号：Bee（蜜蜂）。
 * [Release4.0](#release40), 2020~2021，开发代号：Leo（付亮）。
