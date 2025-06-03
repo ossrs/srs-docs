@@ -99,7 +99,7 @@ SRS是全球TOP1的开源视频服务器，支持直播和WebRTC，可应用于�
 - [x] 支持Proxy Cluster，可以支持更多的路数的流。[#4158](https://github.com/ossrs/srs/pull/4158)
 - [ ] WebRTC支持HEVC，录制HEVC到MP4文件，至此，完成HEVC的全链接支持。[#4289](https://github.com/ossrs/srs/pull/4289),[#4349](https://github.com/ossrs/srs/pull/4349),[#4296](https://github.com/ossrs/srs/pull/4296)
 - [ ] HLS协议支持fMP4。[#4159](https://github.com/ossrs/srs/pull/4159)
-- [ ] 支持RTSP协议播放。[$4333](https://github.com/ossrs/srs/pull/4333)
+- [ ] 支持RTSP协议播放。[#4333](https://github.com/ossrs/srs/pull/4333)
 
 ## Release6.0
 
