@@ -2,12 +2,13 @@
 
 About milestones of SRS.
 
-* Release 6.0, 2023~Now, Code: Hang
-* Release 5.0, 2022~2023, Code: Bee
-* Release 4.0, 2020~2021, Code: Leo
-* Release 3.0, 2018~2019, Code: OuXuli
-* Release 2.0, 2015~2017, Code: ZhouGuowen
-* Release 1.0, 2013~2014, Code: HuKaiqun
+* [Release 7.0](#release70), 2025~Now, Code: Kai
+* [Release 6.0](#release60), 2023~2025, Code: Hang
+* [Release 5.0](#release50), 2022~2023, Code: Bee
+* [Release 4.0](#release40), 2020~2021, Code: Leo
+* [Release 3.0](#release30), 2018~2019, Code: OuXuli
+* [Release 2.0](#release20), 2015~2017, Code: ZhouGuowen
+* [Release 1.0](#release10), 2013~2014, Code: HuKaiqun
 
 For detail features of SRS, please see [FEATURES](https://github.com/ossrs/srs/blob/develop/trunk/doc/Features.md#features).
 
@@ -88,6 +89,17 @@ scenarios and industries.
 
 For a detailed interpretation, please see Welcome to SRS: Mission, Vision, and Values.
 
+## Release 7.0
+
+Code name: Kai. Named by TOC member [Haibo Chen](https://github.com/duiniuluantanqin). Expected to complete major development by the end of 2026 and officially release.
+
+> Code Name Story: I am Haibo Chen, a core maintainer of SRS and a TOC member. The code name Kai is inspired by my son Chen Kaiqi's name. As a father, I aim to set a good example by doing meaningful and interesting work. I appreciate the support and collaboration from everyone in the community, making it more vibrant and warm. This upgrade aims to provide users with more powerful features and a smoother experience, laying a strong foundation for SRS's future.
+
+- [x] Support for Proxy Cluster, allowing more stream paths. [#4158](https://github.com/ossrs/srs/pull/4158)
+- [ ] WebRTC support for HEVC, recording HEVC to MP4 files, completing full HEVC support. [#4289](https://github.com/ossrs/srs/pull/4289), [#4349](https://github.com/ossrs/srs/pull/4349), [#4296](https://github.com/ossrs/srs/pull/4296)
+- [ ] HLS protocol support for fMP4. [#4159](https://github.com/ossrs/srs/pull/4159)
+- [ ] Support for RTSP protocol playback. [#4333](https://github.com/ossrs/srs/pull/4333)
+
 ## Release 6.0
 
 Development codename: Hang. It is expected that the main features of 6.0 will be completed by the end of 2023, with a 
@@ -95,6 +107,12 @@ planned release by the end of 2024.
 
 > Note: The development codename Hang is named by TOC [John](https://github.com/xiaozhihong), and the specific meaning 
 > is left for everyone to appreciate and ponder.
+
+- [x] Supports HEVC encoding format, including protocols like RTMP, HTTP-FLV, HTTP-TS, HLS, and SRT. [#465](https://github.com/ossrs/srs/issues/465)
+- [x] Uses smart pointers (SrsUniquePtr and SrsSharedPtr) to improve memory management and fixes multiple memory leak issues. [#4089](https://github.com/ossrs/srs/pull/4089), [#4109](https://github.com/ossrs/srs/pull/4109)
+- [x] Supports IP whitelisting for HTTP-FLV, HLS, WebRTC, and SRT. [#3902](https://github.com/ossrs/srs/pull/3902)
+- [x] Added Basic Authentication feature for HTTP API. [#3458](https://github.com/ossrs/srs/pull/3458)
+- [x] GB28181 protocol supports external SIP servers. [#4101](https://github.com/ossrs/srs/pull/4101), [srs-sip](https://github.com/ossrs/srs-sip)
 
 # Release 5.0
 
