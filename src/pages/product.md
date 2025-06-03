@@ -102,8 +102,7 @@ Code name: Kai. Named by TOC member [Haibo Chen](https://github.com/duiniuluanta
 
 ## Release 6.0
 
-Development codename: Hang. It is expected that the main features of 6.0 will be completed by the end of 2023, with a 
-planned release by the end of 2024.
+Development codename: Hang. It is planned for release by the end of 2025.
 
 > Note: The development codename Hang is named by TOC [John](https://github.com/xiaozhihong), and the specific meaning 
 > is left for everyone to appreciate and ponder.
