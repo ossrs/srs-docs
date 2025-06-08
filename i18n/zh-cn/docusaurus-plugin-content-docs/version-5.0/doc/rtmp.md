@@ -284,7 +284,7 @@ kickoff_for_idle 0;
 
 ## Converting RTMP to MPEGTS-DASH
 
-如果需要将RTMP转DASH协议是，参考[DASH](./sample-dash.md).
+如果需要将RTMP转DASH协议，参考[DASH](./sample-dash.md).
 
 ## Converting SRT to RTMP
 
