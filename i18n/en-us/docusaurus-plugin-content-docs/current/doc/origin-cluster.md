@@ -46,10 +46,11 @@ Please see [Protocols](#protocols) for details.
 ## Build
 
 To build the proxy server, you need to have Go 1.18+ installed. Then, you can build the proxy 
-server by:
+server by below command, and get the executable binary `./srs-proxy`:
 
 ```bash
-cd srs/proxy && make
+git clone https://github.com/ossrs/proxy-go.git
+cd proxy-go && make
 ```
 
 > Note: You can also download the dependencies by running `go mod download` before building.
