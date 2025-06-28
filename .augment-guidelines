@@ -1,0 +1,133 @@
+# Augment Guidelines for SRS Docs Repository
+
+## Project Overview
+
+SRS (Simple Realtime Server) is an open-source, high-efficiency, real-time media server supporting multiple protocols including RTMP, WebRTC, HLS, HTTP-FLV, SRT, MPEG-DASH, and GB28181. This repository contains the documentation website built with Docusaurus, serving both English (ossrs.io) and Chinese (ossrs.net) audiences.
+
+## Repository Structure
+
+### Key Directories
+- `for-writers/` - Source documentation content organized by language and version
+  - `doc-en-{version}/` - English documentation for specific versions
+  - `doc-zh-{version}/` - Chinese documentation for specific versions
+  - `blog-en/` and `blog-zh/` - Blog posts in respective languages
+- `i18n/` - Internationalization files and translated content
+- `build/` - Generated static site output
+- `static/` - Static assets (images, files, etc.)
+- `src/` - Custom React components and CSS
+- `config/` - Configuration files for different regions
+
+### Important Files
+- `docusaurus.config.js` - Main Docusaurus configuration
+- `package.json` - Node.js dependencies and scripts
+- `sidebars.js` - Documentation navigation structure
+- `versions.json` - Available documentation versions
+
+## Development Workflow
+
+### Local Development
+```bash
+yarn install          # Install dependencies
+yarn start            # Start development server (Chinese by default)
+yarn start-en         # Start English version
+yarn start-cn         # Start Chinese version
+yarn build            # Build production site
+```
+
+### Content Management
+- Documentation is version-controlled with multiple versions (4.0, 5.0, 6.0, 7.0)
+- Content is written in Markdown with MDX support
+- Mermaid diagrams are supported via mdx-mermaid plugin
+- Both English and Chinese content must be maintained
+
+## Content Guidelines
+
+### Documentation Structure
+- Each version has its own directory structure under `for-writers/`
+- Main documentation goes in `doc/` subdirectory
+- Tools and utilities documentation in `tools/` subdirectory
+- Tutorials in `tutorial/` subdirectory
+
+### Writing Standards
+- Use clear, concise language appropriate for technical documentation
+- Include code examples and configuration snippets where relevant
+- Cross-reference related documentation using proper linking syntax
+- Maintain consistency between English and Chinese versions
+
+### Linking Conventions
+- Internal doc links: `[Getting Started](./getting-started.md)`
+- Blog links from docs: `[Blog Post](../../../blog/post-name)`
+- Page links: `[MIT Licensed](../../../license)`
+- Static files: `[file.pdf](/files/file.pdf)`
+- External images: `![](https://ossrs.io/lts/en-us/img/image.png)`
+
+## Technical Considerations
+
+### Protocols and Technologies
+SRS supports multiple streaming protocols and technologies:
+- **Live Streaming**: RTMP, HLS, HTTP-FLV, SRT, MPEG-DASH
+- **Real-time Communication**: WebRTC, WHIP, WHEP
+- **Video Processing**: FFmpeg integration, transcoding, recording
+- **Monitoring**: HTTP API, Prometheus exporter, callback system
+- **Deployment**: Docker, Kubernetes, cloud platforms
+
+### Architecture Understanding
+- SRS uses State Threads (ST) coroutine technology for handling connections
+- Written in ANSI C++ (98) for cross-platform compatibility
+- Supports multiple CPU architectures (x86_64, ARM, RISC-V, etc.)
+- Can run on Linux, Windows, macOS
+
+## Code and Configuration
+
+### When Working with Code Examples
+- Provide complete, working configuration examples
+- Include both basic and advanced use cases
+- Test configurations before documenting
+- Explain the purpose and impact of each configuration option
+
+### API Documentation
+- Document HTTP API endpoints with request/response examples
+- Include authentication and security considerations
+- Provide curl examples and SDK usage where applicable
+
+## Quality Assurance
+
+### Before Making Changes
+- Understand the specific SRS feature or concept being documented
+- Check existing documentation for consistency and accuracy
+- Verify that examples and configurations are current and working
+- Consider impact on both English and Chinese documentation
+
+### Testing Documentation
+- Build the site locally to check for broken links
+- Verify that all images and static assets load correctly
+- Test navigation and cross-references
+- Ensure responsive design works on different screen sizes
+
+## Community and Contribution
+
+### Support Channels
+- GitHub Issues for bug reports and feature requests
+- GitHub Discussions for community questions
+- FAQ section for common questions
+- Documentation should guide users to appropriate support channels
+
+### Contribution Guidelines
+- Follow existing documentation patterns and structure
+- Maintain professional, helpful tone
+- Include practical examples and use cases
+- Consider the needs of both beginners and advanced users
+
+## Deployment and Publishing
+
+### Build Process
+- Site builds automatically generate both language versions
+- Static assets are optimized during build
+- Search functionality is integrated via Algolia
+- CDN deployment for global accessibility
+
+### Version Management
+- Multiple documentation versions are maintained simultaneously
+- Latest stable version is prominently featured
+- Archived versions remain accessible
+- Version-specific features and changes are clearly documented

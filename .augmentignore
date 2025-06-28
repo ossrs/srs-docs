@@ -1,0 +1,12 @@
+
+# Build artifacts
+**/build/**
+
+# IDE files
+**/.idea/**
+**/.vscode/**
+**/.run/**
+**/.docusaurus/**
+
+# Other files
+**/search/**
