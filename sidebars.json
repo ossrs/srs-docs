@@ -40,7 +40,8 @@
         "doc/webrtc",
         "doc/flv",
         "doc/srt",
-        "doc/gb28181"
+        "doc/gb28181",
+        "doc/rtsp"
       ]
     },
     {
