@@ -58,6 +58,11 @@ cd proxy-go && make
 We will support the Docker image in the future, or integrate the proxy server into the Oryx 
 project.
 
+## Legacy
+
+From SRS 7.0+, the new Origin Cluster is based on proxy server, not the old MESH based SRS servers.
+However, if you want to use the old origin cluster, you can switch to SRS 6.0.
+
 ## RTMP Origin Cluster
 
 To use the RTMP origin cluster, you need to deploy the proxy server and the origin server. 

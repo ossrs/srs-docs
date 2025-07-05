@@ -52,6 +52,11 @@ cd proxy-go && make
 
 我们将在未来支持Docker镜像，或将proxy server集成到Oryx项目中。
 
+## Legacy
+
+从SRS 7.0及以上版本开始，新的Origin集群基于proxy server，而不是旧的MESH架构SRS服务器。
+如果你需要使用旧的Origin集群，可以切换到SRS 6.0版本。
+
 ## RTMP Origin Cluster
 
 要使用RTMP源站集群，您需要部署proxy server和源服务器。首先，启动proxy server：
