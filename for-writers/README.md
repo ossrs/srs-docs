@@ -32,6 +32,16 @@ Link the pages in docs:
 
 For instance, refer to the `introduction.md` document for more details.
 
+## How to link faq in docs?
+
+Link the faq in docs:
+
+```markdown
+[FAQ](../../../faq#rtsp)
+```
+
+For instance, refer to the `rtsp.md` document for more details.
+
 ## How to link static resources in docs?
 
 Link the files in docs:

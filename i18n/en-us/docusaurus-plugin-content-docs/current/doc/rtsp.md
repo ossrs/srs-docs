@@ -13,6 +13,8 @@ SRS initially supported the RTSP protocol in version 2.0, but only for publishin
 
 This version reuses some protocol parsing code from version 2.0, removes the publishing functionality, adds playback support, and only works with TCP transport.
 
+For more background, please refer to the [FAQ](../../../faq#rtsp).
+
 ## Usage
 
 First, compile and start SRS (ensure you're using version `7.0.47+`):
