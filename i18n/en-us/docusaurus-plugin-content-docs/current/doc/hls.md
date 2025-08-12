@@ -56,12 +56,18 @@ The config for HLS:
 
 ```bash
 vhost __defaultVhost__ {
-    hls {
-        # whether the hls is enabled.
+    hls {        # whether the hls is enabled.
         # if off, do not write hls(ts and m3u8) when publish.
         # Overwrite by env SRS_VHOST_HLS_ENABLED for all vhosts.
         # default: off
         enabled on;
+
+        # whether to use fmp4 as container
+        # The default value is off, then HLS use ts as container format,
+        # if on, HLS use fmp4 as container format.
+        # Overwrite by env SRS_VHOST_HLS_HLS_USE_FMP4 for all vhosts.
+        # default: off
+        hls_use_fmp4 on;
 
         # the hls fragment in seconds, the duration of a piece of ts.
         # Overwrite by env SRS_VHOST_HLS_HLS_FRAGMENT for all vhosts.
@@ -78,8 +84,8 @@ vhost __defaultVhost__ {
         # for example, the hls_fragment is 10s, hls_aof_ratio is 1.2,
         # the segment will reap to 12s for pure audio.
         # Overwrite by env SRS_VHOST_HLS_HLS_AOF_RATIO for all vhosts.
-        # default: 1.2
-        hls_aof_ratio 1.2;
+        # default: 2.1
+        hls_aof_ratio 2.1;
         # the hls window in seconds, the number of ts in m3u8.
         # Overwrite by env SRS_VHOST_HLS_HLS_WINDOW for all vhosts.
         # default: 60
@@ -123,11 +129,49 @@ vhost __defaultVhost__ {
         #       [timestamp],replace this const to current UNIX timestamp in ms.
         #       [seq], the sequence number of ts.
         #       [duration], replace this const to current ts duration.
-        # @see https://ossrs.net/lts/zh-cn/docs/v4/doc/dvr#custom-path
-        # @see https://ossrs.net/lts/zh-cn/docs/v4/doc/delivery-hls#hls-config
+        # @see https://ossrs.io/lts/en-us/docs/v7/doc/dvr#custom-path
+        # @see https://ossrs.io/lts/en-us/docs/v7/doc/hls#config
         # Overwrite by env SRS_VHOST_HLS_HLS_TS_FILE for all vhosts.
         # default: [app]/[stream]-[seq].ts
         hls_ts_file [app]/[stream]-[seq].ts;
+        # the hls fmp4 file name.
+        # we supports some variables to generate the filename.
+        #       [vhost], the vhost of stream.
+        #       [app], the app of stream.
+        #       [stream], the stream name of stream.
+        #       [2006], replace this const to current year.
+        #       [01], replace this const to current month.
+        #       [02], replace this const to current date.
+        #       [15], replace this const to current hour.
+        #       [04], replace this const to current minute.
+        #       [05], replace this const to current second.p
+        #       [999], replace this const to current millisecond.
+        #       [timestamp],replace this const to current UNIX timestamp in ms.
+        #       [seq], the sequence number of fmp4.
+        #       [duration], replace this const to current ts duration.
+        # @see https://ossrs.net/lts/zh-cn/docs/v4/doc/dvr#custom-path
+        # @see https://ossrs.net/lts/zh-cn/docs/v4/doc/delivery-hls#hls-config
+        # Overwrite by env SRS_VHOST_HLS_HLS_FMP4_FILE for all vhosts.
+        # default: [app]/[stream]-[seq].m4s
+        hls_fmp4_file [app]/[stream]-[seq].m4s;
+        # the hls init mp4 file name.
+        # we supports some variables to generate the filename.
+        #       [vhost], the vhost of stream.
+        #       [app], the app of stream.
+        #       [stream], the stream name of stream.
+        #       [2006], replace this const to current year.
+        #       [01], replace this const to current month.
+        #       [02], replace this const to current date.
+        #       [15], replace this const to current hour.
+        #       [04], replace this const to current minute.
+        #       [05], replace this const to current second.
+        #       [999], replace this const to current millisecond.
+        #       [timestamp],replace this const to current UNIX timestamp in ms.
+        # @see https://ossrs.net/lts/zh-cn/docs/v4/doc/dvr#custom-path
+        # @see https://ossrs.net/lts/zh-cn/docs/v4/doc/delivery-hls#hls-config
+        # Overwrite by env SRS_VHOST_HLS_HLS_INIT_FILE for all vhosts.
+        # default: [app]/[stream]/init.mp4
+        hls_init_file [app]/[stream]/init.mp4;
         # the hls entry prefix, which is base url of ts url.
         # for example, the prefix is:
         #         http://your-server/
@@ -244,8 +288,7 @@ vhost __defaultVhost__ {
 
         # on_hls, never config in here, should config in http_hooks.
         # for the hls http callback, @see http_hooks.on_hls of vhost hooks.callback.srs.com
-        # @see https://ossrs.net/lts/zh-cn/docs/v4/doc/delivery-hls#http-callback
-        # @see https://ossrs.io/lts/en-us/docs/v4/doc/delivery-hls#http-callback
+        # @see https://ossrs.io/lts/en-us/docs/v7/doc/hls#http-callback
 
         # on_hls_notify, never config in here, should config in http_hooks.
         # we support the variables to generate the notify url:
@@ -254,8 +297,7 @@ vhost __defaultVhost__ {
         #       [param], replace with the param.
         #       [ts_url], replace with the ts url.
         # for the hls http callback, @see http_hooks.on_hls_notify of vhost hooks.callback.srs.com
-        # @see https://ossrs.net/lts/zh-cn/docs/v4/doc/delivery-hls#on-hls-notify
-        # @see https://ossrs.io/lts/en-us/docs/v4/doc/delivery-hls#on-hls-notify
+        # @see https://ossrs.io/lts/en-us/docs/v7/doc/hls#on-hls-notify
     }
 }
 ```
@@ -494,6 +536,56 @@ https://developer.apple.com/library/ios/technotes/tn2288/_index.html
 ## HLS Encryption
 
 SRS3 supports slice encryption, for specific usage, refer to [#1093](https://github.com/ossrs/srs/issues/1093#issuecomment-415971022).
+
+## HLS fMP4
+
+SRS (7.0.51+) supports HLS with fMP4 (fragmented MP4) segments instead of traditional MPEG-TS segments. fMP4 is the modern container format for HLS that offers several advantages:
+
+* **Better codec support**: Required for HEVC/H.265 and essential for Low-Latency HLS (LL-HLS)
+* **Lower overhead**: fMP4 has smaller file overhead compared to MPEG-TS segments
+* **DVR compatibility**: fMP4 segments can be used for DVR and time-shifting applications
+* **Future-proof**: fMP4 is the recommended format for modern HLS implementations
+
+To enable HLS with fMP4 segments, set `hls_use_fmp4 on` in your configuration:
+
+```bash
+vhost __defaultVhost__ {
+    hls {
+        enabled on;
+        hls_use_fmp4 on;
+        hls_fragment 10;
+        hls_window 60;
+        hls_m3u8_file   [app]/[stream].m3u8;
+        hls_init_file   [app]/[stream]-init.mp4;
+        hls_fmp4_file   [app]/[stream]-[seq].m4s;
+    }
+}
+```
+
+When fMP4 is enabled, SRS generates:
+* **Initialization segment**: `init.mp4` file containing codec information
+* **Media segments**: `.m4s` files containing the actual media data
+
+You can customize the file naming using these configuration options:
+* `hls_fmp4_file`: Media segment filename pattern (default: `[app]/[stream]-[seq].m4s`)
+* `hls_init_file`: Initialization segment filename pattern (default: `[app]/[stream]/init.mp4`)
+
+For example, start SRS with fMP4 enabled:
+
+```bash
+docker run --rm -it -p 1935:1935 -p 8080:8080 ossrs/srs:7 \
+  ./objs/srs -c conf/hls.mp4.conf
+```
+
+Publish a stream:
+
+```bash
+ffmpeg -re -i ./doc/source.flv -c copy -f flv rtmp://localhost/live/livestream
+```
+
+The generated m3u8 playlist will reference fMP4 segments instead of TS segments, making it compatible with modern HLS players and Low-Latency HLS requirements.
+
+Play the stream by SRS player: [http://localhost:8080/live/livestream.m3u8](http://localhost:8080/players/srs_player.html?stream=livestream.m3u8)
 
 ![](https://ossrs.io/gif/v1/sls.gif?site=ossrs.io&path=/lts/doc/en/v7/hls)
 
