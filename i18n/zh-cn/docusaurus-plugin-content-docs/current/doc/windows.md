@@ -11,6 +11,12 @@ SRS 5.0.89+正式支持Windows，基于Cygwin64平台，支持代码编译，以
 
 SRS 7.0.60+删除了对Windows的支持，因为维护成本太高。
 
+推荐使用WSL(Windows Subsystem for Linux)，它在Windows中启动一个Ubuntu，这样就可以用SRS：
+
+```bash
+wsl --install -d Ubuntu-22.04
+```
+
 Winlin 2022.11
 
 ![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.net&path=/lts/doc/zh/v7/windows)
