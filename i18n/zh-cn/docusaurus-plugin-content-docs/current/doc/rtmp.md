@@ -337,6 +337,62 @@ openssl req -new -x509 -key server.key -out server.crt -days 3650 \
 
 对于生产环境，请使用来自受信任证书颁发机构（CA）或Let's Encrypt的证书。
 
+## IPv6
+
+SRS（v7.0.67+）支持RTMP和RTMPS协议的IPv6，实现双栈（IPv4/IPv6）操作。这允许客户端使用IPv6地址连接，同时保持与现有IPv4基础设施的完全兼容性。
+
+IPv6支持在SRS检测到配置中的IPv6地址时自动启用。您可以通过在`listen`指令中指定IPv6地址来配置SRS监听IPv6地址：
+
+```bash
+rtmp {
+    # Listen on both IPv4 and IPv6
+    listen 1935 [::]:1935;
+}
+
+# For RTMPS
+rtmps {
+    enabled on;
+    listen 1443 [::]:1443;
+    key ./conf/server.key;
+    cert ./conf/server.crt;
+}
+```
+
+通过IPv6发布RTMP流：
+
+```bash
+ffmpeg -re -i ./doc/source.flv -c copy -f flv 'rtmp://[::1]:1935/live/livestream'
+```
+
+通过IPv6发布RTMPS流：
+
+```bash
+ffmpeg -re -i ./doc/source.flv -c copy -f flv 'rtmps://[::1]:1443/live/livestream'
+```
+
+通过IPv6播放RTMP流：
+
+```bash
+ffplay 'rtmp://[::1]:1935/live/livestream'
+```
+
+通过IPv6播放RTMPS流：
+
+```bash
+ffplay 'rtmps://[::1]:1443/live/livestream'
+```
+
+SRS支持双栈操作，允许IPv4和IPv6客户端同时连接：
+
+```bash
+# Listen on both IPv4 and IPv6 addresses
+listen 1935 [::]:1935;
+
+# This allows connections from:
+# - IPv4 clients: rtmp://192.168.1.100:1935/live/stream
+# - IPv6 clients: rtmp://[2001:db8::1]:1935/live/stream
+```
+
 ## On Demand Live Streaming
 
 有些场景下，是有需要播放时，才会邀请开始推流：

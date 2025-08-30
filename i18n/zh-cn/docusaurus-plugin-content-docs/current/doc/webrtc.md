@@ -562,6 +562,86 @@ OBS直接捕获浏览器，可以选择WindowCapature（窗口捕获），直接
 
 Winlin 2020.03
 
+## IPv6
+
+SRS（v7.0.67+）支持WebRTC协议的IPv6，实现双栈（IPv4/IPv6）操作，支持UDP和TCP媒体传输。这包括对WHIP/WHEP信令和通过IPv6进行媒体传输的支持。
+
+IPv6支持在SRS检测到配置中的IPv6地址时自动启用。配置RTC服务器监听IPv6地址：
+
+```bash
+rtc_server {
+    enabled on;
+    # Listen on IPv6 for UDP media
+    listen [::]:8000;
+
+    # For WebRTC over TCP
+    tcp {
+        enabled on;
+        listen [::]:8000;
+    }
+
+    # Configure IPv6 candidate
+    candidate [2001:db8::1];
+}
+
+# HTTP API server for WHIP/WHEP over IPv6
+http_api {
+    enabled on;
+    listen [::]:1985;
+}
+
+# HTTPS API server for secure WHIP/WHEP over IPv6
+https_api {
+    enabled on;
+    listen [::]:1990;
+    key ./conf/server.key;
+    cert ./conf/server.crt;
+}
+```
+
+通过IPv6使用WHIP发布：
+- WHIP URL：`http://[::1]:1985/rtc/v1/whip/?app=live&stream=livestream`
+
+通过IPv6使用WHEP播放：
+- WHEP URL：`http://[::1]:1985/rtc/v1/whep/?app=live&stream=livestream`
+
+通过HTTPS IPv6进行安全连接：
+
+通过HTTPS IPv6使用WHIP发布：
+- WHIP URL：`https://[::1]:1990/rtc/v1/whip/?app=live&stream=livestream`
+
+通过HTTPS IPv6使用WHEP播放：
+- WHEP URL：`https://[::1]:1990/rtc/v1/whep/?app=live&stream=livestream`
+
+使用IPv6时，`candidate`配置对WebRTC连接至关重要：
+
+```bash
+rtc_server {
+    # Use your server's IPv6 address
+    candidate [2001:db8::1];
+
+    # For dual-stack, you can specify both IPv4 and IPv6
+    # candidate 192.168.1.100 [2001:db8::1];
+}
+```
+
+SRS支持双栈WebRTC，允许IPv4和IPv6客户端同时连接：
+
+```bash
+rtc_server {
+    enabled on;
+    # Listen on both IPv4 and IPv6
+    listen 8000 [::]:8000;
+
+    # Configure candidates for both protocols
+    candidate 192.168.1.100 [2001:db8::1];
+}
+```
+
+这使得：
+- IPv4客户端可以通过：`http://192.168.1.100:1985/rtc/v1/whip/`连接
+- IPv6客户端可以通过：`http://[2001:db8::1]:1985/rtc/v1/whip/`连接
+
 ![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.net&path=/lts/doc/zh/v7/webrtc)
 
 

@@ -121,6 +121,72 @@ go test ./blackbox -mod=vendor -v -count=1 -run=TestFast_RtmpPublish_RtspPlay_Ba
 
 目前的版本，只是实现了一个基本功能，其他比如鉴权、重定向、RTCP等，根据实际需要再做计划，或许就在不久的将来。
 
+## IPv6
+
+SRS（v7.0.67+）支持RTSP协议的IPv6，实现双栈（IPv4/IPv6）操作，用于标准化流媒体传输。这允许RTSP客户端使用IPv6地址连接，同时保持与现有IPv4基础设施的完全兼容性。
+
+IPv6支持在SRS检测到配置中的IPv6地址时自动启用。配置RTSP服务器监听IPv6地址：
+
+```bash
+rtsp_server {
+    enabled on;
+    # Listen on both IPv4 and IPv6
+    listen 8554 [::]:8554;
+}
+
+vhost __defaultVhost__ {
+    rtsp {
+        enabled on;
+        rtmp_to_rtsp on;
+    }
+}
+```
+
+使用FFplay通过IPv6播放RTSP流（仅TCP传输）：
+
+```bash
+ffplay -rtsp_transport tcp -i 'rtsp://[::1]:8554/live/livestream'
+```
+
+使用VLC通过IPv6播放RTSP流：
+
+```bash
+vlc 'rtsp://[::1]:8554/live/livestream'
+```
+
+在RTSP URL中使用IPv6地址时，IPv6地址必须用方括号括起来：
+
+```bash
+# Local IPv6 loopback
+rtsp://[::1]:8554/live/livestream
+
+# Public IPv6 address
+rtsp://[2001:db8::1]:8554/live/livestream
+
+# With authentication (if implemented)
+rtsp://user:pass@[2001:db8::1]:8554/live/livestream
+```
+
+SRS支持双栈RTSP操作，允许IPv4和IPv6客户端同时连接：
+
+```bash
+rtsp_server {
+    enabled on;
+    # Listen on both IPv4 and IPv6
+    listen 8554 [::]:8554;
+}
+```
+
+此配置允许：
+- IPv4客户端：`rtsp://192.168.1.100:8554/live/livestream`
+- IPv6客户端：`rtsp://[2001:db8::1]:8554/live/livestream`
+
+RTSP over IPv6保持与IPv4相同的协议行为：
+
+- 仅TCP传输（不支持UDP）
+- 相同的信令流程：DESCRIBE → SETUP → PLAY → TEARDOWN
+- RTP/RTCP数据包在TCP连接中交错传输
+- 支持AAC音频编码（RTSP模式下不支持Opus）
 
 ## Refer
 

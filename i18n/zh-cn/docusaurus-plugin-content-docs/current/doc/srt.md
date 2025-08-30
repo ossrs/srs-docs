@@ -388,6 +388,76 @@ SRS如何实现SRT？基于协程的SRT架构，我们需要将其适配到ST，
 
 > 注意：请注意，SRS 4.0中的SRT是非ST架构，它是通过启动一个单独的线程来实现的，可能没有原生ST协程架构的可维护性。
 
+## IPv6
+
+SRS（v7.0.67+）支持SRT协议的IPv6，实现双栈（IPv4/IPv6）操作，用于低延迟流媒体传输。这允许SRT客户端使用IPv6地址连接，同时保持与现有IPv4基础设施的完全兼容性。
+
+IPv6支持在SRS检测到配置中的IPv6地址时自动启用。配置SRT服务器监听IPv6地址：
+
+```bash
+srt_server {
+    enabled on;
+    # Listen on both IPv4 and IPv6
+    listen 10080 [::]:10080;
+
+    # Other SRT parameters remain the same
+    maxbw 1000000000;
+    mss 1500;
+    connect_timeout 4000;
+    peer_idle_timeout 8000;
+    default_app live;
+    peerlatency 0;
+    recvlatency 0;
+}
+```
+
+使用FFmpeg通过IPv6发布SRT流：
+
+```bash
+ffmpeg -re -i ./doc/source.flv -c copy -pes_payload_size 0 -f mpegts \
+  'srt://[::1]:10080?streamid=#!::r=live/livestream,m=publish'
+```
+
+使用FFplay通过IPv6播放SRT流：
+
+```bash
+ffplay 'srt://[::1]:10080?streamid=#!::r=live/livestream,m=request'
+```
+
+在SRT URL中使用IPv6地址时，IPv6地址必须用方括号括起来：
+
+```bash
+# Publishing
+srt://[2001:db8::1]:10080?streamid=#!::r=live/livestream,m=publish
+
+# Playing
+srt://[2001:db8::1]:10080?streamid=#!::r=live/livestream,m=request
+
+# With vhost support
+srt://[2001:db8::1]:10080?streamid=#!::h=srs.srt.com.cn,r=live/livestream,m=publish
+```
+
+SRS支持双栈SRT操作，允许IPv4和IPv6客户端同时连接：
+
+```bash
+srt_server {
+    enabled on;
+    # Listen on both IPv4 and IPv6
+    listen 10080 [::]:10080;
+}
+```
+
+此配置允许：
+- IPv4客户端：`srt://192.168.1.100:10080?streamid=#!::r=live/stream,m=publish`
+- IPv6客户端：`srt://[2001:db8::1]:10080?streamid=#!::r=live/stream,m=publish`
+
+SRT over IPv6保持与IPv4相同的性能特征：
+
+- 低延迟（典型300-500ms）
+- 基于网络条件的自适应码率
+- 具有数据包恢复的可靠传输
+- 在弱网络环境下比RTMP性能更好
+
 ## Q&A
 
 1. SRS是否支持将SRT流转发到Nginx？

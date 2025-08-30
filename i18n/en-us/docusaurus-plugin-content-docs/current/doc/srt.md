@@ -381,6 +381,69 @@ How does SRS implement SRT? Based on coroutine-based SRT architecture, we need t
 
 > Note: Please note that the SRT in SRS 4.0 is a non-ST architecture, and it is implemented by launching a separate thread, which may not have the same level of maintainability as the native ST coroutine architecture.
 
+## IPv6
+
+SRS (v7.0.67+) supports IPv6 for SRT protocol, enabling dual-stack (IPv4/IPv6) operation for low-latency streaming. This allows SRT clients to connect using IPv6 addresses while maintaining full compatibility with existing IPv4 infrastructure.
+
+IPv6 support is enabled automatically when SRS detects IPv6 addresses in the configuration. Configure the SRT server to listen on IPv6 addresses:
+
+```bash
+srt_server {
+    enabled on;
+    # Listen on both IPv4 and IPv6
+    listen 10080 [::]:10080;
+
+    # Other SRT parameters remain the same
+    maxbw 1000000000;
+    mss 1500;
+    connect_timeout 4000;
+    peer_idle_timeout 8000;
+    default_app live;
+    peerlatency 0;
+    recvlatency 0;
+}
+```
+
+Publish SRT stream via IPv6 using FFmpeg:
+
+```bash
+ffmpeg -re -i ./doc/source.flv -c copy -pes_payload_size 0 -f mpegts \
+  'srt://[::1]:10080?streamid=#!::r=live/livestream,m=publish'
+```
+
+Play SRT stream via IPv6 using FFplay:
+
+```bash
+ffplay 'srt://[::1]:10080?streamid=#!::r=live/livestream,m=request'
+```
+
+When using IPv6 addresses in SRT URLs, the IPv6 address must be enclosed in square brackets:
+
+```bash
+# Publishing
+srt://[2001:db8::1]:10080?streamid=#!::r=live/livestream,m=publish
+
+# Playing
+srt://[2001:db8::1]:10080?streamid=#!::r=live/livestream,m=request
+
+# With vhost support
+srt://[2001:db8::1]:10080?streamid=#!::h=srs.srt.com.cn,r=live/livestream,m=publish
+```
+
+SRS supports dual-stack SRT operation, allowing both IPv4 and IPv6 clients to connect simultaneously:
+
+```bash
+srt_server {
+    enabled on;
+    # Listen on both IPv4 and IPv6
+    listen 10080 [::]:10080;
+}
+```
+
+This configuration allows:
+- IPv4 clients: `srt://192.168.1.100:10080?streamid=#!::r=live/stream,m=publish`
+- IPv6 clients: `srt://[2001:db8::1]:10080?streamid=#!::r=live/stream,m=publish`
+
 ## Q&A
 
 1. Does SRS support forwarding SRT streams to Nginx?
