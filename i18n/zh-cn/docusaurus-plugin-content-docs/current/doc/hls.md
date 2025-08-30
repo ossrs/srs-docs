@@ -594,5 +594,52 @@ ffmpeg -re -i ./doc/source.flv -c copy -f flv rtmp://localhost/live/livestream
 
 使用SRS播放器播放流：[http://localhost:8080/live/livestream.m3u8](http://localhost:8080/players/srs_player.html?stream=livestream.m3u8)
 
+## IPv6
+
+SRS（v7.0.67+）支持HLS流媒体的IPv6，实现双栈（IPv4/IPv6）操作，用于基于HTTP的直播流传输。这允许HLS客户端使用IPv6地址访问流，同时保持与现有IPv4基础设施的完全兼容性。
+
+IPv6支持在SRS检测到HTTP服务器配置中的IPv6地址时自动启用。配置HTTP服务器监听IPv6地址：
+
+```bash
+http_server {
+    enabled on;
+    # Listen on both IPv4 and IPv6
+    listen 8080 [::]:8080;
+    dir ./objs/nginx/html;
+}
+```
+
+通过IPv6访问HLS流：
+
+```bash
+# HLS stream via IPv6
+http://[::1]:8080/live/livestream.m3u8
+
+# HLS segments are also accessible via IPv6
+http://[::1]:8080/live/livestream-1.ts
+http://[::1]:8080/live/livestream-2.ts
+```
+
+使用FFplay通过IPv6播放HLS流：
+
+```bash
+ffplay 'http://[::1]:8080/live/livestream.m3u8'
+```
+
+SRS支持双栈HLS操作，允许IPv4和IPv6客户端同时访问流：
+
+```bash
+http_server {
+    enabled on;
+    # Listen on both IPv4 and IPv6
+    listen 8080 [::]:8080;
+    dir ./objs/nginx/html;
+}
+```
+
+此配置允许：
+- IPv4客户端：`http://192.168.1.100:8080/live/livestream.m3u8`
+- IPv6客户端：`http://[2001:db8::1]:8080/live/livestream.m3u8`
+
 ![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.net&path=/lts/doc/zh/v7/hls)
 

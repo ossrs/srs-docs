@@ -209,5 +209,55 @@ SRS支持将rtmp流中的视频丢弃，将音频流转封装为aac格式，在S
 1. 通用：Flash可以播RTMP，也可以播HTTP FLV。自己做的APP，也都能支持。主流播放器也都支持http flv的播放。
 1. 简单：FLV是最简单的流媒体封装，HTTP是最广泛的协议，这两个到一起维护性很高，比RTMP简单多了。
 
+## IPv6
+
+SRS（v7.0.67+）支持HTTP-FLV流媒体的IPv6，实现双栈（IPv4/IPv6）操作，用于低延迟直播流传输。这允许HTTP-FLV客户端使用IPv6地址访问流，同时保持与现有IPv4基础设施的完全兼容性。
+
+IPv6支持在SRS检测到HTTP服务器配置中的IPv6地址时自动启用。配置HTTP服务器监听IPv6地址：
+
+```bash
+http_server {
+    enabled on;
+    # Listen on both IPv4 and IPv6
+    listen 8080 [::]:8080;
+    dir ./objs/nginx/html;
+}
+
+vhost __defaultVhost__ {
+    http_remux {
+        enabled on;
+        mount [vhost]/[app]/[stream].flv;
+    }
+}
+```
+
+通过IPv6访问HTTP-FLV流：
+
+```bash
+# HTTP-FLV stream via IPv6
+http://[::1]:8080/live/livestream.flv
+```
+
+使用FFplay通过IPv6播放HTTP-FLV流：
+
+```bash
+ffplay 'http://[::1]:8080/live/livestream.flv'
+```
+
+SRS支持双栈HTTP-FLV操作，允许IPv4和IPv6客户端同时访问流：
+
+```bash
+http_server {
+    enabled on;
+    # Listen on both IPv4 and IPv6
+    listen 8080 [::]:8080;
+    dir ./objs/nginx/html;
+}
+```
+
+此配置允许：
+- IPv4客户端：`http://192.168.1.100:8080/live/livestream.flv`
+- IPv6客户端：`http://[2001:db8::1]:8080/live/livestream.flv`
+
 ![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.net&path=/lts/doc/zh/v7/flv)
 
