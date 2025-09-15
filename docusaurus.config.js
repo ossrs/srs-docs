@@ -45,15 +45,15 @@ const config = {
           //lastVersion: versions[0],
           versions: {
             current: {
-              label: `7.0 (Unstable) 🚧`,
+              label: `7.0 (Unstable) 🚧🚀`,
               path: 'v7',
             },
             '6.0': {
-              label: '6.0 (Alpha) 🚀',
+              label: '6.0 (Stable) ✅',
               path: 'v6',
             },
             '5.0': {
-              label: '5.0 (Stable) ✅',
+              label: '5.0 (Archived) 📦',
               path: 'v5',
             },
             '4.0': {
