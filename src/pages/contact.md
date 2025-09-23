@@ -13,11 +13,6 @@ can be resolved through the documentation, and in cases where you still encounte
 assistance from other community members. Friends in the community might offer help, but they are not 
 obligated to do so, as it's a universal rule of open-source communities.
 
-I have a full-time job and support the community during my spare time, focusing primarily on code and 
-documentation development. As a result, I have limited time available for community support and prioritize
-assistance to project contributors. If you wish for me to dedicate time specifically to assist you, you 
-may consider becoming a backer or sponsor of the project.
-
 Our documentation and code are open and free, so you don't need to sponsor the community to access these resources. We are a truly open-source community. Please visit [OpenCollective](https://opencollective.com/srs-server) to become a backer or sponsor.
 
 ## Discussion
