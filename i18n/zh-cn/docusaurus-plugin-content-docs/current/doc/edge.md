@@ -29,7 +29,7 @@ Edge的主要应用场景：
 
 注意：优先使用edge，除非知道必须用forward，才使用forward。
 
-## 概念
+## Concepts
 
 所谓边缘edge服务器，就是边缘直播缓存服务器，配置时指定为remote模式和origin（指定一
 个或多个源站IP），这个边缘edge服务器就是源站的缓存了。
@@ -96,7 +96,7 @@ vhost __defaultVhost__ {
 
 可配置`多个`源站，在故障时会切换到下一个源站。
 
-## 集群配置
+## Example
 
 下面举例说明如何配置一个源站和集群。
 
@@ -124,7 +124,7 @@ vhost __defaultVhost__ {
 }
 ```
 
-## HLS边缘
+## HLS Edge
 
 Edge指的是RTMP边缘，也就是说，配置为Edge后，流推送到源站（Origin）时，Edge不会切片生成HLS。
 
@@ -133,7 +133,7 @@ HLS切片配置在源站，只有源站会在推流上来就产生HLS切片。�
 
 也就是说，HLS的边缘需要使用WEB服务器缓存，譬如nginx反向代理，squid，或者traffic server等。
 
-## 下行边缘结构设计
+## Downstream Edge
 
 下行边缘指的是下行加速边缘，即客户端播放边缘服务器的流，边缘服务器从上层或源站取流。
 
@@ -159,7 +159,7 @@ SRS下行边缘是非常重要的功能，需要考虑以下因素：
 HTTP多进程是不考虑支持的，用NGINX是最好选择，SRS的HTTP服务器只是用在嵌入式设备中，
 没有性能要求的场合。
 
-## 上行边缘结构设计
+## Upstream Edge
 
 上行边缘指的是上行推流加速，客户端推流到边缘服务器，边缘将流转发给源站服务器。
 
@@ -193,6 +193,15 @@ RTMP回源连接。
 边缘缓存方式。所谓边缘缓存方式，即推流到边缘时边缘也会当作源站直接缓存（作为源站），
 然后转发给源站。边缘缓存方式看起来先进，这个边缘节点不必回源，实际上加大了集群的逻辑难度，
 不如直接作为代理方式简单。
+
+## WebRTC Edge
+
+目前Edge Cluster只支持RTMP和HTTP-FLV模式，不支持WebRTC。新的WebRTC集群正在计划中了，
+参考 [#4402](https://github.com/ossrs/srs/discussions/4402) 的详细说明。
+
+注意你可以用新的 [Origin Cluster](./origin-cluster.md) 支持WebRTC，它也可以在一定
+程度上扩展流的支持的路数。当然，如果你需要扩展单个六支持的播放的数量，你还是需要等待新的Edge 
+Cluster。
 
 ## Transform Vhost
 
