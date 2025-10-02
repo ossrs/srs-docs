@@ -444,6 +444,56 @@ This configuration allows:
 - IPv4 clients: `srt://192.168.1.100:10080?streamid=#!::r=live/stream,m=publish`
 - IPv6 clients: `srt://[2001:db8::1]:10080?streamid=#!::r=live/stream,m=publish`
 
+## VLC
+
+VLC has an important limitation: it does not support the `streamid` URL parameter. When VLC connects 
+to an SRT server, it always sends an empty `SRTO_STREAMID` socket option, regardless of what you put
+in the URL. This means VLC can only use the simple URL format `srt://127.0.0.1:10080` without any 
+streamid parameter.
+
+To support VLC and other clients that don't set `SRTO_STREAMID`, SRS provides a `default_streamid` 
+configuration option. When a client connects without setting streamid, SRS will use this configured 
+default value. By default, SRS uses `#!::r=live/livestream,m=publish` for backward compatibility, 
+but for VLC playback, you should configure it to use `m=request` mode instead.
+
+SRS provides a ready-to-use configuration file `conf/srt.vlc.conf` optimized for VLC compatibility. 
+Start SRS with this configuration:
+
+```bash
+./objs/srs -c conf/srt.vlc.conf
+```
+
+You can also set the default streamid using an environment variable, which is useful for Docker deployments:
+
+```bash
+env SRS_SRT_SERVER_DEFAULT_STREAMID="#!::r=live/livestream,m=request" \
+    ./objs/srs -c conf/srt.conf
+```
+
+Here's a complete workflow example. First, publish a stream with FFmpeg (which explicitly sets streamid 
+with `m=publish`):
+
+```bash
+ffmpeg -re -i ./doc/source.flv -c copy -pes_payload_size 0 -f mpegts \
+  'srt://127.0.0.1:10080?streamid=#!::r=live/livestream,m=publish'
+```
+
+Then play with VLC using the simple URL (VLC will use the server's default streamid with `m=request`):
+
+- Open VLC Media Player
+- Go to Media → Open Network Stream
+- Enter URL: `srt://127.0.0.1:10080`
+- Click Play
+
+You can also play with FFplay by explicitly setting the streamid:
+
+```bash
+ffplay 'srt://127.0.0.1:10080?streamid=#!::r=live/livestream,m=request'
+```
+
+The key difference between clients: VLC always uses the server's `default_streamid` configuration, while 
+FFmpeg/FFplay/OBS can set streamid in the URL or settings, which overrides the server default.
+
 ## Q&A
 
 1. Does SRS support forwarding SRT streams to Nginx?

@@ -458,6 +458,47 @@ SRT over IPv6保持与IPv4相同的性能特征：
 - 具有数据包恢复的可靠传输
 - 在弱网络环境下比RTMP性能更好
 
+## VLC
+
+VLC有一个重要的限制：它不支持`streamid` URL参数。当VLC连接到SRT服务器时，无论你在URL中输入什么，它总是发送一个空的`SRTO_STREAMID`套接字选项。这意味着VLC只能使用简单的URL格式`srt://127.0.0.1:10080`，不能带任何streamid参数。
+
+为了支持VLC和其他不设置`SRTO_STREAMID`的客户端，SRS提供了`default_streamid`配置选项。当客户端连接时没有设置streamid，SRS将使用这个配置的默认值。默认情况下，为了向后兼容，SRS使用`#!::r=live/livestream,m=publish`，但对于VLC播放，你应该将其配置为使用`m=request`模式。
+
+SRS提供了一个针对VLC兼容性优化的配置文件`conf/srt.vlc.conf`。使用此配置启动SRS：
+
+```bash
+./objs/srs -c conf/srt.vlc.conf
+```
+
+你也可以使用环境变量设置默认streamid，这对Docker部署很有用：
+
+```bash
+env SRS_SRT_SERVER_DEFAULT_STREAMID="#!::r=live/livestream,m=request" \
+    ./objs/srs -c conf/srt.conf
+```
+
+下面是一个完整的工作流程示例。首先，使用FFmpeg推流（显式设置streamid为`m=publish`）：
+
+```bash
+ffmpeg -re -i ./doc/source.flv -c copy -pes_payload_size 0 -f mpegts \
+  'srt://127.0.0.1:10080?streamid=#!::r=live/livestream,m=publish'
+```
+
+然后使用VLC播放，使用简单的URL（VLC将使用服务器的默认streamid，即`m=request`）：
+
+- 打开VLC Media Player
+- 进入 媒体 → 打开网络串流
+- 输入URL：`srt://127.0.0.1:10080`
+- 点击播放
+
+你也可以使用FFplay播放，显式设置streamid：
+
+```bash
+ffplay 'srt://127.0.0.1:10080?streamid=#!::r=live/livestream,m=request'
+```
+
+客户端之间的关键区别：VLC总是使用服务器的`default_streamid`配置，而FFmpeg/FFplay/OBS可以在URL或设置中设置streamid，这会覆盖服务器默认值。
+
 ## Q&A
 
 1. SRS是否支持将SRT流转发到Nginx？
