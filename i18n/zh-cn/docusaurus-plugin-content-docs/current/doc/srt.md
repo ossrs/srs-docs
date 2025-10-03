@@ -44,7 +44,8 @@ ffmpeg -re -i ./doc/source.flv -c copy -pes_payload_size 0 -f mpegts \
 
 * RTMP(VLC/ffplay): `rtmp://localhost/live/livestream`
 * HLS by SRS player: [http://localhost:8080/live/livestream.flv](http://localhost:8080/players/srs_player.html)
-* SRT(VLC/ffplay): `srt://127.0.0.1:10080?streamid=#!::r=live/livestream,m=request`
+* SRT(ffplay): `srt://127.0.0.1:10080?streamid=#!::r=live/livestream,m=request`
+* SRT(VLC): `srt://127.0.0.1:10080`
 
 SRS支持将SRT转换成其他协议，下面会详细描述。
 
@@ -490,6 +491,8 @@ ffmpeg -re -i ./doc/source.flv -c copy -pes_payload_size 0 -f mpegts \
 - 进入 媒体 → 打开网络串流
 - 输入URL：`srt://127.0.0.1:10080`
 - 点击播放
+
+> Note: VLC不支持带streamid的SRT，所以你应该使用简单的URL格式`srt://127.0.0.1:10080`，不要带任何streamid参数。
 
 你也可以使用FFplay播放，显式设置streamid：
 

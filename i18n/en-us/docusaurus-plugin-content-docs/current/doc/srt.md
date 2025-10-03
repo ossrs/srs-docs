@@ -43,7 +43,8 @@ Open the following page to play the stream (if SRS is not on your local machine,
 
 * RTMP(VLC/ffplay): `rtmp://localhost/live/livestream`
 * HLS by SRS player: [http://localhost:8080/live/livestream.flv](http://localhost:8080/players/srs_player.html)
-* SRT(VLC/ffplay): `srt://127.0.0.1:10080?streamid=#!::r=live/livestream,m=request`
+* SRT(ffplay): `srt://127.0.0.1:10080?streamid=#!::r=live/livestream,m=request`
+* SRT(VLC): `srt://127.0.0.1:10080`
 
 SRS supports converting SRT to other protocols, which will be described in detail below.
 
@@ -484,6 +485,8 @@ Then play with VLC using the simple URL (VLC will use the server's default strea
 - Go to Media → Open Network Stream
 - Enter URL: `srt://127.0.0.1:10080`
 - Click Play
+
+> Note: VLC doesn't support SRT with streamid, so you should use the simple URL format `srt://127.0.0.1:10080` without any streamid parameter.
 
 You can also play with FFplay by explicitly setting the streamid:
 
