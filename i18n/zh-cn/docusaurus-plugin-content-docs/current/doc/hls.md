@@ -429,6 +429,23 @@ mount -o size=7G -t tmpfs none /ramdisk
 
 部署HLS的分发集群，边缘分发集群，实现自建CDN分发HLS，解决海量的观看问题，请参考[Nginx for HLS](./nginx-for-hls.md)。
 
+## HLS with Reverse Proxy
+
+当在反向代理后部署 SRS 并进行路径重写时,您可能会遇到 HLS 主播放列表使用绝对路径(例如 `/live/livestream.m3u8?hls_ctx=xxx`)的问题,这会在代理重写请求路径时导致播放中断。例如,如果外部 URL 是 `http://proxy/srs/live/stream.m3u8` 但被重写为 `http://origin/live/stream.m3u8`,主播放列表中的绝对路径将丢失 `/srs` 前缀,从而导致 404 错误。
+
+SRS (v7.0.104+) 提供了 `hls_master_m3u8_path_relative` 选项,用于在主播放列表中使用相对路径以兼容反向代理:
+
+```bash
+vhost __defaultVhost__ {
+    hls {
+        enabled on;
+        hls_master_m3u8_path_relative on;  # Use relative path for reverse proxy
+    }
+}
+```
+
+启用后,主播放列表将使用相对路径(例如 `livestream.m3u8?hls_ctx=xxx`)而不是绝对路径,允许播放器通过反向代理正确解析 URL。这对于使用 Nginx、Apache、HAProxy、API 网关或基于路径路由的多租户系统的部署非常有用。为了向后兼容,默认值为 `off`。
+
 ## HLS Low Latency
 
 如何降低HLS延迟？关键减少切片数量，减少m3u8中的TS文件数量。SRS的默认配置是10秒一个切片，60秒一个m3u8，这样延迟是30秒左右。
