@@ -453,7 +453,7 @@ docker run --rm --env CANDIDATE=$CANDIDATE \
 
 > Note: Please set CANDIDATE as the ip of server, please read [CANDIDATE](./webrtc.md#config-candidate).
 
-Then startup the signaling, please read [usage](http://ossrs.net/srs.release/wiki/https://github.com/ossrs/signaling#usage):
+Then startup the signaling, please read [usage](https://github.com/ossrs/signaling#usage):
 
 ```bash
 docker run --rm -p 1989:1989 ossrs/signaling:1
