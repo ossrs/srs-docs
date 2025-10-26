@@ -642,6 +642,27 @@ rtc_server {
 - IPv4客户端可以通过：`http://192.168.1.100:1985/rtc/v1/whip/`连接
 - IPv6客户端可以通过：`http://[2001:db8::1]:1985/rtc/v1/whip/`连接
 
+## Known Limitation: Initial Audio Loss
+
+在推送WebRTC流时,您可能会注意到录制(DVR)、RTMP播放或HTTP-FLV流中**前4-6秒的音频丢失**。这是WebRTC音视频同步机制的**已知限制**,
+而不是一个bug。
+
+**根本原因**: WebRTC使用RTCP Sender Reports (SR)来同步音频和视频时间戳。当WebRTC流开始时,音频和视频RTP包会立即到达。
+然而,SRS需要RTCP Sender Reports来计算用于同步音视频的正确时间戳。音视频同步计算需要**两个**RTCP Sender Reports来建立
+RTP时间戳和系统时间之间的时序速率。所有`avsync_time <= 0`的RTP包(包括音频和视频)都会被**丢弃**,以避免直播源中的时间戳问题。
+RTCP Sender Reports通常每2-3秒到达一次。在**第二个**SR到达后(约4-6秒),音视频同步速率被计算出来,数据包开始被接受。
+如果DVR配置了`dvr_wait_keyframe on`,录制无论如何都会从第一个视频关键帧开始。视频关键帧通常每2-4秒到达一次,
+因此当第一个关键帧到达时,音视频同步通常已经建立。然而,在同步建立之前到达的音频包会**永久丢失**。
+
+**为什么不会修复**: 这是WebRTC音视频同步机制的**根本限制**。基于RTCP的音视频同步对WebRTC至关重要。
+如果没有它,音频和视频时间戳将不对齐,导致整个流出现严重的同步问题。当前的设计优先考虑**正确的音视频同步**,
+而不是捕获前几秒的内容。对于大多数直播场景来说,这是一个合理的权衡,因为流通常会持续较长时间(几分钟到几小时),
+在开始时丢失4-6秒是可以接受的,而整个流的完美音视频同步是至关重要的。修复这个问题需要从根本上重新设计WebRTC的音视频同步机制,
+这是极其复杂和有风险的。
+
+**相关Issue**: [#4418](https://github.com/ossrs/srs/issues/4418), [#4151](https://github.com/ossrs/srs/issues/4151),
+[#4076](https://github.com/ossrs/srs/issues/4076)
+
 ![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.net&path=/lts/doc/zh/v7/webrtc)
 
 
