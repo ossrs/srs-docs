@@ -464,7 +464,7 @@ DVR录制或最大兼容性，请使用H.264。
 
 ## VP9 Codec Support
 
-SRS自v7.0.0版本起支持VP9编解码器用于WebRTC到WebRTC的流传输（[#4548](https://github.com/ossrs/srs/issues/4548)）。
+SRS自v7.0.123版本起支持VP9编解码器用于WebRTC到WebRTC的流传输（[#4548](https://github.com/ossrs/srs/issues/4548)）。
 VP9是一种免版税的编解码器，与H.264相比可节省20-40%的带宽。VP9在WebRTC中与拥塞控制配合使用时比H.264/H.265效果更好，
 使其成为在网络波动下保持流直播的理想选择。SRS以仅中继模式（SFU模式）实现VP9，
 通过WHIP接收VP9流并转发给WHEP播放器，无需转码。VP9流无法转换为RTMP/HLS或录制到DVR。
