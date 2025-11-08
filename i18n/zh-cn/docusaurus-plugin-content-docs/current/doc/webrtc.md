@@ -448,6 +448,35 @@ docker run --rm --env CANDIDATE=$CANDIDATE \
 * HTTP-FLV播放：[http://localhost:8080/live/show.flv](http://localhost:8080/players/srs_player.html?autostart=true&stream=show.flv)
 * RTMP流（可用VLC播放）：rtmp://localhost/live/show
 
+## AV1 Codec Support
+
+SRS自v4.0.91版本起支持AV1编解码器用于WebRTC到WebRTC的流传输（[#2324](https://github.com/ossrs/srs/pull/2324)）。
+AV1是一种免版税的编解码器，与H.264相比可节省30-50%的带宽。SRS以仅中继模式（SFU模式）实现AV1，
+通过WHIP接收AV1流并转发给WHEP播放器，无需转码。AV1流无法转换为RTMP/HLS或录制到DVR。
+
+要使用AV1，请在WHIP/WHEP URL中添加`codec=av1`查询参数：
+
+* Publish: `http://localhost:1985/rtc/v1/whip/?app=live&stream=livestream&codec=av1`
+* Play: `http://localhost:1985/rtc/v1/whep/?app=live&stream=livestream&codec=av1`
+
+浏览器支持：Chrome/Edge M90+，Firefox（完全支持），Safari（仅解码）。如果需要RTMP/HLS转换、
+DVR录制或最大兼容性，请使用H.264。
+
+## VP9 Codec Support
+
+SRS自v7.0.0版本起支持VP9编解码器用于WebRTC到WebRTC的流传输（[#4548](https://github.com/ossrs/srs/issues/4548)）。
+VP9是一种免版税的编解码器，与H.264相比可节省20-40%的带宽。VP9在WebRTC中与拥塞控制配合使用时比H.264/H.265效果更好，
+使其成为在网络波动下保持流直播的理想选择。SRS以仅中继模式（SFU模式）实现VP9，
+通过WHIP接收VP9流并转发给WHEP播放器，无需转码。VP9流无法转换为RTMP/HLS或录制到DVR。
+
+要使用VP9，请在WHIP/WHEP URL中添加`codec=vp9`查询参数：
+
+* Publish: `http://localhost:1985/rtc/v1/whip/?app=live&stream=livestream&codec=vp9`
+* Play: `http://localhost:1985/rtc/v1/whep/?app=live&stream=livestream&codec=vp9`
+
+浏览器支持：Chrome/Edge M29+，Firefox M28+，Opera M16+。Safari不支持VP9。如果需要RTMP/HLS转换、
+DVR录制或Safari兼容性，请使用H.264。
+
 ## SFU: One to One
 
 SRS早就具备了SFU的能力，比如一对一通话、[多人通话](./webrtc.md#sfu-video-room)、[直播连麦](./webrtc.md#room-to-live)等等。在沟通中，一对一是常用而且典型的场景，
