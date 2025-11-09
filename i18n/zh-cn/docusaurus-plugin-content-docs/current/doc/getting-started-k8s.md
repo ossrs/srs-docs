@@ -7,6 +7,8 @@ hide_table_of_contents: false
 
 # K8s
 
+> **注意：** SRS K8s已废弃，请使用[CDK](./getting-started-cdk.md)代替。
+
 推荐使用HELM方式部署SRS，参考[srs-helm](https://github.com/ossrs/srs-helm)。当然，SRS也支持K8s方式直接部署，
 参考[SRS K8s](./k8s.md)。
 

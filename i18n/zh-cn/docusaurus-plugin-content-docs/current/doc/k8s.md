@@ -7,6 +7,8 @@ hide_table_of_contents: false
 
 # K8S
 
+> **注意：** SRS K8s已废弃，请使用[CDK](./getting-started-cdk.md)代替。
+
 > 流媒体服务和流媒体服务器的关键差异是什么？高效的运维能力是其中极其关键的差异之一，云计算+Docker+K8S让开源项目也能拥有这种能力，让每个人都能具备互联网流媒体服务能力，正如：旧时王谢堂前燕，飞入寻常百姓家！
 
 为何要用[k8s](https://docs.kubernetes.io/zh/docs/concepts/overview/what-is-kubernetes)部署SRS集群？

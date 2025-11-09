@@ -21,9 +21,9 @@
       "collapsed": true,
       "items": [
         "doc/getting-started",
+        "doc/getting-started-cdk",
         "doc/getting-started-build",
         "doc/getting-started-oryx",
-        "doc/getting-started-k8s",
         "doc/getting-started-ai"
       ]
     },
