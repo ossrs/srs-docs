@@ -477,6 +477,27 @@ VP9是一种免版税的编解码器，与H.264相比可节省20-40%的带宽。
 浏览器支持：Chrome/Edge M29+，Firefox M28+，Opera M16+。Safari不支持VP9。如果需要RTMP/HLS转换、
 DVR录制或Safari兼容性，请使用H.264。
 
+## G.711 Codec Support
+
+SRS自v7.0.124版本起支持G.711（PCMU/PCMA）音频编解码器用于WebRTC（[#4075](https://github.com/ossrs/srs/issues/4075)）。
+G.711是一种广泛使用的免版税音频编解码器，在VoIP系统、IP摄像头和传统电话设备中具有出色的兼容性。
+SRS以仅中继模式（SFU模式）实现G.711，通过WHIP接收G.711音频流并转发给WHEP播放器，无需转码。
+G.711流无法转换为RTMP/HLS或录制到DVR。
+
+要使用G.711，请在WHIP/WHEP URL中添加`acodec=pcmu`或`acodec=pcma`查询参数：
+
+* Publish with PCMU: `http://localhost:1985/rtc/v1/whip/?app=live&stream=livestream&acodec=pcmu`
+* Play with PCMU: `http://localhost:1985/rtc/v1/whep/?app=live&stream=livestream&acodec=pcmu`
+* Publish with PCMA: `http://localhost:1985/rtc/v1/whip/?app=live&stream=livestream&acodec=pcma`
+
+您还可以组合视频和音频编解码器参数：
+
+* VP9 + PCMU: `http://localhost:1985/rtc/v1/whip/?app=live&stream=livestream&vcodec=vp9&acodec=pcmu`
+* H.264 + PCMA: `http://localhost:1985/rtc/v1/whip/?app=live&stream=livestream&vcodec=h264&acodec=pcma`
+
+浏览器支持：所有主流浏览器都支持G.711（PCMU/PCMA）。当两者都可用时，PCMU（μ-law）优先于PCMA（A-law）。
+如果需要RTMP/HLS转换或DVR录制，请使用Opus。
+
 ## SFU: One to One
 
 SRS早就具备了SFU的能力，比如一对一通话、[多人通话](./webrtc.md#sfu-video-room)、[直播连麦](./webrtc.md#room-to-live)等等。在沟通中，一对一是常用而且典型的场景，

@@ -470,6 +470,27 @@ To use VP9, add the `codec=vp9` query parameter to WHIP/WHEP URLs:
 Browser support: Chrome/Edge M29+, Firefox M28+, Opera M16+. Safari does not support VP9. Use H.264 if you need RTMP/HLS conversion,
 DVR recording, or Safari compatibility.
 
+## G.711 Codec Support
+
+SRS supports G.711 (PCMU/PCMA) audio codec for WebRTC since v7.0.124 ([#4075](https://github.com/ossrs/srs/issues/4075)).
+G.711 is a widely-used, royalty-free audio codec with excellent compatibility across VoIP systems, IP cameras, and legacy telephony equipment.
+SRS implements G.711 as relay-only (SFU mode), accepting G.711 audio streams via WHIP and forwarding to WHEP players without transcoding.
+G.711 streams cannot be converted to RTMP/HLS or recorded to DVR.
+
+To use G.711, add the `acodec=pcmu` or `acodec=pcma` query parameter to WHIP/WHEP URLs:
+
+* Publish with PCMU: `http://localhost:1985/rtc/v1/whip/?app=live&stream=livestream&acodec=pcmu`
+* Play with PCMU: `http://localhost:1985/rtc/v1/whep/?app=live&stream=livestream&acodec=pcmu`
+* Publish with PCMA: `http://localhost:1985/rtc/v1/whip/?app=live&stream=livestream&acodec=pcma`
+
+You can also combine video and audio codec parameters:
+
+* VP9 + PCMU: `http://localhost:1985/rtc/v1/whip/?app=live&stream=livestream&vcodec=vp9&acodec=pcmu`
+* H.264 + PCMA: `http://localhost:1985/rtc/v1/whip/?app=live&stream=livestream&vcodec=h264&acodec=pcma`
+
+Browser support: All major browsers support G.711 (PCMU/PCMA). PCMU (μ-law) is prioritized over PCMA (A-law) when both are available.
+Use Opus if you need RTMP/HLS conversion or DVR recording.
+
 ## SFU: One to One
 
 Please use `conf/rtc.conf` as config.
