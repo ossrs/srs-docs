@@ -59,12 +59,13 @@ srt_server {
     # Overwrite by env SRS_SRT_SERVER_ENABLED
     # default: off
     enabled on;
-    # The UDP listen port for SRT.
+    # The UDP listen endpoints for SRT, each with format as <[ip:]port>. The ip can be either ipv4 or ipv6,
+    # or both. For example:
+    #       listen 10080 [::]:10080 192.168.1.100:10080 10.10.10.100:10080;
     # Overwrite by env SRS_SRT_SERVER_LISTEN
     listen 10080;
     # For detail parameters, please read wiki:
-    # @see https://ossrs.net/lts/zh-cn/docs/v5/doc/srt-params
-    # @see https://ossrs.io/lts/en-us/docs/v5/doc/srt-params
+    # @see https://ossrs.io/lts/en-us/docs/v7/doc/srt#config
     # The maxbw is the max bandwidth of the sender side.
     # 	-1: Means the biggest bandwidth is infinity.
     # 	 0: Means the bandwidth is determined by SRTO_INPUTBW.
@@ -83,7 +84,7 @@ srt_server {
     # Overwrite by env SRS_SRT_SERVER_CONNECT_TIMEOUT
     # default: 3000
     connect_timeout 4000;
-	# The timeout time of SRT connection on the receiver side in ms. When the SRT connection is idle 
+    # The timeout time of SRT connection on the receiver side in ms. When the SRT connection is idle
     # more than this config, it will be close.
     # Overwrite by env SRS_SRT_SERVER_PEER_IDLE_TIMEOUT
     # default: 10000
@@ -92,36 +93,52 @@ srt_server {
     # Overwrite by env SRS_SRT_SERVER_DEFAULT_APP
     # default: live
     default_app live;
-	# The peerlatency is set by the sender side and will notify the receiver side.
+    # Default mode for short streamid format (without #!:: prefix).
+    # When client uses short streamid like "live/stream" or "stream", this config
+    # determines whether it's a publisher or player by default.
+    # Options: publish, request
+    #   - publish: short streamid is treated as publisher
+    #   - request: short streamid is treated as player (default)
+    # Example: with default_mode=publish, "srt://host:port?streamid=live/stream" publishes.
+    # Overwrite by env SRS_SRT_SERVER_DEFAULT_MODE
+    # default: request
+    default_mode request;
+    # Default streamid when client doesn't provide one.
+    # This is used when SRT client connects without setting SRTO_STREAMID socket option.
+    # The streamid format follows SRT standard: #!::r=app/stream,m=publish|request
+    # Overwrite by env SRS_SRT_SERVER_DEFAULT_STREAMID
+    # default: #!::r=live/livestream,m=request
+    default_streamid "#!::r=live/livestream,m=request";
+    # The peerlatency is set by the sender side and will notify the receiver side.
     # Overwrite by env SRS_SRT_SERVER_PEERLATENCY
     # default: 0
     peerlatency 0;
-	# The recvlatency means latency from sender to receiver.
+    # The recvlatency means latency from sender to receiver.
     # Overwrite by env SRS_SRT_SERVER_RECVLATENCY
     # default: 120
     recvlatency 0;
-	# This latency configuration configures both recvlatency and peerlatency to the same value.
+    # This latency configuration configures both recvlatency and peerlatency to the same value.
     # Overwrite by env SRS_SRT_SERVER_LATENCY
     # default: 120
     latency 0;
-	# The tsbpd mode means timestamp based packet delivery.
-	# SRT sender side will pack timestamp in each packet. If this config is true,
-	# the receiver will read the packet according to the timestamp in the head of the packet.
+    # The tsbpd mode means timestamp based packet delivery.
+    # SRT sender side will pack timestamp in each packet. If this config is true,
+    # the receiver will read the packet according to the timestamp in the head of the packet.
     # Overwrite by env SRS_SRT_SERVER_TSBPDMODE
     # default: on
     tsbpdmode off;
-	# The tlpkdrop means too-late Packet Drop
-	# SRT sender side will pack timestamp in each packet, When the network is congested,
-	# the packet will drop if latency is bigger than the configuration in both sender side and receiver side.
-	# And on the sender side, it also will be dropped because latency is bigger than configuration.
+    # The tlpkdrop means too-late Packet Drop
+    # SRT sender side will pack timestamp in each packet, When the network is congested,
+    # the packet will drop if latency is bigger than the configuration in both sender side and receiver side.
+    # And on the sender side, it also will be dropped because latency is bigger than configuration.
     # Overwrite by env SRS_SRT_SERVER_TLPKTDROP
     # default: on
     tlpktdrop off;
-	# The send buffer size of SRT.
+    # The send buffer size of SRT.
     # Overwrite by env SRS_SRT_SERVER_SENDBUF
     # default:  8192 * (1500-28)
     sendbuf 2000000;
-	# The recv buffer size of SRT.
+    # The recv buffer size of SRT.
     # Overwrite by env SRS_SRT_SERVER_RECVBUF
     # default:  8192 * (1500-28)
     recvbuf 2000000;
@@ -342,6 +359,64 @@ streamid默认为`#!::r=live/livestream,m=publish`。
 也就是说，下面两个地址等价：
 * `srt://127.0.0.1:10080`
 * `srt://127.0.0.1:10080?streamid=#!::r=live/livestream,m=publish`
+
+## SRT URL with short streamid
+
+SRS支持不带`#!::`前缀的短streamid格式，以简化URL。当使用短streamid格式如`live/livestream`或仅`livestream`时，SRS使用`default_mode`配置来确定这是推流还是播放请求。
+
+`default_mode`配置接受两个值：
+* `publish`: 短streamid将被视为推流/发布模式。
+* `request`: 短streamid将被视为请求/播放/拉流模式（这是默认值）。
+
+对于推流友好的设置，客户端可以使用简单的URL进行推流，配置`default_mode`为`publish`：
+
+```bash
+srt_server {
+    enabled on;
+    listen 10080;
+    # Short streamid format will be treated as publisher
+    default_mode publish;
+}
+```
+
+使用此配置，您可以使用简单的URL进行推流：
+
+```bash
+# Publish with short streamid (uses default_mode=publish)
+ffmpeg -re -i source.flv -c copy -pes_payload_size 0 -f mpegts \
+  'srt://127.0.0.1:10080?streamid=live/livestream'
+
+# Play with explicit mode (must specify m=request)
+ffplay 'srt://127.0.0.1:10080?streamid=#!::r=live/livestream,m=request'
+```
+
+对于播放友好的设置，客户端可以使用简单的URL进行播放，使用默认的`default_mode=request`：
+
+```bash
+srt_server {
+    enabled on;
+    listen 10080;
+    # Short streamid format will be treated as player (default)
+    default_mode request;
+}
+```
+
+使用此配置，您可以使用简单的URL进行播放：
+
+```bash
+# Publish with explicit mode (must specify m=publish)
+ffmpeg -re -i source.flv -c copy -pes_payload_size 0 -f mpegts \
+  'srt://127.0.0.1:10080?streamid=#!::r=live/livestream,m=publish'
+
+# Play with short streamid (uses default_mode=request)
+ffplay 'srt://127.0.0.1:10080?streamid=live/livestream'
+```
+
+SRS提供了两个开箱即用的配置文件：
+* `conf/srt.shortstreamid.publish.conf`: 用于推流友好的设置，使用`default_mode publish`。
+* `conf/srt.shortstreamid.play.conf`: 用于播放友好的设置，使用`default_mode request`。
+
+注意，使用完整`#!::`前缀的显式模式指定始终优先于`default_mode`。这允许支持完整streamid格式的客户端覆盖默认行为。
 
 ## Authentication
 
