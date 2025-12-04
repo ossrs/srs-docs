@@ -271,12 +271,36 @@ srt_server {
     peerlatency 0;
     recvlatency 0;
     latency 0;
-    tlpktdrop off;
+    tlpktdrop on;
     tsbpdmode off;
 }
 ```
 
 > Note: 如果你使用了如上配置仍然花屏，请参考[FFmpeg patch](https://github.com/FFmpeg/FFmpeg/commit/9099046cc76c9e3bf02f62a237b4d444cdaf5b20)
+
+## Too-Late Packet Drop
+
+`tlpktdrop`（Too-Late Packet Drop）设置控制SRT是否丢弃晚于配置的延迟窗口到达的数据包。
+
+当`tlpktdrop off`与`tsbpdmode on`结合使用时，SRT接收缓冲区可能会被无法恢复的数据包填满。随着时间的推移，遍历此缓冲区以请求重传会消耗100%的CPU，导致服务器完全无响应 - 无法发布新流，现有流停止工作，甚至HTTP API也变得不可用。
+
+**推荐配置：**
+
+```
+srt_server {
+    enabled on;
+    listen 10080;
+    tlpktdrop on;
+}
+```
+
+**关键点：**
+
+* `tlpktdrop on`并不会完全禁用重传。延迟窗口内的数据包仍然会被重传。
+* 使用`tlpktdrop on`时，如果网络有严重的抖动，一些延迟的数据包可能会被丢弃，导致轻微的视频花屏。
+* 权衡取舍是：偶尔的花屏（使用`tlpktdrop on`）vs. 潜在的服务器挂起（使用`tlpktdrop off` + `tsbpdmode on`）。
+
+更多详情，请参见[#4587](https://github.com/ossrs/srs/issues/4587)。
 
 ## Video codec
 
