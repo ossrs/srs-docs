@@ -44,8 +44,8 @@ proxy server支持几乎所有SRS协议，包括RTMP、HTTP-FLV、HLS、WebRTC�
 下面的命令会编译出可执行的二进制`./srs-proxy`：
 
 ```bash
-git clone https://github.com/ossrs/proxy-go.git
-cd proxy-go && make
+git clone https://github.com/ossrs/srsx.git
+cd srsx/proxy-go && make
 ```
 
 > Note: 您也可以在构建之前运行 `go mod download` 来下载依赖项。
@@ -117,6 +117,8 @@ env PROXY_RTMP_SERVER=1935 PROXY_HTTP_SERVER=8080 \
     PROXY_SYSTEM_API=12025 PROXY_LOAD_BALANCER_TYPE=memory ./srs-proxy
 ```
 
+> Note: 这里我们使用内存负载均衡器，如果您想运行多个proxy server，可以切换到 `redis`。
+
 然后，部署三个源服务器，通过端口 `12025` 连接到proxy server：
 
 ```bash
@@ -160,6 +162,8 @@ env PROXY_RTMP_SERVER=1935 PROXY_HTTP_SERVER=8080 \
     PROXY_HTTP_API=1985 PROXY_WEBRTC_SERVER=8000 PROXY_SRT_SERVER=10080 \
     PROXY_SYSTEM_API=12025 PROXY_LOAD_BALANCER_TYPE=memory ./srs-proxy
 ```
+
+> Note: 这里我们使用内存负载均衡器，如果您想运行多个proxy server，可以切换到 `redis`。
 
 然后，部署三个源服务器，通过端口 `12025` 连接到proxy server：
 

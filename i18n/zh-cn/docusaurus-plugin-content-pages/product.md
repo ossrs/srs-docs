@@ -92,26 +92,57 @@ SRS是全球TOP1的开源视频服务器，支持直播和WebRTC，可应用于�
 
 ## Release7.0
 
-开发代号：Kai。由TOC [陈海博](https://github.com/duiniuluantanqin)命名。预计会在2026年底完成主要开发工作，并正式发布。
+开发代号：Kai。由TOC [陈海博](https://github.com/duiniuluantanqin)命名。计划于2026年底正式发布。
 
 > 代号故事：我是陈海博，是SRS的核心维护者及TOC成员。代号Kai，灵感来源于我儿子陈恺骐（Chen Kaiqi）名字中的“恺”字。作为父亲，我希望能以身作则，给儿子树立个好榜样，做一点有趣的事情，创造一些有意义的成就。在此，也感谢一路同行的小伙伴们，大家的互助和分享让社区更加温暖和有活力。并期望通过这次升级，为广大用户带来更强大的功能与更流畅的体验，为SRS的未来发展奠定坚实的基础。
 
-- [x] 支持Proxy Cluster，可以支持更多的路数的流。[#4158](https://github.com/ossrs/srs/pull/4158)
-- [ ] WebRTC支持HEVC，录制HEVC到MP4文件，至此，完成HEVC的全链接支持。[#4289](https://github.com/ossrs/srs/pull/4289),[#4349](https://github.com/ossrs/srs/pull/4349),[#4296](https://github.com/ossrs/srs/pull/4296)
-- [ ] HLS协议支持fMP4。[#4159](https://github.com/ossrs/srs/pull/4159)
-- [ ] 支持RTSP协议播放。[#4333](https://github.com/ossrs/srs/pull/4333)
+- [x] Proxy Cluster - 支持更多路数的流。[#4158](https://github.com/ossrs/srs/pull/4158)
+- [ ] WebRTC HEVC - WebRTC支持HEVC，录制HEVC到MP4文件，至此，完成HEVC的全链接支持。[#4289](https://github.com/ossrs/srs/pull/4289),[#4349](https://github.com/ossrs/srs/pull/4349),[#4296](https://github.com/ossrs/srs/pull/4296)
+- [ ] HLS fMP4 - HLS协议支持fMP4。[#4159](https://github.com/ossrs/srs/pull/4159)
+- [ ] RTSP播放 - 支持RTSP协议播放。[#4333](https://github.com/ossrs/srs/pull/4333)
 
 ## Release6.0
 
-开发代号：Hang。已经完成主要功能开发，预计在2025年正式发布。
+开发代号：Hang。由TOC [John](https://github.com/xiaozhihong)命名。已于2024年12月3日正式发布，现在是替代SRS 5.0的稳定版本。
 
 > Note: 开发代号`Hang`，由TOC [John](https://github.com/xiaozhihong)命名，具体含义由大家品，仔细品。
 
-- [x] 支持HEVC编码格式，包括RTMP、HTTP-FLV、HTTP-TS、HLS 和 SRT等协议。[#465](https://github.com/ossrs/srs/issues/465)
-- [x] 使用智能指针（SrsUniquePtr和SrsSharedPtr）以改进内存管理。修复多个内存泄漏问题。[#4089](https://github.com/ossrs/srs/pull/4089),[#4109](https://github.com/ossrs/srs/pull/4109)
-- [x] 支持 HTTP-FLV、HLS、WebRTC 和 SRT 的 IP 白名单。[#3902](https://github.com/ossrs/srs/pull/3902)
-- [x] 支持了HTTP API的Basic Authentication功能。[#3458](https://github.com/ossrs/srs/pull/3458)
-- [x] GB28181协议支持外部SIP服务器。[#4101](https://github.com/ossrs/srs/pull/4101),[srs-sip](https://github.com/ossrs/srs-sip)
+**HEVC/H.265支持（重大特性）**
+
+- [x] HEVC over RTMP/HTTP-FLV - 完整支持RTMP和HTTP-FLV的H.265流媒体传输。[#465](https://github.com/ossrs/srs/issues/465)
+- [x] HEVC over HLS - 支持HLS传输H.265视频。
+- [x] HEVC over HTTP-TS - 支持MPEG-TS传输H.265视频。
+- [x] HEVC over SRT - 支持SRT协议传输H.265视频。
+- [x] HEVC DVR to MP4 - 支持将H.265流录制为MP4格式。
+- [x] HEVC DVR to FLV - 支持将H.265流录制为FLV分片。
+
+**WebRTC增强**
+
+- [x] WHEP支持 - WebRTC-HTTP出口协议，用于播放。
+- [x] OPUS立体声SDP选项 - 支持WebRTC立体声音频。
+- [x] 可配置AAC到Opus码率 - 自定义转码码率。
+
+**安全与认证**
+
+- [x] IP白名单 - 支持HTTP-FLV、HLS、WebRTC和SRT的安全访问控制。[#3902](https://github.com/ossrs/srs/pull/3902)
+- [x] Basic认证 - HTTP API的基础认证功能。[#3458](https://github.com/ossrs/srs/pull/3458)
+
+**SRT改进**
+
+- [x] 升级libsrt到v1.5.3 - 最新的SRT库版本。
+- [x] 可配置default_streamid - 自定义SRT流ID。
+- [x] 降低SRT到RTC延迟 - 延迟降至200ms。
+
+**HLS功能**
+
+- [x] 踢出HLS客户端 - 支持断开HLS客户端连接。
+
+**其他改进**
+
+- [x] 智能指针（SrsUniquePtr和SrsSharedPtr）- 改进内存管理，修复多个内存泄漏问题。[#4089](https://github.com/ossrs/srs/pull/4089),[#4109](https://github.com/ossrs/srs/pull/4109)
+- [x] GB28181协议 - 支持外部SIP服务器。[#4101](https://github.com/ossrs/srs/pull/4101),[srs-sip](https://github.com/ossrs/srs-sip)
+
+SRS 6.0是在2024.12发布的，请参考[6.0-r0](https://github.com/ossrs/srs/releases/tag/v6.0-r0)。
 
 ## Release5.0
 
