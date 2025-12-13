@@ -591,7 +591,7 @@ ffmpeg -re -i ./doc/source.flv -c copy -pes_payload_size 0 -f mpegts \
 - 输入URL：`srt://127.0.0.1:10080`
 - 点击播放
 
-> Note: VLC不支持带streamid的SRT，所以你应该使用简单的URL格式`srt://127.0.0.1:10080`，不要带任何streamid参数。
+> Note: VLC支持带streamid的SRT，所以你应该使用简单的URL格式`srt://127.0.0.1:10080`，带任何streamid参数需要在偏好SRT协议中单独加入ID信息。
 
 你也可以使用FFplay播放，显式设置streamid：
 
