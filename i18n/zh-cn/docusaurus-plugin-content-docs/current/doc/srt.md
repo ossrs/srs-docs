@@ -560,7 +560,7 @@ SRT over IPv6保持与IPv4相同的性能特征：
 
 ## VLC
 
-VLC有一个重要的限制：它不支持`streamid` URL参数。当VLC连接到SRT服务器时，无论你在URL中输入什么，它总是发送一个空的`SRTO_STREAMID`套接字选项。这意味着VLC只能使用简单的URL格式`srt://127.0.0.1:10080`，不能带任何streamid参数。
+VLC-3.0.17以上版本可以支持`streamid` URL参数，方法为先在URL格式`srt://127.0.0.1:10080`写入srt流地址，然后在"工具->偏好设置->左下角"显示设置"选择全部->搜索协议写入"SRT"->编解码器访问模块中“选择SRT”->右侧看到"SRT Stream ID"加入id后可以正常启动播放。
 
 为了支持VLC和其他不设置`SRTO_STREAMID`的客户端，SRS提供了`default_streamid`配置选项。当客户端连接时没有设置streamid，SRS将使用这个配置的默认值。默认情况下，为了向后兼容，SRS使用`#!::r=live/livestream,m=publish`，但对于VLC播放，你应该将其配置为使用`m=request`模式。
 
@@ -591,7 +591,7 @@ ffmpeg -re -i ./doc/source.flv -c copy -pes_payload_size 0 -f mpegts \
 - 输入URL：`srt://127.0.0.1:10080`
 - 点击播放
 
-> Note: VLC不支持带streamid的SRT，所以你应该使用简单的URL格式`srt://127.0.0.1:10080`，不要带任何streamid参数。
+> Note: VLC支持带streamid的SRT，所以你应该使用简单的URL格式`srt://127.0.0.1:10080`，带任何streamid参数需要在偏好SRT协议中单独加入ID信息。
 
 你也可以使用FFplay播放，显式设置streamid：
 
