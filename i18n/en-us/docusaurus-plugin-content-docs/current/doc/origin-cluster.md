@@ -50,7 +50,7 @@ server by below command, and get the executable binary `./srs-proxy`:
 
 ```bash
 git clone https://github.com/ossrs/srsx.git
-cd srsx/proxy-go && make
+cd srsx && make
 ```
 
 > Note: You can also download the dependencies by running `go mod download` before building.
