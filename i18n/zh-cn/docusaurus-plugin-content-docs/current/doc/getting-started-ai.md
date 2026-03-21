@@ -7,50 +7,95 @@ hide_table_of_contents: false
 
 # AI Agent
 
-AI Agent是维护SRS和帮助您理解、调试、操作和开发SRS应用程序的强大工具。我们使用一套全面的AI Agent来维护SRS社区，并建立了AI遵循的指导原则，使您能够更高效地使用这些工具。
+SRS 提供了多种使用 AI 的方式：您可以在 Telegram 或 Discord 中与 SRS Robot 对话快速获取解答，也可以通过 Claude Code、Codex 或 OpenClaw 在本地运行 AI，使用预配置的 SRS 知识库进行开发和调试。
 
-## Augment Code
+## SRS Robot
 
-Augment Code是一个非常强大的AI Agent，我们强烈推荐使用。我们为Augment Code配置了特定的设置和指导原则，让您只需用VSCode打开SRS项目，就能立即利用AI助手的全部功能。SRS为AI提供了全面的上下文信息，包括代码、文档和测试。
+SRS 提供了基于 OpenClaw 构建的 AI 支持机器人，可在 Telegram 群组和 Discord 频道中使用。该机器人拥有涵盖 SRS 代码、文档和常见使用场景的深度知识库，并由最新的 AI 模型驱动。
 
-要使用Augment Code，首先安装VSCode，然后安装Augment Code扩展。请按照安装指南进行操作：[Install Augment for Visual Studio Code](https://docs.augmentcode.com/setup-augment/install-visual-studio-code)。
+您可以向 SRS 机器人咨询任何关于 SRS 的问题——如何使用、如何匹配使用场景、如何配置、如何排查问题，或其他任何疑问。机器人将基于最新的 SRS 知识库为您提供准确、及时的解答。
 
-接下来，克隆SRS代码并确保打开根目录，该目录包含`.augment-guidelines`文件：
+加入 SRS Telegram 群组：[https://t.me/+RiynvKOxpQ42MGJl](https://t.me/+RiynvKOxpQ42MGJl)
+
+加入 SRS Discord 频道：[https://discord.gg/yZ4BnPmHAd](https://discord.gg/yZ4BnPmHAd)
+
+进入群组后，@ SRS Robot 并直接提问即可。
+
+## Claude Code
+
+您可以在本地使用 Claude Code 与 SRS 代码库协作。SRS 内置了预配置的 `.claude` 目录，Claude Code 开箱即用，可以直接获取完整的项目上下文。
+
+克隆 SRS 代码并启动 Claude Code：
 
 ```bash
 git clone https://github.com/ossrs/srs.git
 cd srs
-code .
+claude
 ```
 
-您可以验证Augment Code设置以确保`Context`配置正确，然后通过向Augment Code提问来测试它，例如：
+Claude Code 将自动加载 `srs/.claude` 中的配置，使其深度了解 SRS 代码库，您可以直接提问、调试问题、编写代码等。
+
+## Codex
+
+您也可以在本地使用 Codex 与 SRS 代码库协作。SRS 内置了预配置的 `.agents` 目录，Codex 开箱即用。
+
+克隆 SRS 代码并启动 Codex：
+
+```bash
+git clone https://github.com/ossrs/srs.git
+cd srs
+codex
+```
+
+Codex 将自动加载 `srs/.agents` 中的配置。
+
+## OpenClaw
+
+您可以创建一个带有 SRS 知识库的本地 OpenClaw Agent。首先克隆 SRS 代码：
+
+```bash
+git clone https://github.com/ossrs/srs.git
+```
+
+有两种方式将 Agent 指向 SRS 知识库：
+
+- **直接设置工作空间** — 创建 Agent 时，将工作空间路径设置为 `srs/openclaw`。
+- **软链接** — 使用默认工作空间创建 Agent，然后删除默认工作空间目录，并将其替换为指向 `srs/openclaw` 的软链接：
+
+```bash
+ln -sf ~/git/srs/openclaw ~/.openclaw/workspace
+```
+
+Agent 启动后，列出可用的 Skill 并触发它们以加载知识库。Skill 会告诉 AI 需要加载哪些文件，以及如何更高效地处理 SRS 代码库相关的工作。
+
+## Skills
+
+在启动 Claude Code、Codex 或 OpenClaw 并接入 SRS 代码库后，建议使用 Skill 以获得最佳效果。Skill 会为当前任务加载正确的知识库，并引导 AI 按照正确的工作流执行。
+
+`srs-support` Skill 用于解答 SRS 项目相关的问题。它会根据您的问题自动加载相关知识库，让 AI 给出准确且有上下文的回答。
+
+未来会持续添加更多 Skill。要查看当前可用的 Skill，直接问 AI 即可：
 
 ```
-Will you follow any .augment-guidelines and .augmentignore of this project?
+What skills can I use for SRS?
 ```
 
-我们发现Augment Code对SRS代码库表现出深度的熟悉程度，可与经验丰富的维护者相媲美。有关使用Augment Code审查PullRequest和提高代码质量的实际示例，请参阅[AI Agent for SRS](https://medium.com/@winlinam/f9eb12a1ce74)。
+## 知识库
 
-## GitHub Copilot
+仅靠代码和文档，AI 无法真正理解和维护一个项目。项目背后有大量背景知识、设计思考、积累的经验、使用场景、社区沟通记录和调试工作流，这些内容只存在于人的脑海中，而不在任何文件里。SRS 知识库的目标，就是将这一切明确地记录下来。
 
-GitHub Copilot是读写SRS代码的有效AI Agent。我们也将其用于PullRequest审查。虽然它是一个有价值的AI工具，但还不能完全达到经验丰富的维护者的专业水平。
+知识库就是 OpenClaw 的 Memory——一系列文件，编码了 SRS 的背景、经验和上下文。它的构建方式是：让 AI 阅读代码和文档，再通过与 AI 对话将隐性知识挖掘出来并写成文件。随着时间推移，知识库将覆盖一切：不只是代码做了什么，还有为什么这样设计、如何思考问题、如何运营和维护这个项目。
 
-## Pull Request
+知识库与代码共同构成 SRS 的唯一真理来源。知识库记录了代码无法表达的内容——背景、设计决策、使用场景、调试经验和社区知识。未来，传统文档将从知识库生成，并完全由 AI 维护。
 
-SRS还使用AI来帮助审查PullRequest，因此以AI能够有效理解您的更改和代码的方式来构建PullRequest非常重要。为确保最佳的AI审查效果，请遵循以下指导原则：
+在知识库之上，还有 Skill。Skill 是工作流，告诉 AI 如何处理特定任务，例如：
 
-* 避免在PullRequest中重命名变量和函数，因为这会混淆AI分析。
-* 避免重新排序函数或重构代码，因为这会使AI难以理解实际更改。
-* 避免移动或重命名文件，因为这些对AI系统来说看起来像是重大更改。
+- **技术支持** — 解答用户问题，匹配使用场景
+- **Issue 处理与修复** — 理解、复现和解决问题
+- **功能开发** — 设计和实现新功能
+- **项目维护** — 审查 Pull Request、管理发布、保持项目健康
+- **调试** — 诊断和追踪代码库中的问题
 
-如果您需要执行此类重构任务（重命名变量、函数或文件，或重新排序函数），请在主要功能PullRequest之前提交单独的PullRequest。明确注释重构PR不包含逻辑更改，这样我们可以跳过对该特定PR的AI审查。
-
-## Comments
-
-添加注释非常有益且推荐，特别是对于可能让您和AI都感到困惑的复杂逻辑。一般来说，如果您需要AI帮助来理解或澄清代码，您也应该要求AI为该代码添加注释。
-
-注释总是有价值的且受欢迎的——将它们视为AI的提示。通过准确和全面的注释，AI可以更好地理解复杂代码和隐含的背景知识。通过保持这些良好实践，AI可以继续帮助提高项目质量并创造更好的维护体验。
-
-您还应该利用AI生成简洁明了的CommmitMessage和PullRequest描述。不需要过多的文字——只需足够澄清代码中隐含的特殊上下文和知识即可。
+每个 Skill 会加载知识库中相关的部分，并引导 AI 完成对应任务的正确工作流。这正是 AI 能够有效维护 SRS 的原因——不只是依靠原始智能，而是依托多年积累的结构化知识和工作流。
 
 ![](https://ossrs.net/gif/v1/sls.gif?site=ossrs.net&path=/lts/doc/zh/v7/getting-started-ai)
