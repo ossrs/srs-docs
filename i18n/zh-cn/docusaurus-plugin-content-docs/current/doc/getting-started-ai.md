@@ -7,7 +7,7 @@ hide_table_of_contents: false
 
 # AI Agent
 
-SRS 提供了多种使用 AI 的方式：您可以在 Telegram 或 Discord 中与 SRS Robot 对话快速获取解答，也可以通过 Claude Code、Codex 或 OpenClaw 在本地运行 AI，使用预配置的 SRS 知识库进行开发和调试。
+SRS 提供了多种使用 AI 的方式：您可以在 Telegram 或 Discord 中与 SRS Robot 对话快速获取解答，也可以通过 OpenClaw、Claude Code、Codex 或 Kiro 在本地运行 AI，使用预配置的 SRS 知识库进行开发和调试。
 
 ## SRS Robot
 
@@ -37,7 +37,7 @@ Claude Code 将自动加载 `srs/.claude` 中的配置，使其深度了解 SRS 
 
 ## Codex
 
-您也可以在本地使用 Codex 与 SRS 代码库协作。SRS 内置了预配置的 `.agents` 目录，Codex 开箱即用。
+您也可以在本地使用 Codex 与 SRS 代码库协作。SRS 内置了预配置的 `.codex` 目录，Codex 开箱即用。
 
 克隆 SRS 代码并启动 Codex：
 
@@ -47,7 +47,21 @@ cd srs
 codex
 ```
 
-Codex 将自动加载 `srs/.agents` 中的配置。
+Codex 将自动加载 `srs/.codex` 中的配置。
+
+## Kiro
+
+您也可以在本地使用 Kiro 与 SRS 代码库协作。SRS 内置了预配置的 `.kiro` 目录，Kiro 开箱即用。
+
+克隆 SRS 代码并启动 Kiro：
+
+```bash
+git clone https://github.com/ossrs/srs.git
+cd srs
+kiro-cli
+```
+
+Kiro 将自动加载 `srs/.kiro` 中的配置。
 
 ## OpenClaw
 
@@ -59,18 +73,18 @@ git clone https://github.com/ossrs/srs.git
 
 有两种方式将 Agent 指向 SRS 知识库：
 
-- **直接设置工作空间** — 创建 Agent 时，将工作空间路径设置为 `srs/openclaw`。
-- **软链接** — 使用默认工作空间创建 Agent，然后删除默认工作空间目录，并将其替换为指向 `srs/openclaw` 的软链接：
+- **直接设置工作空间** — 创建 Agent 时，将工作空间路径设置为 `srs/.openclaw`。
+- **软链接** — 使用默认工作空间创建 Agent，然后删除默认工作空间目录，并将其替换为指向 `srs/.openclaw` 的软链接：
 
 ```bash
-ln -sf ~/git/srs/openclaw ~/.openclaw/workspace
+ln -sf ~/git/srs/.openclaw ~/.openclaw/workspace
 ```
 
 Agent 启动后，列出可用的 Skill 并触发它们以加载知识库。Skill 会告诉 AI 需要加载哪些文件，以及如何更高效地处理 SRS 代码库相关的工作。
 
 ## Skills
 
-在启动 Claude Code、Codex 或 OpenClaw 并接入 SRS 代码库后，建议使用 Skill 以获得最佳效果。Skill 会为当前任务加载正确的知识库，并引导 AI 按照正确的工作流执行。
+在启动 OpenClaw、Claude Code、Codex 或 Kiro 并接入 SRS 代码库后，建议使用 Skill 以获得最佳效果。Skill 会为当前任务加载正确的知识库，并引导 AI 按照正确的工作流执行。
 
 `srs-support` Skill 用于解答 SRS 项目相关的问题。它会根据您的问题自动加载相关知识库，让 AI 给出准确且有上下文的回答。
 

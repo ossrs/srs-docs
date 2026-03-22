@@ -7,7 +7,7 @@ hide_table_of_contents: false
 
 # AI Agent
 
-SRS provides several ways to use AI: you can chat with the SRS Robot in Telegram or Discord for quick answers, or run AI locally with Claude Code, Codex, or OpenClaw using the pre-configured SRS knowledge base.
+SRS provides several ways to use AI: you can chat with the SRS Robot in Telegram or Discord for quick answers, or run AI locally with OpenClaw, Claude Code, Codex, or Kiro using the pre-configured SRS knowledge base.
 
 ## SRS Robot
 
@@ -37,7 +37,7 @@ Claude Code will automatically load the configuration from `srs/.claude`, giving
 
 ## Codex
 
-You can also use Codex locally with the SRS codebase. SRS ships with a pre-configured `.agents` directory so Codex works out of the box.
+You can also use Codex locally with the SRS codebase. SRS ships with a pre-configured `.codex` directory so Codex works out of the box.
 
 Clone the SRS code and start Codex:
 
@@ -47,7 +47,21 @@ cd srs
 codex
 ```
 
-Codex will automatically load the configuration from `srs/.agents`.
+Codex will automatically load the configuration from `srs/.codex`.
+
+## Kiro
+
+You can also use Kiro locally with the SRS codebase. SRS ships with a pre-configured `.kiro` directory so Kiro works out of the box.
+
+Clone the SRS code and start Kiro:
+
+```bash
+git clone https://github.com/ossrs/srs.git
+cd srs
+kiro-cli
+```
+
+Kiro will automatically load the configuration from `srs/.kiro`.
 
 ## OpenClaw
 
@@ -59,18 +73,18 @@ git clone https://github.com/ossrs/srs.git
 
 There are two ways to point the agent at the SRS knowledge base:
 
-- **Set the workspace directly** — when creating the agent, set the workspace path to `srs/openclaw`.
-- **Soft link** — create the agent with its default workspace, then remove the default workspace directory and replace it with a soft link to `srs/openclaw`:
+- **Set the workspace directly** — when creating the agent, set the workspace path to `srs/.openclaw`.
+- **Soft link** — create the agent with its default workspace, then remove the default workspace directory and replace it with a soft link to `srs/.openclaw`:
 
 ```bash
-ln -sf ~/git/srs/openclaw ~/.openclaw/workspace
+ln -sf ~/git/srs/.openclaw ~/.openclaw/workspace
 ```
 
 Once the agent is running, list the available skills and trigger them to load the knowledge base. The skills tell the AI which files to load and how to work more effectively with the SRS codebase.
 
 ## Skills
 
-After starting Claude Code, Codex, or OpenClaw with the SRS codebase, you should use skills to get the best results. Skills load the right knowledge base for your task and guide the AI through the correct workflow.
+After starting OpenClaw, Claude Code, Codex, or Kiro with the SRS codebase, you should use skills to get the best results. Skills load the right knowledge base for your task and guide the AI through the correct workflow.
 
 The `srs-support` skill is provided for answering questions about the SRS project. It automatically loads the relevant knowledge base based on your question, so the AI can give you accurate and context-aware answers.
 
