@@ -44,8 +44,8 @@ proxy server支持几乎所有SRS协议，包括RTMP、HTTP-FLV、HLS、WebRTC�
 下面的命令会编译出可执行的二进制`./srs-proxy`：
 
 ```bash
-git clone https://github.com/ossrs/srsx.git
-cd srsx && make
+git clone https://github.com/ossrs/srs.git
+cd srs && make
 ```
 
 > Note: 您也可以在构建之前运行 `go mod download` 来下载依赖项。
