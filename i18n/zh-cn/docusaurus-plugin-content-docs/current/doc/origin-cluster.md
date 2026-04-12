@@ -41,7 +41,7 @@ proxy server支持几乎所有SRS协议，包括RTMP、HTTP-FLV、HLS、WebRTC�
 ## Build
 
 要构建proxy server，您需要安装Go 1.18以上版本。然后，您可以通过以下命令构建proxy server，
-下面的命令会编译出可执行的二进制`./srs-proxy`：
+下面的命令会编译出可执行的二进制`bin/srs-proxy`：
 
 ```bash
 git clone https://github.com/ossrs/srs.git
@@ -64,7 +64,7 @@ cd srs && make
 ```bash
 env PROXY_RTMP_SERVER=1935 PROXY_HTTP_SERVER=8080 \
     PROXY_HTTP_API=1985 PROXY_WEBRTC_SERVER=8000 PROXY_SRT_SERVER=10080 \
-    PROXY_SYSTEM_API=12025 PROXY_LOAD_BALANCER_TYPE=memory ./srs-proxy
+    PROXY_SYSTEM_API=12025 PROXY_LOAD_BALANCER_TYPE=memory ./bin/srs-proxy
 ```
 
 > Note: 这里我们使用内存负载均衡器，如果您想运行多个proxy server，可以切换到 `redis`。
@@ -114,7 +114,7 @@ ffplay http://localhost:8080/live/livestream.m3u8
 ```bash
 env PROXY_RTMP_SERVER=1935 PROXY_HTTP_SERVER=8080 \
     PROXY_HTTP_API=1985 PROXY_WEBRTC_SERVER=8000 PROXY_SRT_SERVER=10080 \
-    PROXY_SYSTEM_API=12025 PROXY_LOAD_BALANCER_TYPE=memory ./srs-proxy
+    PROXY_SYSTEM_API=12025 PROXY_LOAD_BALANCER_TYPE=memory ./bin/srs-proxy
 ```
 
 > Note: 这里我们使用内存负载均衡器，如果您想运行多个proxy server，可以切换到 `redis`。
@@ -160,7 +160,7 @@ ffplay http://localhost:8080/live/livestream.m3u8
 ```bash
 env PROXY_RTMP_SERVER=1935 PROXY_HTTP_SERVER=8080 \
     PROXY_HTTP_API=1985 PROXY_WEBRTC_SERVER=8000 PROXY_SRT_SERVER=10080 \
-    PROXY_SYSTEM_API=12025 PROXY_LOAD_BALANCER_TYPE=memory ./srs-proxy
+    PROXY_SYSTEM_API=12025 PROXY_LOAD_BALANCER_TYPE=memory ./bin/srs-proxy
 ```
 
 > Note: 这里我们使用内存负载均衡器，如果您想运行多个proxy server，可以切换到 `redis`。
