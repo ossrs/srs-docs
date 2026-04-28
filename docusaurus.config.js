@@ -270,6 +270,7 @@ const config = {
   },
   plugins: [
     ...regionConfig.plugins,
+    'docusaurus-plugin-copy-page-button',
     [
       './config/docusaurus-rewrite-siteconfig-plugin',
       {
