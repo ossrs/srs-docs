@@ -41,11 +41,15 @@ const config = {
                 : `https://github.com/ossrs/srs-docs/edit/main/i18n/${locale}/docusaurus-plugin-content-docs/version-${version}/${docPath}`;
             }
           },
-          lastVersion: versions[0],
+          lastVersion: '6.0',
           //lastVersion: versions[0],
           versions: {
             current: {
-              label: `7.0 (Unstable) 🚧🚀`,
+              label: `8.0 (Unstable) 🚧🚀`,
+              path: 'v8',
+            },
+            '7.0': {
+              label: '7.0 (Unstable) 🚧🚀',
               path: 'v7',
             },
             '6.0': {
