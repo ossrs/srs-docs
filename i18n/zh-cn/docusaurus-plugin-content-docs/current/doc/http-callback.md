@@ -190,6 +190,8 @@ vhost your_vhost {
 
 > Note: 推流的回调是`on_publish`和`on_unpublish`，播放的回调是`on_play`和`on_stop`。
 
+> Note: 这些回调同样适用于WebRTC。WHIP推流会触发`on_publish`，WHEP播放会触发`on_play`。由于RTC的Bearer鉴权默认是关闭的，这些回调可以单独完成WHIP和WHEP的鉴权。若与[Bearer鉴权](./http-api.md#bearer-token-authentication)结合使用，需要开启`rtc_bearer_enabled`；此时WHIP或WHEP请求必须先通过Bearer鉴权，SRS才会调用回调。
+
 > Note: SRS 4之前，还有`on_connect`和`on_close`，这是RTMP定义的事件，只有RTMP流才有，而且和推流和播放的事件是重叠的，所以不推荐使用。
 
 > Note: 可以参考conf/full.conf配置文件中的hooks.callback.vhost.com实例。
@@ -259,6 +261,17 @@ heartbeat {
     # Overwrite by env SRS_HEARTBEAT_SUMMARIES
     # default: off
     summaries off;
+    # Optional authentication for the heartbeat request.
+    auth {
+        # Overwrite by env SRS_HEARTBEAT_AUTH_ENABLED
+        # default: off
+        enabled off;
+        # Overwrite by env SRS_HEARTBEAT_AUTH_TYPE
+        # only bearer is supported
+        type bearer;
+        # Overwrite by env SRS_HEARTBEAT_AUTH_TOKEN
+        token proxy-registration-token;
+    }
 }
 ```
 

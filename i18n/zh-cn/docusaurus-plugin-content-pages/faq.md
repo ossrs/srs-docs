@@ -193,8 +193,9 @@
 
 ### [RTSP](#rtsp)
 * `RTSP`：RTSP推流，RTSP服务器，RTSP播放等
-  > 1. SRS支持用Ingest拉RTSP，不支持推RTSP流到SRS，这不是正确的用法，详细原因请参考 [#2304](https://github.com/ossrs/srs/issues/2304) 。
-  > 1. ~~当然RTSP服务器，RTSP播放，更加不会支持，参考 [#476](https://github.com/ossrs/srs/issues/476)~~ 已经支持RTSP播放，参考 [#4333](https://github.com/ossrs/srs/pull/4333)
+  > 1. SRS支持用Ingest拉取RTSP源，但不支持直接推RTSP流到SRS。推RTSP流不是SRS推荐的用法，详细原因请参考 [#2304](https://github.com/ossrs/srs/issues/2304) 。
+  > 1. SRS 7.0.47+ 支持将RTMP流转成RTSP实现RTSP播放/服务器功能。编译时开启`./configure --rtsp=on`，配置`rtmp_to_rtsp on`，用RTMP推流后即可用RTSP播放，例如 `ffplay -rtsp_transport tcp -i rtsp://localhost:8554/live/livestream`。参考[RTSP](../docs/v7/doc/rtsp)。
+  > 1. RTSP播放仅支持TCP/interleaved传输方式，不支持UDP传输。SRS的RTSP输出目前面向H.264 + AAC编码的流。
   > 1. 如果你需要非常多比如1万路摄像头接入，那么用FFmpeg可能会比较费劲，这么大规模的业务，比较推荐的方案是自己用ST+SRS的代码，实现一个拉RTSP转发的服务器。
 * `Browser RTSP`: 如何使用浏览器播放RTSP等
   > 1. H5如何播放RTSP流，FFmpeg拉RTSP流，如何降低延迟，参考[链接](https://stackoverflow.com/a/70400665/17679565)

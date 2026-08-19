@@ -92,12 +92,25 @@ http_api {
         # Always off by https://github.com/ossrs/srs/issues/2653
         #allow_update off;
     }
-    # the auth is authentication for http api
+    # Authentication for the HTTP API. Basic and Bearer authentication protect APIs under /api/.
+    # Bearer authentication can optionally protect WebRTC signaling APIs under /rtc/.
     auth {
         # whether enable the HTTP AUTH.
         # Overwrite by env SRS_HTTP_API_AUTH_ENABLED
         # default: off
         enabled         on;
+        # The authentication type. Supported values are basic and bearer.
+        # Required when authentication is enabled.
+        # Overwrite by env SRS_HTTP_API_AUTH_TYPE
+        type            basic;
+        # The token of Bearer authentication. Required when type is bearer.
+        # Overwrite by env SRS_HTTP_API_AUTH_TOKEN
+        token           secret-token;
+        # Whether Bearer authentication also protects WebRTC signaling APIs under /rtc/,
+        # including WHIP and WHEP. Requires enabled on and type bearer.
+        # Overwrite by env SRS_HTTP_API_AUTH_RTC_BEARER_ENABLED
+        # default: off
+        rtc_bearer_enabled off;
         # The username of Basic authentication:
         # Overwrite by env SRS_HTTP_API_AUTH_USERNAME
         username        admin;
@@ -526,13 +539,16 @@ SRS支持的HTTP RAW API包括：
 
 SRS在`5.0.152+`或者`6.0.40+`版本开始支持HTTP API鉴权，可以通过配置`http_api.auth`开启。
 
+### Basic Authentication
+
 ```bash
-# conf/http.api.auth.conf
+# conf/http.api.auth.basic.conf
 http_api {
     enabled on;
     listen 1985;
     auth {
         enabled on;
+        type basic;
         username admin;
         password admin;
     }
@@ -543,7 +559,8 @@ http_api {
 
 ```bash
 env SRS_HTTP_API_ENABLED=on SRS_HTTP_SERVER_ENABLED=on \
-    SRS_HTTP_API_AUTH_ENABLED=on SRS_HTTP_API_AUTH_USERNAME=admin SRS_HTTP_API_AUTH_PASSWORD=admin \
+    SRS_HTTP_API_AUTH_ENABLED=on SRS_HTTP_API_AUTH_TYPE=basic \
+    SRS_HTTP_API_AUTH_USERNAME=admin SRS_HTTP_API_AUTH_PASSWORD=admin \
     ./objs/srs -e
 ```
 
@@ -554,7 +571,61 @@ env SRS_HTTP_API_ENABLED=on SRS_HTTP_SERVER_ENABLED=on \
 要清除用户名和密码，可以通过用户名访问HTTP API：
 - http://admin@localhost:1985/api/v1/versions
 
-> 注意：只针对HTTP API开启了鉴权，不包括HTTP服务器和WebRTC HTTP API。
+### Bearer Token Authentication
+
+Bearer鉴权通过`Authorization`请求头中携带的token来保护SRS HTTP API。默认情况下，WebRTC信令API不受Bearer鉴权保护。将类型设置为`bearer`，并配置一个非空的token：
+
+```bash
+# conf/http.api.auth.bearer.conf
+http_api {
+    enabled on;
+    listen 1985;
+    auth {
+        enabled on;
+        type bearer;
+        token srs-api-token;
+        rtc_bearer_enabled off;
+    }
+}
+```
+
+等效的环境变量为：
+
+```bash
+env SRS_HTTP_API_AUTH_ENABLED=on \
+    SRS_HTTP_API_AUTH_TYPE=bearer \
+    SRS_HTTP_API_AUTH_TOKEN=srs-api-token \
+    ./objs/srs -c conf/srs.conf
+```
+
+在每个API请求中携带该token：
+
+```bash
+curl -H 'Authorization: Bearer srs-api-token' \
+    http://127.0.0.1:1985/api/v1/versions
+```
+
+要保护WHIP、WHEP等位于`/rtc/`下的WebRTC信令请求，还需开启RTC的Bearer鉴权：
+
+```bash
+SRS_HTTP_API_AUTH_RTC_BEARER_ENABLED=on
+```
+
+或者在`http_api.auth`中设置`rtc_bearer_enabled on;`。这样，WHIP和WHEP客户端也必须携带相同的请求头：
+
+```bash
+curl -H 'Authorization: Bearer srs-api-token' \
+    -H 'Content-Type: application/sdp' --data-binary @offer.sdp \
+    'http://127.0.0.1:1985/rtc/v1/whip/?app=live&stream=livestream'
+```
+
+若token缺失或不正确，请求会收到HTTP `401 Unauthorized`响应，以及响应头`WWW-Authenticate: Bearer`。
+
+`SRS_HTTP_API_AUTH_TOKEN`用于保护SRS服务器自身的HTTP API，当`SRS_HTTP_API_AUTH_RTC_BEARER_ENABLED=on`时，也会保护其WebRTC信令API。它与代理注册鉴权、心跳鉴权所使用的凭据是相互独立的。
+
+> 注意：Basic和Bearer鉴权保护的是`/api/`下的API。Basic鉴权不适用于WebRTC信令API。Bearer鉴权只有在`rtc_bearer_enabled`开启时才会保护`/rtc/`。这两种鉴权方式都不会保护HTTP服务器提供的静态文件。
+
+Bearer鉴权可以和[HTTP回调](./http-callback.md)结合使用。当RTC的Bearer鉴权开启时，WHIP或WHEP请求必须先通过Bearer鉴权，然后SRS才会调用`on_publish`或`on_play`做流级别的鉴权。当RTC的Bearer鉴权关闭时，HTTP回调可以单独完成WHIP和WHEP的鉴权。
 
 Winlin 2015.8
 

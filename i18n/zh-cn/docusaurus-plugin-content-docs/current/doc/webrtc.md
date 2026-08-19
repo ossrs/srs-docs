@@ -291,6 +291,26 @@ SRS支持WHIP和WHEP协议。安装好SRS后，可以直接点击下面的地址
 
 [![](/img/doc-whip-whep-workflow.png)](https://www.figma.com/file/fA75Nl6Fr6v8hsrJba5Xrn/How-Does-WHIP%2FWHEP-Work%3F?type=whiteboard&node-id=0-1)
 
+### Authentication
+
+SRS支持为WHIP和WHEP信令可选地开启Bearer鉴权，RTC默认关闭该功能。开启`http_api.auth`，将其类型设置为`bearer`，配置token，并显式开启RTC的Bearer鉴权：
+
+```bash
+env SRS_HTTP_API_AUTH_ENABLED=on \
+    SRS_HTTP_API_AUTH_TYPE=bearer \
+    SRS_HTTP_API_AUTH_TOKEN=srs-api-token \
+    SRS_HTTP_API_AUTH_RTC_BEARER_ENABLED=on \
+    ./objs/srs -c conf/rtc.conf
+```
+
+WHIP或WHEP客户端必须在HTTP请求中携带该token：
+
+```text
+Authorization: Bearer srs-api-token
+```
+
+Basic鉴权不适用于WHIP或WHEP。当RTC的Bearer鉴权关闭时，SRS可以单独使用HTTP回调完成WebRTC鉴权：`on_publish`处理WHIP推流，`on_play`处理WHEP播放。Bearer鉴权和HTTP回调也可以同时开启；此时请求必须先通过Bearer鉴权，再由回调决定是否接受。参见[HTTP API Authentication](./http-api.md#authentication)和[HTTP Callback](./http-callback.md)。
+
 如果是在Mac或Linux上安装SRS，可以通过localhost测试本机的SRS服务。但是若在Windows，或者远程Linux服务器，或者需要在其他
 设备上测试，则必须使用HTTPS WHIP推流，而WHEP则依然可以HTTP。可以开启SRS的HTTPS参考[HTTPS API](./http-api.md#https-api)，
 也可以使用Web服务器代理比如Nginx参考[HTTPS Proxy](./http-api.md#http-and-https-proxy)。

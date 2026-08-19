@@ -245,6 +245,20 @@ proxy server通过环境变量配置。代理后端服务器支持的环境变�
 
 > 注意：默认后端源服务器是为任何 RTMP 服务器（如 nginx-rtmp）设计的，它不需要源服务器向proxy server注册。
 
+## Authentication
+
+通过以下环境变量配置proxy server的注册API鉴权：
+
+* `PROXY_HTTP_API_AUTH_ENABLED`: 是否对源服务器的注册请求进行鉴权。默认：`off`
+* `PROXY_HTTP_API_AUTH_TYPE`: 鉴权类型。开启鉴权时，proxy server要求类型为`bearer`。
+* `PROXY_HTTP_API_AUTH_TOKEN`: proxy server注册API所接受的Bearer token。开启鉴权时必须配置。
+
+通过以下环境变量配置每个SRS源服务器对其心跳请求进行鉴权：
+
+* `SRS_HEARTBEAT_AUTH_ENABLED`: SRS源服务器是否对其心跳请求进行鉴权。默认：`off`
+* `SRS_HEARTBEAT_AUTH_TYPE`: 心跳鉴权类型。若proxy server已开启鉴权，此处应使用`bearer`。
+* `SRS_HEARTBEAT_AUTH_TOKEN`: SRS源服务器发送的凭据，应设置为proxy server的`PROXY_HTTP_API_AUTH_TOKEN`。它与保护源服务器自身HTTP API的`SRS_HTTP_API_AUTH_TOKEN`是相互独立的。
+
 ## Design
 
 proxy server与 SRS 源服务器一起工作，流媒体流程如下：
