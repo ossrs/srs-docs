@@ -546,10 +546,7 @@ This configuration allows:
 
 ## VLC
 
-VLC has an important limitation: it does not support the `streamid` URL parameter. When VLC connects 
-to an SRT server, it always sends an empty `SRTO_STREAMID` socket option, regardless of what you put
-in the URL. This means VLC can only use the simple URL format `srt://127.0.0.1:10080` without any 
-streamid parameter.
+VLC version 3.0.17 and above supports the `streamid` URL parameter. The method is to first write the SRT stream address in the URL format `srt://127.0.0.1:10080`, then go to “Tools -> Preferences -> Display Settings” in the bottom-left corner. Select All -> Enter “SRT” in the Search Protocol field -> Choose “Select SRT” in the Codec Access Module -> Add the ID to the “SRT Stream ID” field on the right to start playback normally.
 
 To support VLC and other clients that don't set `SRTO_STREAMID`, SRS provides a `default_streamid` 
 configuration option. When a client connects without setting streamid, SRS will use this configured 
@@ -585,7 +582,7 @@ Then play with VLC using the simple URL (VLC will use the server's default strea
 - Enter URL: `srt://127.0.0.1:10080`
 - Click Play
 
-> Note: VLC doesn't support SRT with streamid, so you should use the simple URL format `srt://127.0.0.1:10080` without any streamid parameter.
+> Note: VLC supports SRT files with stream IDs, so you should use the simple URL format `srt://127.0.0.1:10080`. To include any stream ID parameters, you must manually add the ID information within the SRT protocol settings in Preferences.
 
 You can also play with FFplay by explicitly setting the streamid:
 
